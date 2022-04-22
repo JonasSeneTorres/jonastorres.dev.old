@@ -13,8 +13,6 @@
     "test:blog": "ng test blog --code-coverage",
     "test:guide-dog": "ng test guide-dog --code-coverage",
     "coverage": "ng test --no-watch --code-coverage",
-    "coverage:blog": "ng test blog --no-watch --code-coverage",
-    "coverage:guide-dog": "ng test guide-dog --no-watch --code-coverage"
   },
   "private": true,
   "dependencies": {
