@@ -19,7 +19,9 @@ describe('PaginaNaoEncontradaComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('constructor', () => {
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
   });
 });

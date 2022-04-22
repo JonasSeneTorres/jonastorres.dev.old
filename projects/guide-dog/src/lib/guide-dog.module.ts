@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
-import { HeaderModule } from './components/header/header/header.module';
+import { FooterModule } from './components/footer/footer.module';
+import { HeaderModule } from './components/header/header.module';
 
 @NgModule({
   declarations: [
   ],
   imports: [
-    HeaderModule
+    FooterModule,
+    HeaderModule,
   ],
   exports: [
+    FooterModule,
     HeaderModule
   ]
 })
