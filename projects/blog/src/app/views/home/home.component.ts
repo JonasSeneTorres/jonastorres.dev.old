@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsService } from '../../services/posts/posts.service';
 
 @Component({
   selector: 'jt-home',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  post: any;
 
-  constructor() { }
+  constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
+    this.postsService.get().subscribe(
+      sucesso => {
+        this.post = sucesso[0].text;
+        console.log(sucesso)
+      }
+    )
   }
 
 }
