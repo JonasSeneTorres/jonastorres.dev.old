@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { PostsService } from '../../services/posts/posts.service';
 
 @Component({
@@ -8,16 +9,41 @@ import { PostsService } from '../../services/posts/posts.service';
 })
 export class HomeComponent implements OnInit {
   post: any;
+  post2: any;
+  @ViewChild('dataContainer') dataContainer: ElementRef = new ElementRef({});
 
-  constructor(private postsService: PostsService) { }
+  loadData(data: any) {
+      this.dataContainer.nativeElement.innerHTML = data;
+  }
+
+  constructor(
+    private postsService: PostsService,
+    // private sanitizer: DomSanitizer
+    ) { }
 
   ngOnInit(): void {
     this.postsService.get().subscribe(
       sucesso => {
         this.post = sucesso[0].text;
         console.log(sucesso)
+        // this.post2 = this.sanitizer.bypassSecurityTrustHtml(
+        //   sucesso[0].text
+        // );
       }
     )
   }
+
+
+
+  // ngAfterViewInit() {
+  //   this.postsService.get().subscribe(
+  //     sucesso => {
+  //       this.post = sucesso[0].text;
+  //       this.post2 = this.domSanitizerService.sanitize(sucesso[0].text)
+  //       this.loadData(sucesso[0].text);
+  //       console.log(sucesso)
+  //     }
+  //   )
+  // }
 
 }

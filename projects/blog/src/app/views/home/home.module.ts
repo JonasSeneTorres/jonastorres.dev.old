@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Sanitizer } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
-
-import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-
+import { HomeRoutingModule } from './home-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +11,9 @@ import { HomeComponent } from './home.component';
   imports: [
     CommonModule,
     HomeRoutingModule
+  ],
+  providers: [
+
   ]
 })
 export class HomeModule { }
