@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { CenteredPanelModule } from './components/centered-box-min-size/centered-panel.module';
 import { FooterModule } from './components/footer/footer.module';
 import { HeaderModule } from './components/header/header.module';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -8,10 +9,12 @@ import { HeaderModule } from './components/header/header.module';
   imports: [
     FooterModule,
     HeaderModule,
+    CenteredPanelModule,
   ],
   exports: [
     FooterModule,
-    HeaderModule
+    HeaderModule,
+    CenteredPanelModule,
   ]
 })
 export class GuideDogModule { }

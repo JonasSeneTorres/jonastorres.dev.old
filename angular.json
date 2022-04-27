@@ -96,10 +96,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/blog/src/favicon.ico",
-              "projects/blog/src/assets"
+              "projects/blog/src/assets",
+              "projects/guide-dog/src/lib/assets"
             ],
             "styles": [
-              "projects/blog/src/styles/styles.scss"
+              "projects/blog/src/styles/styles.scss",
+              "projects/guide-dog/src/lib/styles/gd.scss"
             ],
             "scripts": []
           }

@@ -1,0 +1,117 @@
+// @use "sass:math";
+
+// @function multiply($fore, $back) {
+//   $red: math.div(red($back) * red($fore), 255);
+//   $green: math.div(green($back) * green($fore), 255);
+//   $blue: math.div(blue($back) * blue($fore), 255);
+//   @return rgb($red, $green, $blue);
+// }
+
+// @function makeColorPalette($color) {
+//   $light: #fff;
+//   $dark: multiply($color, $color);
+//   $palette: (
+//     50: mix($light, $color, 88%),
+//     100: mix($light, $color, 70%),
+//     200: mix($light, $color, 50%),
+//     300: mix($light, $color, 30%),
+//     400: mix($light, $color, 15%),
+//     500: mix($light, $color, 0%),
+//     600: mix($dark, $color, 13%),
+//     700: mix($dark, $color, 30%),
+//     800: mix($dark, $color, 46%),
+//     900: mix($dark, $color, 75%),
+//     A100: lighten(saturate(mix($dark, $color, 15%), 80%), 45.6%),
+//     A200: lighten(saturate(mix($dark, $color, 15%), 80%), 35.6%),
+//     A400: lighten(saturate(mix($dark, $color, 15%), 100%), 25.6%),
+//     A700: lighten(saturate(mix($dark, $color, 15%), 100%), 20.5%),
+//   );
+//   @return $palette;
+// }
+
+// @function makeColorPalette50($color) {
+//   $light: #fff;
+//   $dark: multiply($color, $color);
+//   $palette: mix($light, $color, 88%);
+//   @return $palette;
+// }
+
+// @function makeColorPalette100($color) {
+//   $light: #fff;
+//   $dark: multiply($color, $color);
+//   $palette: mix($light, $color, 70%);
+//   @return $palette;
+// }
+
+// @function makeColorPalette200($color) {
+//   $light: #fff;
+//   $palette: mix($light, $color, 50%);
+//   @return $palette;
+// }
+
+// @function makeColorPalette300($color) {
+//   $light: #fff;
+//   $palette: mix($light, $color, 30%);
+//   @return $palette;
+// }
+
+// @function makeColorPalette400($color) {
+//   $light: #fff;
+//   $palette: mix($light, $color, 15%);
+//   @return $palette;
+// }
+
+// @function makeColorPalette500($color) {
+//   $light: #fff;
+//   $palette: mix($light, $color, 0%);
+//   @return $palette;
+// }
+
+// @function makeColorPalette600($color) {
+//   $dark: multiply($color, $color);
+//   $palette: mix($dark, $color, 13%);
+//   @return $palette;
+// }
+
+// @function makeColorPalette700($color) {
+//   $dark: multiply($color, $color);
+//   $palette: mix($dark, $color, 30%);
+//   @return $palette;
+// }
+
+// @function makeColorPalette800($color) {
+//   $dark: multiply($color, $color);
+//   $palette: mix($dark, $color, 46%);
+//   @return $palette;
+// }
+
+// @function makeColorPalette900($color) {
+//   $dark: multiply($color, $color);
+//   $palette: mix($dark, $color, 75%);
+//   @return $palette;
+// }
+
+
+// @function makeColorPaletteA100($color) {
+//   $dark: multiply($color, $color);
+//   $palette: lighten(saturate(mix($dark, $color, 15%), 80%), 45.6%);
+//   @return $palette;
+// }
+
+// @function makeColorPaletteA200($color) {
+//   $dark: multiply($color, $color);
+//   $palette: lighten(saturate(mix($dark, $color, 15%), 80%), 35.6%);
+//   @return $palette;
+// }
+
+// @function makeColorPaletteA400($color) {
+//   $dark: multiply($color, $color);
+//   $palette: lighten(saturate(mix($dark, $color, 15%), 100%), 25.6%);
+//   @return $palette;
+// }
+
+// @function makeColorPaletteA700($color) {
+//   $dark: multiply($color, $color);
+//   $palette: lighten(saturate(mix($dark, $color, 15%), 100%), 20.5%);
+//   @return $palette;
+// }

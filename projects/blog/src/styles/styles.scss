@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'base/typography';
+
+$normalized_font_family: 'Roboto';
+$title_font_family: 'Titillium Web';
+@import '../../../guide-dog/src/lib/styles/gd.scss';
+
+jt-root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+// @import 'abstracts/variables';
+// @import 'abstracts/functions';
+// @import 'abstracts/mixins';
+// @import 'base/reset';
+// // @import 'base/typography';
+// // @import 'vendor/dg';
+// @import 'vendor/fontawesome';
+
+
+// jst-root {
+//   display: grid;
+//   grid-template-areas:
+//     "accessibility"
+//     "header"
+//     "content"
+//     "footer";
+//   grid-template-rows: auto auto 1fr auto;
+//   min-height: 99vh;
+// }
+
+// jst-content {
+//   grid-area: content;
+// }
+// jst-footer {
+//   grid-area: footer;
+// }
+// jst-header {
+//   grid-area: header;
+//   position: sticky;
+//   top: -1px;
+//   z-index: 10;
+// }
+// jst-accessibility-bar {
+//   grid-area: accessibility;
+//   position: sticky;
+//   top: 0px;
+// }
+

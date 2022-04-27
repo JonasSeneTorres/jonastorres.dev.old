@@ -1,0 +1,54 @@
+@import '../../styles/gd.scss';
+
+.gd-header {
+  background-color: $gd-setcolorligth-primary;
+  box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+  color: $gd-color-white;
+  min-height: 3.5rem;
+  overflow: auto;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  &__nav {
+    align-content: center;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    height: 3.5rem;
+  }
+
+  &__menu{
+    &-main {
+      display:inline;
+      margin-left: 1.5rem;
+      padding: 0;
+
+      &-li {
+        display:inline;
+        margin-left: 2rem;
+      }
+    }
+
+    &-secondary {
+      display:inline;
+      margin-left: 1.5rem;
+      padding: 0;
+
+      &-li {
+        display:inline;
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  &__link {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    *-main {}
+    &-menu {}
+
+  }
+}

@@ -1,13 +1,22 @@
-<header>
-  <div>
-    <p>header works!</p>
-    <nav>
-      <ul>
-        <li>link 1</li>
-        <li>link 2</li>
-        <li>link 3</li>
-        <li>link 4</li>
-      </ul>
+<header class="gd-header">
+  <gd-centered-panel>
+    <nav class="gd-header__nav">
+      <div>
+        <button type="button">MENU</button>
+        <a [routerLink]="['aaa']" class="gd-header__link gd-header__link-main">jonastorres.dev</a>
+        <ul class="gd-header__menu-main">
+          <li class="gd-header__menu-main-li"><a [routerLink]="['aaa']" class="gd-header__link gd-header__link-menu">link 1</a></li>
+          <li class="gd-header__menu-main-li"><a [routerLink]="['aaa']" class="gd-header__link gd-header__link-menu">link 2</a></li>
+          <li class="gd-header__menu-main-li"><a [routerLink]="['aaa']" class="gd-header__link gd-header__link-menu">link 3</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="gd-header__menu-secondary">
+          <li class="gd-header__menu-secondary-li">
+            <button type="button">MENU</button>
+          </li>
+        </ul>
+      </div>
     </nav>
-  </div>
+  </gd-centered-panel>
 </header>

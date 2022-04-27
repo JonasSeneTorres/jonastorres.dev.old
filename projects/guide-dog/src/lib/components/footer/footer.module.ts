@@ -1,13 +1,15 @@
-import { NgModule } from '@angular/core';
+import { CenteredPanelModule } from '../centered-box-min-size/centered-panel.module';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer.component';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
     FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CenteredPanelModule
   ],
   exports: [
     FooterComponent
