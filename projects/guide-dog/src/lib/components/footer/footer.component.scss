@@ -1,0 +1,9 @@
+@import '../../styles/gd.scss';
+
+.gd-footer {
+  background-color: $gd-setcolorligth-primary;
+  color: $gd-color-white;
+  min-height: 2.5rem;
+  overflow: auto;
+  padding: .75rem 0;
+}

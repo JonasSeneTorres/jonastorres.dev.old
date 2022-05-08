@@ -4,8 +4,9 @@
   background-color: $gd-setcolorligth-primary;
   box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
   color: $gd-color-white;
-  min-height: 3.5rem;
+  min-height: 2.5rem;
   overflow: auto;
+  padding: .75rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -14,7 +15,7 @@
     align-content: center;
     display: grid;
     grid-template-columns: 1fr auto;
-    height: 3.5rem;
+    min-height: 2.5rem;
   }
 
   &__menu{
@@ -42,7 +43,7 @@
   }
 
   &__link {
-    color: #fff;
+    color: $gd-color-white;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
@@ -50,5 +51,18 @@
     *-main {}
     &-menu {}
 
+  }
+}
+
+button {
+  background-color: $gd-setcolorligth-primary;;
+  background-color: transparent;
+  border: solid 1px $gd-color-white;
+  color: $gd-color-white;
+  min-height: 2.5rem;
+  padding: 0 .5rem;
+
+  &.first-menu {
+    margin-right: 1rem
   }
 }
