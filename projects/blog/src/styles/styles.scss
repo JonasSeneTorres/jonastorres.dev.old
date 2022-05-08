@@ -6,7 +6,7 @@ $title_font_family: 'Titillium Web';
 
 jt-root {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
   min-height: 100vh;
 }
 
