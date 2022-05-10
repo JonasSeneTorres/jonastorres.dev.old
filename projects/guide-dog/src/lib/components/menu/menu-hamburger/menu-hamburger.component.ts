@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-hamburger.component.scss']
 })
 export class MenuHamburgerComponent implements OnInit {
+  show = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  displayMenu(event: Event, showModal: boolean) {
+    event.stopPropagation()
+    this.show = showModal;
   }
 
 }

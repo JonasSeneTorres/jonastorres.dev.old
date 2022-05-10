@@ -1,17 +1,25 @@
-<button>
-  <span>menu</span>
-  <span>close</span>
-  <span>back</span>
-</button>
+<!-- <div class="menu-hamburger__header" [class.menu-hamburger__header--actived]="show"> -->
+  <button class="menu-hamburger__button" [class.menu-hamburger__button--actived]="show" (click)="displayMenu($event, !show)">
+    <span class="fa-solid" [class.fa-xmark]="show" [class.fa-bars]="!show"></span>
+  </button>
+<!-- </div> -->
 
-<div class="menu-hamburger__nav">
+<div class="menu-hamburger__nav" *ngIf="show" (click)="displayMenu($event, false)">
   <gd-centered-panel>
-    <div class="menu-hamburger__nav-container">
-      <ul>
-        <li>
-          <a [routerLink]="['/']" routerLinkActive="router-link-active">aaa</a>
-        </li>
-      </ul>
+    <div class="menu-hamburger__nav-container" (click)="displayMenu($event, true)">
+      <!-- <button class="menu-hamburger__nav-button" (click)="show = false">
+        <span>menu</span>
+        <span>close</span>
+        <span>back</span>
+      </button> -->
+      <div class="menu-hamburger__nav-container-list">
+        <hr class="menu-hamburger__separador">
+        <ul class="menu-hamburger__nav-list">
+          <li>
+            <a [routerLink]="['/']" routerLinkActive="router-link-active">aaa</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </gd-centered-panel>
 </div>
