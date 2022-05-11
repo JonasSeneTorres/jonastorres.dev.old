@@ -9,7 +9,7 @@
     cursor: pointer;
     margin-right: 1rem;
     min-height: 2.4rem;
-    padding: 0 .5rem;
+    padding: 0 0.5rem;
     position: relative;
     width: 2.5rem;
     z-index: 10;
@@ -39,7 +39,7 @@
   }
 
   &__nav {
-    background-color: rgba($gd-color-black, .2);
+    background-color: rgba($gd-color-black, 0.2);
     height: 100vh;
     left: 0;
     max-height: 100vh;
@@ -54,7 +54,7 @@
       box-shadow: 4px 0px 5px 0px rgba($gd-color-black, 0.15);
       height: 100vh;
       margin-left: -16px;
-      max-height: calc(100vh );
+      max-height: calc(100vh);
       max-width: 400px;
       overflow: auto;
       position: absolute;
@@ -68,7 +68,7 @@
         display: block;
         height: 100vh;
         left: 0;
-        max-height: calc(100vh );
+        max-height: calc(100vh);
         max-width: calc((100vw - $gd-min-content-box) / 2);
         position: fixed;
         top: 0px;
@@ -77,5 +77,19 @@
       }
     }
   }
-
 }
+
+
+// @media screen and (min-width: 1000px) {
+
+  // @media (min-width: 1000px) {
+    @include media-up($gd-min-content-box) {
+
+      .menu-hamburger__button {
+        background-color: red !important;
+      }
+    }
+
+  // }
+// }
+
