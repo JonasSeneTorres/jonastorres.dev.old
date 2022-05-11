@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ModalService } from '../../../services/modal/modal.service'
+
 @Component({
   selector: 'gd-menu-hamburger',
   templateUrl: './menu-hamburger.component.html',
@@ -8,13 +10,22 @@ import { Component, OnInit } from '@angular/core';
 export class MenuHamburgerComponent implements OnInit {
   show = false;
 
-  constructor() { }
+  constructor(
+    private modalService: ModalService
+  ) { }
 
   ngOnInit(): void {
   }
 
   displayMenu(event: Event, showModal: boolean) {
-    event.stopPropagation()
+    event.stopPropagation();
+
+    if(showModal) {
+      this.modalService.open();
+    } else {
+      this.modalService.close();
+    }
+
     this.show = showModal;
   }
 

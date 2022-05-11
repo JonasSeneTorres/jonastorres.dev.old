@@ -1,0 +1,56 @@
+import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ModalService {
+  private _showModal = false;
+  private renderer: Renderer2;
+  private scrollPosition: number = 0;
+  // private listener;
+
+  get showModal(): boolean {
+    return this._showModal;
+  }
+
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private _rendererFactory: RendererFactory2
+  ) {
+    this.renderer = _rendererFactory.createRenderer(null, null);
+    // this.listener = this.renderer.listen('window', 'scroll', (e) => {
+    //   console.log(this.getYPosition(e));
+    // });
+  }
+
+  open() {
+    if (this._showModal) {
+      return;
+    }
+    const body = this.document.body;
+    // const main = this.document.querySelector('main');
+
+    this.scrollPosition = (window.pageYOffset || document.documentElement.scrollTop) - 70;
+
+    console.log('abriu', this.scrollPosition);
+    this.renderer.addClass(body, 'modal-open');
+    this._showModal = true;
+  }
+
+  close() {
+    if (!this._showModal) {
+      return;
+    }
+
+    console.log('fechou');
+    this.scrollPosition = 0;
+    this.renderer.removeClass(this.document.body, 'modal-open');
+
+    this._showModal = false;
+  }
+
+  // private getYPosition(e: Event): number {
+  //   return (e.target as Element).scrollTop;
+  // }
+}

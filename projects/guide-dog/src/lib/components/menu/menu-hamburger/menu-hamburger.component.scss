@@ -12,18 +12,18 @@
     padding: 0 0.5rem;
     position: relative;
     width: 2.5rem;
-    z-index: 10;
+    // z-index: 10;
 
     &--actived {
-      background-color: $gd-color-white;
+      background-color: $gd-colorligth-primary-200;
       border: solid 1px $gd-color-black;
       color: $gd-color-black;
-      z-index: 10;
+      // z-index: 10;
 
       &:hover {
-        background-color: $gd-colordark-gray-200 !important;
+        background-color: $gd-colorligth-primary-300 !important;
         border: solid 2px $gd-color-black !important;
-        color: $gd-color-black !important;
+        color: $gd-colorligth-gray-700 !important;
       }
     }
 
@@ -32,6 +32,15 @@
       border: solid 2px $gd-colorligth-gray-200;
       color: $gd-colorligth-gray-200;
     }
+  }
+
+  &__shield {
+    position: fixed;
+    width: 100vw;
+    background-color: transparent;
+    height: 64px;
+    top: 0;
+    left: 0;
   }
 
   &__separador {
@@ -50,46 +59,49 @@
     width: 100vw;
 
     &-container {
-      background-color: $gd-color-white;
+      background-color: $gd-colorligth-primary-200; //$gd-color-white;
       box-shadow: 4px 0px 5px 0px rgba($gd-color-black, 0.15);
       height: 100vh;
+      left: 0;
       margin-left: -16px;
       max-height: calc(100vh);
       max-width: 400px;
       overflow: auto;
       position: absolute;
-      top: 0px;
+      top: 64px;
       width: 75vw;
       z-index: 9;
 
-      &::before {
-        background-color: $gd-color-white;
-        content: "";
-        display: block;
-        height: 100vh;
-        left: 0;
-        max-height: calc(100vh);
-        max-width: calc((100vw - $gd-min-content-box) / 2);
-        position: fixed;
-        top: 0px;
-        width: 100vw;
-        z-index: -1;
-      }
+      // &::before {
+      //   background-color: $gd-color-white;
+      //   content: "";
+      //   display: block;
+      //   height: 100vh;
+      //   left: 0;
+      //   max-height: calc(100vh);
+      //   max-width: calc((100vw - $gd-min-content-box) / 2);
+      //   position: fixed;
+      //   top: 0px;
+      //   width: 100vw;
+      //   z-index: -1;
+      // }
     }
   }
 }
 
 
-// @media screen and (min-width: 1000px) {
 
-  // @media (min-width: 1000px) {
-    @include media-up($gd-min-content-box) {
-
-      .menu-hamburger__button {
-        background-color: red !important;
+@include media-up($gd-min-content-box) {
+  .menu-hamburger {
+    &__nav{
+      &-container {
+        max-width: calc(((100vw - $gd-min-content-box) / 2) + 400px);
       }
     }
-
+  }
+  // .menu-hamburger__button {
+  //   background-color: red !important;
   // }
-// }
+}
+
 

@@ -10,4 +10,10 @@ jt-root {
   min-height: 100vh;
 }
 
+@include media-down($gd-min-content-box) {
+  main * {
+    max-width: calc(100vw - 40px);
+  }
+}
+
 

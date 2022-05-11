@@ -10,7 +10,7 @@
   padding: .75rem 0;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  // z-index: 60;
 
   &__nav {
     align-content: center;
@@ -65,5 +65,11 @@ button {
 
   &.first-menu {
     margin-right: 1rem
+  }
+}
+
+:host ::ng-deep {
+  button.menu-hamburger__button {
+    z-index: 50;
   }
 }
