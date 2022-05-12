@@ -1,6 +1,6 @@
 @import "../../../styles/gd.scss";
 
-.menu-hamburger {
+.gd-menu-hamburger {
   &__button {
     background-color: $gd-setcolorligth-primary;
     border: solid 1px $gd-color-white;
@@ -15,9 +15,11 @@
     // z-index: 10;
 
     &--actived {
-      background-color: $gd-colorligth-primary-200;
-      border: solid 1px $gd-color-black;
-      color: $gd-color-black;
+      // background-color: $gd-colorligth-primary-200;
+      // border: solid 1px $gd-color-black;
+      // color: $gd-color-black;
+      margin-left: -8px;
+      margin-right: 15px;
       // z-index: 10;
 
       &:hover {
@@ -55,7 +57,7 @@
     max-width: 100vw;
     overflow: hidden;
     position: fixed;
-    top: 0;
+    top: 64px;
     width: 100vw;
 
     &-container {
@@ -68,7 +70,7 @@
       max-width: 400px;
       overflow: auto;
       position: absolute;
-      top: 64px;
+      top: 0;
       width: 75vw;
       z-index: 9;
 
@@ -92,7 +94,7 @@
 
 
 @include media-up($gd-min-content-box) {
-  .menu-hamburger {
+  .gd-menu-hamburger {
     &__nav{
       &-container {
         max-width: calc(((100vw - $gd-min-content-box) / 2) + 400px);

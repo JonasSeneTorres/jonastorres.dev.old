@@ -96,8 +96,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/blog/src/favicon.ico",
-              "projects/blog/src/assets",
-              "projects/guide-dog/src/lib/assets"
+              "projects/blog/src/assets"
+
             ],
             "styles": [
               "projects/blog/src/styles/styles.scss",

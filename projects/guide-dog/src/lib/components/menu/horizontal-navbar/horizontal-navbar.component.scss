@@ -1,0 +1,38 @@
+@import '../../../styles/gd';
+
+.gd-header__menu-main {
+  display: none;
+}
+
+@include media-up($gd-min-content-box) {
+  .gd-header {
+    &__menu-main {
+        display: inline;
+        margin-left: 1.5rem;
+        padding: 0;
+
+        &-li {
+          display: inline;
+          margin-left: 2rem;
+        }
+
+    }
+
+    &__link {
+      color: $gd-color-white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-decoration: none;
+
+      &--actived {
+        color: red !important;
+      }
+    }
+
+    &__button {
+      background-color: transparent;
+      border: none;
+    }
+  }
+}
+

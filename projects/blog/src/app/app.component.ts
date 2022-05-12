@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavibarConfig } from './config/navibarI.onfig';
+import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item-config';
 
 @Component({
   selector: 'jt-root',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'blog';
+  menu: NavibarItemConfig[] = NavibarConfig;
 }
