@@ -15,11 +15,11 @@
   (click)="displayMenu($event, false)"
 >
   <gd-centered-panel>
-    <div
+    <!-- <div
       class="gd-menu-hamburger__shield"
       aria-hidden="true"
       (click)="displayMenu($event, true)"
-    ></div>
+    ></div> -->
     <div
       class="gd-menu-hamburger__nav-container"
       (click)="displayMenu($event, true)"
@@ -27,6 +27,120 @@
       <div class="gd-menu-hamburger__nav-container-list">
         <hr class="gd-menu-hamburger__separador" />
         <ul class="gd-menu-hamburger__nav-list">
+          <ng-container *ngFor="let itemNav of nav">
+            <li>
+              <a
+                (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
+                routerLinkActive="router-link-active"
+                >{{ itemNav.label }}</a
+              >
+            </li>
+          </ng-container>
+
+          <ng-container *ngFor="let itemNav of nav">
+            <li>
+              <a
+                (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
+                routerLinkActive="router-link-active"
+                >{{ itemNav.label }}</a
+              >
+            </li>
+          </ng-container>
+
+          <ng-container *ngFor="let itemNav of nav">
+            <li>
+              <a
+                (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
+                routerLinkActive="router-link-active"
+                >{{ itemNav.label }}</a
+              >
+            </li>
+          </ng-container>
+
+          <ng-container *ngFor="let itemNav of nav">
+            <li>
+              <a
+                (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
+                routerLinkActive="router-link-active"
+                >{{ itemNav.label }}</a
+              >
+            </li>
+          </ng-container>
+
+
+
+          <ng-container *ngFor="let itemNav of nav">
+            <li>
+              <a
+                (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
+                routerLinkActive="router-link-active"
+                >{{ itemNav.label }}</a
+              >
+            </li>
+          </ng-container>
+          <ng-container *ngFor="let itemNav of nav">
+            <li>
+              <a
+                (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
+                routerLinkActive="router-link-active"
+                >{{ itemNav.label }}</a
+              >
+            </li>
+          </ng-container>
+          <ng-container *ngFor="let itemNav of nav">
+            <li>
+              <a
+                (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
+                routerLinkActive="router-link-active"
+                >{{ itemNav.label }}</a
+              >
+            </li>
+          </ng-container>
+          <ng-container *ngFor="let itemNav of nav">
+            <li>
+              <a
+                (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
+                routerLinkActive="router-link-active"
+                >{{ itemNav.label }}</a
+              >
+            </li>
+          </ng-container>
+          <ng-container *ngFor="let itemNav of nav">
+            <li>
+              <a
+                (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
+                routerLinkActive="router-link-active"
+                >{{ itemNav.label }}</a
+              >
+            </li>
+          </ng-container>
+          <ng-container *ngFor="let itemNav of nav">
+            <li>
+              <a
+                (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
+                routerLinkActive="router-link-active"
+                >{{ itemNav.label }}</a
+              >
+            </li>
+          </ng-container>
+          <ng-container *ngFor="let itemNav of nav">
+            <li>
+              <a
+                (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
+                routerLinkActive="router-link-active"
+                >{{ itemNav.label }}</a
+              >
+            </li>
+          </ng-container>
+          <ng-container *ngFor="let itemNav of nav">
+            <li>
+              <a
+                (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
+                routerLinkActive="router-link-active"
+                >{{ itemNav.label }}</a
+              >
+            </li>
+          </ng-container>
           <ng-container *ngFor="let itemNav of nav">
             <li>
               <a

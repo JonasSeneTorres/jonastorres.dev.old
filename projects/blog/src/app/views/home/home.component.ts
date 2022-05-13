@@ -1,5 +1,7 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+
 import { DomSanitizer } from '@angular/platform-browser';
+import { LocalStorageService } from './../../../../../guide-dog/src/lib/services/local-storage/local-storage.service';
 import { PostsService } from '../../services/posts/posts.service';
 
 @Component({
@@ -19,7 +21,9 @@ export class HomeComponent implements OnInit {
   constructor(
     private postsService: PostsService,
     // private sanitizer: DomSanitizer
-    ) { }
+    ) {
+
+    }
 
   ngOnInit(): void {
     this.postsService.get().subscribe(
