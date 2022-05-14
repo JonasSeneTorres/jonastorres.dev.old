@@ -1,4 +1,5 @@
 import { AcessibilityBarComponent } from './acessibility-bar/acessibility-bar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CenteredPanelModule } from '../centered-panel/centered-panel.module';
 import { CommonModule } from '@angular/common';
 import { HorizontalNavbarComponent } from './horizontal-navbar/horizontal-navbar.component';
@@ -16,8 +17,10 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule,
     CenteredPanelModule,
+    BrowserAnimationsModule,
   ],
   exports: [
+    BrowserAnimationsModule,
     MenuHamburgerComponent,
     HorizontalNavbarComponent,
     AcessibilityBarComponent,
