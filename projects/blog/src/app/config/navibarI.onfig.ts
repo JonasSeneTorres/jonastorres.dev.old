@@ -24,11 +24,11 @@ export const NavibarConfig: NavibarItemConfig[] = [
     route: ['/erro'],
   },
   {
-    label: 'Pagina não encontrada',
+    label: 'Suparcalifragelistexpidalidocious',
     route: ['/aa'],
   },
   {
-    label: 'Link com filhos',
+    label: 'Suparcalifragelistexpidalidocious',
     children: [
       {
         label: 'Home',

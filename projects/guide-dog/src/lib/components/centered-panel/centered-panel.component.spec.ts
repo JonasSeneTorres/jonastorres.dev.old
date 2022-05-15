@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CenteredPanelComponent } from './centered-panel.component';
+import { CenteredPanelModule } from './centered-panel.module';
 
 describe('CenteredPanelComponent', () => {
   let component: CenteredPanelComponent;
@@ -8,7 +9,8 @@ describe('CenteredPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CenteredPanelComponent ]
+      // declarations: [ CenteredPanelComponent ]
+      imports: [CenteredPanelModule]
     })
     .compileComponents();
   });

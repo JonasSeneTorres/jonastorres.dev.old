@@ -15,9 +15,6 @@
     width: 2.5rem;
 
     &--actived {
-      // margin-left: -8px;
-      // margin-right: 15px;
-
       &:hover {
         background-color: $gd-colorligth-primary-200 !important;
         border: solid 2px $gd-color-white !important;
@@ -54,8 +51,8 @@
       height: calc(100vh - 16px);
       left: -392px;
       margin-left: 2rem;
-      max-width: 400px;
-      padding: .5rem 0.25rem .5rem .5rem;
+      max-width: 530px;
+      padding: 0.5rem 0.25rem 0.5rem 0.5rem;
       position: absolute;
       top: 0;
       width: 75vw;
@@ -79,10 +76,6 @@
         width: 400px;
       }
 
-      // @include media-down(474px) {
-      //   left: -80vw;
-      // }
-
       &-list {
         height: auto;
         margin-top: 48px;
@@ -90,12 +83,12 @@
         max-width: 400px;
         min-width: 177px;
         overflow: auto;
-        scrollbar-color: $gd-color-white rgba($gd-color-white, .1);
+        scrollbar-color: $gd-color-white rgba($gd-color-white, 0.1);
         scrollbar-width: thin;
         width: 100%;
 
         &::-webkit-scrollbar {
-          width: .5rem;
+          width: 0.5rem;
         }
 
         &::-webkit-scrollbar-track {
@@ -110,21 +103,53 @@
         }
       }
     }
-  }
-}
 
+    &-list {
+      font-size: 24px;
+      list-style-type: none;
+      max-height: 100%;
+      padding: 0 20px;
+      overflow: hidden;
 
+      li {
+        border: solid 2px #fff;
+        border-left: none;
+        border-right: none;
+        line-height: 2.5rem;
+        overflow: hidden;
+        padding: 0 24px;
 
-@include media-up($gd-min-content-box) {
-  .gd-menu-hamburger {
-    &__nav{
-      &-container {
-        border-bottom-left-radius: 16px;
-        height: calc(100vh - 32px);
-        position: relative;
+        &:hover {
+          background-color: $gd-colorligth-primary-300;
+        }
+
+        a {
+          display: grid;
+          grid-template-columns: auto 24px;
+
+          span.label {
+            display: inline-block;
+            overflow: hidden;
+            width: calc(100% - 24px);
+            word-break: break-word;
+          }
+
+          span.arrow {
+            align-self: center;
+            justify-self: center;
+          }
+        }
       }
     }
   }
 }
 
-
+@include media-up($gd-min-content-box) {
+  .gd-menu-hamburger {
+    &__nav-container {
+      border-bottom-left-radius: 16px;
+      height: calc(100vh - 32px);
+      position: relative;
+    }
+  }
+}
