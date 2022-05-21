@@ -1,0 +1,155 @@
+@import "../../../../../styles/gd.scss";
+
+.gd-menu-hamburger {
+  &__button {
+    background-color: $gd-setcolorligth-primary;
+    background-color: transparent;
+    border: solid 1px $gd-color-white;
+    border-radius: 4px;
+    color: $gd-color-white;
+    cursor: pointer;
+    margin-right: 1rem;
+    min-height: 2.4rem;
+    padding: 0 0.5rem;
+    position: relative;
+    width: 2.5rem;
+
+    &--actived {
+      &:hover {
+        background-color: $gd-colorligth-primary-200 !important;
+        border: solid 2px $gd-color-white !important;
+        color: $gd-color-white !important;
+      }
+    }
+
+    &:hover {
+      background-color: $gd-colorligth-primary-800;
+      border: solid 2px $gd-colorligth-gray-200;
+      color: $gd-colorligth-gray-200;
+    }
+  }
+
+  &__separador {
+    margin: 4rem 1.5rem 1rem 4.5rem;
+  }
+
+  &__nav {
+    background-color: rgba($gd-color-black, 0.2);
+    height: 100vh;
+    max-height: 100vh;
+    max-width: 100vw;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+
+    &-container {
+      background-color: $gd-colorligth-primary-200;
+      border-bottom-right-radius: 16px;
+      box-shadow: 4px 0px 5px 0px rgba($gd-color-black, 0.15);
+      height: calc(100vh - 16px);
+      left: -392px;
+      margin-left: 2rem;
+      max-width: 530px;
+      padding: 0.5rem 0.25rem 0.5rem 0.5rem;
+      position: absolute;
+      top: 0;
+      width: 75vw;
+      z-index: 9;
+
+      @include media-down(474px) {
+        left: calc(-80vw - 2rem);
+      }
+
+      @include media-between(474px, 501px) {
+        left: calc(-80vw - 1.5rem);
+      }
+
+      @include media-between(501px, 1139px) {
+        left: -450px;
+        width: 400px;
+      }
+
+      @include media-up(1139px) {
+        left: 0;
+        width: 400px;
+      }
+
+      &-list {
+        height: auto;
+        margin-top: 48px;
+        max-height: calc(100vh - 92px);
+        max-width: 400px;
+        min-width: 177px;
+        overflow: auto;
+        scrollbar-color: $gd-color-white rgba($gd-color-white, 0.1);
+        scrollbar-width: thin;
+        width: 100%;
+
+        &::-webkit-scrollbar {
+          width: 0.5rem;
+        }
+
+        &::-webkit-scrollbar-track {
+          border: none;
+          border-radius: 20px;
+          width: 2px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: $gd-color-white;
+          border-radius: 20px;
+        }
+      }
+    }
+
+    &-list {
+      font-size: 24px;
+      list-style-type: none;
+      max-height: 100%;
+      padding: 0 20px;
+      overflow: hidden;
+
+      li {
+        border: solid 2px #fff;
+        border-left: none;
+        border-right: none;
+        line-height: 2.5rem;
+        overflow: hidden;
+        padding: 0 24px;
+
+        &:hover {
+          background-color: $gd-colorligth-primary-300;
+        }
+
+        a {
+          display: grid;
+          grid-template-columns: auto 24px;
+
+          span.label {
+            display: inline-block;
+            overflow: hidden;
+            width: calc(100% - 24px);
+            word-break: break-word;
+          }
+
+          span.arrow {
+            align-self: center;
+            justify-self: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-up($gd-min-content-box) {
+  .gd-menu-hamburger {
+    &__nav-container {
+      border-bottom-left-radius: 16px;
+      height: calc(100vh - 32px);
+      position: relative;
+    }
+  }
+}
