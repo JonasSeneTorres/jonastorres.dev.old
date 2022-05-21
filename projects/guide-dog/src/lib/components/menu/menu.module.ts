@@ -6,12 +6,18 @@ import { HorizontalNavbarComponent } from './horizontal-navbar/horizontal-navbar
 import { MenuHamburgerComponent } from './menu-hamburger/menu-hamburger.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ButtonHamburgerComponent } from './menu-hamburger/components/button-hamburger/button-hamburger.component';
+import { VerticalMenuBurgerComponent } from './menu-hamburger/components/vertical-menu-burger/vertical-menu-burger.component';
+import { HorizontalMenuBurguerComponent } from './menu-hamburger/components/horizontal-menu-burguer/horizontal-menu-burguer.component';
 
 @NgModule({
   declarations: [
     MenuHamburgerComponent,
     HorizontalNavbarComponent,
     AcessibilityBarComponent,
+    ButtonHamburgerComponent,
+    VerticalMenuBurgerComponent,
+    HorizontalMenuBurguerComponent,
   ],
   imports: [
     CommonModule,

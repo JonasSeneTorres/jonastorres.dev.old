@@ -1,24 +1,19 @@
-  <button
-  class="gd-menu-hamburger__button"
-  [class.gd-menu-hamburger__button--actived]="show"
-  [disabled]="disabledButtom"
-  (click)="displayMenu($event, !show)"
-  title="menu"
->
-  <span class="fa-solid" [class.fa-xmark]="show" [class.fa-bars]="!show"></span>
-</button>
+ <gd-button-hamburger [actived]="showBackground" (click)="displayOpacity($event, !showBackground)" ></gd-button-hamburger>
 
-<!-- *ngIf="show" -->
+ <!-- *ngIf="show" -->
 <div
   class="gd-menu-hamburger__nav"
-  (click)="displayMenu($event, false)"
->
+  (click)="displayOpacity($event, false)"
+  [@showHideBackgroundModal]="showBackground.toString() === 'true'"
+  (@showHideBackgroundModal.done)="showHideMenu()"
+  >
+  <!-- [@showHideBackgroundModal]="show.toString() === 'true'" -->
   <gd-centered-panel>
     <div
       class="gd-menu-hamburger__nav-container"
-      (click)="displayMenu($event, true)"
-      [@openCloseHamburger]="show.toString() === 'true'"
-    >
+      (click)="displayOpacity($event, true)"
+      [@openCloseHamburger]="showMenu.toString() === 'true'"
+      >
       <div class="gd-menu-hamburger__nav-container-list">
 
         <ul class="gd-menu-hamburger__nav-list">
@@ -33,7 +28,6 @@
                   <span class="fa-solid fa-chevron-right"></span>
                 </span>
               </a>
-              <!-- <hr /> -->
             </li>
           </ng-container>
 
