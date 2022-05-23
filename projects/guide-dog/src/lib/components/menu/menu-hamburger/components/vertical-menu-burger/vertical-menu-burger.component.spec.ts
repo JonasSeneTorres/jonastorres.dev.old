@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MenuModule } from '../../../menu.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 import { VerticalMenuBurgerComponent } from './vertical-menu-burger.component';
 
 describe('VerticalMenuBurgerComponent', () => {
@@ -8,7 +11,11 @@ describe('VerticalMenuBurgerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VerticalMenuBurgerComponent ]
+      imports: [
+        MenuModule,
+        RouterTestingModule,
+        NoopAnimationsModule
+      ],
     })
     .compileComponents();
   });

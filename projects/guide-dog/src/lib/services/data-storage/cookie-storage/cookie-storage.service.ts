@@ -1,6 +1,6 @@
 import { BehaviorSubject } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
-import { IStorageService } from './../../interfaces/iStorageService';
+import { IStorageService } from '../../../interfaces/iStorageService';
 import { Injectable } from '@angular/core';
 
 @Injectable({

@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { DomSanitizer } from '@angular/platform-browser';
-import { LocalStorageService } from './../../../../../guide-dog/src/lib/services/local-storage/local-storage.service';
+import { LocalStorageService } from '../../../../../guide-dog/src/lib/services/data-storage/local-storage/local-storage.service';
 import { PostsService } from '../../services/posts/posts.service';
 
 @Component({

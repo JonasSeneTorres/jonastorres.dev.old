@@ -24,11 +24,11 @@ export const NavibarConfig: NavibarItemConfig[] = [
     route: ['/erro'],
   },
   {
-    label: 'Suparcalifragelistexpidalidocious',
+    label: 'teste',
     route: ['/aa'],
   },
   {
-    label: 'Suparcalifragelistexpidalidocious',
+    label: 'teste',
     children: [
       {
         label: 'Home',

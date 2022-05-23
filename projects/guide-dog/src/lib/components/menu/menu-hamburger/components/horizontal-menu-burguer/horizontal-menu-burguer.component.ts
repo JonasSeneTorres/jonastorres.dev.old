@@ -24,7 +24,7 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
         style({
           // backgroundColor: 'rgba(0, 0, 0, 0)',
           transform: 'scaley(0)',
-          top: '-50vh'
+          top: '-100vh'
         })
       ),
 

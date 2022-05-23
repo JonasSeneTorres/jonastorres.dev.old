@@ -1,24 +1,26 @@
-<ul class="gd-header__menu-main">
-  <ng-container *ngFor="let itemNav of nav">
-    <li class="gd-header__menu-main-li">
-      <ng-container *ngIf="(itemNav?.children?.length ?? 0) === 0; else hasChild">
-        <a
-          class="gd-header__link"
-          [routerLink]="itemNav?.route ?? []"
-          [queryParams]="itemNav?.routeExtras ?? undefined"
-          routerLinkActive="gd-header__link--actived"
+<div class="gd-h-navbar">
+  <ul class="gd-header__menu-main">
+    <ng-container *ngFor="let itemNav of nav">
+      <li class="gd-header__menu-main-li">
+        <ng-container *ngIf="(itemNav?.children?.length ?? 0) === 0; else hasChild">
+          <a
+            class="gd-header__link"
+            [routerLink]="itemNav?.route ?? []"
+            [queryParams]="itemNav?.routeExtras ?? undefined"
+            routerLinkActive="gd-header__link--actived"
+          >
+            {{ itemNav.label }}
+          </a>
+        </ng-container>
+
+        <ng-template #hasChild>
+          <button
+          class="gd-header__link gd-header__button"
         >
           {{ itemNav.label }}
-        </a>
-      </ng-container>
-
-      <ng-template #hasChild>
-        <button
-        class="gd-header__link gd-header__button"
-      >
-        {{ itemNav.label }}
-        </button>
-      </ng-template>
-    </li>
-  </ng-container>
-</ul>
+          </button>
+        </ng-template>
+      </li>
+    </ng-container>
+  </ul>
+</div>

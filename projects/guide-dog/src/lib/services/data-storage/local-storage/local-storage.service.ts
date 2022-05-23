@@ -1,15 +1,16 @@
-import { CookieStorageService } from './../cookie-storage/cookie-storage.service';
+import { CookieStorageService } from '../cookie-storage/cookie-storage.service';
+import { IStorageService } from '../../../interfaces/iStorageService';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class SessionStorageService {
-  private storage: any;
+export class LocalStorageService implements IStorageService {
+  private storage = window.localStorage;
 
   constructor(private cookieStorage: CookieStorageService) {
     const warnMessage = 'Your browser does not have access to the "localStorage" feature.\nInstead, "Cookies" will be used.';
-    this.storage = window.sessionStorage;
+    this.storage = window.localStorage;
 
     if (!this.storage) {
       console.warn(warnMessage);

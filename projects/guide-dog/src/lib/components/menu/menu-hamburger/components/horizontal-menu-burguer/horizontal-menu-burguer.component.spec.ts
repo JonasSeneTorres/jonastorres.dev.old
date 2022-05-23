@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HorizontalMenuBurguerComponent } from './horizontal-menu-burguer.component';
+import { MenuModule } from '../../../menu.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HorizontalMenuBurguerComponent', () => {
   let component: HorizontalMenuBurguerComponent;
@@ -8,7 +11,11 @@ describe('HorizontalMenuBurguerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HorizontalMenuBurguerComponent ]
+      imports: [
+        MenuModule,
+        RouterTestingModule,
+        NoopAnimationsModule
+      ],
     })
     .compileComponents();
   });

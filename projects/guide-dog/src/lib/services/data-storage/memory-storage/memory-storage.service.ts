@@ -1,6 +1,6 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 
-import { IStorageService } from '../../interfaces/iStorageService';
+import { IStorageService } from '../../../interfaces/iStorageService';
 import { Injectable } from '@angular/core';
 
 @Injectable({
