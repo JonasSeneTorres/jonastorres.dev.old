@@ -1,44 +1,11 @@
-
-
-@import 'abstracts/variables';
-@import 'abstracts/functions';
-@import 'abstracts/mixins';
-@import 'base/reset';
-@import 'base/gd_classes';
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "base/reset";
+@import "base/gd_classes";
 // @import 'base/typography';
 // @import 'vendor/dg';
-@import 'vendor/fontawesome';
-
-
-// jst-root {
-//   display: grid;
-//   grid-template-areas:
-//     "accessibility"
-//     "header"
-//     "content"
-//     "footer";
-//   grid-template-rows: auto auto 1fr auto;
-//   min-height: 99vh;
-// }
-
-// jst-content {
-//   grid-area: content;
-// }
-// jst-footer {
-//   grid-area: footer;
-// }
-// jst-header {
-//   grid-area: header;
-//   position: sticky;
-//   top: -1px;
-//   z-index: 10;
-// }
-// jst-accessibility-bar {
-//   grid-area: accessibility;
-//   position: sticky;
-//   top: 0px;
-// }
-
+@import "vendor/fontawesome";
 
 $gd-min-content-box: 1140px;
 
@@ -58,8 +25,8 @@ $gd-setcolordark-danger: $gd-setcolorligth-danger !default;
 $gd-setcolordark-warning: $gd-setcolorligth-warning !default;
 $gd-setcolordark-info: $gd-setcolorligth-info !default;
 
-$gd-color-white:    #fff !default;
-$gd-color-black:    #000 !default;
+$gd-color-white: #fff !default;
+$gd-color-black: #000 !default;
 
 $gd-colorligth-gray-50: makeColorPalette50($gd-setcolorligth-gray);
 $gd-colorligth-gray-100: makeColorPalette100($gd-setcolorligth-gray);
@@ -101,10 +68,18 @@ $gd-colorligth-secondary-600: makeColorPalette600($gd-setcolorligth-secondary);
 $gd-colorligth-secondary-700: makeColorPalette700($gd-setcolorligth-secondary);
 $gd-colorligth-secondary-800: makeColorPalette800($gd-setcolorligth-secondary);
 $gd-colorligth-secondary-900: makeColorPalette900($gd-setcolorligth-secondary);
-$gd-colorligth-secondary-A100: makeColorPaletteA100($gd-setcolorligth-secondary);
-$gd-colorligth-secondary-A200: makeColorPaletteA200($gd-setcolorligth-secondary);
-$gd-colorligth-secondary-A400: makeColorPaletteA400($gd-setcolorligth-secondary);
-$gd-colorligth-secondary-A700: makeColorPaletteA700($gd-setcolorligth-secondary);
+$gd-colorligth-secondary-A100: makeColorPaletteA100(
+  $gd-setcolorligth-secondary
+);
+$gd-colorligth-secondary-A200: makeColorPaletteA200(
+  $gd-setcolorligth-secondary
+);
+$gd-colorligth-secondary-A400: makeColorPaletteA400(
+  $gd-setcolorligth-secondary
+);
+$gd-colorligth-secondary-A700: makeColorPaletteA700(
+  $gd-setcolorligth-secondary
+);
 
 $gd-colorligth-success-50: makeColorPalette50($gd-setcolorligth-success);
 $gd-colorligth-success-100: makeColorPalette100($gd-setcolorligth-success);
@@ -272,7 +247,5 @@ $gd-colordark-info-A400: makeColorPaletteA400($gd-setcolordark-info);
 $gd-colordark-info-A700: makeColorPaletteA700($gd-setcolordark-info);
 
 :root {
-  --gd-min-content-box: $gd-min-content-box;
+  --gd-min-content-box: #{$gd-min-content-box};
 }
-
-

@@ -1,11 +1,9 @@
 import * as platform from 'platform';
-
 import { Inject, Injectable, Optional } from '@angular/core';
-
 import { DOCUMENT } from '@angular/common';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SystemInformationService {
   private _window: any;
@@ -16,8 +14,6 @@ export class SystemInformationService {
   private _fullScreenY: number = 0;
   private _usefullAreaBrowserX: number = 0;
   private _usefullAreaBrowserY: number = 0;
-  private _fullBodyX: number = 0;
-  private _fullBodyY: number = 0;
   private _centeredPanelArea: number = 0;
   private _centeredPanelMargin: number = 0;
 
@@ -28,7 +24,7 @@ export class SystemInformationService {
       family: this._platformInfo?.os.family ?? '',
       version: this._platformInfo?.os.version ?? '',
       architecture: this._platformInfo?.os.architecture ?? '',
-    }
+    };
   }
 
   get browser() {
@@ -48,16 +44,9 @@ export class SystemInformationService {
       scrollPosition: {
         x: this._scrollX,
         y: this._scrollY,
-      }
+      },
     };
   }
-
-  // get scrollPosition() {
-  //   return {
-  //     x: this._scrollX,
-  //     y: this._scrollY,
-  //   }
-  // }
 
   get screen() {
     return {
@@ -65,8 +54,8 @@ export class SystemInformationService {
         height: this._fullScreenY,
         width: this._fullScreenX,
       },
-      pixelRatio: Math.trunc(this._window.devicePixelRatio)
-    }
+      pixelRatio: Math.trunc(this._window.devicePixelRatio),
+    };
   }
 
   get page() {
@@ -78,35 +67,9 @@ export class SystemInformationService {
       },
       centeredPanel: {
         area: this._centeredPanelArea,
-        margin: this._centeredPanelMargin
-      }
-    }
-  }
-
-  // get screen() {
-  //   return {
-  //   }
-  // }
-
-  get size() {
-    return {
-      screen: {
-        x: this._fullScreenX,
-        y: this._fullScreenY,
+        margin: this._centeredPanelMargin,
       },
-      browser: {
-        x: this._usefullAreaBrowserX,
-        y: this._usefullAreaBrowserY,
-      },
-      page: {
-        x: this._fullBodyX,
-        y: this._fullBodyY
-      },
-      CenteredPanel: {
-        area: this._centeredPanelArea,
-        margin: this._centeredPanelMargin
-      },
-    }
+    };
   }
 
   constructor(@Optional() @Inject(DOCUMENT) private document: Document) {
@@ -120,9 +83,7 @@ export class SystemInformationService {
         this._scrollX = Math.trunc(this._window.pageXOffset);
         this._scrollY = Math.trunc(this._window.pageYOffset);
       });
-    } catch (error) {
-
-    }
+    } catch (error) {}
   }
 
   private updateInfos() {
@@ -132,18 +93,38 @@ export class SystemInformationService {
   }
 
   private updateScreenSizeInfos() {
-    let centeredPanelArea = getComputedStyle(document.body).getPropertyValue('--theme-base-primary-color-h');
-    if (centeredPanelArea === '') {
-      centeredPanelArea = '0';
-      // console.log(centeredPanelArea)
-    }
     this._fullScreenX = this._window.screen.width;
     this._fullScreenY = this._window.screen.height;
     this._usefullAreaBrowserX = this._window.innerWidth;
     this._usefullAreaBrowserY = this._window.innerHeight;
-    this._fullBodyX = this.document.body.scrollWidth;
-    this._fullBodyY = this.document.body.scrollHeight;
-    this._centeredPanelArea = parseInt(centeredPanelArea, 10) ?? 0;
-    this._centeredPanelMargin = (this._fullScreenX - this._centeredPanelArea) / 2;
+    this._centeredPanelArea = this.calculateCenteredPanelArea();
+    this._centeredPanelMargin = this.calculateCenteredPanelMargin();
+  }
+
+  private calculateCenteredPanelArea(): number {
+    const gdMinContentBoxValue = getComputedStyle(document.body).getPropertyValue(
+      '--gd-min-content-box'
+    ).replace('px', '') ?? '0';
+    let output = parseInt(gdMinContentBoxValue, 10);
+
+    if (output > this._fullScreenX) {
+      output = this._fullScreenX;
+    }
+
+    if (this._fullScreenX > 1140) {
+      output += 40;
+    }
+
+    return output;
+  }
+
+  private calculateCenteredPanelMargin(): number {
+    const output = (this._fullScreenX - this._centeredPanelArea) / 2;
+
+    if (output < 0) {
+      return 0;
+    }
+
+    return output;
   }
 }
