@@ -4,11 +4,12 @@
   display: inline-block;
 }
 
-.gd-header__menu-main {
-  display: none;
-}
+// .gd-header__menu-main {
+//   display: none;
+// }
 
-@include media-up($gd-min-content-box) {
+// @include media-up(calc(var(--gd-min-content-box) - 2px)) {
+  @include media-up($gd-min-content-box - 2px) {
   .gd-header {
     &__menu-main {
         display: inline;

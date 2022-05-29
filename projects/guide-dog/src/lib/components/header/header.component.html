@@ -2,12 +2,12 @@
   <gd-centered-panel>
     <nav class="gd-header__nav">
       <div>
-        <gd-menu-hamburger [nav]="hamburgerNav" *ngIf="showHamburgerNav"></gd-menu-hamburger>
+        <gd-menu-hamburger [nav]="navConfig" ></gd-menu-hamburger>
         <!-- <button type="button" class="first-menu">MENU</button> -->
         <a [routerLink]="['']" class="gd-header__link gd-header__link-main"
           ><span class="fa-solid fa-code"></span>jonastorres.dev</a
         >
-        <gd-horizontal-navbar [nav]="horizontalNav" *ngIf="showHorizontalNav"></gd-horizontal-navbar>
+        <gd-horizontal-navbar [nav]="navConfig" *ngIf="showHamburgerHorizontalNav"></gd-horizontal-navbar>
       </div>
       <!-- <div>
         <ul class="gd-header__menu-secondary" >

@@ -93,6 +93,7 @@ export class SystemInformationService {
   }
 
   private updateScreenSizeInfos() {
+
     this._fullScreenX = this._window.screen.width;
     this._fullScreenY = this._window.screen.height;
     this._usefullAreaBrowserX = this._window.innerWidth;
@@ -111,7 +112,7 @@ export class SystemInformationService {
       output = this._fullScreenX;
     }
 
-    if (this._fullScreenX > 1140) {
+    if (this._fullScreenX > output) {
       output += 40;
     }
 

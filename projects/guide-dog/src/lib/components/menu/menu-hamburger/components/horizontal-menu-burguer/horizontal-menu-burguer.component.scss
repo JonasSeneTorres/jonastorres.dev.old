@@ -144,7 +144,7 @@
   }
 }
 
-@include media-up($gd-min-content-box) {
+@include media-up(var(--gd-min-content-box)) {
   .gd-menu-hamburger {
     &__nav-container {
       border-bottom-left-radius: 16px;
