@@ -8,3 +8,12 @@
 
 
 }
+
+div {
+  min-width: 250px;
+  max-width: 100vw;
+  overflow: hidden;
+  main * {
+    max-width: calc(100vw - 40px);
+  }
+}
