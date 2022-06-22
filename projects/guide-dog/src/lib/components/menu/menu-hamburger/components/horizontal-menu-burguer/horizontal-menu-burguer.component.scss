@@ -63,6 +63,8 @@ gd-centered-panel div {
       width: 85vw;
       z-index: 9;
 
+
+
       // @include media-down(474px) {
       //   left: calc(-80vw - 5rem);
       // }
@@ -76,10 +78,9 @@ gd-centered-panel div {
       //   width: 400px;
       // }
 
-      // @include media-up(1139px) {
-      //   left: 0;
-      //   width: 400px;
-      // }
+      @include media-up($gd-media-tablet-minwidth) {
+        width: 400px;
+      }
 
       &-list {
         height: auto;
@@ -91,6 +92,11 @@ gd-centered-panel div {
         scrollbar-color: $gd-color-white rgba($gd-color-white, 0.1);
         scrollbar-width: thin;
         width: 100%;
+
+        @include media-tablet() {
+          float: right;
+          margin-left: -135px;
+        }
 
         &::-webkit-scrollbar {
           width: 0.5rem;

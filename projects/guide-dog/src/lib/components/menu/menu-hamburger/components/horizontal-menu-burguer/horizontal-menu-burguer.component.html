@@ -1,10 +1,11 @@
-<gd-button-hamburger [actived]="showMenu" (click)="displayOpacity($event, !showBackground)" ></gd-button-hamburger>
+<gd-button-hamburger [actived]="showMenu" aria-controls="conteudoNavbarSuportado" (click)="displayOpacity($event, !showBackground)" ></gd-button-hamburger>
 
 <div
- class="gd-menu-hamburger__nav"
- (click)="displayOpacity($event, false)"
- [@showHideBackgroundModal]="showBackground.toString() === 'true'"
- (@showHideBackgroundModal.done)="showHideMenu()"
+  id="conteudoNavbarSuportado"
+  class="gd-menu-hamburger__nav"
+  (click)="displayOpacity($event, false)"
+  [@showHideBackgroundModal]="showBackground.toString() === 'true'"
+  (@showHideBackgroundModal.done)="showHideMenu()"
  >
  <gd-centered-panel>
    <div style="position: relative;
@@ -25,12 +26,22 @@
                <a
                  (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
                  routerLinkActive="router-link-active"
+                 *ngIf="(itemNav.children ?? []).length === 0"
                  >
                  <span class="label">{{ itemNav.label }}</span>
-                 <span class="arrow" *ngIf="(itemNav.children ?? []).length > 0">
-                   <span class="fa-solid fa-chevron-right"></span>
-                 </span>
                </a>
+               <a
+               (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
+               routerLinkActive="router-link-active"
+               role="button"
+               aria-haspopup="true" aria-expanded="false"
+               *ngIf="(itemNav.children ?? []).length > 0"
+               >
+               <span class="label">{{ itemNav.label }}</span>
+               <span class="arrow" >
+                 <span class="fa-solid fa-chevron-right"></span>
+               </span>
+             </a>
              </li>
            </ng-container>
 

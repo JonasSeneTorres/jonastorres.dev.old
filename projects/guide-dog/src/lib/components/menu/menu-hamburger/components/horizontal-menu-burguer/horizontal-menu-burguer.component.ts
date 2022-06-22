@@ -57,7 +57,7 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
       transition(
         'false => true',
         animate(
-          '1s .2s',
+          '0.5s .2s',
           keyframes([
             // style({ offset: 0, transform: 'translateX(0%)' }),
             // style({ offset: 0.16, transform: 'translateX(132.27%)' }),
@@ -67,24 +67,51 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
             // style({ offset: 0.73, transform: 'translateX(100.58%)' }),
             // style({ offset: 0.88, transform: 'translateX(99.8%)' }),
             // style({ offset: 1, transform: 'translateX(100%)' }),
+
+
+            style({ offset: 0, transform: 'translateX(-100%)' }),
+            style({ offset: 0.04, transform: 'translateX(-100.04%)' }),
+            style({ offset: 0.08, transform: 'translateX(-100.16%)' }),
+            style({ offset: 0.14, transform: 'translateX(-100.17%)' }),
+            style({ offset: 0.18, transform: 'translateX(-99,96%)' }),
+            style({ offset: 0.26, transform: 'translateX(-99,42%)' }),
+            style({ offset: 0.28, transform: 'translateX(-99.45%)' }),
+            style({ offset: 0.4, transform: 'translateX(-101.56%)' }),
+            style({ offset: 0.42, transform: 'translateX(-101.64%)' }),
+            style({ offset: 0.56, transform: 'translateX(-95.37%)' }),
+            style({ offset: 0.58, transform: 'translateX(-95.6%)' }),
+            style({ offset: 0.72, transform: 'translateX(-113.12%)' }),
+            style({ offset: 0.86, transform: 'translateX(-62.94%)' }),
+            style({ offset: 1, transform: 'translateX(0%)' }),
+
+
+            // 72% {
+            //   transform: translateX(-13.12%);
+            // }
+
+            // 86% {
+            //   transform: translateX(37.06%);
+            // }
+
+            // 100% {
+            //   transform: translateX(-100%);
+            // }
           ])
         )
       ),
       transition(
         'true => false',
         animate(
-          '.5s 0s',
+          '1s 0s',
           keyframes([
-            // style({ offset: 0, transform: 'translateX(100%)' }),
-            // style({ offset: 0.12, transform: 'translateX(89.11%)' }),
-            // style({ offset: 0.24, transform: 'translateX(56.44%)' }),
-            // style({ offset: 0.36, transform: 'translateX(1.99%)' }),
-            // style({ offset: 0.54, transform: 'translateX(24.98%)' }),
-            // style({ offset: 0.74, transform: 'translateX(1.63%)' }),
-            // style({ offset: 0.82, transform: 'translateX(6.25%)' }),
-            // style({ offset: 0.92, transform: 'translateX(0.66%)' }),
-            // style({ offset: 0.96, transform: 'translateX(1.64%)' }),
-            // style({ offset: 1, transform: 'translateX(0%)' }),
+            style({ offset: 0, transform: 'translateX(0%)' }),
+            style({ offset: 0.16, transform: 'translateX(-132.27%)' }),
+            style({ offset: 0.28, transform: 'translateX(-86.88%)' }),
+            style({ offset: 0.44, transform: 'translateX(-104.63%)' }),
+            style({ offset: 0.59, transform: 'translateX(-98.36%%)' }),
+            style({ offset: 0.73, transform: 'translateX(-100.58%)' }),
+            style({ offset: 0.88, transform: 'translateX(-99.8%)' }),
+            style({ offset: 0.96, transform: 'translateX(-100%)' }),
           ])
         )
       ),
@@ -112,7 +139,7 @@ export class HorizontalMenuBurguerComponent implements OnInit {
       this.modalService.close();
       setTimeout(() => {
         this.showBackground = showModal;
-      }, 400);
+      }, 600);
     }
 
     this.disabledButtom = true;
