@@ -14,7 +14,6 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
       state(
         'true',
         style({
-          // backgroundColor: 'rgba(0, 0, 0, 0.2)',
           transform: 'scaley(1)',
           top: '0'
         })
@@ -22,7 +21,6 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
       state(
         'false',
         style({
-          // backgroundColor: 'rgba(0, 0, 0, 0)',
           transform: 'scaley(0)',
           top: '-100vh'
         })
@@ -42,14 +40,12 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
       state(
         'true',
         style({
-          // transform: 'translateX(100%)',
           transform: 'translateX(0%)',
         })
       ),
       state(
         'false',
         style({
-          // transform: 'translateX(0%)',
           transform: 'translateX(-100%)',
         })
       ),
@@ -59,16 +55,6 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
         animate(
           '0.5s .2s',
           keyframes([
-            // style({ offset: 0, transform: 'translateX(0%)' }),
-            // style({ offset: 0.16, transform: 'translateX(132.27%)' }),
-            // style({ offset: 0.28, transform: 'translateX(86.88%)' }),
-            // style({ offset: 0.44, transform: 'translateX(104.63%)' }),
-            // style({ offset: 0.59, transform: 'translateX(98.36%)' }),
-            // style({ offset: 0.73, transform: 'translateX(100.58%)' }),
-            // style({ offset: 0.88, transform: 'translateX(99.8%)' }),
-            // style({ offset: 1, transform: 'translateX(100%)' }),
-
-
             style({ offset: 0, transform: 'translateX(-100%)' }),
             style({ offset: 0.04, transform: 'translateX(-100.04%)' }),
             style({ offset: 0.08, transform: 'translateX(-100.16%)' }),
@@ -83,19 +69,6 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
             style({ offset: 0.72, transform: 'translateX(-113.12%)' }),
             style({ offset: 0.86, transform: 'translateX(-62.94%)' }),
             style({ offset: 1, transform: 'translateX(0%)' }),
-
-
-            // 72% {
-            //   transform: translateX(-13.12%);
-            // }
-
-            // 86% {
-            //   transform: translateX(37.06%);
-            // }
-
-            // 100% {
-            //   transform: translateX(-100%);
-            // }
           ])
         )
       ),
@@ -118,15 +91,13 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
     ]),
   ],
 })
-export class HorizontalMenuBurguerComponent implements OnInit {
+export class HorizontalMenuBurguerComponent {
   @Input() nav: NavibarItemConfig[] = [];
   showBackground = false;
   showMenu = false;
   disabledButtom = false;
 
   constructor(private modalService: ModalService, private router: Router) {}
-
-  ngOnInit(): void {}
 
   displayOpacity(event: Event, showModal: boolean) {
     event.stopPropagation();
@@ -155,9 +126,6 @@ export class HorizontalMenuBurguerComponent implements OnInit {
   }
 
   showHideMenu() {
-    // if (this.showBackground) {
-      this.showMenu = this.showBackground;
-    // }
-    // this.showMenu = this.showBackground;
+    this.showMenu = this.showBackground;;
   }
 }

@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './centered-panel.component.html',
   styleUrls: ['./centered-panel.component.scss']
 })
-export class CenteredPanelComponent implements OnInit {
+export class CenteredPanelComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

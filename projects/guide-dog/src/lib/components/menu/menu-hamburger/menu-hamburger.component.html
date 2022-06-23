@@ -1,1 +1,2 @@
-<gd-horizontal-menu-burguer [nav]="nav"></gd-horizontal-menu-burguer>
+<gd-horizontal-menu-burguer [nav]="nav" *ngIf="showHorizontalMenu"></gd-horizontal-menu-burguer>
+<gd-vertical-menu-burger [nav]="nav" *ngIf="!showHorizontalMenu"></gd-vertical-menu-burger>

@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './acessibility-bar.component.html',
   styleUrls: ['./acessibility-bar.component.scss']
 })
-export class AcessibilityBarComponent implements OnInit {
+export class AcessibilityBarComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

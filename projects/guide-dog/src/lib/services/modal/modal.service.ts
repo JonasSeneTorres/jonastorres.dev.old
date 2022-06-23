@@ -29,11 +29,9 @@ export class ModalService {
       return;
     }
     const body = this.document.body;
-    // const main = this.document.querySelector('main');
 
     this.scrollPosition = (window.pageYOffset || document.documentElement.scrollTop) - 70;
 
-    console.log('abriu', this.scrollPosition);
     this.renderer.addClass(body, 'modal-open');
     this._showModal = true;
   }
@@ -43,7 +41,6 @@ export class ModalService {
       return;
     }
 
-    console.log('fechou');
     this.scrollPosition = 0;
     this.renderer.removeClass(this.document.body, 'modal-open');
 

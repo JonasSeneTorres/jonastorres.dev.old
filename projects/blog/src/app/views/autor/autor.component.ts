@@ -6,20 +6,10 @@ import { SessionStorageService } from 'projects/guide-dog/src/lib/services/data-
 @Component({
   selector: 'jt-autor',
   templateUrl: './autor.component.html',
-  styleUrls: ['./autor.component.scss']
+  styleUrls: ['./autor.component.scss'],
 })
-export class AutorComponent implements OnInit {
-
-  constructor(
-
-    private local: SessionStorageService
-  ) {
-    console.warn('teste')
-      this.local.set('LocalStorageService', { teste: 1 })
-      console.log('storage:', this.local.get('LocalStorageService'));
+export class AutorComponent {
+  constructor(private local: SessionStorageService) {
+    this.local.set('LocalStorageService', { teste: 1 });
   }
-
-  ngOnInit(): void {
-  }
-
 }

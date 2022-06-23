@@ -7,11 +7,8 @@ import { SystemInformationService } from 'projects/guide-dog/src/lib/services/sy
   templateUrl: './acessibilidade.component.html',
   styleUrls: ['./acessibilidade.component.scss']
 })
-export class AcessibilidadeComponent implements OnInit {
+export class AcessibilidadeComponent {
 
   constructor(public browserService: SystemInformationService) { }
-
-  ngOnInit(): void {
-  }
 
 }

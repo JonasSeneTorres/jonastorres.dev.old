@@ -53,8 +53,6 @@ gd-centered-panel div {
       border-bottom-right-radius: 16px;
       box-shadow: 4px 0px 5px 0px rgba($gd-color-black, 0.15);
       height: calc(100vh - 16px);
-      // left: -392px;
-      // margin-left: 2rem;
       max-width: 530px;
       padding: 0.5rem 0.25rem 0.5rem 0.5rem;
       position: absolute !important;
@@ -62,21 +60,6 @@ gd-centered-panel div {
       left: 0;
       width: 85vw;
       z-index: 9;
-
-
-
-      // @include media-down(474px) {
-      //   left: calc(-80vw - 5rem);
-      // }
-
-      // @include media-between(474px, 501px) {
-      //   left: calc(-80vw - 1.5rem);
-      // }
-
-      // @include media-between(501px, 1139px) {
-      //   left: -450px;
-      //   width: 400px;
-      // }
 
       @include media-up($gd-media-tablet-minwidth) {
         width: 400px;

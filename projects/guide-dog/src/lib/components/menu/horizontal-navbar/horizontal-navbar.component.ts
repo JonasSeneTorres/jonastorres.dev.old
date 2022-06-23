@@ -7,14 +7,12 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
   templateUrl: './horizontal-navbar.component.html',
   styleUrls: ['./horizontal-navbar.component.scss'],
 })
-export class HorizontalNavbarComponent implements OnInit {
+export class HorizontalNavbarComponent {
   @Input() nav: NavibarItemConfig[] = [];
 
   constructor() // private modalService: ModalService,
   // private router: Router
   {}
-
-  ngOnInit(): void {}
 
   // navigate(commands: any[], extras?: NavigationExtras | undefined): void {
   //   this.modalService.close();

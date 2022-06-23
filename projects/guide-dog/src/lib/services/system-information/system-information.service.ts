@@ -64,6 +64,7 @@ export class SystemInformationService {
       size: {
         height: this._fullScreenY,
         width: this._fullScreenX,
+        ItsGreaterThanCenterPanel: this._fullScreenX > this._centeredPanelArea,
       },
       centeredPanel: {
         area: this._centeredPanelArea,
@@ -89,6 +90,7 @@ export class SystemInformationService {
   private updateInfos() {
     this._window = this.document.defaultView;
     this._platformInfo = platform.parse(this._window.navigator.userAgent);
+
     this.updateScreenSizeInfos();
   }
 

@@ -29,10 +29,6 @@ export class HomeComponent implements OnInit {
     this.postsService.get().subscribe(
       sucesso => {
         this.post = sucesso[0].text;
-        console.log(sucesso)
-        // this.post2 = this.sanitizer.bypassSecurityTrustHtml(
-        //   sucesso[0].text
-        // );
       }
     )
   }
@@ -45,7 +41,6 @@ export class HomeComponent implements OnInit {
   //       this.post = sucesso[0].text;
   //       this.post2 = this.domSanitizerService.sanitize(sucesso[0].text)
   //       this.loadData(sucesso[0].text);
-  //       console.log(sucesso)
   //     }
   //   )
   // }

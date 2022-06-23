@@ -14,7 +14,6 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
       state(
         'true',
         style({
-          // backgroundColor: 'rgba(0, 0, 0, 0.2)',
           transform: 'scaley(1)',
           top: '0'
         })
@@ -22,9 +21,8 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
       state(
         'false',
         style({
-          // backgroundColor: 'rgba(0, 0, 0, 0)',
           transform: 'scaley(0)',
-          top: '-50vh'
+          top: '-100vh'
         })
       ),
 
@@ -42,62 +40,48 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
       state(
         'true',
         style({
-          transform: 'translateX(100%)',
+          transform: 'translateY(0%)',
         })
       ),
       state(
         'false',
         style({
-          transform: 'translateX(0%)',
+          transform: 'translateY(-100%)',
         })
       ),
 
       transition(
         'false => true',
         animate(
-          '1s .2s',
-          keyframes([
-            style({ offset: 0, transform: 'translateX(0%)' }),
-            style({ offset: 0.16, transform: 'translateX(132.27%)' }),
-            style({ offset: 0.28, transform: 'translateX(86.88%)' }),
-            style({ offset: 0.44, transform: 'translateX(104.63%)' }),
-            style({ offset: 0.59, transform: 'translateX(98.36%)' }),
-            style({ offset: 0.73, transform: 'translateX(100.58%)' }),
-            style({ offset: 0.88, transform: 'translateX(99.8%)' }),
-            style({ offset: 1, transform: 'translateX(100%)' }),
-          ])
+          '0.5s 0s cubic-bezier(0.32, 0, 0.67, 0)',
         )
       ),
       transition(
         'true => false',
         animate(
-          '.5s 0s',
+          '0.5s 0s',
           keyframes([
-            style({ offset: 0, transform: 'translateX(100%)' }),
-            style({ offset: 0.12, transform: 'translateX(89.11%)' }),
-            style({ offset: 0.24, transform: 'translateX(56.44%)' }),
-            style({ offset: 0.36, transform: 'translateX(1.99%)' }),
-            style({ offset: 0.54, transform: 'translateX(24.98%)' }),
-            style({ offset: 0.74, transform: 'translateX(1.63%)' }),
-            style({ offset: 0.82, transform: 'translateX(6.25%)' }),
-            style({ offset: 0.92, transform: 'translateX(0.66%)' }),
-            style({ offset: 0.96, transform: 'translateX(1.64%)' }),
-            style({ offset: 1, transform: 'translateX(0%)' }),
+            style({ offset: 0, transform: 'translateY(0%)' }),
+            style({ offset: 0.16, transform: 'translateY(-132.27%)' }),
+            style({ offset: 0.28, transform: 'translateY(-86.88%)' }),
+            style({ offset: 0.44, transform: 'translateY(-104.63%)' }),
+            style({ offset: 0.59, transform: 'translateY(-98.36%%)' }),
+            style({ offset: 0.73, transform: 'translateY(-100.58%)' }),
+            style({ offset: 0.88, transform: 'translateY(-99.8%)' }),
+            style({ offset: 0.96, transform: 'translateY(-100%)' }),
           ])
         )
       ),
     ]),
   ],
 })
-export class VerticalMenuBurgerComponent implements OnInit {
+export class VerticalMenuBurgerComponent {
   @Input() nav: NavibarItemConfig[] = [];
   showBackground = false;
   showMenu = false;
   disabledButtom = false;
 
   constructor(private modalService: ModalService, private router: Router) {}
-
-  ngOnInit(): void {}
 
   displayOpacity(event: Event, showModal: boolean) {
     event.stopPropagation();
@@ -116,7 +100,7 @@ export class VerticalMenuBurgerComponent implements OnInit {
     this.disabledButtom = true;
     setTimeout(() => {
       this.disabledButtom = false;
-    }, 1000);
+    }, 500);
   }
 
   navigate(commands: any[], extras?: NavigationExtras | undefined): void {
@@ -126,9 +110,6 @@ export class VerticalMenuBurgerComponent implements OnInit {
   }
 
   showHideMenu() {
-    // if (this.showBackground) {
-      this.showMenu = this.showBackground;
-    // }
-    // this.showMenu = this.showBackground;
+    this.showMenu = this.showBackground;;
   }
 }

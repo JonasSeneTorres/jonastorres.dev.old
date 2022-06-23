@@ -8,7 +8,7 @@ import { SystemInformationService } from 'projects/guide-dog/src/lib/services/sy
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input() navConfig: NavibarItemConfig[] = [];
   @Input() showAcessibilityBar = false;
   // private centeredPanelMargin: number = 0;
@@ -31,12 +31,8 @@ export class HeaderComponent implements OnInit {
   get showHamburgerHorizontalNav(): boolean {
     const hasNavConfig = this.navConfig.length > 0;
     const centeredPanelMarginPositive = this.centeredPanelMargin > 0;
-    const greatherThanLayoutBreak =
-      this.systemInformation.page.size.width >
-      this.systemInformation.page.centeredPanel.area - 2;
-    console.log(
-      hasNavConfig && (centeredPanelMarginPositive || greatherThanLayoutBreak)
-    );
+    const greatherThanLayoutBreak = this.systemInformation.page.size.ItsGreaterThanCenterPanel;
+
     return (
       hasNavConfig && (centeredPanelMarginPositive || greatherThanLayoutBreak)
     );
@@ -47,5 +43,4 @@ export class HeaderComponent implements OnInit {
     // this.centeredPanelMargin = this.systemInformation.page.centeredPanel.margin + sizeAdjustment;
   }
 
-  ngOnInit(): void {}
 }

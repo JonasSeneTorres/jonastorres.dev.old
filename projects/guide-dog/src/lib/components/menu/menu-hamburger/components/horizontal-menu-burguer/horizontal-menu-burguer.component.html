@@ -1,7 +1,7 @@
-<gd-button-hamburger [actived]="showMenu" aria-controls="conteudoNavbarSuportado" (click)="displayOpacity($event, !showBackground)" ></gd-button-hamburger>
+<gd-button-hamburger [actived]="showMenu" aria-controls="menuHamburger" (click)="displayOpacity($event, !showBackground)" ></gd-button-hamburger>
 
 <div
-  id="conteudoNavbarSuportado"
+  id="menuHamburger"
   class="gd-menu-hamburger__nav"
   (click)="displayOpacity($event, false)"
   [@showHideBackgroundModal]="showBackground.toString() === 'true'"
