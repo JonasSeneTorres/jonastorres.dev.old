@@ -26,6 +26,14 @@ const routes: Routes = [
       import('./views/erro/erro.module').then((m) => m.ErroModule),
   },
   {
+    path: 'categoria',
+    loadChildren: () =>
+      import('./views/categoria/categoria.module').then(
+        (m) => m.CategoriaModule
+      ),
+  },
+  { path: 'artigo', loadChildren: () => import('./views/artigo/artigo.module').then(m => m.ArtigoModule) },
+  {
     path: '**',
     loadChildren: () =>
       import('./views/pagina-nao-encontrada/pagina-nao-encontrada.module').then(

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavibarConfig } from './config/navibarI.onfig';
+import { NavibarConfig } from './config/navibar.config';
 import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item-config';
 
 @Component({
