@@ -12,4 +12,5 @@ export class AutorComponent {
   constructor(private local: SessionStorageService) {
     this.local.set('LocalStorageService', { teste: 1 });
   }
+
 }

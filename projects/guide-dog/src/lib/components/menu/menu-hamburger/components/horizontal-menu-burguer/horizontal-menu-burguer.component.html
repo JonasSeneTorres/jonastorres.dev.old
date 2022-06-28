@@ -1,4 +1,8 @@
-<gd-button-hamburger [actived]="showMenu" aria-controls="menuHamburger" (click)="displayOpacity($event, !showBackground)" ></gd-button-hamburger>
+<gd-button-hamburger
+  [actived]="showMenu"
+  aria-controls="menuHamburger"
+  (click)="displayOpacity($event, !showBackground)"
+></gd-button-hamburger>
 
 <div
   id="menuHamburger"
@@ -6,48 +10,60 @@
   (click)="displayOpacity($event, false)"
   [@showHideBackgroundModal]="showBackground.toString() === 'true'"
   (@showHideBackgroundModal.done)="showHideMenu()"
- >
- <gd-centered-panel>
-   <div style="position: relative;
-   width: 100vw;
-   height: 100vh;
-   margin-left: -20px;">
-
-     <div
-       class="gd-menu-hamburger__nav-container"
-       (click)="displayOpacity($event, true)"
-       [@openCloseHamburger]="showMenu.toString() === 'true'"
-       >
-       <div class="gd-menu-hamburger__nav-container-list">
-
-         <ul class="gd-menu-hamburger__nav-list">
-           <ng-container *ngFor="let itemNav of nav">
-             <li>
-               <a
-                 (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
-                 routerLinkActive="router-link-active"
-                 *ngIf="(itemNav.children ?? []).length === 0"
-                 >
-                 <span class="label">{{ itemNav.label }}</span>
-               </a>
-               <a
-               (click)="navigate(itemNav?.route ?? [], itemNav?.routeExtras ?? undefined)"
-               routerLinkActive="router-link-active"
-               role="button"
-               aria-haspopup="true" aria-expanded="false"
-               *ngIf="(itemNav.children ?? []).length > 0"
-               >
-               <span class="label">{{ itemNav.label }}</span>
-               <span class="arrow" >
-                 <span class="fa-solid fa-chevron-right"></span>
-               </span>
-             </a>
-             </li>
-           </ng-container>
-
-         </ul>
-       </div>
-     </div>
-   </div>
- </gd-centered-panel>
+>
+  <gd-centered-panel>
+    <div
+      style="
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        margin-left: -20px;
+      "
+    >
+      <div
+        class="gd-menu-hamburger__nav-container"
+        (click)="displayOpacity($event, true)"
+        [@openCloseHamburger]="showMenu.toString() === 'true'"
+      >
+        <div class="gd-menu-hamburger__nav-container-list">
+          <ul class="gd-menu-hamburger__nav-list">
+            <ng-container *ngFor="let itemNav of nav">
+              <li>
+                <a
+                  (click)="
+                    navigate(
+                      itemNav?.route ?? [],
+                      itemNav?.routeExtras ?? undefined
+                    )
+                  "
+                  routerLinkActive="router-link-active"
+                  *ngIf="(itemNav.children ?? []).length === 0"
+                >
+                  <span class="label">{{ itemNav.label }}</span>
+                </a>
+                <a
+                  (click)="
+                    navigate(
+                      itemNav?.route ?? [],
+                      itemNav?.routeExtras ?? undefined
+                    )
+                  "
+                  routerLinkActive="router-link-active"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  *ngIf="(itemNav.children ?? []).length > 0"
+                >
+                  <span class="label">{{ itemNav.label }}</span>
+                  <span class="arrow">
+                    <span class="fa-solid fa-chevron-right"></span>
+                  </span>
+                </a>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </gd-centered-panel>
 </div>
