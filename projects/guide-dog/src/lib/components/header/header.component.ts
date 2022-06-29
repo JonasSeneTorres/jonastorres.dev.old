@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 
 import { NavibarItemConfig } from '../../types/navibar-item-config';
 import { SystemInformationService } from 'projects/guide-dog/src/lib/services/system-information/system-information.service';
@@ -11,6 +11,7 @@ import { SystemInformationService } from 'projects/guide-dog/src/lib/services/sy
 export class HeaderComponent {
   @Input() navConfig: NavibarItemConfig[] = [];
   @Input() showAcessibilityBar = false;
+  greatherThanLayoutBreak = false;
   // private centeredPanelMargin: number = 0;
 
   get centeredPanelMargin() {
@@ -22,20 +23,42 @@ export class HeaderComponent {
     const hasNavConfig = this.navConfig.length > 0;
     const centeredPanelMarginPositive = this.centeredPanelMargin > 0;
     const lessThanLayoutBreak =
-      this.systemInformation.page.size.width <=
+      this.systemInformation.browser.size.width <=
       this.systemInformation.page.centeredPanel.area - 2;
 
+      console.log(
+        hasNavConfig, centeredPanelMarginPositive, lessThanLayoutBreak
+      )
+
     return hasNavConfig && !centeredPanelMarginPositive && lessThanLayoutBreak;
+    // return hasNavConfig  && lessThanLayoutBreak;
   }
 
   get showHamburgerHorizontalNav(): boolean {
     const hasNavConfig = this.navConfig.length > 0;
     const centeredPanelMarginPositive = this.centeredPanelMargin > 0;
-    const greatherThanLayoutBreak = this.systemInformation.page.size.ItsGreaterThanCenterPanel;
+    this.greatherThanLayoutBreak = this.systemInformation.page.size.ItsGreaterThanCenterPanel;
+
+
+
 
     return (
-      hasNavConfig && (centeredPanelMarginPositive || greatherThanLayoutBreak)
+      hasNavConfig && (centeredPanelMarginPositive || this.greatherThanLayoutBreak)
     );
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    const hasNavConfig = this.navConfig.length > 0;
+    const centeredPanelMarginPositive = this.centeredPanelMargin > 0;
+    const lessThanLayoutBreak =
+      this.systemInformation.browser.size.width <=
+      this.systemInformation.page.centeredPanel.area - 2;
+
+      console.log(
+        hasNavConfig, centeredPanelMarginPositive, lessThanLayoutBreak
+      )
+
   }
 
   constructor(private systemInformation: SystemInformationService) {

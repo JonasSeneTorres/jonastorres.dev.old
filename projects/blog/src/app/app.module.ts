@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { GuideDogModule } from 'projects/guide-dog/src/lib/guide-dog.module';
 import { HttpClientModule } from '@angular/common/http';
+import { JsonPipe } from '@angular/common';
 import { domPurifyConfig } from './config/dom-purify.config';
 
 @NgModule({
@@ -23,6 +24,7 @@ import { domPurifyConfig } from './config/dom-purify.config';
   ],
   exports: [GuideDogModule, NgDompurifyModule],
   providers: [
+    { provide: JsonPipe },
     {
       provide: Sanitizer,
       useClass: NgDompurifySanitizer,

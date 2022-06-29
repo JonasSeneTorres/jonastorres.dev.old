@@ -4,6 +4,7 @@
     <nav class="gd-header__nav" id="menu">
       <div>
         <gd-menu-hamburger [nav]="navConfig" *ngIf="!showHamburgerHorizontalNav" ></gd-menu-hamburger>
+        <!-- <gd-menu-hamburger [nav]="navConfig" *ngIf="showHamburgerHorizontalNav && !greatherThanLayoutBreak" ></gd-menu-hamburger> -->
         <!-- <button type="button" class="first-menu">MENU</button> -->
         <a [routerLink]="['']" class="gd-header__link gd-header__link-main"
           ><span class="fa-solid fa-code"></span>jonastorres.dev</a

@@ -15,7 +15,13 @@ export class MenuHamburgerComponent {
   @HostListener('window:resize', ['$event'])
   refreshData() {
     // this.role= this.role === 'admin' ? 'guest' : 'admin';
-    this.showHorizontalMenu = !this.systemInformation.page.size.ItsGreaterThanCenterPanel;
+    // this.showHorizontalMenu = !this.systemInformation.browser.size.ItsGreaterThanCenterPanel;
+    console.log(
+      this.systemInformation.browser.size.width <=
+      this.systemInformation.page.centeredPanel.area - 2
+    );
+    this.showHorizontalMenu = !(this.systemInformation.browser.size.width <=
+      this.systemInformation.page.centeredPanel.area - 2)
   }
 
   constructor(private systemInformation: SystemInformationService) {

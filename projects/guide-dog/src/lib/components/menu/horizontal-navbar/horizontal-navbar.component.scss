@@ -10,7 +10,15 @@
 // }
 
 // @include media-up(calc(var(--gd-min-content-box) - 2px)) {
-  @include media-up($gd-min-content-box - 2px) {
+  // @include media-down($gd-min-content-box ) {
+  //   .gd-header {
+  //     &__menu-main {
+  //       display: none;
+  //     }}
+  // }
+
+
+  // @include media-up($gd-min-content-box ) {
   .gd-header {
     &__menu-main {
         display: inline;
@@ -39,6 +47,6 @@
       background-color: transparent;
       border: none;
     }
-  }
+  // }
 }
 

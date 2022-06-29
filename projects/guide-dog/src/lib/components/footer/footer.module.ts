@@ -2,6 +2,7 @@ import { CenteredPanelModule } from '../centered-panel/centered-panel.module';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer.component';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { NgModule } from '@angular/core';
   ],
   imports: [
     CommonModule,
-    CenteredPanelModule
+    CenteredPanelModule,
+    RouterModule,
   ],
   exports: [
     FooterComponent

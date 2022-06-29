@@ -98,8 +98,8 @@ export class SystemInformationService {
 
     this._fullScreenX = this._window.screen.width;
     this._fullScreenY = this._window.screen.height;
-    this._usefullAreaBrowserX = this._window.innerWidth;
-    this._usefullAreaBrowserY = this._window.innerHeight;
+    this._usefullAreaBrowserX = this.document.documentElement.clientWidth; // this._window.innerWidth;
+    this._usefullAreaBrowserY = this.document.documentElement.clientHeight; // this._window.innerHeight;
     this._centeredPanelArea = this.calculateCenteredPanelArea();
     this._centeredPanelMargin = this.calculateCenteredPanelMargin();
   }
