@@ -1,0 +1,11 @@
+.artigo {
+  display: grid;
+  gap: 6rem;
+  grid-template-columns: 1fr 22rem;
+}
+
+aside {
+  width: 100%;
+  max-width: 22rem;
+  // overflow: hidden;
+}

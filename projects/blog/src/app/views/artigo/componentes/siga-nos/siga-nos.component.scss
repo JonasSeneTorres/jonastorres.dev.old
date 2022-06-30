@@ -1,0 +1,65 @@
+@import '../../../../../../../blog/src/styles/styles.scss';
+
+.siganos {
+  background-color: $gd-colorligth-primary-300;
+  border-radius: 8px;
+  color: #fff;
+  padding: 16px 0;
+
+  &__title {
+    margin: 0;
+    text-align: center;
+  }
+
+  &__list {
+    padding: 0;
+    text-align: center;
+
+    li{
+      display: inline-block;
+      position: relative;
+      transform: translateY(0px);
+      transition: all 0.3s;
+
+      :hover {
+        transform: translateY(-3px);
+        // margin: 0 .25rem;
+      }
+
+
+      &:hover .icon{
+        transform: scale(2);
+      }
+
+      &:hover .title {
+        transform: scale(1);
+      }
+    }
+  }
+
+  a, a:link, a:visited, a:hover, a:active {
+    color: #fff;
+    margin: 0 0.5rem;
+    text-decoration: none;
+  }
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.title {
+  transform: scale(0);
+  position: absolute;
+    top: 36px;
+    left: -28px;
+    display: inline-block;
+    /* border: solid 1px #fff; */
+    width: 100px;
+    text-align: center;
+}
+
+span {
+  display: inline-block;
+  transition: all 0.3s;
+}

@@ -1,0 +1,82 @@
+@import '../../../../../../../blog/src/styles/styles.scss';
+
+.box-compartilhe {
+  // background-color: $gd-setcolorligth-primary;
+  // background-color: $gd-colorligth-primary-50;
+  // background-color: $gd-colorligth-primary-100;
+  background-color: $gd-colorligth-primary-200;
+  // background-color: $gd-colorligth-primary-300;
+  // background-color: $gd-colorligth-primary-400;
+  // background-color: $gd-colorligth-primary-500;
+  // background-color: $gd-colorligth-primary-600;
+  // background-color: $gd-colorligth-primary-700;
+  // background-color: $gd-colorligth-primary-800;
+  // background-color: $gd-colorligth-primary-900;
+  // background-color: $gd-colorligth-primary-A100;
+  // background-color: $gd-colorligth-primary-A200;
+  // background-color: $gd-colorligth-primary-A400;
+  // background-color: $gd-colorligth-primary-A700;
+  border-radius: 8px;
+  color: #fff;
+  // padding: 16px 0;
+
+  &__title {
+    margin: 0 2.5rem;
+    display: inline-block;
+    margin-right: 1.5rem;
+    // text-align: center;
+  }
+
+  &__list {
+    padding: 0;
+    text-align: center;
+    display: inline-block;
+
+    li{
+      display: inline-block;
+      position: relative;
+      transform: translateY(0px);
+      transition: all 0.3s;
+
+      &:hover {
+        transform: translateY(-11px);
+        // margin: 0 .25rem;
+      }
+
+
+      &:hover .icon{
+        transform: scale(1.15);
+      }
+
+      &:hover .title {
+        transform: scale(1);
+      }
+    }
+  }
+
+  a, a:link, a:visited, a:hover, a:active {
+    color: #fff;
+    margin: 0 0.5rem;
+    text-decoration: none;
+  }
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.title {
+  transform: scale(0);
+  position: absolute;
+    top: 36px;
+    left: -28px;
+    display: inline-block;
+    /* border: solid 1px #fff; */
+    width: 100px;
+    text-align: center;
+}
+
+span {
+  display: inline-block;
+  transition: all 0.3s;
+}

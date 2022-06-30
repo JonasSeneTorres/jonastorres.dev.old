@@ -1,0 +1,47 @@
+@import '../../../../../../../guide-dog/src/lib/styles/gd.scss';
+
+h2 {
+  // border-bottom: 1px solid #000;
+  margin: 0;
+}
+
+.autor {
+  background-color: $gd-colorligth-primary-50;
+  border-radius: 8px;
+  display: grid;
+  grid-template-areas:
+		"foto nome"
+		"foto cargo"
+		"foto sobre";
+  padding: 1rem 2rem;
+  line-height: 1.8rem;
+  margin: 1rem 0 2rem;
+
+  &__foto {
+    align-self: start;
+    border: solid 1px #000;
+    border-radius: 8px;
+    grid-area: foto;
+    height: 150px;
+    justify-self: center;
+    margin-right: 2rem;
+    width: 150px;
+  }
+
+  &__nome {
+    grid-area: nome;
+    font-family: "Titillium Web";
+  }
+
+  &__cargo {
+    grid-area: cargo;
+    font-family: "Titillium Web";
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  &__sobre {
+    grid-area: sobre;
+    margin-top: 1.25rem;
+  }
+}
