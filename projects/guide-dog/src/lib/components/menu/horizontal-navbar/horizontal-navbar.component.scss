@@ -1,52 +1,34 @@
-@import '../../../styles/gd';
+@import "../../../styles/gd";
 
 .gd-h-navbar {
   display: inline-block;
-  // display: none;
 }
 
-// .gd-header__menu-main {
-//   display: none;
-// }
+.gd-header {
+  &__menu-main {
+    display: inline;
+    margin-left: 1.5rem;
+    padding: 0;
 
-// @include media-up(calc(var(--gd-min-content-box) - 2px)) {
-  // @include media-down($gd-min-content-box ) {
-  //   .gd-header {
-  //     &__menu-main {
-  //       display: none;
-  //     }}
-  // }
-
-
-  // @include media-up($gd-min-content-box ) {
-  .gd-header {
-    &__menu-main {
-        display: inline;
-        margin-left: 1.5rem;
-        padding: 0;
-
-        &-li {
-          display: inline;
-          margin-left: 2rem;
-        }
-
+    &-li {
+      display: inline;
+      margin-left: 2rem;
     }
+  }
 
-    &__link {
-      color: $gd-color-white;
-      font-size: 1.2rem;
-      font-weight: 600;
-      text-decoration: none;
+  &__link {
+    color: $gd-color-white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
 
-      &--actived {
-        color: red !important;
-      }
+    &--actived {
+      color: red !important;
     }
+  }
 
-    &__button {
-      background-color: transparent;
-      border: none;
-    }
-  // }
+  &__button {
+    background-color: transparent;
+    border: none;
+  }
 }
-

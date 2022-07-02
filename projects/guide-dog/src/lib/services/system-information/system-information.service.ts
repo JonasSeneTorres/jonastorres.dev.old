@@ -95,19 +95,19 @@ export class SystemInformationService {
   }
 
   private updateScreenSizeInfos() {
-
     this._fullScreenX = this._window.screen.width;
     this._fullScreenY = this._window.screen.height;
-    this._usefullAreaBrowserX = this.document.documentElement.clientWidth; // this._window.innerWidth;
-    this._usefullAreaBrowserY = this.document.documentElement.clientHeight; // this._window.innerHeight;
+    this._usefullAreaBrowserX = this.document.documentElement.clientWidth;
+    this._usefullAreaBrowserY = this.document.documentElement.clientHeight;
     this._centeredPanelArea = this.calculateCenteredPanelArea();
     this._centeredPanelMargin = this.calculateCenteredPanelMargin();
   }
 
   private calculateCenteredPanelArea(): number {
-    const gdMinContentBoxValue = getComputedStyle(document.body).getPropertyValue(
-      '--gd-min-content-box'
-    ).replace('px', '') ?? '0';
+    const gdMinContentBoxValue =
+      getComputedStyle(document.body)
+        .getPropertyValue('--gd-min-content-box')
+        .replace('px', '') ?? '0';
     let output = parseInt(gdMinContentBoxValue, 10);
 
     if (output > this._fullScreenX) {

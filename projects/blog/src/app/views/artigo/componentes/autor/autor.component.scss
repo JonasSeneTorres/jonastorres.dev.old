@@ -1,7 +1,6 @@
-@import '../../../../../../../guide-dog/src/lib/styles/gd.scss';
+@import "../../../../../../../guide-dog/src/lib/styles/gd.scss";
 
 h2 {
-  // border-bottom: 1px solid #000;
   margin: 0;
 }
 
@@ -10,12 +9,12 @@ h2 {
   border-radius: 8px;
   display: grid;
   grid-template-areas:
-		"foto nome"
-		"foto cargo"
-		"foto sobre";
-  padding: 1rem 2rem;
+    "foto nome"
+    "foto cargo"
+    "foto sobre";
   line-height: 1.8rem;
   margin: 1rem 0 2rem;
+  padding: 1rem 2rem;
 
   &__foto {
     align-self: start;
@@ -29,15 +28,15 @@ h2 {
   }
 
   &__nome {
+    font-family: $title_font_family;
     grid-area: nome;
-    font-family: "Titillium Web";
   }
 
   &__cargo {
     grid-area: cargo;
-    font-family: "Titillium Web";
-    font-weight: bold;
+    font-family: $title_font_family;
     font-size: 1.25rem;
+    font-weight: bold;
   }
 
   &__sobre {

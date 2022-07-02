@@ -23,10 +23,10 @@ import { VerticalMenuBurgerComponent } from './menu-hamburger/components/vertica
     CommonModule,
     RouterModule,
     CenteredPanelModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
   ],
   exports: [
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     MenuHamburgerComponent,
     AcessibilityBarComponent,
     HorizontalNavbarComponent,

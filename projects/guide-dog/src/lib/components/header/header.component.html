@@ -1,23 +1,13 @@
-<!-- <gd-acessibility-bar></gd-acessibility-bar> -->
 <header class="gd-header">
   <gd-centered-panel>
     <nav class="gd-header__nav" id="menu">
       <div>
         <gd-menu-hamburger [nav]="navConfig" *ngIf="!showHamburgerHorizontalNav" ></gd-menu-hamburger>
-        <!-- <gd-menu-hamburger [nav]="navConfig" *ngIf="showHamburgerHorizontalNav && !greatherThanLayoutBreak" ></gd-menu-hamburger> -->
-        <!-- <button type="button" class="first-menu">MENU</button> -->
         <a [routerLink]="['']" class="gd-header__link gd-header__link-main"
           ><span class="fa-solid fa-code"></span>jonastorres.dev</a
         >
         <gd-horizontal-navbar [nav]="navConfig" *ngIf="showHamburgerHorizontalNav"></gd-horizontal-navbar>
       </div>
-      <!-- <div>
-        <ul class="gd-header__menu-secondary" >
-          <li class="gd-header__menu-secondary-li">
-            <button type="button">MENU</button>
-          </li>
-        </ul>
-      </div> -->
     </nav>
   </gd-centered-panel>
 </header>

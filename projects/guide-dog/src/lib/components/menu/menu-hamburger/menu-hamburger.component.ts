@@ -1,7 +1,7 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 
 import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item-config';
-import { SystemInformationService } from '../../../services/system-information/system-information.service';
+import { SystemInformationService } from 'projects/guide-dog/src/lib/services/system-information/system-information.service';
 
 @Component({
   selector: 'gd-menu-hamburger',
@@ -12,20 +12,15 @@ export class MenuHamburgerComponent {
   @Input() nav: NavibarItemConfig[] = [];
   showHorizontalMenu = false;
 
+  constructor(private systemInformation: SystemInformationService) {
+    this.refreshData();
+  }
+
   @HostListener('window:resize', ['$event'])
   refreshData() {
-    // this.role= this.role === 'admin' ? 'guest' : 'admin';
-    // this.showHorizontalMenu = !this.systemInformation.browser.size.ItsGreaterThanCenterPanel;
-    console.log(
+    this.showHorizontalMenu = !(
       this.systemInformation.browser.size.width <=
       this.systemInformation.page.centeredPanel.area - 2
     );
-    this.showHorizontalMenu = !(this.systemInformation.browser.size.width <=
-      this.systemInformation.page.centeredPanel.area - 2)
-  }
-
-  constructor(private systemInformation: SystemInformationService) {
-    this.refreshData()
-    // this.showHorizontalMenu = !this.systemInformation.page.size.ItsGreaterThanCenterPanel;
   }
 }
