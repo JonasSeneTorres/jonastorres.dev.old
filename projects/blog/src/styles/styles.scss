@@ -17,3 +17,93 @@ jt-root {
 }
 
 
+.angular,
+.angularjs {
+  background-color: #ff0000 !important;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 0, 0, 0.8) 0%,
+    rgba(255, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 89%
+  ) !important;
+}
+
+// .css {
+//   background-color: #1575ba;
+//   background: linear-gradient(
+//     150deg,
+//     rgba(21, 117, 186, 0.8) 0%,
+//     rgba(21, 117, 186, 1) 10%,
+//     rgba(0, 0, 0, 1) 89%
+//   );
+// }
+
+.css {
+  background-color: #0162ad !important;
+  background: linear-gradient(
+    150deg,
+    rgba(3, 97, 173, 0.8) 0%,
+    rgba(3, 97, 173, 1) 10%,
+    rgba(0, 0, 0, 1) 89%
+  ) !important;
+}
+
+.dotnet {
+  background-color: #592c8c !important;
+  background: linear-gradient(
+    150deg,
+    rgba(105, 64, 151, 1) 0%,
+    rgba(89, 44, 140, 1) 30%,
+    rgba(0, 0, 0, 1) 89%
+  ) !important;
+}
+
+.flutter {
+  background-color: #43caf5 !important;
+  background: linear-gradient(
+    150deg,
+    rgba(67, 202, 245, 1) 0%,
+    rgba(2, 80, 149, 1) 30%,
+    rgba(0, 0, 0, 1) 89%
+  ) !important;
+}
+
+.html {
+  background-color: #e54c21 !important;
+  background: linear-gradient(
+    150deg,
+    rgba(229, 76, 33, 0.8) 0%,
+    rgba(229, 76, 33, 1) 10%,
+    rgba(0, 0, 0, 1) 89%
+  ) !important;
+}
+
+.javascript {
+  background-color: #efd81d;
+  background: linear-gradient(
+    150deg,
+    rgba(239, 216, 29, 0.8) 0%,
+    rgba(239, 216, 29, 1) 10%,
+    rgba(0, 0, 0, 1) 89%
+  ) !important;
+}
+
+.react {
+  background-color: #00d1f7;
+  background: linear-gradient(
+    150deg,
+    rgba(0, 209, 247, 0.8) 0%,
+    rgba(0, 209, 247, 1) 10%,
+    rgba(0, 0, 0, 1) 89%
+  ) !important;
+}
+
+.vue {
+  background-color: #3fb27f;
+  background: linear-gradient(
+    150deg,
+    rgba(63, 178, 127, 1) 0%,
+    rgba(50, 71, 91, 1) 30%,
+    rgba(0, 0, 0, 1) 89%
+  ) !important;
+}

@@ -1,11 +1,69 @@
 <div class="jumbotron">
   <div class="jumbotron__vitrine">
     <gd-centered-panel>
+      <div class="jumbotron__conteudo jumbotron__conteudo-{{ categoria}}">
+        <div class="jumbotron__icone">
+          <span class="fa-brands fa-angular" *ngIf="categoria==='angular'"></span>
+        </div>
+        <div class="jumbotron__titulo">
+          <h1>Um titulo qualquer...</h1>
+          <h2>Complementando o titulo 1.</h2>
+        </div>
+         <div class="jumbotron__dados">
+          <span>01 de jameiro de 2020 - editado em: 01 de jameiro de 2020</span>
+          <span>15 min de leitura</span>
+        </div>
+        <div class="jumbotron__compartilhamento">
+          <ul class="jumbotron__list">
+            <li>
+              <a href="#" target="_blank">
+                <span class="icon socicon-youtube" aria-hidden="true"></span>
+                <span class="title">YouTube</span>
+              </a>
+            </li>
+            <!-- <li>
+              <a href="#" target="_blank">
+                <span class="icon socicon-facebook" aria-hidden="true"></span>
+                <span class="title">Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <span class="icon socicon-twitter" aria-hidden="true"></span>
+                <span class="title">Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <span class="icon socicon-instagram" aria-hidden="true"></span>
+                <span class="title">Instagran</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <span class="icon socicon-linkedin" aria-hidden="true"></span>
+                <span class="title">LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <span class="icon socicon-github" aria-hidden="true"></span>
+                <span class="title">Github</span>
+              </a>
+            </li>
 
-      dsdsassad
+            <li>
+              <a href="#" target="_blank">
+                <span class="icon socicon-rss" aria-hidden="true"></span>
+                <span class="title">RSS</span>
+              </a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
     </gd-centered-panel>
   </div>
-  <div class="jumbotron__fundo">
-~çklçkç~kl
+  <div class="jumbotron__fundo {{ categoria }}">
+<!-- ~çklçkç~kl -->
   </div>
 </div>
