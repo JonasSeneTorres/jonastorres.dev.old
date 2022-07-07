@@ -16,6 +16,28 @@ jt-root {
   }
 }
 
+// .asp {
+//   background-color: #ff0000 !important;
+//   background: linear-gradient(
+//     150deg,
+//     rgba(#67CA3B, 1) 0%,
+//     rgba(#FFFF00, 1) 30%,
+//     rgba(#FF0000, 1) 56%,
+//     rgba(#009CFF, 1) 75%
+//   ) !important;
+// }
+
+.angular,
+.angularjs {
+  background-color: #ff0000 !important;
+  background: linear-gradient(
+    150deg,
+    rgba(#67CA3B, 0.8) 0%,
+    rgba(#FF0000, 1) 10%,
+    rgba(#009CFF, 1) 89%
+  ) !important;
+}
+
 
 .angular,
 .angularjs {

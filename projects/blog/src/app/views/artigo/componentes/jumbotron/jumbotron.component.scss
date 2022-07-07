@@ -5,6 +5,7 @@
   max-width: 100vw;
   width: 100%;
   z-index: 2;
+  color: #fff;
 
   &__vitrine {
     // height: 32rem;
@@ -25,16 +26,16 @@
     grid-template-columns: 225px 2fr 1fr;
     padding-top: 60px;
 
-    &-angular {
-      color: #fff;
-    }
+    // &-angular, &-css, &-dotnet {
+    //   color: #fff;
+    // }
   }
 
   &__icone {
     grid-area: icone;
     text-shadow: 2px 4px #000;
 
-    .fa-angular {
+    .fa-solid, .fa-brands {
       font-size: 200px;
     }
   }
@@ -129,4 +130,18 @@
   }
     }
   }
+}
+
+.icon {
+  margin-right: .5rem;
+}
+
+.icon2 {
+  margin: 0 .5rem;
+}
+
+.icone-asp {
+  margin-left: -3rem;
+  margin-top: -2rem;
+  width: 285px;
 }

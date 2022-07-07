@@ -18,13 +18,20 @@ h2 {
 
   &__foto {
     align-self: start;
-    border: solid 1px #000;
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+    // border: solid 1px #000;
     border-radius: 8px;
     grid-area: foto;
     height: 150px;
     justify-self: center;
     margin-right: 2rem;
+    overflow: hidden;
     width: 150px;
+
+    img {
+      // height: 152px;
+      width: 154px;
+    }
   }
 
   &__nome {
