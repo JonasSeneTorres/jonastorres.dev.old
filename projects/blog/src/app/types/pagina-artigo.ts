@@ -12,6 +12,6 @@ export type paginaArtigo = {
   conteudoArtigo: string;
   listaSerieArtigo?: SerieArtigo[];
   autor: Autor;
-  listaCategoria: Categoria[];
-  listaUltimosPosts: Categoria[];
+  listaCategoria?: Categoria[];
+  listaUltimosPosts?: SerieArtigo[];
 }

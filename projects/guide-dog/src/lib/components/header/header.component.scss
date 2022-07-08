@@ -50,6 +50,10 @@
     font-weight: 600;
     text-decoration: none;
   }
+
+  &__logo {
+    width: 2.25rem;
+  }
 }
 
 button {
@@ -63,6 +67,14 @@ button {
   &.first-menu {
     margin-right: 1rem
   }
+}
+
+.grid {
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-items: baseline;
+  margin-top: .75rem;
 }
 
 :host ::ng-deep {

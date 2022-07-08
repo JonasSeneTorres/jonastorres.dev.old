@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { PaginaNaoEncontradaRoutingModule } from './pagina-nao-encontrada-routing.module';
+import { NgModule } from '@angular/core';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
-
+import { PaginaNaoEncontradaRoutingModule } from './pagina-nao-encontrada-routing.module';
+import { SharedModule } from '../../components/shared.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +10,8 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component'
   ],
   imports: [
     CommonModule,
-    PaginaNaoEncontradaRoutingModule
+    PaginaNaoEncontradaRoutingModule,
+    SharedModule
   ]
 })
 export class PaginaNaoEncontradaModule { }

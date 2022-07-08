@@ -9,9 +9,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { GuideDogModule } from 'projects/guide-dog/src/lib/guide-dog.module';
 import { HttpClientModule } from '@angular/common/http';
 import { JsonPipe } from '@angular/common';
+import { SharedModule } from './components/shared.module';
 import { domPurifyConfig } from './config/dom-purify.config';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { domPurifyConfig } from './config/dom-purify.config';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    GuideDogModule,
+    SharedModule,
     NgDompurifyModule,
   ],
   exports: [NgDompurifyModule],

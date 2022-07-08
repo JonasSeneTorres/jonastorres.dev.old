@@ -33,6 +33,10 @@ const routes: Routes = [
       ),
   },
   { path: 'artigo', loadChildren: () => import('./views/artigo/artigo.module').then(m => m.ArtigoModule) },
+  { path: 'contato', loadChildren: () => import('./views/contato/contato.module').then(m => m.ContatoModule) },
+  { path: 'sobre', loadChildren: () => import('./views/sobre/sobre.module').then(m => m.SobreModule) },
+  { path: 'busca', loadChildren: () => import('./views/busca/busca.module').then(m => m.BuscaModule) },
+  { path: 'sitemap', loadChildren: () => import('./views/sitemap/sitemap.module').then(m => m.SitemapModule) },
   {
     path: '**',
     loadChildren: () =>

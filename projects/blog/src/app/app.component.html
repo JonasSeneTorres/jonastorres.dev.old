@@ -1,6 +1,12 @@
-<div>
+<div class="app-container">
   <gd-acessibility-bar></gd-acessibility-bar>
-  <gd-header [navConfig]="menu"></gd-header>
+  <gd-header [navConfig]="menu">
+    <div class="grid">
+      <!-- <img class="logo" src="assets/img/fotos/logos/jonastorres-dev.gif"> -->
+      <span class="logo"></span>
+      <span class="titulo">JonasTorres<span>.dev</span></span>
+    </div>
+  </gd-header>
   <gd-centered-panel>
     <main id="conteudo">
       <router-outlet></router-outlet>

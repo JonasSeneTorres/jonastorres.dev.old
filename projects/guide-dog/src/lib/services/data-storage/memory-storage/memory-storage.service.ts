@@ -19,11 +19,11 @@ export class MemoryStorageService implements IStorageService {
     );
   }
 
-  get(key: string): any {
+  get(key: string): any | any[] {
     return this._value[key];
   }
 
-  set(key: string, value: any): void {
+  set(key: string, value: any | any[]): void {
     const newValue = this._value;
     newValue[key] = value;
     this._dataSource.next(newValue);

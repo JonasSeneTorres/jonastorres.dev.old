@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { AcessibilidadeRoutingModule } from './acessibilidade-routing.module';
 import { AcessibilidadeComponent } from './acessibilidade.component';
-
+import { AcessibilidadeRoutingModule } from './acessibilidade-routing.module';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { SharedModule } from './../../components/shared.module';
 
 @NgModule({
   declarations: [
@@ -11,6 +10,7 @@ import { AcessibilidadeComponent } from './acessibilidade.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     AcessibilidadeRoutingModule
   ]
 })
