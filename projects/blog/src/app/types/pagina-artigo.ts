@@ -2,7 +2,7 @@ import { Autor } from "./autor";
 import { Categoria } from "./categoria";
 import { SerieArtigo } from "./serie-artigo";
 
-export type paginaArtigo = {
+export type PaginaArtigo = {
   titulo: string;
   subtitulo: string;
   categoria: string;

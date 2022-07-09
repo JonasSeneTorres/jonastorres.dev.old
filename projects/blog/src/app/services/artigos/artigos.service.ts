@@ -1,3 +1,5 @@
+import { Observable, map } from 'rxjs';
+
 import { HttpClient } from '@angular/common/http';
 import { ICrudService } from './../../interfaces/icrud-service';
 import { Injectable } from '@angular/core';
@@ -10,8 +12,10 @@ export class ArtigosService implements ICrudService {
 
   constructor(private httpClient: HttpClient) {}
 
-  obter(codigo: number) {
-    return this.httpClient.get(`${this.baseURL}/artigos`);
+  obter(codigo: number): Observable<any> {
+    return this.httpClient.get(`${this.baseURL}/artigos`).pipe(
+      map((item: any) => item[0])
+    );
   }
   listar(): any[] {
     throw new Error('Method not implemented.');

@@ -1,7 +1,6 @@
 @import 'base/typography';
-$normalized_font_family: 'Roboto';
-// $title_font_family: 'Titillium Web';
-$title_font_family: 'Orbitron';
+$normalized_font_family: 'Saira', sans-serif;
+$title_font_family: 'Tomorrow', arial;
 
 @import '../../../guide-dog/src/lib/styles/gd.scss';
 
@@ -16,17 +15,6 @@ jt-root {
     max-width: calc(100vw - 40px);
   }
 }
-
-// .asp {
-//   background-color: #ff0000 !important;
-//   background: linear-gradient(
-//     150deg,
-//     rgba(#67CA3B, 1) 0%,
-//     rgba(#FFFF00, 1) 30%,
-//     rgba(#FF0000, 1) 56%,
-//     rgba(#009CFF, 1) 75%
-//   ) !important;
-// }
 
 .angular,
 .angularjs {
@@ -50,16 +38,6 @@ jt-root {
     rgba(0, 0, 0, 1) 89%
   ) !important;
 }
-
-// .css {
-//   background-color: #1575ba;
-//   background: linear-gradient(
-//     150deg,
-//     rgba(21, 117, 186, 0.8) 0%,
-//     rgba(21, 117, 186, 1) 10%,
-//     rgba(0, 0, 0, 1) 89%
-//   );
-// }
 
 .css {
   background-color: #0162ad !important;

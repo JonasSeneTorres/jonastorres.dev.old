@@ -23,25 +23,44 @@
   grid-template-columns: auto 1fr;
 }
 
-.logo {
-  width: 2rem;
-}
+// .logo {
+//   width: 2rem;
+// }
 
 .titulo {
   align-self: center;
   margin-left: 0.25rem;
-  font-family: 'Orbitron';
-  font-size: 1.25rem;
+  font-family: 'OoohBaby', Arial, Helvetica, sans-serif;
+  font-size: 1.7rem;
+  margin-top: -6px;
   // font-weight: lighter;
 }
 
+.dev {
+  font-family: "Tomorrow", mono;
+    font-size: 0.85rem;
+    padding-left: 0.125rem;
+    font-weight: 400;
+}
+
 .logo {
+
   display: inline-block;
-    width: 2.75rem;
-    margin-top: -14px;
-    height: 2.5rem;
-    background-image: url("/assets/img/fotos/logos/jonastorres-dev.gif");
-    background-size: 2.75rem 2.75rem;
+  width: 2.25rem;
+  margin-right: .25rem;
+  margin-top: -10px;
+  height: 2.25rem;
+  background-image: url('/assets/img/fotos/logos/jonastorres-dev.gif');
+  background-size: 2.25rem 2.25rem;
+
+
+
+  // display: inline-block;
+  //   width: 2.75rem;
+  //   margin-top: -14px;
+  //   height: 2.5rem;
+  //   background-image: url("/assets/img/fotos/logos/jonastorres-dev.gif");
+  //   background-size: 2.75rem 2.75rem;
   // display: inline-block;
   //   width: 3rem;
   //   margin-top: -8px;

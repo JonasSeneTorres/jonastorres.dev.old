@@ -10,14 +10,14 @@ import { ArtigosService } from '../../services/artigos/artigos.service';
 import { Categoria } from '../../types/categoria';
 import { Injectable } from '@angular/core';
 import { MemoryStorageService } from 'projects/guide-dog/src/lib/services/data-storage/memory-storage/memory-storage.service';
+import { PaginaArtigo } from '../../types/pagina-artigo';
 import { SerieArtigo } from '../../types/serie-artigo';
-import { paginaArtigo } from '../../types/pagina-artigo';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ArtigoResolver implements Resolve<paginaArtigo | undefined> {
-  private readonly novaPagina: paginaArtigo = {
+export class ArtigoResolver implements Resolve<PaginaArtigo | undefined> {
+  private readonly novaPagina: PaginaArtigo = {
     titulo: '',
     subtitulo: '',
     categoria: '',
@@ -35,47 +35,60 @@ export class ArtigoResolver implements Resolve<paginaArtigo | undefined> {
     listaUltimosPosts: [],
   };
 
-  private resolver = new BehaviorSubject<paginaArtigo | undefined>(undefined);
+  private resolver = new BehaviorSubject<PaginaArtigo | undefined>(undefined);
 
   constructor(
-    private memoryStorageService: MemoryStorageService,
-    private artigosService: ArtigosService
+    // private memoryStorageService: MemoryStorageService,
+    private artigosService: ArtigosService,
   ) {}
 
   resolve(
-    _route: ActivatedRouteSnapshot,
+    route: ActivatedRouteSnapshot,
     _state: RouterStateSnapshot
-  ): Observable<paginaArtigo | undefined> {
-    this.requisicoesIniciais().subscribe(
-      (sucesso) => {
-      let novoResultado: paginaArtigo = this.novaPagina;
+  ): Observable<PaginaArtigo | undefined> {
+    const idArtigo = route.params['id'];
 
-      novoResultado.listaCategoria = sucesso.categorias;
-      novoResultado.listaUltimosPosts = sucesso.ultimosArtigos;
+
+    this.requisicoesIniciais(idArtigo).subscribe(
+      (sucesso) => {
+      let novoResultado: PaginaArtigo = this.novaPagina;
+
+      // novoResultado = sucesso.artigo;
+      novoResultado.titulo = sucesso.artigo.titulo;
+      novoResultado.subtitulo = sucesso.artigo.subtitulo;
+      novoResultado.categoria = sucesso.artigo.categoria;
+      novoResultado.dataCriacao  = new Date(sucesso.artigo.dataCriacao);
+      // novoResultado.dataEdicao  = sucesso.artigo.dataEdicao ? new Date() : undefined;
+      novoResultado.tempoLeitura = sucesso.artigo.tempoLeitura;
+      novoResultado.conteudoArtigo = sucesso.artigo.conteudoArtigo;
+      novoResultado.listaCategoria = [] // sucesso.categorias;
+      novoResultado.listaUltimosPosts = []; // sucesso.ultimosArtigos;
+      console.log('aaa', novoResultado)
+      console.log('bbb', sucesso)
 
       this.resolver.next(novoResultado);
     });
 
-    return this.resolver.asObservable();
+    return this.resolver;
   }
 
-  private requisicoesIniciais() {
+  private requisicoesIniciais(idArtigo: number = 0) {
     const requisicoes = [];
 
-    const obterUltimosArtigos: SerieArtigo[] =
-      this.memoryStorageService.get('ultimos_artigos') ?? [];
-    const obterCategorias: Categoria[] =
-      this.memoryStorageService.get('categorias') ?? [];
-    const obterArtigo = this.artigosService.obter(0);
+    // const obterUltimosArtigos: SerieArtigo[] =
+    //   this.memoryStorageService.get('ultimos_artigos') ?? [];
+    // const obterCategorias: Categoria[] =
+    //   this.memoryStorageService.get('categorias') ?? [];
+    const obterArtigo = this.artigosService.obter(idArtigo);
 
-    requisicoes.push(obterUltimosArtigos);
-    requisicoes.push(obterCategorias);
+    // requisicoes.push(obterUltimosArtigos);
+    // requisicoes.push(obterCategorias);
     requisicoes.push(obterArtigo);
 
     return forkJoin({
       artigo: obterArtigo,
-      categorias: of(obterCategorias),
-      ultimosArtigos: of(obterUltimosArtigos),
+      // categorias: of(obterCategorias),
+      // ultimosArtigos: of(obterUltimosArtigos),
     });
   }
 }

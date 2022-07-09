@@ -1,0 +1,233 @@
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-Thin.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-ThinItalic.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-ExtraLight.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-ExtraLightItalic.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-Light.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-LightItalic.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-Regular.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-Italic.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-Medium.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-MediumItalic.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-SemiBold.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-SemiBold.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-Bold.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-BoldItalic.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-ExtraBold.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-ExtraBold.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-Black.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("../../assets/fonts/Tomorrow-Black.ttf") format("truetype");
+  // src: url("../../assets/fonts/Roboto-Light.eot"); /* IE9 Compat Modes */
+  // src: url("../../assets/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype") /* IE6-IE8 */,
+  //   // url("../../assets/fonts/Roboto-Light.woff2") format("woff2") /* Super Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.woff") format("woff") /* Pretty Modern Browsers */,
+  //   url("../../assets/fonts/Roboto-Light.ttf") format("truetype") /* Safari, Android, iOS */,
+  //   url("../../assets/fonts/Roboto-Light.svg#svgFontName") format("svg")  /* Legacy iOS */;
+  font-weight: 900;
+  font-style: italic;
+}
