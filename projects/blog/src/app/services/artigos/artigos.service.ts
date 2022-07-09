@@ -13,21 +13,30 @@ export class ArtigosService implements ICrudService {
   constructor(private httpClient: HttpClient) {}
 
   obter(codigo: number): Observable<any> {
-    return this.httpClient.get(`${this.baseURL}/artigos`).pipe(
-      map((item: any) => item[0])
-    );
+    return this.httpClient.get(`${this.baseURL}/artigos/${codigo}`);
   }
-  listar(): any[] {
-    throw new Error('Method not implemented.');
+
+  listar(): Observable<any> {
+    return this.httpClient.get(`${this.baseURL}/artigos`);
   }
-  inserir(objeto: any) {
-    throw new Error('Method not implemented.');
+
+  listarUltimosArtigos(): Observable<any> {
+    return this.httpClient.get(`${this.baseURL}/artigos?_sort=id&_order=desc&_limit=5`);
   }
-  atualizar(objeto: any) {
-    throw new Error('Method not implemented.');
+
+  listarArtigosSerie(serieId: number): Observable<any> {
+    return this.httpClient.get(`${this.baseURL}/artigos?serieId=${serieId}`);
   }
-  apagar(codigo: number): void {
+
+  inserir(objeto: any): Observable<any> {
     throw new Error('Method not implemented.');
   }
 
+  atualizar(objeto: any): Observable<any> {
+    throw new Error('Method not implemented.');
+  }
+
+  apagar(codigo: number): Observable<any> {
+    throw new Error('Method not implemented.');
+  }
 }

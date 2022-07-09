@@ -84,11 +84,18 @@
     padding: 0;
   }
 
+  &__item {
+    &:first-child {
+      border-top: solid 1px #000;
+    }
+  }
+
   &__link {
     align-items: center;
     border: none;
     border-bottom: solid 1px #000;
-    border-top: solid 1px #000;
+
+    border-top: none;
     display: grid;
     font-size: 1.075rem;
     grid-template-columns: 1fr 24px;
@@ -99,6 +106,8 @@
     text-decoration: none;
     transition: all 0.25s ease;
     width: 100%;
+
+
 
     &::before,
     &::after {

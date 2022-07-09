@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'jt-box-outros-artigos',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./box-outros-artigos.component.scss']
 })
 export class BoxOutrosArtigosComponent {
+  @Input() listaArtigoSerie: any[] = [];
 
   constructor() { }
 

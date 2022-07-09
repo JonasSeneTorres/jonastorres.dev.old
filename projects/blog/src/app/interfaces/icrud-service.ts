@@ -1,7 +1,9 @@
+import { Observable } from "rxjs";
+
 export interface ICrudService {
-  obter(codigo: number): any;
-  listar(): any[];
-  inserir(objeto: any): any;
-  atualizar(objeto: any): any;
-  apagar(codigo: number): void;
+  obter(codigo: number): Observable<any>;
+  listar(): Observable<any>;
+  inserir(objeto: any): Observable<any>;
+  atualizar(objeto: any): Observable<any>;
+  apagar(codigo: number): Observable<any>;
 }

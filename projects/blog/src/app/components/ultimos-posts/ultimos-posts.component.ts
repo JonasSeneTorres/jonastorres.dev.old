@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./ultimos-posts.component.scss']
 })
 export class UltimosPostsComponent {
+  @Input() ultimosArtigos: any [] = [];
 
   constructor() { }
 }

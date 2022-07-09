@@ -1,35 +1,20 @@
-<section class="categoria">
+<section class="categoria" *ngIf="categorias">
   <h2 class="categoria__titulo">Categorias</h2>
   <ul class="categoria__lista">
-    <li class="categoria__item">
-      <a class="categoria__link" routerLink="">
-        <span class="categoria__link-label">Categoria 1</span>
-        <span class="fa-solid fa-caret-right" aria-hidden="true"></span>
-      </a>
-    </li>
-    <li class="categoria__item">
-      <a class="categoria__link" routerLink="">
-        <span class="categoria__link-label">Categoria 2</span>
-        <span class="fa-solid fa-caret-right" aria-hidden="true"></span>
-      </a>
-    </li>
-    <li class="categoria__item">
-      <a class="categoria__link" routerLink="">
-        <span class="categoria__link-label">Categoria 3</span>
-        <span class="fa-solid fa-caret-right" aria-hidden="true"></span>
-      </a>
-    </li>
-    <li class="categoria__item">
-      <a class="categoria__link" routerLink="">
-        <span class="categoria__link-label">Categoria 4</span>
-        <span class="fa-solid fa-caret-right" aria-hidden="true"></span>
-      </a>
-    </li>
-    <li class="categoria__item">
-      <a class="categoria__link" routerLink="">
-        <span class="categoria__link-label">Categoria 5</span>
-        <span class="fa-solid fa-caret-right" aria-hidden="true"></span>
-      </a>
-    </li>
+    <ng-container *ngFor="let categoria of categorias">
+      <li class="categoria__item">
+        <ng-container *ngIf="categoria.nome === categoriaSelecionada; else lista_selecionavel">
+          <span class="categoria__link--selecionado">
+            <span class="categoria__link-label">{{ categoria.nome }}</span>
+          </span>
+        </ng-container>
+        <ng-template #lista_selecionavel>
+          <a class="categoria__link" routerLink="">
+            <span class="categoria__link-label">{{ categoria.nome }}</span>
+            <span class="fa-solid fa-caret-right" aria-hidden="true"></span>
+          </a>
+        </ng-template>
+      </li>
+    </ng-container>
   </ul>
 </section>

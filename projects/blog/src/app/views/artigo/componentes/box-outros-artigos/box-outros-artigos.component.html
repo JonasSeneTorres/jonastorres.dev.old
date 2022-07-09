@@ -1,4 +1,4 @@
-<section class="box-outros-artigos-botoes">
+<section class="box-outros-artigos-botoes" *ngIf="listaArtigoSerie.length > 0">
   <button class="botaoVoltar botaoAcao">
     <span class="fa-solid fa-chevron-left"></span>
     <span class="label">Artigo anterior</span>
@@ -9,15 +9,15 @@
   </button>
 </section>
 
-<section class="box-outros-artigos">
+<section class="box-outros-artigos" *ngIf="listaArtigoSerie.length > 0">
   <h2 class="box-outros-artigos__titulo">Outros artigos da série "Descomplicando conceitos de animação"</h2>
   <ul class="box-outros-artigos__lista">
-    <li class="box-outros-artigos__item">
+    <li class="box-outros-artigos__item" *ngFor="let artigo of listaArtigoSerie">
       <a class="box-outros-artigos__link" routerLink="">
         <span class="box-outros-artigos__link-label">Categoria 1</span>
       </a>
     </li>
-    <li class="box-outros-artigos__item">
+    <!-- <li class="box-outros-artigos__item">
       <a class="box-outros-artigos__link" routerLink="">
         <span class="box-outros-artigos__link-label">Categoria 2</span>
       </a>
@@ -36,7 +36,7 @@
       <a class="box-outros-artigos__link" routerLink="">
         <span class="box-outros-artigos__link-label">Categoria 5</span>
       </a>
-    </li>
+    </li> -->
   </ul>
 </section>
 

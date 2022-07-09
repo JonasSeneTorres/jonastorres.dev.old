@@ -1,32 +1,62 @@
 <section class="ultimos-posts">
   <h2>Ultimos posts</h2>
   <ul class="ultimos-posts__list">
-    <li>
+    <li *ngFor="let artigo of ultimosArtigos">
       <article class="ultimos-posts__artigo" role="link" [routerLink]="'/'">
-        <div class="ultimos-posts__thumb angular">
-
-          <img class="icone-asp" src="assets/img/fotos/logos/asp.gif" />
-          <!-- <span class="ultimos-posts__icone fa-brands fa-angular"></span> -->
-          <!--
-          <span class="fa-brands fa-angular"></span>
-          <span class="ultimos-posts__icone fa-brands fa-css3"></span>
-        -->
-        <!--
-          <img class="icone-c-sharp" src="assets/img/fotos/logos/c-sharp-branco.gif" />
-          <img class="icone-flutter" src="assets/img/fotos/logos/flutter.svg" />
-          <span class="ultimos-posts__icone fa-brands fa-html5"></span>
-          <span class="ultimos-posts__icone fa-brands fa-js"></span>
-          <span class="ultimos-posts__icone fa-brands fa-react"></span>
-          <span class="ultimos-posts__icone fa-brands fa-vuejs"></span> -->
+        <div class="ultimos-posts__thumb {{ artigo.categoria.toLowerCase() }}">
+          <img
+            class="icone-asp"
+            src="assets/img/fotos/logos/asp.gif"
+            *ngIf="artigo.categoria.toLowerCase() === 'asp'"
+          />
+          <span
+            class="ultimos-posts__icone fa-brands fa-angular"
+            *ngIf="artigo.categoria.toLowerCase() === 'angular'"
+          ></span>
+          <span
+            class="ultimos-posts__icone fa-brands fa-angular"
+            *ngIf="artigo.categoria.toLowerCase() === 'angularjs'"
+          ></span>
+          <span
+            class="ultimos-posts__icone fa-brands fa-css3"
+            *ngIf="artigo.categoria.toLowerCase() === 'css'"
+          ></span>
+          <img
+            class="icone-c-sharp"
+            src="assets/img/fotos/logos/c-sharp-branco.gif"
+            *ngIf="artigo.categoria.toLowerCase() === 'dotnet'"
+          />
+          <img
+            class="icone-flutter"
+            src="assets/img/fotos/logos/flutter.svg"
+            *ngIf="artigo.categoria.toLowerCase() === 'flutter'"
+          />
+          <span
+            class="ultimos-posts__icone fa-brands fa-html5"
+            *ngIf="artigo.categoria.toLowerCase()  === 'html'"
+          ></span>
+          <span
+            class="ultimos-posts__icone fa-brands fa-js"
+            *ngIf="artigo.categoria.toLowerCase()  === 'javascript'"
+          ></span>
+          <span
+            class="ultimos-posts__icone fa-brands fa-react"
+            *ngIf="artigo.categoria.toLowerCase()  === 'react'"
+          ></span>
+          <span
+            class="ultimos-posts__icone fa-brands fa-vuejs"
+            *ngIf="artigo.categoria.toLowerCase()  === 'vue'"
+          ></span>
         </div>
         <h3 class="ultimos-posts__titulo">
-          Artigo 1Artigo 1Artigo Artigo 1Artigo 1ArtigoArtigo 1Artigo
-          1ArtigoArtigo 1Artigo 1Artigo
+          {{ artigo.titulo }}
         </h3>
         <div class="ultimos-posts__detalhes">
-          <span class="fa-solid fa-calendar-days"></span> 22/05/2022
+          <span class="fa-solid fa-calendar-days"></span>
+          {{ artigo.dataCriacao | date: "dd/MM/yyyy" }}
           <span class="pipe">|</span>
-          <span class="fa-solid fa-stopwatch"></span> 15 min
+          <span class="fa-solid fa-stopwatch"></span>
+          {{ artigo.tempoLeitura }} min
         </div>
       </article>
     </li>
