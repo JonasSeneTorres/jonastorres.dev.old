@@ -1,9 +1,9 @@
 <section class="box-outros-artigos-botoes" *ngIf="listaArtigoSerie.length > 0">
-  <button class="botaoVoltar botaoAcao">
+  <button class="botaoVoltar botaoAcao" [disabled]="desabilitarBotaoVoltar">
     <span class="fa-solid fa-chevron-left"></span>
     <span class="label">Artigo anterior</span>
   </button>
-  <button class="botaoAvancar botaoAcao">
+  <button class="botaoAvancar botaoAcao" [disabled]="desabilitarBotaoAvancar">
     <span class="label">Próximo artigo</span>
     <span class="fa-solid fa-chevron-right"></span>
   </button>
@@ -13,9 +13,21 @@
   <h2 class="box-outros-artigos__titulo">Outros artigos da série "Descomplicando conceitos de animação"</h2>
   <ul class="box-outros-artigos__lista">
     <li class="box-outros-artigos__item" *ngFor="let artigo of listaArtigoSerie">
-      <a class="box-outros-artigos__link" routerLink="">
-        <span class="box-outros-artigos__link-label">Categoria 1</span>
-      </a>
+      <!-- <a class="box-outros-artigos__link" routerLink="">
+        <span class="box-outros-artigos__link-label">{{ artigo.titulo }}</span>
+      </a> -->
+
+      <ng-container *ngIf="artigo.titulo === artigoAtual; else lista_selecionavel">
+        <span class="box-outros-artigos__link--selecionado">
+          <span class="box-outros-artigos__link-label">{{ artigo.titulo }}</span>
+        </span>
+      </ng-container>
+      <ng-template #lista_selecionavel>
+        <a class="box-outros-artigos__link" routerLink="">
+          <span class="box-outros-artigos__link-label">{{ artigo.titulo }}</span>
+        </a>
+      </ng-template>
+
     </li>
     <!-- <li class="box-outros-artigos__item">
       <a class="box-outros-artigos__link" routerLink="">
