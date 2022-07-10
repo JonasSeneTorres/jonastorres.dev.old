@@ -23,8 +23,8 @@
     grid-template-areas:
       "icone titulo titulo"
       "icone dados compartilhamento";
-    grid-template-columns: 225px 2fr 1fr;
-    padding-top: 60px;
+    grid-template-columns: 300px 2fr 1fr;
+    padding-top: 30px;
 
     // &-angular, &-css, &-dotnet {
     //   color: #fff;
@@ -36,7 +36,7 @@
     text-shadow: 2px 4px #000;
 
     .fa-solid, .fa-brands {
-      font-size: 200px;
+      font-size: 17rem;
     }
   }
 
@@ -47,23 +47,30 @@
     text-shadow: 2px 4px #000;
 
     h1 {
-      font-size: 3.25rem;
-      margin: 0;
+      font-size: 3rem;
+      margin: 1rem 0 0 0;
+      min-height: 116px;
+      display: grid;
+    align-items: end;
     }
 
     h2 {
-      font-size: 2.45rem;
+      font-size: 2.25rem;
       margin: 0;
+      margin-top: 2rem;
     }
   }
 
   &__dados {
-    padding-top: 1.25rem;
+    border-top: solid 1px #fff;
+    padding-top: 1.75rem;
     grid-area: dados;
     // align-self: center;
   }
 
   &__compartilhamento {
+    border-top: solid 1px #fff;
+    padding-top: .5rem;
     // padding-top: 1.25rem;
     grid-area: compartilhamento;
   }

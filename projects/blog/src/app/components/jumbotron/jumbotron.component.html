@@ -3,37 +3,66 @@
     <gd-centered-panel>
       <div class="jumbotron__conteudo jumbotron__conteudo-{{ categoria }}">
         <div class="jumbotron__icone">
-          <img class="icone-asp" src="assets/img/fotos/logos/asp.gif" *ngIf="categoria==='asp'" />
-          <span class="fa-brands fa-angular" *ngIf="categoria==='angular'"></span>
-          <span class="fa-brands fa-angular" *ngIf="categoria==='angularjs'"></span>
-          <span class="fa-brands fa-css3" *ngIf="categoria==='css'"></span>
-          <img class="pagina-nao-encontrada" src="assets/img/fotos/pagina-nao-encontrada/travolta.gif" width="200px" *ngIf="categoria==='pagina-nao-encontrada'" />
-          <img src="assets/img/fotos/logos/c-sharp-branco.gif" width="200px" *ngIf="categoria==='dotnet'" />
-          <img src="assets/img/fotos/logos/flutter.svg" width="200px" *ngIf="categoria==='flutter'">
-          <span class="fa-brands fa-html5" *ngIf="categoria==='html'"></span>
-          <span class="fa-brands fa-js" *ngIf="categoria==='javascript'"></span>
-          <span class="fa-brands fa-react" *ngIf="categoria==='react'"></span>
-          <span class="fa-brands fa-vuejs" *ngIf="categoria==='vue'"></span>
+          <img
+            class="icone-asp"
+            src="assets/img/fotos/logos/asp.gif"
+            *ngIf="categoria === 'asp'"
+          />
+          <span
+            class="fa-brands fa-angular"
+            *ngIf="categoria === 'angular'"
+          ></span>
+          <span
+            class="fa-brands fa-angular"
+            *ngIf="categoria === 'angularjs'"
+          ></span>
+          <span class="fa-brands fa-css3" *ngIf="categoria === 'css'"></span>
+          <img
+            class="pagina-nao-encontrada"
+            src="assets/img/fotos/pagina-nao-encontrada/travolta.gif"
+            width="200px"
+            *ngIf="categoria === 'pagina-nao-encontrada'"
+          />
+          <img
+            src="assets/img/fotos/logos/c-sharp-branco.gif"
+            width="200px"
+            *ngIf="categoria === 'dotnet'"
+          />
+          <img
+            src="assets/img/fotos/logos/flutter.svg"
+            width="200px"
+            *ngIf="categoria === 'flutter'"
+          />
+          <span class="fa-brands fa-html5" *ngIf="categoria === 'html'"></span>
+          <span
+            class="fa-brands fa-js"
+            *ngIf="categoria === 'javascript'"
+          ></span>
+          <span class="fa-brands fa-react" *ngIf="categoria === 'react'"></span>
+          <span class="fa-brands fa-vuejs" *ngIf="categoria === 'vue'"></span>
         </div>
         <div class="jumbotron__titulo">
-          <h1>Um titulo qualquer...</h1>
-          <h2>Complementando o titulo 1.</h2>
+          <h1>{{ titulo }}</h1>
+          <h2>{{ subtitulo }}</h2>
         </div>
-         <div class="jumbotron__dados">
-          <ng-container>
-            <span class="fa-solid fa-calendar-days icon"></span> 01 de janeiro de 2020
+        <div class="jumbotron__dados">
+          <ng-container *ngIf="dataCriacao">
+            <span class="fa-solid fa-calendar-days icon"></span>
+            {{ dataCriacao | date: "longDate":"":"pt-BR" }}
             <span class="icon2" aria-hidden="true"> | </span>
           </ng-container>
-          <ng-container>
-            <span class="fa-solid fa-pen-to-square icon"></span>editado em: 01 de janeiro de 2020
+          <ng-container *ngIf="dataEdicao">
+            <span class="fa-solid fa-pen-to-square icon"></span>Ultima edição:
+            {{ dataEdicao | date: "longDate":"":"pt-BR" }}
             <span class="icon2" aria-hidden="true"> | </span>
           </ng-container>
-          <ng-container>
-            <span class="fa-solid fa-stopwatch icon"></span>15 min de leitura
+          <ng-container *ngIf="tempoLeitura">
+            <span class="fa-solid fa-stopwatch icon"></span
+            >{{ tempoLeitura }} min de leitura
           </ng-container>
         </div>
         <div class="jumbotron__compartilhamento">
-          <ul class="jumbotron__list">
+          <ul class="jumbotron__list" *ngIf="compartilharBox">
             <li>
               <a href="#" target="_blank">
                 <span class="icon socicon-youtube" aria-hidden="true"></span>
@@ -83,6 +112,6 @@
     </gd-centered-panel>
   </div>
   <div class="jumbotron__fundo {{ categoria }}">
-<!-- ~çklçkç~kl -->
+    <!-- ~çklçkç~kl -->
   </div>
 </div>

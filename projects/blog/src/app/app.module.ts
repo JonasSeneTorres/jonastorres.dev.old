@@ -13,6 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { JsonPipe } from '@angular/common';
 import { SharedModule } from './components/shared.module';
 import { domPurifyConfig } from './config/dom-purify.config';
+import localePT from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localePT);
 
 @NgModule({
   declarations: [AppComponent],

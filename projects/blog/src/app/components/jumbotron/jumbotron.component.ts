@@ -6,7 +6,21 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./jumbotron.component.scss']
 })
 export class JumbotronComponent {
-  @Input() categoria = '';
+  @Input() titulo: string = '';
+  @Input() subtitulo: string = '';
+  @Input() dataCriacao?: Date;
+  @Input() dataEdicao?: Date;
+  @Input() tempoLeitura?: number;
+  @Input() compartilharBox = true;
+  @Input() set categoria(value: string) {
+    this._categoria = value.toLocaleLowerCase();
+  }
+
+  get categoria(): string {
+    return this._categoria;
+  }
+
+  _categoria = '';
 
   constructor() { }
 

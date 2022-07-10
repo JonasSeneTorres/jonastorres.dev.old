@@ -1,26 +1,16 @@
 <div class="artigo" *ngIf="dadosArtigo">
   <article>
-    <jt-jumbotron categoria="asp"></jt-jumbotron>
-    <!-- <pre style="border: solid 1px red;">
-      {{ dadosArtigo$ | async | json  }}
-    </pre>
-    <br />
-
-    <hr>
-    <div>{{ dadosArtigo$ | async }}</div>
-    <hr>
-
-    <div [innerText]="(dadosArtigo$ | async)?.conteudoArtigo"></div>
-
-    {{(dadosArtigo$ | async)?.conteudoArtigo}} -->
-    <div [innerHtml]="dadosArtigo.conteudoArtigo"></div>
-    <!-- <ng-content [innerHtml]="dadosArtigo"></ng-content> -->
-
-
-
+    <jt-jumbotron
+      [titulo]="dadosArtigo.titulo"
+      [subtitulo]="dadosArtigo.subtitulo"
+      [dataCriacao]="dadosArtigo.dataCriacao"
+      [dataEdicao]="dadosArtigo.dataEdicao"
+      [tempoLeitura]="dadosArtigo.tempoLeitura"
+      [categoria]="dadosArtigo.categoria"></jt-jumbotron>
+    <div class="content" [innerHtml]="dadosArtigo.conteudoArtigo"></div>
     <jt-box-outros-artigos [listaArtigoSerie]="listaArquivoSerie" [artigoAtual]="dadosArtigo.titulo"></jt-box-outros-artigos>
     <jt-box-compartilhe></jt-box-compartilhe>
-    <jt-autor></jt-autor>
+    <jt-autor [autor]="dadosAutor"></jt-autor>
   </article>
 
   <aside *ngIf="categorias && ultimosArtigos">

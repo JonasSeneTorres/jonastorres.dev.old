@@ -1,13 +1,16 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
-import { DomSanitizer } from '@angular/platform-browser';
-import { LocalStorageService } from '../../../../../guide-dog/src/lib/services/data-storage/local-storage/local-storage.service';
-import { PostsService } from '../../services/posts/posts.service';
+import { ArtigosService } from './../../services/artigos/artigos.service';
 
 @Component({
   selector: 'jt-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   post: any;
@@ -15,25 +18,19 @@ export class HomeComponent implements OnInit {
   @ViewChild('dataContainer') dataContainer: ElementRef = new ElementRef({});
 
   loadData(data: any) {
-      this.dataContainer.nativeElement.innerHTML = data;
+    this.dataContainer.nativeElement.innerHTML = data;
   }
 
   constructor(
-    private postsService: PostsService,
-    // private sanitizer: DomSanitizer
-    ) {
-
-    }
+    private artigosService: ArtigosService
+  ) // private sanitizer: DomSanitizer
+  {}
 
   ngOnInit(): void {
-    this.postsService.get().subscribe(
-      sucesso => {
-        this.post = sucesso[0].text;
-      }
-    )
+    this.artigosService.obter(1).subscribe((sucesso: any) => {
+      this.post = sucesso[0].text;
+    });
   }
-
-
 
   // ngAfterViewInit() {
   //   this.postsService.get().subscribe(
@@ -44,5 +41,4 @@ export class HomeComponent implements OnInit {
   //     }
   //   )
   // }
-
 }

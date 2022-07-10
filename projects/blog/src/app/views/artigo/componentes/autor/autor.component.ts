@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'jt-autor',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./autor.component.scss']
 })
 export class AutorComponent {
+  @Input() autor: any;
 
   constructor() { }
 }

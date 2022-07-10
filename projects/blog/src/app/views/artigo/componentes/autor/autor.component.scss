@@ -36,8 +36,12 @@ h2 {
   }
 
   &__nome {
-    font-family: $title_font_family;
+    // font-family: $title_font_family;
+    font-family: "OoohBaby";
+    font-size: 2.5rem;
+    font-style: italic;
     grid-area: nome;
+    padding-bottom: 0.25rem;
   }
 
   &__cargo {
@@ -49,6 +53,6 @@ h2 {
 
   &__sobre {
     grid-area: sobre;
-    margin-top: 1.25rem;
+    margin-top: .75rem;
   }
 }

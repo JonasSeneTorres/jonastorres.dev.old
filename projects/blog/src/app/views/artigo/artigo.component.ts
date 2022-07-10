@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, forkJoin } from 'rxjs';
 
 import { ArtigosService } from './../../services/artigos/artigos.service';
+import { AutoresService } from '../../services/autores/autores.service';
 import { CategoriasService } from '../../services/categorias/categorias.service';
 import { Router } from '@angular/router';
 
@@ -15,11 +16,13 @@ export class ArtigoComponent implements OnInit {
   categorias: any[] = [];
   ultimosArtigos: any[] = [];
   listaArquivoSerie: any[] = [];
+  dadosAutor: any;
 
   constructor(
     private router: Router,
     private artigosService: ArtigosService,
-    private categoriasService: CategoriasService
+    private categoriasService: CategoriasService,
+    private autoresService: AutoresService
   ) {
     console.log(this.router);
   }
@@ -33,7 +36,12 @@ export class ArtigoComponent implements OnInit {
       this.obterDadosArtigoSerie().subscribe(
         sucessoArtigoSerie => {
           this.listaArquivoSerie = sucessoArtigoSerie;
-          console.log('sucessoArtigoSerie: ', sucessoArtigoSerie);
+        }
+      );
+
+      this.obterDadosAutor().subscribe(
+        (sucesso: any) => {
+          this.dadosAutor = sucesso;
         }
       );
     });
@@ -54,6 +62,11 @@ export class ArtigoComponent implements OnInit {
   private obterDadosArtigoSerie() {
     const serieId = this.dadosArtigo.serieId;
     return this.artigosService.listarArtigosSerie(serieId);
+  }
+
+  private obterDadosAutor() {
+    const autorId = this.dadosArtigo.autorId;
+    return this.autoresService.obter(autorId);
   }
 
   // listarArtigosSerie

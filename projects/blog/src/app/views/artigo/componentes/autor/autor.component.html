@@ -1,13 +1,9 @@
 <section class="autor">
   <div class="autor__foto">
-    <img src="assets/img/fotos/autor/jonas.jpg" />
+    <img [src]="autor.urlImagem" />
+
   </div>
-  <div class="autor__nome"><h2>Jonas Sene Torres</h2></div>
-  <div class="autor__cargo">Desenvolvedor</div>
-  <div class="autor__sobre">
-    Detraxit consequat et quo num tendi nada.Todo mundo vê os porris que eu
-    tomo, mas ninguém vê os tombis que eu levo!Nec orci ornare consequat.
-    Praesent lacinia ultrices consectetur. Sed non ipsum felis.Quem num gosta di
-    mim que vai caçá sua turmis!
-  </div>
+  <h2 class="autor__nome" [innerText]="autor.nome"></h2>
+  <div class="autor__cargo" [innerText]="autor.cargo"></div>
+  <div class="autor__sobre" [innerText]="autor.descricao"></div>
 </section>
