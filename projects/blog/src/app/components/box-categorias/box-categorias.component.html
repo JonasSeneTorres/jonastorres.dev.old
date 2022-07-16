@@ -1,4 +1,4 @@
-<section class="categoria" *ngIf="categorias">
+<section class="categoria" *ngIf="categorias.length > 0">
   <h2 class="categoria__titulo">Categorias</h2>
   <ul class="categoria__lista">
     <ng-container *ngFor="let categoria of categorias">

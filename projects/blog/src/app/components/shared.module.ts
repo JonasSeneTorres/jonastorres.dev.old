@@ -1,3 +1,4 @@
+import { BoxArtigoModule } from './box-artigo/box-artigo.module';
 import { BoxBuscaModule } from './box-busca/box-busca.module';
 import { BoxCategoriasModule } from './box-categorias/box-categorias.module';
 import { BoxCompartilheModule } from './box-compartilhe/box-compartilhe.module';
@@ -15,7 +16,8 @@ const modulosCompartilhados = [
   BoxCompartilheModule,
   JumbotronModule,
   SigaNosModule,
-  UltimosPostsModule
+  UltimosPostsModule,
+  BoxArtigoModule
 ];
 
 @NgModule({

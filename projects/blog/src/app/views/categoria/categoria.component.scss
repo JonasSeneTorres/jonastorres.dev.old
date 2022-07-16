@@ -6,15 +6,18 @@
   // position: relative;
   column-gap: 6rem;
   grid-template-columns: 1fr 22rem;
+
+  &__artigos{
+    grid-area: article;
+  }
 }
 
 jt-jumbotron {
   grid-area: jumbotrom;
 }
 
-article {
-  grid-area: article;
-}
+
+
 
 aside {
   grid-area: aside;

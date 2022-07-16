@@ -13,7 +13,8 @@ export class JumbotronComponent {
   @Input() tempoLeitura?: number;
   @Input() compartilharBox = true;
   @Input() set categoria(value: string) {
-    this._categoria = value.toLocaleLowerCase();
+    const inputValue = value ?? '';
+    this._categoria = inputValue.toLocaleLowerCase();
   }
 
   get categoria(): string {

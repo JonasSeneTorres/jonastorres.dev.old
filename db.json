@@ -4,7 +4,7 @@
       "id": 0,
       "titulo": "Dungeons & Dragons: Honra Entre Rebeldes abre o Salão H na SDCC deste ano",
       "subtitulo": "um subtitulo",
-      "categoria": "Angular",
+      "subCategoriaId": 1,
       "dataCriacao": "2022-05-22T00:00:00",
       "dataEdicao": "2022-05-22T00:00:00",
       "tempoLeitura": 15,
@@ -16,7 +16,7 @@
       "id": 1,
       "titulo": "titulo 1",
       "subtitulo": "um subtitulo",
-      "categoria": "HTML",
+      "subCategoriaId": 2,
       "dataCriacao": "2022-05-23T00:00:00",
       "dataEdicao": null,
       "tempoLeitura": 14,
@@ -28,7 +28,7 @@
       "id": 2,
       "titulo": "titulo 2",
       "subtitulo": "um subtitulo",
-      "categoria": "CSS",
+      "subCategoriaId": 2,
       "dataCriacao": "2022-05-24T00:00:00",
       "dataEdicao": null,
       "tempoLeitura": 20,
@@ -40,7 +40,7 @@
       "id": 3,
       "titulo": "titulo 3",
       "subtitulo": "um subtitulo",
-      "categoria": "React",
+      "subCategoriaId": 3,
       "dataCriacao": "2022-05-24T00:00:00",
       "dataEdicao": null,
       "tempoLeitura": 17,
@@ -52,7 +52,7 @@
       "id": 4,
       "titulo": "titulo 4",
       "subtitulo": "um subtitulo",
-      "categoria": "Vue",
+      "subCategoriaId": 1,
       "dataCriacao": "2022-05-26T00:00:00",
       "dataEdicao": null,
       "tempoLeitura": 5,
@@ -64,7 +64,7 @@
       "id": 5,
       "titulo": "titulo 5",
       "subtitulo": "um subtitulo",
-      "categoria": "Engenharia",
+      "subCategoriaId": 2,
       "dataCriacao": "2022-05-27T00:00:00",
       "dataEdicao": null,
       "tempoLeitura": 9,
@@ -89,6 +89,23 @@
     {
       "id": 4,
       "nome": "Angular"
+    }
+  ],
+  "subcategorias": [
+    {
+      "id": 1,
+      "nome": "Sem categoria",
+      "categoriaId": "1"
+    },
+    {
+      "id": 2,
+      "nome": "Boas praticas",
+      "categoriaId": "1"
+    },
+    {
+      "id": 2,
+      "nome": "Acessibilidade",
+      "idCategoria": "1"
     }
   ],
   "autores": [

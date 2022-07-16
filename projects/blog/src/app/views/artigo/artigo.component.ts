@@ -17,6 +17,7 @@ export class ArtigoComponent implements OnInit {
   ultimosArtigos: any[] = [];
   listaArquivoSerie: any[] = [];
   dadosAutor: any;
+  categoriaArtigo: string = '';
 
   constructor(
     private router: Router,
@@ -44,6 +45,8 @@ export class ArtigoComponent implements OnInit {
           this.dadosAutor = sucesso;
         }
       );
+
+      this.obterCategoriaArtigo();
     });
   }
 
@@ -67,6 +70,17 @@ export class ArtigoComponent implements OnInit {
   private obterDadosAutor() {
     const autorId = this.dadosArtigo.autorId;
     return this.autoresService.obter(autorId);
+  }
+
+  private obterCategoriaArtigo() {
+
+
+    const autorId = this.dadosArtigo;
+    this.categoriasService.obter(autorId).subscribe(
+      sucesso => {
+        this.categoriaArtigo = sucesso;
+      }
+    );
   }
 
   // listarArtigosSerie

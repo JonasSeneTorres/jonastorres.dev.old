@@ -1,62 +1,62 @@
-<section class="ultimos-posts">
-  <h2>Ultimos posts</h2>
+<section class="ultimos-posts" *ngIf="ultimosArtigos.length > 0">
+  <h2>Ultimos artigos</h2>
   <ul class="ultimos-posts__list">
     <li *ngFor="let artigo of ultimosArtigos">
       <article class="ultimos-posts__artigo" role="link" [routerLink]="'/'">
-        <div class="ultimos-posts__thumb {{ artigo.categoria.toLowerCase() }}">
+        <div class="ultimos-posts__thumb {{ artigo.categoria?.toLowerCase() }}">
           <img
             class="icone-asp"
             src="assets/img/fotos/logos/asp.gif"
-            *ngIf="artigo.categoria.toLowerCase() === 'asp'"
+            *ngIf="artigo.categoria?.toLowerCase() === 'asp'"
           />
           <span
             class="ultimos-posts__icone fa-brands fa-angular"
-            *ngIf="artigo.categoria.toLowerCase() === 'angular'"
+            *ngIf="artigo.categoria?.toLowerCase() === 'angular'"
           ></span>
           <span
             class="ultimos-posts__icone fa-brands fa-angular"
-            *ngIf="artigo.categoria.toLowerCase() === 'angularjs'"
+            *ngIf="artigo.categoria?.toLowerCase() === 'angularjs'"
           ></span>
           <span
             class="ultimos-posts__icone fa-brands fa-css3"
-            *ngIf="artigo.categoria.toLowerCase() === 'css'"
+            *ngIf="artigo.categoria?.toLowerCase() === 'css'"
           ></span>
           <img
             class="icone-c-sharp"
             src="assets/img/fotos/logos/c-sharp-branco.gif"
-            *ngIf="artigo.categoria.toLowerCase() === 'dotnet'"
+            *ngIf="artigo.categoria?.toLowerCase() === 'dotnet'"
           />
           <img
             class="icone-flutter"
             src="assets/img/fotos/logos/flutter.svg"
-            *ngIf="artigo.categoria.toLowerCase() === 'flutter'"
+            *ngIf="artigo.categoria?.toLowerCase() === 'flutter'"
           />
           <span
             class="ultimos-posts__icone fa-brands fa-html5"
-            *ngIf="artigo.categoria.toLowerCase()  === 'html'"
+            *ngIf="artigo.categoria?.toLowerCase()  === 'html'"
           ></span>
           <span
             class="ultimos-posts__icone fa-brands fa-js"
-            *ngIf="artigo.categoria.toLowerCase()  === 'javascript'"
+            *ngIf="artigo.categoria?.toLowerCase()  === 'javascript'"
           ></span>
           <span
             class="ultimos-posts__icone fa-brands fa-react"
-            *ngIf="artigo.categoria.toLowerCase()  === 'react'"
+            *ngIf="artigo.categoria?.toLowerCase()  === 'react'"
           ></span>
           <span
             class="ultimos-posts__icone fa-brands fa-vuejs"
-            *ngIf="artigo.categoria.toLowerCase()  === 'vue'"
+            *ngIf="artigo.categoria?.toLowerCase()  === 'vue'"
           ></span>
         </div>
         <h3 class="ultimos-posts__titulo">
-          {{ artigo.titulo }}
+          {{ artigo?.titulo }}
         </h3>
         <div class="ultimos-posts__detalhes">
           <span class="fa-solid fa-calendar-days"></span>
-          {{ artigo.dataCriacao | date: "dd/MM/yyyy" }}
+          {{ artigo?.dataCriacao | date: "dd/MM/yyyy" }}
           <span class="pipe">|</span>
           <span class="fa-solid fa-stopwatch"></span>
-          {{ artigo.tempoLeitura }} min
+          {{ artigo?.tempoLeitura }} min
         </div>
       </article>
     </li>
