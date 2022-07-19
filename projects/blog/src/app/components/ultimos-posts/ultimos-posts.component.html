@@ -1,51 +1,51 @@
 <section class="ultimos-posts" *ngIf="ultimosArtigos.length > 0">
   <h2>Ultimos artigos</h2>
   <ul class="ultimos-posts__list">
-    <li *ngFor="let artigo of ultimosArtigos">
+    <li *ngFor="let artigo of ultimosArtigos; let i = index;">
       <article class="ultimos-posts__artigo" role="link" [routerLink]="'/'">
-        <div class="ultimos-posts__thumb {{ artigo.categoria?.toLowerCase() }}">
+        <div class="ultimos-posts__thumb {{ obterNomeCategoria(i) }}">
           <img
             class="icone-asp"
             src="assets/img/fotos/logos/asp.gif"
-            *ngIf="artigo.categoria?.toLowerCase() === 'asp'"
+            *ngIf="pertenceACategoria(i, 'asp')"
           />
           <span
             class="ultimos-posts__icone fa-brands fa-angular"
-            *ngIf="artigo.categoria?.toLowerCase() === 'angular'"
+            *ngIf="pertenceACategoria(i, 'angular')"
           ></span>
           <span
             class="ultimos-posts__icone fa-brands fa-angular"
-            *ngIf="artigo.categoria?.toLowerCase() === 'angularjs'"
+            *ngIf="pertenceACategoria(i, 'angularjs')"
           ></span>
           <span
             class="ultimos-posts__icone fa-brands fa-css3"
-            *ngIf="artigo.categoria?.toLowerCase() === 'css'"
+            *ngIf="pertenceACategoria(i, 'css')"
           ></span>
           <img
             class="icone-c-sharp"
             src="assets/img/fotos/logos/c-sharp-branco.gif"
-            *ngIf="artigo.categoria?.toLowerCase() === 'dotnet'"
+            *ngIf="pertenceACategoria(i, 'dotnet')"
           />
           <img
             class="icone-flutter"
             src="assets/img/fotos/logos/flutter.svg"
-            *ngIf="artigo.categoria?.toLowerCase() === 'flutter'"
+            *ngIf="pertenceACategoria(i, 'flutter')"
           />
           <span
             class="ultimos-posts__icone fa-brands fa-html5"
-            *ngIf="artigo.categoria?.toLowerCase()  === 'html'"
+            *ngIf="pertenceACategoria(i, 'html')"
           ></span>
           <span
             class="ultimos-posts__icone fa-brands fa-js"
-            *ngIf="artigo.categoria?.toLowerCase()  === 'javascript'"
+            *ngIf="pertenceACategoria(i, 'javascript')"
           ></span>
           <span
             class="ultimos-posts__icone fa-brands fa-react"
-            *ngIf="artigo.categoria?.toLowerCase()  === 'react'"
+            *ngIf="pertenceACategoria(i, 'react')"
           ></span>
           <span
             class="ultimos-posts__icone fa-brands fa-vuejs"
-            *ngIf="artigo.categoria?.toLowerCase()  === 'vue'"
+            *ngIf="pertenceACategoria(i, 'vue')"
           ></span>
         </div>
         <h3 class="ultimos-posts__titulo">

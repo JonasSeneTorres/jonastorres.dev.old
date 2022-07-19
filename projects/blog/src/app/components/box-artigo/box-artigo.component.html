@@ -5,37 +5,28 @@
   <div class="artigo-box__box-conteudo">
     <section class="artigo-box__box-titulo">
       <h3 class="artigo-box__titulo">
-        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem v
-        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem v
-        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem v
+        {{ artigo?.titulo }}
       </h3>
-      <h4 class="artigo-box__subtitulo">
-        Subtitulo
+      <h4 class="artigo-box__subtitulo" *ngIf="artigo?.subtitulo">
+        {{ artigo?.subtitulo }}
       </h4>
     </section>
     <section class="artigo-box__box-dados">
       <p class="artigo-box__dados">
-        <span class="fa-solid fa-calendar-days"></span>/
-        22/05/1981
+        <span class="fa-solid fa-calendar-days"></span>
+        {{ artigo?.dataCriacao | date: "longDate":"":"pt-BR"  }}
         <span class="pipe">|</span>
-        <ng-container>
+        <ng-container *ngIf="artigo?.dataEdicao">
           <span class="fa-solid fa-pen-to-square"></span>
-          Ultima edição em: 22/05/1981
+          Ultima edição em: {{ artigo?.dataEdicao | date: "longDate":"":"pt-BR"  }}
           <span class="pipe">|</span>
         </ng-container>
         <span class="fa-solid fa-stopwatch"></span>
-        15 min de leitura
+        {{ artigo?.tempoLeitura }} min de leitura
       </p>
+      <!-- <pre>{{ artigo.conteudoArtigo | geraspoiler }}</pre> -->
       <p class="artigo-box__spoiler">
-        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem v
-        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem v
-        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem v
+        {{ artigo.conteudoArtigo | geraspoiler }}
       </p>
       <p class="artigo-box__box-leia-mais">
         <a class="artigo-box__leia-mais">

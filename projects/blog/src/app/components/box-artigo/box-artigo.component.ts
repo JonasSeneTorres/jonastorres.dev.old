@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'jt-box-artigo',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./box-artigo.component.scss']
 })
 export class BoxArtigoComponent /*implements OnInit*/ {
-
+  @Input() artigo: any = null;
   constructor() { }
 
   // ngOnInit(): void {

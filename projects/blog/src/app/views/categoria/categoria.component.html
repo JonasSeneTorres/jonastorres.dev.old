@@ -1,13 +1,22 @@
 <div class="categoria">
   <section class="categoria__artigos">
     <jt-jumbotron
-      [titulo]="dadosCategoria?.nome"
-      [categoria]="dadosCategoria?.nome"
+      [titulo]="dadosArtigo?.nome"
+      [categoria]="dadosArtigo?.nome"
       [compartilharBox]="false"
     ></jt-jumbotron>
 
-    <h2>Subcategoria</h2>
-    <jt-box-artigo></jt-box-artigo>
+    <ng-container *ngFor="let item of artigosDaCategoria">
+      <h2 *ngIf="item.subcategoria !== 'Sem categoria'">{{ item.subcategoria }}</h2>
+      <ng-container *ngFor="let artigo of item.artigos; let i = index">
+        <jt-box-artigo
+          [class.semCategoria]="item.subcategoria === 'Sem categoria' && i === 0"
+          [artigo]="artigo"
+          >
+        </jt-box-artigo>
+      </ng-container>
+    </ng-container>
+
   </section>
 
   <aside *ngIf="categorias && ultimosArtigos">
@@ -15,9 +24,9 @@
     <!-- |{{ dadosCategoria?.categoria | json }}| -->
     <jt-box-categorias
       [categorias]="categorias"
-      [categoriaSelecionada]="dadosCategoria?.categoria"
+      [categoriaSelecionada]="dadosArtigo?.nome | lowercase"
     ></jt-box-categorias>
     <jt-siga-nos></jt-siga-nos>
-    <jt-ultimos-posts [ultimosArtigos]="ultimosArtigos"></jt-ultimos-posts>
+    <jt-ultimos-posts [ultimosArtigos]="ultimosArtigos" [categorias]="categorias"></jt-ultimos-posts>
   </aside>
 </div>

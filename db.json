@@ -4,6 +4,7 @@
       "id": 0,
       "titulo": "Dungeons & Dragons: Honra Entre Rebeldes abre o Salão H na SDCC deste ano",
       "subtitulo": "um subtitulo",
+      "categoriaId": 1,
       "subCategoriaId": 1,
       "dataCriacao": "2022-05-22T00:00:00",
       "dataEdicao": "2022-05-22T00:00:00",
@@ -16,6 +17,7 @@
       "id": 1,
       "titulo": "titulo 1",
       "subtitulo": "um subtitulo",
+      "categoriaId": 1,
       "subCategoriaId": 2,
       "dataCriacao": "2022-05-23T00:00:00",
       "dataEdicao": null,
@@ -28,6 +30,7 @@
       "id": 2,
       "titulo": "titulo 2",
       "subtitulo": "um subtitulo",
+      "categoriaId": 1,
       "subCategoriaId": 2,
       "dataCriacao": "2022-05-24T00:00:00",
       "dataEdicao": null,
@@ -40,6 +43,7 @@
       "id": 3,
       "titulo": "titulo 3",
       "subtitulo": "um subtitulo",
+      "categoriaId": 1,
       "subCategoriaId": 3,
       "dataCriacao": "2022-05-24T00:00:00",
       "dataEdicao": null,
@@ -52,6 +56,7 @@
       "id": 4,
       "titulo": "titulo 4",
       "subtitulo": "um subtitulo",
+      "categoriaId": 1,
       "subCategoriaId": 1,
       "dataCriacao": "2022-05-26T00:00:00",
       "dataEdicao": null,
@@ -64,6 +69,7 @@
       "id": 5,
       "titulo": "titulo 5",
       "subtitulo": "um subtitulo",
+      "categoriaId": 1,
       "subCategoriaId": 2,
       "dataCriacao": "2022-05-27T00:00:00",
       "dataEdicao": null,
@@ -105,7 +111,7 @@
     {
       "id": 2,
       "nome": "Acessibilidade",
-      "idCategoria": "1"
+      "categoriaId": "1"
     }
   ],
   "autores": [

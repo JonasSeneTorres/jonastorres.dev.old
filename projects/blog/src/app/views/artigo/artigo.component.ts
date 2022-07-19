@@ -31,8 +31,12 @@ export class ArtigoComponent implements OnInit {
   ngOnInit(): void {
     this.obterDadosIniciais(0).subscribe((sucesso) => {
       this.dadosArtigo = sucesso.artigo;
-      this.categorias = sucesso.categorias;
-      this.ultimosArtigos = sucesso.ultimosArtigos;
+      this.categorias = sucesso.categorias ?? [];
+      this.ultimosArtigos = sucesso.ultimosArtigos ?? [];
+      // console.log(this.dadosArtigo);
+
+      const nomeArtigo = this.categorias.filter( item => item.id === this.dadosArtigo.categoriaId)[0].nome;
+      this.categoriaArtigo = (nomeArtigo ?? '').toLowerCase();
 
       this.obterDadosArtigoSerie().subscribe(
         sucessoArtigoSerie => {
@@ -46,7 +50,7 @@ export class ArtigoComponent implements OnInit {
         }
       );
 
-      this.obterCategoriaArtigo();
+      // this.obterCategoriaArtigo();
     });
   }
 
@@ -72,16 +76,15 @@ export class ArtigoComponent implements OnInit {
     return this.autoresService.obter(autorId);
   }
 
-  private obterCategoriaArtigo() {
-
-
-    const autorId = this.dadosArtigo;
-    this.categoriasService.obter(autorId).subscribe(
-      sucesso => {
-        this.categoriaArtigo = sucesso;
-      }
-    );
-  }
+  // private obterCategoriaArtigo() {
+  //   const categoriaId = this.dadosArtigo.categoriaId;
+  //   this.categoriasService.obter(categoriaId).subscribe(
+  //     sucesso => {
+  //       this.categoriaArtigo = (sucesso.nome ?? '').toLowerCase();
+  //       console.log(sucesso, this.categoriaArtigo);
+  //     }
+  //   );
+  // }
 
   // listarArtigosSerie
 

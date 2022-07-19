@@ -6,7 +6,7 @@
       [dataCriacao]="dadosArtigo.dataCriacao"
       [dataEdicao]="dadosArtigo.dataEdicao"
       [tempoLeitura]="dadosArtigo.tempoLeitura"
-      [categoria]="dadosArtigo.categoria"></jt-jumbotron>
+      [categoria]="categoriaArtigo"></jt-jumbotron>
     <div class="content" [innerHtml]="dadosArtigo.conteudoArtigo"></div>
     <jt-box-outros-artigos [listaArtigoSerie]="listaArquivoSerie" [artigoAtual]="dadosArtigo.titulo"></jt-box-outros-artigos>
     <jt-box-compartilhe></jt-box-compartilhe>
@@ -15,8 +15,9 @@
 
   <aside *ngIf="categorias && ultimosArtigos">
     <jt-box-busca></jt-box-busca>
-    <jt-box-categorias [categorias]="categorias" [categoriaSelecionada]="dadosArtigo.categoria"></jt-box-categorias>
+    <!-- {{ dadosArtigo.categoriaArtigo }}xxx -->
+    <jt-box-categorias [categorias]="categorias" [categoriaSelecionada]="categoriaArtigo"></jt-box-categorias>
     <jt-siga-nos></jt-siga-nos>
-    <jt-ultimos-posts [ultimosArtigos]="ultimosArtigos"></jt-ultimos-posts>
+    <jt-ultimos-posts [ultimosArtigos]="ultimosArtigos" [categorias]="categorias"></jt-ultimos-posts>
   </aside>
 </div>

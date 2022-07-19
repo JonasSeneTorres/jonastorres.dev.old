@@ -24,6 +24,10 @@ export class ArtigosService implements ICrudService {
     return this.httpClient.get(`${this.baseURL}/artigos?_sort=id&_order=desc&_limit=5`);
   }
 
+  listarArtigosCategoria(categoriaId: number): Observable<any> {
+    return this.httpClient.get(`${this.baseURL}/artigos?categoriaId=${categoriaId}`);
+  }
+
   listarArtigosSerie(serieId: number): Observable<any> {
     return this.httpClient.get(`${this.baseURL}/artigos?serieId=${serieId}`);
   }
