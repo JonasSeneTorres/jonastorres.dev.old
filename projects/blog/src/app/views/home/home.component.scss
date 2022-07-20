@@ -1,3 +1,44 @@
+@import "../../../styles/styles.scss";
+
+@mixin box-pequeno {
+  .artigo-box {
+    grid-template-columns: 9rem 1fr;
+    &:hover .artigo-box__icone{
+      font-size: 4.5rem !important;
+    }
+  }
+
+  .artigo-box__box-conteudo {
+    align-self: center;
+  }
+
+  section.artigo-box__capa {
+    width: 60px;
+    height: 30px;
+
+    .artigo-box__icone {
+      font-size: 3.5rem;
+    }
+  }
+  section.artigo-box__box-titulo {
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    h4 {
+      font-size: 1.15rem;
+    }
+
+    p.artigo-box__spoiler {
+      display: none;
+    }
+  }
+
+  section.artigo-box__box-dados {
+    display: none;
+  }
+}
+
 .home {
   display: grid;
   grid-template-areas:
@@ -6,14 +47,68 @@
   // position: relative;
   column-gap: 6rem;
   grid-template-columns: 1fr 22rem;
+
+  &__artigos {
+    grid-area: article;
+  }
+
+  &__ultimos-artigos {
+    display: grid;
+    grid-template-areas:
+      "titulo titulo"
+      "artigo1 artigo2"
+      "artigo1 artigo3"
+      "artigo1 artigo4";
+    // gap: 2.5rem;
+    grid-template-columns: 1fr 430px;
+    column-gap: 2.5rem;
+
+    background-color: $gd-colordark-gray-100;
+    margin-top: -19.5rem;
+    /* z-index: 130; */
+    position: absolute;
+    width: 915px;
+    border-radius: 8px;
+    padding: 0rem 3rem 3.25rem 2rem;
+    height: 411px;
+
+
+
+    &-titulo {
+      grid-area: titulo;
+    }
+
+    &1 {
+      grid-area: artigo1;
+    }
+
+    &2 {
+      grid-area: artigo2;
+
+      section.artigo-box__box-titulo h3 {
+        font-size: 1rem;
+      }
+    }
+    &3 {
+      grid-area: artigo3;
+    }
+    &4 {
+      grid-area: artigo4;
+    }
+  }
+
+  &__artigos-populares {
+    margin-top: 10.5rem;
+  }
+}
+
+.semCategoria {
+  display: block;
+  margin-top: 1.5rem;
 }
 
 jt-jumbotron {
   grid-area: jumbotrom;
-}
-
-article {
-  grid-area: article;
 }
 
 aside {
@@ -21,4 +116,58 @@ aside {
   margin-top: 23rem;
   max-width: 21rem;
   width: 100%;
+}
+
+:host::ng-deep {
+  .home__ultimos-artigos {
+    &1 {
+      .artigo-box {
+        display: grid;
+        grid-template-columns: none;
+        justify-content: center;
+
+        &:hover .artigo-box__icone{
+          font-size: 11rem !important;
+        }
+
+        .artigo-box__spoiler, .artigo-box__leia-mais {
+          display: none !important;
+        }
+
+        &:hover .artigo-box__capa {
+          transform: scale(1.05);
+        }
+        &__capa {
+          width: 380px;
+        }
+
+        &__titulo {
+          padding-top: 0.5rem;
+        }
+
+        &__icone {
+          font-size: 9rem ;
+        }
+
+        &__dados {
+          border: none;
+          padding-top: 1rem;
+        }
+      }
+      // @include box-pequeno;
+    }
+
+    &2 {
+      @include box-pequeno;
+    }
+
+    &3 {
+      @include box-pequeno;
+    }
+
+    &4 {
+      @include box-pequeno;
+    }
+  }
+
 }

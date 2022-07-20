@@ -1,16 +1,44 @@
 <div class="home">
-  <article>
-    <jt-jumbotron categoria="asp"></jt-jumbotron>
-    <div [innerHtml]="post"></div>
+  <section class="home__artigos">
+    <jt-jumbotron
+      [titulo]="''"
+      [categoria]="'home'"
+      [compartilharBox]="false"
+    ></jt-jumbotron>
 
-    <jt-box-compartilhe></jt-box-compartilhe>
-  </article>
+    <section class="home__ultimos-artigos">
+      <h1 class="home__ultimos-artigos-titulo">Ultimos artigos:</h1>
+      <jt-box-artigo class="home__ultimos-artigos1" [artigo]="ultimosArtigos[0]"></jt-box-artigo>
+      <jt-box-artigo class="home__ultimos-artigos2" [artigo]="ultimosArtigos[1]"></jt-box-artigo>
+      <jt-box-artigo class="home__ultimos-artigos3" [artigo]="ultimosArtigos[2]"></jt-box-artigo>
+      <jt-box-artigo class="home__ultimos-artigos4" [artigo]="ultimosArtigos[3]"> </jt-box-artigo>
+    </section>
 
-  <aside>
+    <section class="home__artigos-populares">
+      <h2>Artigos populares</h2>
+      <jt-box-artigo [artigo]="ultimosArtigos[0]"></jt-box-artigo>
+      <jt-box-artigo [artigo]="ultimosArtigos[1]"></jt-box-artigo>
+      <jt-box-artigo [artigo]="ultimosArtigos[2]"></jt-box-artigo>
+      <jt-box-artigo [artigo]="ultimosArtigos[3]"> </jt-box-artigo>
+    </section>
+
+    <!-- <ng-container *ngFor="let item of artigosDaCategoria">
+      <h2 *ngIf="item.subcategoria !== 'Sem categoria'">{{ item.subcategoria }}</h2>
+      <ng-container *ngFor="let artigo of item.artigos; let i = index">
+        <jt-box-artigo
+          [class.semCategoria]="item.subcategoria === 'Sem categoria' && i === 0"
+          [artigo]="artigo"
+          >
+        </jt-box-artigo>
+      </ng-container>
+    </ng-container> -->
+  </section>
+
+  <aside *ngIf="categorias && ultimosArtigos">
     <jt-box-busca></jt-box-busca>
-    <jt-box-categorias></jt-box-categorias>
+    <!-- |{{ dadosCategoria?.categoria | json }}| -->
+    <jt-box-categorias [categorias]="categorias"></jt-box-categorias>
     <jt-siga-nos></jt-siga-nos>
-    <jt-ultimos-posts></jt-ultimos-posts>
+    <!-- <jt-ultimos-posts [ultimosArtigos]="ultimosArtigos" [categorias]="categorias"></jt-ultimos-posts> -->
   </aside>
 </div>
-
