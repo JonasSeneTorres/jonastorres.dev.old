@@ -11,7 +11,56 @@
         <a href="{{url}}#footer" accesskey="3">Ir para o rodapé [3]</a>
       </li>
       <li class="acessibilitybar__item">
-        <a routerLink="'/acessibilidade'">Acessibilidade</a>
+        <a [routerLink]="['/acessibilidade']">Acessibilidade</a>
+      </li>
+      <li class="acessibilitybar__item2">
+        <span>
+          Zoom:
+        </span>
+        <ul class="acessibilitybar__list acessibilitybar__list2">
+          <li>
+            <button type="button">
+              <span class="fa-solid fa-magnifying-glass-plus"></span>
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <span class="fa-solid fa-magnifying-glass-minus"></span>
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              Redefinir
+            </button>
+          </li>
+        </ul>
+      </li>
+      <li class="acessibilitybar__item2">
+        <span>
+          Temas:
+        </span>
+        <ul class="acessibilitybar__list acessibilitybar__list2">
+          <li>
+            <button type="button">
+              <span class="fa-solid fa-sun" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <span class="fa-solid fa-moon" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <span class="fa-solid fa-circle-half-stroke" aria-hidden="true"></span>
+            </button>
+          </li>
+        </ul>
+      </li>
+      <li class="acessibilitybar__item">
+        <a [routerLink]="['/sitemap']">
+          <span class="fa-solid fa-sitemap" aria-hidden="true"></span>
+        </a>
       </li>
     </ul>
   </gd-centered-panel>
