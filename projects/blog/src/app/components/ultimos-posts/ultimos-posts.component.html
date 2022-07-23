@@ -2,7 +2,7 @@
   <h2>Ultimos artigos</h2>
   <ul class="ultimos-posts__list">
     <li *ngFor="let artigo of ultimosArtigos; let i = index;">
-      <article class="ultimos-posts__artigo" role="link" [routerLink]="'/'">
+      <article class="ultimos-posts__artigo" role="link" [routerLink]="['/artigo']">
         <div class="ultimos-posts__thumb {{ obterNomeCategoria(i) }}">
           <img
             class="icone-asp"

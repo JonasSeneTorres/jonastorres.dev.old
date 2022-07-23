@@ -1,14 +1,16 @@
 import { BoxArtigoComponent } from './/box-artigo.component';
 import { CommonModule } from '@angular/common';
-import { GeraSpoilerPipe } from './../../../../../guide-dog/src/lib/pipes/gera-spoiler.pipe';
+import { GeraSpoilerPipe } from 'projects/guide-dog/src/lib/pipes/gera-spoiler.pipe';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     BoxArtigoComponent, GeraSpoilerPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     BoxArtigoComponent, GeraSpoilerPipe
