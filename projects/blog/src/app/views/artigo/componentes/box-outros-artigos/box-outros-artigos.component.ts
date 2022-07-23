@@ -25,7 +25,6 @@ export class BoxOutrosArtigosComponent {
     this.desabilitarBotaoAvancar = false;
 
     if (index === 0) {
-      console.log('desabilitei')
       this.desabilitarBotaoVoltar = true;
       return;
     }

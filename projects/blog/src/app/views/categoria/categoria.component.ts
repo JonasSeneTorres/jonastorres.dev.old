@@ -5,8 +5,6 @@ import { ArtigosService } from '../../services/artigos/artigos.service';
 import { CategoriasService } from '../../services/categorias/categorias.service';
 import { SubcategoriasService } from './../../services/subcategorias/subcategorias.service';
 
-// import { Router } from '@angular/router';
-
 @Component({
   selector: 'jt-categoria',
   templateUrl: './categoria.component.html',
@@ -20,7 +18,6 @@ export class CategoriaComponent implements OnInit {
   artigosDaCategoria: any[] = [];
 
   constructor(
-    // private router: Router,
     private artigosService: ArtigosService,
     private categoriasService: CategoriasService,
     private subcategoriasService: SubcategoriasService
@@ -33,15 +30,9 @@ export class CategoriaComponent implements OnInit {
       this.ultimosArtigos = sucesso.ultimosArtigos;
       this.subcategorias = sucesso.subcategorias;
       this.artigosDaCategoria = this.montarArtigosDaCategoria(this.subcategorias, sucesso.artigosDaCategoria);
-      // for (let indice = 0; indice < this.ultimosArtigos.length; indice++) {
-      //   const element = this.ultimosArtigos[indice];
-
-      // }
-
-      console.log( this.artigosDaCategoria);
     },
     (erro: any) => {
-      console.log(erro);
+      console.error(erro);
     });
   }
 
@@ -74,8 +65,6 @@ export class CategoriaComponent implements OnInit {
         artigos: colecaoArtigos
       });
     }
-
-    console.log('output', output);
 
     return output;
   }

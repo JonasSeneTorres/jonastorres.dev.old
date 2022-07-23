@@ -4,7 +4,6 @@ import { Observable, forkJoin } from 'rxjs';
 import { ArtigosService } from './../../services/artigos/artigos.service';
 import { AutoresService } from '../../services/autores/autores.service';
 import { CategoriasService } from '../../services/categorias/categorias.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'jt-artigo',
@@ -20,12 +19,10 @@ export class ArtigoComponent implements OnInit {
   categoriaArtigo: string = '';
 
   constructor(
-    private router: Router,
     private artigosService: ArtigosService,
     private categoriasService: CategoriasService,
     private autoresService: AutoresService
   ) {
-    console.log(this.router);
   }
 
   ngOnInit(): void {
@@ -33,7 +30,6 @@ export class ArtigoComponent implements OnInit {
       this.dadosArtigo = sucesso.artigo;
       this.categorias = sucesso.categorias ?? [];
       this.ultimosArtigos = sucesso.ultimosArtigos ?? [];
-      // console.log(this.dadosArtigo);
 
       const nomeArtigo = this.categorias.filter( item => item.id === this.dadosArtigo.categoriaId)[0].nome;
       this.categoriaArtigo = (nomeArtigo ?? '').toLowerCase();
@@ -49,8 +45,6 @@ export class ArtigoComponent implements OnInit {
           this.dadosAutor = sucesso;
         }
       );
-
-      // this.obterCategoriaArtigo();
     });
   }
 
@@ -75,21 +69,4 @@ export class ArtigoComponent implements OnInit {
     const autorId = this.dadosArtigo.autorId;
     return this.autoresService.obter(autorId);
   }
-
-  // private obterCategoriaArtigo() {
-  //   const categoriaId = this.dadosArtigo.categoriaId;
-  //   this.categoriasService.obter(categoriaId).subscribe(
-  //     sucesso => {
-  //       this.categoriaArtigo = (sucesso.nome ?? '').toLowerCase();
-  //       console.log(sucesso, this.categoriaArtigo);
-  //     }
-  //   );
-  // }
-
-  // listarArtigosSerie
-
-  // ngAfterViewInit() {
-  //   console.log('jmsadklçdj')
-  //   console.log(this.router.url);
-  // }
 }
