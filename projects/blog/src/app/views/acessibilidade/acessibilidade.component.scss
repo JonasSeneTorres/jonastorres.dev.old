@@ -1,4 +1,4 @@
-.acessibilidade {
+.acessibilidade-page {
   display: grid;
   grid-template-areas:
     "jumbotrom"
@@ -6,6 +6,14 @@
   // position: relative;
   column-gap: 6rem;
   grid-template-columns: 1fr;
+
+  &__citacao{
+    border: solid 1px;
+    border-left: solid 0.5rem;
+    font-size: 2rem;
+    margin: 2rem 0 1.5rem;
+    padding: 1rem 2rem;
+  }
 }
 
 jt-jumbotron {

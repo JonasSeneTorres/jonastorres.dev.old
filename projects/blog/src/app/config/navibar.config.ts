@@ -1,29 +1,64 @@
 import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item-config';
 
 export const NavibarConfig: NavibarItemConfig[] = [
+  {
+    label: 'Frontend',
+    children: [
+      {
+        label: 'HTML',
+        route: ['/categoria'],
+      },
+      {
+        label: 'CSS',
+        route: ['/categoria'],
+      },
+      {
+        label: 'Javascript/Typescript',
+        route: ['/categoria'],
+      },
+      {
+        label: 'Angular',
+        route: ['/categoria'],
+      },
+    ],
+  },
+  {
+    label: 'Backend',
+    children: [
+      {
+        label: 'C#',
+        route: ['/categoria'],
+      },
+      {
+        label: 'Node',
+        route: ['/categoria'],
+      },
+    ],
+  },
+  {
+    label: 'Mobile',
+    children: [
+      {
+        label: 'Flutter',
+        route: ['/categoria'],
+      },
+    ],
+  },
+  {
+    label: 'Banco de dados',
+    children: [
+      {
+        label: 'SQL',
+        route: ['/categoria'],
+      },
+    ],
+  },
+  {
+    label: 'Arquitetura',
+    route: ['/categoria'],
+  },
   // {
-  //   label: 'Frontend',
-  //   children: [
-  //     {
-  //       label: 'HTML',
-  //       route: ['/erro'],
-  //     },
-  //     {
-  //       label: 'CSS',
-  //       route: ['/erro'],
-  //     },
-  //     {
-  //       label: 'Javascript/Typescript',
-  //       route: ['/erro'],
-  //     },
-  //     {
-  //       label: 'Angular',
-  //       route: ['/erro'],
-  //     },
-  //   ],
-  // },
-  // {
-  //   label: 'Backend',
+  //   label: 'Arquitetura',
   //   children: [
   //     {
   //       label: 'C#',
@@ -45,31 +80,31 @@ export const NavibarConfig: NavibarItemConfig[] = [
     route: ['/sobre'],
   },
   {
-    label: 'autor',
+    label: 'Autor',
     route: ['/autor'],
   },
+  // {
+  //   label: 'categoria',
+  //   route: ['/categoria'],
+  // },
+  // {
+  //   label: 'artigo',
+  //   route: ['/artigo'],
+  // },
+  // {
+  //   label: 'busca',
+  //   route: ['/busca'],
+  // },
+  // {
+  //   label: 'erro',
+  //   route: ['/erro'],
+  // },
+  // {
+  //   label: 'pagina n encontrada',
+  //   route: ['/aa'],
+  // },
   {
-    label: 'categoria',
-    route: ['/categoria'],
-  },
-  {
-    label: 'artigo',
-    route: ['/artigo'],
-  },
-  {
-    label: 'busca',
-    route: ['/busca'],
-  },
-  {
-    label: 'erro',
-    route: ['/erro'],
-  },
-  {
-    label: 'pagina n encontrada',
-    route: ['/aa'],
-  },
-  {
-    label: 'contato',
+    label: 'Contato',
     route: ['/contato'],
   },
   // {

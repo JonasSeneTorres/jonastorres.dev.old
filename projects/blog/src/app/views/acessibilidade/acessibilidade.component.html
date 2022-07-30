@@ -1,47 +1,265 @@
-<div class="acessibilidade">
+<div class="acessibilidade-page">
   <article>
-    <jt-jumbotron categoria="asp"></jt-jumbotron>
+    <jt-jumbotron
+      titulo="Acessibilidade"
+      subtitulo=""
+      categoria="acessibilidade"
+    ></jt-jumbotron>
+
+    <blockquote class="acessibilidade-page__citacao">
+      “O poder da web está em sua universalidade. O acesso de todos,
+      independentemente da deficiência, é um aspecto essencial” - Tim
+      Berners-Lee
+    </blockquote>
+
     <p>
-      Mussum Ipsum, cacilds vidis litro abertis. Nec orci ornare consequat.
-      Praesent lacinia ultrices consectetur. Sed non ipsum felis.Admodum
-      accumsan disputationi eu sit. Vide electram sadipscing et
-      per.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num
-      gostis.Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.
+      Toda vez que um programador opta por fazer um site de qualquer jeito, se
+      importando somente com aparência, cai um fio de cabelo de Tim Berners-Lee.
+      Brincadeiras à parte, o pai da internet sempre imaginou a web como algo
+      libertador, sem fronteiras. As informações devem ser fáceis de serem
+      acessadas. Parece uma coisa óbvia…
     </p>
     <p>
-      Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non
-      ipsum felis.Não sou faixa preta cumpadi, sou preto inteiris, inteiris.Suco
-      de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e
-      fermentis.Quem num gosta di mim que vai caçá sua turmis!
+      Em um primeiro momento, e já peço perdão pela honestidade, o desenvolvedor
+      médio está preocupado em fazer um site bonito, responsivo, cheio de
+      features. Mas por descuido, acabamos nos esquecendo de algumas coisas. O
+      principal é:
     </p>
     <p>
-      Interessantiss quisso pudia ce receita de bolis, mais bolis eu num
-      gostis.Per aumento de cachacis, eu reclamis.Aenean aliquam molestie leo,
-      vitae iaculis nisl.Viva Forevis aptent taciti sociosqu ad litora torquent.
+      Será que meu usuário consegue interagir com meu site? Parece uma pergunta,
+      a primeira vista, muito boba. Mas, atras dela, existe algo muito mais
+      além... É possivel interagir com meu site somente pelo teclado? Parece
+      algo de outro mundo, não é verdade? E se o usuario, por exemplo, interage
+      com o teclado usando uma "caneta" entre os dentes? Ou vamos pensar num
+      tetraplegico como, por exemplo o Stephen Hawking.
     </p>
     <p>
-      Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo
-      pose.Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed
-      non ipsum felis.Copo furadis é disculpa de bebadis, arcu quam euismod
-      magna.Paisis, filhis, espiritis santis.
+      Outro tipo nde problema comum são com pessoas com dificulade de visão.
+      Isso pode ir desde o "vovozinho" que não enxerga as letras por serem muito
+      miudinha, até o daltonico, que vai ter dificuldades em diferenciar algumas
+      cores. Tem o caso do "ceguinho" também. Esse é um caso um pouco mais
+      obvio. Com certezq vc já se deparaou, em alguma rede social com a campanha
+      "Para cego ver", onde acrescentamos uma breve descrição sobre o que se
+      trata a imagem de uma figura. Algo como, por exemplo:
     </p>
     <p>
-      Pra lá , depois divoltis porris, paradis.Leite de capivaris, leite de mula
-      manquis sem cabeça.Praesent malesuada urna nisi, quis volutpat erat
-      hendrerit non. Nam vulputate dapibus.Si u mundo tá muito paradis? Toma um
-      mé que o mundo vai girarzis!
+      <strong>Para cego ver:</strong> Foto de crianças jogando futebol ao redor
+      de uma casa na fazenda.
     </p>
     <p>
-      Quem num gosta di mé, boa gentis num é.Casamentiss faiz malandris se
-      pirulitá.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit.
-      Aenean sit amet nisi.Atirei o pau no gatis, per gatis num morreus.
+      Os padrões de acessibilidade vem atender a essa população. Aqui no
+      jonastorres.dev estamos seguindo as recomendações contidas WCAG (Web
+      Content Accessibility Guidelines), do W3C (World Wide Web Consortium),
+      principal organização de padronização da World Wide Web, que desenvolve
+      especificações técnicas e orientações para o mercado. Também, na medida do
+      possível, estamos implementando as orientações do eMAG (O Modelo de
+      Acessibilidade em Governo Eletrônico). O último é voltado normalmente para
+      sites do governo brasileiro, porém, só pelo aprendizado já vale a adoção
+      também.
+    </p>
+    <p>Nosso site conta com:</p>
+    <ul>
+      <li>Barra de acessibilidade;</li>
+      <li>
+        Botões de direcionamento as principais partes de interesse no site;
+      </li>
+      <li>Controle de tamanho de fonte;</li>
+      <li>Ajustes de temas visuais do site;</li>
+      <li>Mapa do site;</li>
+      <li>Botão de direcionamento para o topo;</li>
+      <li>Atalhos de teclado.</li>
+    </ul>
+
+    <h2>Barra de acessibilidade</h2>
+    <p>No topo de nossa página há uma pequena barra que contendo:</p>
+    <ul>
+      <li>Links de direcionamento para as principais regiões da página;</li>
+      <li>Link para essa página;</li>
+      <li>Botões para controle de tamanho de fonte;</li>
+      <li>
+        Botões para seleção de tema do site (claro, escuro e alto-contraste);
+      </li>
+      <li>Controle de animações;</li>
+      <li>Mapa do site.</li>
+    </ul>
+
+    <h2>Atalhos de teclado</h2>
+    <p>
+      Os atalhos de teclado tem por finalidade facilitar a navegação sem a
+      utilização do mouse. Infelizmente, cada conjunto de sistema operacional e
+      navegadores, implementaram seus padrões. De modo geral, irei utilizar a
+      nomenclatura <kbd>[Conjunto de teclas]</kbd> para destacar a parte que
+      pode mudar de um navegador para outro.
+    </p>
+    <p>Aqui em jonastorres.dev é utilizado os seguintes atalhos:</p>
+    <dl>
+      <dt><kbd>[Conjunto de teclas]</kbd> + <kbd>1</kbd></dt>
+      <dd>Direciona ao cabeçalho da página</dd>
+
+      <dt><kbd>[Conjunto de teclas]</kbd> + <kbd>2</kbd></dt>
+      <dd>Direciona ao conteúdo principal</dd>
+
+      <dt><kbd>[Conjunto de teclas]</kbd> + <kbd>3</kbd></dt>
+      <dd>Direciona ao rodapé</dd>
+    </dl>
+
+    <h3>Conhecendo as implementações nos sistemas Windows / Linux</h3>
+    <h4>Internet Explorer e Google Chrome</h4>
+    <p>
+      Na lista apresentada acima, devemos ler o
+      <kbd>[Conjunto de teclas]</kbd> como <kbd>Alt</kbd>.
     </p>
     <p>
-      Detraxit consequat et quo num tendi nada.Todo mundo vê os porris que eu
-      tomo, mas ninguém vê os tombis que eu levo!Nec orci ornare consequat.
-      Praesent lacinia ultrices consectetur. Sed non ipsum felis.Quem num gosta
-      di mim que vai caçá sua turmis!
+      Por exemplo, o atalho para o cabeçalho da página seria "<kbd>Alt</kbd> +
+      <kbd>1</kbd>".
     </p>
+
+    <h4>Firefox</h4>
+    <p>
+      Na lista apresentada acima, devemos ler o
+      <kbd>[Conjunto de teclas]</kbd> como a combinação das teclas "<kbd
+        >Alt</kbd
+      >
+      + <kbd>Shift</kbd>".
+    </p>
+    <p>
+      Por exemplo, o atalho para o conteúdo principal da página seria "<kbd
+        >Alt</kbd
+      >
+      + <kbd>Shift</kbd> + <kbd>2</kbd>".
+    </p>
+
+    <h4>Opera</h4>
+    <p>
+      Na lista apresentada acima, devemos ler o
+      <kbd>[Conjunto de teclas]</kbd> como a combinação das teclas "<kbd
+        >Shift</kbd
+      >
+      + <kbd>Esc</kbd>".
+    </p>
+    <p>
+      Por exemplo, o atalho para o conteúdo principal da página seria "<kbd
+        >Shift</kbd
+      >
+      + <kbd>Esc</kbd> + <kbd>2</kbd>".
+    </p>
+
+    <h4>Safari e OmniWeb</h4>
+    <p>
+      Na lista apresentada acima, devemos ler o
+      <kbd>[Conjunto de teclas]</kbd> como <kbd>Ctrl</kbd>.
+    </p>
+    <p>
+      Por exemplo, o atalho para o conteúdo principal da página seria "<kbd
+        >Ctrl</kbd
+      >
+      + <kbd>2</kbd> ".
+    </p>
+
+    <h3>Mac OS</h3>
+    <p>
+      Na lista apresentada acima, devemos ler o
+      <kbd>[Conjunto de teclas]</kbd> como a combinação das teclas "<kbd
+        >Ctrl</kbd
+      >
+      + <kbd>Option</kbd>".
+    </p>
+    <p>
+      Por exemplo, o atalho para o rodapé da página seria ""<kbd>Ctrl</kbd> +
+      <kbd>Option</kbd>" + <kbd>3</kbd>".
+    </p>
+
+    <h2>Saiba mais</h2>
+    <ul>
+      <li>
+        <a href="https://emag.governoeletronico.gov.br/" target="_blank"
+          >https://emag.governoeletronico.gov.br/</a
+        >
+      </li>
+    </ul>
+
+    <!--
+    <p>No topo das páginas de nosso site, disponibilizamos uma barra de acessibilidade, que contém:</p>
+
+    Teclas de atalho: combinação de diferentes teclas que facilitam a navegação pela página sem a utilização do mouse;
+    Página de acessibilidade: apresenta informações sobre a acessibilidade do site e recursos oferecidos;
+    Temas da página: ativa um contraste otimizado, facilitando a navegação para quem tem baixa visão;
+    Botões de ajuste de zoom da página: botões que facilitam aumentar ou diminuir o tamanho das fontes utilizadas no site, assim  como a restauração ao tamanho normal.
+    Mapa do site: disponibiliza todas as páginas do site de forma hierárquica, permitindo que o usuário conheça toda a estrutura do site e acesse diretamente a página desejada.
+
+    <h2>Teclas de atalho</h2>
+    <p>
+      Cada conjunto de navegador de internet sistema operacional possui um
+      conjunto de teclas para facilitar o acesso aos recursos.
+    </p>
+    <p>Aqui em jonastorres.dev é utilizado os seguintes atalhos:</p>
+    <dl>
+      <dt><code>[Conjunto de teclas]</code> + <kbd>1</kbd></dt>
+      <dd>Direciona ao cabeçario da página</dd>
+
+      <dt><code>[Conjunto de teclas]</code> + <kbd>2</kbd></dt>
+      <dd>Direciona ao conteudo principal</dd>
+
+      <dt><code>[Conjunto de teclas]</code> + <kbd>3</kbd></dt>
+      <dd>Direciona ao rodapé</dd>
+    </dl>
+
+    <h3>Windows / Linux</h3>
+    <h4>Internet Explorer e Google Chrome</h4>
+    <p>
+      Na lista apresentada acima, devemos ler o <code>[Conjunto de teclas]</code> como <kbd>Alt</kbd>.
+    </p>
+    <p>
+      Por exemplo, o atalho para o cabeçario da ágina seria "<kbd>Alt</kbd> + <kbd>1</kbd>".
+    </p>
+
+    <h4>Firefox</h4>
+    <p>
+      Na lista apresentada acima, devemos ler o <code>[Conjunto de teclas]</code> como a combinação das teclas "<kbd>Alt</kbd> + <kbd>Shift</kbd>".
+    </p>
+    <p>
+      Por exemplo, o atalho para o conteúdo principal da página seria "<kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>2</kbd>".
+    </p>
+
+    <h4>Opera</h4>
+    <p>
+      Na lista apresentada acima, devemos ler o <code>[Conjunto de teclas]</code> como a combinação das teclas "<kbd>Shift</kbd> + <kbd>Esc</kbd>".
+    </p>
+    <p>
+      Por exemplo, o atalho para o conteúdo principal da página seria "<kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>2</kbd>".
+    </p>
+
+    <h4>Safari e OmniWeb</h4>
+    <p>
+      Na lista apresentada acima, devemos ler o <code>[Conjunto de teclas]</code> como o <code>[Conjunto de teclas]</code> como <kbd>Ctrl</kbd>.
+    </p>
+    <p>
+      Por exemplo, o atalho para o conteúdo principal da página seria "<kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>2</kbd>".
+    </p>
+
+    <h3>Mac OS</h3>
+    <p>
+      Na lista apresentada acima, devemos ler o <code>[Conjunto de teclas]</code> como a combinação das teclas "<kbd>Ctrl</kbd> + <kbd>Option</kbd>".
+    </p>
+    <p>
+      Por exemplo, o atalho para o rodapé da página seria "<kbd>Ctrl</kbd> + <kbd>Option</kbd> + <kbd>3</kbd>".
+    </p>
+
+    <h2>Página de acessibilidade</h2>
+
+    <h2>Temas da página</h2>
+    <h3>Tema claro</h3>
+    <h3>Tema escuro</h3>
+    <h3>Tema de alto contraste</h3>
+
+    <h2>Botões de ajuste de zoom da página</h2>
+
+    <h2>Mapa do site (Sitemap)</h2> -->
+    <!-- <ul>
+      <li>
+        <code>[Conjunto de teclas]</code> + <kbd>1</kbd>
+      </li>
+    </ul> -->
 
     <!-- <jt-box-compartilhe></jt-box-compartilhe> -->
   </article>

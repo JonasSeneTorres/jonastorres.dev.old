@@ -17,8 +17,7 @@ jt-root {
 }
 
 
-.angular,
-.angularjs {
+.asp {
   background-color: #ff0000 !important;
   background: linear-gradient(
     150deg,
@@ -56,6 +55,16 @@ jt-root {
     150deg,
     rgba(105, 64, 151, 1) 0%,
     rgba(89, 44, 140, 1) 30%,
+    rgba(0, 0, 0, 1) 89%
+  ) !important;
+}
+
+.erro {
+  background-color: #ff0000 !important;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 0, 0, 0.8) 0%,
+    rgba(255, 0, 0, 1) 10%,
     rgba(0, 0, 0, 1) 89%
   ) !important;
 }

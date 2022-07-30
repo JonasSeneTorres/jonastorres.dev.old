@@ -2,7 +2,9 @@
   <ul class="gd-header__menu-main">
     <ng-container *ngFor="let itemNav of nav">
       <li class="gd-header__menu-main-li">
-        <ng-container *ngIf="(itemNav?.children?.length ?? 0) === 0; else hasChild">
+        <ng-container
+          *ngIf="(itemNav?.children?.length ?? 0) === 0; else hasChild"
+        >
           <a
             class="gd-header__link"
             [routerLink]="itemNav?.route ?? []"
@@ -14,10 +16,9 @@
         </ng-container>
 
         <ng-template #hasChild>
-          <button
-          class="gd-header__link gd-header__button"
-        >
-          {{ itemNav.label }}
+          <button class="gd-header__link2 gd-header__button">
+            {{ itemNav.label }}
+            <span class="fa-solid fa-caret-down"></span>
           </button>
         </ng-template>
       </li>

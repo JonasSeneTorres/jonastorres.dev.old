@@ -1,4 +1,4 @@
-.erro {
+.error {
   display: grid;
   grid-template-areas:
     "jumbotrom jumbotrom"
@@ -18,7 +18,11 @@ article {
 
 aside {
   grid-area: aside;
-  // margin-top: 23rem;
+  margin-top: 23rem;
   max-width: 21rem;
   width: 100%;
+}
+
+.content {
+  margin-top: 1.5rem;
 }
