@@ -16,14 +16,15 @@
     background: linear-gradient(
       150deg,
       rgba(124, 124, 124, 0.8) 0%,
-      rgba(180, 180, 180, 1) 10%,
+      // rgba(180, 180, 180, 1) 10%,
+      rgba(0, 22, 87, 1) 10%,
       rgba(0, 0, 0, 1) 89%
     ) !important;
     transition: all 0.5s ease;
   }
 
   &:hover {
-    background-color: #e2eeff;
+    background-color: $gd-colorligth-primary-50;
     box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%),
       0 1px 18px rgb(0 0 0 / 12%);
     cursor: pointer;

@@ -9,6 +9,7 @@ import { MenuHamburgerComponent } from './menu-hamburger/menu-hamburger.componen
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { VerticalMenuBurgerComponent } from './menu-hamburger/components/vertical-menu-burger/vertical-menu-burger.component';
+import { MenuListHorizontalComponent } from './horizontal-navbar/components/menu-list-horizontal/menu-list-horizontal.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { VerticalMenuBurgerComponent } from './menu-hamburger/components/vertica
     ButtonHamburgerComponent,
     VerticalMenuBurgerComponent,
     HorizontalMenuBurguerComponent,
+    MenuListHorizontalComponent,
   ],
   imports: [
     CommonModule,

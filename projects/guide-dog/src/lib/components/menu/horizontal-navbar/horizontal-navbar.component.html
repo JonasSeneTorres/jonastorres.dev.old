@@ -1,7 +1,7 @@
 <div class="gd-h-navbar">
   <ul class="gd-header__menu-main">
     <ng-container *ngFor="let itemNav of nav">
-      <li class="gd-header__menu-main-li">
+      <li class="gd-header__menu-main-li" [attr.data-show]="false" #listaitens tabindex="-1" (hover)="listaitens.setAttribute('data-show', 'true')">
         <ng-container
           *ngIf="(itemNav?.children?.length ?? 0) === 0; else hasChild"
         >
@@ -20,6 +20,8 @@
             {{ itemNav.label }}
             <span class="fa-solid fa-caret-down"></span>
           </button>
+          <!-- {{ listaitens.getAttribute('data-show') | json }} -->
+          <gd-menu-list-horizontal [navibarItemList]="itemNav.children ?? []" [show]="listaitens.getAttribute('data-show') === 'true'"></gd-menu-list-horizontal>
         </ng-template>
       </li>
     </ng-container>

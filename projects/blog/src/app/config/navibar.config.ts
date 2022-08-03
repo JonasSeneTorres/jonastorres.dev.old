@@ -6,19 +6,19 @@ export const NavibarConfig: NavibarItemConfig[] = [
     children: [
       {
         label: 'HTML',
-        route: ['/categoria'],
+        route: ['/frontend/html'],
       },
       {
         label: 'CSS',
-        route: ['/categoria'],
+        route: ['/frontend/css'],
       },
       {
         label: 'Javascript/Typescript',
-        route: ['/categoria'],
+        route: ['/frontend/js'],
       },
       {
         label: 'Angular',
-        route: ['/categoria'],
+        route: ['/frontend/angular'],
       },
     ],
   },
@@ -27,11 +27,15 @@ export const NavibarConfig: NavibarItemConfig[] = [
     children: [
       {
         label: 'C#',
-        route: ['/categoria'],
+        route: ['/backend/c_sharp'],
       },
+      // {
+      //   label: 'C#',
+      //   route: ['/backend/c-sharp'],
+      // },
       {
         label: 'Node',
-        route: ['/categoria'],
+        route: ['/backend/node'],
       },
     ],
   },
@@ -40,7 +44,7 @@ export const NavibarConfig: NavibarItemConfig[] = [
     children: [
       {
         label: 'Flutter',
-        route: ['/categoria'],
+        route: ['/mobile/flutter'],
       },
     ],
   },
@@ -49,13 +53,13 @@ export const NavibarConfig: NavibarItemConfig[] = [
     children: [
       {
         label: 'SQL',
-        route: ['/categoria'],
+        route: ['/banco_de_dados/sql'],
       },
     ],
   },
   {
     label: 'Arquitetura',
-    route: ['/categoria'],
+    route: ['/arquitetura'],
   },
   // {
   //   label: 'Arquitetura',

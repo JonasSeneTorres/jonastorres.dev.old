@@ -32,6 +32,41 @@ const routes: Routes = [
         (m) => m.CategoriaModule
       ),
   },
+  {
+    path: 'frontend',
+    loadChildren: () =>
+      import('./views/categoria/categoria.module').then(
+        (m) => m.CategoriaModule
+      ),
+  },
+  {
+    path: 'backend',
+    loadChildren: () =>
+      import('./views/categoria/categoria.module').then(
+        (m) => m.CategoriaModule
+      ),
+  },
+  {
+    path: 'mobile',
+    loadChildren: () =>
+      import('./views/categoria/categoria.module').then(
+        (m) => m.CategoriaModule
+      ),
+  },
+  {
+    path: 'banco_de_dados',
+    loadChildren: () =>
+      import('./views/categoria/categoria.module').then(
+        (m) => m.CategoriaModule
+      ),
+  },
+  {
+    path: 'arquitetura',
+    loadChildren: () =>
+      import('./views/categoria/categoria.module').then(
+        (m) => m.CategoriaModule
+      ),
+  },
   { path: 'artigo', loadChildren: () => import('./views/artigo/artigo.module').then(m => m.ArtigoModule) },
   { path: 'contato', loadChildren: () => import('./views/contato/contato.module').then(m => m.ContatoModule) },
   { path: 'sobre', loadChildren: () => import('./views/sobre/sobre.module').then(m => m.SobreModule) },

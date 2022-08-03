@@ -1,0 +1,196 @@
+@import "../../../../../styles/gd.scss";
+
+ul {
+  background-color: #fff;
+  border: solid 1px #000;
+  border-radius: 8px;
+  // display: inline-block;
+  display: none;
+  left: -1rem;
+  list-style-type: none;
+  margin: 0;
+  min-width: max-content;
+  padding: 0.5rem 1.1rem;
+  position: absolute;
+  top: 1.5rem;
+  width: 100%;
+
+  animation-name: animacao-menu;
+  animation-duration: 1s;
+  animation-direction: reverse;
+  // transform: translateY(-500%);
+  // transform: scale(1);
+
+  // &:hover {
+  //   display: inline-block;
+  // }
+}
+
+.show {
+  display: inline-block !important;
+}
+
+li {
+  // border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  padding: 0.5rem 0.25rem;
+
+  &:first-child {
+    // a {
+    border: none !important;
+    // }
+  }
+
+  &:hover {
+    background-color: $gd-colorligth-primary-50;;
+    border-radius: 8px;
+
+    a {
+      font-weight: bold;
+    }
+  }
+}
+
+a {
+  color: #000;
+  cursor: pointer;
+  font-family: $title_font_family;
+  font-size: 1.2rem;
+  font-weight: 400;
+  position: relative;
+  text-decoration: none;
+
+  display: block;
+}
+
+// @keyframes animacao-menu {
+// 	0% {
+// 		transform: scaleY(1);
+// 	}
+
+// 	4% {
+// 		transform: scaleY(1);
+// 	}
+
+// 	8% {
+// 		transform: scaleY(1);
+// 	}
+
+// 	14% {
+// 		transform: scaleY(1);
+// 	}
+
+// 	18% {
+// 		transform: scaleY(1);
+// 	}
+
+// 	26% {
+// 		transform: scaleY(1.01);
+// 	}
+
+// 	28% {
+// 		transform: scaleY(1.01);
+// 	}
+
+// 	40% {
+// 		transform: scaleY(0.98);
+// 	}
+
+// 	42% {
+// 		transform: scaleY(0.98);
+// 	}
+
+// 	56% {
+// 		transform: scaleY(1.05);
+// 	}
+
+// 	58% {
+// 		transform: scaleY(1.04);
+// 	}
+
+// 	72% {
+// 		transform: scaleY(0.87);
+// 	}
+
+// 	86% {
+// 		transform: scaleY(1.37);
+// 	}
+
+// 	100% {
+// 		transform: scaleY(0);
+// 	}
+
+// }
+
+@keyframes animacao-menu  {
+	0% {
+    display: block;
+		transform: translateY(0%);
+	}
+
+	4% {
+    display: block;
+		transform: translateY(-0.04%);
+	}
+
+	8% {
+    display: block;
+		transform: translateY(-0.16%);
+	}
+
+	14% {
+    display: block;
+		transform: translateY(-0.17%);
+	}
+
+	18% {
+    display: block;
+		transform: translateY(0.04%);
+	}
+
+	26% {
+    display: block;
+		transform: translateY(0.58%);
+	}
+
+	28% {
+    display: block;
+		transform: translateY(0.55%);
+	}
+
+	40% {
+    display: block;
+		transform: translateY(-1.56%);
+	}
+
+	42% {
+    display: block;
+		transform: translateY(-1.64%);
+	}
+
+	56% {
+    display: block;
+		transform: translateY(4.63%);
+	}
+
+	58% {
+    display: block;
+		transform: translateY(4.4%);
+	}
+
+	72% {
+    display: block;
+		transform: translateY(-13.12%);
+	}
+
+	86% {
+    display: block;
+		transform: translateY(37.06%);
+	}
+
+	100% {
+    display: block;
+		transform: translateY(-100%);
+	}
+
+}
