@@ -16,7 +16,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'autor',
+    path: 'blog/autor',
     loadChildren: () =>
       import('./views/autor/autor.module').then((m) => m.AutorModule),
   },
@@ -26,42 +26,42 @@ const routes: Routes = [
       import('./views/erro/erro.module').then((m) => m.ErroModule),
   },
   {
-    path: 'categoria',
+    path: 'blog/categoria',
     loadChildren: () =>
       import('./views/categoria/categoria.module').then(
         (m) => m.CategoriaModule
       ),
   },
   {
-    path: 'frontend',
+    path: 'blog/frontend',
     loadChildren: () =>
       import('./views/categoria/categoria.module').then(
         (m) => m.CategoriaModule
       ),
   },
   {
-    path: 'backend',
+    path: 'blog/backend',
     loadChildren: () =>
       import('./views/categoria/categoria.module').then(
         (m) => m.CategoriaModule
       ),
   },
   {
-    path: 'mobile',
+    path: 'blog/mobile',
     loadChildren: () =>
       import('./views/categoria/categoria.module').then(
         (m) => m.CategoriaModule
       ),
   },
   {
-    path: 'banco_de_dados',
+    path: 'blog/banco_de_dados',
     loadChildren: () =>
       import('./views/categoria/categoria.module').then(
         (m) => m.CategoriaModule
       ),
   },
   {
-    path: 'arquitetura',
+    path: 'blog/arquitetura',
     loadChildren: () =>
       import('./views/categoria/categoria.module').then(
         (m) => m.CategoriaModule

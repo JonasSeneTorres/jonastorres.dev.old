@@ -3,37 +3,49 @@
     <span class="artigo-box__icone fa-brands fa-html5"></span>
   </section>
   <div class="artigo-box__box-conteudo">
-    <section class="artigo-box__box-titulo">
-      <h3 class="artigo-box__titulo">
-        {{ artigo?.titulo }}
-      </h3>
-      <h4 class="artigo-box__subtitulo" *ngIf="artigo?.subtitulo">
-        {{ artigo?.subtitulo }}
-      </h4>
-    </section>
-    <section class="artigo-box__box-dados">
-      <p class="artigo-box__dados">
-        <span class="fa-solid fa-calendar-days"></span>
-        {{ artigo?.dataCriacao | date: "longDate":"":"pt-BR"  }}
-        <span class="pipe">|</span>
-        <ng-container *ngIf="artigo?.dataEdicao">
-          <span class="fa-solid fa-pen-to-square"></span>
-          Ultima edição em: {{ artigo?.dataEdicao | date: "longDate":"":"pt-BR"  }}
+    <div class="artigo-box__ghost-box-titulo" *ngIf="!dadosCarregados">
+      <div class="artigo-box__ghost-titulo loading">
+      </div>
+      <div class="artigo-box__ghost-subtitulo loading">
+      </div>
+      <!-- <div>
+        <div class="artigo-box__ghost-tempo1 loading"></div>
+        <div class="artigo-box__ghost-tempo2 loading"></div>
+      </div> -->
+    </div>
+    <ng-container *ngIf="dadosCarregados">
+      <section class="artigo-box__box-titulo">
+        <h3 class="artigo-box__titulo">
+          {{ artigo?.titulo }}
+        </h3>
+        <h4 class="artigo-box__subtitulo" *ngIf="artigo?.subtitulo">
+          {{ artigo?.subtitulo }}
+        </h4>
+      </section>
+      <section class="artigo-box__box-dados">
+        <p class="artigo-box__dados">
+          <span class="fa-solid fa-calendar-days"></span>
+          {{ artigo?.dataCriacao | date: "longDate":"":"pt-BR"  }}
           <span class="pipe">|</span>
-        </ng-container>
-        <span class="fa-solid fa-stopwatch"></span>
-        {{ artigo?.tempoLeitura }} min de leitura
-      </p>
-      <!-- <pre>{{ artigo.conteudoArtigo | geraspoiler }}</pre> -->
-      <p class="artigo-box__spoiler">
-        {{ artigo?.conteudoArtigo | geraspoiler }}
-      </p>
-      <p class="artigo-box__box-leia-mais">
-        <a class="artigo-box__leia-mais">
-          Leia mais
-          <span class="fa-solid fa-angles-right"></span>
-        </a>
-      </p>
-    </section>
+          <ng-container *ngIf="artigo?.dataEdicao">
+            <span class="fa-solid fa-pen-to-square"></span>
+            Ultima edição em: {{ artigo?.dataEdicao | date: "longDate":"":"pt-BR"  }}
+            <span class="pipe">|</span>
+          </ng-container>
+          <span class="fa-solid fa-stopwatch"></span>
+          {{ artigo?.tempoLeitura }} min de leitura
+        </p>
+        <!-- <pre>{{ artigo.conteudoArtigo | geraspoiler }}</pre> -->
+        <p class="artigo-box__spoiler">
+          {{ artigo?.conteudoArtigo | geraspoiler }}
+        </p>
+        <p class="artigo-box__box-leia-mais">
+          <a class="artigo-box__leia-mais">
+            Leia mais
+            <span class="fa-solid fa-angles-right"></span>
+          </a>
+        </p>
+      </section>
+    </ng-container>
   </div>
 </article>

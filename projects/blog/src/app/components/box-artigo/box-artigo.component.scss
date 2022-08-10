@@ -1,5 +1,7 @@
 @import "../../../styles/styles.scss";
 
+
+
 .artigo-box {
   border-radius: 8px;
   cursor: pointer;
@@ -11,7 +13,7 @@
   position: relative;
   width: 100%;
 
-  &:not(:hover) .artigo-box__capa  {
+  &:not(:hover) .artigo-box__capa {
     background-color: #808080 !important;
     background: linear-gradient(
       150deg,
@@ -159,8 +161,70 @@
     min-width: 10rem;
     padding: 0.4rem 1.5rem;
   }
+
+  &__ghost {
+    &__ghost-box-titulo {
+      align-content: end;
+      display: grid;
+      height: 4rem;
+      justify-content: flex-start;
+      max-height: 4rem;
+      overflow: hidden;
+    }
+    &-titulo {
+      background-color: #000;
+      border: solid 1px red;
+      height: 24px;
+      margin-top: 0.75rem;
+    }
+    &-subtitulo {
+      background-color: #000;
+      border: solid 1px red;
+      height: 22px;
+      margin-top: 0.5rem;
+    }
+    &-tempo1 {
+      background-color: #000;
+      border: solid 1px red;
+      display: inline-block;
+      height: 22px;
+      margin-top: 0.5rem;
+    }
+    &-tempo2 {
+      background-color: #000;
+      border: solid 1px red;
+      display: inline-block;
+      height: 22px;
+      margin-top: 0.5rem;
+    }
+  }
 }
 
 .pipe {
   margin: 0 0.5rem;
 }
+
+:root {
+  --loading-grey: #ededed;
+}
+
+.loading {
+  background-color: #ededed;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 60%
+  ) #ededed;
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: 2s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}
+
+

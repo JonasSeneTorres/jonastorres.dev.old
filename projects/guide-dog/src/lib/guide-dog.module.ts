@@ -2,7 +2,6 @@ import { NgModule, Renderer2 } from '@angular/core';
 
 import { CenteredPanelModule } from './components/centered-panel/centered-panel.module';
 import { CommonModule } from '@angular/common';
-import { CookieService } from 'ngx-cookie-service';
 import { FooterModule } from './components/footer/footer.module';
 import { HeaderModule } from './components/header/header.module';
 import { LocalStorageService } from 'projects/guide-dog/src/lib/services/data-storage/local-storage/local-storage.service';
@@ -24,7 +23,7 @@ import { SessionStorageService } from 'projects/guide-dog/src/lib/services/data-
   // imports: [
   // ],
   providers: [
-    CookieService,
+    // CookieService,
     LocalStorageService,
     MemoryStorageService,
     ModalService,

@@ -7,9 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BoxArtigoComponent /*implements OnInit*/ {
   @Input() artigo: any = null;
+  @Input() dadosCarregados = false;
+
   constructor() { }
 
   // ngOnInit(): void {
   // }
-
 }

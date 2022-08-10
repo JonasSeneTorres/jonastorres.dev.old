@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class SessionStorageService {
   private storage: any;
 
-  constructor(private cookieStorage: CookieStorageService) {
+  constructor() {
     const warnMessage = 'Your browser does not have access to the "localStorage" feature.\nInstead, "Cookies" will be used.';
     this.storage = window.sessionStorage;
 
@@ -22,7 +22,7 @@ export class SessionStorageService {
       return JSON.parse(output);
     }
 
-    this.cookieStorage.get(key);
+    // this.cookieStorage.get(key);
   }
 
   set(key: string, value: any): void {
@@ -31,7 +31,7 @@ export class SessionStorageService {
       return;
     }
 
-    this.cookieStorage.set(key, value);
+    // this.cookieStorage.set(key, value);
   }
 
   removeItem(key: string): void {
@@ -40,7 +40,7 @@ export class SessionStorageService {
       return;
     }
 
-    this.cookieStorage.removeItem(key);
+    // this.cookieStorage.removeItem(key);
   }
 
   clear(): void {
@@ -49,6 +49,6 @@ export class SessionStorageService {
       return;
     }
 
-    this.cookieStorage.clear();
+    // this.cookieStorage.clear();
   }
 }
