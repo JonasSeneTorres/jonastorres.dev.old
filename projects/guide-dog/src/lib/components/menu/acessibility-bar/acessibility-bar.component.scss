@@ -1,7 +1,12 @@
+@import "../../../styles/gd";
+
 .acessibilitybar {
   background-color: #fff;
   height: 2rem;
-  // overflow: hidden;
+
+  @include media-down($gd-media-tablet-maxwidth) {
+    display: none;
+  }
 
   &__list {
     display: grid;

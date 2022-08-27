@@ -3,6 +3,12 @@
 .categoria {
   margin-bottom: 1.25rem;
 
+  @include media-down($gd-media-tablet-maxwidth) {
+    border: solid 1px #000;
+    border-radius: 16px;
+    padding: 1rem;
+  }
+
   &__titulo {
     font-size: 1.75rem;
     margin: 0 0 .5rem 0;

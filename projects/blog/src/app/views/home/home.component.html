@@ -1,5 +1,5 @@
-<div class="home">
-  <section class="home__artigos">
+<div class="jt">
+  <section class="jt__artigos">
     <jt-jumbotron
       [titulo]="''"
       [categoria]="'home'"
@@ -16,10 +16,12 @@
 
     <section class="home__artigos-populares">
       <h2>Artigos populares</h2>
-      <jt-box-artigo [artigo]="ultimosArtigos[0]"></jt-box-artigo>
-      <jt-box-artigo [artigo]="ultimosArtigos[1]"></jt-box-artigo>
-      <jt-box-artigo [artigo]="ultimosArtigos[2]"></jt-box-artigo>
-      <jt-box-artigo [artigo]="ultimosArtigos[3]"> </jt-box-artigo>
+      <div class="home__artigos-populares-grid">
+        <jt-box-artigo [artigo]="ultimosArtigos[0]"></jt-box-artigo>
+        <jt-box-artigo [artigo]="ultimosArtigos[1]"></jt-box-artigo>
+        <jt-box-artigo [artigo]="ultimosArtigos[2]"></jt-box-artigo>
+        <jt-box-artigo [artigo]="ultimosArtigos[3]"> </jt-box-artigo>
+      </div>
     </section>
 
     <!-- <ng-container *ngFor="let item of artigosDaCategoria">

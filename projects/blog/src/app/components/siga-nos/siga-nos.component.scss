@@ -4,7 +4,54 @@
   background-color: $gd-colorligth-primary-300;
   border-radius: 8px;
   color: #fff;
+  height: 100px;
   padding: 1.5rem 0 0.5rem 0;
+  position: relative;
+
+  @include media-down($gd-media-tablet-maxwidth) {
+    background-color: #fff;
+    background-color: transparent;
+    padding: 0;
+    margin: 0 calc(-1rem - 4px);
+    height: 134px;
+    width: 100vw;
+    // background-color: $gd-colorligth-primary-300;
+    // padding: 1.5rem 0 0.5rem 0;
+    // position: absolute;
+    // top: 0;
+    // left: -1rem
+    // margin-top: 23rem;
+    // display: block;
+    // border-radius: 0;
+    // margin-left: calc(-1rem - 4px);
+    // width: 100vw;
+  }
+
+  @include media-up($gd-media-tablet-maxwidth) {
+    background-color: $gd-colorligth-primary-300;
+    // height: 9rem;
+    // width: 16rem;
+  }
+
+
+
+  &__box {
+    @include media-down($gd-media-tablet-maxwidth) {
+      background-color: $gd-colorligth-primary-300;
+      height: 102px;
+      padding: 1.5rem 0 0.5rem 0;
+      // position: absolute;
+      // top: 0;
+      // left: calc(-1rem - 0.33rem);
+      // margin-left: calc(-1rem - 0.33rem);;
+      // width: calc(100vw);
+    }
+
+    @include media-up($gd-media-tablet-maxwidth) {
+
+    }
+
+  }
 
   &__title {
     margin: 0;

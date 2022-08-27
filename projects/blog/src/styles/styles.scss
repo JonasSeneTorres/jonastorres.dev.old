@@ -134,3 +134,55 @@ blockquote {
     rgba(0, 0, 0, 1) 89%
   ) !important;
 }
+
+.jt {
+  display: grid;
+  // grid-template-areas:
+  //   "jumbotrom jumbotrom"
+  //   "article aside";
+  // column-gap: 6rem;
+  // grid-template-columns: 1fr 22rem;
+
+  @include media-down($gd-media-tablet-maxwidth) {
+    grid-template-areas:
+      "jumbotrom"
+      "article"
+      "aside";
+  }
+
+  @include media-up($gd-media-tablet-maxwidth) {
+    grid-template-areas:
+      "jumbotrom jumbotrom"
+      "article aside";
+    column-gap: 6rem;
+    grid-template-columns: 1fr 22rem;
+  }
+
+  &__artigos {
+    grid-area: article;
+  }
+
+}
+
+jt-jumbotron {
+  grid-area: jumbotrom;
+
+  // @include media-down($gd-media-tablet-maxwidth) {
+  //   display: none;
+  // }
+}
+
+aside {
+  grid-area: aside;
+
+  width: 100%;
+
+  @include media-down($gd-media-tablet-maxwidth) {
+    // margin-top: 23rem;
+  }
+
+  @include media-up($gd-media-tablet-maxwidth) {
+    margin-top: 23rem;
+    max-width: 21rem;
+  }
+}

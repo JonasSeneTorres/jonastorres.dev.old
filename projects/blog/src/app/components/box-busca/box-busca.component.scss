@@ -4,6 +4,10 @@
   margin-bottom: 1rem;
   max-width: 22rem;
   width: 100%;
+
+  @include media-down($gd-media-tablet-maxwidth) {
+    display: none;
+  }
 }
 
 input {

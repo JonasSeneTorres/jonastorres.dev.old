@@ -3,8 +3,21 @@
 @mixin box-pequeno {
   .artigo-box {
     grid-template-columns: 9rem 1fr;
-    &:hover .artigo-box__icone{
+    &:hover .artigo-box__icone {
       font-size: 4.5rem !important;
+    }
+
+    &__capaloading {
+      height: 30px;
+      width: 60px;
+    }
+
+    &__ghost-container-data {
+      display: none;
+    }
+
+    &__ghost-paragrafo {
+      display: none;
     }
   }
 
@@ -40,17 +53,31 @@
 }
 
 .home {
-  display: grid;
-  grid-template-areas:
-    "jumbotrom jumbotrom"
-    "article aside";
-  // position: relative;
-  column-gap: 6rem;
-  grid-template-columns: 1fr 22rem;
+  // display: grid;
+  // grid-template-areas:
+  //   "jumbotrom jumbotrom"
+  //   "article aside";
+  // column-gap: 6rem;
+  // grid-template-columns: 1fr 22rem;
 
-  &__artigos {
-    grid-area: article;
-  }
+  // @include media-down($gd-media-tablet-maxwidth) {
+  //   grid-template-areas:
+  //     "jumbotrom"
+  //     "article"
+  //     "aside";
+  // }
+
+  // @include media-up($gd-media-tablet-maxwidth) {
+  //   grid-template-areas:
+  //     "jumbotrom jumbotrom"
+  //     "article aside";
+  //   column-gap: 6rem;
+  //   grid-template-columns: 1fr 22rem;
+  // }
+
+  // &__artigos {
+  //   grid-area: article;
+  // }
 
   &__ultimos-artigos {
     display: grid;
@@ -72,7 +99,13 @@
     padding: 0rem 3rem 3.25rem 2rem;
     height: 411px;
 
+    @include media-down($gd-media-tablet-maxwidth) {
+     display: none;
+    }
 
+    @include media-up($gd-media-tablet-maxwidth) {
+      // grid-template-columns: 22rem 1fr;
+    }
 
     &-titulo {
       grid-area: titulo;
@@ -98,7 +131,26 @@
   }
 
   &__artigos-populares {
-    margin-top: 10.5rem;
+
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      // margin-top: 23rem;
+    }
+
+
+
+    @include media-up($gd-media-tablet-maxwidth) {
+      margin-top: 10.5rem;
+    }
+
+    &-grid {
+      @include media-tablet(){
+        display: grid;
+        gap: 1rem;
+        column-gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
   }
 }
 
@@ -107,16 +159,28 @@
   margin-top: 1.5rem;
 }
 
-jt-jumbotron {
-  grid-area: jumbotrom;
-}
+// jt-jumbotron {
+//   grid-area: jumbotrom;
 
-aside {
-  grid-area: aside;
-  margin-top: 23rem;
-  max-width: 21rem;
-  width: 100%;
-}
+//   // @include media-down($gd-media-tablet-maxwidth) {
+//   //   display: none;
+//   // }
+// }
+
+// aside {
+//   grid-area: aside;
+
+//   width: 100%;
+
+//   @include media-down($gd-media-tablet-maxwidth) {
+//     // margin-top: 23rem;
+//   }
+
+//   @include media-up($gd-media-tablet-maxwidth) {
+//     margin-top: 23rem;
+//     max-width: 21rem;
+//   }
+// }
 
 :host::ng-deep {
   .home__ultimos-artigos {
@@ -126,11 +190,12 @@ aside {
         grid-template-columns: none;
         justify-content: center;
 
-        &:hover .artigo-box__icone{
+        &:hover .artigo-box__icone {
           font-size: 11rem !important;
         }
 
-        .artigo-box__spoiler, .artigo-box__leia-mais {
+        .artigo-box__spoiler,
+        .artigo-box__leia-mais {
           display: none !important;
         }
 
@@ -146,15 +211,23 @@ aside {
         }
 
         &__icone {
-          font-size: 9rem ;
+          font-size: 9rem;
         }
 
         &__dados {
           border: none;
           padding-top: 1rem;
         }
+
+        &__capaloading {
+          height: 144px;
+          width: 380px;
+        }
+
+        &__ghost-paragrafo {
+          display: none;
+        }
       }
-      // @include box-pequeno;
     }
 
     &2 {
@@ -169,5 +242,4 @@ aside {
       @include box-pequeno;
     }
   }
-
 }

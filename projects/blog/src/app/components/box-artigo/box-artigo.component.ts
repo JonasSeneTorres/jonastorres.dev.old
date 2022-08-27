@@ -7,10 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BoxArtigoComponent /*implements OnInit*/ {
   @Input() artigo: any = null;
-  @Input() dadosCarregados = false;
+  @Input() dadosCarregados = true;
 
   constructor() { }
 
   // ngOnInit(): void {
+  //   // console.log();
   // }
 }

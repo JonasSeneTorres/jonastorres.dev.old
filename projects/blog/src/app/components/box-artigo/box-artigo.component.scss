@@ -1,56 +1,62 @@
 @import "../../../styles/styles.scss";
 
-
-
 .artigo-box {
   border-radius: 8px;
   cursor: pointer;
   display: grid;
-  grid-template-columns: 22rem 1fr;
+  // grid-template-columns: 22rem 1fr;
   transition: all 0.5s ease;
-  // padding: 1rem;
   margin-bottom: 1rem;
   position: relative;
   width: 100%;
 
-  &:not(:hover) .artigo-box__capa {
-    background-color: #808080 !important;
-    background: linear-gradient(
-      150deg,
-      rgba(124, 124, 124, 0.8) 0%,
-      // rgba(180, 180, 180, 1) 10%,
-      rgba(0, 22, 87, 1) 10%,
-      rgba(0, 0, 0, 1) 89%
-    ) !important;
-    transition: all 0.5s ease;
+  @include media-down($gd-media-tablet-maxwidth) {
+    grid-template-columns: 1fr;
   }
 
-  &:hover {
-    background-color: $gd-colorligth-primary-50;
-    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%),
-      0 1px 18px rgb(0 0 0 / 12%);
-    cursor: pointer;
-    padding: 0.5rem;
-    transform: scale(1.05);
+  @include media-up($gd-media-tablet-maxwidth) {
+    grid-template-columns: 22rem 1fr;
+  }
 
-    .artigo-box__capa::after {
-      transform: scale(1.1);
+  &__active {
+    &:not(:hover) .artigo-box__capa {
+      background-color: #808080 !important;
+      background: linear-gradient(
+        150deg,
+        rgba(124, 124, 124, 0.8) 0%,
+        rgba(0, 22, 87, 1) 10%,
+        rgba(0, 0, 0, 1) 89%
+      ) !important;
+      transition: all 0.5s ease;
     }
 
-    .artigo-box__icone {
-      font-size: 9rem;
-    }
+    &:hover {
+      background-color: $gd-colorligth-primary-50;
+      box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%),
+        0 1px 18px rgb(0 0 0 / 12%);
+      cursor: pointer;
+      padding: 0.5rem;
+      transform: scale(1.05);
 
-    .artigo-box__box-leia-mais {
-      transform: scale(1.1);
-    }
+      .artigo-box__capa::after {
+        transform: scale(1.1);
+      }
 
-    .artigo-box__leia-mais {
-      background-color: $gd-colorligth-primary-500;
+      .artigo-box__icone {
+        font-size: 9rem;
+      }
+
+      .artigo-box__box-leia-mais {
+        transform: scale(1.1);
+      }
+
+      .artigo-box__leia-mais {
+        background-color: $gd-colorligth-primary-500;
+      }
     }
   }
 
-  &__capa {
+  &__capaloading {
     align-content: center;
     align-items: baseline;
     background-color: #808080;
@@ -71,6 +77,38 @@
     position: relative;
     transition: all 0.5s ease;
     width: 16rem;
+  }
+
+  &__capa {
+    align-content: center;
+    align-items: baseline;
+    background-color: #808080;
+    background: linear-gradient(
+      150deg,
+      rgba(124, 124, 124, 0.8) 0%,
+      rgba(180, 180, 180, 1) 10%,
+      rgba(0, 0, 0, 1) 89%
+    );
+    border: solid 1px #000;
+    border-radius: 8px;
+    color: #fff;
+    display: grid;
+    // height: 9rem;
+    justify-content: center;
+    justify-items: baseline;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.5s ease;
+    // width: 16rem;
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      // margin-top: 23rem;
+    }
+
+    @include media-up($gd-media-tablet-maxwidth) {
+      height: 9rem;
+      width: 16rem;
+    }
 
     &:after {
       background-image: url("/assets/img/backgrounds/circuit-board-white.svg");
@@ -148,6 +186,8 @@
 
   &__box_conteudo {
     display: grid;
+
+
   }
 
   &__leia-mais {
@@ -160,6 +200,16 @@
     font-weight: bold;
     min-width: 10rem;
     padding: 0.4rem 1.5rem;
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      // margin-top: 23rem;
+      display: block;
+    }
+
+    @include media-up($gd-media-tablet-maxwidth) {
+      // height: 9rem;
+      // width: 16rem;
+    }
   }
 
   &__ghost {
@@ -183,19 +233,28 @@
       height: 22px;
       margin-top: 0.5rem;
     }
-    &-tempo1 {
+
+    &-subtitulo {
       background-color: #000;
       border: solid 1px red;
-      display: inline-block;
       height: 22px;
       margin-top: 0.5rem;
     }
-    &-tempo2 {
+
+    &-data {
       background-color: #000;
       border: solid 1px red;
       display: inline-block;
       height: 22px;
       margin-top: 0.5rem;
+      width: 320px;
+    }
+
+    &-paragrafo {
+      background-color: #000;
+      border: solid 1px red;
+      height: 22px;
+      margin: 0.5rem 0 0 0;
     }
   }
 }
@@ -211,11 +270,12 @@
 .loading {
   background-color: #ededed;
   background: linear-gradient(
-    100deg,
-    rgba(255, 255, 255, 0) 40%,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(255, 255, 255, 0) 60%
-  ) #ededed;
+      100deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0) 60%
+    )
+    #ededed;
   background-size: 200% 100%;
   background-position-x: 180%;
   animation: 2s loading ease-in-out infinite;
@@ -226,5 +286,3 @@
     background-position-x: -20%;
   }
 }
-
-
