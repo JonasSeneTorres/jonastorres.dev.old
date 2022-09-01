@@ -1,7 +1,7 @@
 @import "../../../styles/gd";
 
 .acessibilitybar {
-  background-color: #fff;
+  background-color: $gd-color-white;;
   height: 2rem;
 
   @include media-down($gd-media-tablet-maxwidth) {

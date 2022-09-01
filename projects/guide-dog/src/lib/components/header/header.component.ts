@@ -38,14 +38,5 @@ export class HeaderComponent {
     );
   }
 
-  // @HostListener('window:resize', ['$event'])
-  // onResize() {
-  //   const hasNavConfig = this.navConfig.length > 0;
-  //   const centeredPanelMarginPositive = this.centeredPanelMargin > 0;
-  //   const lessThanLayoutBreak =
-  //     this.systemInformation.browser.size.width <=
-  //     this.systemInformation.page.centeredPanel.area - 2;
-  // }
-
   constructor(private systemInformation: SystemInformationService) {}
 }

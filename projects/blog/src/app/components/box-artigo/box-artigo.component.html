@@ -3,15 +3,11 @@
   [class.artigo-box__active]="dadosCarregados"
   [routerLink]="['/artigo']"
 >
-<!-- class="angular" -->
-<!-- {{ artigo | json }} -->
   <section
     [class.artigo-box__capa.active]="dadosCarregados"
     [class.artigo-box__capaloading]="!dadosCarregados"
     [class.loading]="!dadosCarregados"
     >
-    <!-- [class.active]="dadosCarregados" -->
-    <!-- [class.artigo-box__capaloading]="dadosCarregados" -->
     <span
       class="artigo-box__icone fa-brands fa-html5"
       *ngIf="dadosCarregados"

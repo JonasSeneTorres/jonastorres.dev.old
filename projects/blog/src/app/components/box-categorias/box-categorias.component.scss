@@ -4,9 +4,11 @@
   margin-bottom: 1.25rem;
 
   @include media-down($gd-media-tablet-maxwidth) {
+    background-color: $gd-color-white;
     border: solid 1px #000;
     border-radius: 16px;
     padding: 1rem;
+    margin: .5rem;
   }
 
   &__titulo {

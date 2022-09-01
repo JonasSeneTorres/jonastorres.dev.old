@@ -8,7 +8,6 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
   styleUrls: ['./menu-list-horizontal.component.scss']
 })
 export class MenuListHorizontalComponent {
-  // private _navibarItemList: NavibarItemConfig[] = [];
   @Input() navibarItemList: NavibarItemConfig[] = [];
   @Input() show = false
 

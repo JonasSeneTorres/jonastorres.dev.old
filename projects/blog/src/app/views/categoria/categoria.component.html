@@ -21,7 +21,6 @@
 
   <aside *ngIf="categorias && ultimosArtigos">
     <jt-box-busca></jt-box-busca>
-    <!-- |{{ dadosCategoria?.categoria | json }}| -->
     <jt-box-categorias
       [categorias]="categorias"
       [categoriaSelecionada]="dadosArtigo?.nome | lowercase"

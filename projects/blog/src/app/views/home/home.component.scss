@@ -53,32 +53,6 @@
 }
 
 .home {
-  // display: grid;
-  // grid-template-areas:
-  //   "jumbotrom jumbotrom"
-  //   "article aside";
-  // column-gap: 6rem;
-  // grid-template-columns: 1fr 22rem;
-
-  // @include media-down($gd-media-tablet-maxwidth) {
-  //   grid-template-areas:
-  //     "jumbotrom"
-  //     "article"
-  //     "aside";
-  // }
-
-  // @include media-up($gd-media-tablet-maxwidth) {
-  //   grid-template-areas:
-  //     "jumbotrom jumbotrom"
-  //     "article aside";
-  //   column-gap: 6rem;
-  //   grid-template-columns: 1fr 22rem;
-  // }
-
-  // &__artigos {
-  //   grid-area: article;
-  // }
-
   &__ultimos-artigos {
     display: grid;
     grid-template-areas:
@@ -86,25 +60,20 @@
       "artigo1 artigo2"
       "artigo1 artigo3"
       "artigo1 artigo4";
-    // gap: 2.5rem;
     grid-template-columns: 1fr 430px;
     column-gap: 2.5rem;
+    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%), 0 1px 4px rgb(0 0 0 / 12%);
 
     background-color: $gd-colorligth-primary-100;
     margin-top: -19.5rem;
-    /* z-index: 130; */
     position: absolute;
-    width: 915px;
+    width: 921px;
     border-radius: 8px;
     padding: 0rem 3rem 3.25rem 2rem;
     height: 411px;
 
     @include media-down($gd-media-tablet-maxwidth) {
      display: none;
-    }
-
-    @include media-up($gd-media-tablet-maxwidth) {
-      // grid-template-columns: 22rem 1fr;
     }
 
     &-titulo {
@@ -131,24 +100,36 @@
   }
 
   &__artigos-populares {
-
+    background-color: $gd-color-white;
 
     @include media-down($gd-media-tablet-maxwidth) {
-      // margin-top: 23rem;
+      padding: .5rem 0 .5rem .5rem;
     }
-
-
 
     @include media-up($gd-media-tablet-maxwidth) {
       margin-top: 10.5rem;
+      padding: 1rem 0rem;
     }
 
     &-grid {
-      @include media-tablet(){
+      @include media-down($gd-media-phone-maxheight){
         display: grid;
-        gap: 1rem;
-        column-gap: 1.5rem;
+        gap: 0rem;
+        column-gap: 0rem;
+        grid-template-columns: 1fr;
+      }
+
+      @include media-tablet() {
+         display: grid;
+        gap: 0.25rem;
+        column-gap: 0.25rem;
         grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    &-titulo {
+      @include media-down($gd-media-tablet-maxwidth){
+        margin: 0.5rem 0 1.25rem 0;
       }
     }
   }
@@ -158,29 +139,6 @@
   display: block;
   margin-top: 1.5rem;
 }
-
-// jt-jumbotron {
-//   grid-area: jumbotrom;
-
-//   // @include media-down($gd-media-tablet-maxwidth) {
-//   //   display: none;
-//   // }
-// }
-
-// aside {
-//   grid-area: aside;
-
-//   width: 100%;
-
-//   @include media-down($gd-media-tablet-maxwidth) {
-//     // margin-top: 23rem;
-//   }
-
-//   @include media-up($gd-media-tablet-maxwidth) {
-//     margin-top: 23rem;
-//     max-width: 21rem;
-//   }
-// }
 
 :host::ng-deep {
   .home__ultimos-artigos {

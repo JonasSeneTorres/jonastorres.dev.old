@@ -52,8 +52,6 @@ gd-centered-panel div {
       background-color: $gd-colorligth-primary-200;
       border-bottom-right-radius: 16px;
       box-shadow: 4px 0px 5px 0px rgba($gd-color-black, 0.15);
-      // height: calc(100vh - 16px);
-      // padding-bottom: 1.75rem;
       max-width: 530px;
       padding: 0.5rem 0.25rem 1.75rem 0.5rem;
       position: absolute !important;
@@ -107,7 +105,7 @@ gd-centered-panel div {
       overflow: hidden;
 
       li {
-        border: solid 2px #fff;
+        border: solid 2px $gd-color-white;
         border-left: none;
         border-right: none;
         line-height: 2.5rem;

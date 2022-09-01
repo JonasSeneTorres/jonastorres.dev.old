@@ -8,7 +8,6 @@ export class ModalService {
   private _showModal = false;
   private renderer: Renderer2;
   private scrollPosition: number = 0;
-  // private listener;
 
   get showModal(): boolean {
     return this._showModal;
@@ -19,9 +18,6 @@ export class ModalService {
     private _rendererFactory: RendererFactory2
   ) {
     this.renderer = _rendererFactory.createRenderer(null, null);
-    // this.listener = this.renderer.listen('window', 'scroll', (e) => {
-    //   console.log(this.getYPosition(e));
-    // });
   }
 
   open() {
@@ -46,8 +42,4 @@ export class ModalService {
 
     this._showModal = false;
   }
-
-  // private getYPosition(e: Event): number {
-  //   return (e.target as Element).scrollTop;
-  // }
 }

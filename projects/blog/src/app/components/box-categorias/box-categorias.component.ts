@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'jt-box-categorias',
@@ -10,8 +10,4 @@ export class BoxCategoriasComponent {
   @Input() categoriaSelecionada: string = '';
 
   constructor() { }
-
-  // ngOnInit(): void {
-  // }
-
 }

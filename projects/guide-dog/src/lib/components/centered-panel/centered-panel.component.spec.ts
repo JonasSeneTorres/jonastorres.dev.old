@@ -9,7 +9,6 @@ describe('CenteredPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      // declarations: [ CenteredPanelComponent ]
       imports: [CenteredPanelModule]
     })
     .compileComponents();

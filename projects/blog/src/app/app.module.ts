@@ -39,17 +39,6 @@ registerLocaleData(localePT);
       provide: DOMPURIFY_CONFIG,
       useValue: domPurifyConfig,
     },
-    // {
-    //   provide: DOMPURIFY_HOOKS,
-    //   useValue: [
-    //     {
-    //       name: 'beforeSanitizeAttributes',
-    //       hook: (node: Element) => {
-    //         node.removeAttribute('id');
-    //       },
-    //     },
-    //   ],
-    // },
   ],
   bootstrap: [AppComponent],
 })

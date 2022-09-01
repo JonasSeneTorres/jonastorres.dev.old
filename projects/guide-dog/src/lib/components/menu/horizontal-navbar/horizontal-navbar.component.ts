@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item-config';
 
@@ -10,12 +10,6 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
 export class HorizontalNavbarComponent {
   @Input() nav: NavibarItemConfig[] = [];
 
-  constructor() // private modalService: ModalService,
-  // private router: Router
+  constructor()
   {}
-
-  // navigate(commands: any[], extras?: NavigationExtras | undefined): void {
-  //   this.modalService.close();
-  //   this.router.navigate(commands, extras);
-  // }
 }

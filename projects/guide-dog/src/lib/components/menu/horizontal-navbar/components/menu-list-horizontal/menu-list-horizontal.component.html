@@ -1,7 +1,6 @@
 <uL [class.show]="show">
   <ng-container *ngFor="let item of navibarItemList">
     <li>
-      <!-- {{ item | json }}{{ show}} -->
       <a [routerLink]="item.route">{{ item.label }}</a>
     </li>
   </ng-container>

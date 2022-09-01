@@ -20,16 +20,11 @@ import { SessionStorageService } from 'projects/guide-dog/src/lib/services/data-
     MenuModule,
     CommonModule,
   ],
-  // imports: [
-  // ],
   providers: [
-    // CookieService,
     LocalStorageService,
     MemoryStorageService,
     ModalService,
     SessionStorageService,
-
-    // Renderer2,
   ],
   exports: [
     FooterModule,

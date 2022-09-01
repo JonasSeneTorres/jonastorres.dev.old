@@ -5,13 +5,9 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './box-artigo.component.html',
   styleUrls: ['./box-artigo.component.scss']
 })
-export class BoxArtigoComponent /*implements OnInit*/ {
+export class BoxArtigoComponent {
   @Input() artigo: any = null;
   @Input() dadosCarregados = true;
 
   constructor() { }
-
-  // ngOnInit(): void {
-  //   // console.log();
-  // }
 }

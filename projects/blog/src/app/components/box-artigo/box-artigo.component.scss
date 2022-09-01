@@ -1,17 +1,20 @@
 @import "../../../styles/styles.scss";
 
 .artigo-box {
+  background-color: $gd-colorligth-primary-50;
   border-radius: 8px;
   cursor: pointer;
   display: grid;
-  // grid-template-columns: 22rem 1fr;
-  transition: all 0.5s ease;
   margin-bottom: 1rem;
   position: relative;
+  transition: all 0.5s ease;
   width: 100%;
 
   @include media-down($gd-media-tablet-maxwidth) {
     grid-template-columns: 1fr;
+    margin: 0 0rem .5rem 0;
+    padding: 1rem;
+    width: calc(100% - 2.5rem);
   }
 
   @include media-up($gd-media-tablet-maxwidth) {
@@ -68,7 +71,7 @@
     );
     border: solid 1px #000;
     border-radius: 8px;
-    color: #fff;
+    color: $gd-color-white;
     display: grid;
     height: 9rem;
     justify-content: center;
@@ -91,19 +94,13 @@
     );
     border: solid 1px #000;
     border-radius: 8px;
-    color: #fff;
+    color: $gd-color-white;;
     display: grid;
-    // height: 9rem;
     justify-content: center;
     justify-items: baseline;
     padding: 2rem;
     position: relative;
     transition: all 0.5s ease;
-    // width: 16rem;
-
-    @include media-down($gd-media-tablet-maxwidth) {
-      // margin-top: 23rem;
-    }
 
     @include media-up($gd-media-tablet-maxwidth) {
       height: 9rem;
@@ -145,7 +142,6 @@
   }
 
   &__dados {
-    border-top: solid 1px #fff;
     grid-area: dados;
     margin: 0;
     width: 100%;
@@ -186,30 +182,18 @@
 
   &__box_conteudo {
     display: grid;
-
-
   }
 
   &__leia-mais {
     background-color: $gd-colorligth-primary-300;
     border-radius: 8px;
-    color: #fff;
+    color: $gd-color-white;
     cursor: pointer;
     display: inline-block;
     font-family: $title_font_family;
     font-weight: bold;
     min-width: 10rem;
     padding: 0.4rem 1.5rem;
-
-    @include media-down($gd-media-tablet-maxwidth) {
-      // margin-top: 23rem;
-      display: block;
-    }
-
-    @include media-up($gd-media-tablet-maxwidth) {
-      // height: 9rem;
-      // width: 16rem;
-    }
   }
 
   &__ghost {

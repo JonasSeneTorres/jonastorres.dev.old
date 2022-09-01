@@ -20,7 +20,6 @@ h2 {
   &__foto {
     align-self: start;
     box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
-    // border: solid 1px #000;
     border-radius: 8px;
     grid-area: foto;
     height: 150px;
@@ -30,13 +29,11 @@ h2 {
     width: 150px;
 
     img {
-      // height: 152px;
       width: 154px;
     }
   }
 
   &__nome {
-    // font-family: $title_font_family;
     font-family: "OoohBaby";
     font-size: 2.5rem;
     font-style: italic;

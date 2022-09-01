@@ -10,16 +10,11 @@ import { SystemInformationService } from 'projects/guide-dog/src/lib/services/sy
   styleUrls: ['./acessibilidade.component.scss'],
 })
 export class AcessibilidadeComponent {
-  // constructor() { }
-  // url: string;
 
   constructor(
     private local: SessionStorageService,
-    // private router: Router,
     public browserService: SystemInformationService
   ) {
     this.local.set('LocalStorageService', { teste: 1 });
-    // this.url = this.router.url;
-    // console.log(this.router.url);
   }
 }

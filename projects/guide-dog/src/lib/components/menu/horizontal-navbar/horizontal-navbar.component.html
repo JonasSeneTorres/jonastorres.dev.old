@@ -20,7 +20,6 @@
             {{ itemNav.label }}
             <span class="fa-solid fa-caret-down"></span>
           </button>
-          <!-- {{ listaitens.getAttribute('data-show') | json }} -->
           <gd-menu-list-horizontal [navibarItemList]="itemNav.children ?? []" [show]="listaitens.getAttribute('data-show') === 'true'"></gd-menu-list-horizontal>
         </ng-template>
       </li>

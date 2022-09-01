@@ -10,14 +10,8 @@ import { SharedModule } from './../../components/shared.module';
 @NgModule({
   declarations: [
     ArtigoComponent,
-    // BoxBuscaComponent,
     BoxOutrosArtigosComponent,
-    // BoxCategoriasComponent,
     AutorComponent,
-    // SigaNosComponent,
-    // UltimosPostsComponent,
-    // BoxCompartilheComponent,
-    // JumbotronComponent
   ],
   imports: [
     CommonModule,

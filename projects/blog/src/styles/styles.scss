@@ -137,11 +137,6 @@ blockquote {
 
 .jt {
   display: grid;
-  // grid-template-areas:
-  //   "jumbotrom jumbotrom"
-  //   "article aside";
-  // column-gap: 6rem;
-  // grid-template-columns: 1fr 22rem;
 
   @include media-down($gd-media-tablet-maxwidth) {
     grid-template-areas:
@@ -154,35 +149,46 @@ blockquote {
     grid-template-areas:
       "jumbotrom jumbotrom"
       "article aside";
-    column-gap: 6rem;
-    grid-template-columns: 1fr 22rem;
+    column-gap: 1rem;
+    grid-template-columns: 1fr 21rem;
   }
 
   &__artigos {
     grid-area: article;
+    margin-bottom: .5rem;
+
   }
 
 }
 
 jt-jumbotron {
   grid-area: jumbotrom;
-
-  // @include media-down($gd-media-tablet-maxwidth) {
-  //   display: none;
-  // }
 }
 
 aside {
   grid-area: aside;
 
-  width: 100%;
-
   @include media-down($gd-media-tablet-maxwidth) {
-    // margin-top: 23rem;
+    margin: 0;
+    padding: 0;
   }
 
   @include media-up($gd-media-tablet-maxwidth) {
-    margin-top: 23rem;
+    border-radius: 16px;
+    background-color: $gd-color-white;
+    margin-top: 24rem !important;
     max-width: 21rem;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+}
+
+jt-box-categorias {
+  @include media-down($gd-media-tablet-maxwidth) {
+    background-color: $gd-color-white;
+    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%), 0 1px 4px rgb(0 0 0 / 12%);
+    display: block;
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 0.5rem;
   }
 }

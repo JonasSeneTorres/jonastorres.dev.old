@@ -3,7 +3,7 @@
 .box-compartilhe {
   background-color: $gd-colorligth-primary-200;
   border-radius: 8px;
-  color: #fff;
+  color: $gd-color-white;;
   margin-bottom: 1rem;
 
   &__title {
@@ -42,7 +42,7 @@
   a:visited,
   a:hover,
   a:active {
-    color: #fff;
+    color: $gd-color-white;;
     margin: 0 0.5rem;
     text-decoration: none;
   }

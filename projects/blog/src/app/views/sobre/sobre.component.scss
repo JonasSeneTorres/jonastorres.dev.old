@@ -8,7 +8,6 @@
 
   &__missao-visao-valores{
     border: solid 1px #000;
-    // column-gap: 2rem;
     display: grid;
     grid-template-areas: 'missao visao valores';
     grid-template-columns: 1fr 1fr 1fr;
@@ -16,14 +15,12 @@
 
   &__missao {
     grid-area: missao;
-    // border: solid 1px #000;
   }
 
   &__visao {
     border-left: solid 1px #000;
     border-right: solid 1px #000;
     grid-area: visao;
-
   }
 
   &__valores {

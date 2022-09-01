@@ -1,10 +1,9 @@
 @import "../../../../../styles/gd.scss";
 
 ul {
-  background-color: #fff;
+  background-color: $gd-color-white;
   border: solid 1px #000;
   border-radius: 8px;
-  // display: inline-block;
   display: none;
   left: -1rem;
   list-style-type: none;
@@ -18,12 +17,6 @@ ul {
   animation-name: animacao-menu;
   animation-duration: 1s;
   animation-direction: reverse;
-  // transform: translateY(-500%);
-  // transform: scale(1);
-
-  // &:hover {
-  //   display: inline-block;
-  // }
 }
 
 .show {
@@ -31,14 +24,11 @@ ul {
 }
 
 li {
-  // border-bottom: 1px solid #000;
   border-top: 1px solid #000;
   padding: 0.5rem 0.25rem;
 
   &:first-child {
-    // a {
     border: none !important;
-    // }
   }
 
   &:hover {
@@ -62,65 +52,6 @@ a {
 
   display: block;
 }
-
-// @keyframes animacao-menu {
-// 	0% {
-// 		transform: scaleY(1);
-// 	}
-
-// 	4% {
-// 		transform: scaleY(1);
-// 	}
-
-// 	8% {
-// 		transform: scaleY(1);
-// 	}
-
-// 	14% {
-// 		transform: scaleY(1);
-// 	}
-
-// 	18% {
-// 		transform: scaleY(1);
-// 	}
-
-// 	26% {
-// 		transform: scaleY(1.01);
-// 	}
-
-// 	28% {
-// 		transform: scaleY(1.01);
-// 	}
-
-// 	40% {
-// 		transform: scaleY(0.98);
-// 	}
-
-// 	42% {
-// 		transform: scaleY(0.98);
-// 	}
-
-// 	56% {
-// 		transform: scaleY(1.05);
-// 	}
-
-// 	58% {
-// 		transform: scaleY(1.04);
-// 	}
-
-// 	72% {
-// 		transform: scaleY(0.87);
-// 	}
-
-// 	86% {
-// 		transform: scaleY(1.37);
-// 	}
-
-// 	100% {
-// 		transform: scaleY(0);
-// 	}
-
-// }
 
 @keyframes animacao-menu  {
 	0% {
