@@ -65,7 +65,7 @@
     box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%), 0 1px 4px rgb(0 0 0 / 12%);
 
     background-color: $gd-colorligth-primary-100;
-    margin-top: -19.5rem;
+    margin-top: -23.5rem;
     position: absolute;
     width: 921px;
     border-radius: 8px;
@@ -101,14 +101,18 @@
 
   &__artigos-populares {
     background-color: $gd-color-white;
+    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%), 0 1px 4px rgb(0 0 0 / 12%);
 
     @include media-down($gd-media-tablet-maxwidth) {
-      padding: .5rem 0 .5rem .5rem;
+      padding: .5rem 0 .25rem .5rem;
     }
 
     @include media-up($gd-media-tablet-maxwidth) {
-      margin-top: 10.5rem;
-      padding: 1rem 0rem;
+      border-radius: 16px;
+      margin-top: 1.5rem;
+      padding: 1rem;
+      padding-bottom: 1px;
+      // padding: 1rem;
     }
 
     &-grid {
@@ -119,17 +123,29 @@
         grid-template-columns: 1fr;
       }
 
-      @include media-tablet() {
+      @include media-between($gd-media-phone-maxheight, 60rem) {
          display: grid;
         gap: 0.25rem;
         column-gap: 0.25rem;
         grid-template-columns: 1fr 1fr;
       }
+
+      @include media-between(60rem, $gd-media-tablet-maxwidth) {
+        display: grid;
+       gap: 0.25rem;
+       column-gap: 0.25rem;
+       grid-template-columns: 1fr 1fr 1fr;
+     }
     }
 
     &-titulo {
       @include media-down($gd-media-tablet-maxwidth){
         margin: 0.5rem 0 1.25rem 0;
+      }
+
+      @include media-up($gd-media-tablet-maxwidth) {
+        font-size: 1.75rem;
+        margin: 0 0 0.5rem;
       }
     }
   }
@@ -200,4 +216,11 @@
       @include box-pequeno;
     }
   }
+}
+
+jt-jumbotron {
+  @include media-down($gd-media-tablet-maxwidth) {
+    display: block;
+    margin-bottom: 2.25rem;
+   }
 }

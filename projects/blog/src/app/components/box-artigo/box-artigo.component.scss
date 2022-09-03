@@ -1,5 +1,9 @@
 @import "../../../styles/styles.scss";
 
+:root {
+  --loading-grey: #ededed;
+}
+
 .artigo-box {
   background-color: $gd-colorligth-primary-50;
   border-radius: 8px;
@@ -38,8 +42,12 @@
       box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%),
         0 1px 18px rgb(0 0 0 / 12%);
       cursor: pointer;
-      padding: 0.5rem;
+      margin: 1rem 0 1.5rem 0;
       transform: scale(1.05);
+
+      @include media-up($gd-media-tablet-maxwidth) {
+        transform: scale(1.0125);
+      }
 
       .artigo-box__capa::after {
         transform: scale(1.1);
@@ -103,8 +111,9 @@
     transition: all 0.5s ease;
 
     @include media-up($gd-media-tablet-maxwidth) {
-      height: 9rem;
-      width: 16rem;
+      height: 7rem;
+      margin: 1rem 0 1rem 1rem;
+      width: 14rem;
     }
 
     &:after {
@@ -129,6 +138,10 @@
     margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    @include media-up($gd-media-tablet-maxwidth) {
+      margin-top: 1rem;
+    }
   }
 
   &__subtitulo {
@@ -168,9 +181,9 @@
   &__box-titulo {
     align-content: end;
     display: grid;
-    height: 4rem;
+    height: 5rem;
     justify-content: flex-start;
-    max-height: 4rem;
+    max-height: 5rem;
     overflow: hidden;
   }
 
@@ -182,6 +195,12 @@
 
   &__box_conteudo {
     display: grid;
+  }
+
+  &__box-dados {
+    @include media-up($gd-media-tablet-maxwidth) {
+      margin-top: .5rem;
+    }
   }
 
   &__leia-mais {
@@ -245,10 +264,6 @@
 
 .pipe {
   margin: 0 0.5rem;
-}
-
-:root {
-  --loading-grey: #ededed;
 }
 
 .loading {
