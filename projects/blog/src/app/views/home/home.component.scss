@@ -52,6 +52,12 @@
   }
 }
 
+:host ::ng-deep {
+  .jt__artigos {
+    margin-bottom: .5rem;
+  }
+}
+
 .home {
   &__ultimos-artigos {
     display: grid;
@@ -232,3 +238,4 @@
 //     margin-bottom: 2.25rem;
 //   }
 // }
+

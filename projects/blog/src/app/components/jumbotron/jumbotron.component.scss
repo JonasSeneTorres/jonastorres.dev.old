@@ -153,6 +153,7 @@
       // display: grid;
       grid-template-areas:
         // "icone"
+
         "titulo"
         "dados";
       grid-template-columns: 1fr;
@@ -184,6 +185,8 @@
       align-self: baseline;
       justify-self: center;
       padding: 0 1.5rem;
+      max-height: calc(100vh - 189px);
+      overflow: hidden;
       // align-self: end;
       // grid-area: titulo;
       // padding-bottom: 1.5rem;

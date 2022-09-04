@@ -1,11 +1,13 @@
-.artigo {
-  display: grid;
-  grid-template-areas:
-    "jumbotrom jumbotrom"
-    "article aside";
-  column-gap: 6rem;
-  grid-template-columns: 1fr 22rem;
-}
+@import "../../../styles/styles.scss";
+
+// .artigo {
+//   display: grid;
+//   grid-template-areas:
+//     "jumbotrom jumbotrom"
+//     "article aside";
+//   column-gap: 6rem;
+//   grid-template-columns: 1fr 22rem;
+// }
 
 jt-jumbotron {
   grid-area: jumbotrom;
@@ -15,13 +17,54 @@ article {
   grid-area: article;
 }
 
-aside {
-  grid-area: aside;
-  margin-top: 23rem;
-  max-width: 21rem;
-  width: 100%;
+.artigo {
+  @include scaffolding-card;
+  // margin-bottom: 0.5rem;
+
+  @include media-down($gd-media-phone-maxwidth) {
+    overflow: hidden;
+    // margin-top: -3.5rem;
+  }
+
+  @include media-between(
+    $gd-media-phone-maxwidth + 1,
+    $gd-media-tablet-maxwidth - 1
+  ) {
+  }
+
+  @include media-up($gd-media-tablet-maxwidth) {
+    // padding: 1rem 2rem 1.5rem;
+  }
+
+  &-content {
+    // overflow: hidden;
+    // width: 100vw;
+    margin-bottom: .5rem;
+
+    @include media-down($gd-media-phone-maxwidth) {
+      overflow: hidden;
+      width: 100vw;
+      // margin-bottom: .5rem;
+    }
+
+    @include media-between(
+      $gd-media-phone-maxwidth + 1,
+      $gd-media-tablet-maxwidth - 1
+    ) {
+    }
+
+    @include media-up($gd-media-tablet-maxwidth) {
+      // padding: 1rem 2rem 1.5rem;
+    }
+  }
 }
+
 
 .content {
   margin-top: 1.5rem;
+  // overflow: hidden;
+  position: relative;
+  width: 100vw;
+
+  // @include scaffolding-card;
 }

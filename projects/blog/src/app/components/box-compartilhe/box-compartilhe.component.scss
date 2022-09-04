@@ -1,11 +1,11 @@
 @import "../../../styles/styles.scss";
 
 .box-compartilhe {
-  background-color: $gd-colorligth-primary-200;
+  background-color: $gd-colorligth-secondary-500;
   border-radius: 8px;
-  color: $gd-color-white;;
-  margin-bottom: 1rem;
-
+  color: $gd-color-white;
+  // margin-bottom: 1rem;
+margin-top: 1rem;
   &__title {
     display: inline-block;
     margin: 0 2.5rem;

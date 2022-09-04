@@ -1,5 +1,5 @@
 <div class="jt" *ngIf="dadosArtigo">
-  <article class="jt__artigos">
+  <article class="jt_artigo">
     <jt-jumbotron
       [titulo]="dadosArtigo.titulo"
       [subtitulo]="dadosArtigo.subtitulo"
@@ -7,16 +7,22 @@
       [dataEdicao]="dadosArtigo.dataEdicao"
       [tempoLeitura]="dadosArtigo.tempoLeitura"
       [categoria]="categoriaArtigo"></jt-jumbotron>
-    <div class="content" [innerHtml]="dadosArtigo.conteudoArtigo"></div>
-    <jt-box-outros-artigos [listaArtigoSerie]="listaArquivoSerie" [artigoAtual]="dadosArtigo.titulo"></jt-box-outros-artigos>
-    <jt-box-compartilhe></jt-box-compartilhe>
-    <jt-autor [autor]="dadosAutor"></jt-autor>
+    <div class="artigo-content">
+      <div class="artigo" [innerHtml]="dadosArtigo.conteudoArtigo"></div>
+      <jt-box-compartilhe></jt-box-compartilhe>
+      <jt-box-outros-artigos [listaArtigoSerie]="listaArquivoSerie" [artigoAtual]="dadosArtigo.titulo"></jt-box-outros-artigos>
+      <!-- <jt-autor [autor]="dadosAutor"></jt-autor> -->
+    </div>
   </article>
 
-  <aside *ngIf="categorias && ultimosArtigos">
+  <aside>
+    <jt-aside-box></jt-aside-box>
+  </aside>
+
+  <!-- <aside *ngIf="categorias && ultimosArtigos">
     <jt-box-busca></jt-box-busca>
     <jt-box-categorias [categorias]="categorias" [categoriaSelecionada]="categoriaArtigo"></jt-box-categorias>
     <jt-siga-nos></jt-siga-nos>
     <jt-ultimos-posts [ultimosArtigos]="ultimosArtigos" [categorias]="categorias"></jt-ultimos-posts>
-  </aside>
+  </aside> -->
 </div>
