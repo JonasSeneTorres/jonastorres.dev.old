@@ -12,11 +12,23 @@
   top: 0;
   z-index: 11;
 
+  &__hide-navbar {
+    overflow: hidden;
+    height: 0;
+  }
+
   &__nav {
     align-content: center;
     display: grid;
     grid-template-columns: 1fr auto;
     min-height: 2.5rem;
+
+    &-complete {
+
+      @include media-up($gd-media-tablet-maxwidth) {
+        align-content: end;
+      }
+    }
   }
 
   &__menu{
@@ -48,6 +60,20 @@
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
+    margin-top: -0.7rem;
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      margin-top: 0.7rem;
+    }
+
+    &-adjusted {
+      margin-left: .5rem;
+      margin-top: 1rem;
+
+      @include media-up($gd-media-phone-maxwidth) {
+        margin-left: 1.5rem;
+      }
+    }
   }
 
   &__logo {
@@ -73,11 +99,25 @@ button {
   display: grid;
   grid-template-columns: auto 1fr;
   justify-items: baseline;
-  margin-top: .75rem;
+
+  &-mobile {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: baseline;
+  }
+
+  .grid {
+    @include media-up($gd-media-tablet-maxwidth) {
+      margin-top: .75rem;
+    }
+  }
 }
 
 :host ::ng-deep {
   button.gd-menu-hamburger__button {
     z-index: 50;
   }
+
+
 }

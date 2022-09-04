@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private artigosService: ArtigosService,
-    private categoriasService: CategoriasService
+    private categoriasService: CategoriasService,
   ) {}
 
   ngOnInit(): void {

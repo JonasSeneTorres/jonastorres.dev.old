@@ -1,4 +1,15 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  NgZone,
+  OnDestroy,
+  OnInit
+} from '@angular/core';
+import { Observer, Subject, throttleTime } from 'rxjs';
 
 import { NavibarItemConfig } from '../../types/navibar-item-config';
 import { SystemInformationService } from 'projects/guide-dog/src/lib/services/system-information/system-information.service';
@@ -8,35 +19,82 @@ import { SystemInformationService } from 'projects/guide-dog/src/lib/services/sy
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
   @Input() navConfig: NavibarItemConfig[] = [];
-  @Input() showAcessibilityBar = false;
   greatherThanLayoutBreak = false;
+  navboxWithAcceptableSize = true;
+  private _navBoxElement: Element;
+  private changeSize = new Subject();
 
   get centeredPanelMargin() {
     const sizeAdjustment = -2;
     return this.systemInformation.page.centeredPanel.margin + sizeAdjustment;
   }
 
-  get showHamburgerNav(): boolean {
-    const hasNavConfig = this.navConfig.length > 0;
-    const centeredPanelMarginPositive = this.centeredPanelMargin > 0;
-    const lessThanLayoutBreak =
-      this.systemInformation.browser.size.width <=
-      this.systemInformation.page.centeredPanel.area - 2;
-
-    return hasNavConfig && !centeredPanelMarginPositive && lessThanLayoutBreak;
-  }
-
   get showHamburgerHorizontalNav(): boolean {
     const hasNavConfig = this.navConfig.length > 0;
     const centeredPanelMarginPositive = this.centeredPanelMargin > 0;
-    this.greatherThanLayoutBreak = this.systemInformation.page.size.ItsGreaterThanCenterPanel;
+    this.greatherThanLayoutBreak =
+      this.systemInformation.page.size.ItsGreaterThanCenterPanel;
 
     return (
-      hasNavConfig && (centeredPanelMarginPositive || this.greatherThanLayoutBreak)
+      hasNavConfig &&
+      (centeredPanelMarginPositive || this.greatherThanLayoutBreak)
     );
   }
 
-  constructor(private systemInformation: SystemInformationService) {}
+  constructor(
+    private elementRef: ElementRef,
+    // private ngZone: NgZone,
+    private systemInformation: SystemInformationService,
+    private changeDetectorRef: ChangeDetectorRef
+  ) {
+    this._navBoxElement = this.elementRef.nativeElement;
+
+    this.changeSize
+    .asObservable()
+    .pipe(
+      throttleTime(1000)
+    )
+    .subscribe(innerWidth => {
+      console.log('innerWidth:', innerWidth);
+      this.navboxWithAcceptableSize = this.checkAcceptableSizeNavbox();
+      this.changeDetectorRef.detectChanges();
+    });
+  }
+
+  ngAfterViewInit(): void {
+    // this.ngZone.run(() => {
+      // this.updateBox(this.currentId, event.clientX + this.offsetX, event.clientY + this.offsetY);
+      // this.currentId = null;
+      this.onResize();
+      // this.changeDetectorRef.detectChanges();
+    // });
+  }
+
+  @HostListener('window:resize', ['$event.target'])
+  public onResize(target: any = {}) {
+    // console.log(target.innerWidth);
+    this.changeSize.next(target);
+  }
+
+  private checkAcceptableSizeNavbox(): boolean {
+    if (this.systemInformation.browser.size.width < 1024) {
+      return false;
+    }
+
+    const acceptableSizeLineInPixel = 24;
+    const heigthNavBox =
+    // let elementSize =
+      this.elementRef.nativeElement.querySelector('.gd-h-navbar').offsetHeight;
+
+    // const a = this.elementRef.nativeElement.offsetHeight;
+    // console.log('tamanho: ', a);
+    // if (a > 64) {
+    //   return false;
+    // }
+
+    // const heigth = elementSize ?? acceptableSizeLineInPixel;
+    return heigthNavBox <= 2 * acceptableSizeLineInPixel - 1;
+  }
 }
