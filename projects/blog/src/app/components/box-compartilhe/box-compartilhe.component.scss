@@ -2,20 +2,76 @@
 
 .box-compartilhe {
   background-color: $gd-colorligth-secondary-500;
-  border-radius: 8px;
+
   color: $gd-color-white;
   // margin-bottom: 1rem;
-margin-top: 1rem;
+  margin-top: 1rem;
+
+  @include media-down($gd-media-phone-maxwidth) {
+    margin: .5rem .25rem;
+    border-radius: 8px;
+  }
+
+  @include media-between(
+    $gd-media-phone-maxwidth + 1,
+    $gd-media-tablet-maxwidth - 1
+  ) {
+  }
+
+  @include media-up($gd-media-tablet-maxwidth) {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
   &__title {
-    display: inline-block;
-    margin: 0 2.5rem;
-    margin-right: 1.5rem;
+    // @include media-down($gd-media-phone-maxwidth) {
+    //   margin-bottom: 1rem;
+    // }
+
+    // @include media-between(
+    //   $gd-media-phone-maxwidth + 1,
+    //   $gd-media-tablet-maxwidth - 1
+    // ) {
+    // }
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      display: block;
+      padding-top: 1rem;
+      text-align: center;
+      margin: 0 !important;
+    }
+
+    @include media-up($gd-media-tablet-maxwidth) {
+      display: inline-block;
+      margin: 0 2.5rem;
+      margin-right: 1.5rem;
+    }
+
+
   }
 
   &__list {
-    display: inline-block;
-    padding: 0;
     text-align: center;
+
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      display: block;
+      // text-align: center;
+      padding: 0 0 1rem 0;
+      margin-bottom: 0;
+    }
+
+    @include media-up($gd-media-tablet-maxwidth) {
+      display: inline-block;
+      padding: 0;
+    // text-align: center;
+    }
+    // display: inline-block;
+    // padding: 0;
+    // text-align: center;
+
+
 
     li {
       display: inline-block;
