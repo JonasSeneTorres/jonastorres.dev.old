@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     this.obterDadosIniciais(1).subscribe(
       (sucesso) => {
         this.dadosArtigo = sucesso.artigo;
-        this.categorias = sucesso.categorias;
+        // this.categorias = sucesso.categorias;
         this.ultimosArtigos = sucesso.ultimosArtigos;
         this.subcategorias = sucesso.subcategorias;
         this.artigosDaCategoria = this.montarArtigosDaCategoria(
@@ -41,14 +41,14 @@ export class HomeComponent implements OnInit {
 
   private obterDadosIniciais(idCategoria: number): Observable<any> {
     const obterArtigo = this.categoriasService.obter(idCategoria);
-    const obterCategorias = this.categoriasService.listar();
+    // const obterCategorias = this.categoriasService.listar();
     const obterUltimosArtigos = this.artigosService.listarUltimosArtigos();
     const obterArtigosDaCategoria =
       this.artigosService.listarArtigosCategoria(idCategoria);
 
     return forkJoin({
       artigo: obterArtigo,
-      categorias: obterCategorias,
+      // categorias: obterCategorias,
       ultimosArtigos: obterUltimosArtigos,
       artigosDaCategoria: obterArtigosDaCategoria,
     });

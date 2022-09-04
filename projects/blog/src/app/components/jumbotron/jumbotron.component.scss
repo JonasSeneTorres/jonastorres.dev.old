@@ -19,11 +19,11 @@
 
   &__conteudo {
     display: grid;
-    grid-template-areas:
-      "icone titulo titulo"
-      "icone dados compartilhamento";
-    grid-template-columns: 300px 2fr 1fr;
-    padding-top: 30px;
+    // grid-template-areas:
+    //   "icone titulo titulo"
+    //   "icone dados compartilhamento";
+    // grid-template-columns: 300px 2fr 1fr;
+    // padding-top: 30px;
   }
 
   &__icone {
@@ -57,13 +57,13 @@
   }
 
   &__dados {
-    border-top: solid 1px #fff;
+    // border-top: solid 1px #fff;
     grid-area: dados;
     padding-top: 1.75rem;
   }
 
   &__compartilhamento {
-    border-top: solid 1px #fff;
+    // border-top: solid 1px #fff;
     grid-area: compartilhamento;
     padding-top: 0.5rem;
   }
@@ -130,6 +130,426 @@
       }
     }
   }
+
+  @include media-down($gd-media-phone-maxwidth) {
+    // height: 100vh;
+
+    display: block;
+    height: 100vh;
+    margin-bottom: -2rem;
+
+    &__vitrine {
+      // left: 0;
+      // max-width: 100vw;
+      // padding-top: 3rem;
+      padding-top: 1.5rem;
+      // position: absolute;
+      // top: 2rem;
+      // width: 100%;
+      // z-index: 10;
+    }
+
+    &__conteudo {
+      // display: grid;
+      grid-template-areas:
+        // "icone"
+        "titulo"
+        "dados";
+      grid-template-columns: 1fr;
+      grid-template-rows: calc(100vh - 174px) 100px;
+      padding-top: 0;
+    }
+
+    &__icone {
+      position: absolute;
+      width: 100vw;
+      text-align: center;
+      opacity: 0.2;
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      height: 100vh;
+      // grid-area: icone;
+      // text-shadow: 2px 4px #000;
+      // justify-self: center;
+      // display: none;
+
+      // .fa-solid,
+      // .fa-brands {
+      //   font-size: 25vh;
+      // }
+    }
+
+    &__titulo {
+      align-self: baseline;
+      justify-self: center;
+      padding: 0 1.5rem;
+      // align-self: end;
+      // grid-area: titulo;
+      // padding-bottom: 1.5rem;
+      // text-shadow: 2px 4px #000;
+
+      h1 {
+        // display: grid;
+        font-size: 2rem;
+        // margin: 1rem 0 0 0;
+        // min-height: 116px;
+        // align-items: end;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin: 1rem 0 0 0;
+      }
+    }
+
+    &__dados {
+      // border-top: solid 1px #fff;
+      // grid-area: dados;
+      // padding-top: 1.75rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+
+      .icon {
+        align-self: center;
+        justify-self: self-start;
+      }
+
+      .icon2 {
+        display: none;
+      }
+    }
+
+    &__compartilhamento {
+      display: none;
+      // border-top: solid 1px #fff;
+      // grid-area: compartilhamento;
+      // padding-top: 0.5rem;
+    }
+
+    &__fundo {
+      height: 100vh;
+      // background-color: #808080;
+      // background: linear-gradient(
+      //   150deg,
+      //   rgba(124, 124, 124, 0.8) 0%,
+      //   rgba($gd-setcolorligth-secondary, 1) 10%,
+      //   rgba(0, 0, 0, 1) 89%
+      // );
+      // height: 27rem;
+      // left: 0;
+      // max-width: 100vw;
+      // position: absolute;
+      // top: 2rem;
+      // width: 100%;
+
+      &:after {
+        // background-image: url("/assets/img/backgrounds/circuit-board-white.svg");
+        // content: "";
+        // display: block;
+        // height: 100%;
+        // left: 0;
+        // opacity: 0.1;
+        // position: absolute;
+        // top: 0;
+        // width: 100%;
+      }
+    }
+
+    &__list {
+      // display: inline-block;
+      // padding: 0;
+      // text-align: center;
+
+      li {
+        // display: inline-block;
+        // position: relative;
+        // transform: translateY(0px);
+        // transition: all 0.3s;
+
+        &:hover {
+          // transform: translateY(-11px);
+        }
+
+        &:hover .icon {
+          // transform: scale(1.15);
+        }
+
+        &:hover .title {
+          // transform: scale(1);
+        }
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+          // color: #fff;
+          // margin: 0 0.5rem;
+          // text-decoration: none;
+        }
+      }
+    }
+  }
+
+  @include media-between(
+    $gd-media-phone-maxwidth + 1,
+    $gd-media-tablet-maxwidth - 1
+  ) {
+    &__vitrine {
+      // left: 0;
+      // max-width: 100vw;
+      // padding-top: 5rem;
+      // position: absolute;
+      // top: 2rem;
+      // width: 100%;
+      // z-index: 10;
+    }
+
+    &__conteudo {
+      // display: grid;
+      grid-template-areas:
+        "icone titulo titulo"
+        "icone dados compartilhamento";
+      grid-template-columns: 300px 2fr 1fr;
+      padding-top: 30px;
+    }
+
+    &__icone {
+      // grid-area: icone;
+      // text-shadow: 2px 4px #000;
+
+      // .fa-solid,
+      // .fa-brands {
+      //   font-size: 17rem;
+      // }
+    }
+
+    &__titulo {
+      // align-self: end;
+      // grid-area: titulo;
+      // padding-bottom: 1.5rem;
+      // text-shadow: 2px 4px #000;
+
+      h1 {
+        // display: grid;
+        // font-size: 3rem;
+        // margin: 1rem 0 0 0;
+        // min-height: 116px;
+        // align-items: end;
+      }
+
+      h2 {
+        // font-size: 2.25rem;
+        // margin: 2rem 0 0 0;
+      }
+    }
+
+    &__dados {
+      // border-top: solid 1px #fff;
+      // grid-area: dados;
+      // padding-top: 1.75rem;
+    }
+
+    &__compartilhamento {
+      // border-top: solid 1px #fff;
+      // grid-area: compartilhamento;
+      // padding-top: 0.5rem;
+    }
+
+    &__fundo {
+      // background-color: #808080;
+      // background: linear-gradient(
+      //   150deg,
+      //   rgba(124, 124, 124, 0.8) 0%,
+      //   rgba($gd-setcolorligth-secondary, 1) 10%,
+      //   rgba(0, 0, 0, 1) 89%
+      // );
+      // height: 27rem;
+      // left: 0;
+      // max-width: 100vw;
+      // position: absolute;
+      // top: 2rem;
+      // width: 100%;
+
+      &:after {
+        // background-image: url("/assets/img/backgrounds/circuit-board-white.svg");
+        // content: "";
+        // display: block;
+        // height: 100%;
+        // left: 0;
+        // opacity: 0.1;
+        // position: absolute;
+        // top: 0;
+        // width: 100%;
+      }
+    }
+
+    &__list {
+      // display: inline-block;
+      // padding: 0;
+      // text-align: center;
+
+      li {
+        // display: inline-block;
+        // position: relative;
+        // transform: translateY(0px);
+        // transition: all 0.3s;
+
+        &:hover {
+          // transform: translateY(-11px);
+        }
+
+        &:hover .icon {
+          // transform: scale(1.15);
+        }
+
+        &:hover .title {
+          // transform: scale(1);
+        }
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+          // color: #fff;
+          // margin: 0 0.5rem;
+          // text-decoration: none;
+        }
+      }
+    }
+  }
+
+  // @include media-down($gd-media-tablet-maxwidth) {
+  // }
+
+  @include media-up($gd-media-tablet-maxwidth) {
+    &__vitrine {
+      // left: 0;
+      // max-width: 100vw;
+      // padding-top: 5rem;
+      // position: absolute;
+      // top: 2rem;
+      // width: 100%;
+      // z-index: 10;
+    }
+
+    &__conteudo {
+      // display: grid;
+      grid-template-areas:
+        "icone titulo titulo"
+        "icone dados compartilhamento";
+      grid-template-columns: 300px 2fr 1fr;
+      padding-top: 30px;
+    }
+
+    &__icone {
+      // grid-area: icone;
+      // text-shadow: 2px 4px #000;
+
+      // .fa-solid,
+      // .fa-brands {
+      //   font-size: 17rem;
+      // }
+    }
+
+    &__titulo {
+      // align-self: end;
+      // grid-area: titulo;
+      // padding-bottom: 1.5rem;
+      // text-shadow: 2px 4px #000;
+
+      h1 {
+        // display: grid;
+        // font-size: 3rem;
+        // margin: 1rem 0 0 0;
+        // min-height: 116px;
+        // align-items: end;
+      }
+
+      h2 {
+        // font-size: 2.25rem;
+        // margin: 2rem 0 0 0;
+      }
+    }
+
+    &__dados {
+      border-top: solid 1px #fff;
+      // grid-area: dados;
+      // padding-top: 1.75rem;
+    }
+
+    &__compartilhamento {
+      border-top: solid 1px #fff;
+      // grid-area: compartilhamento;
+      // padding-top: 0.5rem;
+    }
+
+    &__fundo {
+      // background-color: #808080;
+      // background: linear-gradient(
+      //   150deg,
+      //   rgba(124, 124, 124, 0.8) 0%,
+      //   rgba($gd-setcolorligth-secondary, 1) 10%,
+      //   rgba(0, 0, 0, 1) 89%
+      // );
+      // height: 27rem;
+      // left: 0;
+      // max-width: 100vw;
+      // position: absolute;
+      // top: 2rem;
+      // width: 100%;
+
+      &:after {
+        // background-image: url("/assets/img/backgrounds/circuit-board-white.svg");
+        // content: "";
+        // display: block;
+        // height: 100%;
+        // left: 0;
+        // opacity: 0.1;
+        // position: absolute;
+        // top: 0;
+        // width: 100%;
+      }
+    }
+
+    &__list {
+      // display: inline-block;
+      // padding: 0;
+      // text-align: center;
+
+      li {
+        // display: inline-block;
+        // position: relative;
+        // transform: translateY(0px);
+        // transition: all 0.3s;
+
+        &:hover {
+          // transform: translateY(-11px);
+        }
+
+        &:hover .icon {
+          // transform: scale(1.15);
+        }
+
+        &:hover .title {
+          // transform: scale(1);
+        }
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+          // color: #fff;
+          // margin: 0 0.5rem;
+          // text-decoration: none;
+        }
+      }
+    }
+  }
 }
 
 .icon {
@@ -163,4 +583,115 @@
 .fa-solid.fa-id-card,
 .fa-solid.fa-user-group {
   font-size: 13rem !important;
+}
+
+@include media-down($gd-media-phone-maxwidth) {
+  .icon {
+    // margin-right: 0.5rem;
+  }
+
+  .icon2 {
+    // margin: 0 0.5rem;
+  }
+
+  .icone-asp {
+    // margin-left: -3rem;
+    // margin-top: -2rem;
+    // width: 285px;
+  }
+
+  .pagina-nao-encontrada {
+    // background-color: #fff;
+    // border-radius: 8px;
+    // filter: grayscale(100%);
+  }
+
+  .destaque {
+    // font-size: 6rem !important;
+  }
+
+  .sem-borda {
+    // border: none !important;
+  }
+
+  .fa-solid.fa-id-card,
+  .fa-solid.fa-user-group {
+    // font-size: 13rem !important;
+  }
+}
+
+@include media-between(
+  $gd-media-phone-maxwidth + 1,
+  $gd-media-tablet-maxwidth - 1
+) {
+  .icon {
+    // margin-right: 0.5rem;
+  }
+
+  .icon2 {
+    // margin: 0 0.5rem;
+  }
+
+  .icone-asp {
+    // margin-left: -3rem;
+    // margin-top: -2rem;
+    // width: 285px;
+  }
+
+  .pagina-nao-encontrada {
+    // background-color: #fff;
+    // border-radius: 8px;
+    // filter: grayscale(100%);
+  }
+
+  .destaque {
+    // font-size: 6rem !important;
+  }
+
+  .sem-borda {
+    // border: none !important;
+  }
+
+  .fa-solid.fa-id-card,
+  .fa-solid.fa-user-group {
+    // font-size: 13rem !important;
+  }
+}
+
+// @include media-down($gd-media-tablet-maxwidth) {
+// }
+
+@include media-up($gd-media-tablet-maxwidth) {
+  .icon {
+    // margin-right: 0.5rem;
+  }
+
+  .icon2 {
+    // margin: 0 0.5rem;
+  }
+
+  .icone-asp {
+    // margin-left: -3rem;
+    // margin-top: -2rem;
+    // width: 285px;
+  }
+
+  .pagina-nao-encontrada {
+    // background-color: #fff;
+    // border-radius: 8px;
+    // filter: grayscale(100%);
+  }
+
+  .destaque {
+    // font-size: 6rem !important;
+  }
+
+  .sem-borda {
+    // border: none !important;
+  }
+
+  .fa-solid.fa-id-card,
+  .fa-solid.fa-user-group {
+    // font-size: 13rem !important;
+  }
 }

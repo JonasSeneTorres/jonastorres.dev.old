@@ -1,3 +1,5 @@
+@import "../../../styles/styles.scss";
+
 .acessibilidade-page {
   display: grid;
   grid-template-areas:
@@ -5,6 +7,33 @@
     "article";
   column-gap: 6rem;
   grid-template-columns: 1fr;
+
+  &-box {
+    // @include box-shadow;
+    margin-bottom: 1rem;
+
+    @include scaffolding-card;
+
+    // background-color: $gd-color-white;
+    // @include box-shadow;
+    // // box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%),
+    // //   0 1px 4px rgb(0 0 0 / 12%);
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      display: block;
+      padding: 1rem;
+      overflow: hidden;
+      width: calc(100vw - 2rem);
+    }
+
+    // @include media-up($gd-media-tablet-maxwidth) {
+    //   border-radius: 16px;
+    //   margin-top: 1.5rem;
+    //   padding: 1rem;
+    //   padding-bottom: 1px;
+    //   // padding: 1rem;
+    // }
+  }
 }
 
 jt-jumbotron {
@@ -13,5 +42,9 @@ jt-jumbotron {
 
 article {
   grid-area: article;
+}
+
+aside {
+  grid-area: aside;
 }
 

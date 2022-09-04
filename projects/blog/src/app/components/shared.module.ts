@@ -1,3 +1,4 @@
+import { AsideBoxModule } from './aside-box/aside-box.module';
 import { BoxArtigoModule } from './box-artigo/box-artigo.module';
 import { BoxBuscaModule } from './box-busca/box-busca.module';
 import { BoxCategoriasModule } from './box-categorias/box-categorias.module';
@@ -17,7 +18,8 @@ const modulosCompartilhados = [
   JumbotronModule,
   SigaNosModule,
   UltimosPostsModule,
-  BoxArtigoModule
+  BoxArtigoModule,
+  AsideBoxModule,
 ];
 
 @NgModule({

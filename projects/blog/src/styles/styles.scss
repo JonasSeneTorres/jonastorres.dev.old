@@ -178,9 +178,10 @@ aside {
   }
 
   @include media-up($gd-media-tablet-maxwidth) {
+    @include box-shadow;
     border-radius: 16px;
     background-color: $gd-color-white;
-    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%), 0 1px 4px rgb(0 0 0 / 12%);
+    // box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%), 0 1px 4px rgb(0 0 0 / 12%);
     margin-top: 24rem !important;
     max-width: 21rem;
     padding: 1rem;
