@@ -6,6 +6,7 @@
   color: $gd-color-white;
   // margin-bottom: 1rem;
   margin-top: 1rem;
+  @include box-shadow;
 
   @include media-down($gd-media-phone-maxwidth) {
     margin: .5rem .25rem;

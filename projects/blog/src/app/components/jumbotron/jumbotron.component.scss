@@ -577,6 +577,18 @@
 
 .destaque {
   font-size: 6rem !important;
+
+  @include media-down($gd-media-phone-maxwidth) {
+    font-size: 2rem !important;
+    white-space: break-spaces;
+    word-break: break-word;
+
+    // display: grid;
+    // font-size: 3rem;
+    // margin: 1rem 0 0 0;
+    min-height: 116px;
+    // align-items: end;
+  }
 }
 
 .sem-borda {

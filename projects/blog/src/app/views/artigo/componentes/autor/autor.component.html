@@ -1,7 +1,6 @@
 <section class="autor">
   <div class="autor__foto">
-    <img [src]="autor?.urlImagem" />
-
+    <img [src]="autor?.urlImagem" alt="Foto de {{ autor?.nome }}" />
   </div>
   <h2 class="autor__nome" [innerText]="autor?.nome"></h2>
   <div class="autor__cargo" [innerText]="autor?.cargo"></div>
