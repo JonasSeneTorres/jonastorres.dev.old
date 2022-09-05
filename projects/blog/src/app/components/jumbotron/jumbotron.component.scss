@@ -579,7 +579,7 @@
   font-size: 6rem !important;
 
   @include media-down($gd-media-phone-maxwidth) {
-    font-size: 2rem !important;
+    font-size: 4rem !important;
     white-space: break-spaces;
     word-break: break-word;
 

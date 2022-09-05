@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { GuideDogModule } from "projects/guide-dog/src/public-api";
 import { NgModule } from '@angular/core';
 import { SigaNosModule } from '../siga-nos/siga-nos.module';
+import { UltimosPostsModule } from './../ultimos-posts/ultimos-posts.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SigaNosModule } from '../siga-nos/siga-nos.module';
     GuideDogModule,
     SigaNosModule,
     BoxCategoriasModule,
-    BoxBuscaModule
+    BoxBuscaModule,
+    UltimosPostsModule
   ],
   exports: [
     AsideBoxComponent

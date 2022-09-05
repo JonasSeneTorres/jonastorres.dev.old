@@ -1,3 +1,5 @@
+@import "../../../styles/styles.scss";
+
 .contato {
   display: grid;
   grid-template-areas:
@@ -5,19 +7,30 @@
     "article aside";
   column-gap: 6rem;
   grid-template-columns: 1fr 22rem;
+
+  &__box {
+    // margin-bottom: 1rem;
+    @include scaffolding-card;
+    padding: 1rem 2rem !important;
+
+    h2 {
+      font-size: 1.7rem;
+      margin: 0 0 0.5rem;
+    }
+  }
 }
 
-jt-jumbotron {
-  grid-area: jumbotrom;
-}
+// jt-jumbotron {
+//   grid-area: jumbotrom;
+// }
 
-article {
-  grid-area: article;
-}
+// article {
+//   grid-area: article;
+// }
 
-aside {
-  grid-area: aside;
-  margin-top: 23rem;
-  max-width: 21rem;
-  width: 100%;
-}
+// aside {
+//   grid-area: aside;
+//   margin-top: 23rem;
+//   max-width: 21rem;
+//   width: 100%;
+// }

@@ -1,3 +1,11 @@
+@import "../../../styles/styles.scss";
+
+:host ::ng-deep {
+  .jt__artigos {
+    margin-bottom: .5rem;
+  }
+}
+
 .categoria {
   display: grid;
   grid-template-areas:
@@ -8,21 +16,27 @@
 
   &__artigos{
     grid-area: article;
+
+    &-box {
+      @include scaffolding-card;
+
+      @include media-up($gd-media-tablet-maxwidth) {
+        padding: 1rem 2rem 0.5rem 2rem;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+        margin: 0 0 1rem 0;
+      }
+    }
   }
 }
+
+// scaffolding-card
 
 .semCategoria{
   display: block;
   margin-top: 1.5rem;
 }
 
-jt-jumbotron {
-  grid-area: jumbotrom;
-}
 
-aside {
-  grid-area: aside;
-  margin-top: 23rem;
-  max-width: 21rem;
-  width: 100%;
-}

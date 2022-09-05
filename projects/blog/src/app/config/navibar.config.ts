@@ -6,19 +6,19 @@ export const NavibarConfig: NavibarItemConfig[] = [
     children: [
       {
         label: 'HTML',
-        route: ['/frontend/html'],
+        route: ['blog/frontend/html'],
       },
       {
         label: 'CSS',
-        route: ['/frontend/css'],
+        route: ['blog/frontend/css'],
       },
       {
         label: 'Javascript/Typescript',
-        route: ['/frontend/js'],
+        route: ['blog/frontend/js'],
       },
       {
         label: 'Angular',
-        route: ['/frontend/angular'],
+        route: ['blog/frontend/angular'],
       },
     ],
   },
@@ -27,11 +27,11 @@ export const NavibarConfig: NavibarItemConfig[] = [
     children: [
       {
         label: 'C#',
-        route: ['/backend/c_sharp'],
+        route: ['blog/backend/c_sharp'],
       },
       {
         label: 'Node',
-        route: ['/backend/node'],
+        route: ['blog/backend/node'],
       },
     ],
   },
@@ -40,7 +40,7 @@ export const NavibarConfig: NavibarItemConfig[] = [
     children: [
       {
         label: 'Flutter',
-        route: ['/mobile/flutter'],
+        route: ['blog/mobile/flutter'],
       },
     ],
   },
@@ -49,13 +49,13 @@ export const NavibarConfig: NavibarItemConfig[] = [
     children: [
       {
         label: 'SQL',
-        route: ['/banco_de_dados/sql'],
+        route: ['blog/banco_de_dados/sql'],
       },
     ],
   },
   {
     label: 'Arquitetura',
-    route: ['/arquitetura'],
+    route: ['blog/arquitetura'],
   },
   {
     label: 'Sobre',
@@ -63,7 +63,7 @@ export const NavibarConfig: NavibarItemConfig[] = [
   },
   {
     label: 'Autor',
-    route: ['/autor'],
+    route: ['blog/autor'],
   },
   {
     label: 'Contato',

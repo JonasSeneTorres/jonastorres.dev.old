@@ -1,22 +1,39 @@
-.busca {
-  display: grid;
-  grid-template-areas:
-    "jumbotrom jumbotrom"
-    "article aside";
-  column-gap: 6rem;
-  grid-template-columns: 1fr 22rem;
+@import "../../../styles/styles.scss";
+
+.busca{
+  &__box {
+    @include scaffolding-card;
+
+    @include media-up($gd-media-tablet-maxwidth) {
+      padding: 1rem 2rem 0.5rem 2rem;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      margin: 0 0 1rem 0;
+    }
+  }
 }
 
-jt-jumbotron {
-  grid-area: jumbotrom;
-}
+// .busca {
+//   display: grid;
+//   grid-template-areas:
+//     "jumbotrom jumbotrom"
+//     "article aside";
+//   column-gap: 6rem;
+//   grid-template-columns: 1fr 22rem;
+// }
 
-article {
-  grid-area: article;
-}
+// jt-jumbotron {
+//   grid-area: jumbotrom;
+// }
 
-aside {
-  grid-area: aside;
-  max-width: 21rem;
-  width: 100%;
-}
+// article {
+//   grid-area: article;
+// }
+
+// aside {
+//   grid-area: aside;
+//   max-width: 21rem;
+//   width: 100%;
+// }

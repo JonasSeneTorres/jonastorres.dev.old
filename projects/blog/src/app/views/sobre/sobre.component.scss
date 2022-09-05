@@ -1,3 +1,12 @@
+@import "../../../styles/styles.scss";
+
+:host ::ng-deep {
+  .jt__artigos {
+    // @include scaffolding-card;
+    margin-bottom: .5rem;
+  }
+}
+
 .sobre {
   column-gap: 6rem;
   display: grid;
@@ -5,6 +14,11 @@
     "jumbotrom jumbotrom"
     "article aside";
   grid-template-columns: 1fr 22rem;
+
+  &__box {
+    @include scaffolding-card;
+    padding: 1rem 2rem 2rem 2rem !important;
+  }
 
   &__missao-visao-valores{
     border: solid 1px #000;
@@ -28,17 +42,4 @@
   }
 }
 
-jt-jumbotron {
-  grid-area: jumbotrom;
-}
 
-article {
-  grid-area: article;
-}
-
-aside {
-  grid-area: aside;
-  margin-top: 23rem;
-  max-width: 21rem;
-  width: 100%;
-}

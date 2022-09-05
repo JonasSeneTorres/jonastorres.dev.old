@@ -2,7 +2,7 @@
 
 h2 {
   font-size: 1.75rem;
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
 }
 
 .ultimos-posts {
@@ -22,7 +22,7 @@ h2 {
     transition: all 0.5s ease;
 
     &:hover {
-      background-color: #e2eeff;
+      background-color: $gd-colorligth-primary-50;
       box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%),
         0 1px 18px rgb(0 0 0 / 12%);
       cursor: pointer;
