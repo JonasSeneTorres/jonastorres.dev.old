@@ -18,6 +18,13 @@
   &__box {
     @include scaffolding-card;
     padding: 1rem 2rem 2rem 2rem !important;
+
+    &2 {
+      @include media-down($gd-media-tablet-maxwidth) {
+        // border: solid 1px #000;
+        margin-top: .5rem;
+      }
+    }
   }
 
   &__missao-visao-valores{
@@ -25,20 +32,43 @@
     display: grid;
     grid-template-areas: 'missao visao valores';
     grid-template-columns: 1fr 1fr 1fr;
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      grid-template-areas: 'missao'
+      'visao'
+      'valores';
+      grid-template-columns: 1fr;
+      border: none;
+    }
   }
 
   &__missao {
     grid-area: missao;
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      border: solid 1px #000;
+      margin-bottom: 1rem;
+    }
   }
 
   &__visao {
     border-left: solid 1px #000;
     border-right: solid 1px #000;
     grid-area: visao;
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      border: solid 1px #000;
+      margin-bottom: 1rem;
+    }
   }
 
   &__valores {
     grid-area: valores;
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      border: solid 1px #000;
+      margin-bottom: 1rem;
+    }
   }
 }
 

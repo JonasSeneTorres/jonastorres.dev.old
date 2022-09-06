@@ -59,6 +59,7 @@
 
       .artigo-box__box-leia-mais {
         transform: scale(1.1);
+
       }
 
       .artigo-box__leia-mais {
@@ -213,6 +214,7 @@
     font-weight: bold;
     min-width: 10rem;
     padding: 0.4rem 1.5rem;
+    text-shadow: 1px 1px 1px black, 0 0 0em black;
   }
 
   &__ghost {

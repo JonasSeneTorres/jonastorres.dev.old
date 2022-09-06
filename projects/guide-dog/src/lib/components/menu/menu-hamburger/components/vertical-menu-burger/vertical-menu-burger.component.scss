@@ -53,6 +53,7 @@ gd-centered-panel div {
       border-bottom-right-radius: 16px;
       box-shadow: 4px 0px 5px 0px rgba($gd-color-black, 0.15);
       max-width: 530px;
+      min-height: 100vh;
       padding: 0.5rem 0.25rem 1.75rem 0.5rem;
       position: absolute !important;
       top: 0;
