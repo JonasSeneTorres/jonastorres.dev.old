@@ -9,44 +9,20 @@ h2 {
 
   @include media-up($gd-media-tablet-maxwidth) {
     margin-bottom: 0.5rem;
-    // margin-top: 0.5rem;
   }
 }
 
 .ultimos-posts {
-
-  // background-color: $gd-colorligth-primary-200;
-  // display: grid;
-
-  // line-height: 1.8rem;
-  // margin: 1rem 0 2rem;
   @include media-down($gd-media-tablet-maxwidth) {
     @include scaffolding-card;
-    // margin: 1rem 0 0rem;
-    // padding: 1rem 2rem;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
   }
-
-  // @include media-up($gd-media-tablet-maxwidth) {
-  //   margin: 1rem 0 0rem;
-  //   padding: 1rem 2rem;
-  // }
-
 
   &__list {
     list-style-type: none;
     margin: 0;
     padding: 0;
-
-    // li {
-    //   @include media-down($gd-media-tablet-maxwidth) {
-    //     background-color: $gd-colorligth-primary-200;
-    //     // margin: 1rem 0 0rem;
-    //     // padding: 1rem 2rem;
-    //     // border-top: solid;
-    //   }
-    // }
   }
 
   &__artigo {
@@ -63,16 +39,10 @@ h2 {
 
     @include media-down($gd-media-tablet-maxwidth) {
       margin: 0 .5rem .5rem 0;
-      // margin: 1rem 0 0rem;
-      // padding: 1rem 2rem;
-      // border-top: solid;
     }
 
     @include media-up($gd-media-tablet-maxwidth) {
       margin: 0 0 0.5rem 0;
-      // margin: 1rem 0 0rem;
-      // padding: 1rem 2rem;
-      // border-top: solid;
     }
 
     &:hover {
@@ -119,11 +89,6 @@ h2 {
 
     @include media-down($gd-media-tablet-maxwidth) {
       margin: .25rem .5rem .25rem 1rem;
-      // background-color: $gd-colorligth-primary-50;
-      // margin: 0 .5rem .5rem .5rem;
-      // margin: 1rem 0 0rem;
-      // padding: 1rem 2rem;
-      // border-top: solid;
     }
 
     &:after {

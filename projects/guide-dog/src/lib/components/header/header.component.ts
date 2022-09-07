@@ -7,7 +7,7 @@ import {
   Input,
   NgZone,
   OnDestroy,
-  OnInit
+  OnInit,
 } from '@angular/core';
 import { Observer, Subject, throttleTime } from 'rxjs';
 
@@ -45,36 +45,27 @@ export class HeaderComponent implements AfterViewInit {
 
   constructor(
     private elementRef: ElementRef,
-    // private ngZone: NgZone,
     private systemInformation: SystemInformationService,
     private changeDetectorRef: ChangeDetectorRef
   ) {
     this._navBoxElement = this.elementRef.nativeElement;
 
     this.changeSize
-    .asObservable()
-    .pipe(
-      throttleTime(1000)
-    )
-    .subscribe(innerWidth => {
-      console.log('innerWidth:', innerWidth);
-      this.navboxWithAcceptableSize = this.checkAcceptableSizeNavbox();
-      this.changeDetectorRef.detectChanges();
-    });
+      .asObservable()
+      .pipe(throttleTime(1000))
+      .subscribe((innerWidth) => {
+        console.log('innerWidth:', innerWidth);
+        this.navboxWithAcceptableSize = this.checkAcceptableSizeNavbox();
+        this.changeDetectorRef.detectChanges();
+      });
   }
 
   ngAfterViewInit(): void {
-    // this.ngZone.run(() => {
-      // this.updateBox(this.currentId, event.clientX + this.offsetX, event.clientY + this.offsetY);
-      // this.currentId = null;
-      this.onResize();
-      // this.changeDetectorRef.detectChanges();
-    // });
+    this.onResize();
   }
 
   @HostListener('window:resize', ['$event.target'])
   public onResize(target: any = {}) {
-    // console.log(target.innerWidth);
     this.changeSize.next(target);
   }
 
@@ -85,16 +76,8 @@ export class HeaderComponent implements AfterViewInit {
 
     const acceptableSizeLineInPixel = 24;
     const heigthNavBox =
-    // let elementSize =
       this.elementRef.nativeElement.querySelector('.gd-h-navbar').offsetHeight;
 
-    // const a = this.elementRef.nativeElement.offsetHeight;
-    // console.log('tamanho: ', a);
-    // if (a > 64) {
-    //   return false;
-    // }
-
-    // const heigth = elementSize ?? acceptableSizeLineInPixel;
     return heigthNavBox <= 2 * acceptableSizeLineInPixel - 1;
   }
 }

@@ -18,17 +18,12 @@ implements OnInit
   constructor(
     private categoriasService: CategoriasService,
     private artigosService: ArtigosService,
-    ) {
-
-    }
+    ) {}
 
     ngOnInit(): void {
       this.obterDadosIniciais(1).subscribe((sucesso) => {
-        // this.dadosArtigo = sucesso.artigo;
         this.categorias = sucesso.categorias;
         this.ultimosArtigos = sucesso.ultimosArtigos;
-        // this.subcategorias = sucesso.subcategorias;
-        // this.artigosDaCategoria = this.montarArtigosDaCategoria(this.subcategorias, sucesso.artigosDaCategoria);
       },
       (erro: any) => {
         console.error(erro);
@@ -36,26 +31,12 @@ implements OnInit
     }
 
     private obterDadosIniciais(idCategoria: number): Observable<any> {
-      // const obterArtigo = this.categoriasService.obter(idCategoria);
       const obterCategorias = this.categoriasService.listar();
-      // const obterSubcategorias = this.subcategoriasService.listar();
       const obterUltimosArtigos = this.artigosService.listarUltimosArtigos();
-      // const obterArtigosDaCategoria = this.artigosService.listarArtigosCategoria(idCategoria);
 
       return forkJoin({
-        // artigo: obterArtigo,
         categorias: obterCategorias,
-        // subcategorias: obterSubcategorias,
         ultimosArtigos: obterUltimosArtigos,
-        // artigosDaCategoria: obterArtigosDaCategoria,
       });
     }
-
-  // ngOnInit(): void {
-  //   this.categoriasService.listar().subscribe(
-  //     (sucesso) => {
-  //       this.categorias = sucesso;
-  //     }
-  //   );
-  // }
 }

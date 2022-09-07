@@ -22,7 +22,6 @@
   max-width: 100vw;
   min-width: 250px;
   position: relative;
-  // z-index: -1;
 
   @include media-up($gd-media-tablet-maxwidth) {
 
@@ -37,11 +36,8 @@
       position: absolute;
       top: 0;
       width: 100%;
-      // z-index: -1;
     }
   }
-
-
 
   main * {
     max-width: calc(100vw - 40px);

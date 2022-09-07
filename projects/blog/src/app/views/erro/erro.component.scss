@@ -5,12 +5,10 @@
 
   @include media-down($gd-media-tablet-minwidth) {
     padding: 1rem  !important;
-    // width: 400px;
   }
 
   @include media-up($gd-media-tablet-minwidth) {
     padding: 1rem 2rem !important;
-    // width: 400px;
   }
 
   h2 {

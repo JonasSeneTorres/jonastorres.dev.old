@@ -2,7 +2,6 @@
 
 :host ::ng-deep {
   .jt__artigos {
-    // @include scaffolding-card;
     margin-bottom: .5rem;
   }
 }
@@ -21,7 +20,6 @@
 
     &2 {
       @include media-down($gd-media-tablet-maxwidth) {
-        // border: solid 1px #000;
         margin-top: .5rem;
       }
     }

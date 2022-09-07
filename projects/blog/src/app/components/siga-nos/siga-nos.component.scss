@@ -6,7 +6,6 @@
   padding: 1.5rem 0 0.5rem 0;
 
 @include media-down($gd-media-tablet-maxwidth) {
-    // border-radius: 8px;
     @include box-shadow
   }
 

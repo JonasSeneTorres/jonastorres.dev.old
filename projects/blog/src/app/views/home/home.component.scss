@@ -69,8 +69,6 @@
     grid-template-columns: 1fr 430px;
     column-gap: 2.5rem;
     @include box-shadow;
-    // box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%),
-    //   0 1px 4px rgb(0 0 0 / 12%);
 
     background-color: $gd-colorligth-primary-100;
     margin-top: -23.5rem;
@@ -110,8 +108,6 @@
   &__artigos-populares {
     background-color: $gd-color-white;
     @include box-shadow;
-    // box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%),
-    //   0 1px 4px rgb(0 0 0 / 12%);
 
     @include media-down($gd-media-tablet-maxwidth) {
       padding: 0.5rem 0 0.25rem 0.5rem;
@@ -122,7 +118,6 @@
       margin-top: 1.5rem;
       padding: 1rem 2rem;
       padding-bottom: 1px;
-      // padding: 1rem;
     }
 
     &-grid {
@@ -231,11 +226,4 @@
     }
   }
 }
-
-// jt-jumbotron {
-//   @include media-down($gd-media-tablet-maxwidth) {
-//     display: block;
-//     margin-bottom: 2.25rem;
-//   }
-// }
 

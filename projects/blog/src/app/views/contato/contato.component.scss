@@ -9,17 +9,14 @@
   grid-template-columns: 1fr 22rem;
 
   &__box {
-    // margin-bottom: 1rem;
     @include scaffolding-card;
 
     @include media-down($gd-media-tablet-minwidth) {
       padding: 1rem 0 !important;
-      // width: 400px;
     }
 
     @include media-up($gd-media-tablet-minwidth) {
       padding: 1rem 2rem !important;
-      // width: 400px;
     }
 
     h2 {
@@ -28,18 +25,3 @@
     }
   }
 }
-
-// jt-jumbotron {
-//   grid-area: jumbotrom;
-// }
-
-// article {
-//   grid-area: article;
-// }
-
-// aside {
-//   grid-area: aside;
-//   margin-top: 23rem;
-//   max-width: 21rem;
-//   width: 100%;
-// }

@@ -4,7 +4,6 @@
   background-color: $gd-colorligth-secondary-500;
 
   color: $gd-color-white;
-  // margin-bottom: 1rem;
   margin-top: 1rem;
   @include box-shadow;
 
@@ -26,16 +25,6 @@
   }
 
   &__title {
-    // @include media-down($gd-media-phone-maxwidth) {
-    //   margin-bottom: 1rem;
-    // }
-
-    // @include media-between(
-    //   $gd-media-phone-maxwidth + 1,
-    //   $gd-media-tablet-maxwidth - 1
-    // ) {
-    // }
-
     @include media-down($gd-media-tablet-maxwidth) {
       display: block;
       padding-top: 1rem;
@@ -48,8 +37,6 @@
       margin: 0 2.5rem;
       margin-right: 1.5rem;
     }
-
-
   }
 
   &__list {
@@ -58,21 +45,14 @@
 
     @include media-down($gd-media-tablet-maxwidth) {
       display: block;
-      // text-align: center;
-      padding: 0 0 1rem 0;
       margin-bottom: 0;
+      padding: 0 0 1rem 0;
     }
 
     @include media-up($gd-media-tablet-maxwidth) {
       display: inline-block;
       padding: 0;
-    // text-align: center;
     }
-    // display: inline-block;
-    // padding: 0;
-    // text-align: center;
-
-
 
     li {
       display: inline-block;

@@ -1,8 +1,8 @@
-@import 'base/typography';
-$normalized_font_family: 'Saira', sans-serif;
-$title_font_family: 'Tomorrow', arial;
+@import "base/typography";
+$normalized_font_family: "Saira", sans-serif;
+$title_font_family: "Tomorrow", arial;
 
-@import '../../../guide-dog/src/lib/styles/gd.scss';
+@import "../../../guide-dog/src/lib/styles/gd.scss";
 
 jt-root {
   display: grid;
@@ -50,13 +50,10 @@ blockquote {
 
 .manuscrito {
   font-family: "OoohBaby", Arial, Helvetica, sans-serif;
-  // font-size: 3rem;
   font-style: italic;
   font-weight: bold;
-
-  // font-size: 2rem;
-    white-space: break-spaces;
-    word-break: break-word;
+  white-space: break-spaces;
+  word-break: break-word;
 
   @include media-down($gd-media-tablet-maxwidth) {
     font-size: 2rem;
@@ -71,12 +68,11 @@ blockquote {
   background-color: #ff0000 !important;
   background: linear-gradient(
     150deg,
-    rgba(#67CA3B, 0.8) 0%,
-    rgba(#FF0000, 1) 10%,
-    rgba(#009CFF, 1) 89%
+    rgba(#67ca3b, 0.8) 0%,
+    rgba(#ff0000, 1) 10%,
+    rgba(#009cff, 1) 89%
   ) !important;
 }
-
 
 .angular,
 .angularjs {
@@ -190,15 +186,13 @@ blockquote {
 
   &__artigos {
     grid-area: article;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     z-index: 1;
 
     @include media-up($gd-media-tablet-maxwidth) {
       margin-bottom: 1rem;
     }
-
   }
-
 }
 
 jt-jumbotron {
@@ -219,7 +213,6 @@ aside {
     @include box-shadow;
     border-radius: 16px;
     background-color: $gd-color-white;
-    // box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%), 0 1px 4px rgb(0 0 0 / 12%);
     margin-top: 24rem !important;
     max-width: 21rem;
     padding: 1rem 2rem;
@@ -232,7 +225,8 @@ aside {
 jt-box-categorias {
   @include media-down($gd-media-tablet-maxwidth) {
     background-color: $gd-color-white;
-    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%), 0 1px 4px rgb(0 0 0 / 12%);
+    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%),
+      0 1px 4px rgb(0 0 0 / 12%);
     display: block;
     padding: 0.5rem 0.5rem;
     margin-bottom: 0.5rem;
