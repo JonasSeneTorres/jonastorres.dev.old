@@ -1,5 +1,14 @@
 @import "../../../styles/styles.scss";
 
+:host ::ng-deep {
+  .jt__artigos {
+    margin-bottom: -1rem;
+  }
+  // .jt {
+  //   margin-bottom: 2rem;
+  // }
+}
+
 .acessibilidade-page {
   display: grid;
   grid-template-areas:
@@ -9,8 +18,8 @@
   grid-template-columns: 1fr;
 
   &-box {
-    margin-bottom: 1rem;
     @include scaffolding-card;
+    margin-bottom: 1.5rem !important;
 
     @include media-down($gd-media-tablet-maxwidth) {
       display: block;

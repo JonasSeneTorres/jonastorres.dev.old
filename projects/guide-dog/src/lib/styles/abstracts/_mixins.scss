@@ -82,6 +82,7 @@ $gd-media-desktop-maxheight: 1280px !default;
 
 @mixin scaffolding-card {
   background-color: $gd-color-white;
+  box-sizing: border-box;
   z-index: 1;
     @include box-shadow;
 

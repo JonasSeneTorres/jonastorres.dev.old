@@ -148,7 +148,7 @@
           grid-template-columns: 1fr 1.5rem;
         }
 
-        @include media-up($gd-media-tablet-maxwidth) {x;
+        @include media-up($gd-media-tablet-maxwidth) {
           padding-left: 52px;
         }
       }

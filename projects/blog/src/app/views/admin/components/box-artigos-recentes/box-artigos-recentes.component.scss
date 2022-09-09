@@ -1,0 +1,16 @@
+@import "../../../../../../../blog/src/styles/styles.scss";
+
+.box-artigos-recentes {
+  background-color: $gd-colorligth-primary-50;
+  border: solid 2px $gd-colorligth-primary-600;
+  color: $gd-colorligth-primary-600;
+  border-radius: 8px;
+  // @include scaffolding-card;
+
+  // height: 100%;
+
+  // @include media-up($gd-media-tablet-maxwidth) {
+  //   // padding: 1rem 2rem 0.5rem 2rem;
+  // }
+}
+

@@ -73,6 +73,8 @@ const routes: Routes = [
   { path: 'sobre', loadChildren: () => import('./views/sobre/sobre.module').then(m => m.SobreModule) },
   { path: 'busca', loadChildren: () => import('./views/busca/busca.module').then(m => m.BuscaModule) },
   { path: 'sitemap', loadChildren: () => import('./views/sitemap/sitemap.module').then(m => m.SitemapModule) },
+  { path: 'login', loadChildren: () => import('./views/login/login.module').then(m => m.LoginModule) },
+  { path: 'admin', loadChildren: () => import('./views/admin/admin.module').then(m => m.AdminModule) },
   {
     path: '**',
     loadChildren: () =>

@@ -1,0 +1,51 @@
+@import "../../../../../../../blog/src/styles/styles.scss";
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    grid-template-areas:
+      "titulo titulo titulo titulo titulo titulo"
+      "box-num-seguidores box-num-posts box-num-likes box-num-visualizacao box-comentarios-recentes box-comentarios-recentes"
+      "grafico-num-visitantes grafico-num-visitantes  grafico-num-visitantes lista-mais-compartilhados-social-media box-comentarios-recentes box-comentarios-recentes"
+      "box-artigos-recentes box-artigos-recentes box-artigos-recentes box-artigos-recentes box-sistemas-operacionais box-sistemas-operacionais";
+    // padding-bottom: 1.6rem;
+}
+
+
+jt-box-num-seguidores {
+  grid-area: box-num-seguidores;
+}
+
+jt-box-num-posts {
+  grid-area: box-num-posts;
+}
+
+jt-box-num-likes {
+  grid-area: box-num-likes;
+}
+
+jt-box-num-visualizacao {
+  grid-area: box-num-visualizacao;
+}
+
+jt-box-comentarios-recentes {
+  grid-area: box-comentarios-recentes;
+}
+
+jt-grafico-num-visitantes {
+  grid-area: grafico-num-visitantes;
+}
+
+jt-lista-mais-compartilhados-social-media {
+  grid-area: lista-mais-compartilhados-social-media;
+}
+
+jt-box-artigos-recentes {
+  grid-area: box-artigos-recentes;
+}
+
+jt-box-sistemas-operacionais {
+  grid-area: box-sistemas-operacionais;
+}

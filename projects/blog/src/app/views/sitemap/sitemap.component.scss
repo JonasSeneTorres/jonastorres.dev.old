@@ -1,1 +1,20 @@
 @import "../../../styles/styles.scss";
+
+.sitemap {
+  :host ::ng-deep {
+    .jt__artigos {
+      margin-bottom: .5rem;
+    }
+  }
+
+  @include scaffolding-card;
+
+  @include media-up($gd-media-tablet-maxwidth) {
+    padding: 1rem 2rem 0.5rem 2rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    margin: 0 0 1rem 0;
+  }
+}

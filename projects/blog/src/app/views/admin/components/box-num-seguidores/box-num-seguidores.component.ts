@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'jt-box-num-seguidores',
+  templateUrl: './box-num-seguidores.component.html',
+  styleUrls: ['./box-num-seguidores.component.scss']
+})
+export class BoxNumSeguidoresComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
