@@ -1,6 +1,6 @@
 @import "../../../../../../../blog/src/styles/styles.scss";
 
-.grafico-num-visitantes {
+.grafico-dispositivos{
   border: solid 2px $gd-colorligth-primary-600;
   border-radius: 8px;
   color: $gd-colorligth-primary-600;
@@ -14,6 +14,6 @@
   }
 
   &__grafico-container {
-    margin: 0 2rem 0.5rem;
+    margin: 0 2rem .5rem;
   }
 }

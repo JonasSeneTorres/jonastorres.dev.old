@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoxComentariosRecentesComponent } from './box-comentarios-recentes.component';
+import { ComentariosRecentesComponent } from './comentarios-recentes.component';
 
 describe('BoxComentariosRecentesComponent', () => {
-  let component: BoxComentariosRecentesComponent;
-  let fixture: ComponentFixture<BoxComentariosRecentesComponent>;
+  let component: ComentariosRecentesComponent;
+  let fixture: ComponentFixture<ComentariosRecentesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoxComentariosRecentesComponent ]
+      declarations: [ ComentariosRecentesComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BoxComentariosRecentesComponent);
+    fixture = TestBed.createComponent(ComentariosRecentesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

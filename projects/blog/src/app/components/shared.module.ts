@@ -6,6 +6,7 @@ import { BoxCompartilheModule } from './box-compartilhe/box-compartilhe.module';
 import { CommonModule } from '@angular/common';
 import { GuideDogModule } from 'projects/guide-dog/src/lib/guide-dog.module';
 import { JumbotronModule } from './jumbotron/jumbotron.module';
+import { NgChartsModule } from 'ng2-charts';
 import { NgModule } from '@angular/core';
 import { SigaNosModule } from './siga-nos/siga-nos.module';
 import { UltimosPostsModule } from './ultimos-posts/ultimos-posts.module';
@@ -20,6 +21,7 @@ const modulosCompartilhados = [
   UltimosPostsModule,
   BoxArtigoModule,
   AsideBoxModule,
+  NgChartsModule
 ];
 
 @NgModule({

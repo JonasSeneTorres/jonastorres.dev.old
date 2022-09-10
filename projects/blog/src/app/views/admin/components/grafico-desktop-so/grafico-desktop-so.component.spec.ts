@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoxSistemasOperacionaisComponent } from './box-sistemas-operacionais.component';
+import { GraficoDesktopSOComponent } from './grafico-desktop-so.component';
 
 describe('BoxSistemasOperacionaisComponent', () => {
-  let component: BoxSistemasOperacionaisComponent;
-  let fixture: ComponentFixture<BoxSistemasOperacionaisComponent>;
+  let component: GraficoDesktopSOComponent;
+  let fixture: ComponentFixture<GraficoDesktopSOComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoxSistemasOperacionaisComponent ]
+      declarations: [ GraficoDesktopSOComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BoxSistemasOperacionaisComponent);
+    fixture = TestBed.createComponent(GraficoDesktopSOComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -9,7 +9,10 @@
       "titulo titulo titulo titulo titulo titulo"
       "box-num-seguidores box-num-posts box-num-likes box-num-visualizacao box-comentarios-recentes box-comentarios-recentes"
       "grafico-num-visitantes grafico-num-visitantes  grafico-num-visitantes lista-mais-compartilhados-social-media box-comentarios-recentes box-comentarios-recentes"
-      "box-artigos-recentes box-artigos-recentes box-artigos-recentes box-artigos-recentes box-sistemas-operacionais box-sistemas-operacionais";
+      // "grafico-dispositivos grafico-dispositivos grafico-dispositivos grafico-dispositivos grafico-dispositivos grafico-dispositivos "
+      // "grafico-dispositivos grafico-dispositivos box-sistemas-operacionais  box-sistemas-operacionais box-comentarios-recentes box-comentarios-recentes"
+      // "grafico-desktop-navegadores grafico-desktop-navegadores grafico-mobile-navegadores grafico-mobile-navegadores grafico-mobile-so grafico-mobile-so" //grafico-mobile-so grafico-mobile-so
+      "box-artigos-recentes box-artigos-recentes box-artigos-recentes box-artigos-recentes grafico-dispositivos grafico-dispositivos";
     // padding-bottom: 1.6rem;
 }
 
@@ -30,7 +33,7 @@ jt-box-num-visualizacao {
   grid-area: box-num-visualizacao;
 }
 
-jt-box-comentarios-recentes {
+jt-comentarios-recentes {
   grid-area: box-comentarios-recentes;
 }
 
@@ -38,14 +41,30 @@ jt-grafico-num-visitantes {
   grid-area: grafico-num-visitantes;
 }
 
-jt-lista-mais-compartilhados-social-media {
+jt-lista-compartilhamentos {
   grid-area: lista-mais-compartilhados-social-media;
 }
 
-jt-box-artigos-recentes {
+jt-artigos-recentes {
   grid-area: box-artigos-recentes;
 }
 
-jt-box-sistemas-operacionais {
+jt-grafico-desktop-so {
   grid-area: box-sistemas-operacionais;
+}
+
+jt-grafico-dispositivos {
+  grid-area: grafico-dispositivos;
+}
+
+jt-grafico-desktop-navegadores {
+  grid-area: grafico-desktop-navegadores;
+}
+
+jt-grafico-mobile-so {
+  grid-area: grafico-mobile-so;
+}
+
+jt-grafico-mobile-navegadores {
+  grid-area: grafico-mobile-navegadores;
 }
