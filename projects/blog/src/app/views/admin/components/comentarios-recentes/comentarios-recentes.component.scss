@@ -3,7 +3,18 @@
 .box-comentarios-recentes {
   background-color: $gd-colorligth-primary-50;
   border: solid 2px $gd-colorligth-primary-600;
-  color: $gd-colorligth-primary-600;
   border-radius: 8px;
+  color: $gd-colorligth-primary-600;
   height: 100%;
+
+  &__titulo {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0.5rem 0 0;
+    text-align: center;
+  }
+
+  &__grafico-container {
+    margin: 0 2rem 0.5rem;
+  }
 }
