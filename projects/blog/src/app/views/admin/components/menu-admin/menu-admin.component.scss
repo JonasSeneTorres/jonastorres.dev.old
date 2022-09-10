@@ -1,13 +1,29 @@
 @import "../../../../../../../blog/src/styles/styles.scss";
 
-// .box-artigos-recentes {
-//   @include scaffolding-card;
+.menu-admin{
+  &__link {
+    &--ativo {
+      background-color: $gd-colorligth-primary-50;
+    }
+  }
+  &__link,
+  &__link:link,
+  &__link:visited{
+    color: $gd-colorligth-primary-500;
+    display: inline-block;
+    font-size: 1.25rem;
+    text-decoration: none;
+    width: 100%;
+  }
+  &__link:hover {
 
-//   // @include media-up($gd-media-tablet-maxwidth) {
-//   //   // padding: 1rem 2rem 0.5rem 2rem;
-//   // }
-// }
-// .menu-admin {
-//   height: 100%;
-//   box-sizing: border-box;
-// }
+  }
+  &__link:active {
+
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
