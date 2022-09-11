@@ -3,6 +3,7 @@ $normalized_font_family: "Saira", sans-serif;
 $title_font_family: "Tomorrow", arial;
 
 @import "../../../guide-dog/src/lib/styles/gd.scss";
+@import "./vendor/ngprime";
 
 jt-root {
   display: grid;

@@ -1,0 +1,94 @@
+@import "../../../../../../../blog/src/styles/styles.scss";
+
+// :host ::ng-deep {
+//   .table-busca {
+//     border: none;
+//     margin-top: 1.5rem;
+
+//     &__container-busca{
+
+//     display: grid;
+//     grid-template-columns: 1fr 100px;
+//     }
+
+//     &__input-pesquisa {
+//       width: calc(100% - 3rem);
+//     }
+
+//     .p-datatable-header {
+//       background-color: transparent;
+//       border: none;
+//       padding: 0 0 .75rem;
+//     }
+
+//     th, td {
+//       border: solid 1px #e9ecef !important;
+//     }
+
+//     &__coluna-acoes {
+//       width: 92px;
+//       padding: 0 .5rem !important;
+//     }
+
+//     &__grid-botao {
+//       display: grid;
+//       grid-template-columns: 1fr 1fr;
+//       column-gap: .5rem;
+//       box-sizing: border-box;
+//       width: 92px;
+//     }
+
+//     &__botao {
+//       &-novo {
+//         background-color: $gd-setcolorligth-success;
+//         border: solid 1px $gd-setcolorligth-success;
+//         border-radius: 8px;
+//         box-sizing: border-box;
+//         color: $gd-color-white;
+//         padding: .5rem 1rem;
+//       }
+
+//       &-editar {
+//         align-content: center;
+//         background-color: $gd-setcolorligth-success;
+//         border: solid 1px $gd-setcolorligth-success;
+//         border-radius: 50%;
+//         color: $gd-color-white;
+//         display: grid;
+//         justify-content: center;
+//         padding: .75rem;
+//       }
+
+//       &-apagar {
+//         align-content: center;
+//         background-color: $gd-setcolorligth-danger;
+//         border: solid 1px #fff;
+//         border-radius: 50%;
+//         color: $gd-color-white;
+//         display: grid;
+//         justify-content: center;
+//         padding: .75rem;
+//       }
+//     }
+
+//     &__botao-novo, &__botao-editar, &__botao-apagar {
+//       transition: all .25s;
+
+//       &:hover {
+//         transform: translateY(-5px);
+//         box-shadow: 0 9px 12px 2px rgb(0 0 0 / 20%), 0 7px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+//       }
+
+//       &:active {
+//         transform: translateY(1px);
+//         box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+//       }
+//     }
+
+//     .p-float-label input:focus ~ label {
+//       left: 0;
+//     }
+//   }
+// }
+
+

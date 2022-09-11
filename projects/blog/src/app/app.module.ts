@@ -3,7 +3,7 @@ import {
   NgDompurifyModule,
   NgDompurifySanitizer,
 } from '@tinkoff/ng-dompurify';
-import { NgModule, Sanitizer } from '@angular/core';
+import { LOCALE_ID, NgModule, Sanitizer } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -39,6 +39,7 @@ registerLocaleData(localePT);
       provide: DOMPURIFY_CONFIG,
       useValue: domPurifyConfig,
     },
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
   ],
   bootstrap: [AppComponent],
 })

@@ -41,6 +41,6 @@ export class ArtigosService implements ICrudService {
   }
 
   apagar(codigo: number): Observable<any> {
-    throw new Error('Method not implemented.');
+    return this.httpClient.delete(`${this.baseURL}/artigos/${codigo}`);
   }
 }

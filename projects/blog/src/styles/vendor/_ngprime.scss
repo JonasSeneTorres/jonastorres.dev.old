@@ -1,0 +1,176 @@
+
+:host ::ng-deep {
+  .icone_botao {
+    margin-right: 0.25rem;
+  }
+
+  .table-busca {
+    border: none;
+    margin-top: 1.5rem;
+
+    p-sorticon i {
+      color: #000 !important;
+    }
+
+    table {
+      border-color: $gd-colorligth-primary-300;
+    }
+
+    button.p-highlight {
+      background-color: $gd-colorligth-secondary-100 !important;
+      border-color: $gd-colorligth-secondary-200 !important;
+      color: $gd-color-white !important;
+    }
+
+    .p-paginator .p-paginator-first:not(.p-disabled):not(.p-highlight):hover,
+    .p-paginator .p-paginator-prev:not(.p-disabled):not(.p-highlight):hover,
+    .p-paginator .p-paginator-next:not(.p-disabled):not(.p-highlight):hover,
+    .p-paginator .p-paginator-last:not(.p-disabled):not(.p-highlight):hover,
+    .p-paginator .p-paginator-page:not(.p-highlight):hover  {
+      background-color: $gd-colorligth-secondary-50 !important;
+      border-color: $gd-colorligth-secondary-100 !important;
+
+    }
+
+    .p-sortable-column:focus {
+      box-shadow: inset 0 0 0 0.15rem $gd-colorligth-primary-500 !important;
+    }
+
+    .p-datatable-tbody > tr:nth-child(even) {
+      background-color: $gd-colorligth-primary-50;
+    }
+
+    &__container-busca {
+      display: grid;
+      grid-template-columns: 1fr 100px;
+    }
+
+    &__input-pesquisa {
+      width: calc(100% - 3rem);
+    }
+
+    .p-datatable-header {
+      background-color: transparent;
+      border: none;
+      padding: 0 0 0.75rem;
+    }
+
+    th {
+      background-color: $gd-colorligth-primary-100 !important;
+      color: #000 !important;
+      font-family: $title_font_family;
+      text-shadow: 1px 1px 2px #fff, 0 0 0em #fff;
+    }
+
+    th,
+    td {
+      border: solid 1px $gd-colorligth-primary-300 !important;
+    }
+
+    &__coluna-acoes {
+      padding: 0 0.5rem !important;
+      width: 92px;
+    }
+
+    &__grid-botao {
+      box-sizing: border-box;
+      column-gap: 0.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 92px;
+    }
+
+    &__botao {
+      &-novo {
+        background-color: $gd-setcolorligth-success;
+        border: solid 1px $gd-setcolorligth-success;
+        border-radius: 8px;
+        box-sizing: border-box;
+        color: $gd-color-white;
+        padding: 0.5rem 1rem;
+      }
+
+      &-editar {
+        align-content: center;
+        background-color: $gd-setcolorligth-success;
+        border: solid 1px $gd-setcolorligth-success;
+        border-radius: 50%;
+        color: $gd-color-white;
+        display: grid;
+        justify-content: center;
+        padding: 0.75rem;
+      }
+
+      &-apagar {
+        align-content: center;
+        background-color: $gd-setcolorligth-danger;
+        border: solid 1px #fff;
+        border-radius: 50%;
+        color: $gd-color-white;
+        display: grid;
+        justify-content: center;
+        padding: 0.75rem;
+      }
+    }
+
+    &__botao-novo,
+    &__botao-editar,
+    &__botao-apagar {
+      transition: all 0.25s;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 9px 12px 2px rgb(0 0 0 / 20%), 0 7px 10px rgb(0 0 0 / 14%),
+          0 1px 18px rgb(0 0 0 / 12%);
+      }
+
+      &:active {
+        transform: translateY(1px);
+        box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%),
+          0 1px 18px rgb(0 0 0 / 12%);
+      }
+    }
+
+    .p-float-label input:focus ~ label {
+      left: 0;
+    }
+  }
+
+  .p-paginator-bottom {
+    border-width: 0 0 0 0;
+  }
+
+  .p-dialog.p-confirm-dialog .p-confirm-dialog-message {
+      margin-left: 0rem;
+  }
+
+  .p-dialog-footer {
+    display: flex;
+    justify-content: end;
+  }
+
+  .confirmDialog{
+    &__yes {
+      background-color: $gd-setcolorligth-success;
+      border: solid 1px $gd-setcolorligth-success;
+      border-radius: 8px;
+      box-sizing: border-box;
+      color: $gd-color-white;
+      display: block;
+      padding: 0.75rem 1rem;
+      width: 120px !important;
+    }
+
+    &__no {
+      background-color: $gd-setcolorligth-danger;
+      border: solid 1px  $gd-setcolorligth-danger;
+      border-radius: 8px;
+      box-sizing: border-box;
+      color: $gd-color-white;
+      display: block;
+      margin-right: 0.75rem;
+      padding: 0.75rem 1rem;
+      width: 120px !important;
+    }
+  }
+}

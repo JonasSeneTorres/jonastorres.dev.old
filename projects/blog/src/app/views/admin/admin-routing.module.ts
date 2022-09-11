@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AdminComponent } from './admin.component';
 import { ArtigoComponent } from './views/artigo/artigo.component';
+import { ArtigoEdicaoComponent } from './views/artigo/artigo-edicao/artigo-edicao.component';
 import { AutorComponent } from './views/autor/autor.component';
 import { CategoriaComponent } from './views/categoria/categoria.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
@@ -17,6 +18,8 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent},
       { path: 'artigos', component: ArtigoComponent },
+      { path: 'artigos/novo', component: ArtigoEdicaoComponent },
+      { path: 'artigos/editar', component: ArtigoEdicaoComponent },
       { path: 'autores', component: AutorComponent },
       { path: 'categorias', component: CategoriaComponent },
       { path: 'perfil-usuarios', component: PerfilUsuarioComponent },

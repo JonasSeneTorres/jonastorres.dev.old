@@ -3,12 +3,32 @@ import { BoxArtigoModule } from './box-artigo/box-artigo.module';
 import { BoxBuscaModule } from './box-busca/box-busca.module';
 import { BoxCategoriasModule } from './box-categorias/box-categorias.module';
 import { BoxCompartilheModule } from './box-compartilhe/box-compartilhe.module';
+import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
 import { CommonModule } from '@angular/common';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
+import { FileUploadModule } from 'primeng/fileupload';
 import { GuideDogModule } from 'projects/guide-dog/src/lib/guide-dog.module';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { JumbotronModule } from './jumbotron/jumbotron.module';
+import { MessageService } from 'primeng/api';
+import { MultiSelectModule } from 'primeng/multiselect';
 import { NgChartsModule } from 'ng2-charts';
 import { NgModule } from '@angular/core';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { RatingModule } from 'primeng/rating';
 import { SigaNosModule } from './siga-nos/siga-nos.module';
+import { SliderModule } from 'primeng/slider';
+import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
 import { UltimosPostsModule } from './ultimos-posts/ultimos-posts.module';
 
 const modulosCompartilhados = [
@@ -21,13 +41,35 @@ const modulosCompartilhados = [
   UltimosPostsModule,
   BoxArtigoModule,
   AsideBoxModule,
-  NgChartsModule
+  NgChartsModule,
+];
+
+const modulosNgPrime = [
+  TableModule,
+  ButtonModule,
+  ToastModule,
+
+  CalendarModule,
+  SliderModule,
+  MultiSelectModule,
+  ContextMenuModule,
+  DialogModule,
+  DropdownModule,
+  ProgressBarModule,
+  InputTextModule,
+  FileUploadModule,
+  ToolbarModule,
+  RatingModule,
+  RadioButtonModule,
+  InputNumberModule,
+  ConfirmDialogModule,
+  InputTextareaModule,
+  ConfirmDialogModule,
 ];
 
 @NgModule({
   imports: [CommonModule, ...modulosCompartilhados],
-  exports: [
-    ...modulosCompartilhados
-  ],
+  providers: [ConfirmationService, MessageService],
+  exports: [...modulosCompartilhados, ...modulosNgPrime],
 })
 export class SharedModule {}
