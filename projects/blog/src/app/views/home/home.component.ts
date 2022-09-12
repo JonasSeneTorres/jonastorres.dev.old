@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, forkJoin } from 'rxjs';
 
 import { ArtigosService } from './../../services/artigos/artigos.service';
+import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
 import { CategoriasService } from '../../services/categorias/categorias.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit {
   subcategorias: any = [];
   ultimosArtigos: any[] = [];
   artigosDaCategoria: any[] = [];
+  // breadcrumbsItem: BreadcrumbsItem[];
 
   constructor(
     private artigosService: ArtigosService,

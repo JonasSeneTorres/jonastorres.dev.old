@@ -1,20 +1,26 @@
 import { Component, Injector, OnInit } from '@angular/core';
 
-import { AdminCrudComponent } from '../admin-crud/admin-crud.component';
+import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master.component';
 import { Observable, of } from 'rxjs';
 import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
+import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 
 @Component({
   templateUrl: './artigo.component.html',
   styleUrls: ['./artigo.component.scss'],
 })
-export class ArtigoComponent extends AdminCrudComponent implements OnInit {
+export class ArtigoComponent extends BaseAdminMasterComponent implements OnInit {
   constructor(
     protected override injector: Injector,
     private artigosService: ArtigosService
     ) {
     super(injector);
     this.filtravelPelosCampos = ['titulo', 'categoriaId'];
+    this.breadcrumbsItem = [
+      JonastorresRoutes.HOME.toBreadcrumb(),
+      JonastorresRoutes.ADMIN.toBreadcrumb(),
+      JonastorresRoutes.ADMIN_ARTIGOS.toBreadcrumb(),
+    ];
   }
 
   ngOnInit(): void {
@@ -23,7 +29,7 @@ export class ArtigoComponent extends AdminCrudComponent implements OnInit {
 
   protected listarItens() {
     this.artigosService.listar().subscribe({
-      next: (sucesso) => {
+      next: (sucesso: any) => {
         this.dados = sucesso;
         console.log(this.dados);
       },
@@ -34,10 +40,6 @@ export class ArtigoComponent extends AdminCrudComponent implements OnInit {
   }
 
   protected confirmarExclusao(registro: any): Observable<any> {
-    console.log(registro);
-    // return of({});
-    const a = this.artigosService.apagar(registro.id);
-    console.log(a);
-    return a;
+    return this.artigosService.apagar(registro.id);
   }
 }

@@ -1,15 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
+import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
+import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
+import { Observable } from 'rxjs';
+import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master.component';
 
 @Component({
   selector: 'jt-autor',
   templateUrl: './autor.component.html',
   styleUrls: ['./autor.component.scss']
 })
-export class AutorComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+export class AutorComponent extends BaseAdminMasterComponent implements OnInit {
+  constructor(
+    protected override injector: Injector,
+    private artigosService: ArtigosService
+    ) {
+    super(injector);
+    this.filtravelPelosCampos = ['titulo', 'categoriaId'];
+    this.breadcrumbsItem = [
+      JonastorresRoutes.HOME.toBreadcrumb(),
+      JonastorresRoutes.ADMIN.toBreadcrumb(),
+      JonastorresRoutes.ADMIN_ARTIGOS.toBreadcrumb(),
+    ];
   }
 
+  ngOnInit(): void {
+    this.listarItens();
+  }
+
+  protected listarItens() {
+    this.artigosService.listar().subscribe({
+      next: (sucesso: any) => {
+        this.dados = sucesso;
+        console.log(this.dados);
+      },
+      error: () => {
+
+      }
+    });
+  }
+
+  protected confirmarExclusao(registro: any): Observable<any> {
+    return this.artigosService.apagar(registro.id);
+  }
 }

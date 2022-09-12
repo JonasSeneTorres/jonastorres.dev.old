@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, forkJoin } from 'rxjs';
 
 import { ArtigosService } from '../../services/artigos/artigos.service';
+import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
 import { CategoriasService } from '../../services/categorias/categorias.service';
+import { JonastorresRoutes } from '../../enuns/jonastorres-routes.enum';
 import { SubcategoriasService } from './../../services/subcategorias/subcategorias.service';
 
 @Component({
@@ -16,12 +18,19 @@ export class CategoriaComponent implements OnInit {
   subcategorias: any = [];
   ultimosArtigos: any[] = [];
   artigosDaCategoria: any[] = [];
+  breadcrumbsItem: BreadcrumbsItem[];
 
   constructor(
     private artigosService: ArtigosService,
     private categoriasService: CategoriasService,
     private subcategoriasService: SubcategoriasService
-  ) {}
+  ) {
+    this.breadcrumbsItem = [
+      JonastorresRoutes.HOME.toBreadcrumb(),
+      JonastorresRoutes.ADMIN.toBreadcrumb(),
+      JonastorresRoutes.ADMIN_ARTIGOS.toBreadcrumb(),
+    ];
+  }
 
   ngOnInit(): void {
     this.obterDadosIniciais(1).subscribe((sucesso) => {

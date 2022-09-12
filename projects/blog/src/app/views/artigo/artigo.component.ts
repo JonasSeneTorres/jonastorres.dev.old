@@ -3,7 +3,9 @@ import { Observable, forkJoin } from 'rxjs';
 
 import { ArtigosService } from './../../services/artigos/artigos.service';
 import { AutoresService } from '../../services/autores/autores.service';
+import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
 import { CategoriasService } from '../../services/categorias/categorias.service';
+import { JonastorresRoutes } from '../../enuns/jonastorres-routes.enum';
 
 @Component({
   selector: 'jt-artigo',
@@ -17,12 +19,18 @@ export class ArtigoComponent implements OnInit {
   listaArquivoSerie: any[] = [];
   dadosAutor: any;
   categoriaArtigo: string = '';
+  breadcrumbsItem: BreadcrumbsItem[];
 
   constructor(
     private artigosService: ArtigosService,
     private categoriasService: CategoriasService,
     private autoresService: AutoresService
   ) {
+    this.breadcrumbsItem = [
+      JonastorresRoutes.HOME.toBreadcrumb(),
+      JonastorresRoutes.ADMIN.toBreadcrumb(),
+      JonastorresRoutes.ADMIN_ARTIGOS.toBreadcrumb(),
+    ];
   }
 
   ngOnInit(): void {

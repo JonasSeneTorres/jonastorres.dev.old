@@ -6,6 +6,8 @@
       [compartilharBox]="false"
     ></jt-jumbotron>
 
+    <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
+
     <ng-container *ngFor="let item of artigosDaCategoria">
       <div class="categoria__artigos-box">
         <h2 *ngIf="item.subcategoria !== 'Sem categoria'">{{ item.subcategoria }}</h2>

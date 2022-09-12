@@ -16,10 +16,11 @@ const routes: Routes = [
     path: '',
     component: AdminComponent,
     children: [
-      { path: '', component: DashboardComponent},
+      { path: '',   redirectTo: '/admin/dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent},
       { path: 'artigos', component: ArtigoComponent },
       { path: 'artigos/novo', component: ArtigoEdicaoComponent },
-      { path: 'artigos/editar', component: ArtigoEdicaoComponent },
+      { path: 'artigos/editar/:id', component: ArtigoEdicaoComponent },
       { path: 'autores', component: AutorComponent },
       { path: 'categorias', component: CategoriaComponent },
       { path: 'perfil-usuarios', component: PerfilUsuarioComponent },

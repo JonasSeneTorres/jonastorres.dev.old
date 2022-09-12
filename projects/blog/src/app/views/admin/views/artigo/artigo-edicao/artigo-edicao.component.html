@@ -1,2 +1,58 @@
-<h1>Novo Artigo</h1>
-<h1>Edição de artigo</h1>
+<gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
+<h1 *ngIf="id.length === 0">Novo Artigo</h1>
+<h1 *ngIf="id.length > 0">Edição de artigo</h1>
+
+<span class="p-float-label">
+  <input id="float-input" type="text" pInputText />
+  <label for="float-input">Titulo</label>
+</span>
+
+<span class="p-float-label">
+  <input id="float-input" type="text" pInputText />
+  <label for="float-input">Subtutulo</label>
+</span>
+
+<span class="p-float-label">
+  <p-chips></p-chips>
+  <label for="float-input">Metatags </label>
+</span>
+<p></p>
+
+<p>
+  <label for="data-criacao">Data de criação</label>
+  <input type="date" id="data-criacao" pInputText />
+
+  <label for="data-edicao">Data da ultima edição</label>
+  <input type="date" id="data-edicao" pInputText />
+
+  <label for="data-agendamento">Data de agendamento</label>
+  <input type="date" id="data-agendamento" pInputText />
+</p>
+
+<p>
+  <label>Categoria</label>
+  <select for="categoria">
+    <option value="">Selecione...</option>
+  </select>
+
+  <label>Subcategoria</label>
+  <select for="categoria">
+    <option value="">Selecione...</option>
+  </select>
+</p>
+
+<!-- <p-editor  ></p-editor>
+<p-editor  >
+  <ng-template pTemplate="header">
+      <span class="ql-format-group">
+          <span title="Bold" class="ql-format-button ql-bold"></span>
+          <span class="ql-format-separator"></span>
+          <span title="Italic" class="ql-format-button ql-italic"></span>
+          <span class="ql-format-separator"></span>
+          <span title="Underline" class="ql-format-button ql-underline"></span>
+          <span class="ql-format-separator"></span>
+          <span title="Strikethrough" class="ql-format-button ql-strike"></span>
+      </span>
+  </ng-template>
+</p-editor> -->
+<!-- <quill-editor></quill-editor> -->

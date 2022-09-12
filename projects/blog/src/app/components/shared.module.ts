@@ -3,8 +3,10 @@ import { BoxArtigoModule } from './box-artigo/box-artigo.module';
 import { BoxBuscaModule } from './box-busca/box-busca.module';
 import { BoxCategoriasModule } from './box-categorias/box-categorias.module';
 import { BoxCompartilheModule } from './box-compartilhe/box-compartilhe.module';
+import { BreadcrumbModule } from './../../../../guide-dog/src/lib/components/breadcrumb/breadcrumb.module';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
+import { ChipsModule } from 'primeng/chips';
 import { CommonModule } from '@angular/common';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
@@ -41,6 +43,7 @@ const modulosCompartilhados = [
   UltimosPostsModule,
   BoxArtigoModule,
   AsideBoxModule,
+  BreadcrumbModule,
   NgChartsModule,
 ];
 
@@ -48,7 +51,6 @@ const modulosNgPrime = [
   TableModule,
   ButtonModule,
   ToastModule,
-
   CalendarModule,
   SliderModule,
   MultiSelectModule,
@@ -65,10 +67,15 @@ const modulosNgPrime = [
   ConfirmDialogModule,
   InputTextareaModule,
   ConfirmDialogModule,
+  ChipsModule,
+
+
 ];
 
 @NgModule({
-  imports: [CommonModule, ...modulosCompartilhados],
+  imports: [CommonModule, ...modulosCompartilhados,
+    // QuillModule.forRoot()
+  ],
   providers: [ConfirmationService, MessageService],
   exports: [...modulosCompartilhados, ...modulosNgPrime],
 })

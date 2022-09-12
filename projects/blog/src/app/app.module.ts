@@ -16,6 +16,12 @@ import { domPurifyConfig } from './config/dom-purify.config';
 import localePT from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 
+// import { QuillModule } from 'ngx-quill'
+
+
+
+
+
 registerLocaleData(localePT);
 
 @NgModule({
@@ -27,6 +33,7 @@ registerLocaleData(localePT);
     BrowserAnimationsModule,
     SharedModule,
     NgDompurifyModule,
+    // QuillModule.forRoot()
   ],
   exports: [NgDompurifyModule],
   providers: [
@@ -39,6 +46,7 @@ registerLocaleData(localePT);
       provide: DOMPURIFY_CONFIG,
       useValue: domPurifyConfig,
     },
+
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ],
   bootstrap: [AppComponent],

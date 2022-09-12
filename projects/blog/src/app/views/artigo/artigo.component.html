@@ -8,6 +8,7 @@
       [tempoLeitura]="dadosArtigo.tempoLeitura"
       [categoria]="categoriaArtigo"></jt-jumbotron>
     <div class="artigo-content">
+      <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
       <div class="artigo" [innerHtml]="dadosArtigo.conteudoArtigo"></div>
       <jt-box-compartilhe></jt-box-compartilhe>
       <jt-box-outros-artigos [listaArtigoSerie]="listaArquivoSerie" [artigoAtual]="dadosArtigo.titulo"></jt-box-outros-artigos>

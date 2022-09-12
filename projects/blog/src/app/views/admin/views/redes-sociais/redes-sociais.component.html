@@ -1,1 +1,114 @@
-<h1>configuracao-redes-sociais works!</h1>
+<gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
+<h1>Configuracao de redes sociais</h1>
+
+<p-table
+  [value]="dados"
+  styleClass="p-datatable-striped table-busca"
+  [paginator]="true"
+  [rows]="10"
+  [showCurrentPageReport]="true"
+  responsiveLayout="scroll"
+  currentPageReportTemplate="Exibindo linhas {first} à {last} de um total de {totalRecords} registros"
+  [rowsPerPageOptions]="[10, 25, 50]"
+  [globalFilterFields]="filtravelPelosCampos"
+  #dt
+>
+  <ng-template pTemplate="caption">
+    <div class="table-busca__container-busca">
+      <span class="p-float-label p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input
+          id="float-input"
+          type="text"
+          class="table-busca__input-pesquisa"
+          pInputText
+          (input)="applyFilterGlobal($event, 'contains')"
+        />
+        <label for="float-input">Filtrar</label>
+      </span>
+
+      <button
+        type="button"
+        tabindex="0"
+        class="table-busca__botao-novo"
+        [routerLink]="['/admin/artigos/novo']"
+      >
+        <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
+        Novo
+      </button>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="titulo">
+        Nome <p-sortIcon field="titulo"></p-sortIcon>
+      </th>
+      <th pSortableColumn="categoriaId">
+        Categoria <p-sortIcon field="categoriaId"></p-sortIcon>
+      </th>
+      <th pSortableColumn="dataCriacao">
+        Criado em: <p-sortIcon field="dataCriacao"></p-sortIcon>
+      </th>
+      <th class="table-busca__coluna-acoes"></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-dados>
+    <tr>
+      <td>
+        {{ dados.titulo }}
+      </td>
+      <td>
+        {{ dados.categoriaId }}
+      </td>
+      <td>
+        {{ dados.dataCriacao | date:'shortDate' }}
+      </td>
+      <td class="table-busca__coluna-acoes">
+        <div class="table-busca__grid-botao">
+          <button
+            type="button"
+            class="table-busca__botao-editar"
+            alt="editar"
+            aria-label="editar"
+            [routerLink]="['/admin/artigos/editar']"
+          >
+            <span class="fa-solid fa-pen-to-square" aria-hidden="true"></span>
+          </button>
+
+          <button
+            type="button"
+            class="table-busca__botao-apagar"
+            alt="excluir"
+            aria-label="excluir"
+            (click)="excluir(dados, dados.titulo)"
+          >
+            <span class="fa-solid fa-trash-can" aria-hidden="true"></span>
+          </button>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="5">Nenhum registro encontrado.</td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<p-toast position="bottom-left"></p-toast>
+
+<p-confirmDialog #cd [style]="{ width: '50vw' }" >
+  <ng-template pTemplate="header">
+    <h1>Excluir Registro</h1>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <button class="confirmDialog__no" type="button" (click)="cd.reject()">
+      <span class="icone_botao fa-solid fa-xmark" aria-hidden="true"></span>
+      Cancelar
+    </button>
+    <button class="confirmDialog__yes" type="button" (click)="cd.accept()">
+      <span class="icone_botao fa-solid fa-check" aria-hidden="true"></span>
+      Sim
+    </button>
+  </ng-template>
+</p-confirmDialog>

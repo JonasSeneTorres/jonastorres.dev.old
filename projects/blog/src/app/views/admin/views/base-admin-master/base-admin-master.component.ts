@@ -1,16 +1,18 @@
 import { Component, Injector, Type, ViewChild } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 
+import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
 import { Observable } from 'rxjs';
 import { Table } from 'primeng/table';
 
 @Component({ template: '' })
-export abstract class AdminCrudComponent {
+export abstract class BaseAdminMasterComponent {
   @ViewChild('dt') ngPrimeTable: Table | undefined;
   first = 0;
   rows = 10;
   dados: any[];
   filtravelPelosCampos: string[];
+  breadcrumbsItem: BreadcrumbsItem[];
   private confirmationService: ConfirmationService;
   private messageService: MessageService;
 
@@ -23,6 +25,7 @@ export abstract class AdminCrudComponent {
     );
     this.dados = [];
     this.filtravelPelosCampos = [];
+    this.breadcrumbsItem = [];
   }
 
   next() {

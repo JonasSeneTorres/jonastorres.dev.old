@@ -1,10 +1,10 @@
 import { AdminComponent } from './admin.component';
-import { AdminCrudComponent } from './views/admin-crud/admin-crud.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { ArtigoComponent } from './views/artigo/artigo.component';
 import { ArtigoEdicaoComponent } from './views/artigo/artigo-edicao/artigo-edicao.component';
 import { ArtigosRecentesComponent } from './components/artigos-recentes/artigos-recentes.component';
 import { AutorComponent } from './views/autor/autor.component';
+import { BaseAdminMasterComponent } from './views/base-admin-master/base-admin-master.component';
 import { BoxNumLikesComponent } from './components/box-num-likes/box-num-likes.component';
 import { BoxNumPostsComponent } from './components/box-num-posts/box-num-posts.component';
 import { BoxNumSeguidoresComponent } from './components/box-num-seguidores/box-num-seguidores.component';
@@ -23,6 +23,7 @@ import { ListaCompartilhamentosComponent } from './components/lista-compartilham
 import { MenuAdminComponent } from './components/menu-admin/menu-admin.component';
 import { NgModule } from '@angular/core';
 import { PerfilUsuarioComponent } from './views/perfil-usuario/perfil-usuario.component';
+// import { QuillModule } from 'ngx-quill'
 import { RedesSociaisComponent } from './views/redes-sociais/redes-sociais.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './../../components/shared.module';
@@ -58,7 +59,8 @@ import { UsuariosComponent } from './views/usuarios/usuarios.component';
     CommonModule,
     AdminRoutingModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+
   ]
 })
 export class AdminModule { }
