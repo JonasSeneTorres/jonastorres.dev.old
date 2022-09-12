@@ -32,7 +32,7 @@
   }
 
   &__titulo {
-    align-self: end;
+    align-self: flex-end;
     grid-area: titulo;
     padding-bottom: 1.5rem;
     text-shadow: 2px 4px #000;
@@ -42,7 +42,7 @@
       font-size: 3rem;
       margin: 1rem 0 0 0;
       min-height: 116px;
-      align-items: end;
+      align-items: flex-end;
     }
 
     h2 {

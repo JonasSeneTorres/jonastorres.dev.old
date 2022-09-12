@@ -180,7 +180,7 @@
   }
 
   &__box-titulo {
-    align-content: end;
+    align-content: flex-end;
     display: grid;
     height: 5rem;
     justify-content: flex-start;
@@ -219,7 +219,7 @@
 
   &__ghost {
     &__ghost-box-titulo {
-      align-content: end;
+      align-content: flex-end;
       display: grid;
       height: 4rem;
       justify-content: flex-start;

@@ -26,7 +26,7 @@
     &-complete {
 
       @include media-up($gd-media-tablet-maxwidth) {
-        align-content: end;
+        align-content: flex-end;
       }
     }
   }
