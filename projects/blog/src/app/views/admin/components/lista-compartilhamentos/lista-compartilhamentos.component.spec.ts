@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListaCompartilhamentosComponent } from './lista-compartilhamentos.component';
+import { SharedModule } from 'projects/blog/src/app/components/shared.module';
 
 describe('ListaCompartilhamentosComponent', () => {
   let component: ListaCompartilhamentosComponent;
@@ -8,7 +9,8 @@ describe('ListaCompartilhamentosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListaCompartilhamentosComponent ]
+      declarations: [ ListaCompartilhamentosComponent ],
+      imports: [SharedModule]
     })
     .compileComponents();
 

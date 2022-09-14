@@ -24,13 +24,13 @@ export class GraficoDispositivosComponent {
     event: ChartEvent;
     active: {}[];
   }): void {
-    console.log(event, active);
+    // console.log(event, active);
   }
 
   chartHovered({event, active}: {
     event: ChartEvent;
     active: {}[];
   }): void {
-    console.log(event, active);
+    // console.log(event, active);
   }
 }

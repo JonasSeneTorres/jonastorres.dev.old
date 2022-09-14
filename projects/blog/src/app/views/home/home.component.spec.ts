@@ -1,8 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { ArtigosService } from '../../services/artigos/artigos.service';
+import { CategoriasService } from '../../services/categorias/categorias.service';
 import { HomeComponent } from './home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PostsService } from '../../services/posts/posts.service';
+import { SharedModule } from './../../components/shared.module';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -11,8 +13,8 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ HomeComponent ],
-      imports: [ HttpClientModule ],
-      providers: [ PostsService ]
+      imports: [ HttpClientModule, SharedModule ],
+      providers: [ ArtigosService, CategoriasService ]
     })
     .compileComponents();
   });

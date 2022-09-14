@@ -1,0 +1,18 @@
+<div class="blog">
+  <jt-jumbotron
+  class="blog__jumbotron"
+  ></jt-jumbotron>
+  <!-- [titulo]="dadosArtigo.titulo"
+  [subtitulo]="dadosArtigo.subtitulo"
+  [dataCriacao]="dadosArtigo.dataCriacao"
+  [dataEdicao]="dadosArtigo.dataEdicao"
+  [tempoLeitura]="dadosArtigo.tempoLeitura"
+  [categoria]="categoriaArtigo" -->
+  <main id="conteudo" class="blog__main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <aside class="blog__aside">
+    <jt-aside-box></jt-aside-box>
+  </aside>
+</div>

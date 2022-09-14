@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuAdminComponent } from './menu-admin.component';
+import { SharedModule } from 'projects/blog/src/app/components/shared.module';
 
 describe('MenuAdminComponent', () => {
   let component: MenuAdminComponent;
@@ -8,7 +9,8 @@ describe('MenuAdminComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuAdminComponent ]
+      declarations: [ MenuAdminComponent ],
+      imports: [SharedModule]
     })
     .compileComponents();
 

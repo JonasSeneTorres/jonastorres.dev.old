@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GraficoDesktopSOComponent } from './grafico-desktop-so.component';
+import { SharedModule } from 'projects/blog/src/app/components/shared.module';
 
 describe('BoxSistemasOperacionaisComponent', () => {
   let component: GraficoDesktopSOComponent;
@@ -8,7 +9,8 @@ describe('BoxSistemasOperacionaisComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraficoDesktopSOComponent ]
+      declarations: [ GraficoDesktopSOComponent ],
+      imports: [SharedModule]
     })
     .compileComponents();
 

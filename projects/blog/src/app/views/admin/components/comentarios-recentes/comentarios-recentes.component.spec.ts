@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ComentariosRecentesComponent } from './comentarios-recentes.component';
+import { SharedModule } from 'projects/blog/src/app/components/shared.module';
 
 describe('BoxComentariosRecentesComponent', () => {
   let component: ComentariosRecentesComponent;
@@ -8,7 +9,8 @@ describe('BoxComentariosRecentesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ComentariosRecentesComponent ]
+      declarations: [ ComentariosRecentesComponent ],
+      imports: [SharedModule]
     })
     .compileComponents();
 

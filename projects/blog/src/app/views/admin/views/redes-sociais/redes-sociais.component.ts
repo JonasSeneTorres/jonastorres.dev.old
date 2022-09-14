@@ -30,7 +30,7 @@ export class RedesSociaisComponent extends BaseAdminMasterComponent implements O
     this.artigosService.listar().subscribe({
       next: (sucesso) => {
         this.dados = sucesso;
-        console.log(this.dados);
+        // console.log(this.dados);
       },
       error: () => {
 

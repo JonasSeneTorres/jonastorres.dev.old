@@ -1,0 +1,38 @@
+@import "../../../styles/styles.scss";
+
+.blog {
+  display: grid;
+  grid-template-areas:
+    'jumbotron jumbotron'
+    'main aside';
+
+  @include media-down($gd-media-phone-maxwidth) {
+  }
+
+  @include media-between( $gd-media-phone-maxwidth + 1, $gd-media-tablet-maxwidth - 1) {
+  }
+
+  @include media-up($gd-media-tablet-maxwidth) {
+    column-gap: 1rem;
+    grid-template-areas:
+    'jumbotron jumbotron'
+    'main aside';
+    grid-template-columns: 1fr 25rem;
+  }
+
+  &__jumbotron {
+    grid-area: jumbotron;
+  }
+
+  &__main {
+    @include scaffolding-card;
+    grid-area: main;
+    height: 100%;
+  }
+
+  &__aside {
+    @include scaffolding-card;
+    grid-area: aside;
+    height: 100%;
+  }
+}

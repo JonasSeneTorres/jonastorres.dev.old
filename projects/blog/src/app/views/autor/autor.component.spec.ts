@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AutorComponent } from './autor.component';
+import { SharedModule } from '../../components/shared.module';
 
 describe('AutorComponent', () => {
   let component: AutorComponent;
@@ -8,7 +9,8 @@ describe('AutorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AutorComponent ]
+      declarations: [ AutorComponent ],
+      imports: [SharedModule]
     })
     .compileComponents();
   });

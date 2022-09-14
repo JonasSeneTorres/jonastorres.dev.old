@@ -13,6 +13,7 @@ import { ConfirmationService } from 'primeng/api';
 import { ContextMenuModule } from 'primeng/contextmenu';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
+import {EditorModule} from 'primeng/editor';
 import { FileUploadModule } from 'primeng/fileupload';
 import { GuideDogModule } from 'projects/guide-dog/src/lib/guide-dog.module';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -69,7 +70,7 @@ const modulosNgPrime = [
   ConfirmDialogModule,
   ChipsModule,
 
-
+  EditorModule
 ];
 
 @NgModule({

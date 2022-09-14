@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GraficoDispositivosComponent } from './grafico-dispositivos.component';
+import { SharedModule } from 'projects/blog/src/app/components/shared.module';
 
 describe('GraficoDispositivosComponent', () => {
   let component: GraficoDispositivosComponent;
@@ -8,7 +9,8 @@ describe('GraficoDispositivosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraficoDispositivosComponent ]
+      declarations: [ GraficoDispositivosComponent ],
+      imports: [SharedModule]
     })
     .compileComponents();
 

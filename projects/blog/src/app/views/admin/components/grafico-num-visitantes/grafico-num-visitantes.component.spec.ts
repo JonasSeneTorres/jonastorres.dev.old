@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GraficoNumVisitantesComponent } from './grafico-num-visitantes.component';
+import { SharedModule } from 'projects/blog/src/app/components/shared.module';
 
 describe('GraficoNumVisitantesComponent', () => {
   let component: GraficoNumVisitantesComponent;
@@ -8,7 +9,8 @@ describe('GraficoNumVisitantesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraficoNumVisitantesComponent ]
+      declarations: [ GraficoNumVisitantesComponent ],
+      imports: [SharedModule]
     })
     .compileComponents();
 

@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '../../components/shared.module';
 import { SitemapComponent } from './sitemap.component';
 
 describe('SitemapComponent', () => {
@@ -8,7 +10,8 @@ describe('SitemapComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SitemapComponent ]
+      declarations: [ SitemapComponent ],
+      imports: [SharedModule, HttpClientModule]
     })
     .compileComponents();
 

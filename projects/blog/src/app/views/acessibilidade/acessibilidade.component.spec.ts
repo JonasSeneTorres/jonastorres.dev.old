@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AcessibilidadeComponent } from './acessibilidade.component';
+import { SharedModule } from '../../components/shared.module';
 
 describe('AcessibilidadeComponent', () => {
   let component: AcessibilidadeComponent;
@@ -8,7 +9,8 @@ describe('AcessibilidadeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AcessibilidadeComponent ]
+      declarations: [ AcessibilidadeComponent ],
+      imports: [SharedModule]
     })
     .compileComponents();
   });

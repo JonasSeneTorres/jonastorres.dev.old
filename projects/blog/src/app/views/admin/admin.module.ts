@@ -1,3 +1,5 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AdminComponent } from './admin.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { ArtigoComponent } from './views/artigo/artigo.component';
@@ -23,7 +25,6 @@ import { ListaCompartilhamentosComponent } from './components/lista-compartilham
 import { MenuAdminComponent } from './components/menu-admin/menu-admin.component';
 import { NgModule } from '@angular/core';
 import { PerfilUsuarioComponent } from './views/perfil-usuario/perfil-usuario.component';
-// import { QuillModule } from 'ngx-quill'
 import { RedesSociaisComponent } from './views/redes-sociais/redes-sociais.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './../../components/shared.module';
@@ -60,7 +61,8 @@ import { UsuariosComponent } from './views/usuarios/usuarios.component';
     AdminRoutingModule,
     RouterModule,
     SharedModule,
-
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

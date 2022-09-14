@@ -1,4 +1,4 @@
-import { Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
 import { ICrudService } from './../../interfaces/icrud-service';
@@ -8,7 +8,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ArtigosService implements ICrudService {
+  private _itensBuscados$: BehaviorSubject<any> = new BehaviorSubject(null);
   private baseURL: string = 'http://localhost:3000';
+
+  get itensBuscados$() {
+    return this._itensBuscados$.asObservable();
+  }
 
   constructor(private httpClient: HttpClient) {}
 
@@ -17,6 +22,10 @@ export class ArtigosService implements ICrudService {
   }
 
   listar(): Observable<any> {
+    return this.httpClient.get(`${this.baseURL}/artigos`);
+  }
+
+  buscar(_palavraChave: string): Observable<any> {
     return this.httpClient.get(`${this.baseURL}/artigos`);
   }
 

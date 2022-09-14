@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ErroComponent } from './erro.component';
+import { SharedModule } from '../../components/shared.module';
 
 describe('ErroComponent', () => {
   let component: ErroComponent;
@@ -8,7 +9,8 @@ describe('ErroComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ErroComponent ]
+      declarations: [ ErroComponent ],
+      imports: [SharedModule]
     })
     .compileComponents();
   });

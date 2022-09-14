@@ -1,6 +1,7 @@
 import { AppComponent } from './app.component';
-import { GuideDogModule } from 'projects/guide-dog/src/lib/guide-dog.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+import { SharedModule } from './components/shared.module';
 import { TestBed } from '@angular/core/testing';
 
 describe('AppComponent', () => {
@@ -8,7 +9,8 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        GuideDogModule
+        SharedModule,
+        NoopAnimationsModule
       ],
       declarations: [
         AppComponent

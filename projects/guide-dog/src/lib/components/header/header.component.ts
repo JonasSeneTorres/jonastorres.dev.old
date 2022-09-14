@@ -54,7 +54,7 @@ export class HeaderComponent implements AfterViewInit {
       .asObservable()
       .pipe(throttleTime(1000))
       .subscribe((innerWidth) => {
-        console.log('innerWidth:', innerWidth);
+        // console.log('innerWidth:', innerWidth);
         this.navboxWithAcceptableSize = this.checkAcceptableSizeNavbox();
         this.changeDetectorRef.detectChanges();
       });

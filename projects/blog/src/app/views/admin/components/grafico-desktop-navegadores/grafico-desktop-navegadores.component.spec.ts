@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GraficoDesktopNavegadoresComponent } from './grafico-desktop-navegadores.component';
+import { SharedModule } from 'projects/blog/src/app/components/shared.module';
 
 describe('GraficoDesktopNavegadoresComponent', () => {
   let component: GraficoDesktopNavegadoresComponent;
@@ -8,7 +9,8 @@ describe('GraficoDesktopNavegadoresComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraficoDesktopNavegadoresComponent ]
+      declarations: [ GraficoDesktopNavegadoresComponent ],
+      imports: [SharedModule]
     })
     .compileComponents();
 

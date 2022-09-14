@@ -1,7 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { Observable, of, throwError } from 'rxjs';
 
+import { AdminModule } from './../../admin.module';
 import { BaseAdminMasterComponent } from './base-admin-master.component';
+import { SharedModule } from 'projects/blog/src/app/components/shared.module';
 
 class TestingBaseAdminMasterComponent extends BaseAdminMasterComponent {
   erro = false;
@@ -25,7 +28,9 @@ describe('BaseAdminMasterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TestingBaseAdminMasterComponent, BaseAdminMasterComponent ]
+      declarations: [ TestingBaseAdminMasterComponent, BaseAdminMasterComponent ],
+      imports: [SharedModule, AdminModule],
+      providers: [ConfirmationService, MessageService]
     })
     .compileComponents();
 

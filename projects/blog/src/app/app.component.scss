@@ -22,6 +22,8 @@
   max-width: 100vw;
   min-width: 250px;
   position: relative;
+  box-sizing: border-box;
+  padding-bottom: 2.5rem;
 
   @include media-up($gd-media-tablet-maxwidth) {
 
@@ -39,7 +41,7 @@
     }
   }
 
-  main * {
+  .app-container-conteudo * {
     max-width: calc(100vw - 40px);
   }
 }

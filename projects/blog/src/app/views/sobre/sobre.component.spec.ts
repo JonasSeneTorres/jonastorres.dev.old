@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { SharedModule } from './../../components/shared.module';
 import { SobreComponent } from './sobre.component';
 
 describe('SobreComponent', () => {
@@ -8,7 +9,8 @@ describe('SobreComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SobreComponent ]
+      declarations: [ SobreComponent ],
+      imports: [SharedModule]
     })
     .compileComponents();
 

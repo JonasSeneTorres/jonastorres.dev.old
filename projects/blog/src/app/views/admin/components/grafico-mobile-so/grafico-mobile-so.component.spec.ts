@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GraficoMobileSoComponent } from './grafico-mobile-so.component';
+import { SharedModule } from 'projects/blog/src/app/components/shared.module';
 
 describe('GraficoSoMobileComponent', () => {
   let component: GraficoMobileSoComponent;
@@ -8,7 +9,8 @@ describe('GraficoSoMobileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraficoMobileSoComponent ]
+      declarations: [ GraficoMobileSoComponent ],
+      imports: [SharedModule]
     })
     .compileComponents();
 
