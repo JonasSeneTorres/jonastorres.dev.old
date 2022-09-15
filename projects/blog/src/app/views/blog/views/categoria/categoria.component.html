@@ -1,1 +1,15 @@
-<p>categoria works!</p>
+<gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
+
+<ng-container *ngFor="let item of artigosDaCategoria">
+  <div class="categoria__artigos-box">
+    <h2 *ngIf="item.subcategoria !== 'Sem categoria'">{{ item.subcategoria }}</h2>
+    <h2 *ngIf="item.subcategoria === 'Sem categoria'">Fundamentos</h2>
+    <ng-container *ngFor="let artigo of item.artigos; let i = index">
+      <jt-box-artigo
+        [class.semCategoria]="item.subcategoria === 'Sem categoria' && i === 0"
+        [artigo]="artigo"
+        >
+      </jt-box-artigo>
+    </ng-container>
+  </div>
+</ng-container>

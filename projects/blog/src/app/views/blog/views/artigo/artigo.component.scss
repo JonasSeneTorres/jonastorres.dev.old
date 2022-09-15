@@ -1,0 +1,28 @@
+@import "../../../../../../../guide-dog/src/lib/styles/gd.scss";
+
+.artigo {
+  @include scaffolding-card;
+
+  @include media-down($gd-media-phone-maxwidth) {
+    overflow: hidden;
+  }
+
+  @include media-between(
+    $gd-media-phone-maxwidth + 1,
+    $gd-media-tablet-maxwidth - 1
+  ) {
+  }
+
+  @include media-up($gd-media-tablet-maxwidth) {
+    padding: 1rem 2rem;
+  }
+
+  &-content {
+    margin-bottom: .5rem;
+
+    @include media-down($gd-media-phone-maxwidth) {
+      overflow: hidden;
+      width: 100vw;
+    }
+  }
+}

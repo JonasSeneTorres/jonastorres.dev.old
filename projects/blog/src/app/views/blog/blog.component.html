@@ -8,7 +8,12 @@
   [dataEdicao]="dadosArtigo.dataEdicao"
   [tempoLeitura]="dadosArtigo.tempoLeitura"
   [categoria]="categoriaArtigo" -->
-  <main id="conteudo" class="blog__main">
+
+  <main id="conteudo" class="blog__main" *ngIf="(boxPrincipalTransparente | async) !== true">
+    <router-outlet></router-outlet>
+  </main>
+
+  <main id="conteudo" class="blog__main-transparente" *ngIf="(boxPrincipalTransparente | async)">
     <router-outlet></router-outlet>
   </main>
 

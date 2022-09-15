@@ -1,22 +1,31 @@
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, takeUntil } from 'rxjs';
+import { Injectable, OnDestroy } from '@angular/core';
 
 import { IStorageService } from '../../../interfaces/iStorageService';
-import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MemoryStorageService implements IStorageService {
+export class MemoryStorageService implements IStorageService, OnDestroy {
   private _value: any = {};
   private _dataSource = new BehaviorSubject<any>({});
+  private _destroy$: Subject<boolean> = new Subject<boolean>();
+
   data$: Observable<any> = this._dataSource.asObservable();
 
   constructor() {
-    this.data$.subscribe(
+    this.data$
+    .pipe(takeUntil(this._destroy$))
+    .subscribe(
       data => {
         this._value = data;
       }
     );
+  }
+
+  ngOnDestroy(): void {
+    this._destroy$.next(true);
+    this._destroy$.unsubscribe();
   }
 
   get(key: string): any | any[] {

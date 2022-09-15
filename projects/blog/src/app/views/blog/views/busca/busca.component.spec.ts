@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BuscaComponent } from './busca.component';
-import { SharedModule } from '../../components/shared.module';
 
 describe('BuscaComponent', () => {
   let component: BuscaComponent;
@@ -9,8 +8,7 @@ describe('BuscaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BuscaComponent ],
-      imports: [SharedModule]
+      declarations: [ BuscaComponent ]
     })
     .compileComponents();
 

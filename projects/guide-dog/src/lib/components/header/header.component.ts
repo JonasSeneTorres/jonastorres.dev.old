@@ -9,7 +9,7 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { Observer, Subject, throttleTime } from 'rxjs';
+import { Observer, Subject, takeUntil, throttleTime } from 'rxjs';
 
 import { NavibarItemConfig } from '../../types/navibar-item-config';
 import { SystemInformationService } from 'projects/guide-dog/src/lib/services/system-information/system-information.service';
@@ -19,7 +19,9 @@ import { SystemInformationService } from 'projects/guide-dog/src/lib/services/sy
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent implements AfterViewInit, OnDestroy {
+  private _destroy$: Subject<boolean> = new Subject<boolean>();
+
   @Input() navConfig: NavibarItemConfig[] = [];
   greatherThanLayoutBreak = false;
   navboxWithAcceptableSize = true;
@@ -53,6 +55,7 @@ export class HeaderComponent implements AfterViewInit {
     this.changeSize
       .asObservable()
       .pipe(throttleTime(1000))
+      .pipe(takeUntil(this._destroy$))
       .subscribe((innerWidth) => {
         // console.log('innerWidth:', innerWidth);
         this.navboxWithAcceptableSize = this.checkAcceptableSizeNavbox();
@@ -62,6 +65,11 @@ export class HeaderComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.onResize();
+  }
+
+  ngOnDestroy(): void {
+    this._destroy$.next(true);
+    this._destroy$.unsubscribe();
   }
 
   @HostListener('window:resize', ['$event.target'])

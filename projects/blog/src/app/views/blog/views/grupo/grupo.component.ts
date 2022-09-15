@@ -1,8 +1,11 @@
 import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
+import { Observable, Subject, takeUntil } from 'rxjs';
 
 import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
+import { BlogService } from 'projects/blog/src/app/services/blog/blog.service';
+import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
+import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { JumbotronService } from 'projects/blog/src/app/services/jumbotron/jumbotron.service';
 import { VitrineDados } from 'projects/blog/src/app/types/vitrine-dados.type';
 
@@ -11,22 +14,37 @@ import { VitrineDados } from 'projects/blog/src/app/types/vitrine-dados.type';
   styleUrls: ['./grupo.component.scss']
 })
 export class GrupoComponent implements OnInit, OnDestroy {
-  vitrineDados: VitrineDados = {};
   private _destroy$: Subject<boolean> = new Subject<boolean>();
+
+  vitrineDados: VitrineDados = {};
+  breadcrumbsItem: BreadcrumbsItem[];
 
   constructor(
     private _artigosService: ArtigosService,
     private _jumbotronService: JumbotronService,
-    private _activatedRoute: ActivatedRoute
+    private _blogService: BlogService,
+    private _activatedRoute: ActivatedRoute,
     ) {
       this._jumbotronService.dadosJumbotrom$ = null;
+      this._blogService.tornarBoxPrincipalTransparente(false);
+      this.breadcrumbsItem = [];
     }
 
   ngOnInit(): void {
     this.chamadasApisExternas();
-    this._activatedRoute.params.subscribe((params: Params) => {
-      console.log(params);
-      console.log(this._activatedRoute.snapshot.data);
+    this._activatedRoute.params
+    .pipe(takeUntil(this._destroy$))
+    .subscribe((params: Params) => {
+      const labelGrupo = `${params['grupo']}`;
+      const routeGrupo = `/blog/${params['grupo']}`;
+
+      this.breadcrumbsItem = [
+        JonastorresRoutes.HOME.toBreadcrumb(),
+      ];
+
+      if (labelGrupo !== 'categoria') {
+        this.breadcrumbsItem.push({ label: labelGrupo, route: [routeGrupo]});
+      }
     });
   }
 

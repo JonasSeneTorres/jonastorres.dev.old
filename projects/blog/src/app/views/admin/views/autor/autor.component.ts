@@ -1,7 +1,7 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injector, OnInit, OnDestroy } from '@angular/core';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
-import { Observable } from 'rxjs';
+import { Observable, Subject, takeUntil } from 'rxjs';
 import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master.component';
 
 @Component({
@@ -9,7 +9,9 @@ import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master
   templateUrl: './autor.component.html',
   styleUrls: ['./autor.component.scss']
 })
-export class AutorComponent extends BaseAdminMasterComponent implements OnInit {
+export class AutorComponent extends BaseAdminMasterComponent implements OnInit, OnDestroy {
+  // private _destroy$: Subject<boolean> = new Subject<boolean>();
+
   constructor(
     protected override injector: Injector,
     private artigosService: ArtigosService
@@ -27,8 +29,15 @@ export class AutorComponent extends BaseAdminMasterComponent implements OnInit {
     this.listarItens();
   }
 
+  // ngOnDestroy(): void {
+  //   this._destroy$.next(true);
+  //   this._destroy$.unsubscribe();
+  // }
+
   protected listarItens() {
-    this.artigosService.listar().subscribe({
+    this.artigosService.listar()
+    .pipe(takeUntil(this._destroy$))
+    .subscribe({
       next: (sucesso: any) => {
         this.dados = sucesso;
         // console.log(this.dados);

@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 
 import { ActivatedRoute } from '@angular/router';
 import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
@@ -10,6 +11,8 @@ import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-route
   styleUrls: ['./artigo-edicao.component.scss'],
 })
 export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
+  private _destroy$: Subject<boolean> = new Subject<boolean>();
+
   breadcrumbsItem: BreadcrumbsItem[];
   id = '';
 
@@ -24,7 +27,9 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.routeParams$ = this.route.params.subscribe((params) => {
+    this.routeParams$ = this.route.params
+    .pipe(takeUntil(this._destroy$))
+    .subscribe((params) => {
       this.id = params['id'] ?? '';
 
       const breadcrumbNovo = JonastorresRoutes.ADMIN_ARTIGOS_NOVO.toBreadcrumb();
@@ -33,8 +38,9 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
-    this.routeParams$.unsubscribe();
+  ngOnDestroy(): void {
+    this._destroy$.next(true);
+    this._destroy$.unsubscribe();
   }
 
   private ajustarBreadcrumb(id: string, breadcrumbNovo: BreadcrumbsItem, breadcrumbEditar: BreadcrumbsItem) {

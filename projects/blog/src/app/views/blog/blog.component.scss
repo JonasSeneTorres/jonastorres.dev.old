@@ -29,6 +29,12 @@
     @include scaffolding-card;
     grid-area: main;
     height: 100%;
+
+    &-transparente {
+      grid-area: main;
+      height: 100%;
+      z-index: 1;
+    }
   }
 
   &__aside {

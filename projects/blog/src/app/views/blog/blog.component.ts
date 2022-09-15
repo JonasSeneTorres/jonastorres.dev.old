@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject, forkJoin, takeUntil } from 'rxjs';
 
 import { ArtigosService } from './../../services/artigos/artigos.service';
+import { BlogService } from '../../services/blog/blog.service';
 import { CategoriasService } from './../../services/categorias/categorias.service';
 import { JumbotronService } from './../../services/jumbotron/jumbotron.service';
 import { Router } from '@angular/router';
@@ -15,21 +16,25 @@ export class BlogComponent implements OnInit, OnDestroy {
   categorias = [];
   ultimosArtigos = [];
   jumbotron = {};
+  boxPrincipalTransparente: Observable<boolean>;
   private _destroy$: Subject<boolean> = new Subject<boolean>();
 
   constructor(
-    private artigosService: ArtigosService,
-    private categoriasService: CategoriasService,
-    private jumbotronService: JumbotronService,
-    private router: Router
-  ) {}
+    private _artigosService: ArtigosService,
+    private _categoriasService: CategoriasService,
+    private _blogService: BlogService,
+    private _jumbotronService: JumbotronService,
+    private _router: Router
+  ) {
+    this.boxPrincipalTransparente = this._blogService.boxPrincipalTransparente;
+  }
 
   ngOnInit(): void {
     forkJoin({
-      artigos: this.artigosService.listarUltimosArtigos(),
-      categorias: this.categoriasService.listar(),
-      jumbotron: this.jumbotronService.dadosJumbotrom$,
-      buscar: this.artigosService.itensBuscados$,
+      artigos: this._artigosService.listarUltimosArtigos(),
+      categorias: this._categoriasService.listar(),
+      jumbotron: this._jumbotronService.dadosJumbotrom$,
+      buscar: this._artigosService.itensBuscados$,
     })
       .pipe(takeUntil(this._destroy$))
       .subscribe({
@@ -60,7 +65,7 @@ export class BlogComponent implements OnInit, OnDestroy {
     dados
     .pipe(takeUntil(this._destroy$))
     .subscribe((data) => {
-      this.router.navigate([''], { queryParams: { por: data }});
+      this._router.navigate([''], { queryParams: { por: data }});
     });
   }
 }

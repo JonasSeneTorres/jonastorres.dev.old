@@ -1,20 +1,22 @@
-import { Component, Injector, Type, ViewChild } from '@angular/core';
+import { Component, Injector, OnDestroy, Type, ViewChild } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { Observable, Subject, takeUntil } from 'rxjs';
 
 import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
-import { Observable } from 'rxjs';
 import { Table } from 'primeng/table';
 
 @Component({ template: '' })
-export abstract class BaseAdminMasterComponent {
+export abstract class BaseAdminMasterComponent implements OnDestroy {
+  protected _destroy$: Subject<boolean> = new Subject<boolean>();
+
   @ViewChild('dt') ngPrimeTable: Table | undefined;
   first = 0;
   rows = 10;
   dados: any[];
   filtravelPelosCampos: string[];
   breadcrumbsItem: BreadcrumbsItem[];
-  private confirmationService: ConfirmationService;
-  private messageService: MessageService;
+  protected confirmationService: ConfirmationService;
+  protected messageService: MessageService;
 
   constructor(protected injector: Injector) {
     this.confirmationService = injector.get<ConfirmationService>(
@@ -26,6 +28,11 @@ export abstract class BaseAdminMasterComponent {
     this.dados = [];
     this.filtravelPelosCampos = [];
     this.breadcrumbsItem = [];
+  }
+
+  ngOnDestroy(): void {
+    this._destroy$.next(true);
+    this._destroy$.unsubscribe();
   }
 
   next() {
@@ -77,7 +84,9 @@ export abstract class BaseAdminMasterComponent {
   }
 
   private observarResultadoExclusao(registro: any, texto: string) {
-    this.confirmarExclusao(registro).subscribe({
+    this.confirmarExclusao(registro)
+    .pipe(takeUntil(this._destroy$))
+    .subscribe({
       next: (_sucesso: any) => this.exclusaoMensagemSucesso(registro, texto),
       error: (_erro: any) => this.exclusaoMensagemFalha(registro, texto),
     });
