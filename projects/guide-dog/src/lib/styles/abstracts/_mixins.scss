@@ -9,8 +9,8 @@ $gd-media-tablet-maxheight: 1440px !default;
 $gd-media-desktop-minheight: 768px !default;
 $gd-media-desktop-maxheight: 1280px !default;
 
-@mixin media-phone(){
-  @media screen and (min-width: $gd-media-phone-minwidth) and (max-height: $gd-media-phone-maxheight){
+@mixin media-phone() {
+  @media screen and (min-width: $gd-media-phone-minwidth) and (max-height: $gd-media-phone-maxheight) {
     @content;
   }
 }
@@ -21,14 +21,14 @@ $gd-media-desktop-maxheight: 1280px !default;
   }
 }
 
-@mixin media-phone-landscape(){
-  @media screen and (min-height: $gd-media-phone-minheight) and (max-height: $gd-media-phone-maxheight) and (orientation: landscape){
+@mixin media-phone-landscape() {
+  @media screen and (min-height: $gd-media-phone-minheight) and (max-height: $gd-media-phone-maxheight) and (orientation: landscape) {
     @content;
   }
 }
 
-@mixin media-tablet(){
-  @media screen and (min-width: $gd-media-tablet-minwidth) and (max-height: $gd-media-tablet-maxheight){
+@mixin media-tablet() {
+  @media screen and (min-width: $gd-media-tablet-minwidth) and (max-height: $gd-media-tablet-maxheight) {
     @content;
   }
 }
@@ -39,62 +39,61 @@ $gd-media-desktop-maxheight: 1280px !default;
   }
 }
 
-@mixin media-tablet-landscape(){
-  @media screen and (min-height: $gd-media-tablet-minheight) and (max-height: $gd-media-tablet-maxheight) and (orientation: landscape){
+@mixin media-tablet-landscape() {
+  @media screen and (min-height: $gd-media-tablet-minheight) and (max-height: $gd-media-tablet-maxheight) and (orientation: landscape) {
     @content;
   }
 }
 
-@mixin media-desktop(){
-  @media screen and (min-height: $gd-media-desktop-minheight) and (max-height: $gd-media-desktop-maxheight){
+@mixin media-desktop() {
+  @media screen and (min-height: $gd-media-desktop-minheight) and (max-height: $gd-media-desktop-maxheight) {
     @content;
   }
 }
 
-@mixin media-desktop(){
-  @media screen and (min-height: $gd-media-desktop-minheight) and (max-height: $gd-media-desktop-maxheight){
+@mixin media-desktop() {
+  @media screen and (min-height: $gd-media-desktop-minheight) and (max-height: $gd-media-desktop-maxheight) {
     @content;
   }
 }
 
-@mixin media-up($value){
+@mixin media-up($value) {
   @media screen and (min-width: $value) {
     @content;
   }
 }
 
-@mixin media-down($value){
-  @media screen and (max-width: $value){
+@mixin media-down($value) {
+  @media screen and (max-width: $value) {
     @content;
   }
 }
 
-@mixin media-between($min, $max){
-  @media screen and (min-width: $min) and (max-width: $max){
+@mixin media-between($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
     @content;
   }
 }
 
-@mixin box-shadow{
+@mixin box-shadow {
   box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%),
-      0 1px 4px rgb(0 0 0 / 12%);
+    0 1px 4px rgb(0 0 0 / 12%);
 }
 
 @mixin scaffolding-card {
   background-color: $gd-color-white;
   box-sizing: border-box;
   z-index: 1;
-    @include box-shadow;
+  @include box-shadow;
 
-    @include media-down($gd-media-tablet-maxwidth) {
-      padding: 0.5rem 0 0.25rem 0.5rem;
-    }
+  @include media-down($gd-media-tablet-maxwidth) {
+    padding: 0.5rem 0 0.25rem 0.5rem;
+  }
 
-    @include media-up($gd-media-tablet-maxwidth) {
-      border-radius: 16px;
-      margin-top: 1.5rem;
-      padding: 1rem;
-      padding-bottom: 1px;
-    }
-
+  @include media-up($gd-media-tablet-maxwidth) {
+    border-radius: 16px;
+    // margin-top: 1.5rem;
+    padding: 1rem;
+    // padding-bottom: 1px;
+  }
 }

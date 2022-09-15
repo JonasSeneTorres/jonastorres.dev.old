@@ -18,6 +18,7 @@
     'jumbotron jumbotron'
     'main aside';
     grid-template-columns: 1fr 25rem;
+    row-gap: 1.6rem;
   }
 
   &__jumbotron {

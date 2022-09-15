@@ -15,6 +15,10 @@
       }
     }
   }
+
+  #footer {
+    margin-top: 1rem;
+  }
 }
 
 .app-container {
@@ -23,7 +27,8 @@
   min-width: 250px;
   position: relative;
   box-sizing: border-box;
-  padding-bottom: 2.5rem;
+  height: calc(100% + 1rem);
+  // padding-bottom: 2.5rem;
 
   @include media-up($gd-media-tablet-maxwidth) {
 

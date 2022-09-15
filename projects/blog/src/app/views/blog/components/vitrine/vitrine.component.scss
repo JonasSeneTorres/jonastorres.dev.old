@@ -1,0 +1,55 @@
+@import "../../../../../styles/styles.scss";
+
+.vitrine {
+  // background-color: $gd-color-white;
+  // @include box-shadow;
+
+  @include media-down($gd-media-tablet-maxwidth) {
+    padding: 0.5rem 0 0.25rem 0.5rem;
+  }
+
+  @include media-up($gd-media-tablet-maxwidth) {
+    // border-radius: 16px;
+    // margin-top: 1.5rem;
+    // padding: 1rem 2rem;
+    // padding-bottom: 1px;
+  }
+
+  &__grid {
+    @include media-down($gd-media-phone-maxheight) {
+      display: grid;
+      gap: 0rem;
+      column-gap: 0rem;
+      grid-template-columns: 1fr;
+    }
+
+    @include media-between($gd-media-phone-maxheight, 60rem) {
+      display: grid;
+      gap: 0.25rem;
+      column-gap: 0.25rem;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-between(60rem, $gd-media-tablet-maxwidth) {
+      display: grid;
+      gap: 0.25rem;
+      column-gap: 0.25rem;
+      grid-template-columns: 1fr 1fr 1fr !important;
+    }
+
+    @include media-up($gd-media-tablet-maxwidth) {
+      display: block;
+    }
+  }
+
+  &__titulo {
+    @include media-down($gd-media-tablet-maxwidth) {
+      margin: 0.5rem 0 1.25rem 0;
+    }
+
+    @include media-up($gd-media-tablet-maxwidth) {
+      font-size: 1.75rem;
+      margin: 0 0 0.5rem;
+    }
+  }
+}

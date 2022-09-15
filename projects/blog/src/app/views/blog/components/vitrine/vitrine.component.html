@@ -1,0 +1,8 @@
+<section class="vitrine">
+  <h2 class="vitrine__titulo">Artigos populares</h2>
+  <div class="vitrine__grid">
+    <ng-container *ngFor="let item of ultimosArtigos; let i = index">
+      <jt-box-artigo [artigo]="item"></jt-box-artigo>
+    </ng-container>
+  </div>
+</section>

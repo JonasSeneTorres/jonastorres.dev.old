@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () =>
-      import('./views/home/home.module').then((m) => m.HomeModule),
-  },
+  { path: '',   redirectTo: '/blog', pathMatch: 'full' },
+  // {
+  //   path: '',
+  //   loadChildren: () =>
+  //     import('./views/home/home.module').then((m) => m.HomeModule),
+  // },
   // {
   //   path: 'acessibilidade',
   //   loadChildren: () =>
@@ -75,7 +76,7 @@ const routes: Routes = [
   // { path: 'sitemap', loadChildren: () => import('./views/sitemap/sitemap.module').then(m => m.SitemapModule) },
   // { path: 'login', loadChildren: () => import('./views/login/login.module').then(m => m.LoginModule) },
   // { path: 'admin', loadChildren: () => import('./views/admin/admin.module').then(m => m.AdminModule) },
-  { path: '', loadChildren: () => import('./views/blog/blog.module').then(m => m.BlogModule) },
+  // { path: '', loadChildren: () => import('./views/blog/blog.module').then(m => m.BlogModule) },
   { path: 'blog', loadChildren: () => import('./views/blog/blog.module').then(m => m.BlogModule) },
   {
     path: '**',
