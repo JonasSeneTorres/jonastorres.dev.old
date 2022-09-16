@@ -16,7 +16,7 @@ export class UltimosPostsComponent {
       (item) => item.id === this.ultimosArtigos[indice].categoriaId
     );
 
-    return output[0].nome.toLowerCase();
+    return ''; // output[0].nome.toLowerCase();
   }
 
   pertenceACategoria(indice: number, nomeCategoria: string = '') {

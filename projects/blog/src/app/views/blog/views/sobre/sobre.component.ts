@@ -19,7 +19,7 @@ export class SobreComponent implements OnInit, OnDestroy {
     private jumbotronService: JumbotronService,
     private _blogService: BlogService,
   ) {
-    this._blogService.tornarBoxPrincipalTransparente(true);
+    this._blogService.tornarBoxPrincipalTransparente(false);
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
       {label: 'Sobre'}
