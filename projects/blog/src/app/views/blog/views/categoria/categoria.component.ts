@@ -63,7 +63,7 @@ export class CategoriaComponent implements OnInit, OnDestroy {
     });
 
     this.obterDadosIniciais(1).pipe(takeUntil(this._destroy$)).subscribe((sucesso) => {
-      console.log(sucesso);
+      // console.log(sucesso);
       this.dadosArtigo = sucesso.artigo;
       // this.categorias = sucesso.categorias;
       // this.ultimosArtigos = sucesso.ultimosArtigos;

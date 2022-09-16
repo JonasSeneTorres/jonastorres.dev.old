@@ -76,6 +76,18 @@
                 "ativo": true
               }
             ]
+          },
+          {
+            "label": "Arquitetura2",
+            "url": "arquitetura2",
+            "ativo": false,
+            "subcategorias": [
+              {
+                "id": 1,
+                "nome": "Fundamentos",
+                "ativo": true
+              }
+            ]
           }
         ]
       }
