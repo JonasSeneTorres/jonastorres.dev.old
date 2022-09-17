@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'jt-erro',
   templateUrl: './erro.component.html',
   styleUrls: ['./erro.component.scss']
 })
-export class ErroComponent implements OnInit {
+export class ErroComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

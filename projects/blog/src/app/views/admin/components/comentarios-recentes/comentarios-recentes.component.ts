@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'jt-comentarios-recentes',
   templateUrl: './comentarios-recentes.component.html',
   styleUrls: ['./comentarios-recentes.component.scss']
 })
-export class ComentariosRecentesComponent implements OnInit {
+export class ComentariosRecentesComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

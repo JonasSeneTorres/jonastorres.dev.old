@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'jt-lista-compartilhamentos',
   templateUrl: './lista-compartilhamentos.component.html',
   styleUrls: ['./lista-compartilhamentos.component.scss']
 })
-export class ListaCompartilhamentosComponent implements OnInit {
+export class ListaCompartilhamentosComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
