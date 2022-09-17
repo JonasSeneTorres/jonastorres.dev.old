@@ -4,6 +4,7 @@ import { AdminComponent } from './admin.component';
 import { ArtigoComponent } from './views/artigo/artigo.component';
 import { ArtigoEdicaoComponent } from './views/artigo/artigo-edicao/artigo-edicao.component';
 import { AutorComponent } from './views/autor/autor.component';
+import { AutorEdicaoComponent } from './views/autor/autor-edicao/autor-edicao.component';
 import { CategoriaComponent } from './views/categoria/categoria.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
@@ -22,6 +23,8 @@ const routes: Routes = [
       { path: 'artigos/novo', component: ArtigoEdicaoComponent },
       { path: 'artigos/editar/:id', component: ArtigoEdicaoComponent },
       { path: 'autores', component: AutorComponent },
+      { path: 'autores/novo', component: AutorEdicaoComponent },
+      { path: 'autores/editar/:id', component: AutorEdicaoComponent },
       { path: 'categorias', component: CategoriaComponent },
       { path: 'perfil-usuarios', component: PerfilUsuarioComponent },
       {
@@ -30,6 +33,7 @@ const routes: Routes = [
         // outlet: 'adminOutlet',
       },
       { path: 'usuarios', component: UsuariosComponent },
+      { path: '**', component: DashboardComponent},
     ],
   },
 ];

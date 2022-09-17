@@ -13,10 +13,19 @@
 </span>
 
 <span class="p-float-label">
+  <input id="float-input" type="text" pInputText />
+  <label for="float-input">URL</label>
+</span>
+
+<span class="p-float-label">
+  <input id="float-input" type="text" pInputText />
+  <label for="float-input">Tempo de leitura</label>
+</span>
+
+<span class="p-float-label">
   <p-chips></p-chips>
   <label for="float-input">Metatags </label>
 </span>
-<p></p>
 
 <p>
   <label for="data-criacao">Data de criação</label>
@@ -30,6 +39,14 @@
 </p>
 
 <p>
+  <label>Classificação</label>
+  <select for="categoria">
+    <option value="">Selecione...</option>
+  </select>
+  <button>
+    adicionar categoria
+  </button>
+
   <label>Categoria</label>
   <select for="categoria">
     <option value="">Selecione...</option>
@@ -55,6 +72,14 @@
   </button>
 </p>
 
+<p>
+  <label>Vincular a série de artigos</label>
+  <select>
+    <option value="">Selecione...</option>
+  </select>
+  <button>Acidionar nova série</button>
+</p>
+
 <!-- <p-editor  ></p-editor>
 <p-editor  >
   <ng-template pTemplate="header">
@@ -70,4 +95,7 @@
   </ng-template>
 </p-editor> -->
 <!-- <quill-editor></quill-editor> -->
-<p-editor  [style]="{'height':'320px'}"></p-editor>
+<div>
+  <label>Conteudo</label>
+  <p-editor  [style]="{'height':'320px'}"></p-editor>
+</div>

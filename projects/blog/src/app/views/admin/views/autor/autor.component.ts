@@ -1,6 +1,7 @@
 import { Component, Injector, OnInit, OnDestroy } from '@angular/core';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
+import { AutoresService } from 'projects/blog/src/app/services/autores/autores.service';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master.component';
 
@@ -10,18 +11,17 @@ import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master
   styleUrls: ['./autor.component.scss']
 })
 export class AutorComponent extends BaseAdminMasterComponent implements OnInit, OnDestroy {
-  // private _destroy$: Subject<boolean> = new Subject<boolean>();
 
   constructor(
     protected override injector: Injector,
-    private artigosService: ArtigosService
+    private autoresService: AutoresService
     ) {
     super(injector);
-    this.filtravelPelosCampos = ['titulo', 'categoriaId'];
+    this.filtravelPelosCampos = ['nome'];
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
       JonastorresRoutes.ADMIN.toBreadcrumb(),
-      JonastorresRoutes.ADMIN_ARTIGOS.toBreadcrumb(),
+      { label: 'Autor' }
     ];
   }
 
@@ -29,18 +29,13 @@ export class AutorComponent extends BaseAdminMasterComponent implements OnInit, 
     this.listarItens();
   }
 
-  // ngOnDestroy(): void {
-  //   this._destroy$.next(true);
-  //   this._destroy$.unsubscribe();
-  // }
-
   protected listarItens() {
-    this.artigosService.listar()
+    this.autoresService.listar()
     .pipe(takeUntil(this._destroy$))
     .subscribe({
       next: (sucesso: any) => {
         this.dados = sucesso;
-        // console.log(this.dados);
+        console.log(this.dados);
       },
       error: () => {
 
@@ -49,6 +44,6 @@ export class AutorComponent extends BaseAdminMasterComponent implements OnInit, 
   }
 
   protected confirmarExclusao(registro: any): Observable<any> {
-    return this.artigosService.apagar(registro.id);
+    return this.autoresService.apagar(registro.id);
   }
 }

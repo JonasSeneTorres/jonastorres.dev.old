@@ -31,7 +31,7 @@
         type="button"
         tabindex="0"
         class="table-busca__botao-novo"
-        [routerLink]="['/admin/artigos/novo']"
+        [routerLink]="['/admin/categoria/novo']"
       >
         <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
         Novo
@@ -41,28 +41,32 @@
   <ng-template pTemplate="header">
     <tr>
       <th pSortableColumn="titulo">
-        Nome <p-sortIcon field="titulo"></p-sortIcon>
+        Classificacao <p-sortIcon field="titulo"></p-sortIcon>
       </th>
       <th pSortableColumn="categoriaId">
         Categoria <p-sortIcon field="categoriaId"></p-sortIcon>
       </th>
-      <th pSortableColumn="dataCriacao">
+      <!-- <th pSortableColumn="dataCriacao">
         Criado em: <p-sortIcon field="dataCriacao"></p-sortIcon>
-      </th>
+      </th> -->
       <th class="table-busca__coluna-acoes"></th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-dados>
     <tr>
       <td>
-        {{ dados.titulo }}
+        {{ dados.classificacao.label }} <strong>({{ dados.classificacao.ativo ? 'Ativo': 'Inativo' }})</strong>
       </td>
       <td>
-        {{ dados.categoriaId }}
+        <ng-container *ngFor="let categoria of dados.classificacao.categorias">
+          <div>
+            {{ categoria.label }} <strong>({{ categoria.ativo ? 'Ativo': 'Inativo' }})</strong>
+          </div>
+        </ng-container>
       </td>
-      <td>
+      <!-- <td>
         {{ dados.dataCriacao | date:'shortDate' }}
-      </td>
+      </td> -->
       <td class="table-busca__coluna-acoes">
         <div class="table-busca__grid-botao">
           <button
@@ -70,7 +74,7 @@
             class="table-busca__botao-editar"
             alt="editar"
             aria-label="editar"
-            [routerLink]="['/admin/artigos/editar']"
+            [routerLink]="['/admin/categoria/editar']"
           >
             <span class="fa-solid fa-pen-to-square" aria-hidden="true"></span>
           </button>

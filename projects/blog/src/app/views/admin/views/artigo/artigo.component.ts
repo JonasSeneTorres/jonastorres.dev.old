@@ -11,7 +11,6 @@ import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-route
 })
 export class ArtigoComponent extends BaseAdminMasterComponent implements OnInit {
 
-
   constructor(
     protected override injector: Injector,
     private artigosService: ArtigosService
@@ -21,7 +20,7 @@ export class ArtigoComponent extends BaseAdminMasterComponent implements OnInit 
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
       JonastorresRoutes.ADMIN.toBreadcrumb(),
-      JonastorresRoutes.ADMIN_ARTIGOS.toBreadcrumb(),
+      { label: 'artigo' }
     ];
   }
 
@@ -46,6 +45,4 @@ export class ArtigoComponent extends BaseAdminMasterComponent implements OnInit 
   protected confirmarExclusao(registro: any): Observable<any> {
     return this.artigosService.apagar(registro.id);
   }
-
-
 }

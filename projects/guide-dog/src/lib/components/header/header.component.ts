@@ -84,7 +84,7 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
 
     const acceptableSizeLineInPixel = 24;
     const heigthNavBox =
-      this.elementRef.nativeElement.querySelector('.gd-h-navbar').offsetHeight;
+      this.elementRef.nativeElement.querySelector('.gd-h-navbar')?.offsetHeight ?? 0;
 
     return heigthNavBox <= 2 * acceptableSizeLineInPixel - 1;
   }

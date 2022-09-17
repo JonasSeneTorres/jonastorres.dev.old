@@ -29,6 +29,11 @@ import { RedesSociaisComponent } from './views/redes-sociais/redes-sociais.compo
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './../../components/shared.module';
 import { UsuariosComponent } from './views/usuarios/usuarios.component';
+import { AutorEdicaoComponent } from './views/autor/autor-edicao/autor-edicao.component';
+import { CategoriaEdicaoComponent } from './views/categoria/categoria-edicao/categoria-edicao.component';
+import { PerfilUsuarioEdicaoComponent } from './views/perfil-usuario/perfil-usuario-edicao/perfil-usuario-edicao.component';
+import { RedesSociaisEdicaoComponent } from './views/redes-sociais/redes-sociais-edicao/redes-sociais-edicao.component';
+import { UsuariosEdicaoComponent } from './views/usuarios/usuarios-edicao/usuarios-edicao.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +60,11 @@ import { UsuariosComponent } from './views/usuarios/usuarios.component';
     GraficoMobileNavegadoresComponent,
     GraficoDispositivosComponent,
     ArtigoEdicaoComponent,
+    AutorEdicaoComponent,
+    CategoriaEdicaoComponent,
+    PerfilUsuarioEdicaoComponent,
+    RedesSociaisEdicaoComponent,
+    UsuariosEdicaoComponent,
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,6 @@
 <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
 <h1>Usuarios</h1>
 
-
 <p-table
   [value]="dados"
   styleClass="p-datatable-striped table-busca"
@@ -32,7 +31,7 @@
         type="button"
         tabindex="0"
         class="table-busca__botao-novo"
-        [routerLink]="['/admin/artigos/novo']"
+        [routerLink]="['/admin/usuarios/novo']"
       >
         <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
         Novo
@@ -71,7 +70,7 @@
             class="table-busca__botao-editar"
             alt="editar"
             aria-label="editar"
-            [routerLink]="['/admin/artigos/editar']"
+            [routerLink]="['/admin/usuarios/editar']"
           >
             <span class="fa-solid fa-pen-to-square" aria-hidden="true"></span>
           </button>

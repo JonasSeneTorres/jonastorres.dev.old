@@ -4,7 +4,7 @@ h1 {
 }
 :host {
   ::ng-deep {
-    .admin-main h1 {
+    .admin-main h1, h2 {
       color: $gd-colorligth-primary-600;
       margin: 0;
     }
@@ -20,21 +20,24 @@ h1 {
   z-index: 1;
   position: relative;
   min-height: calc(100vh - 198px);
-  margin-bottom: 2rem;
+  padding-top: 1rem;
+  // margin-bottom: 2rem;
 
   &-aside {
+    @include scaffolding-card;
     grid-area: aside;
     box-sizing: border-box;
     height: 100%;
-    margin: 1rem 0 !important;
+    // padding-top: 1rem
+    // margin: 1rem 0 !important;
   }
 
   &-main {
     @include scaffolding-card;
     height: 100%;
     // padding: 1rem 2rem !important;
-    padding: 1rem 2rem 1rem 2rem !important;
-    margin-top: 1rem !important;
+    // padding: 1rem 2rem 0 2rem !important;
+    // margin-top: 1rem !important;
     // border: solid 1px red;
     //   box-sizing: border-box;
     //   grid-area: main;

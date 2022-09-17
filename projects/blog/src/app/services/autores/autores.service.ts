@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
+import { ICrudService } from '../../interfaces/icrud-service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ICrudService } from '../../interfaces/icrud-service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class AutoresService implements ICrudService {
   }
 
   listar(): Observable<any> {
-    throw new Error('Method not implemented.');
+    return this.httpClient.get(`${this.baseURL}/autores`);
   }
 
   inserir(objeto: any): Observable<any> {

@@ -18,7 +18,7 @@ export class RedesSociaisComponent extends BaseAdminMasterComponent implements O
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
       JonastorresRoutes.ADMIN.toBreadcrumb(),
-      JonastorresRoutes.ADMIN_ARTIGOS.toBreadcrumb(),
+      { label: 'Redes Sociais' },
     ];
   }
 

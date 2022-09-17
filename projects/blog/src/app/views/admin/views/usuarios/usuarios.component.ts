@@ -18,7 +18,7 @@ export class UsuariosComponent extends BaseAdminMasterComponent implements OnIni
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
       JonastorresRoutes.ADMIN.toBreadcrumb(),
-      JonastorresRoutes.ADMIN_ARTIGOS.toBreadcrumb(),
+      { label: 'Usuários' },
     ];
   }
 
