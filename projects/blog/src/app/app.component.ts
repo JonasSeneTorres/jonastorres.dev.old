@@ -66,14 +66,14 @@ export class AppComponent implements OnInit, OnDestroy {
   private adicionarMenuSobre(menuNovo: NavibarItemConfig[]) {
     menuNovo.push({
       label: 'Sobre',
-      route: ['/blog/sobre'],
+      route: ['/sobre'],
     });
   }
 
   private adicionarMenuAutores(menuNovo: NavibarItemConfig[]) {
     menuNovo.push({
       label: 'Autores',
-      route: ['/blog/autores'],
+      route: ['/autores'],
     });
   }
 

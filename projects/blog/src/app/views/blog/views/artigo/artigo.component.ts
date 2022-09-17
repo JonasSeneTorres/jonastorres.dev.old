@@ -44,9 +44,9 @@ export class ArtigoComponent implements OnInit, OnDestroy {
       const labelGrupo = `${params['grupo']}`;
       const routeGrupo = `/blog/${params['grupo']}`;
       const labelCategoria = `${params['categoria']}`;
-      const routeCategoria = `/blog/${params['categoria']}`;
+      const routeCategoria = `/blog/${params['grupo']}/${params['categoria']}`;
       const labelArtigo = `${params['artigo']}`;
-      const routeArtigo = `/blog/${params['artigo']}`;
+      const routeArtigo = `/blog/${params['grupo']}/${params['categoria']}/${params['artigo']}`;
 
       this.breadcrumbsItem = [
         JonastorresRoutes.HOME.toBreadcrumb(),
@@ -91,7 +91,6 @@ export class ArtigoComponent implements OnInit, OnDestroy {
     this._destroy$.next(true);
     this._destroy$.unsubscribe();
   }
-
 
   private obterDadosIniciais(idArtigo: number): Observable<any> {
     const obterArtigo = this._artigosService.obter(idArtigo);

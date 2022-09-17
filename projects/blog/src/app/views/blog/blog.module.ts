@@ -15,6 +15,10 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from './../../components/shared.module';
 import { VitrineComponent } from './components/vitrine/vitrine.component';
 import { SobreComponent } from './views/sobre/sobre.component';
+import { SitemapComponent } from './views/sitemap/sitemap.component';
+import { ContatoComponent } from './views/contato/contato.component';
+import { ErroComponent } from './views/erro/erro.component';
+import { AcessibilidadeComponent } from './views/acessibilidade/acessibilidade.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { SobreComponent } from './views/sobre/sobre.component';
     AutorComponent,
     BoxOutrosArtigosComponent,
     SobreComponent,
+    SitemapComponent,
+    ContatoComponent,
+    ErroComponent,
+    AcessibilidadeComponent,
     // FrontendComponent,
     // BackendComponent,
     // ArquiteturaComponent,

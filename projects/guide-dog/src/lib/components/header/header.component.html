@@ -8,7 +8,7 @@
         <div class="grid">
           <gd-menu-hamburger
             [nav]="navConfig"
-            *ngIf="!showHamburgerHorizontalNav || !navboxWithAcceptableSize"
+            *ngIf="(!showHamburgerHorizontalNav || !navboxWithAcceptableSize) && navConfig.length > 0"
           ></gd-menu-hamburger>
           <a
             [routerLink]="['']"

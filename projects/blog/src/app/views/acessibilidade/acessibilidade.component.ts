@@ -18,7 +18,7 @@ export class AcessibilidadeComponent {
     private local: SessionStorageService,
     public browserService: SystemInformationService
   ) {
-    this.local.set('LocalStorageService', { teste: 1 });
+    // this.local.set('LocalStorageService', { teste: 1 });
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
       JonastorresRoutes.ADMIN.toBreadcrumb(),
