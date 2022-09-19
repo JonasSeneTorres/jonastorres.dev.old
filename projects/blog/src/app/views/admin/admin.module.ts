@@ -34,6 +34,9 @@ import { CategoriaEdicaoComponent } from './views/categoria/categoria-edicao/cat
 import { PerfilUsuarioEdicaoComponent } from './views/perfil-usuario/perfil-usuario-edicao/perfil-usuario-edicao.component';
 import { RedesSociaisEdicaoComponent } from './views/redes-sociais/redes-sociais-edicao/redes-sociais-edicao.component';
 import { UsuariosEdicaoComponent } from './views/usuarios/usuarios-edicao/usuarios-edicao.component';
+import { ModalAutorComponent } from './modal/modal-autor/modal-autor.component';
+import { ModalClassificacaoComponent } from './modal/modal-classificacao/modal-classificacao.component';
+import { ModalSerieComponent } from './modal/modal-serie/modal-serie.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +68,9 @@ import { UsuariosEdicaoComponent } from './views/usuarios/usuarios-edicao/usuari
     PerfilUsuarioEdicaoComponent,
     RedesSociaisEdicaoComponent,
     UsuariosEdicaoComponent,
+    ModalAutorComponent,
+    ModalClassificacaoComponent,
+    ModalSerieComponent,
   ],
   imports: [
     CommonModule,

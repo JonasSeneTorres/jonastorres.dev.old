@@ -1,9 +1,9 @@
 
   <section class="artigo">
     <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
-    <div  [innerHtml]="dadosArtigo.conteudoArtigo"></div>
+    <div  [innerHtml]="dadosArtigo?.conteudoArtigo"></div>
   </section>
   <jt-box-compartilhe></jt-box-compartilhe>
-  <jt-box-outros-artigos [listaArtigoSerie]="listaArquivoSerie" [artigoAtual]="dadosArtigo.titulo"></jt-box-outros-artigos>
+  <jt-box-outros-artigos [listaArtigoSerie]="listaArquivoSerie" [artigoAtual]="dadosArtigo?.titulo"></jt-box-outros-artigos>
   <jt-autor [autor]="dadosAutor"></jt-autor>
 

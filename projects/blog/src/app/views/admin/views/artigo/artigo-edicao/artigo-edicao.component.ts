@@ -2,9 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
+import { AutoresService } from 'projects/blog/src/app/services/autores/autores.service';
+import { CategoriasService } from 'projects/blog/src/app/services/categorias/categorias.service';
 import { PaginaModel } from 'projects/blog/src/app/types/artigoModel';
 import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
-import { Subject, takeUntil } from 'rxjs';
+import { forkJoin, Observable, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'jt-artigo-edicao',
@@ -13,35 +15,101 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
+  private _displayModal = false;
 
   form!: FormGroup;
-  breadcrumbsItem: BreadcrumbsItem[];
+  breadcrumbsItem!: BreadcrumbsItem[];
   id = '';
+  tipoDoModal: 'Autor' | 'Classificação' | 'Serie' | null = null;
 
-  constructor(private route: ActivatedRoute) {
-    this.breadcrumbsItem = [
-      JonastorresRoutes.HOME.toBreadcrumb(),
-      JonastorresRoutes.ADMIN.toBreadcrumb(),
-      JonastorresRoutes.ADMIN_ARTIGOS.toBreadcrumb(),
-    ];
+  get displayModal(): boolean {
+    return this._displayModal;
+  }
+
+  set displayModal(value: boolean) {
+    if(!value) {
+      this.tipoDoModal = null;
+    }
+
+    this._displayModal = value;
+  }
+
+  constructor(
+    private _route: ActivatedRoute,
+    private autoresService: AutoresService,
+    private categoriasService: CategoriasService,
+    ) {
     this.createForm();
   }
 
   ngOnInit() {
-    this.route.params.pipe(takeUntil(this._destroy$)).subscribe((params) => {
+    this._route.params.pipe(takeUntil(this._destroy$)).subscribe((params) => {
       this.id = params['id'] ?? '';
+      this.montarBreadcrumb();
+    });
 
-      const breadcrumbNovo =
-        JonastorresRoutes.ADMIN_ARTIGOS_NOVO.toBreadcrumb();
-      const breadcrumbEditar =
-        JonastorresRoutes.ADMIN_ARTIGOS_EDITAR.toBreadcrumb();
-      this.ajustarBreadcrumb(this.id, breadcrumbNovo, breadcrumbEditar);
+    this.obterDadosIniciais()
+    .pipe(takeUntil(this._destroy$))
+    .subscribe({
+      next: (sucesso: any) => {
+        console.log(sucesso);
+      },
+      error: (erro: Error) => {
+        console.error(`${erro.name}: ${erro.message}`);
+      }
     });
   }
 
   ngOnDestroy(): void {
     this._destroy$.next(true);
     this._destroy$.unsubscribe();
+  }
+
+  abrirModalAutor() {
+    this.tipoDoModal = 'Autor';
+    this.displayModal = true;
+  }
+
+  abrirModalClassificacao() {
+    this.tipoDoModal = 'Classificação';
+    this.displayModal = true;
+  }
+
+  abrirModalSerie() {
+    this.tipoDoModal = 'Serie';
+    this.displayModal = true;
+  }
+
+  private montarBreadcrumb() {
+    this.breadcrumbsItem = [
+      JonastorresRoutes.HOME.toBreadcrumb(),
+      JonastorresRoutes.ADMIN.toBreadcrumb(),
+      JonastorresRoutes.ADMIN_ARTIGOS.toBreadcrumb(),
+    ];
+
+    const breadcrumbNovo = JonastorresRoutes.ADMIN_ARTIGOS_NOVO.toBreadcrumb();
+    const breadcrumbEditar =
+      JonastorresRoutes.ADMIN_ARTIGOS_EDITAR.toBreadcrumb();
+
+    let complementoBreadcrumbs = breadcrumbNovo;
+    if (this.id.length > 0) {
+      complementoBreadcrumbs = breadcrumbEditar;
+    }
+
+    this.breadcrumbsItem.push(complementoBreadcrumbs);
+  }
+
+  private obterDadosIniciais(): Observable<any> {
+    const obterAutores = this.autoresService.listar();
+    const obterCategorias = this.categoriasService.listar();
+    // const obterCategorias = this.categoriasService.listar();
+    // const obterUltimosArtigos = this.artigosService.listarUltimosArtigos();
+
+    return forkJoin({
+      autores: obterAutores,
+      categorias: obterCategorias,
+      // ultimosArtigos: obterUltimosArtigos,
+    });
   }
 
   private createForm(dado?: PaginaModel) {
@@ -78,18 +146,5 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
         serieId: dado,
       });
     }
-  }
-
-  private ajustarBreadcrumb(
-    id: string,
-    breadcrumbNovo: BreadcrumbsItem,
-    breadcrumbEditar: BreadcrumbsItem
-  ) {
-    let complementoBreadcrumbs = breadcrumbNovo;
-    if (id.length > 0) {
-      complementoBreadcrumbs = breadcrumbEditar;
-    }
-
-    this.breadcrumbsItem.push(complementoBreadcrumbs);
   }
 }

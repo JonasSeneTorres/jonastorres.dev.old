@@ -2,100 +2,162 @@
 <h1 *ngIf="id.length === 0">Novo Artigo</h1>
 <h1 *ngIf="id.length > 0">Edição de artigo</h1>
 
-<span class="p-float-label">
-  <input id="float-input" type="text" pInputText />
-  <label for="float-input">Titulo</label>
-</span>
+<form class="artigo-edicao">
+  <p class="p-float-label artigo-edicao__margin-top2">
+    <input
+      id="titulo"
+      class="artigo-edicao__input-linha"
+      type="text"
+      pInputText
+    />
+    <label for="titulo">Título</label>
+  </p>
 
-<span class="p-float-label">
-  <input id="float-input" type="text" pInputText />
-  <label for="float-input">Subtutulo</label>
-</span>
+  <p class="p-float-label artigo-edicao__margin-top">
+    <input
+      id="subtitulo"
+      class="artigo-edicao__input-linha"
+      type="text"
+      pInputText
+    />
+    <label for="subtitulo">Subtítulo</label>
+  </p>
 
-<span class="p-float-label">
-  <input id="float-input" type="text" pInputText />
-  <label for="float-input">URL</label>
-</span>
+  <div class="artigo-edicao__grid-url">
+    <div>
+      <label for="url">URL</label>
+      <input
+        type="text"
+        id="url"
+        class="artigo-edicao__input-linha"
+        readonly
+        pInputText
+      />
+    </div>
 
-<span class="p-float-label">
-  <input id="float-input" type="text" pInputText />
-  <label for="float-input">Tempo de leitura</label>
-</span>
+    <div class="artigo-edicao__grid-url-col2">
+      <label for="tempo-leitura">Tempo de leitura</label>
+      <input type="text" id="tempo-leitura" readonly pInputText />
+    </div>
+  </div>
 
-<span class="p-float-label">
-  <p-chips></p-chips>
-  <label for="float-input">Metatags </label>
-</span>
+  <p class="p-float-label artigo-edicao__margin-top2">
+    <p-chips id="metatags" class="artigo-edicao__input-linha"></p-chips>
+    <label for="metatags">Metatags </label>
+  </p>
 
-<p>
-  <label for="data-criacao">Data de criação</label>
-  <input type="date" id="data-criacao" pInputText />
+  <div class="artigo-edicao__margin-top artigo-edicao__grid-data">
+    <div>
+      <label>Autor</label>
+      <select for="Autor">
+        <option value="">Selecione...</option>
+      </select>
+      <button (click)="abrirModalAutor()">adicionar novo autor</button>
+    </div>
 
-  <label for="data-edicao">Data da ultima edição</label>
-  <input type="date" id="data-edicao" pInputText />
+    <div>
+      <label for="data-criacao">Data de criação</label>
+      <input type="date" id="data-criacao" pInputText />
+    </div>
 
-  <label for="data-agendamento">Data de agendamento</label>
-  <input type="date" id="data-agendamento" pInputText />
-</p>
+    <div>
+      <label for="data-edicao">Data da ultima edição</label>
+      <input type="date" id="data-edicao" pInputText />
+    </div>
 
-<p>
-  <label>Classificação</label>
-  <select for="categoria">
-    <option value="">Selecione...</option>
-  </select>
-  <button>
-    adicionar categoria
-  </button>
+    <div class="artigo-edicao__grid-data3">
+      <label for="data-agendamento">Data de agendamento</label>
+      <input type="date" id="data-agendamento" pInputText />
+    </div>
+  </div>
 
-  <label>Categoria</label>
-  <select for="categoria">
-    <option value="">Selecione...</option>
-  </select>
-  <button>
-    adicionar categoria
-  </button>
+  <div class="artigo-edicao__grid-classicicacao">
+    <div>
+      <label>Classificação</label>
+      <select for="categoria">
+        <option value="">Selecione...</option>
+      </select>
+    </div>
 
-  <label>Subcategoria</label>
-  <select for="subcategoria">
-    <option value="">Selecione...</option>
-  </select>
-  <button>
-    adicionar subcategoria
-  </button>
+    <div>
+      <label>Categoria</label>
+      <select for="categoria">
+        <option value="">Selecione...</option>
+      </select>
+    </div>
 
-  <label>Autor</label>
-  <select for="Autor">
-    <option value="">Selecione...</option>
-  </select>
-  <button>
-    adicionar autor
-  </button>
-</p>
+    <div class="artigo-edicao__grid-classicicacao3">
+      <label>Subcategoria</label>
+      <select for="subcategoria">
+        <option value="">Selecione...</option>
+      </select>
+    </div>
 
-<p>
-  <label>Vincular a série de artigos</label>
-  <select>
-    <option value="">Selecione...</option>
-  </select>
-  <button>Acidionar nova série</button>
-</p>
+    <div class="artigo-edicao__grid-classicicacao4">
+      <button (click)="abrirModalClassificacao()">
+        adicionar nova classificação
+      </button>
+    </div>
+  </div>
 
-<!-- <p-editor  ></p-editor>
-<p-editor  >
-  <ng-template pTemplate="header">
-      <span class="ql-format-group">
-          <span title="Bold" class="ql-format-button ql-bold"></span>
-          <span class="ql-format-separator"></span>
-          <span title="Italic" class="ql-format-button ql-italic"></span>
-          <span class="ql-format-separator"></span>
-          <span title="Underline" class="ql-format-button ql-underline"></span>
-          <span class="ql-format-separator"></span>
-          <span title="Strikethrough" class="ql-format-button ql-strike"></span>
-      </span>
+  <p class="artigo-edicao__grid-serie">
+    <label>Vincular a série de artigos</label>
+    <select>
+      <option value="">Selecione...</option>
+    </select>
+    <button (click)="abrirModalSerie()">Acidionar nova série</button>
+  </p>
+  <div>
+    <fieldset>
+      <legend>Conteudo</legend>
+      <p-tabView>
+        <p-tabPanel header="Editor">
+          <p-editor [style]="{ height: '320px' }"></p-editor>
+        </p-tabPanel>
+        <p-tabPanel header="Ver código HTML">
+          Content 2
+        </p-tabPanel>
+      </p-tabView>
+    </fieldset>
+  </div>
+
+  <p>
+    <button>Cancelar</button>
+    <button>Enviar</button>
+  </p>
+</form>
+
+<p-dialog
+  header="Adicionar {{ tipoDoModal }}"
+  [(visible)]="displayModal"
+  [style]="{ width: '50vw' }"
+  [modal]="true"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <jt-modal-autor *ngIf="tipoDoModal === 'Autor'"></jt-modal-autor>
+  <jt-modal-classificacao
+    *ngIf="tipoDoModal === 'Classificação'"
+  ></jt-modal-classificacao>
+  <jt-modal-serie *ngIf="tipoDoModal === 'Serie'"></jt-modal-serie>
+
+  <ng-template pTemplate="footer">
+    <button
+      class="confirmDialog__no"
+      type="button"
+      (click)="displayModal = false"
+    >
+      <span class="icone_botao fa-solid fa-xmark" aria-hidden="true"></span>
+      Cancelar
+    </button>
+    <button
+      class="confirmDialog__yes"
+      type="button"
+      (click)="displayModal = false"
+    >
+      <span class="icone_botao fa-solid fa-check" aria-hidden="true"></span>
+      Salvar
+    </button>
   </ng-template>
-</p-editor> -->
-<!-- <quill-editor></quill-editor> -->
-<div>
-  <label>Conteudo</label>
-  <p-editor  [style]="{'height':'320px'}"></p-editor>
-</div>
+</p-dialog>

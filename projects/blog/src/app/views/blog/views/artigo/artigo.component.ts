@@ -1,14 +1,13 @@
-import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subject, forkJoin, takeUntil } from 'rxjs';
-
+import { ActivatedRoute, Params } from '@angular/router';
+import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
 import { AutoresService } from 'projects/blog/src/app/services/autores/autores.service';
 import { BlogService } from 'projects/blog/src/app/services/blog/blog.service';
-import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
 import { CategoriasService } from 'projects/blog/src/app/services/categorias/categorias.service';
-import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { JumbotronService } from 'projects/blog/src/app/services/jumbotron/jumbotron.service';
+import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
+import { forkJoin, Observable, Subject, takeUntil } from 'rxjs';
 
 @Component({
   templateUrl: './artigo.component.html',
@@ -66,7 +65,7 @@ export class ArtigoComponent implements OnInit, OnDestroy {
       this.categorias = sucesso.categorias ?? [];
       this.ultimosArtigos = sucesso.ultimosArtigos ?? [];
 
-      const nomeArtigo = this.categorias.filter( item => item.id === this.dadosArtigo.categoriaId)[0].nome;
+      const nomeArtigo = this.categorias.filter( item => item.id === this.dadosArtigo.categoriaId)[0]?.nome;
       this.categoriaArtigo = (nomeArtigo ?? '').toLowerCase();
 
       this.obterDadosArtigoSerie()
