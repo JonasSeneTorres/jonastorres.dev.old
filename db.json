@@ -6,7 +6,7 @@
       "titulo": "Dungeons & Dragons: Honra Entre Rebeldes abre o Salão H na SDCC deste ano",
       "subtitulo": "um subtitulo Dungeons & Dragons: Honra Entre Rebeldes abre o Salão H na SDCC deste ano",
       "metatags" : [],
-      "ClassificacaoId": "1-0-1",
+      "classificacaoId": "1-2-1",
       "dataCriacao": "2022-05-22T00:00:00",
       "dataEdicao": "2022-05-22T00:00:00",
       "dataAgendamento": "2022-05-22T00:00:00",
@@ -60,31 +60,34 @@
   ],
   "categorias": [
     {
-      "id": 1,
+      "id": "zzzzz",
       "classificacao": {
+        "id": "1",
         "label": "Não classificado",
         "url": "categorias",
         "ativo": true,
         "categorias": [
           {
+            "id": "1-1",
             "label": "Arquitetura",
             "url": "arquitetura",
             "ativo": true,
             "subcategorias": [
               {
-                "id": 1,
+                "id": "1-1-1",
                 "nome": "Fundamentos",
                 "ativo": true
               }
             ]
           },
           {
+            "id": "1-2",
             "label": "Arquitetura2",
             "url": "arquitetura2",
             "ativo": false,
             "subcategorias": [
               {
-                "id": 1,
+                "id": "1-2-1",
                 "nome": "Fundamentos",
                 "ativo": true
               }
@@ -94,55 +97,60 @@
       }
     },
     {
-      "id": 2,
+      "id": "asddfggfd",
       "classificacao": {
+        "id": "2",
         "label": "Frontend",
         "url": "frontend",
         "ativo": true,
         "categorias": [
           {
+            "id": "2-1",
             "label": "HTML",
             "url": "html",
             "ativo": true,
             "subcategorias": [
               {
-                "id": 2,
+                "id": "2-1-1",
                 "nome": "Fundamentos",
                 "ativo": true
               }
             ]
           },
           {
+            "id": "2-2",
             "label": "CSS",
             "url": "css",
             "ativo": true,
             "subcategorias": [
               {
-                "id": 3,
+                "id": "2-2-2",
                 "nome": "Fundamentos",
                 "ativo": true
               }
             ]
           },
           {
+            "id": "2-3",
             "label": "Javascript / Typescript",
             "url": "js",
             "ativo": true,
             "subcategorias": [
               {
-                "id": 4,
+                "id": "2-3-1",
                 "nome": "Fundamentos",
                 "ativo": true
               }
             ]
           },
           {
+            "id": "2-4",
             "label": "Angular",
             "url": "angular",
             "ativo": true,
             "subcategorias": [
               {
-                "id": 5,
+                "id": "2-4-1",
                 "nome": "Fundamentos",
                 "ativo": true
               }
@@ -152,31 +160,34 @@
       }
     },
     {
-      "id": 3,
+      "id": "djfhjkhadfslkjh",
       "classificacao": {
+        "id": "3",
         "label": "Backend",
         "url": "backend",
         "ativo": true,
         "categorias": [
           {
+            "id": "3-1",
             "label": "C#",
             "url": "c_sharp",
             "ativo": true,
             "subcategorias": [
               {
-                "id": 6,
+                "id": "3-1-1",
                 "nome": "Fundamentos",
                 "ativo": true
               }
             ]
           },
           {
+            "id": "3-2",
             "label": "Node",
             "url": "node",
             "ativo": true,
             "subcategorias": [
               {
-                "id": 7,
+                "id": "3-2-1",
                 "nome": "Fundamentos",
                 "ativo": true
               }
@@ -186,19 +197,21 @@
       }
     },
     {
-      "id": 4,
+      "id": "halkjdhlakdhfals",
       "classificacao": {
+        "id": "4",
         "label": "Mobile",
         "url": "mobile",
         "ativo": true,
         "categorias": [
           {
+            "id": "4-1",
             "label": "Flutter",
             "url": "flutter",
             "ativo": true,
             "subcategorias": [
               {
-                "id": 8,
+                "id": "4-1-1",
                 "nome": "Fundamentos",
                 "ativo": true
               }

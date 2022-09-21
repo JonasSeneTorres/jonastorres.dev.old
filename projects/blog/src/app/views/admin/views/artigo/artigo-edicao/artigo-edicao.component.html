@@ -1,13 +1,14 @@
 <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
-<h1 *ngIf="id.length === 0">Novo Artigo</h1>
-<h1 *ngIf="id.length > 0">Edição de artigo</h1>
+<h1 *ngIf="!ehEdicao">Novo Artigo</h1>
+<h1 *ngIf="ehEdicao">Edição de artigo</h1>
 
-<form class="artigo-edicao">
+<form class="artigo-edicao" [formGroup]="form">
   <p class="p-float-label artigo-edicao__margin-top2">
     <input
       id="titulo"
       class="artigo-edicao__input-linha"
       type="text"
+      formControlName="titulo"
       pInputText
     />
     <label for="titulo">Título</label>
@@ -18,6 +19,7 @@
       id="subtitulo"
       class="artigo-edicao__input-linha"
       type="text"
+      formControlName="subtitulo"
       pInputText
     />
     <label for="subtitulo">Subtítulo</label>
@@ -30,6 +32,7 @@
         type="text"
         id="url"
         class="artigo-edicao__input-linha"
+        formControlName="url"
         readonly
         pInputText
       />
@@ -37,61 +40,74 @@
 
     <div class="artigo-edicao__grid-url-col2">
       <label for="tempo-leitura">Tempo de leitura</label>
-      <input type="text" id="tempo-leitura" readonly pInputText />
+      <input type="text" id="tempo-leitura" formControlName="tempoLeitura" readonly pInputText />
     </div>
   </div>
 
   <p class="p-float-label artigo-edicao__margin-top2">
-    <p-chips id="metatags" class="artigo-edicao__input-linha"></p-chips>
+    <p-chips id="metatags" class="artigo-edicao__input-linha" formControlName="metatags"></p-chips>
     <label for="metatags">Metatags </label>
   </p>
 
   <div class="artigo-edicao__margin-top artigo-edicao__grid-data">
     <div>
       <label>Autor</label>
-      <select for="Autor">
+      <select for="Autor" formControlName="autorId">
         <option value="">Selecione...</option>
+        <ng-container *ngFor="let autor of listaAutor">
+          <option [value]="autor.id">{{ autor.nome }}</option>
+        </ng-container>
       </select>
       <button (click)="abrirModalAutor()">adicionar novo autor</button>
     </div>
 
     <div>
       <label for="data-criacao">Data de criação</label>
-      <input type="date" id="data-criacao" pInputText />
+      <input type="date" id="data-criacao" formControlName="dataCriacao" pInputText />
     </div>
 
     <div>
       <label for="data-edicao">Data da ultima edição</label>
-      <input type="date" id="data-edicao" pInputText />
+      <input type="date" id="data-edicao" formControlName="dataEdicao" pInputText />
     </div>
 
     <div class="artigo-edicao__grid-data3">
       <label for="data-agendamento">Data de agendamento</label>
-      <input type="date" id="data-agendamento" pInputText />
+      <input type="date" id="data-agendamento" formControlName="dataAgendamento" pInputText />
     </div>
   </div>
 
   <div class="artigo-edicao__grid-classicicacao">
     <div>
       <label>Classificação</label>
-      <select for="categoria">
+      <select for="categoria" formControlName="classificacaoId">
         <option value="">Selecione...</option>
+        <ng-container *ngFor="let classificacao of listaClassificacao">
+          <option [value]="classificacao.id">{{ classificacao.nome }}</option>
+        </ng-container>
       </select>
     </div>
 
     <div>
       <label>Categoria</label>
-      <select for="categoria">
+      <select for="categoria" formControlName="categoriaId">
         <option value="">Selecione...</option>
+        <ng-container *ngFor="let categoria of listaCategoria">
+          <option [value]="categoria.id">{{ categoria.nome }}</option>
+        </ng-container>
       </select>
     </div>
 
     <div class="artigo-edicao__grid-classicicacao3">
       <label>Subcategoria</label>
-      <select for="subcategoria">
+      <select for="subcategoria" formControlName="subcategoriaId">
         <option value="">Selecione...</option>
+        <ng-container *ngFor="let subcategoria of listaSubcategoria">
+          <option [value]="subcategoria.id">{{ subcategoria.nome }}</option>
+        </ng-container>
       </select>
     </div>
+    <!-- {{ form.get('categoriaId')!.value | json }}] -->
 
     <div class="artigo-edicao__grid-classicicacao4">
       <button (click)="abrirModalClassificacao()">
@@ -102,7 +118,7 @@
 
   <p class="artigo-edicao__grid-serie">
     <label>Vincular a série de artigos</label>
-    <select>
+    <select formControlName="serieId" formControlName="classificacaoId">
       <option value="">Selecione...</option>
     </select>
     <button (click)="abrirModalSerie()">Acidionar nova série</button>
@@ -112,18 +128,20 @@
       <legend>Conteudo</legend>
       <p-tabView>
         <p-tabPanel header="Editor">
-          <p-editor [style]="{ height: '320px' }"></p-editor>
+          <p-editor [style]="{ height: '320px' }" formControlName="conteudoArtigo"></p-editor>
         </p-tabPanel>
         <p-tabPanel header="Ver código HTML">
-          Content 2
+          <textarea formControlName="conteudoArtigo"  [value]="form.get('conteudoArtigo')!.value" (input)="equalizarTexto($event)">
+          </textarea>
         </p-tabPanel>
       </p-tabView>
     </fieldset>
   </div>
-
+  <!-- <textarea formControlName="conteudoArtigo"  [value]="form.get('conteudoArtigo')!.value" (input)="equalizarTexto($event)">
+  </textarea> -->
   <p>
-    <button>Cancelar</button>
-    <button>Enviar</button>
+    <button type="button">Cancelar</button>
+    <button type="submit" [disabled]="form.invalid">Enviar</button>
   </p>
 </form>
 
@@ -154,6 +172,7 @@
     <button
       class="confirmDialog__yes"
       type="button"
+      [disabled]="form.valid"
       (click)="displayModal = false"
     >
       <span class="icone_botao fa-solid fa-check" aria-hidden="true"></span>

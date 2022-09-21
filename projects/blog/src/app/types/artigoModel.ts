@@ -1,9 +1,7 @@
-import { Autor } from "./autor";
-import { Categoria } from "./categoria";
-import { SerieArtigo } from "./serie-artigo";
+import { Guid } from 'guid-typescript';
 
-export type PaginaModel = {
-  id: number,
+export type ArtigoModel = {
+  id: Guid,
   url: string,
   titulo: string,
   subtitulo?: string,
