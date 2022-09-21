@@ -1,9 +1,8 @@
 import { Component, Injector, OnDestroy, Type, ViewChild } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { Observable, Subject, takeUntil } from 'rxjs';
-
-import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
 import { Table } from 'primeng/table';
+import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
+import { Observable, Subject, takeUntil } from 'rxjs';
 
 @Component({ template: '' })
 export abstract class BaseAdminMasterComponent implements OnDestroy {
@@ -12,7 +11,7 @@ export abstract class BaseAdminMasterComponent implements OnDestroy {
   @ViewChild('dt') ngPrimeTable: Table | undefined;
   first = 0;
   rows = 10;
-  dados: any[];
+  dados: any[] = [];
   filtravelPelosCampos: string[];
   breadcrumbsItem: BreadcrumbsItem[];
   protected confirmationService: ConfirmationService;
@@ -25,7 +24,7 @@ export abstract class BaseAdminMasterComponent implements OnDestroy {
     this.messageService = injector.get<MessageService>(
       MessageService as Type<MessageService>
     );
-    this.dados = [];
+    // this.dados = [];
     this.filtravelPelosCampos = [];
     this.breadcrumbsItem = [];
   }

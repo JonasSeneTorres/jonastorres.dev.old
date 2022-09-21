@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CenteredPanelModule } from '../centered-panel/centered-panel.module';
+import { MenuModule } from '../menu/menu.module';
 import { FooterComponent } from './footer.component';
 import { FooterModule } from './footer.module';
 
@@ -12,7 +13,8 @@ describe('FooterComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         FooterModule,
-        CenteredPanelModule
+        CenteredPanelModule,
+        MenuModule
       ]
     })
     .compileComponents();

@@ -1,13 +1,12 @@
-import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subject, takeUntil } from 'rxjs';
-
+import { ActivatedRoute, Params } from '@angular/router';
+import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
 import { BlogService } from 'projects/blog/src/app/services/blog/blog.service';
-import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
-import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { JumbotronService } from 'projects/blog/src/app/services/jumbotron/jumbotron.service';
 import { VitrineDados } from 'projects/blog/src/app/types/vitrine-dados.type';
+import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   templateUrl: './grupo.component.html',
@@ -58,6 +57,7 @@ export class GrupoComponent implements OnInit, OnDestroy {
       .listarUltimosArtigos()
       .pipe(takeUntil(this._destroy$))
       .subscribe({
+
         next: (sucesso: any) => {
           console.log(sucesso);
           this.vitrineDados.ultimosArtigos = sucesso

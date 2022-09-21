@@ -1,8 +1,8 @@
-import { CategoriasService } from 'projects/blog/src/app/services/categorias/categorias.service';
 import { Component, Injector, OnInit } from '@angular/core';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
-import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
+import { CategoriasService } from 'projects/blog/src/app/services/categorias/categorias.service';
 import { Observable, takeUntil } from 'rxjs';
+
 import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master.component';
 
 @Component({
@@ -21,6 +21,7 @@ export class CategoriaComponent extends BaseAdminMasterComponent implements OnIn
       JonastorresRoutes.ADMIN.toBreadcrumb(),
       { label: 'categoria' },
     ];
+    // this.dados = [];
   }
 
   ngOnInit(): void {
@@ -33,7 +34,7 @@ export class CategoriaComponent extends BaseAdminMasterComponent implements OnIn
     .subscribe({
       next: (sucesso: any) => {
         this.dados = sucesso;
-        console.log(this.dados);
+        // console.log(this.dados);
       },
       error: () => {
 

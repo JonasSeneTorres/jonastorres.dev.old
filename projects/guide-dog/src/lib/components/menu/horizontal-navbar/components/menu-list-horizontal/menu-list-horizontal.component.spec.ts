@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MenuModule } from '../../../menu.module';
 import { MenuListHorizontalComponent } from './menu-list-horizontal.component';
 
 describe('MenuListHorizontalComponent', () => {
@@ -8,7 +9,8 @@ describe('MenuListHorizontalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuListHorizontalComponent ]
+      declarations: [ MenuListHorizontalComponent ],
+      imports: [ MenuModule ]
     })
     .compileComponents();
 

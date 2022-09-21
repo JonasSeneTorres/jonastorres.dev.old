@@ -120,26 +120,34 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this._destroy$))
       .subscribe({
         next: (sucesso: any) => {
-          this.listaAutor = sucesso.autores.map((autor: any) => ({
-            id: autor.id,
-            nome: autor.nome,
-          }));
-
-          this.listaClassificacaoBruta = sucesso.categorias;
-          this.listaClassificacao = sucesso.categorias.map((item: any) => ({
-            id: item.classificacao.id,
-            nome: item.classificacao.label,
-          }));
-
-          if (this.ehEdicao) {
-            this.filtrarListaCategoria();
-            this.filtrarListaSubcategoria();
-          }
+          this.obterDadosIniciaisSucesso(sucesso);
         },
         error: (erro: Error) => {
           console.error(`${erro.name}: ${erro.message}`);
         },
       });
+  }
+
+  private obterDadosIniciaisSucesso(sucesso: any) {
+    this.listaAutor = sucesso.autores.map((autor: any) => ({
+      id: autor.id,
+      nome: autor.nome,
+    }));
+
+    this.listaClassificacaoBruta = sucesso.categorias;
+    this.listaClassificacao = this.extrairListaClassificacao(sucesso);
+
+    if (this.ehEdicao) {
+      this.filtrarListaCategoria();
+      this.filtrarListaSubcategoria();
+    }
+  }
+
+  private extrairListaClassificacao(sucesso: any): {id: string, nome: string}[] {
+    return sucesso.categorias.map((item: any) => ({
+      id: item.classificacao.id,
+      nome: item.classificacao.label,
+    }));
   }
 
   private popularComboCategoria(): void {
@@ -169,17 +177,16 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
   }
 
   private filtrarListaSubcategoria() {
-    this.listaSubcategoria = this.listaClassificacaoBruta
+      const itemClassificacao = this.listaClassificacaoBruta
       .filter(
         (filtroClassificacao) =>
           filtroClassificacao.classificacao.id ===
           this.form.get('classificacaoId')!.value
-      )[0]
-      .classificacao.categorias.filter(
-        (filtroCategoria: any) =>
-          filtroCategoria.id === this.form.get('categoriaId')!.value
-      )[0]
-      .subcategorias.map((resultado: any) => ({
+      )[0];
+      const itemSubcategorias = itemClassificacao.classificacao.categorias.filter(
+        (x: any) => x.id === this.form.get('categoriaId')!.value
+      )[0].subcategorias;
+      this.listaSubcategoria = itemSubcategorias.map((resultado: any) => ({
         nome: resultado.nome,
         id: resultado.id,
       }));

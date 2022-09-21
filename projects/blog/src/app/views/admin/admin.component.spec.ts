@@ -1,7 +1,10 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import { AdminComponent } from './admin.component';
 import { SharedModule } from '../../components/shared.module';
+import { AdminComponent } from './admin.component';
+import { AdminModule } from './admin.module';
 
 describe('AdminComponent', () => {
   let component: AdminComponent;
@@ -9,8 +12,8 @@ describe('AdminComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminComponent ],
-      imports: [SharedModule]
+      // declarations: [ AdminComponent ],
+      imports: [AdminModule, SharedModule, RouterTestingModule, HttpClientModule]
     })
     .compileComponents();
 

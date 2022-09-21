@@ -14,7 +14,7 @@ export class AutorEdicaoComponent implements OnInit, OnDestroy {
   breadcrumbsItem: BreadcrumbsItem[];
   id = '';
 
-  constructor(protected route: ActivatedRoute) {
+  constructor(protected _route: ActivatedRoute) {
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
       JonastorresRoutes.ADMIN.toBreadcrumb(),
@@ -23,7 +23,10 @@ export class AutorEdicaoComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.route.params.pipe(takeUntil(this._destroy$)).subscribe((params) => {
+    this._route.params.pipe(takeUntil(this._destroy$))
+    // this._route.params
+    // .pipe(takeUntil(this._destroy$))
+    .subscribe((params) => {
       this.id = params['id'] ?? '';
 
       const breadcrumbNovo = JonastorresRoutes.ADMIN_AUTOR_NOVO.toBreadcrumb();

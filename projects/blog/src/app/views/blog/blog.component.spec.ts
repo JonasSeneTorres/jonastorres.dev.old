@@ -1,12 +1,14 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ArtigosService } from '../../services/artigos/artigos.service';
-import { ArtigosServiceMock } from '../../mocks/artigo.service.mock';
-import { BlogComponent } from './blog.component';
-import { CategoriasService } from '../../services/categorias/categorias.service';
 import { HttpClientModule } from '@angular/common/http';
-import { JumbotronService } from '../../services/jumbotron/jumbotron.service';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
+import { JumbotronModule } from '../../components/jumbotron/jumbotron.module';
 import { SharedModule } from '../../components/shared.module';
+import { ArtigosServiceMock } from '../../mocks/artigos.service.mock';
+import { ArtigosService } from '../../services/artigos/artigos.service';
+import { CategoriasService } from '../../services/categorias/categorias.service';
+import { JumbotronService } from '../../services/jumbotron/jumbotron.service';
+import { BlogComponent } from './blog.component';
 
 describe('BlogComponent', () => {
   let component: BlogComponent;
@@ -15,7 +17,7 @@ describe('BlogComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ BlogComponent ],
-      imports: [ SharedModule, HttpClientModule ],
+      imports: [ SharedModule, HttpClientModule, RouterTestingModule, JumbotronModule ],
       providers: [
         { provide: ArtigosService, useClass: ArtigosServiceMock},
         // ArtigosService,

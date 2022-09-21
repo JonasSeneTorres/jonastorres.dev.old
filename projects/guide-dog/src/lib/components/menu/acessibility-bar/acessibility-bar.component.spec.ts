@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MenuModule } from '../menu.module';
 import { AcessibilityBarComponent } from './acessibility-bar.component';
 
 describe('AcessibilityBarComponent', () => {
@@ -8,7 +9,8 @@ describe('AcessibilityBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AcessibilityBarComponent ]
+      declarations: [ AcessibilityBarComponent ],
+      imports: [MenuModule]
     })
     .compileComponents();
   });

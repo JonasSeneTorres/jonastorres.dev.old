@@ -1,7 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { SharedModule } from 'projects/blog/src/app/components/shared.module';
+import { ActivatedRouteMock } from 'projects/blog/src/app/mocks/activated-route.mock';
 
 import { MenuAdminComponent } from './menu-admin.component';
-import { SharedModule } from 'projects/blog/src/app/components/shared.module';
 
 describe('MenuAdminComponent', () => {
   let component: MenuAdminComponent;
@@ -10,6 +12,9 @@ describe('MenuAdminComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ MenuAdminComponent ],
+      providers: [
+        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
+       ],
       imports: [SharedModule]
     })
     .compileComponents();

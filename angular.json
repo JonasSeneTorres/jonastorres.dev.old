@@ -3,7 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "cli": {
-    "schematicCollections": ["@angular-eslint/schematics"],
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ],
     "analytics": "1ca5b3c3-b764-40bc-b133-ac051a968660"
   },
   "projects": {
@@ -36,12 +38,11 @@
             ],
             "styles": [
               "projects/blog/src/styles/styles.scss",
-
-                "node_modules/primeng/resources/themes/saga-blue/theme.css",
-                "node_modules/primeng/resources/primeng.min.css",
-                "node_modules/primeicons/primeicons.css",
-                "node_modules/quill/dist/quill.core.css",
-                "node_modules/quill/dist/quill.snow.css"
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/quill/dist/quill.core.css",
+              "node_modules/quill/dist/quill.snow.css"
             ],
             "scripts": [
               "node_modules/quill/dist/quill.js"

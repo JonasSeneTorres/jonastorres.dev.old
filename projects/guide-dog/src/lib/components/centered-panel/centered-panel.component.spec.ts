@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MenuModule } from '../menu/menu.module';
 import { CenteredPanelComponent } from './centered-panel.component';
 import { CenteredPanelModule } from './centered-panel.module';
 
@@ -9,7 +10,7 @@ describe('CenteredPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CenteredPanelModule]
+      imports: [CenteredPanelModule, MenuModule]
     })
     .compileComponents();
   });

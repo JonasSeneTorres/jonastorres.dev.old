@@ -1,8 +1,12 @@
-import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+
+import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared.module';
-import { TestBed } from '@angular/core/testing';
+import { CategoriasServiceMock } from './mocks/categorias.service.mock';
+import { CategoriasService } from './services/categorias/categorias.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -10,7 +14,11 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         SharedModule,
-        NoopAnimationsModule
+        NoopAnimationsModule,
+        HttpClientModule,
+      ],
+      providers: [
+        { provide: CategoriasService, useClass: CategoriasServiceMock }
       ],
       declarations: [
         AppComponent

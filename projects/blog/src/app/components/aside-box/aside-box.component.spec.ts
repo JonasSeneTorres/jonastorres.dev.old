@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SharedModule } from 'projects/blog/src/app/components/shared.module';
 
 import { AsideBoxComponent } from './aside-box.component';
 
@@ -8,7 +10,8 @@ describe('AsideBoxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AsideBoxComponent ]
+      declarations: [ AsideBoxComponent ],
+      imports: [ SharedModule, HttpClientModule ]
     })
     .compileComponents();
 
