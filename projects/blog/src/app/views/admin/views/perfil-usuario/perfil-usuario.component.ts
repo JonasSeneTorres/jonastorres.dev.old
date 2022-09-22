@@ -1,8 +1,8 @@
-import { Injector } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
 import { Observable, takeUntil } from 'rxjs';
+
 import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master.component';
 
 @Component({
@@ -22,6 +22,7 @@ export class PerfilUsuarioComponent extends BaseAdminMasterComponent implements 
       JonastorresRoutes.ADMIN.toBreadcrumb(),
       { label: 'perfil de usuario' },
     ];
+    this.dados = [];
   }
 
   ngOnInit(): void {

@@ -18,9 +18,9 @@ export class CategoriasServiceMock implements ICrudService {
     return throwError(() => new Error('teste de erro'));
   }
 
-  listar(): Observable<any> {
+  listar(): Observable<any[]> {
     if(!this.erro) {
-      return of({});
+      return of([{}]);
     }
 
     return throwError(() => new Error('teste de erro'));

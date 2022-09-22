@@ -2,7 +2,7 @@
 <h1>Categoria</h1>
 
 <p-table
-  [value]="dados ?? []"
+  [value]="dados"
   styleClass="p-datatable-striped table-busca"
   [paginator]="true"
   [rows]="10"
@@ -55,12 +55,12 @@
   <ng-template pTemplate="body" let-dados>
     <tr>
       <td>
-        {{ dados.classificacao.label }} <strong>({{ dados.classificacao.ativo ? 'Ativo': 'Inativo' }})</strong>
+        {{ dados.classificacao?.label }} <strong>({{ dados.classificacao?.ativo ? 'Ativo': 'Inativo' }})</strong>
       </td>
       <td>
-        <ng-container *ngFor="let categoria of dados.classificacao.categorias">
+        <ng-container *ngFor="let categoria of dados.classificacao?.categorias">
           <div>
-            {{ categoria.label }} <strong>({{ categoria.ativo ? 'Ativo': 'Inativo' }})</strong>
+            {{ categoria?.label }} <strong>({{ categoria?.ativo ? 'Ativo': 'Inativo' }})</strong>
           </div>
         </ng-container>
       </td>

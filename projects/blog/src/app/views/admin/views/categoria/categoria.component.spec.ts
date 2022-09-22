@@ -12,7 +12,7 @@ import { CategoriasService } from 'projects/blog/src/app/services/categorias/cat
 import { AdminModule } from './../../admin.module';
 import { CategoriaComponent } from './categoria.component';
 
-describe('CategoriaComponent', () => {
+describe('ADMIN/CategoriaComponent', () => {
   let component: CategoriaComponent;
   let fixture: ComponentFixture<CategoriaComponent>;
 

@@ -41,7 +41,7 @@ describe('CategoriaComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create2', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -21,7 +21,7 @@ export class CategoriaComponent extends BaseAdminMasterComponent implements OnIn
       JonastorresRoutes.ADMIN.toBreadcrumb(),
       { label: 'categoria' },
     ];
-    // this.dados = [];
+    this.dados = [];
   }
 
   ngOnInit(): void {

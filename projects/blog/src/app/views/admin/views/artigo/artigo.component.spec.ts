@@ -13,7 +13,7 @@ import { AutoresService } from 'projects/blog/src/app/services/autores/autores.s
 import { AdminModule } from '../../admin.module';
 import { ArtigoComponent } from './artigo.component';
 
-describe('ArtigoComponent', () => {
+describe('ADMIN/ArtigoComponent', () => {
   let component: ArtigoComponent;
   let fixture: ComponentFixture<ArtigoComponent>;
 

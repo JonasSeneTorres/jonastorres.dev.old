@@ -10,7 +10,7 @@ import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.s
 import { AdminModule } from './../../../admin.module';
 import { AutorEdicaoComponent } from './autor-edicao.component';
 
-describe('AutorEdicaoComponent', () => {
+describe('ADMIN/AutorEdicaoComponent', () => {
   let component: AutorEdicaoComponent;
   let fixture: ComponentFixture<AutorEdicaoComponent>;
 
@@ -20,23 +20,7 @@ describe('AutorEdicaoComponent', () => {
       imports: [SharedModule, AdminModule, HttpClientModule, RouterTestingModule],
       providers: [
         { provide: ArtigosService, useClass: ArtigosServiceMock },
-        {provide: ActivatedRoute,
-          // useValue: {
-            // snapshot: {
-            //   paramMap: {
-            //     get: (key: string) => {
-            //       switch (key) {
-            //         case 'title':
-            //           return 'my title';
-            //         case 'subtitle':
-            //           return 'my subtitle';
-            //       }
-            //       return '';
-            //     }
-            //   },
-            // },
-          // },
-          useClass: ActivatedRouteMock
+        {provide: ActivatedRoute, useClass: ActivatedRouteMock
         },
       ],
     })

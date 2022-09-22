@@ -11,7 +11,7 @@ import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.s
 import { AdminModule } from '../../admin.module';
 import { PerfilUsuarioComponent } from './perfil-usuario.component';
 
-describe('PerfilUsuarioComponent', () => {
+describe('ADMIN/PerfilUsuarioComponent', () => {
   let component: PerfilUsuarioComponent;
   let fixture: ComponentFixture<PerfilUsuarioComponent>;
 

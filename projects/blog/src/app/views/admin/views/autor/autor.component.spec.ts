@@ -13,7 +13,7 @@ import { AutoresService } from 'projects/blog/src/app/services/autores/autores.s
 import { AdminModule } from '../../admin.module';
 import { AutorComponent } from './autor.component';
 
-describe('AutorComponent', () => {
+describe('ADMIN/AutorComponent', () => {
   let component: AutorComponent;
   let fixture: ComponentFixture<AutorComponent>;
 

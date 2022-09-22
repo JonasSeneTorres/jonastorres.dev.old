@@ -1,6 +1,6 @@
-import { BehaviorSubject, Observable, of, throwError } from "rxjs";
+import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 
-import { ICrudService } from "../interfaces/icrud-service";
+import { ICrudService } from '../interfaces/icrud-service';
 
 export class ArtigosServiceMock implements ICrudService {
   private _itensBuscados$: BehaviorSubject<any> = new BehaviorSubject(null);
@@ -18,41 +18,41 @@ export class ArtigosServiceMock implements ICrudService {
     return throwError(() => new Error('teste de erro'));
   }
 
-  listar(): Observable<any> {
+  listar(): Observable<any[]> {
     if(!this.erro) {
-      return of({});
+      return of([{}]);
     }
 
     return throwError(() => new Error('teste de erro'));
   }
 
-  buscar(_palavraChave: string): Observable<any> {
+  buscar(_palavraChave: string): Observable<any[]> {
     if(!this.erro) {
-      return of({});
+      return of([{}]);
     }
 
     return throwError(() => new Error('teste de erro'));
   }
 
-  listarUltimosArtigos(): Observable<any> {
+  listarUltimosArtigos(): Observable<any[]> {
     if(!this.erro) {
-      return of({});
+      return of([{}]);
     }
 
     return throwError(() => new Error('teste de erro'));
   }
 
-  listarArtigosCategoria(_categoriaId: number): Observable<any> {
+  listarArtigosCategoria(_categoriaId: number): Observable<any[]> {
     if(!this.erro) {
-      return of({});
+      return of([{}]);
     }
 
     return throwError(() => new Error('teste de erro'));
   }
 
-  listarArtigosSerie(_serieId: number): Observable<any> {
+  listarArtigosSerie(_serieId: number): Observable<any[]> {
     if(!this.erro) {
-      return of({});
+      return of([{}]);
     }
 
     return throwError(() => new Error('teste de erro'));

@@ -11,7 +11,7 @@ import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.s
 import { AdminModule } from './../../admin.module';
 import { RedesSociaisComponent } from './redes-sociais.component';
 
-describe('RedesSociaisComponent', () => {
+describe('ADMIN/RedesSociaisComponent', () => {
   let component: RedesSociaisComponent;
   let fixture: ComponentFixture<RedesSociaisComponent>;
 

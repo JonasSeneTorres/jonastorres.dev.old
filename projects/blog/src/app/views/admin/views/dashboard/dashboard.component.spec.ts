@@ -11,7 +11,7 @@ import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.s
 import { AdminModule } from './../../admin.module';
 import { DashboardComponent } from './dashboard.component';
 
-describe('DashboardComponent', () => {
+describe('ADMIN/DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
 

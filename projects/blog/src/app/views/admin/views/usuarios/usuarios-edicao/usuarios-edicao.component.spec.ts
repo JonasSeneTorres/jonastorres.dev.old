@@ -7,7 +7,7 @@ import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.s
 import { AdminModule } from '../../../admin.module';
 import { UsuariosEdicaoComponent } from './usuarios-edicao.component';
 
-describe('UsuariosEdicaoComponent', () => {
+describe('ADMIN/UsuariosEdicaoComponent', () => {
   let component: UsuariosEdicaoComponent;
   let fixture: ComponentFixture<UsuariosEdicaoComponent>;
 
