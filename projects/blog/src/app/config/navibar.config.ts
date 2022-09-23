@@ -69,31 +69,4 @@ export const NavibarConfig: NavibarItemConfig[] = [
     label: 'Contato',
     route: ['/contato'],
   },
-
-
-
-
-  // {
-  //   label: 'Sobre',
-  //   route: ['/sobre'],
-  // },
-  // {
-  //   label: 'Autor',
-  //   route: ['/autor'],
-  // },
-  // {
-  //   label: 'Contato',
-  //   route: ['/contato'],
-  // },{
-  //   label: 'Sobre',
-  //   route: ['/sobre'],
-  // },
-  // {
-  //   label: 'Autor',
-  //   route: ['/autor'],
-  // },
-  // {
-  //   label: 'Contato',
-  //   route: ['/contato'],
-  // },
 ];

@@ -1,7 +1,7 @@
 import { Guid } from 'guid-typescript';
 
 export type ArtigoModel = {
-  id: Guid,
+  id?: Guid,
   url: string,
   titulo: string,
   subtitulo?: string,

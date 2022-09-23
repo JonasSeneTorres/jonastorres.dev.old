@@ -24,7 +24,6 @@ export abstract class BaseAdminMasterComponent implements OnDestroy {
     this.messageService = injector.get<MessageService>(
       MessageService as Type<MessageService>
     );
-    // this.dados = [];
     this.filtravelPelosCampos = [];
     this.breadcrumbsItem = [];
   }

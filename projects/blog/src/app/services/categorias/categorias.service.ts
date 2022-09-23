@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { ICrudService } from '../../interfaces/icrud-service';
 
 @Injectable({
@@ -12,7 +13,7 @@ export class CategoriasService implements ICrudService {
 
   constructor(private httpClient: HttpClient) {}
 
-  obter(codigo: number): Observable<any> {
+  obter(codigo: string): Observable<any> {
     return this.httpClient.get(`${this.baseURL}/categorias/${codigo}`);
   }
   listar(): Observable<any> {
@@ -24,7 +25,7 @@ export class CategoriasService implements ICrudService {
   atualizar(objeto: any): Observable<any> {
     throw new Error('Method not implemented.');
   }
-  apagar(codigo: number): Observable<any> {
+  apagar(codigo: string): Observable<any> {
     throw new Error('Method not implemented.');
   }
 }

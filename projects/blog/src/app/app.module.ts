@@ -1,26 +1,15 @@
-import {
-  DOMPURIFY_CONFIG,
-  NgDompurifyModule,
-  NgDompurifySanitizer,
-} from '@tinkoff/ng-dompurify';
-import { LOCALE_ID, NgModule, Sanitizer } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
+import { JsonPipe, registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { JsonPipe } from '@angular/common';
+import localePT from '@angular/common/locales/pt';
+import { LOCALE_ID, NgModule, Sanitizer } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DOMPURIFY_CONFIG, NgDompurifyModule, NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared.module';
 import { domPurifyConfig } from './config/dom-purify.config';
-import localePT from '@angular/common/locales/pt';
-import { registerLocaleData } from '@angular/common';
-
-// import { QuillModule } from 'ngx-quill'
-
-
-
-
 
 registerLocaleData(localePT);
 
@@ -33,7 +22,6 @@ registerLocaleData(localePT);
     BrowserAnimationsModule,
     SharedModule,
     NgDompurifyModule,
-    // QuillModule.forRoot()
   ],
   exports: [NgDompurifyModule],
   providers: [

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
-import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
+import { Component } from '@angular/core';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
+import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
 
 @Component({
   templateUrl: './contato.component.html',
@@ -13,8 +12,6 @@ export class ContatoComponent {
   constructor() {
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
-      // JonastorresRoutes.ADMIN.toBreadcrumb(),
-      // JonastorresRoutes.ADMIN_ARTIGOS.toBreadcrumb(),
     ];
   }
 }

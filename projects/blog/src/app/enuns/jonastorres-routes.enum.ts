@@ -5,8 +5,8 @@ export class JonastorresRoutes {
 
   static readonly ADMIN = new JonastorresRoutes('Admin', ['/admin']);
 
-  static readonly ADMIN_ARTIGOS = new JonastorresRoutes('Artigos', ['/admin/artigo']);
-  static readonly ADMIN_ARTIGOS_NOVO = new JonastorresRoutes('Novo', ['/admin/artigo/novos']);
+  static readonly ADMIN_ARTIGOS = new JonastorresRoutes('Artigos', ['/admin/artigos']);
+  static readonly ADMIN_ARTIGOS_NOVO = new JonastorresRoutes('Novo', ['/admin/artigos/novos']);
   static readonly ADMIN_ARTIGOS_EDITAR = new JonastorresRoutes('Editar', ['/admin/artigos/editar']);
 
   static readonly ADMIN_AUTOR = new JonastorresRoutes('Autores', ['/admin/autores']);

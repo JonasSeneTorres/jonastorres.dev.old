@@ -76,7 +76,6 @@ const modulosNgPrime = [
 
 @NgModule({
   imports: [CommonModule, ...modulosCompartilhados,
-    // QuillModule.forRoot()
   ],
   providers: [ConfirmationService, MessageService],
   exports: [...modulosCompartilhados, ...modulosNgPrime],

@@ -24,8 +24,6 @@ export class AutorEdicaoComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this._route.params.pipe(takeUntil(this._destroy$))
-    // this._route.params
-    // .pipe(takeUntil(this._destroy$))
     .subscribe((params) => {
       this.id = params['id'] ?? '';
 

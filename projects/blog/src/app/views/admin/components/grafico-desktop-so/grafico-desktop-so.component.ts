@@ -1,5 +1,5 @@
+import { Component } from '@angular/core';
 import { ChartData, ChartEvent, ChartType } from 'chart.js';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'jt-grafico-desktop-so',
@@ -26,13 +26,9 @@ export class GraficoDesktopSOComponent /*implements OnInit*/ {
 
   constructor() { }
 
-  // ngOnInit(): void {
-  // }
   public chartClicked({ event, active }: { event: ChartEvent, active: {}[] }): void {
-    // console.log(event, active);
   }
 
   public chartHovered({ event, active }: { event: ChartEvent, active: {}[] }): void {
-    // console.log(event, active);
   }
 }

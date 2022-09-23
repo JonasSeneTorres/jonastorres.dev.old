@@ -13,89 +13,24 @@ h1 {
 
 .admin {
   box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  grid-template-areas: "aside main";
   column-gap: 1rem;
-  z-index: 1;
-  position: relative;
+  display: grid;
+  grid-template-areas: "aside main";
+  grid-template-columns: 300px 1fr;
   min-height: calc(100vh - 198px);
   padding-top: 1rem;
-  // margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
 
   &-aside {
     @include scaffolding-card;
-    grid-area: aside;
     box-sizing: border-box;
+    grid-area: aside;
     height: 100%;
-    // padding-top: 1rem
-    // margin: 1rem 0 !important;
   }
 
   &-main {
     @include scaffolding-card;
     height: 100%;
-    // padding: 1rem 2rem !important;
-    // padding: 1rem 2rem 0 2rem !important;
-    // margin-top: 1rem !important;
-    // border: solid 1px red;
-    //   box-sizing: border-box;
-    //   grid-area: main;
-    //   margin: 1rem 0 !important;
-    //   display: grid;
-    //   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    //   column-gap: 1rem;
-    //   row-gap: 1rem;
-    //   grid-template-areas:
-    //     "titulo titulo titulo titulo titulo titulo"
-    //     "box-num-seguidores box-num-posts box-num-likes box-num-visualizacao box-comentarios-recentes box-comentarios-recentes"
-    //     "grafico-num-visitantes grafico-num-visitantes grafico-num-visitantes lista-mais-compartilhados-social-media box-comentarios-recentes box-comentarios-recentes"
-    //     "box-artigos-recentes box-artigos-recentes box-artigos-recentes box-artigos-recentes box-sistemas-operacionais box-sistemas-operacionais";
-    //   padding-bottom: 1.6rem;
   }
-
-  // &-titulo {
-  //   @include scaffolding-card;
-  //   grid-area: titulo;
-  //   margin: 0 !important;
-  //   padding: 1rem !important;
-
-  //   height: 100%;
-  // }
 }
-
-// jt-box-num-seguidores {
-//   grid-area: box-num-seguidores;
-// }
-
-// jt-box-num-posts {
-//   grid-area: box-num-posts;
-// }
-
-// jt-box-num-likes {
-//   grid-area: box-num-likes;
-// }
-
-// jt-box-num-visualizacao {
-//   grid-area: box-num-visualizacao;
-// }
-
-// jt-box-comentarios-recentes {
-//   grid-area: box-comentarios-recentes;
-// }
-
-// jt-grafico-num-visitantes {
-//   grid-area: grafico-num-visitantes;
-// }
-
-// jt-lista-mais-compartilhados-social-media {
-//   grid-area: lista-mais-compartilhados-social-media;
-// }
-
-// jt-box-artigos-recentes {
-//   grid-area: box-artigos-recentes;
-// }
-
-// jt-box-sistemas-operacionais {
-//   grid-area: box-sistemas-operacionais;
-// }

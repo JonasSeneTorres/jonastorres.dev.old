@@ -2,6 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
 import { Observable } from 'rxjs';
+
 import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master.component';
 
 @Component({
@@ -30,7 +31,6 @@ export class UsuariosComponent extends BaseAdminMasterComponent implements OnIni
     this.artigosService.listar().subscribe({
       next: (sucesso) => {
         this.dados = sucesso;
-        // console.log(this.dados);
       },
       error: () => {
 

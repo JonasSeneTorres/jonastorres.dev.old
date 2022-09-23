@@ -92,8 +92,6 @@ $gd-media-desktop-maxheight: 1280px !default;
 
   @include media-up($gd-media-tablet-maxwidth) {
     border-radius: 16px;
-    // margin-top: 1.5rem;
     padding: 1rem;
-    // padding-bottom: 1px;
   }
 }

@@ -46,6 +46,7 @@ export class ArtigoComponent implements OnInit, OnDestroy {
       const routeCategoria = `/blog/${params['grupo']}/${params['categoria']}`;
       const labelArtigo = `${params['artigo']}`;
       const routeArtigo = `/blog/${params['grupo']}/${params['categoria']}/${params['artigo']}`;
+      const idArtigo = params['artigo'] ?? '';
 
       this.breadcrumbsItem = [
         JonastorresRoutes.HOME.toBreadcrumb(),
@@ -56,34 +57,39 @@ export class ArtigoComponent implements OnInit, OnDestroy {
       }
       this.breadcrumbsItem.push({ label: labelCategoria, route: [routeCategoria]});
       this.breadcrumbsItem.push({ label: labelArtigo, route: [routeArtigo]});
+
+      this.obterDadosIniciais(idArtigo);
     });
 
-    this.obterDadosIniciais(0)
-    .pipe(takeUntil(this._destroy$))
-    .subscribe((sucesso: any) => {
-      this.dadosArtigo = sucesso.artigo;
-      this.categorias = sucesso.categorias ?? [];
-      this.ultimosArtigos = sucesso.ultimosArtigos ?? [];
+  }
 
-      const nomeArtigo = this.categorias.filter( item => item.id === this.dadosArtigo.categoriaId)[0]?.nome;
-      this.categoriaArtigo = (nomeArtigo ?? '').toLowerCase();
-
-      this.obterDadosArtigoSerie()
+  private obterDadosIniciais(id: string) {
+    this.consutarDadosIniciais('0')
       .pipe(takeUntil(this._destroy$))
-      .subscribe(
-        (sucessoArtigoSerie : any) => {
-          this.listaArquivoSerie = sucessoArtigoSerie;
-        }
-      );
+      .subscribe((sucesso: any) => {
+        this.dadosArtigo = sucesso.artigo;
+        this.categorias = sucesso.categorias ?? [];
+        this.ultimosArtigos = sucesso.ultimosArtigos ?? [];
 
-      this.obterDadosAutor()
-      .pipe(takeUntil(this._destroy$))
-      .subscribe(
-        (sucesso: any) => {
-          this.dadosAutor = sucesso;
-        }
-      );
-    });
+        const nomeArtigo = this.categorias.filter(item => item.id === this.dadosArtigo.categoriaId)[0]?.nome;
+        this.categoriaArtigo = (nomeArtigo ?? '').toLowerCase();
+
+        this.obterDadosArtigoSerie()
+          .pipe(takeUntil(this._destroy$))
+          .subscribe(
+            (sucessoArtigoSerie: any) => {
+              this.listaArquivoSerie = sucessoArtigoSerie;
+            }
+          );
+
+        this.obterDadosAutor()
+          .pipe(takeUntil(this._destroy$))
+          .subscribe(
+            (sucesso: any) => {
+              this.dadosAutor = sucesso;
+            }
+          );
+      });
   }
 
   ngOnDestroy(): void {
@@ -91,7 +97,7 @@ export class ArtigoComponent implements OnInit, OnDestroy {
     this._destroy$.unsubscribe();
   }
 
-  private obterDadosIniciais(idArtigo: number): Observable<any> {
+  private consutarDadosIniciais(idArtigo: string): Observable<any> {
     const obterArtigo = this._artigosService.obter(idArtigo);
     const obterCategorias = this._categoriasService.listar();
     const obterUltimosArtigos = this._artigosService.listarUltimosArtigos();

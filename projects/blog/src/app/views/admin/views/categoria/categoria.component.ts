@@ -34,7 +34,6 @@ export class CategoriaComponent extends BaseAdminMasterComponent implements OnIn
     .subscribe({
       next: (sucesso: any) => {
         this.dados = sucesso;
-        // console.log(this.dados);
       },
       error: () => {
 

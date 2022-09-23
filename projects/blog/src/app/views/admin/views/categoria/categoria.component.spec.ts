@@ -22,8 +22,6 @@ describe('ADMIN/CategoriaComponent', () => {
       imports: [SharedModule, RouterTestingModule, HttpClientModule, AdminModule, TableModule],
       providers: [
         {provide: ActivatedRoute, useClass: ActivatedRouteMock},
-        // {provide: ActivatedRoute, useValue: activatedRouteMock},
-        // { provide: ArtigosService, useClass: ArtigosServiceMock },
         { provide: CategoriasService, useClass: CategoriasServiceMock },
         ConfirmationService,
         MessageService

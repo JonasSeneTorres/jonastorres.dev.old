@@ -1,7 +1,6 @@
 @import "../../../../../../../blog/src/styles/styles.scss";
 
 .lista-mais-compartilhados-social-media {
-  // background-color: $gd-colorligth-primary-50;
   border: solid 2px $gd-colorligth-primary-600;
   color: $gd-colorligth-primary-600;
   border-radius: 8px;
@@ -42,7 +41,6 @@
     font-weight: bold;
     text-align: flex-end;
     overflow: hidden;
-    // padding-right: .5rem;
   }
 
   &__total {

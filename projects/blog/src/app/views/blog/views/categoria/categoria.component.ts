@@ -25,7 +25,6 @@ export class CategoriaComponent implements OnInit, OnDestroy {
   constructor(
     private _artigosService: ArtigosService,
     private _categoriasService: CategoriasService,
-    // private _subcategoriasService: SubcategoriasService,
     private _blogService: BlogService,
     private _jumbotronService: JumbotronService,
     private _activatedRoute: ActivatedRoute
@@ -38,13 +37,6 @@ export class CategoriaComponent implements OnInit, OnDestroy {
     this._activatedRoute.params
     .pipe(takeUntil(this._destroy$))
     .subscribe((params: Params) => {
-      // console.log(params);
-      // console.log(this._activatedRoute.snapshot.data);
-
-      // this.breadcrumbsItem = [
-      //   JonastorresRoutes.HOME.toBreadcrumb(),
-      // ];
-
       const labelGrupo = `${params['grupo']}`;
       const routeGrupo = `/blog/${params['grupo']}`;
       const labelCategoria = `${params['categoria']}`;
@@ -61,12 +53,7 @@ export class CategoriaComponent implements OnInit, OnDestroy {
     });
 
     this.obterDadosIniciais(1).pipe(takeUntil(this._destroy$)).subscribe((sucesso) => {
-      // console.log(sucesso);
       this.dadosArtigo = sucesso.artigo;
-      // this.categorias = sucesso.categorias;
-      // this.ultimosArtigos = sucesso.ultimosArtigos;
-      // this.subcategorias = sucesso.subcategorias;
-      // this.artigosDaCategoria = this.montarArtigosDaCategoria(this.subcategorias, sucesso.artigosDaCategoria);
     },
     (erro: any) => {
       console.error(erro);
@@ -80,17 +67,9 @@ export class CategoriaComponent implements OnInit, OnDestroy {
 
   private obterDadosIniciais(idCategoria: number): Observable<any> {
     const obterArtigos = this._artigosService.listar();
-    // const obterArtigo = this._categoriasService.obter(idCategoria);
-    // const obterSubcategorias = this._subcategoriasService.listar();
-    // const obterUltimosArtigos = this._artigosService.listarUltimosArtigos();
-    // const obterArtigosDaCategoria = this._artigosService.listarArtigosCategoria(idCategoria);
 
     return forkJoin({
       artigo: obterArtigos,
-      // categorias: obterCategorias,
-      // // subcategorias: obterSubcategorias,
-      // ultimosArtigos: obterUltimosArtigos,
-      // artigosDaCategoria: obterArtigosDaCategoria,
     });
   }
 

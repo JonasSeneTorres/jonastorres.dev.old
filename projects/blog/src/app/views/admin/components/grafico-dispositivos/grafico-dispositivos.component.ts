@@ -1,5 +1,5 @@
-import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ChartData, ChartEvent, ChartType } from 'chart.js';
 
 @Component({
   selector: 'jt-grafico-dispositivos',
@@ -24,13 +24,11 @@ export class GraficoDispositivosComponent {
     event: ChartEvent;
     active: {}[];
   }): void {
-    // console.log(event, active);
   }
 
   chartHovered({event, active}: {
     event: ChartEvent;
     active: {}[];
   }): void {
-    // console.log(event, active);
   }
 }

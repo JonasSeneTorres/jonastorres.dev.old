@@ -1,9 +1,8 @@
-import { Component, OnDestroy, OnInit, Output } from '@angular/core';
-import { Subject, filter, map, takeUntil } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item-config';
+import { Subject, takeUntil } from 'rxjs';
 
 import { CategoriasService } from './services/categorias/categorias.service';
-import { NavibarConfig } from './config/navibar.config';
-import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item-config';
 
 @Component({
   selector: 'jt-root',
@@ -132,9 +131,6 @@ export class AppComponent implements OnInit, OnDestroy {
   private mapearMenuComCategoria(
     itemFiltrado: any
   ): NavibarItemConfig | undefined {
-    // const valido = true;
-
-    // if (valido) {
     const itemLabel = itemFiltrado.classificacao.label;
     const itemRoute = `/blog/${itemFiltrado.classificacao.url}`;
     let itemChildren: any[] = [];
@@ -160,8 +156,5 @@ export class AppComponent implements OnInit, OnDestroy {
     };
 
     return itensValidos;
-    // }
-
-    // return;
   }
 }

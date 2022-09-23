@@ -1,8 +1,8 @@
-import { BehaviorSubject, Observable, map } from 'rxjs';
-
 import { HttpClient } from '@angular/common/http';
-import { ICrudService } from './../../interfaces/icrud-service';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+
+import { ICrudService } from './../../interfaces/icrud-service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class ArtigosService implements ICrudService {
 
   constructor(private httpClient: HttpClient) {}
 
-  obter(codigo: number): Observable<any> {
+  obter(codigo: string): Observable<any> {
     return this.httpClient.get(`${this.baseURL}/artigos/${codigo}`);
   }
 
@@ -41,15 +41,15 @@ export class ArtigosService implements ICrudService {
     return this.httpClient.get(`${this.baseURL}/artigos?serieId=${serieId}`);
   }
 
-  inserir(objeto: any): Observable<any> {
+  inserir(value: any): Observable<any> {
+    return this.httpClient.post(`${this.baseURL}/artigos`, value);
+  }
+
+  atualizar(value: any): Observable<any> {
     throw new Error('Method not implemented.');
   }
 
-  atualizar(objeto: any): Observable<any> {
-    throw new Error('Method not implemented.');
-  }
-
-  apagar(codigo: number): Observable<any> {
+  apagar(codigo: string): Observable<any> {
     return this.httpClient.delete(`${this.baseURL}/artigos/${codigo}`);
   }
 }

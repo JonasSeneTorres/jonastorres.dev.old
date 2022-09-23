@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'jt-ultimos-posts',
@@ -16,7 +16,7 @@ export class UltimosPostsComponent {
       (item) => item.id === this.ultimosArtigos[indice].categoriaId
     );
 
-    return ''; // output[0].nome.toLowerCase();
+    return '';
   }
 
   pertenceACategoria(indice: number, nomeCategoria: string = '') {

@@ -37,7 +37,6 @@ export class ArtigoComponent
       .subscribe({
         next: (sucesso: any) => {
           this.dados = sucesso;
-          // console.log(this.dados);
         },
         error: () => {},
       });

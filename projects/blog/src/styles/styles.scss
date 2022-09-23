@@ -4,7 +4,6 @@ $title_font_family: "Tomorrow", arial;
 
 @import "../../../guide-dog/src/lib/styles/gd.scss";
 @import "./vendor/ngprime";
-// @import '~quill/dist/quill.bubble.css';
 
 jt-root {
   display: grid;
@@ -166,71 +165,3 @@ blockquote {
     rgba(0, 0, 0, 1) 89%
   ) !important;
 }
-
-// .jt {
-//   display: grid;
-//   z-index: 1;
-
-//   @include media-down($gd-media-tablet-maxwidth) {
-//     grid-template-areas:
-//       "jumbotrom"
-//       "article"
-//       "aside";
-//   }
-
-//   @include media-up($gd-media-tablet-maxwidth) {
-//     grid-template-areas:
-//       "jumbotrom jumbotrom"
-//       "article aside";
-//     column-gap: 1rem;
-//     grid-template-columns: 1fr 25rem;
-//   }
-
-//   &__artigos {
-//     grid-area: article;
-//     margin-bottom: 0.5rem;
-//     z-index: 1;
-
-//     @include media-up($gd-media-tablet-maxwidth) {
-//       margin-bottom: 1rem;
-//     }
-//   }
-// }
-
-// jt-jumbotron {
-//   grid-area: jumbotrom;
-//   z-index: 1;
-// }
-
-// aside {
-//   grid-area: aside;
-//   z-index: 1;
-
-//   @include media-down($gd-media-tablet-maxwidth) {
-//     margin: 0;
-//     padding: 0;
-//   }
-
-//   @include media-up($gd-media-tablet-maxwidth) {
-//     @include box-shadow;
-//     border-radius: 16px;
-//     background-color: $gd-color-white;
-//     margin-top: 24rem !important;
-//     max-width: 21rem;
-//     padding: 1rem 2rem;
-//     margin: 1rem 0;
-//     width: 100%;
-//     margin-bottom: 0.5rem;
-//   }
-// }
-
-// jt-box-categorias {
-//   @include media-down($gd-media-tablet-maxwidth) {
-//     background-color: $gd-color-white;
-//     box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%),
-//       0 1px 4px rgb(0 0 0 / 12%);
-//     display: block;
-//     padding: 0.5rem 0.5rem;
-//     margin-bottom: 0.5rem;
-//   }
-// }

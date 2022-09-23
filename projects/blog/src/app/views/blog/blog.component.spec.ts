@@ -20,7 +20,6 @@ describe('BlogComponent', () => {
       imports: [ SharedModule, HttpClientModule, RouterTestingModule, JumbotronModule ],
       providers: [
         { provide: ArtigosService, useClass: ArtigosServiceMock},
-        // ArtigosService,
         CategoriasService,
         JumbotronService,
       ]

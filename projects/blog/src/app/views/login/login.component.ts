@@ -1,4 +1,3 @@
-import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,7 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  // breadcrumbsItem: BreadcrumbsItem[];
-
   constructor() { }
 }

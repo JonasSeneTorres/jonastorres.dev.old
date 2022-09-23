@@ -14,8 +14,6 @@ export class CategoriaEdicaoComponent implements OnInit, OnDestroy {
   breadcrumbsItem: BreadcrumbsItem[];
   id = '';
 
-  // private routeParams$: any;
-
   constructor(private route: ActivatedRoute) {
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),

@@ -1,8 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-
-import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
+import { Component } from '@angular/core';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
-import { Subject } from 'rxjs';
+import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
 
 @Component({
   selector: 'jt-acessibilidade',
@@ -13,10 +11,7 @@ export class AcessibilidadeComponent {
   breadcrumbsItem: BreadcrumbsItem[];
 
   constructor(
-    // private local: SessionStorageService,
-    // public browserService: SystemInformationService
   ) {
-    // this.local.set('LocalStorageService', { teste: 1 });
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
       { label: 'acessibilidade' }

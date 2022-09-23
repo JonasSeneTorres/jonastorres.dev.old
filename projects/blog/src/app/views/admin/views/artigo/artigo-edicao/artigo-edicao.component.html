@@ -2,7 +2,7 @@
 <h1 *ngIf="!ehEdicao">Novo Artigo</h1>
 <h1 *ngIf="ehEdicao">Edição de artigo</h1>
 
-<form class="artigo-edicao" [formGroup]="form">
+<form class="artigo-edicao" [formGroup]="form" (submit)="submit()">
   <p class="p-float-label artigo-edicao__margin-top2">
     <input
       id="titulo"
@@ -144,6 +144,10 @@
     <button type="submit" [disabled]="form.invalid">Enviar</button>
   </p>
 </form>
+
+<pre>
+  {{ form.value | json }}
+</pre>
 
 <p-dialog
   header="Adicionar {{ tipoDoModal }}"

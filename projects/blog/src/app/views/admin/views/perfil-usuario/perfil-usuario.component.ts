@@ -35,7 +35,6 @@ export class PerfilUsuarioComponent extends BaseAdminMasterComponent implements 
     .subscribe({
       next: (sucesso: any) => {
         this.dados = sucesso;
-        // console.log(this.dados);
       },
       error: () => {
 

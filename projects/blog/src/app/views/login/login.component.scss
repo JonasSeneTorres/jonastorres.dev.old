@@ -7,23 +7,20 @@
 }
 
 .login {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   height: calc(100vh - 188px);
+  justify-content: center;
 
   &-box {
     @include scaffolding-card;
-    z-index: 1;
-    // border: solid 2px $gd-setcolorligth-primary;;
-    // background-color: $gd-colorligth-secondary-500;
-    // color: #fff;
     border-radius: 8px;
-    padding: 2rem !important;
     box-sizing: border-box;
-    position: relative;
     max-width: 500px;
+    padding: 2rem !important;
+    position: relative;
     width: 100%;
+    z-index: 1;
 
     @include media-down($gd-media-tablet-minwidth) {
       margin: 0 2rem;

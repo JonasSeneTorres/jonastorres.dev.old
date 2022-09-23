@@ -9,7 +9,6 @@ describe('JumbotronComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      // declarations: [ JumbotronComponent ],
       imports: [ JumbotronModule ]
     })
     .compileComponents();
