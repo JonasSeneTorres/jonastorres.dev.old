@@ -1,13 +1,11 @@
-import { Guid } from 'guid-typescript';
-
 export type ArtigoModel = {
-  id?: Guid,
+  id?: string,
   url: string,
   titulo: string,
   subtitulo?: string,
   metatags?: string[],
-  ClassificacaoId: string,
-  dataCriacao: Date,
+  subcategoriaId: string,
+  dataCriacao?: Date,
   dataEdicao?: Date,
   dataAgendamento?: Date,
   tempoLeitura: number,

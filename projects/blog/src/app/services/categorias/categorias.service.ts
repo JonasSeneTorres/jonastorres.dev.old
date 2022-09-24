@@ -8,24 +8,27 @@ import { ICrudService } from '../../interfaces/icrud-service';
   providedIn: 'root'
 })
 export class CategoriasService implements ICrudService {
-
-  private baseURL: string = 'http://localhost:3000';
+  private baseURL: string = 'http://localhost:3000/categorias';
 
   constructor(private httpClient: HttpClient) {}
 
   obter(codigo: string): Observable<any> {
-    return this.httpClient.get(`${this.baseURL}/categorias/${codigo}`);
+    return this.httpClient.get(`${this.baseURL}/${codigo}`);
   }
+
   listar(): Observable<any> {
-    return this.httpClient.get(`${this.baseURL}/categorias`);
+    return this.httpClient.get(`${this.baseURL}`);
   }
-  inserir(objeto: any): Observable<any> {
-    throw new Error('Method not implemented.');
+
+  inserir(value: any): Observable<any> {
+    return this.httpClient.post(`${this.baseURL}`, value);
   }
-  atualizar(objeto: any): Observable<any> {
-    throw new Error('Method not implemented.');
+
+  atualizar(value: any): Observable<any> {
+    return this.httpClient.put(`${this.baseURL}/value.id`, value);
   }
+
   apagar(codigo: string): Observable<any> {
-    throw new Error('Method not implemented.');
+    return this.httpClient.delete(`${this.baseURL}/${codigo}`);
   }
 }

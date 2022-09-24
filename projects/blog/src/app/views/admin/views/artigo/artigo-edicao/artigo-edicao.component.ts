@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Guid } from 'guid-typescript';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
@@ -93,11 +93,26 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const artigo: ArtigoModel = this.form.value;
+    const artigo: ArtigoModel = {
+      // id?: Guid,
+      url: this.form.get('url')!.value,
+      titulo: this.form.get('titulo')!.value,
+      subtitulo: this.form.get('subtitulo')!.value,
+      metatags: this.form.get('metatags')!.value,
+      subcategoriaId: this.form.get('subcategoriaId')!.value,
+      // dataCriacao: this.form.get('classificacaoId')!.value,
+      // dataEdicao?: Date,
+      dataAgendamento:  this.form.get('dataAgendamento')!.value,
+      tempoLeitura: +this.form.get('tempoLeitura')!.value ?? 0,
+      conteudoArtigo: this.form.get('conteudoArtigo')!.value,
+      autorId: this.form.get('autorId')!.value,
+      serieId:  this.form.get('serieId')!.value,
+    }// this.form.value;
 
     this.setarTipoOperacao(artigo).subscribe({
       next: () => {
-        this.router.navigate([JonastorresRoutes.ADMIN_ARTIGOS.router]);
+        console.log(JonastorresRoutes.ADMIN_ARTIGOS.router);
+        this.router.navigate(JonastorresRoutes.ADMIN_ARTIGOS.router as any[]);
       },
       error: (error: Error) => {
         console.error(error);
@@ -107,7 +122,10 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
 
   private setarTipoOperacao(artigo: ArtigoModel) {
     if (this.ehEdicao) {
+      artigo.id = this.id;
+      artigo.dataCriacao = this.form.get('dataCriacao')!.value,
       artigo.dataEdicao = new Date();
+      console.log(artigo);
       return this.artigosService.atualizar(artigo);
     }
 
@@ -115,6 +133,7 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
     artigo.id = newGuid.value;
     artigo.dataCriacao = new Date();
     artigo.dataEdicao = undefined;
+    console.log('criar', artigo);
     return this.artigosService.inserir(artigo);
   }
 
@@ -254,12 +273,12 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
     this.filtrarListaSubcategoria();
   }
 
-  private observarAlteracoesForm() {
+  private observarAlteracoesCategoria() {
     this.form
       .get('classificacaoId')!
       .valueChanges.pipe(takeUntil(this._destroy$))
       .subscribe((valorClassificacao: any) => {
-        console.log('classificacao alterada', valorClassificacao);
+        // console.log('classificacao alterada', valorClassificacao);
         this.popularComboCategoria();
       });
 
@@ -267,33 +286,59 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
       .get('categoriaId')!
       .valueChanges.pipe(takeUntil(this._destroy$))
       .subscribe((valorCategoria) => {
-        console.log('categoria alterada', valorCategoria);
+        // console.log('categoria alterada', valorCategoria);
         this.popularComboSubcategoria();
       });
+  }
+
+  private observarAlteracoesUrl() {
+    this.form
+      .get('subcategoriaId')!
+      .valueChanges.pipe(takeUntil(this._destroy$))
+      .subscribe((formValores: any) => {
+        console.log('form alterada', formValores);
+        // this.popularComboCategoria();
+        const classificacao = this.form.get('classificacaoId')!.value;
+        const categoria = this.form.get('categoriaId')!.value;
+        const subcategoria = this.form.get('subcategoriaId')!.value;
+        let output:string = `/${classificacao}/${categoria}/${subcategoria}`;
+        output = this.form.get('subcategoriaId')!.value.length === 0 ? '': output;
+
+        if (this.form.get('classificacaoId')!.value !== output) {
+          this.form.patchValue({
+            url: output,
+          });
+        }
+      });
+
+
   }
 
   private createForm(dado?: ArtigoModel) {
     this.form = new FormGroup({
       id: new FormControl(''),
-      url: new FormControl(''),
-      titulo: new FormControl(''),
+      url: new FormControl('', Validators.required),
+      titulo: new FormControl('', Validators.required),
       subtitulo: new FormControl(''),
-      metatags: new FormControl(''),
+      metatags: new FormControl('', Validators.required),
       classificacaoId: new FormControl(''),
       categoriaId: new FormControl(''),
-      subcategoriaId: new FormControl(''),
+      subcategoriaId: new FormControl('', Validators.required),
       dataCriacao: new FormControl(''),
       dataEdicao: new FormControl(''),
       dataAgendamento: new FormControl(''),
-      tempoLeitura: new FormControl('0'),
-      conteudoArtigo: new FormControl(''),
-      autorId: new FormControl(''),
+      tempoLeitura: new FormControl('0', Validators.required),
+      conteudoArtigo: new FormControl('', Validators.required),
+      autorId: new FormControl('', Validators.required),
       serieId: new FormControl(''),
     });
 
     if (this.ehEdicao) {
       this.prepararFormEdicao();
     }
+
+    this.observarAlteracoesCategoria();
+    this.observarAlteracoesUrl();
   }
 
   private prepararFormEdicao() {
@@ -318,7 +363,7 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
         classificacaoId: classificacaoId,
         categoriaId: categoriaId,
         subcategoriaId: subcategoriaId,
-        dataCriacao: sucesso.dataCriacao.split('T')[0],
+        dataCriacao: (sucesso.dataCriacao ?? '').split('T')[0],
         dataEdicao: sucesso.dataEdicao?.split('T')[0],
         dataAgendamento: sucesso.dataAgendamento?.split('T')[0],
         tempoLeitura: sucesso.tempoLeitura,
@@ -335,7 +380,8 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
         subcategoriaId: subcategoriaId,
       });
 
-      this.observarAlteracoesForm();
+      // this.observarAlteracoesCategoria();
+      // this.observarAlteracoesUrl();
     });
   }
 

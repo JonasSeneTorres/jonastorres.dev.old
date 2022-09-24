@@ -1,6 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Guid } from 'guid-typescript';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
+import { AutoresService } from 'projects/blog/src/app/services/autores/autores.service';
 import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -12,9 +15,15 @@ export class AutorEdicaoComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
 
   breadcrumbsItem: BreadcrumbsItem[];
+  form!: FormGroup;
   id = '';
+  ehEdicao = false;
 
-  constructor(protected _route: ActivatedRoute) {
+  constructor(
+    protected _route: ActivatedRoute,
+    private autoresService: AutoresService,
+    private router: Router
+  ) {
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
       JonastorresRoutes.ADMIN.toBreadcrumb(),
@@ -23,14 +32,15 @@ export class AutorEdicaoComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this._route.params.pipe(takeUntil(this._destroy$))
-    .subscribe((params) => {
+    this._route.params.pipe(takeUntil(this._destroy$)).subscribe((params) => {
       this.id = params['id'] ?? '';
+      this.ehEdicao = this.id.length > 0;
 
       const breadcrumbNovo = JonastorresRoutes.ADMIN_AUTOR_NOVO.toBreadcrumb();
       const breadcrumbEditar =
         JonastorresRoutes.ADMIN_AUTOR_EDITAR.toBreadcrumb();
       this.ajustarBreadcrumb(this.id, breadcrumbNovo, breadcrumbEditar);
+      this.createForm();
     });
   }
 
@@ -50,5 +60,70 @@ export class AutorEdicaoComponent implements OnInit, OnDestroy {
     }
 
     this.breadcrumbsItem.push(complementoBreadcrumbs);
+  }
+
+  private createForm() {
+    this.form = new FormGroup({
+      id: new FormControl(''),
+      nome: new FormControl('', Validators.required),
+      cargo: new FormControl('', Validators.required),
+      descricao: new FormControl('', Validators.required),
+      urlImagem: new FormControl(''),
+      dataCriacao: new FormControl(''),
+      dataEdicao: new FormControl(''),
+    });
+
+    if (this.ehEdicao) {
+      this.prepararFormEdicao();
+    }
+  }
+
+  private prepararFormEdicao() {
+    this.autoresService.obter(this.id).subscribe((sucesso: any) => {
+      this.form.patchValue({
+        id: sucesso.id,
+        nome: sucesso.nome,
+        cargo: sucesso.cargo,
+        descricao: sucesso.descricao,
+        urlImagem: sucesso.urlImagem,
+        dataCriacao: sucesso.dataCriacao?.split('T')[0],
+        dataEdicao: sucesso.dataEdicao?.split('T')[0],
+      });
+    });
+  }
+
+  submit() {
+    if (this.form.invalid) {
+      return;
+    }
+
+    const autor: any = {
+      nome: this.form.get('nome')!.value,
+      cargo: this.form.get('cargo')!.value,
+      descricao: this.form.get('descricao')!.value,
+      urlImagem: this.form.get('urlImagem')!.value,
+    };
+
+    this.setarTipoOperacao(autor).subscribe({
+      next: () => {
+        this.router.navigate([JonastorresRoutes.ADMIN_AUTOR.router]);
+      },
+      error: (error: Error) => {
+        console.error(error);
+      },
+    });
+  }
+
+  private setarTipoOperacao(autor: any) {
+    if (this.ehEdicao) {
+      autor.dataEdicao = new Date();
+      return this.autoresService.atualizar(autor);
+    }
+
+    const newGuid: any = Guid.create();
+    autor.id = newGuid.value;
+    autor.dataCriacao = new Date();
+    autor.dataEdicao = undefined;
+    return this.autoresService.inserir(autor);
   }
 }

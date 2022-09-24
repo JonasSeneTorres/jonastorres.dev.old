@@ -2,7 +2,12 @@
 <h1 *ngIf="!ehEdicao">Novo Artigo</h1>
 <h1 *ngIf="ehEdicao">Edição de artigo</h1>
 
-<form class="artigo-edicao" [formGroup]="form" (submit)="submit()">
+<form
+  class="artigo-edicao"
+  [formGroup]="form"
+  (submit)="submit()"
+  autocomplete="off"
+>
   <p class="p-float-label artigo-edicao__margin-top2">
     <input
       id="titulo"
@@ -40,12 +45,22 @@
 
     <div class="artigo-edicao__grid-url-col2">
       <label for="tempo-leitura">Tempo de leitura</label>
-      <input type="text" id="tempo-leitura" formControlName="tempoLeitura" readonly pInputText />
+      <input
+        type="text"
+        id="tempo-leitura"
+        formControlName="tempoLeitura"
+        readonly
+        pInputText
+      />
     </div>
   </div>
 
   <p class="p-float-label artigo-edicao__margin-top2">
-    <p-chips id="metatags" class="artigo-edicao__input-linha" formControlName="metatags"></p-chips>
+    <p-chips
+      id="metatags"
+      class="artigo-edicao__input-linha"
+      formControlName="metatags"
+    ></p-chips>
     <label for="metatags">Metatags </label>
   </p>
 
@@ -58,22 +73,46 @@
           <option [value]="autor.id">{{ autor.nome }}</option>
         </ng-container>
       </select>
-      <button (click)="abrirModalAutor()">adicionar novo autor</button>
+      <button
+        type="button"
+        tabindex="0"
+        class="table-busca__botao-novo"
+        (click)="abrirModalAutor()"
+      >
+        <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
+        Adicionar novo autor
+      </button>
+      <!-- <button (click)="abrirModalAutor()">adicionar novo autor</button> -->
     </div>
 
     <div>
       <label for="data-criacao">Data de criação</label>
-      <input type="date" id="data-criacao" formControlName="dataCriacao" pInputText />
+      <input
+        type="date"
+        id="data-criacao"
+        formControlName="dataCriacao"
+        pInputText
+      />
     </div>
 
     <div>
       <label for="data-edicao">Data da ultima edição</label>
-      <input type="date" id="data-edicao" formControlName="dataEdicao" pInputText />
+      <input
+        type="date"
+        id="data-edicao"
+        formControlName="dataEdicao"
+        pInputText
+      />
     </div>
 
     <div class="artigo-edicao__grid-data3">
       <label for="data-agendamento">Data de agendamento</label>
-      <input type="date" id="data-agendamento" formControlName="dataAgendamento" pInputText />
+      <input
+        type="date"
+        id="data-agendamento"
+        formControlName="dataAgendamento"
+        pInputText
+      />
     </div>
   </div>
 
@@ -110,9 +149,18 @@
     <!-- {{ form.get('categoriaId')!.value | json }}] -->
 
     <div class="artigo-edicao__grid-classicicacao4">
-      <button (click)="abrirModalClassificacao()">
-        adicionar nova classificação
+      <button
+        type="button"
+        tabindex="0"
+        class="table-busca__botao-novo"
+        (click)="abrirModalClassificacao()"
+      >
+        <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
+        Adicionar nova classificação
       </button>
+      <!-- <button (click)="abrirModalClassificacao()">
+        adicionar nova classificação
+      </button> -->
     </div>
   </div>
 
@@ -121,17 +169,34 @@
     <select formControlName="serieId" formControlName="classificacaoId">
       <option value="">Selecione...</option>
     </select>
-    <button (click)="abrirModalSerie()">Acidionar nova série</button>
+    <!-- <button (click)="abrirModalSerie()">Acidionar nova série</button> -->
+    <button
+    type="button"
+    tabindex="0"
+    class="table-busca__botao-novo"
+    (click)="abrirModalSerie()"
+  >
+    <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
+    Adicionar nova série
+  </button>
   </p>
   <div>
     <fieldset>
       <legend>Conteudo</legend>
       <p-tabView>
         <p-tabPanel header="Editor">
-          <p-editor [style]="{ height: '320px' }" formControlName="conteudoArtigo"></p-editor>
+          <p-editor
+            [style]="{ height: '320px' }"
+            formControlName="conteudoArtigo"
+          ></p-editor>
         </p-tabPanel>
         <p-tabPanel header="Ver código HTML">
-          <textarea formControlName="conteudoArtigo"  [value]="form.get('conteudoArtigo')!.value" (input)="equalizarTexto($event)">
+          <textarea
+            class="artigo-edicao__textarea"
+            formControlName="conteudoArtigo"
+            [value]="form.get('conteudoArtigo')!.value"
+            (input)="equalizarTexto($event)"
+          >
           </textarea>
         </p-tabPanel>
       </p-tabView>
@@ -139,15 +204,23 @@
   </div>
   <!-- <textarea formControlName="conteudoArtigo"  [value]="form.get('conteudoArtigo')!.value" (input)="equalizarTexto($event)">
   </textarea> -->
-  <p>
-    <button type="button">Cancelar</button>
-    <button type="submit" [disabled]="form.invalid">Enviar</button>
+  <p class="artigo-edicao__container-salvar">
+    <button class="botao confirmDialog__no" type="button" [routerLink]="['/admin/artigos']">
+      <span class="icone_botao fa-solid fa-xmark" aria-hidden="true"></span>
+      Cancelar
+    </button>
+    <button class="botao confirmDialog__yes" type="submit" [disabled]="form.invalid">
+      <span class="icone_botao fa-solid fa-check" aria-hidden="true"></span>
+      Salvar
+    </button>
+    <!-- <button type="button">Cancelar</button>
+    <button type="submit" [disabled]="form.invalid">Enviar</button> -->
   </p>
 </form>
 
-<pre>
+<!-- <pre>
   {{ form.value | json }}
-</pre>
+</pre> -->
 
 <p-dialog
   header="Adicionar {{ tipoDoModal }}"
