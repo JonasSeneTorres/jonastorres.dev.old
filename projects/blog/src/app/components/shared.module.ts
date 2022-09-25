@@ -12,6 +12,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { EditorModule } from 'primeng/editor';
 import { FileUploadModule } from 'primeng/fileupload';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MultiSelectModule } from 'primeng/multiselect';
@@ -71,7 +72,8 @@ const modulosNgPrime = [
   ConfirmDialogModule,
   ChipsModule,
   TabViewModule,
-  EditorModule
+  EditorModule,
+  InputSwitchModule
 ];
 
 @NgModule({

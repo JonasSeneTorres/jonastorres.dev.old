@@ -227,22 +227,13 @@
   ],
   "autores": [
     {
-      "id": 1,
       "nome": "Jonas Sene Torres",
       "cargo": "Desenvolvedor Full Stack Sênior",
       "descricao": "Detraxit consequat et quo num tendi nada.Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis.Quem num gosta di mim que vai caçá sua turmis!",
       "urlImagem": "assets/img/fotos/autor/jonas.jpg",
-      "dataCriacao": "2022-05-22T00:00:00",
-      "dataEdicao": "2022-05-22T00:00:00"
-    },
-    {
-      "nome": "Johnny Test2",
-      "cargo": "Nonono",
-      "descricao": "Uma descrição qualquer...",
-      "urlImagem": "",
-      "id": "29d246ad-2e82-a38a-1f45-f30fc4c20b8f",
-      "dataCriacao": "2022-09-24",
-      "dataEdicao": "2022-09-24T05:18:47.651Z"
+      "id": 1,
+      "dataCriacao": "2022-05-22",
+      "dataEdicao": "2022-09-25T01:17:59.129Z"
     }
   ]
 }

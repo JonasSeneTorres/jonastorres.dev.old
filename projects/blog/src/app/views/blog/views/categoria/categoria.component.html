@@ -2,15 +2,9 @@
 
 <ng-container *ngFor="let item of dadosArtigo">
   <div class="categoria__artigos-box">
-    <!-- <h2 *ngIf="item.subcategoria !== 'Sem categoria'">{{ item.subcategoria }}</h2>
-    <h2 *ngIf="item.subcategoria === 'Sem categoria'">Fundamentos</h2> -->
-    <!-- <ng-container *ngFor="let artigo of item.artigos; let i = index"> -->
-      <!-- [class.semCategoria]="item.subcategoria === 'Sem categoria' && i === 0" -->
-      <!-- {{ item }} -->
       <jt-box-artigo
         [artigo]="item"
         >
       </jt-box-artigo>
-    <!-- </ng-container> -->
   </div>
 </ng-container>

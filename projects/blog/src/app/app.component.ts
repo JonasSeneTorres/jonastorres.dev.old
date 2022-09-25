@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item-config';
 import { Subject, takeUntil } from 'rxjs';
 
 import { CategoriasService } from './services/categorias/categorias.service';
+import { ToastService } from './services/toast/toast.service';
 
 @Component({
   selector: 'jt-root',
@@ -14,7 +16,17 @@ export class AppComponent implements OnInit, OnDestroy {
 
   menu: NavibarItemConfig[] = [];
 
-  constructor(private categoriasService: CategoriasService) {}
+  constructor(
+    private _messageService: MessageService,
+    private categoriasService: CategoriasService,
+    private _toastService: ToastService
+    ) {
+      this._toastService.itensBuscados$.subscribe(
+        (dados: any) => {
+          this.exibirToast(dados.titulo, dados.mensagem, dados.icone);
+        }
+      );
+    }
 
   ngOnInit(): void {
     this.categoriasService
@@ -156,5 +168,25 @@ export class AppComponent implements OnInit, OnDestroy {
     };
 
     return itensValidos;
+  }
+
+  protected exclusaoMensagemSucesso(texto: string = '', edicao: boolean = false) {
+    let severidade = 'success';
+    let titulo = 'Sucesso';
+    let detalhes = `${texto} foi ${edicao ? 'editado' : 'cadastrado'} com sucesso`;
+
+    this._messageService.add({
+      severity: severidade,
+      summary: titulo,
+      detail: detalhes,
+    });
+  }
+
+  private exibirToast(titulo: string, mensagem: string, icone: string = 'success') {
+    this._messageService.add({
+      severity: icone,
+      summary: titulo,
+      detail: mensagem,
+    });
   }
 }

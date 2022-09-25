@@ -94,20 +94,17 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
     }
 
     const artigo: ArtigoModel = {
-      // id?: Guid,
       url: this.form.get('url')!.value,
       titulo: this.form.get('titulo')!.value,
       subtitulo: this.form.get('subtitulo')!.value,
       metatags: this.form.get('metatags')!.value,
       subcategoriaId: this.form.get('subcategoriaId')!.value,
-      // dataCriacao: this.form.get('classificacaoId')!.value,
-      // dataEdicao?: Date,
       dataAgendamento:  this.form.get('dataAgendamento')!.value,
       tempoLeitura: +this.form.get('tempoLeitura')!.value ?? 0,
       conteudoArtigo: this.form.get('conteudoArtigo')!.value,
       autorId: this.form.get('autorId')!.value,
       serieId:  this.form.get('serieId')!.value,
-    }// this.form.value;
+    };
 
     this.setarTipoOperacao(artigo).subscribe({
       next: () => {
@@ -278,7 +275,6 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
       .get('classificacaoId')!
       .valueChanges.pipe(takeUntil(this._destroy$))
       .subscribe((valorClassificacao: any) => {
-        // console.log('classificacao alterada', valorClassificacao);
         this.popularComboCategoria();
       });
 
@@ -286,7 +282,6 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
       .get('categoriaId')!
       .valueChanges.pipe(takeUntil(this._destroy$))
       .subscribe((valorCategoria) => {
-        // console.log('categoria alterada', valorCategoria);
         this.popularComboSubcategoria();
       });
   }
@@ -296,8 +291,6 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
       .get('subcategoriaId')!
       .valueChanges.pipe(takeUntil(this._destroy$))
       .subscribe((formValores: any) => {
-        console.log('form alterada', formValores);
-        // this.popularComboCategoria();
         const classificacao = this.form.get('classificacaoId')!.value;
         const categoria = this.form.get('categoriaId')!.value;
         const subcategoria = this.form.get('subcategoriaId')!.value;
@@ -310,8 +303,6 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
           });
         }
       });
-
-
   }
 
   private createForm(dado?: ArtigoModel) {
@@ -379,9 +370,6 @@ export class ArtigoEdicaoComponent implements OnInit, OnDestroy {
       this.form.patchValue({
         subcategoriaId: subcategoriaId,
       });
-
-      // this.observarAlteracoesCategoria();
-      // this.observarAlteracoesUrl();
     });
   }
 

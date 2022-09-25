@@ -82,7 +82,6 @@
         <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
         Adicionar novo autor
       </button>
-      <!-- <button (click)="abrirModalAutor()">adicionar novo autor</button> -->
     </div>
 
     <div>
@@ -146,7 +145,6 @@
         </ng-container>
       </select>
     </div>
-    <!-- {{ form.get('categoriaId')!.value | json }}] -->
 
     <div class="artigo-edicao__grid-classicicacao4">
       <button
@@ -158,9 +156,6 @@
         <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
         Adicionar nova classificação
       </button>
-      <!-- <button (click)="abrirModalClassificacao()">
-        adicionar nova classificação
-      </button> -->
     </div>
   </div>
 
@@ -169,7 +164,6 @@
     <select formControlName="serieId" formControlName="classificacaoId">
       <option value="">Selecione...</option>
     </select>
-    <!-- <button (click)="abrirModalSerie()">Acidionar nova série</button> -->
     <button
     type="button"
     tabindex="0"
@@ -202,8 +196,6 @@
       </p-tabView>
     </fieldset>
   </div>
-  <!-- <textarea formControlName="conteudoArtigo"  [value]="form.get('conteudoArtigo')!.value" (input)="equalizarTexto($event)">
-  </textarea> -->
   <p class="artigo-edicao__container-salvar">
     <button class="botao confirmDialog__no" type="button" [routerLink]="['/admin/artigos']">
       <span class="icone_botao fa-solid fa-xmark" aria-hidden="true"></span>
@@ -213,14 +205,8 @@
       <span class="icone_botao fa-solid fa-check" aria-hidden="true"></span>
       Salvar
     </button>
-    <!-- <button type="button">Cancelar</button>
-    <button type="submit" [disabled]="form.invalid">Enviar</button> -->
   </p>
 </form>
-
-<!-- <pre>
-  {{ form.value | json }}
-</pre> -->
 
 <p-dialog
   header="Adicionar {{ tipoDoModal }}"

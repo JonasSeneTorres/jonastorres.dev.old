@@ -26,30 +26,6 @@
         <p class="artigo-box__ghost-paragrafo loading"></p>
         <p class="artigo-box__ghost-paragrafo loading"></p>
       </div>
-      <!-- <section class="artigo-box__box-dados"> -->
-      <!-- <p class="artigo-box__dados">
-          <span class="fa-solid fa-calendar-days"></span>
-          {{ artigo?.dataCriacao | date: "longDate":"":"pt-BR"  }}
-          <span class="pipe">|</span>
-          <ng-container *ngIf="artigo?.dataEdicao">
-            <span class="fa-solid fa-pen-to-square"></span>
-            Ultima edição em: {{ artigo?.dataEdicao | date: "longDate":"":"pt-BR"  }}
-            <span class="pipe">|</span>
-          </ng-container>
-          <span class="fa-solid fa-stopwatch"></span>
-          {{ artigo?.tempoLeitura }} min de leitura
-        </p> -->
-      <!-- <pre>{{ artigo.conteudoArtigo | geraspoiler }}</pre> -->
-      <!-- <p class="artigo-box__spoiler">
-          {{ artigo?.conteudoArtigo | geraspoiler }}
-        </p>
-        <p class="artigo-box__box-leia-mais">
-          <a class="artigo-box__leia-mais">
-            Leia mais
-            <span class="fa-solid fa-angles-right"></span>
-          </a>
-        </p>
-      </section> -->
     </div>
     <ng-container *ngIf="dadosCarregados">
       <section class="artigo-box__box-titulo">
@@ -74,7 +50,6 @@
           <span class="fa-solid fa-stopwatch"></span>
           {{ artigo?.tempoLeitura }} min de leitura
         </p>
-        <!-- <pre>{{ artigo.conteudoArtigo | geraspoiler }}</pre> -->
         <p class="artigo-box__spoiler">
           {{ artigo?.conteudoArtigo | geraspoiler }}
         </p>

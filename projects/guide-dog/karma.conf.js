@@ -32,6 +32,11 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
+    preprocessors: {
+      // source files, that you wanna generate coverage for
+      // do not include tests or libraries
+      'src/**/!(spec|mock)/*.js': ['coverage']
+    },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,

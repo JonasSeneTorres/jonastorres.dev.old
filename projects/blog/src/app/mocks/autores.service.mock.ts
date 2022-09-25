@@ -10,7 +10,7 @@ export class AutoresServiceMock implements ICrudService {
     return this._itensBuscados$.asObservable();
   }
 
-  obter(_codigo: number): Observable<any> {
+  obter(_codigo: string): Observable<any> {
     if(!this.erro) {
       return of({});
     }
@@ -74,7 +74,7 @@ export class AutoresServiceMock implements ICrudService {
     return throwError(() => new Error('teste de erro'));
   }
 
-  apagar(_codigo: number): Observable<any> {
+  apagar(_codigo: string): Observable<any> {
     if(!this.erro) {
       return of({});
     }

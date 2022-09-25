@@ -1,3 +1,61 @@
 <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
 <h1 *ngIf="id.length === 0">Novo categoria</h1>
 <h1 *ngIf="id.length > 0">Edição de categorias</h1>
+
+<form
+  class="artigo-edicao"
+  [formGroup]="form"
+  (submit)="submit()"
+  autocomplete="off"
+>
+<p>
+  <label for="classificacao">Classificação</label>
+  <input type="text" id="classificacao" value="" pInputText>
+</p>
+<fieldset>
+  <legend>categorias</legend>
+  <div>
+    <ul>
+      <li>
+        <label for="categoria">Nome da categoria</label>
+        <input type="text" id="categoria" pInputText>
+        <label for="ativo">
+          Ativo
+          <p-inputSwitch id="ativo"></p-inputSwitch>
+        </label>
+        <button>Excluir</button>
+        <fieldset>
+          <legend>Subcategorias</legend>
+          <ul>
+            <li>
+              <label for="categoria">Nome da categoria</label>
+              <input type="text" id="categoria" pInputText>
+              <label for="ativo">
+                Ativo
+                <p-inputSwitch id="ativo"></p-inputSwitch>
+              </label>
+              <button>Excluir</button>
+              <button>Adicionar</button>
+            </li>
+          </ul>
+        </fieldset>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <button>Adicionar nova categoria</button>
+  </div>
+</fieldset>
+
+
+<p class="artigo-edicao__container-salvar">
+  <button class="botao confirmDialog__no" type="button" [routerLink]="['/admin/artigos']">
+    <span class="icone_botao fa-solid fa-xmark" aria-hidden="true"></span>
+    Cancelar
+  </button>
+  <button class="botao confirmDialog__yes" type="submit" [disabled]="form.invalid">
+    <span class="icone_botao fa-solid fa-check" aria-hidden="true"></span>
+    Salvar
+  </button>
+</p>
+</form>

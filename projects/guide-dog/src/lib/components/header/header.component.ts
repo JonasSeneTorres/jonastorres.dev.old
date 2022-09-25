@@ -1,18 +1,8 @@
-import {
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  HostListener,
-  Input,
-  NgZone,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
-import { Observer, Subject, takeUntil, throttleTime } from 'rxjs';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Input, OnDestroy } from '@angular/core';
+import { SystemInformationService } from 'projects/guide-dog/src/lib/services/system-information/system-information.service';
+import { Subject, takeUntil, throttleTime } from 'rxjs';
 
 import { NavibarItemConfig } from '../../types/navibar-item-config';
-import { SystemInformationService } from 'projects/guide-dog/src/lib/services/system-information/system-information.service';
 
 @Component({
   selector: 'gd-header',
@@ -57,7 +47,6 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
       .pipe(throttleTime(1000))
       .pipe(takeUntil(this._destroy$))
       .subscribe((innerWidth) => {
-        // console.log('innerWidth:', innerWidth);
         this.navboxWithAcceptableSize = this.checkAcceptableSizeNavbox();
         this.changeDetectorRef.detectChanges();
       });

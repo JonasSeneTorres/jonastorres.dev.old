@@ -1,5 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { SharedModule } from 'projects/blog/src/app/components/shared.module';
 import { ActivatedRouteMock } from 'projects/blog/src/app/mocks/activated-route.mock';
 
@@ -12,7 +14,7 @@ describe('ModalAutorComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ModalAutorComponent ],
-      imports: [ SharedModule ],
+      imports: [ SharedModule, HttpClientModule, RouterTestingModule ],
       providers: [
         {provide: ActivatedRoute, useClass: ActivatedRouteMock},
       ]

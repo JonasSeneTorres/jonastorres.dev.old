@@ -28,10 +28,8 @@
   position: relative;
   box-sizing: border-box;
   height: calc(100% + 1rem);
-  // padding-bottom: 2.5rem;
 
   @include media-up($gd-media-tablet-maxwidth) {
-
     &::after {
       background-image: url("/assets/img/backgrounds/circuit-board-black.svg");
         opacity: 0.07;

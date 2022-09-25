@@ -115,7 +115,11 @@
               "projects/blog/src/styles/styles.scss",
               "projects/guide-dog/src/lib/styles/gd.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "codeCoverageExclude": [
+              "/**/*mock*.ts",
+              "/**/*enum*.ts"
+            ]
           }
         },
         "lint": {
@@ -155,7 +159,10 @@
           "options": {
             "main": "projects/guide-dog/src/test.ts",
             "tsConfig": "projects/guide-dog/tsconfig.spec.json",
-            "karmaConfig": "projects/guide-dog/karma.conf.js"
+            "karmaConfig": "projects/guide-dog/karma.conf.js",
+            "codeCoverageExclude": [
+              "/**/*mock*.ts"
+            ]
           }
         },
         "lint": {

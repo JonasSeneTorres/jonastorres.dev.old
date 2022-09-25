@@ -1,6 +1,7 @@
 import { Component, Injector, OnDestroy, Type, ViewChild } from '@angular/core';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { ConfirmationService } from 'primeng/api';
 import { Table } from 'primeng/table';
+import { ToastService } from 'projects/blog/src/app/services/toast/toast.service';
 import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
 import { Observable, Subject, takeUntil } from 'rxjs';
 
@@ -15,15 +16,15 @@ export abstract class BaseAdminMasterComponent implements OnDestroy {
   filtravelPelosCampos: string[];
   breadcrumbsItem: BreadcrumbsItem[];
   protected confirmationService: ConfirmationService;
-  protected messageService: MessageService;
+  protected _toastService: ToastService;
 
   constructor(protected injector: Injector) {
     this.confirmationService = injector.get<ConfirmationService>(
       ConfirmationService as Type<ConfirmationService>
     );
-    this.messageService = injector.get<MessageService>(
-      MessageService as Type<MessageService>
-    );
+    this._toastService = injector.get<ToastService>(
+      ToastService as Type<ToastService>
+      );
     this.filtravelPelosCampos = [];
     this.breadcrumbsItem = [];
   }
@@ -62,7 +63,7 @@ export abstract class BaseAdminMasterComponent implements OnDestroy {
 
   excluir(registro: any, texto: string = '') {
     this.confirmationService.confirm({
-      message: `Você deseja excluir o registro <strong>"${texto}"</strong>.
+      message: `Você deseja excluir <strong>"${texto}"</strong>.
       <br aria-hidden='true'><br aria-hidden='true'>
       <strong>Essa ação é definitiva e não pode ser revertida.</strong>
       <br aria-hidden='true'><br aria-hidden='true'>
@@ -94,15 +95,11 @@ export abstract class BaseAdminMasterComponent implements OnDestroy {
   protected abstract confirmarExclusao(registro: any): Observable<any>;
 
   protected exclusaoMensagemSucesso(_registro: any, texto: string = '') {
-    let severidade = 'success';
+    let icone = 'success';
     let titulo = 'Sucesso';
-    let detalhes = `O registro ${texto} foi excluido com sucesso`;
+    let mensagem = `"${texto}" foi excluido com sucesso`;
 
-    this.messageService.add({
-      severity: severidade,
-      summary: titulo,
-      detail: detalhes,
-    });
+    this.ativarToast(titulo, mensagem, icone);
     this.listarItens();
   }
 
@@ -111,17 +108,17 @@ export abstract class BaseAdminMasterComponent implements OnDestroy {
     texto: string = '',
     errorMessage: string = ''
   ) {
-    let severidade = 'error';
+    let icone = 'error';
     let titulo = 'Erro';
-    let detalhes =
+    let mensagem =
       errorMessage.length === 0
-        ? `Ocorreu um erro ao tentar excluir o registro ${texto}.\nTente novamente`
+        ? `Ocorreu um erro ao tentar excluir o registro "${texto}".\nTente novamente`
         : errorMessage;
 
-    this.messageService.add({
-      severity: severidade,
-      summary: titulo,
-      detail: detalhes,
-    });
+    this.ativarToast(titulo, mensagem, icone);
+  }
+
+  protected ativarToast(titulo: string, mensagem: string, icone: string) {
+    this._toastService.ativarToast(titulo, mensagem, icone);
   }
 }
