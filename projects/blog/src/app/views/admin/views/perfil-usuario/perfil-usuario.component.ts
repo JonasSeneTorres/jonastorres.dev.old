@@ -20,7 +20,7 @@ export class PerfilUsuarioComponent extends BaseAdminMasterComponent implements 
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
       JonastorresRoutes.ADMIN.toBreadcrumb(),
-      { label: 'perfil de usuario' },
+      { label: 'Perfil de usuario' },
     ];
     this.dados = [];
   }
