@@ -7,8 +7,8 @@ import { ICrudService } from '../../interfaces/icrud-service';
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriasService implements ICrudService {
-  private baseURL: string = 'http://localhost:3000/categorias';
+export class PerfilUsuarioService implements ICrudService {
+  private baseURL: string = 'http://localhost:3000/perfil-de-usuario';
 
   constructor(private httpClient: HttpClient) {}
 

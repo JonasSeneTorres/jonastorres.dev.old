@@ -6,10 +6,14 @@ import { ArtigoEdicaoComponent } from './views/artigo/artigo-edicao/artigo-edica
 import { ArtigoComponent } from './views/artigo/artigo.component';
 import { AutorEdicaoComponent } from './views/autor/autor-edicao/autor-edicao.component';
 import { AutorComponent } from './views/autor/autor.component';
+import { CategoriaEdicaoComponent } from './views/categoria/categoria-edicao/categoria-edicao.component';
 import { CategoriaComponent } from './views/categoria/categoria.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { PerfilUsuarioEdicaoComponent } from './views/perfil-usuario/perfil-usuario-edicao/perfil-usuario-edicao.component';
 import { PerfilUsuarioComponent } from './views/perfil-usuario/perfil-usuario.component';
+import { RedesSociaisEdicaoComponent } from './views/redes-sociais/redes-sociais-edicao/redes-sociais-edicao.component';
 import { RedesSociaisComponent } from './views/redes-sociais/redes-sociais.component';
+import { UsuariosEdicaoComponent } from './views/usuarios/usuarios-edicao/usuarios-edicao.component';
 import { UsuariosComponent } from './views/usuarios/usuarios.component';
 
 const routes: Routes = [
@@ -26,12 +30,17 @@ const routes: Routes = [
       { path: 'autores/novo', component: AutorEdicaoComponent },
       { path: 'autores/editar/:id', component: AutorEdicaoComponent },
       { path: 'categorias', component: CategoriaComponent },
+      { path: 'categorias/novo', component: CategoriaEdicaoComponent },
+      { path: 'categorias/editar/:id', component: CategoriaEdicaoComponent },
       { path: 'perfil-usuarios', component: PerfilUsuarioComponent },
-      {
-        path: 'redes-sociais',
-        component: RedesSociaisComponent,
-      },
+      { path: 'perfil-usuarios/novo', component: PerfilUsuarioEdicaoComponent },
+      { path: 'perfil-usuarios/editar/:id', component: PerfilUsuarioEdicaoComponent },
+      { path: 'redes-sociais', component: RedesSociaisComponent },
+      { path: 'redes-sociais/novo', component: RedesSociaisEdicaoComponent },
+      { path: 'redes-sociais/editar/:id', component: RedesSociaisEdicaoComponent },
       { path: 'usuarios', component: UsuariosComponent },
+      { path: 'usuarios/novo', component: UsuariosEdicaoComponent },
+      { path: 'usuarios/editar/:id', component: UsuariosEdicaoComponent },
       { path: '**', component: DashboardComponent},
     ],
   },

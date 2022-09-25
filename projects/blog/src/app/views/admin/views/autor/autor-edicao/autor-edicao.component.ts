@@ -66,7 +66,7 @@ export class AutorEdicaoComponent implements OnInit, OnDestroy {
     this.form = new FormGroup({
       id: new FormControl(''),
       nome: new FormControl('', Validators.required),
-      cargo: new FormControl('', Validators.required),
+      cargo: new FormControl(''),
       descricao: new FormControl('', Validators.required),
       urlImagem: new FormControl(''),
       dataCriacao: new FormControl(''),
@@ -106,7 +106,7 @@ export class AutorEdicaoComponent implements OnInit, OnDestroy {
 
     this.setarTipoOperacao(autor).subscribe({
       next: () => {
-        this.router.navigate([JonastorresRoutes.ADMIN_AUTOR.router]);
+        this.router.navigate(JonastorresRoutes.ADMIN_AUTOR.router as any);
       },
       error: (error: Error) => {
         console.error(error);
@@ -116,6 +116,8 @@ export class AutorEdicaoComponent implements OnInit, OnDestroy {
 
   private setarTipoOperacao(autor: any) {
     if (this.ehEdicao) {
+      autor.id = this.id;
+      autor.dataCriacao = this.form.get('dataCriacao')!.value,
       autor.dataEdicao = new Date();
       return this.autoresService.atualizar(autor);
     }

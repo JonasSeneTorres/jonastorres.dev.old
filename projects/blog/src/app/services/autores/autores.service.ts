@@ -25,7 +25,7 @@ export class AutoresService implements ICrudService {
   }
 
   atualizar(value: any): Observable<any> {
-    return this.httpClient.put(`${this.baseURL}/value.id`, value);
+    return this.httpClient.put(`${this.baseURL}/${value.id}`, value);
   }
 
   apagar(codigo: string): Observable<any> {
