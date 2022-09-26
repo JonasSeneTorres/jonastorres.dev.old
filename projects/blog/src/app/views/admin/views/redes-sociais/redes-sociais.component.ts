@@ -1,9 +1,9 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
-import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
 import { Observable, takeUntil } from 'rxjs';
 
 import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master.component';
+import { RedesSociaisService } from './../../../../services/redes-sociais/redes-sociais.service';
 
 @Component({
   templateUrl: './redes-sociais.component.html',
@@ -12,7 +12,7 @@ import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master
 export class RedesSociaisComponent extends BaseAdminMasterComponent implements OnInit {
   constructor(
     protected override injector: Injector,
-    private artigosService: ArtigosService
+    private redesSociaisService: RedesSociaisService
     ) {
     super(injector);
     this.filtravelPelosCampos = ['titulo', 'categoriaId'];
@@ -28,10 +28,11 @@ export class RedesSociaisComponent extends BaseAdminMasterComponent implements O
   }
 
   protected listarItens() {
-    this.artigosService.listar()
+    this.redesSociaisService.listar()
     .pipe(takeUntil(this._destroy$))
     .subscribe({
       next: (sucesso) => {
+        console.log(sucesso)
         this.dados = sucesso;
       },
       error: () => {
@@ -41,6 +42,6 @@ export class RedesSociaisComponent extends BaseAdminMasterComponent implements O
   }
 
   protected confirmarExclusao(registro: any): Observable<any> {
-    return this.artigosService.apagar(registro.id);
+    return this.redesSociaisService.apagar(registro.id);
   }
 }

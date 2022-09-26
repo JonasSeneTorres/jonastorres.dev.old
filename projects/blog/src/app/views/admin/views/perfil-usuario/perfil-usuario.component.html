@@ -14,7 +14,7 @@
   #dt
 >
   <ng-template pTemplate="caption">
-    <div class="table-busca__container-busca">
+    <!-- <div class="table-busca__container-busca">
       <span class="p-float-label p-input-icon-left">
         <i class="pi pi-search"></i>
         <input
@@ -25,9 +25,9 @@
           (input)="applyFilterGlobal($event, 'contains')"
         />
         <label for="float-input">Filtrar</label>
-      </span>
+      </span> -->
 
-      <button
+      <!-- <button
         type="button"
         tabindex="0"
         class="table-busca__botao-novo"
@@ -35,42 +35,42 @@
       >
         <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
         Novo
-      </button>
-    </div>
+      </button> -->
+    <!-- </div> -->
   </ng-template>
   <ng-template pTemplate="header">
     <tr>
       <th pSortableColumn="titulo">
-        Nome <p-sortIcon field="titulo"></p-sortIcon>
+        Nome do perfil <p-sortIcon field="titulo"></p-sortIcon>
       </th>
-      <th pSortableColumn="categoriaId">
+      <!-- <th pSortableColumn="categoriaId">
         Categoria <p-sortIcon field="categoriaId"></p-sortIcon>
       </th>
       <th pSortableColumn="dataCriacao">
         Criado em: <p-sortIcon field="dataCriacao"></p-sortIcon>
-      </th>
-      <th class="table-busca__coluna-acoes"></th>
+      </th> -->
+      <!-- <th class="table-busca__coluna-acoes"></th> -->
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-dados>
     <tr>
       <td>
-        {{ dados.titulo }}
+        {{ dados.nome }}
       </td>
-      <td>
+      <!-- <td>
         {{ dados.categoriaId }}
       </td>
       <td>
         {{ dados.dataCriacao | date:'shortDate' }}
-      </td>
-      <td class="table-busca__coluna-acoes">
+      </td> -->
+      <!-- <td class="table-busca__coluna-acoes">
         <div class="table-busca__grid-botao">
           <button
             type="button"
             class="table-busca__botao-editar"
             alt="editar"
             aria-label="editar"
-            [routerLink]="['/admin/perfil-usuario/editar']"
+            [routerLink]="['/admin/perfil-usuario/editar', dados?.id]"
           >
             <span class="fa-solid fa-pen-to-square" aria-hidden="true"></span>
           </button>
@@ -85,7 +85,7 @@
             <span class="fa-solid fa-trash-can" aria-hidden="true"></span>
           </button>
         </div>
-      </td>
+      </td> -->
     </tr>
   </ng-template>
   <ng-template pTemplate="emptymessage">
@@ -95,7 +95,7 @@
   </ng-template>
 </p-table>
 
-<p-confirmDialog #cd [style]="{ width: '50vw' }" >
+<!-- <p-confirmDialog #cd [style]="{ width: '50vw' }" >
   <ng-template pTemplate="header">
     <h1>Excluir Registro</h1>
   </ng-template>
@@ -109,5 +109,5 @@
       Sim
     </button>
   </ng-template>
-</p-confirmDialog>
+</p-confirmDialog> -->
 

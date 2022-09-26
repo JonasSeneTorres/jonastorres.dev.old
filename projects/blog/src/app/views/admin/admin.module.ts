@@ -34,7 +34,6 @@ import { AutorComponent } from './views/autor/autor.component';
 import { CategoriaEdicaoComponent } from './views/categoria/categoria-edicao/categoria-edicao.component';
 import { CategoriaComponent } from './views/categoria/categoria.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { PerfilUsuarioEdicaoComponent } from './views/perfil-usuario/perfil-usuario-edicao/perfil-usuario-edicao.component';
 import { PerfilUsuarioComponent } from './views/perfil-usuario/perfil-usuario.component';
 import { RedesSociaisEdicaoComponent } from './views/redes-sociais/redes-sociais-edicao/redes-sociais-edicao.component';
 import { RedesSociaisComponent } from './views/redes-sociais/redes-sociais.component';
@@ -68,7 +67,6 @@ import { UsuariosComponent } from './views/usuarios/usuarios.component';
     ArtigoEdicaoComponent,
     AutorEdicaoComponent,
     CategoriaEdicaoComponent,
-    PerfilUsuarioEdicaoComponent,
     RedesSociaisEdicaoComponent,
     UsuariosEdicaoComponent,
     ModalAutorComponent,

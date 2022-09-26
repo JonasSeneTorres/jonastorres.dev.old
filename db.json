@@ -253,5 +253,54 @@
       "dataCriacao": "2022-05-22",
       "dataEdicao": "2022-09-25T01:17:59.129Z"
     }
+  ],
+  "perfil-de-usuario": [
+    {
+      "id": 1,
+      "nome": "Leitura",
+      "ativo": true,
+      "dataCriacao": "2022-05-22",
+      "dataEdicao": "2022-09-25T01:17:59.129Z"
+    },
+    {
+      "id": 2,
+      "nome": "Autor",
+      "ativo": true,
+      "dataCriacao": "2022-05-22",
+      "dataEdicao": "2022-09-25T01:17:59.129Z"
+    },
+    {
+      "id": 3,
+      "nome": "Admin",
+      "ativo": true,
+      "dataCriacao": "2022-05-22",
+      "dataEdicao": "2022-09-25T01:17:59.129Z"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Jonas Sene Torres",
+      "email": "jonas.sene.torres@gmail.com",
+      "senha": "teste@1234",
+      "autorId": 1,
+      "perfilUsuarioId": "1",
+      "quantidadeAdvertencia": 0,
+      "suspensoAteData": "2022-05-22",
+      "observacao": "",
+      "ativo": true,
+      "dataCriacao": "2022-05-22",
+      "dataEdicao": "2022-09-25T01:17:59.129Z",
+    }
+  ],
+  "redes-sociais": [
+    {
+      "id": 1,
+      "nome": "Facebook",
+      "url": "https://web.facebook.com/jonas.s.torres",
+      "ativo": true,
+      "dataCriacao": "2022-05-22",
+      "dataEdicao": "2022-09-25T01:17:59.129Z"
+    }
   ]
 }

@@ -1,9 +1,9 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
-import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
 import { Observable } from 'rxjs';
 
 import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master.component';
+import { UsuariosService } from './../../../../services/usuarios/usuarios.service';
 
 @Component({
   templateUrl: './usuarios.component.html',
@@ -12,7 +12,7 @@ import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master
 export class UsuariosComponent extends BaseAdminMasterComponent implements OnInit {
   constructor(
     protected override injector: Injector,
-    private artigosService: ArtigosService
+    private usuariosService: UsuariosService
     ) {
     super(injector);
     this.filtravelPelosCampos = ['titulo', 'categoriaId'];
@@ -28,7 +28,7 @@ export class UsuariosComponent extends BaseAdminMasterComponent implements OnIni
   }
 
   protected listarItens() {
-    this.artigosService.listar().subscribe({
+    this.usuariosService.listar().subscribe({
       next: (sucesso) => {
         this.dados = sucesso;
       },
@@ -39,6 +39,6 @@ export class UsuariosComponent extends BaseAdminMasterComponent implements OnIni
   }
 
   protected confirmarExclusao(registro: any): Observable<any> {
-    return this.artigosService.apagar(registro.id);
+    return this.usuariosService.apagar(registro.id);
   }
 }

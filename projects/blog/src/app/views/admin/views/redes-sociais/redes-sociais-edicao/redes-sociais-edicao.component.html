@@ -1,1 +1,25 @@
-<p>redes-sociais-edicao works!</p>
+<gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
+<h1 *ngIf="id.length === 0">Nova rede social</h1>
+<h1 *ngIf="id.length > 0">Edição de rede social</h1>
+
+
+<form
+  class="artigo-edicao"
+  [formGroup]="form"
+  (submit)="submit()"
+  autocomplete="off"
+>
+
+
+
+<p class="redes-sociais-edicao__container-salvar">
+  <button class="botao confirmDialog__no" type="button" [routerLink]="['/admin/redes-sociais']">
+    <span class="icone_botao fa-solid fa-xmark" aria-hidden="true"></span>
+    Cancelar
+  </button>
+  <button class="botao confirmDialog__yes" type="submit" [disabled]="form.invalid">
+    <span class="icone_botao fa-solid fa-check" aria-hidden="true"></span>
+    Salvar
+  </button>
+</p>
+</form>

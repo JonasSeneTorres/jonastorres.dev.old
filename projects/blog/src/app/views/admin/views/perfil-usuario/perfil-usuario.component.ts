@@ -1,9 +1,9 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
-import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
 import { Observable, takeUntil } from 'rxjs';
 
 import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master.component';
+import { PerfilUsuarioService } from './../../../../services/perfil-usuario/perfil-usuario.service';
 
 @Component({
   selector: 'jt-perfil-usuario',
@@ -13,7 +13,7 @@ import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master
 export class PerfilUsuarioComponent extends BaseAdminMasterComponent implements OnInit {
   constructor(
     protected override injector: Injector,
-    private artigosService: ArtigosService
+    private perfilUsuarioService: PerfilUsuarioService
     ) {
     super(injector);
     this.filtravelPelosCampos = ['titulo', 'categoriaId'];
@@ -30,10 +30,11 @@ export class PerfilUsuarioComponent extends BaseAdminMasterComponent implements 
   }
 
   protected listarItens() {
-    this.artigosService.listar()
+    this.perfilUsuarioService.listar()
     .pipe(takeUntil(this._destroy$))
     .subscribe({
       next: (sucesso: any) => {
+        console.log(sucesso)
         this.dados = sucesso;
       },
       error: () => {
@@ -43,6 +44,6 @@ export class PerfilUsuarioComponent extends BaseAdminMasterComponent implements 
   }
 
   protected confirmarExclusao(registro: any): Observable<any> {
-    return this.artigosService.apagar(registro.id);
+    return this.perfilUsuarioService.apagar(registro.id);
   }
 }

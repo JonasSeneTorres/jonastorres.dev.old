@@ -44,7 +44,7 @@
         Nome <p-sortIcon field="titulo"></p-sortIcon>
       </th>
       <th pSortableColumn="categoriaId">
-        Categoria <p-sortIcon field="categoriaId"></p-sortIcon>
+        URL <p-sortIcon field="categoriaId"></p-sortIcon>
       </th>
       <th pSortableColumn="dataCriacao">
         Criado em: <p-sortIcon field="dataCriacao"></p-sortIcon>
@@ -55,10 +55,10 @@
   <ng-template pTemplate="body" let-dados>
     <tr>
       <td>
-        {{ dados.titulo }}
+        {{ dados.nome }}
       </td>
       <td>
-        {{ dados.categoriaId }}
+        {{ dados.url }}
       </td>
       <td>
         {{ dados.dataCriacao | date:'shortDate' }}
@@ -70,7 +70,7 @@
             class="table-busca__botao-editar"
             alt="editar"
             aria-label="editar"
-            [routerLink]="['/admin/redes-sociais/editar']"
+            [routerLink]="['/admin/redes-sociais/editar', dados?.id]"
           >
             <span class="fa-solid fa-pen-to-square" aria-hidden="true"></span>
           </button>

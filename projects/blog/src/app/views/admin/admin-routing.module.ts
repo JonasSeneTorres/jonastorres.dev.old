@@ -9,7 +9,6 @@ import { AutorComponent } from './views/autor/autor.component';
 import { CategoriaEdicaoComponent } from './views/categoria/categoria-edicao/categoria-edicao.component';
 import { CategoriaComponent } from './views/categoria/categoria.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { PerfilUsuarioEdicaoComponent } from './views/perfil-usuario/perfil-usuario-edicao/perfil-usuario-edicao.component';
 import { PerfilUsuarioComponent } from './views/perfil-usuario/perfil-usuario.component';
 import { RedesSociaisEdicaoComponent } from './views/redes-sociais/redes-sociais-edicao/redes-sociais-edicao.component';
 import { RedesSociaisComponent } from './views/redes-sociais/redes-sociais.component';
@@ -33,8 +32,6 @@ const routes: Routes = [
       { path: 'categorias/novo', component: CategoriaEdicaoComponent },
       { path: 'categorias/editar/:id', component: CategoriaEdicaoComponent },
       { path: 'perfil-usuario', component: PerfilUsuarioComponent },
-      { path: 'perfil-usuario/novo', component: PerfilUsuarioEdicaoComponent },
-      { path: 'perfil-usuario/editar/:id', component: PerfilUsuarioEdicaoComponent },
       { path: 'redes-sociais', component: RedesSociaisComponent },
       { path: 'redes-sociais/novo', component: RedesSociaisEdicaoComponent },
       { path: 'redes-sociais/editar/:id', component: RedesSociaisEdicaoComponent },
