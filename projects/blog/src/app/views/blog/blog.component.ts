@@ -1,11 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subject, forkJoin, takeUntil } from 'rxjs';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { forkJoin, Observable, Subject, takeUntil } from 'rxjs';
 
-import { ArtigosService } from './../../services/artigos/artigos.service';
 import { BlogService } from '../../services/blog/blog.service';
+import { ArtigosService } from './../../services/artigos/artigos.service';
 import { CategoriasService } from './../../services/categorias/categorias.service';
 import { JumbotronService } from './../../services/jumbotron/jumbotron.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'jt-blog',
@@ -24,7 +24,8 @@ export class BlogComponent implements OnInit, OnDestroy {
     private _categoriasService: CategoriasService,
     private _blogService: BlogService,
     private _jumbotronService: JumbotronService,
-    private _router: Router
+    private _router: Router,
+    private _changeDetectorRef: ChangeDetectorRef
   ) {
     this.boxPrincipalTransparente = this._blogService.boxPrincipalTransparente;
   }
@@ -46,6 +47,17 @@ export class BlogComponent implements OnInit, OnDestroy {
         },
         error: () => {},
       });
+
+      this.boxPrincipalTransparente
+      .pipe(takeUntil(this._destroy$))
+      .subscribe(
+        () => {
+          this._changeDetectorRef.detectChanges();
+          // setTimeout(() => {
+
+          // }, 500);
+        }
+      );
   }
 
   ngOnDestroy() {

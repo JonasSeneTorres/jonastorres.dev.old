@@ -1,11 +1,63 @@
-@import '../../../../../../styles/styles.scss';
+@import "../../../../../../styles/styles.scss";
 
 .categoria-edicao {
-  &__container-salvar{
+  &__grid-categoria {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto auto;
+    column-gap: 1rem;
+
+    &-sub {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      column-gap: 1rem;
+    }
+  }
+
+  &__container-botoes {
+    align-self: end;
+    margin-bottom: 0.5rem;
+    width: 4.25rem;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+
+  &__label {
+    display: block;
+
+    &-ativo {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__botao1 {
+    margin-right: 0.5rem;
+  }
+
+  &__container-salvar {
     text-align: end;
+  }
+
+  &__grid-data {
+    display: flex;
+    column-gap: 1rem;
+    margin-top: 0.5rem;
   }
 }
 
-.botao{
+.botao {
   display: inline-block;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

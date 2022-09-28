@@ -57,7 +57,7 @@
       <td>
         <ng-container *ngFor="let categoria of dados.classificacao?.categorias">
           <div>
-            {{ categoria?.label }} <strong>({{ categoria?.ativo ? 'Ativo': 'Inativo' }})</strong>
+            {{ categoria?.labelCategoria }} <strong>({{ categoria?.ativoCategoria ? 'Ativo': 'Inativo' }})</strong>
           </div>
         </ng-container>
       </td>

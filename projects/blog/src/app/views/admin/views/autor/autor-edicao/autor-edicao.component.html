@@ -2,45 +2,84 @@
 <h1 *ngIf="id.length === 0">Novo Autor</h1>
 <h1 *ngIf="id.length > 0">Edição de autor</h1>
 
-<form [formGroup]="form" (submit)="submit()" autocomplete="off">
-  <div>
-    <input id="username1" type="text" readonly formControlName="urlImagem" />
-  </div>
-  <div>
-    <label for="username1" class="block">Foto</label>
-    <input type="file" />
-  </div>
-  <div class="field">
-    <label for="username1" class="block">Nome</label>
-    <input id="username1" type="text" formControlName="nome" />
-  </div>
-  <div class="field">
-    <label for="username1" class="block">Cargo</label>
-    <input id="username1" type="text" formControlName="cargo" />
-  </div>
-  <div class="field">
-    <label for="username1" class="block">Descricao</label>
-    <textarea formControlName="descricao"> </textarea>
-  </div>
+<form
+  class="autor-edicao"
+  [formGroup]="form"
+  (submit)="submit()"
+  autocomplete="off"
+>
+  <div class="autor-edicao__grid">
+    <div class="autor-edicao__container-img">
+      <img
+        src="/assets/img/fotos/autor/jonas.jpg"
+        class="autor-edicao__img"
+        alt=""
+      />
+      <input
+        id="username1"
+        class="autor-edicao__campo-urlfoto"
+        type="text"
+        readonly
+        formControlName="urlImagem"
+      />
+      <input type="file" />
+    </div>
+    <div class="autor-edicao__container-form">
+      <div class="field">
+        <label for="username1" class="autor-edicao__label">Nome</label>
+        <input
+          id="username1"
+          class="autor-edicao__campo"
+          type="text"
+          formControlName="nome"
+        />
+      </div>
+      <div class="field">
+        <label for="username1" class="autor-edicao__label">Cargo</label>
+        <input
+          id="username1"
+          class="autor-edicao__campo"
+          type="text"
+          formControlName="cargo"
+        />
+      </div>
+      <div class="field">
+        <label for="username1" class="autor-edicao__label">Descricao</label>
+        <textarea
+          class="autor-edicao__campo autor-edicao__campo-textarea"
+          formControlName="descricao"
+        >
+        </textarea>
+      </div>
 
-  <div>
-    <label for="data-criacao">Data de criação</label>
-    <input
-      type="date"
-      id="data-criacao"
-      formControlName="dataCriacao"
-      pInputText
-    />
-  </div>
+      <div class="autor-edicao__grid-data">
+        <div>
+          <label for="data-criacao" class="autor-edicao__label"
+            >Data de criação</label
+          >
+          <input
+            type="date"
+            id="data-criacao"
+            formControlName="dataCriacao"
+            pInputText
+            readonly
+          />
+        </div>
 
-  <div>
-    <label for="data-edicao">Data da ultima edição</label>
-    <input
-      type="date"
-      id="data-edicao"
-      formControlName="dataEdicao"
-      pInputText
-    />
+        <div>
+          <label for="data-edicao" class="autor-edicao__label"
+            >Data da ultima edição</label
+          >
+          <input
+            type="date"
+            id="data-edicao"
+            formControlName="dataEdicao"
+            pInputText
+            readonly
+          />
+        </div>
+      </div>
+    </div>
   </div>
 
   <p class="autor-edicao__container-salvar">

@@ -1,8 +1,52 @@
 @import '../../../../../../styles/styles.scss';
 
 .autor-edicao {
-  &__container-salvar{
+  &__grid {
+    column-gap: 2rem;
+    display: grid;
+    grid-template-areas: 'img form';
+    grid-template-columns: 20rem auto;
+
+    &-data {
+      column-gap: 2rem;
+      display: flex;
+    }
+  }
+
+  &__container{
+    &-form {
+      grid-area: form;
+    }
+
+    &-img {
+      grid-area: img;
+    }
+  }
+
+  &__campo {
+    margin-bottom: .5rem;
+    width: 100%;
+
+    &-textarea {
+      height: 8rem;
+      resize: none;
+    }
+
+    &-urlfoto {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    width: 10rem;
+  }
+
+  &__container-salvar {
     text-align: end;
+  }
+
+  &__label {
+    display: block;
   }
 }
 

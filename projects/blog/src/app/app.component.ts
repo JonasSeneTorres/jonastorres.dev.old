@@ -130,10 +130,10 @@ export class AppComponent implements OnInit, OnDestroy {
     itemFiltrado: any
   ): NavibarItemConfig | undefined {
     for (const item of itemFiltrado.classificacao.categorias) {
-      const labelItem = item.label;
-      const urlItem = `/blog/categorias/${item.url}`;
+      const labelItem = item.labelCategoria;
+      const urlItem = `/blog/categorias/${item.urlCategoria}`;
 
-      if (item.ativo) {
+      if (item.ativoCategoria) {
         return { label: labelItem, route: [urlItem] };
       }
     }
@@ -148,15 +148,15 @@ export class AppComponent implements OnInit, OnDestroy {
     let itemChildren: any[] = [];
 
     for (const categoria of itemFiltrado.classificacao.categorias) {
-      const categoriaLabel = categoria.label;
-      const categoriaRoute = `${itemRoute}/${categoria.url}`;
+      const categoriaLabel = categoria.labelCategoria;
+      const categoriaRoute = `${itemRoute}/${categoria.urlCategoria}`;
 
       const CategoriaValida = {
         label: categoriaLabel,
         route: [categoriaRoute],
       };
 
-      if (categoria.ativo) {
+      if (categoria.ativoCategoria) {
         itemChildren.push(CategoriaValida);
       }
     }

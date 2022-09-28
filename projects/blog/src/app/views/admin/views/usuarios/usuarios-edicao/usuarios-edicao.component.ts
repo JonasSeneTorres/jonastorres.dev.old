@@ -98,7 +98,4 @@ export class UsuariosEdicaoComponent
     });
   }
 }
-// export class UsuariosEdicaoComponent {
 
-//   constructor() { }
-// }

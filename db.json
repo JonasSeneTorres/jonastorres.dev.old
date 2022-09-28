@@ -83,6 +83,8 @@
   "categorias": [
     {
       "id": "zzzzz",
+      "dataCriacao": "2022-05-22",
+      "dataEdicao": "2022-09-25T01:17:59.129Z",
       "classificacao": {
         "id": "1",
         "label": "Não classificado",
@@ -90,28 +92,38 @@
         "ativo": true,
         "categorias": [
           {
-            "id": "1-1",
-            "label": "Arquitetura",
-            "url": "arquitetura",
-            "ativo": true,
+            "idCategoria": "1-1",
+            "labelCategoria": "Arquitetura",
+            "urlCategoria": "arquitetura",
+            "ativoCategoria": true,
             "subcategorias": [
               {
-                "id": "1-1-1",
-                "nome": "Fundamentos",
-                "ativo": true
+                "idSubcategoria": "1-1-1",
+                "labelSubcategoria": "Fundamentos",
+                "ativoSubcategoria": true
               }
             ]
           },
           {
-            "id": "1-2",
-            "label": "Arquitetura2",
-            "url": "arquitetura2",
-            "ativo": false,
+            "idCategoria": "1-2",
+            "labelCategoria": "Arquitetura2",
+            "urlCategoria": "arquitetura2",
+            "ativoCategoria": false,
             "subcategorias": [
               {
-                "id": "1-2-1",
-                "nome": "Fundamentos",
-                "ativo": true
+                "idSubcategoria": "1-2-1",
+                "labelSubcategoria": "Fundamentos 1",
+                "ativoSubcategoria": true
+              },
+              {
+                "idSubcategoria": "1-2-2",
+                "labelSubcategoria": "Fundamentos 2",
+                "ativoSubcategoria": true
+              },
+              {
+                "idSubcategoria": "1-2-3",
+                "labelSubcategoria": "Fundamentos 3",
+                "ativoSubcategoria": true
               }
             ]
           }
@@ -127,54 +139,54 @@
         "ativo": true,
         "categorias": [
           {
-            "id": "2-1",
-            "label": "HTML",
-            "url": "html",
-            "ativo": true,
+            "idCategoria": "2-1",
+            "labelCategoria": "HTML",
+            "urlCategoria": "html",
+            "ativoCategoria": true,
             "subcategorias": [
               {
-                "id": "2-1-1",
-                "nome": "Fundamentos",
-                "ativo": true
+                "idSubcategoria": "2-1-1",
+                "labelSubcategoria": "Fundamentos",
+                "ativoSubcategoria": true
               }
             ]
           },
           {
-            "id": "2-2",
-            "label": "CSS",
-            "url": "css",
-            "ativo": true,
+            "idCategoria": "2-2",
+            "labelCategoria": "CSS",
+            "urlCategoria": "css",
+            "ativoCategoria": true,
             "subcategorias": [
               {
-                "id": "2-2-2",
-                "nome": "Fundamentos",
-                "ativo": true
+                "idSubcategoria": "2-2-2",
+                "labelSubcategoria": "Fundamentos",
+                "ativoSubcategoria": true
               }
             ]
           },
           {
-            "id": "2-3",
-            "label": "Javascript / Typescript",
-            "url": "js",
-            "ativo": true,
+            "idCategoria": "2-3",
+            "labelCategoria": "Javascript / Typescript",
+            "urlCategoria": "js",
+            "ativoCategoria": true,
             "subcategorias": [
               {
-                "id": "2-3-1",
-                "nome": "Fundamentos",
-                "ativo": true
+                "idSubcategoria": "2-3-1",
+                "labelSubcategoria": "Fundamentos",
+                "ativoSubcategoria": true
               }
             ]
           },
           {
-            "id": "2-4",
-            "label": "Angular",
-            "url": "angular",
-            "ativo": true,
+            "idCategoria": "2-4",
+            "labelCategoria": "Angular",
+            "urlCategoria": "angular",
+            "ativoCategoria": true,
             "subcategorias": [
               {
-                "id": "2-4-1",
-                "nome": "Fundamentos",
-                "ativo": true
+                "idSubcategoria": "2-4-1",
+                "labelSubcategoria": "Fundamentos",
+                "ativoSubcategoria": true
               }
             ]
           }
@@ -190,28 +202,28 @@
         "ativo": true,
         "categorias": [
           {
-            "id": "3-1",
-            "label": "C#",
-            "url": "c_sharp",
-            "ativo": true,
+            "idCategoria": "3-1",
+            "labelCategoria": "C#",
+            "urlCategoria": "c_sharp",
+            "ativoCategoria": true,
             "subcategorias": [
               {
-                "id": "3-1-1",
-                "nome": "Fundamentos",
-                "ativo": true
+                "idSubcategoria": "3-1-1",
+                "labelSubcategoria": "Fundamentos",
+                "ativSubcategoriao": true
               }
             ]
           },
           {
-            "id": "3-2",
-            "label": "Node",
-            "url": "node",
-            "ativo": true,
+            "idCategoria": "3-2",
+            "labelCategoria": "Node",
+            "urlCategoria": "node",
+            "ativoCategoria": true,
             "subcategorias": [
               {
-                "id": "3-2-1",
-                "nome": "Fundamentos",
-                "ativo": true
+                "idSubcategoria": "3-2-1",
+                "labelSubcategoria": "Fundamentos",
+                "ativoSubcategoria": true
               }
             ]
           }
@@ -227,15 +239,15 @@
         "ativo": true,
         "categorias": [
           {
-            "id": "4-1",
-            "label": "Flutter",
-            "url": "flutter",
-            "ativo": true,
+            "idCategoria": "4-1",
+            "labelCategoria": "Flutter",
+            "urlCategoria": "flutter",
+            "ativoCategoria": true,
             "subcategorias": [
               {
-                "id": "4-1-1",
-                "nome": "Fundamentos",
-                "ativo": true
+                "idSubcategoria": "4-1-1",
+                "labelSubcategoria": "Fundamentos",
+                "ativoSubcategoria": true
               }
             ]
           }
@@ -290,7 +302,7 @@
       "observacao": "",
       "ativo": true,
       "dataCriacao": "2022-05-22",
-      "dataEdicao": "2022-09-25T01:17:59.129Z",
+      "dataEdicao": "2022-09-25T01:17:59.129Z"
     }
   ],
   "redes-sociais": [
