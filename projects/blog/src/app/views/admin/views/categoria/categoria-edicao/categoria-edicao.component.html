@@ -6,9 +6,11 @@
   (submit)="submit()"
   autocomplete="off"
 >
-  <h1 *ngIf="id.length === 0">Novo categoria</h1>
-  <h1 *ngIf="id.length > 0">Edição de categorias</h1>
-  <p-inputSwitch id="ativo" formControlName="ativo"></p-inputSwitch>
+  <div class="categoria-edicao__grid-titulo">
+    <h1 *ngIf="id.length === 0">Novo categoria</h1>
+    <h1 *ngIf="id.length > 0">Edição de categorias</h1>
+    <p-inputSwitch id="ativo" class="categoria-edicao__ativo" formControlName="ativo"></p-inputSwitch>
+  </div>
 
   <p>
     <label for="classificacao" class="categoria-edicao__label"
@@ -92,7 +94,7 @@
                   </button>
                   <button
                     type="button"
-                    (click)="adicionarCategoria()"
+                    (click)="adicionarCategoria(indiceCategoria + 1)"
                     *ngIf="categorias.controls.length === indiceCategoria + 1"
                   >
                     <span class="fa-solid fa-plus" aria-hidden="true"></span>

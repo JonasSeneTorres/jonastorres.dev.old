@@ -21,6 +21,11 @@
     width: 100%;
   }
 
+  &__grid-titulo {
+    display: grid;
+    grid-template-columns: 1fr 4rem;
+  }
+
   &__grid-url {
     margin-top: 1rem;
     display: grid;
@@ -103,6 +108,11 @@
 
   &__container-salvar{
     text-align: end;
+  }
+
+  &__ativo {
+    align-self: end;
+    justify-self: end;
   }
 }
 

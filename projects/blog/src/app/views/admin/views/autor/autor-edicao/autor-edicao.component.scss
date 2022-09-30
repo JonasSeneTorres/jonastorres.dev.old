@@ -11,6 +11,11 @@
       column-gap: 2rem;
       display: flex;
     }
+
+    &-titulo {
+      display: grid;
+      grid-template-columns: 1fr 4rem;
+    }
   }
 
   &__container{
@@ -47,6 +52,11 @@
 
   &__label {
     display: block;
+  }
+
+  &__ativo {
+    align-self: end;
+    justify-self: end;
   }
 }
 

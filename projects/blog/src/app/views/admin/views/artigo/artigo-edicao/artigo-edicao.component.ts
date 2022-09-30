@@ -142,6 +142,7 @@ export class ArtigoEdicaoComponent
       categoriaId: new FormControl(''),
       subcategoriaId: new FormControl('', Validators.required),
       dataCriacao: new FormControl(''),
+      ativo: new FormControl(true),
       dataEdicao: new FormControl(''),
       dataAgendamento: new FormControl(''),
       tempoLeitura: new FormControl('0', Validators.required),
@@ -174,6 +175,7 @@ export class ArtigoEdicaoComponent
       this.observarAlteracoesCategoria();
       this.observarAlteracoesUrl();
 
+      this._dataCriacao = sucesso.dataCriacao;
       this.form.patchValue({
         id: sucesso.id,
         url: sucesso.url,
@@ -186,6 +188,7 @@ export class ArtigoEdicaoComponent
         dataCriacao: (sucesso.dataCriacao ?? '').split('T')[0],
         dataEdicao: sucesso.dataEdicao?.split('T')[0],
         dataAgendamento: sucesso.dataAgendamento?.split('T')[0],
+        ativo: sucesso.ativo,
         tempoLeitura: sucesso.tempoLeitura,
         conteudoArtigo: sucesso.conteudoArtigo,
         autorId: sucesso.autorId,

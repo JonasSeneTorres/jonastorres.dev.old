@@ -1,13 +1,21 @@
 <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
-<h1 *ngIf="!ehEdicao">Novo Artigo</h1>
-<h1 *ngIf="ehEdicao">Edição de artigo</h1>
-
 <form
   class="artigo-edicao"
   [formGroup]="form"
   (submit)="submit()"
   autocomplete="off"
 >
+
+<div class="artigo-edicao__grid-titulo">
+  <h1 *ngIf="!ehEdicao">Novo Artigo</h1>
+  <h1 *ngIf="ehEdicao">Edição de artigo</h1>
+  <p-inputSwitch
+    id="ativo"
+    class="artigo-edicao__ativo"
+    formControlName="ativo"
+  ></p-inputSwitch>
+</div>
+
   <p class="p-float-label artigo-edicao__margin-top2">
     <input
       id="titulo"

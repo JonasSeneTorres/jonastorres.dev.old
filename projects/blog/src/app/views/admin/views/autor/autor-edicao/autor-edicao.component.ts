@@ -48,6 +48,7 @@ export class AutorEdicaoComponent
       cargo: this.form.get('cargo')!.value,
       descricao: this.form.get('descricao')!.value,
       urlImagem: this.form.get('urlImagem')!.value,
+      ativo: this.form.get('ativo')!.value,
     };
 
     this.gravarDados(autor, autor.nome, JonastorresRoutes.ADMIN_AUTOR.router as any);
@@ -75,6 +76,7 @@ export class AutorEdicaoComponent
       cargo: new FormControl(''),
       descricao: new FormControl('', Validators.required),
       urlImagem: new FormControl(''),
+      ativo: new FormControl(true),
       dataCriacao: new FormControl(''),
       dataEdicao: new FormControl(''),
     });
@@ -86,12 +88,14 @@ export class AutorEdicaoComponent
 
   protected prepararFormEdicao(): void {
     this.autoresService.obter(this.id).subscribe((sucesso: any) => {
+      console.log(sucesso);
       this.form.patchValue({
         id: sucesso.id,
         nome: sucesso.nome,
         cargo: sucesso.cargo,
         descricao: sucesso.descricao,
         urlImagem: sucesso.urlImagem,
+        ativo: sucesso.ativo,
         dataCriacao: sucesso.dataCriacao?.split('T')[0],
         dataEdicao: sucesso.dataEdicao?.split('T')[0],
       });

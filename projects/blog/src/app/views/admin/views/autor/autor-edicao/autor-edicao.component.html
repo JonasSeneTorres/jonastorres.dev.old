@@ -1,13 +1,20 @@
 <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
-<h1 *ngIf="id.length === 0">Novo Autor</h1>
-<h1 *ngIf="id.length > 0">Edição de autor</h1>
-
 <form
   class="autor-edicao"
   [formGroup]="form"
   (submit)="submit()"
   autocomplete="off"
 >
+  <div class="autor-edicao__grid-titulo">
+    <h1 *ngIf="id.length === 0">Novo Autor</h1>
+    <h1 *ngIf="id.length > 0">Edição de autor</h1>
+    <p-inputSwitch
+      id="ativo"
+      class="autor-edicao__ativo"
+      formControlName="ativo"
+    ></p-inputSwitch>
+  </div>
+
   <div class="autor-edicao__grid">
     <div class="autor-edicao__container-img">
       <img

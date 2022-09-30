@@ -19,14 +19,6 @@ export class CategoriaEdicaoComponent
     return this.form.controls['categorias'] as FormArray;
   }
 
-  // get subcategorias() {
-  //   return this.form.controls["subcategorias"] as FormArray;
-  // }
-
-  // get a() {
-  //   return this.categorias.controls;
-  // }
-
   constructor(
     protected override injector: Injector,
     private categoriasService: CategoriasService,
@@ -57,42 +49,18 @@ export class CategoriaEdicaoComponent
       return;
     }
 
-    const a = {
-      id: this.form.value.id,
-      dataCriacao: this.form.value.dataCriacao,
-      dataEdicao: this.form.value.dataEdicao,
-      classificacao: {
-        id: this.form.value.idClassificacao,
-        label: this.form.value.classificacao,
-        url: this.form.value.url,
-        ativo: this.form.value.ativo,
-        categorias: [
-          {
-            idCategoria: '1-1',
-            labelCategoria: 'Arquitetura',
-            urlCategoria: 'arquitetura',
-            ativoCategoria: true,
-            subcategorias: [
-              {
-                idSubcategoria: '1-1-1',
-                labelSubcategoria: 'Fundamentos',
-                ativoSubcategoria: true,
-              },
-            ],
-          },
-        ],
-      },
-    };
-    console.log('preenchido: ', this.form.value);
+    const categoria = {...this.form.value};
+    categoria.dataCriacao = this._dataCriacao;
+    categoria.categorias.forEach((itemCategoria: any, indiceCategoria: number) => {
+      itemCategoria.idCategoria = `${categoria.id}#${indiceCategoria + 1}`;
+      itemCategoria.subcategorias.forEach((itemSubategoria: any, indiceSubcategoria: number) => {
+        itemSubategoria.idSubcategoria = `${categoria.id}#${indiceCategoria + 1}-${indiceSubcategoria + 1}`;
+      });
+    });
 
-    // const categorias: any = {
-    //   nome: this.form.get('nome')!.value,
-    //   cargo: this.form.get('cargo')!.value,
-    //   descricao: this.form.get('descricao')!.value,
-    //   urlImagem: this.form.get('urlImagem')!.value,
-    // };
+    // console.log(categoria);
 
-    // this.gravarDados(autor, autor.nome, JonastorresRoutes.ADMIN_AUTOR.router as any);
+    this.gravarDados( categoria, categoria.classificacao, JonastorresRoutes.ADMIN_CATEGORIA.router as any);
   }
 
   protected gravarDadosInclusao(dados: any): Observable<any> {
@@ -105,17 +73,16 @@ export class CategoriaEdicaoComponent
 
   protected gravarDadosEdicao(dados: any): Observable<any> {
     dados.id = this.id;
-    (dados.dataCriacao = this.form.get('dataCriacao')!.value),
-      (dados.dataEdicao = new Date());
+    dados.dataEdicao = new Date();
     return this.categoriasService.atualizar(dados);
   }
 
   protected criarForm(): void {
     this.form = new FormGroup({
       id: new FormControl(''),
-      ativo: new FormControl(''),
+      ativo: new FormControl(true),
       classificacao: new FormControl(''),
-      idClassificacao: new FormControl(''),
+      // idClassificacao: new FormControl(''),
       url: new FormControl(''),
       dataCriacao: new FormControl(''),
       dataEdicao: new FormControl(''),
@@ -124,63 +91,65 @@ export class CategoriaEdicaoComponent
 
     if (this.ehEdicao) {
       this.prepararFormEdicao();
+      return;
     }
+
+    this.adicionarCategoria();
+    this.adicionarSubcategoria(0);
+    this.form.patchValue({
+      categorias: [
+        {
+          subcategorias: [
+            {
+              labelSubcategoria: 'Fundamentos',
+            }
+          ]
+        }
+      ]
+    });
   }
 
   protected prepararFormEdicao(): void {
     this.categoriasService.obter(this.id).subscribe((sucesso: any) => {
       console.log('xxxx', sucesso);
+      this._dataCriacao = sucesso.dataCriacao;
 
       this.form.patchValue({
         id: sucesso.id,
-        ativo: sucesso.classificacao.ativo,
-        classificacao: sucesso.classificacao.label,
-        idClassificacao: sucesso.classificacao.id,
-        url: sucesso.classificacao.url,
+        ativo: sucesso.ativo,
+        classificacao: sucesso.classificacao,
+        // idClassificacao: sucesso.idClassificacao,
+        url: sucesso.url,
         dataCriacao: sucesso.dataCriacao?.split('T')[0],
         dataEdicao: sucesso.dataEdicao?.split('T')[0],
       });
 
-      sucesso.classificacao.categorias.forEach(
+      sucesso.categorias.forEach(
         (categoria: any, indiceCategoria: number) => {
           this.adicionarCategoria();
-          // this.categorias.form
+          categoria.idCategoria = `${sucesso.id}#${indiceCategoria + 1}`
 
-          for (const _sub of categoria.subcategorias) {
+          categoria.subcategorias.forEach( (subcategoria: any, indiceSubcategoria: number) => {
+
             this.adicionarSubcategoria(indiceCategoria);
-          }
+            subcategoria.idSubcategoria = `${sucesso.id}#${indiceCategoria = 1}-${indiceSubcategoria + 1}`
+          });
 
-          // categoria.subcategorias.forEach((_value: any, indiceSubcategoria: number) => {
-          //   this.adicionarSubcategoria(indiceCategoria);
-          // });
+          // for (const _sub of categoria.subcategorias) {
+          // }
         }
       );
 
-      const categoriasObtidas = sucesso.classificacao.categorias;
+      const categoriasObtidas = sucesso.categorias;
 
-      // const categoriasObtidas = sucesso.classificacao.categorias.map(
-      //   (item: any) => {
-      //     const output = item;
-      //     return output;
-      //   }
-      // );
-
-      console.log(categoriasObtidas);
 
       this.form.patchValue({
-        // classificacao: {
         categorias: categoriasObtidas,
-        // }
       });
-
-      // for (const categoria of sucesso.classificacao.categorias) {
-      //   this.adicionarCategoria();
-      //   // console.log(categoria);
-      // }
     });
   }
 
-  adicionarCategoria() {
+  adicionarCategoria(indice?: number) {
     const categoriaForm = this.formBuilder.group({
       idCategoria: [''],
       labelCategoria: ['', Validators.required],
@@ -190,6 +159,10 @@ export class CategoriaEdicaoComponent
     });
 
     this.categorias.push(categoriaForm);
+
+    if(indice) {
+      this.adicionarSubcategoria(indice);
+    }
   }
 
   removerCategoria(indice: number) {
@@ -202,40 +175,14 @@ export class CategoriaEdicaoComponent
       labelSubcategoria: ['', Validators.required],
       ativoSubcategoria: [true, Validators.required],
     });
-    // console.log('add sub', indice, (this.form))
-    // const a = this.form.controls['categorias'] as FormArray;
-    // console.log(a.controls[0]);
-    // const b = (this.form.controls['categorias'] as FormArray).controls[0];
-    // console.log((b as FormGroup).controls['subcategorias']);
 
-    const c = this.getSubcategorias(indice);
-    // console.log(c);
-
-    c.push(subcategoriaForm);
-    // const subcategoriaForm = this.formBuilder.group({
-    //   label: ['', Validators.required],
-    //   // url: ['', Validators.required],
-    //   // ativo: ['', Validators.required]
-    // });
-    // (this.categorias.controls.at(indice).get('subcategoria') as FormArray).push(subcategoriaForm);
-    //   this.form.value.categorias[0].subcategorias.push(subcategoriaForm);
-
-    // //   const control = (this.form.get('categorias') as FormArray).controls[indice].get('subcategorias');
-    // //  // console.log(control);
-    // //   (control as FormArray).push(subcategoriaForm);
-    //   // this.categorias[indice].subcategorias.push(subcategoriaForm);
-    //   const categorias = this.form.controls["categorias"] as FormArray;
-    //   categorias.insert(categorias.length, subcategoriaForm);
+    this.getSubcategorias(indice).push(subcategoriaForm);
   }
 
   removerSubcategoria(indiceCategoria: number, indiceSubcategoria: number) {
     const control = this.getSubcategorias(indiceCategoria);
     control.removeAt(indiceSubcategoria);
   }
-
-  // getSubcategorias(indice: number): FormArray {
-  //   return this.form.controls["categorias"][indice].subcategorias as FormArray;
-  // }
 
   getSubcategorias(indice: number): FormArray {
     return (this.categorias.controls[indice] as FormGroup).controls[

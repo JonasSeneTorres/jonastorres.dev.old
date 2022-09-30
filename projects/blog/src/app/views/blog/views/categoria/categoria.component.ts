@@ -73,20 +73,20 @@ export class CategoriaComponent implements OnInit, OnDestroy {
     });
   }
 
-  private montarArtigosDaCategoria(subcategorias: any[], artigosDaCategoria: any[]) {
-    let output = [];
-    for (const item of subcategorias) {
-      const subcategoriaItem = item.nome;
-      const colecaoArtigos = artigosDaCategoria.filter(
-        artigo => artigo.subCategoriaId === item.id
-      )
+  // private montarArtigosDaCategoria(subcategorias: any[], artigosDaCategoria: any[]) {
+  //   let output = [];
+  //   for (const item of subcategorias) {
+  //     const subcategoriaItem = item.nome;
+  //     const colecaoArtigos = artigosDaCategoria.filter(
+  //       artigo => artigo.subCategoriaId === item.id
+  //     )
 
-      output.push({
-        subcategoria: subcategoriaItem,
-        artigos: colecaoArtigos
-      });
-    }
+  //     output.push({
+  //       subcategoria: subcategoriaItem,
+  //       artigos: colecaoArtigos
+  //     });
+  //   }
 
-    return output;
-  }
+  //   return output;
+  // }
 }

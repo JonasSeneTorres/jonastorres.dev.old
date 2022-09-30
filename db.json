@@ -82,177 +82,26 @@
   ],
   "categorias": [
     {
-      "id": "zzzzz",
-      "dataCriacao": "2022-05-22",
-      "dataEdicao": "2022-09-25T01:17:59.129Z",
-      "classificacao": {
-        "id": "1",
-        "label": "Não classificado",
-        "url": "categorias",
-        "ativo": true,
-        "categorias": [
-          {
-            "idCategoria": "1-1",
-            "labelCategoria": "Arquitetura",
-            "urlCategoria": "arquitetura",
-            "ativoCategoria": true,
-            "subcategorias": [
-              {
-                "idSubcategoria": "1-1-1",
-                "labelSubcategoria": "Fundamentos",
-                "ativoSubcategoria": true
-              }
-            ]
-          },
-          {
-            "idCategoria": "1-2",
-            "labelCategoria": "Arquitetura2",
-            "urlCategoria": "arquitetura2",
-            "ativoCategoria": false,
-            "subcategorias": [
-              {
-                "idSubcategoria": "1-2-1",
-                "labelSubcategoria": "Fundamentos 1",
-                "ativoSubcategoria": true
-              },
-              {
-                "idSubcategoria": "1-2-2",
-                "labelSubcategoria": "Fundamentos 2",
-                "ativoSubcategoria": true
-              },
-              {
-                "idSubcategoria": "1-2-3",
-                "labelSubcategoria": "Fundamentos 3",
-                "ativoSubcategoria": true
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "asddfggfd",
-      "classificacao": {
-        "id": "2",
-        "label": "Frontend",
-        "url": "frontend",
-        "ativo": true,
-        "categorias": [
-          {
-            "idCategoria": "2-1",
-            "labelCategoria": "HTML",
-            "urlCategoria": "html",
-            "ativoCategoria": true,
-            "subcategorias": [
-              {
-                "idSubcategoria": "2-1-1",
-                "labelSubcategoria": "Fundamentos",
-                "ativoSubcategoria": true
-              }
-            ]
-          },
-          {
-            "idCategoria": "2-2",
-            "labelCategoria": "CSS",
-            "urlCategoria": "css",
-            "ativoCategoria": true,
-            "subcategorias": [
-              {
-                "idSubcategoria": "2-2-2",
-                "labelSubcategoria": "Fundamentos",
-                "ativoSubcategoria": true
-              }
-            ]
-          },
-          {
-            "idCategoria": "2-3",
-            "labelCategoria": "Javascript / Typescript",
-            "urlCategoria": "js",
-            "ativoCategoria": true,
-            "subcategorias": [
-              {
-                "idSubcategoria": "2-3-1",
-                "labelSubcategoria": "Fundamentos",
-                "ativoSubcategoria": true
-              }
-            ]
-          },
-          {
-            "idCategoria": "2-4",
-            "labelCategoria": "Angular",
-            "urlCategoria": "angular",
-            "ativoCategoria": true,
-            "subcategorias": [
-              {
-                "idSubcategoria": "2-4-1",
-                "labelSubcategoria": "Fundamentos",
-                "ativoSubcategoria": true
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "djfhjkhadfslkjh",
-      "classificacao": {
-        "id": "3",
-        "label": "Backend",
-        "url": "backend",
-        "ativo": true,
-        "categorias": [
-          {
-            "idCategoria": "3-1",
-            "labelCategoria": "C#",
-            "urlCategoria": "c_sharp",
-            "ativoCategoria": true,
-            "subcategorias": [
-              {
-                "idSubcategoria": "3-1-1",
-                "labelSubcategoria": "Fundamentos",
-                "ativSubcategoriao": true
-              }
-            ]
-          },
-          {
-            "idCategoria": "3-2",
-            "labelCategoria": "Node",
-            "urlCategoria": "node",
-            "ativoCategoria": true,
-            "subcategorias": [
-              {
-                "idSubcategoria": "3-2-1",
-                "labelSubcategoria": "Fundamentos",
-                "ativoSubcategoria": true
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "halkjdhlakdhfals",
-      "classificacao": {
-        "id": "4",
-        "label": "Mobile",
-        "url": "mobile",
-        "ativo": true,
-        "categorias": [
-          {
-            "idCategoria": "4-1",
-            "labelCategoria": "Flutter",
-            "urlCategoria": "flutter",
-            "ativoCategoria": true,
-            "subcategorias": [
-              {
-                "idSubcategoria": "4-1-1",
-                "labelSubcategoria": "Fundamentos",
-                "ativoSubcategoria": true
-              }
-            ]
-          }
-        ]
-      }
+      "id": "adcb32e4-91b1-23b5-4c1a-d7ea5383df09",
+      "ativo": true,
+      "classificacao": "Sem categorias",
+      "url": "categorias",
+      "dataCriacao": "2022-09-30T01:33:25.118Z",
+      "categorias": [
+        {
+          "idCategoria": "#1",
+          "labelCategoria": "Arquitetura",
+          "urlCategoria": "arquitetura",
+          "ativoCategoria": true,
+          "subcategorias": [
+            {
+              "idSubcategoria": "#1-1",
+              "labelSubcategoria": "Fundamentos",
+              "ativoSubcategoria": true
+            }
+          ]
+        }
+      ]
     }
   ],
   "autores": [
@@ -262,6 +111,7 @@
       "descricao": "Detraxit consequat et quo num tendi nada.Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis.Quem num gosta di mim que vai caçá sua turmis!",
       "urlImagem": "assets/img/fotos/autor/jonas.jpg",
       "id": 1,
+      "ativo": true,
       "dataCriacao": "2022-05-22",
       "dataEdicao": "2022-09-25T01:17:59.129Z"
     }

@@ -52,10 +52,10 @@
   <ng-template pTemplate="body" let-dados>
     <tr>
       <td>
-        {{ dados.classificacao?.label }} <strong>({{ dados.classificacao?.ativo ? 'Ativo': 'Inativo' }})</strong>
+        {{ dados?.classificacao }} <strong>({{ dados?.ativo ? 'Ativo': 'Inativo' }})</strong>
       </td>
       <td>
-        <ng-container *ngFor="let categoria of dados.classificacao?.categorias">
+        <ng-container *ngFor="let categoria of dados?.categorias">
           <div>
             {{ categoria?.labelCategoria }} <strong>({{ categoria?.ativoCategoria ? 'Ativo': 'Inativo' }})</strong>
           </div>
