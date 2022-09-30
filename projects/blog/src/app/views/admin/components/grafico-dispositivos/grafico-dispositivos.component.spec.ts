@@ -9,10 +9,9 @@ describe('GraficoDispositivosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraficoDispositivosComponent ],
-      imports: [SharedModule]
-    })
-    .compileComponents();
+      declarations: [GraficoDispositivosComponent],
+      imports: [SharedModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GraficoDispositivosComponent);
     component = fixture.componentInstance;

@@ -1,15 +1,15 @@
 export type ArtigoModel = {
-  id?: string,
-  url: string,
-  titulo: string,
-  subtitulo?: string,
-  metatags?: string[],
-  subcategoriaId: string,
-  dataCriacao?: Date,
-  dataEdicao?: Date,
-  dataAgendamento?: Date,
-  tempoLeitura: number,
-  conteudoArtigo: string,
-  autorId:  number,
-  serieId?:  number,
-}
+  id?: string;
+  url: string;
+  titulo: string;
+  subtitulo?: string;
+  metatags?: string[];
+  subcategoriaId: string;
+  dataCriacao?: Date;
+  dataEdicao?: Date;
+  dataAgendamento?: Date;
+  tempoLeitura: number;
+  conteudoArtigo: string;
+  autorId: number;
+  serieId?: number;
+};

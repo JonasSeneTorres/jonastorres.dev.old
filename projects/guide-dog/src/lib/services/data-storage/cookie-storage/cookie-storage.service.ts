@@ -3,14 +3,10 @@ import { IStorageService } from '../../../interfaces/iStorageService';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class CookieStorageService /*implements IStorageService*/{
-
-
-  constructor() {
-
-  }
+export class CookieStorageService /*implements IStorageService*/ {
+  constructor() {}
 
   // get(key: string): string {
   //   return this.cookieService.get(key);

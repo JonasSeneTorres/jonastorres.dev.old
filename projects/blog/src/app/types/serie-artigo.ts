@@ -3,4 +3,4 @@ export type SerieArtigo = {
   rota: string;
   titulo: string;
   artigoAtual?: boolean;
-}
+};

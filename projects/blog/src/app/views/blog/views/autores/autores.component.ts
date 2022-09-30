@@ -7,20 +7,18 @@ import { Subject } from 'rxjs';
 
 @Component({
   templateUrl: './autores.component.html',
-  styleUrls: ['./autores.component.scss']
+  styleUrls: ['./autores.component.scss'],
 })
 export class AutoresComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
 
   breadcrumbsItem: BreadcrumbsItem[];
 
-  constructor(
-    private _blogService: BlogService,
-  ) {
+  constructor(private _blogService: BlogService) {
     this._blogService.tornarBoxPrincipalTransparente(false);
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
-      { label: 'Autores' }
+      { label: 'Autores' },
     ];
   }
 

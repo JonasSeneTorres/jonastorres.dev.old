@@ -2,21 +2,18 @@
   class="breadcrumb"
   aria-label="Breadcrumb"
   class="breadcrumb"
-  *ngIf="breadcrumbsItem.length > 0"
->
+  *ngIf="breadcrumbsItem.length > 0">
   <ol
     class="breadcrumb__list"
     itemscope
-    itemtype="https://schema.org/BreadcrumbList"
-  >
+    itemtype="https://schema.org/BreadcrumbList">
     <ng-container *ngFor="let item of breadcrumbsItem; let i = index">
       <li
         class="breadcrumb__item"
         itemprop="itemListElement"
         itemscope
         itemtype="https://schema.org/ListItem"
-        *ngIf="breadcrumbsItem.length > i + 1"
-      >
+        *ngIf="breadcrumbsItem.length > i + 1">
         <a itemprop="item" [routerLink]="item.route">
           <span itemprop="name">{{ item.label }}</span>
           <meta itemprop="position" [attr.content]="i" />
@@ -29,8 +26,7 @@
         itemprop="itemListElement"
         itemscope
         itemtype="https://schema.org/ListItem"
-        *ngIf="breadcrumbsItem.length === i + 1"
-      >
+        *ngIf="breadcrumbsItem.length === i + 1">
         <a itemprop="item" aria-current="page">
           <span itemprop="name">{{ item.label }} </span>
           <meta itemprop="position" [attr.content]="i" />

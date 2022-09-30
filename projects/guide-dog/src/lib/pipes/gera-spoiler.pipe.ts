@@ -1,10 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'geraspoiler'
+  name: 'geraspoiler',
 })
 export class GeraSpoilerPipe implements PipeTransform {
-
   transform(value: any): any {
     let input = value ?? '';
     input = input.split('</p>')[0] ?? '<p>';
@@ -18,7 +17,6 @@ export class GeraSpoilerPipe implements PipeTransform {
   private clearTags(value: string) {
     const output = value;
 
-    return output.replace(/<script[^>]*>(?:(?!<\/script>)[^])*<\/script>/g, "");
+    return output.replace(/<script[^>]*>(?:(?!<\/script>)[^])*<\/script>/g, '');
   }
-
 }

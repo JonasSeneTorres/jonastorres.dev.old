@@ -7,13 +7,16 @@ import { RedesSociaisService } from './../../../../services/redes-sociais/redes-
 
 @Component({
   templateUrl: './redes-sociais.component.html',
-  styleUrls: ['./redes-sociais.component.scss']
+  styleUrls: ['./redes-sociais.component.scss'],
 })
-export class RedesSociaisComponent extends BaseAdminMasterComponent implements OnInit {
+export class RedesSociaisComponent
+  extends BaseAdminMasterComponent
+  implements OnInit
+{
   constructor(
     protected override injector: Injector,
     private redesSociaisService: RedesSociaisService
-    ) {
+  ) {
     super(injector);
     this.filtravelPelosCampos = ['titulo', 'categoriaId'];
     this.breadcrumbsItem = [
@@ -28,17 +31,16 @@ export class RedesSociaisComponent extends BaseAdminMasterComponent implements O
   }
 
   protected listarItens() {
-    this.redesSociaisService.listar()
-    .pipe(takeUntil(this._destroy$))
-    .subscribe({
-      next: (sucesso) => {
-        console.log(sucesso)
-        this.dados = sucesso;
-      },
-      error: () => {
-
-      }
-    });
+    this.redesSociaisService
+      .listar()
+      .pipe(takeUntil(this._destroy$))
+      .subscribe({
+        next: sucesso => {
+          console.log(sucesso);
+          this.dados = sucesso;
+        },
+        error: () => {},
+      });
   }
 
   protected confirmarExclusao(registro: any): Observable<any> {

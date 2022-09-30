@@ -1,13 +1,13 @@
 export const domPurifyConfig = {
   FORBID_ATTR: ['style'],
   FORBID_TAGS: ['script'],
-  ADD_TAGS: ['gd-footer', 'iframe' ],
+  ADD_TAGS: ['gd-footer', 'iframe'],
   ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling'],
   // ADD_URI_SAFE_ATTR: ['gd-footer'],
   KEEP_CONTENT: false,
   // SAFE_FOR_TEMPLATES: true,
   // SANITIZE_DOM : false,
-  USE_PROFILES: {html: true, angular: true},
+  USE_PROFILES: { html: true, angular: true },
   // CUSTOM_ELEMENT_HANDLING: {
   //   tagNameCheck: (tagName: any) => tagName.match(/^gd-/), // allow all tags starting with "foo-"
   //   // attributeNameCheck: (attr) => attr.match(/baz/), // allow all containing "baz"

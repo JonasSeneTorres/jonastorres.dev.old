@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 
 @Component({
   templateUrl: './sobre.component.html',
-  styleUrls: ['./sobre.component.scss']
+  styleUrls: ['./sobre.component.scss'],
 })
 export class SobreComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
@@ -17,12 +17,12 @@ export class SobreComponent implements OnInit, OnDestroy {
 
   constructor(
     private jumbotronService: JumbotronService,
-    private _blogService: BlogService,
+    private _blogService: BlogService
   ) {
     this._blogService.tornarBoxPrincipalTransparente(false);
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
-      {label: 'Sobre'}
+      { label: 'Sobre' },
     ];
   }
 

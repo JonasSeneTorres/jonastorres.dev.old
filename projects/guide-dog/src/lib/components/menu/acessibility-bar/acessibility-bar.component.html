@@ -2,43 +2,41 @@
   <gd-centered-panel>
     <ul class="acessibilitybar__list">
       <li class="acessibilitybar__item">
-        <a href="{{url}}#conteudo" accesskey="1">Ir para o conteúdo [1]</a>
+        <a href="{{ url }}#conteudo" accesskey="1">Ir para o conteúdo [1]</a>
       </li>
       <li class="acessibilitybar__item">
-        <a href="{{url}}#menu" accesskey="2">Ir para o menu [2]</a>
+        <a href="{{ url }}#menu" accesskey="2">Ir para o menu [2]</a>
       </li>
       <li class="acessibilitybar__item">
-        <a href="{{url}}#footer" accesskey="3">Ir para o rodapé [3]</a>
+        <a href="{{ url }}#footer" accesskey="3">Ir para o rodapé [3]</a>
       </li>
       <li class="acessibilitybar__item">
         <a [routerLink]="['/acessibilidade']">Acessibilidade</a>
       </li>
       <li class="acessibilitybar__item2">
-        <span>
-          Zoom:
-        </span>
+        <span> Zoom: </span>
         <ul class="acessibilitybar__list acessibilitybar__list2">
           <li>
             <button type="button" aria-label="mais zoom">
-              <span class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></span>
+              <span
+                class="fa-solid fa-magnifying-glass-plus"
+                aria-hidden="true"></span>
             </button>
           </li>
           <li>
             <button type="button" aria-label="menos zoom">
-              <span class="fa-solid fa-magnifying-glass-minus" aria-hidden="true"></span>
+              <span
+                class="fa-solid fa-magnifying-glass-minus"
+                aria-hidden="true"></span>
             </button>
           </li>
           <li>
-            <button type="button">
-              Redefinir
-            </button>
+            <button type="button">Redefinir</button>
           </li>
         </ul>
       </li>
       <li class="acessibilitybar__item2">
-        <span>
-          Temas:
-        </span>
+        <span> Temas: </span>
         <ul class="acessibilitybar__list acessibilitybar__list2">
           <li>
             <button type="button" alt="tema claro" aria-label="tema claro">
@@ -51,15 +49,18 @@
             </button>
           </li>
           <li>
-            <button type="button" alt="auto contraste" aria-label="auto contraste">
-              <span class="fa-solid fa-circle-half-stroke" aria-hidden="true"></span>
+            <button
+              type="button"
+              alt="auto contraste"
+              aria-label="auto contraste">
+              <span
+                class="fa-solid fa-circle-half-stroke"
+                aria-hidden="true"></span>
             </button>
           </li>
         </ul>
       </li>
-      <li class="acessibilitybar__item">
-        animações
-      </li>
+      <li class="acessibilitybar__item">animações</li>
       <li class="acessibilitybar__item">
         <a [routerLink]="['/sitemap']" aria-label="sitemap">
           <span class="fa-solid fa-sitemap" aria-hidden="true"></span>

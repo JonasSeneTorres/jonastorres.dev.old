@@ -11,13 +11,8 @@ describe('FooterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        FooterModule,
-        CenteredPanelModule,
-        MenuModule
-      ]
-    })
-    .compileComponents();
+      imports: [FooterModule, CenteredPanelModule, MenuModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

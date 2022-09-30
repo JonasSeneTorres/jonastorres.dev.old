@@ -16,14 +16,18 @@ describe('AutoresComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AutoresComponent ],
-      imports: [SharedModule, RouterTestingModule, HttpClientModule, BlogModule],
+      declarations: [AutoresComponent],
+      imports: [
+        SharedModule,
+        RouterTestingModule,
+        HttpClientModule,
+        BlogModule,
+      ],
       providers: [
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
-        { provide: ArtigosService, useClass: ArtigosServiceMock},
-      ]
-    })
-    .compileComponents();
+        { provide: ActivatedRoute, useClass: ActivatedRouteMock },
+        { provide: ArtigosService, useClass: ArtigosServiceMock },
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AutoresComponent);
     component = fixture.componentInstance;

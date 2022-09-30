@@ -20,8 +20,8 @@ const routes: Routes = [
     path: '',
     component: AdminComponent,
     children: [
-      { path: '',   redirectTo: '/admin/dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent},
+      { path: '', redirectTo: '/admin/dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
       { path: 'artigos', component: ArtigoComponent },
       { path: 'artigos/novo', component: ArtigoEdicaoComponent },
       { path: 'artigos/editar/:id', component: ArtigoEdicaoComponent },
@@ -34,11 +34,14 @@ const routes: Routes = [
       { path: 'perfil-usuario', component: PerfilUsuarioComponent },
       { path: 'redes-sociais', component: RedesSociaisComponent },
       { path: 'redes-sociais/novo', component: RedesSociaisEdicaoComponent },
-      { path: 'redes-sociais/editar/:id', component: RedesSociaisEdicaoComponent },
+      {
+        path: 'redes-sociais/editar/:id',
+        component: RedesSociaisEdicaoComponent,
+      },
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'usuarios/novo', component: UsuariosEdicaoComponent },
       { path: 'usuarios/editar/:id', component: UsuariosEdicaoComponent },
-      { path: '**', component: DashboardComponent},
+      { path: '**', component: DashboardComponent },
     ],
   },
 ];

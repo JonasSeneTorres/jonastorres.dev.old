@@ -4,14 +4,12 @@ import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-it
 
 @Component({
   templateUrl: './contato.component.html',
-  styleUrls: ['./contato.component.scss']
+  styleUrls: ['./contato.component.scss'],
 })
 export class ContatoComponent {
   breadcrumbsItem: BreadcrumbsItem[];
 
   constructor() {
-    this.breadcrumbsItem = [
-      JonastorresRoutes.HOME.toBreadcrumb(),
-    ];
+    this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb()];
   }
 }

@@ -24,7 +24,7 @@ export abstract class BaseAdminMasterComponent implements OnDestroy {
     );
     this._toastService = injector.get<ToastService>(
       ToastService as Type<ToastService>
-      );
+    );
     this.filtravelPelosCampos = [];
     this.breadcrumbsItem = [];
   }
@@ -84,11 +84,11 @@ export abstract class BaseAdminMasterComponent implements OnDestroy {
 
   private observarResultadoExclusao(registro: any, texto: string) {
     this.confirmarExclusao(registro)
-    .pipe(takeUntil(this._destroy$))
-    .subscribe({
-      next: (_sucesso: any) => this.exclusaoMensagemSucesso(registro, texto),
-      error: (_erro: any) => this.exclusaoMensagemFalha(registro, texto),
-    });
+      .pipe(takeUntil(this._destroy$))
+      .subscribe({
+        next: (_sucesso: any) => this.exclusaoMensagemSucesso(registro, texto),
+        error: (_erro: any) => this.exclusaoMensagemFalha(registro, texto),
+      });
   }
 
   protected abstract listarItens(): void;

@@ -15,14 +15,13 @@ describe('GrupoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GrupoComponent ],
+      declarations: [GrupoComponent],
       imports: [SharedModule, RouterTestingModule, BlogModule],
       providers: [
-        { provide: ArtigosService, useClass: ArtigosServiceMock},
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock}
-      ]
-    })
-    .compileComponents();
+        { provide: ArtigosService, useClass: ArtigosServiceMock },
+        { provide: ActivatedRoute, useClass: ActivatedRouteMock },
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GrupoComponent);
     component = fixture.componentInstance;

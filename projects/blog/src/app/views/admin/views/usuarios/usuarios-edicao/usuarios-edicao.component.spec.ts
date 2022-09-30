@@ -13,11 +13,10 @@ describe('ADMIN/UsuariosEdicaoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UsuariosEdicaoComponent ],
+      declarations: [UsuariosEdicaoComponent],
       imports: [SharedModule, AdminModule, HttpClientModule],
       providers: [{ provide: ArtigosService, useClass: ArtigosServiceMock }],
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(UsuariosEdicaoComponent);
     component = fixture.componentInstance;

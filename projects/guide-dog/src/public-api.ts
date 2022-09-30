@@ -3,4 +3,3 @@
  */
 
 export * from './lib/guide-dog.module';
-

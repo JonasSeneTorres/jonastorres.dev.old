@@ -12,14 +12,9 @@ describe('MenuHamburgerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        MenuModule,
-        RouterTestingModule,
-        NoopAnimationsModule
-      ],
-      providers: [ModalService]
-    })
-    .compileComponents();
+      imports: [MenuModule, RouterTestingModule, NoopAnimationsModule],
+      providers: [ModalService],
+    }).compileComponents();
   });
 
   beforeEach(() => {

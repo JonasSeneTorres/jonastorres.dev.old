@@ -20,15 +20,7 @@ export class GraficoDispositivosComponent {
 
   constructor() {}
 
-  chartClicked({event, active}: {
-    event: ChartEvent;
-    active: {}[];
-  }): void {
-  }
+  chartClicked({ event, active }: { event: ChartEvent; active: {}[] }): void {}
 
-  chartHovered({event, active}: {
-    event: ChartEvent;
-    active: {}[];
-  }): void {
-  }
+  chartHovered({ event, active }: { event: ChartEvent; active: {}[] }): void {}
 }

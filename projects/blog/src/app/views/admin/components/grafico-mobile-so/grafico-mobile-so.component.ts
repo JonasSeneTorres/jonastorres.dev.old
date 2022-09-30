@@ -4,7 +4,7 @@ import { ChartData, ChartEvent, ChartType } from 'chart.js';
 @Component({
   selector: 'jt-grafico-mobile-so',
   templateUrl: './grafico-mobile-so.component.html',
-  styleUrls: ['./grafico-mobile-so.component.scss']
+  styleUrls: ['./grafico-mobile-so.component.scss'],
 })
 export class GraficoMobileSoComponent {
   public doughnutChartLabels: string[] = [
@@ -13,22 +13,30 @@ export class GraficoMobileSoComponent {
     'IExplorer',
     'Chrome',
     'Firefox',
-    'IExplorer'
+    'IExplorer',
   ];
 
   public doughnutChartData: ChartData<'doughnut'> = {
     labels: this.doughnutChartLabels,
-    datasets: [
-      { data: [ 350, 450, 100, 350, 450, 100 ] }
-    ]
+    datasets: [{ data: [350, 450, 100, 350, 450, 100] }],
   };
   doughnutChartType: ChartType = 'doughnut';
 
-  constructor() { }
+  constructor() {}
 
-  public chartClicked({ event, active }: { event: ChartEvent, active: {}[] }): void {
-  }
+  public chartClicked({
+    event,
+    active,
+  }: {
+    event: ChartEvent;
+    active: {}[];
+  }): void {}
 
-  public chartHovered({ event, active }: { event: ChartEvent, active: {}[] }): void {
-  }
+  public chartHovered({
+    event,
+    active,
+  }: {
+    event: ChartEvent;
+    active: {}[];
+  }): void {}
 }

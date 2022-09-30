@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 @Component({
   selector: 'jt-busca',
   templateUrl: './busca.component.html',
-  styleUrls: ['./busca.component.scss']
+  styleUrls: ['./busca.component.scss'],
 })
 export class BuscaComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
@@ -18,12 +18,12 @@ export class BuscaComponent implements OnInit, OnDestroy {
 
   constructor(
     private jumbotronService: JumbotronService,
-    private _blogService: BlogService,
+    private _blogService: BlogService
   ) {
     this._blogService.tornarBoxPrincipalTransparente(false);
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
-      {label: 'busca'}
+      { label: 'busca' },
     ];
   }
 

@@ -4,17 +4,25 @@ import { ChartData, ChartEvent, ChartType } from 'chart.js';
 @Component({
   selector: 'jt-grafico-num-visitantes',
   templateUrl: './grafico-num-visitantes.component.html',
-  styleUrls: ['./grafico-num-visitantes.component.scss']
+  styleUrls: ['./grafico-num-visitantes.component.scss'],
 })
 export class GraficoNumVisitantesComponent {
   chartLabels: string[] = ['mobile', 'desktop'];
 
   chartData: ChartData<'bar'> = {
-    labels: [ 'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado' ],
+    labels: [
+      'Domingo',
+      'Segunda',
+      'Terça',
+      'Quarta',
+      'Quinta',
+      'Sexta',
+      'Sabado',
+    ],
     datasets: [
-      { data: [ 65, 59, 80, 81, 56, 55, 40 ], label: 'Essa semana' },
-      { data: [ 28, 48, 40, 19, 86, 27, 90 ], label: 'Semana passada' }
-    ]
+      { data: [65, 59, 80, 81, 56, 55, 40], label: 'Essa semana' },
+      { data: [28, 48, 40, 19, 86, 27, 90], label: 'Semana passada' },
+    ],
   };
   chartType: ChartType = 'bar';
   chartOptions = {
@@ -23,15 +31,7 @@ export class GraficoNumVisitantesComponent {
 
   constructor() {}
 
-  chartClicked({event, active}: {
-    event: ChartEvent;
-    active: {}[];
-  }): void {
-  }
+  chartClicked({ event, active }: { event: ChartEvent; active: {}[] }): void {}
 
-  chartHovered({event, active}: {
-    event: ChartEvent;
-    active: {}[];
-  }): void {
-  }
+  chartHovered({ event, active }: { event: ChartEvent; active: {}[] }): void {}
 }

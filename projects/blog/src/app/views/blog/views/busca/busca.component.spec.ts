@@ -15,14 +15,13 @@ describe('BuscaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BuscaComponent ],
+      declarations: [BuscaComponent],
       imports: [SharedModule, RouterTestingModule, BlogModule],
       providers: [
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
-        { provide: ArtigosService, useClass: ArtigosServiceMock},
-      ]
-    })
-    .compileComponents();
+        { provide: ActivatedRoute, useClass: ActivatedRouteMock },
+        { provide: ArtigosService, useClass: ArtigosServiceMock },
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BuscaComponent);
     component = fixture.componentInstance;

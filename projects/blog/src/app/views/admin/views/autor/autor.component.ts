@@ -8,20 +8,22 @@ import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master
 @Component({
   selector: 'jt-autor',
   templateUrl: './autor.component.html',
-  styleUrls: ['./autor.component.scss']
+  styleUrls: ['./autor.component.scss'],
 })
-export class AutorComponent extends BaseAdminMasterComponent implements OnInit, OnDestroy {
-
+export class AutorComponent
+  extends BaseAdminMasterComponent
+  implements OnInit, OnDestroy
+{
   constructor(
     protected override injector: Injector,
     private autoresService: AutoresService
-    ) {
+  ) {
     super(injector);
     this.filtravelPelosCampos = ['nome'];
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
       JonastorresRoutes.ADMIN.toBreadcrumb(),
-      { label: 'Autor' }
+      { label: 'Autor' },
     ];
   }
 
@@ -30,17 +32,16 @@ export class AutorComponent extends BaseAdminMasterComponent implements OnInit, 
   }
 
   protected listarItens() {
-    this.autoresService.listar()
-    .pipe(takeUntil(this._destroy$))
-    .subscribe({
-      next: (sucesso: any) => {
-        this.dados = sucesso;
-        console.log(this.dados);
-      },
-      error: () => {
-
-      }
-    });
+    this.autoresService
+      .listar()
+      .pipe(takeUntil(this._destroy$))
+      .subscribe({
+        next: (sucesso: any) => {
+          this.dados = sucesso;
+          console.log(this.dados);
+        },
+        error: () => {},
+      });
   }
 
   protected confirmarExclusao(registro: any): Observable<any> {

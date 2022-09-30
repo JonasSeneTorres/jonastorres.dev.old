@@ -9,10 +9,9 @@ describe('MenuListHorizontalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuListHorizontalComponent ],
-      imports: [ MenuModule ]
-    })
-    .compileComponents();
+      declarations: [MenuListHorizontalComponent],
+      imports: [MenuModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MenuListHorizontalComponent);
     component = fixture.componentInstance;

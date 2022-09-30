@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { ICrudService } from './../../interfaces/icrud-service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ArtigosService implements ICrudService {
   private _itensBuscados$: BehaviorSubject<any> = new BehaviorSubject(null);

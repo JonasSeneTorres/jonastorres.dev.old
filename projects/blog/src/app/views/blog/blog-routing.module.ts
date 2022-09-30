@@ -15,25 +15,33 @@ import { PaginaNaoEncontradaComponent } from './views/pagina-nao-encontrada/pagi
 import { SitemapComponent } from './views/sitemap/sitemap.component';
 import { SobreComponent } from './views/sobre/sobre.component';
 
-const routes: Routes = [{ path: '', component: BlogComponent, children: [
-  { path: '', component: HomeComponent},
-  { path: 'acessibilidade', component: AcessibilidadeComponent },
-  { path: 'autores', component: AutoresComponent },
-  { path: 'busca', component: BuscaComponent },
-  { path: 'contato', component: ContatoComponent },
-  { path: 'erro', component: ErroComponent },
+const routes: Routes = [
+  {
+    path: '',
+    component: BlogComponent,
+    children: [
+      { path: '', component: HomeComponent },
+      { path: 'acessibilidade', component: AcessibilidadeComponent },
+      { path: 'autores', component: AutoresComponent },
+      { path: 'busca', component: BuscaComponent },
+      { path: 'contato', component: ContatoComponent },
+      { path: 'erro', component: ErroComponent },
 
-  { path: 'sitemap', component: SitemapComponent },
-  { path: 'sobre', component: SobreComponent },
-  { path: 'pagina-nao-encontrada', component: PaginaNaoEncontradaComponent },
-  { path: ':grupo', component: GrupoComponent },
-  { path: ':grupo/:categoria', component: CategoriaComponent },
-  { path: ':grupo/:categoria/:artigo', component: ArtigoComponent },
-]
-}];
+      { path: 'sitemap', component: SitemapComponent },
+      { path: 'sobre', component: SobreComponent },
+      {
+        path: 'pagina-nao-encontrada',
+        component: PaginaNaoEncontradaComponent,
+      },
+      { path: ':grupo', component: GrupoComponent },
+      { path: ':grupo/:categoria', component: CategoriaComponent },
+      { path: ':grupo/:categoria/:artigo', component: ArtigoComponent },
+    ],
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class BlogRoutingModule { }
+export class BlogRoutingModule {}

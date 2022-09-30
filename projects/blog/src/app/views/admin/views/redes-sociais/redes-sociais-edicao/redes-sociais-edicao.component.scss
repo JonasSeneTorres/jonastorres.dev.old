@@ -1,11 +1,40 @@
-@import '../../../../../../styles/styles.scss';
+@import "../../../../../../styles/styles.scss";
 
 .redes-sociais-edicao {
-  &__container-salvar{
+  &__grid {
+    &-titulo {
+      display: grid;
+      grid-template-columns: 1fr 4rem;
+    }
+
+    &-data {
+      column-gap: 2rem;
+      display: flex;
+    }
+  }
+
+  &__container-salvar {
     text-align: end;
+  }
+
+  &__label {
+    display: block;
+
+    &-ativo {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__ativo {
+    align-self: end;
+    justify-self: end;
   }
 }
 
-.botao{
+.botao {
   display: inline-block;
 }

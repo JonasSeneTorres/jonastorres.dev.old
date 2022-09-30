@@ -17,16 +17,20 @@ describe('ADMIN/RedesSociaisComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RedesSociaisComponent ],
-      imports: [SharedModule, RouterTestingModule, HttpClientModule, AdminModule],
+      declarations: [RedesSociaisComponent],
+      imports: [
+        SharedModule,
+        RouterTestingModule,
+        HttpClientModule,
+        AdminModule,
+      ],
       providers: [
         { provide: ArtigosService, useClass: ArtigosServiceMock },
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
+        { provide: ActivatedRoute, useClass: ActivatedRouteMock },
         ConfirmationService,
-        MessageService
+        MessageService,
       ],
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RedesSociaisComponent);
     component = fixture.componentInstance;

@@ -7,13 +7,16 @@ import { UsuariosService } from './../../../../services/usuarios/usuarios.servic
 
 @Component({
   templateUrl: './usuarios.component.html',
-  styleUrls: ['./usuarios.component.scss']
+  styleUrls: ['./usuarios.component.scss'],
 })
-export class UsuariosComponent extends BaseAdminMasterComponent implements OnInit {
+export class UsuariosComponent
+  extends BaseAdminMasterComponent
+  implements OnInit
+{
   constructor(
     protected override injector: Injector,
     private usuariosService: UsuariosService
-    ) {
+  ) {
     super(injector);
     this.filtravelPelosCampos = ['titulo', 'categoriaId'];
     this.breadcrumbsItem = [
@@ -29,12 +32,10 @@ export class UsuariosComponent extends BaseAdminMasterComponent implements OnIni
 
   protected listarItens() {
     this.usuariosService.listar().subscribe({
-      next: (sucesso) => {
+      next: sucesso => {
         this.dados = sucesso;
       },
-      error: () => {
-
-      }
+      error: () => {},
     });
   }
 

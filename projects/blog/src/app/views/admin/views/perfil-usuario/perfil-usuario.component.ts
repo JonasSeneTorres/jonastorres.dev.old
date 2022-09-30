@@ -8,13 +8,16 @@ import { PerfilUsuarioService } from './../../../../services/perfil-usuario/perf
 @Component({
   selector: 'jt-perfil-usuario',
   templateUrl: './perfil-usuario.component.html',
-  styleUrls: ['./perfil-usuario.component.scss']
+  styleUrls: ['./perfil-usuario.component.scss'],
 })
-export class PerfilUsuarioComponent extends BaseAdminMasterComponent implements OnInit {
+export class PerfilUsuarioComponent
+  extends BaseAdminMasterComponent
+  implements OnInit
+{
   constructor(
     protected override injector: Injector,
     private perfilUsuarioService: PerfilUsuarioService
-    ) {
+  ) {
     super(injector);
     this.filtravelPelosCampos = ['titulo', 'categoriaId'];
     this.breadcrumbsItem = [
@@ -30,17 +33,16 @@ export class PerfilUsuarioComponent extends BaseAdminMasterComponent implements 
   }
 
   protected listarItens() {
-    this.perfilUsuarioService.listar()
-    .pipe(takeUntil(this._destroy$))
-    .subscribe({
-      next: (sucesso: any) => {
-        console.log(sucesso)
-        this.dados = sucesso;
-      },
-      error: () => {
-
-      }
-    });
+    this.perfilUsuarioService
+      .listar()
+      .pipe(takeUntil(this._destroy$))
+      .subscribe({
+        next: (sucesso: any) => {
+          console.log(sucesso);
+          this.dados = sucesso;
+        },
+        error: () => {},
+      });
   }
 
   protected confirmarExclusao(registro: any): Observable<any> {

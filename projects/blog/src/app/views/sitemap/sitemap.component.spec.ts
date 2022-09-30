@@ -12,13 +12,10 @@ describe('SitemapComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SitemapComponent ],
-      providers: [
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
-      ],
-      imports: [SharedModule, HttpClientModule]
-    })
-    .compileComponents();
+      declarations: [SitemapComponent],
+      providers: [{ provide: ActivatedRoute, useClass: ActivatedRouteMock }],
+      imports: [SharedModule, HttpClientModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SitemapComponent);
     component = fixture.componentInstance;

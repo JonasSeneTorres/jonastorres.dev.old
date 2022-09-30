@@ -10,7 +10,7 @@ import { VitrineDados } from 'projects/blog/src/app/types/vitrine-dados.type';
 
 @Component({
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
@@ -20,11 +20,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private _artigosService: ArtigosService,
     private _blogService: BlogService,
-    private _jumbotronService: JumbotronService,
-    ) {
-      this._blogService.tornarBoxPrincipalTransparente(false);
-      this._jumbotronService.dadosJumbotrom$ = null;
-    }
+    private _jumbotronService: JumbotronService
+  ) {
+    this._blogService.tornarBoxPrincipalTransparente(false);
+    this._jumbotronService.dadosJumbotrom$ = null;
+  }
 
   ngOnInit(): void {
     this.chamadasApisExternas();
@@ -42,9 +42,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (sucesso: any) => {
           console.log(sucesso);
-          this.vitrineDados.ultimosArtigos = sucesso
+          this.vitrineDados.ultimosArtigos = sucesso;
         },
-        error: () => { },
+        error: () => {},
       });
   }
 }

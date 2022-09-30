@@ -5,7 +5,7 @@ import { VitrineDados } from 'projects/blog/src/app/types/vitrine-dados.type';
 @Component({
   selector: 'jt-vitrine',
   templateUrl: './vitrine.component.html',
-  styleUrls: ['./vitrine.component.scss']
+  styleUrls: ['./vitrine.component.scss'],
 })
 export class VitrineComponent {
   @Input() dados: VitrineDados = {};
@@ -15,6 +15,6 @@ export class VitrineComponent {
   }
 
   constructor() {
-    this.dados.ultimosArtigos
+    this.dados.ultimosArtigos;
   }
 }

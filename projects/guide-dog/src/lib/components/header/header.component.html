@@ -3,25 +3,21 @@
     <nav
       class="gd-header__nav"
       [class.gd-header__nav-complete]="navboxWithAcceptableSize"
-      id="menu"
-    >
+      id="menu">
       <div
         [class.grid]="navboxWithAcceptableSize"
-        [class.grid-mobile]="!navboxWithAcceptableSize"
-      >
+        [class.grid-mobile]="!navboxWithAcceptableSize">
         <div class="grid">
           <gd-menu-hamburger
             [nav]="navConfig"
             *ngIf="
               (!showHamburgerHorizontalNav || !navboxWithAcceptableSize) &&
               navConfig.length > 0
-            "
-          ></gd-menu-hamburger>
+            "></gd-menu-hamburger>
           <a
             [routerLink]="['']"
             class="gd-header__link gd-header__link-main"
-            [class.gd-header__link-adjusted]="!navboxWithAcceptableSize"
-          >
+            [class.gd-header__link-adjusted]="!navboxWithAcceptableSize">
             <ng-content></ng-content>
           </a>
         </div>
@@ -29,8 +25,7 @@
           [class.gd-header__hide-navbar]="!navboxWithAcceptableSize"
           [attr.ariahidden]="!navboxWithAcceptableSize"
           [nav]="navConfig"
-          *ngIf="showHamburgerHorizontalNav"
-        ></gd-horizontal-navbar>
+          *ngIf="showHamburgerHorizontalNav"></gd-horizontal-navbar>
       </div>
     </nav>
   </gd-centered-panel>

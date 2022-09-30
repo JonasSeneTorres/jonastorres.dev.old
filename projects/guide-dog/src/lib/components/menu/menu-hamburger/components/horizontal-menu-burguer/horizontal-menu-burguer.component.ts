@@ -1,7 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  animate,
+  keyframes,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+import { Component, Input } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
-
 import { ModalService } from 'projects/guide-dog/src/lib/services/modal/modal.service';
 import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item-config';
 
@@ -15,14 +21,14 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
         'true',
         style({
           transform: 'scaley(1)',
-          top: '0'
+          top: '0',
         })
       ),
       state(
         'false',
         style({
           transform: 'scaley(0)',
-          top: '-100vh'
+          top: '-100vh',
         })
       ),
 
@@ -126,6 +132,6 @@ export class HorizontalMenuBurguerComponent {
   }
 
   showHideMenu() {
-    this.showMenu = this.showBackground;;
+    this.showMenu = this.showBackground;
   }
 }

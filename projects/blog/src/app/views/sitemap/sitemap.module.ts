@@ -5,13 +5,7 @@ import { SitemapComponent } from './sitemap.component';
 import { SitemapRoutingModule } from './sitemap-routing.module';
 
 @NgModule({
-  declarations: [
-    SitemapComponent
-  ],
-  imports: [
-    CommonModule,
-    SitemapRoutingModule,
-    SharedModule
-  ]
+  declarations: [SitemapComponent],
+  imports: [CommonModule, SitemapRoutingModule, SharedModule],
 })
-export class SitemapModule { }
+export class SitemapModule {}

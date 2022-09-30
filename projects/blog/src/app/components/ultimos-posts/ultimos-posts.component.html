@@ -1,59 +1,52 @@
 <section class="ultimos-posts" *ngIf="ultimosArtigos.length > 0">
   <h2>Ultimos artigos</h2>
   <ul class="ultimos-posts__list">
-    <li *ngFor="let artigo of ultimosArtigos; let i = index;">
-      <article class="ultimos-posts__artigo" role="link" [routerLink]="[ artigo?.url ]">
+    <li *ngFor="let artigo of ultimosArtigos; let i = index">
+      <article
+        class="ultimos-posts__artigo"
+        role="link"
+        [routerLink]="[artigo?.url]">
         <div class="ultimos-posts__thumb {{ obterNomeCategoria(i) }}">
           <img
             class="icone-asp"
             src="assets/img/fotos/logos/asp.gif"
-            *ngIf="pertenceACategoria(i, 'asp')"
-          />
+            *ngIf="pertenceACategoria(i, 'asp')" />
           <span
             class="ultimos-posts__icone fa-brands fa-angular"
-            *ngIf="pertenceACategoria(i, 'angular')"
-          ></span>
+            *ngIf="pertenceACategoria(i, 'angular')"></span>
           <span
             class="ultimos-posts__icone fa-brands fa-angular"
-            *ngIf="pertenceACategoria(i, 'angularjs')"
-          ></span>
+            *ngIf="pertenceACategoria(i, 'angularjs')"></span>
           <span
             class="ultimos-posts__icone fa-brands fa-css3"
-            *ngIf="pertenceACategoria(i, 'css')"
-          ></span>
+            *ngIf="pertenceACategoria(i, 'css')"></span>
           <img
             class="icone-c-sharp"
             src="assets/img/fotos/logos/c-sharp-branco.gif"
-            *ngIf="pertenceACategoria(i, 'dotnet')"
-          />
+            *ngIf="pertenceACategoria(i, 'dotnet')" />
           <img
             class="icone-flutter"
             src="assets/img/fotos/logos/flutter.svg"
-            *ngIf="pertenceACategoria(i, 'flutter')"
-          />
+            *ngIf="pertenceACategoria(i, 'flutter')" />
           <span
             class="ultimos-posts__icone fa-brands fa-html5"
-            *ngIf="pertenceACategoria(i, 'html')"
-          ></span>
+            *ngIf="pertenceACategoria(i, 'html')"></span>
           <span
             class="ultimos-posts__icone fa-brands fa-js"
-            *ngIf="pertenceACategoria(i, 'javascript')"
-          ></span>
+            *ngIf="pertenceACategoria(i, 'javascript')"></span>
           <span
             class="ultimos-posts__icone fa-brands fa-react"
-            *ngIf="pertenceACategoria(i, 'react')"
-          ></span>
+            *ngIf="pertenceACategoria(i, 'react')"></span>
           <span
             class="ultimos-posts__icone fa-brands fa-vuejs"
-            *ngIf="pertenceACategoria(i, 'vue')"
-          ></span>
+            *ngIf="pertenceACategoria(i, 'vue')"></span>
         </div>
         <h3 class="ultimos-posts__titulo">
           {{ artigo?.titulo }}
         </h3>
         <div class="ultimos-posts__detalhes">
           <span class="fa-solid fa-calendar-days"></span>
-          {{ artigo?.dataCriacao | date: "dd/MM/yyyy" }}
+          {{ artigo?.dataCriacao | date: 'dd/MM/yyyy' }}
           <span class="pipe">|</span>
           <span class="fa-solid fa-stopwatch"></span>
           {{ artigo?.tempoLeitura }} min

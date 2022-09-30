@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'jt-jumbotron',
   templateUrl: './jumbotron.component.html',
-  styleUrls: ['./jumbotron.component.scss']
+  styleUrls: ['./jumbotron.component.scss'],
 })
 export class JumbotronComponent {
   @Input() titulo: string = '';
@@ -23,5 +23,5 @@ export class JumbotronComponent {
 
   _categoria = '';
 
-  constructor() { }
+  constructor() {}
 }

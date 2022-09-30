@@ -7,13 +7,16 @@ import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master
 
 @Component({
   templateUrl: './categoria.component.html',
-  styleUrls: ['./categoria.component.scss']
+  styleUrls: ['./categoria.component.scss'],
 })
-export class CategoriaComponent extends BaseAdminMasterComponent implements OnInit{
+export class CategoriaComponent
+  extends BaseAdminMasterComponent
+  implements OnInit
+{
   constructor(
     protected override injector: Injector,
     private categoriasService: CategoriasService
-    ) {
+  ) {
     super(injector);
     this.filtravelPelosCampos = ['classificacao', 'categoriaId'];
     this.breadcrumbsItem = [
@@ -29,17 +32,16 @@ export class CategoriaComponent extends BaseAdminMasterComponent implements OnIn
   }
 
   protected listarItens() {
-    this.categoriasService.listar()
-    .pipe(takeUntil(this._destroy$))
-    .subscribe({
-      next: (sucesso: any) => {
-        console.log(sucesso);
-        this.dados = sucesso;
-      },
-      error: () => {
-
-      }
-    });
+    this.categoriasService
+      .listar()
+      .pipe(takeUntil(this._destroy$))
+      .subscribe({
+        next: (sucesso: any) => {
+          console.log(sucesso);
+          this.dados = sucesso;
+        },
+        error: () => {},
+      });
   }
 
   protected confirmarExclusao(registro: any): Observable<any> {

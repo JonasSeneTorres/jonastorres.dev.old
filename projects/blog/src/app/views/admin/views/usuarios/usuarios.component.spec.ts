@@ -15,15 +15,19 @@ describe('ADMIN/UsuariosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UsuariosComponent ],
-      imports: [SharedModule, AdminModule, RouterTestingModule, HttpClientModule],
+      declarations: [UsuariosComponent],
+      imports: [
+        SharedModule,
+        AdminModule,
+        RouterTestingModule,
+        HttpClientModule,
+      ],
       providers: [
         { provide: ArtigosService, useClass: ArtigosServiceMock },
         ConfirmationService,
-        MessageService
+        MessageService,
       ],
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(UsuariosComponent);
     component = fixture.componentInstance;

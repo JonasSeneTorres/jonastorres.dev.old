@@ -1,4 +1,12 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Input, OnDestroy } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  OnDestroy,
+} from '@angular/core';
 import { SystemInformationService } from 'projects/guide-dog/src/lib/services/system-information/system-information.service';
 import { Subject, takeUntil, throttleTime } from 'rxjs';
 
@@ -46,7 +54,7 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
       .asObservable()
       .pipe(throttleTime(1000))
       .pipe(takeUntil(this._destroy$))
-      .subscribe((innerWidth) => {
+      .subscribe(innerWidth => {
         this.navboxWithAcceptableSize = this.checkAcceptableSizeNavbox();
         this.changeDetectorRef.detectChanges();
       });
@@ -73,7 +81,8 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
 
     const acceptableSizeLineInPixel = 24;
     const heigthNavBox =
-      this.elementRef.nativeElement.querySelector('.gd-h-navbar')?.offsetHeight ?? 0;
+      this.elementRef.nativeElement.querySelector('.gd-h-navbar')
+        ?.offsetHeight ?? 0;
 
     return heigthNavBox <= 2 * acceptableSizeLineInPixel - 1;
   }

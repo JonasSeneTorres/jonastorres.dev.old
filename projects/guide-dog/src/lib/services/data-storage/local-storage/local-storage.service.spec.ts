@@ -7,9 +7,7 @@ describe('LocalStorageService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        CookieStorageService
-      ]
+      providers: [CookieStorageService],
     });
     service = TestBed.inject(LocalStorageService);
   });

@@ -9,10 +9,9 @@ describe('GraficoSoMobileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraficoMobileSoComponent ],
-      imports: [SharedModule]
-    })
-    .compileComponents();
+      declarations: [GraficoMobileSoComponent],
+      imports: [SharedModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GraficoMobileSoComponent);
     component = fixture.componentInstance;

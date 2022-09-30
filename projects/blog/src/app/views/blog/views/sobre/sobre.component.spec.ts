@@ -15,15 +15,14 @@ describe('SobreComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SobreComponent ],
+      declarations: [SobreComponent],
       imports: [SharedModule, RouterTestingModule, BlogModule],
       providers: [
-        { provide: ArtigosService, useClass: ArtigosServiceMock},
+        { provide: ArtigosService, useClass: ArtigosServiceMock },
         BlogService,
         JumbotronService,
-      ]
-    })
-    .compileComponents();
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SobreComponent);
     component = fixture.componentInstance;

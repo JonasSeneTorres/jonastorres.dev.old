@@ -4,7 +4,7 @@ import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-route
 
 @Component({
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
   breadcrumbsItem: BreadcrumbsItem[];

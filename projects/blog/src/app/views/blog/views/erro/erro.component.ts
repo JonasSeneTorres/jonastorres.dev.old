@@ -3,9 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'jt-erro',
   templateUrl: './erro.component.html',
-  styleUrls: ['./erro.component.scss']
+  styleUrls: ['./erro.component.scss'],
 })
 export class ErroComponent {
-
-  constructor() { }
+  constructor() {}
 }

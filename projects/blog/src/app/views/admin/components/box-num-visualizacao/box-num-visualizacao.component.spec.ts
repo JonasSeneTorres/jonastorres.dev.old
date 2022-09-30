@@ -8,9 +8,8 @@ describe('BoxNumVisualizacaoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoxNumVisualizacaoComponent ]
-    })
-    .compileComponents();
+      declarations: [BoxNumVisualizacaoComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BoxNumVisualizacaoComponent);
     component = fixture.componentInstance;

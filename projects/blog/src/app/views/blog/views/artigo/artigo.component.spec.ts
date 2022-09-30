@@ -22,18 +22,22 @@ describe('ArtigoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ArtigoComponent ],
-      imports: [SharedModule, RouterTestingModule, HttpClientModule, BlogModule],
+      declarations: [ArtigoComponent],
+      imports: [
+        SharedModule,
+        RouterTestingModule,
+        HttpClientModule,
+        BlogModule,
+      ],
       providers: [
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
-        { provide: ArtigosService, useClass: ArtigosServiceMock},
+        { provide: ActivatedRoute, useClass: ActivatedRouteMock },
+        { provide: ArtigosService, useClass: ArtigosServiceMock },
         { provide: CategoriasService, useClass: CategoriasServiceMock },
         { provide: AutoresService, useClass: AutoresServiceMock },
         BlogService,
         JumbotronService,
-      ]
-    })
-    .compileComponents();
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ArtigoComponent);
     component = fixture.componentInstance;

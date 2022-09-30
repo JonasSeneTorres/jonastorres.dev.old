@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { ICrudService } from '../../interfaces/icrud-service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PerfilUsuarioService implements ICrudService {
   private baseURL: string = 'http://localhost:3000/perfil-de-usuario';

@@ -8,7 +8,8 @@ export class SessionStorageService {
   private storage: any;
 
   constructor() {
-    const warnMessage = 'Your browser does not have access to the "localStorage" feature.\nInstead, "Cookies" will be used.';
+    const warnMessage =
+      'Your browser does not have access to the "localStorage" feature.\nInstead, "Cookies" will be used.';
     this.storage = window.sessionStorage;
 
     if (!this.storage) {

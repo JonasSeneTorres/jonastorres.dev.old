@@ -15,15 +15,14 @@ describe('PaginaNaoEncontradaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PaginaNaoEncontradaComponent ],
+      declarations: [PaginaNaoEncontradaComponent],
       imports: [SharedModule, RouterTestingModule, BlogModule],
       providers: [
-        { provide: ArtigosService, useClass: ArtigosServiceMock},
+        { provide: ArtigosService, useClass: ArtigosServiceMock },
         BlogService,
         JumbotronService,
-      ]
-    })
-    .compileComponents();
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PaginaNaoEncontradaComponent);
     component = fixture.componentInstance;

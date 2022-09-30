@@ -6,7 +6,7 @@ import { JonastorresRoutes } from '../../enuns/jonastorres-routes.enum';
 @Component({
   selector: 'jt-sitemap',
   templateUrl: './sitemap.component.html',
-  styleUrls: ['./sitemap.component.scss']
+  styleUrls: ['./sitemap.component.scss'],
 })
 export class SitemapComponent {
   breadcrumbsItem: BreadcrumbsItem[];

@@ -14,11 +14,15 @@ describe('ADMIN/ArtigoEdicaoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ArtigoEdicaoComponent ],
-      imports: [SharedModule, AdminModule, HttpClientModule, RouterTestingModule],
+      declarations: [ArtigoEdicaoComponent],
+      imports: [
+        SharedModule,
+        AdminModule,
+        HttpClientModule,
+        RouterTestingModule,
+      ],
       providers: [{ provide: ArtigosService, useClass: ArtigosServiceMock }],
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ArtigoEdicaoComponent);
     component = fixture.componentInstance;

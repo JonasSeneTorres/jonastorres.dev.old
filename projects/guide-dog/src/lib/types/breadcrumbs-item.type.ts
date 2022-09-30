@@ -1,4 +1,4 @@
 export interface BreadcrumbsItem {
   label: string;
-  route?: string[],
+  route?: string[];
 }

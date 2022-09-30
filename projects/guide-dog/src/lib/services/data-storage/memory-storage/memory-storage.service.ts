@@ -4,7 +4,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { IStorageService } from '../../../interfaces/iStorageService';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MemoryStorageService implements IStorageService, OnDestroy {
   private _value: any = {};
@@ -14,13 +14,9 @@ export class MemoryStorageService implements IStorageService, OnDestroy {
   data$: Observable<any> = this._dataSource.asObservable();
 
   constructor() {
-    this.data$
-    .pipe(takeUntil(this._destroy$))
-    .subscribe(
-      data => {
-        this._value = data;
-      }
-    );
+    this.data$.pipe(takeUntil(this._destroy$)).subscribe(data => {
+      this._value = data;
+    });
   }
 
   ngOnDestroy(): void {

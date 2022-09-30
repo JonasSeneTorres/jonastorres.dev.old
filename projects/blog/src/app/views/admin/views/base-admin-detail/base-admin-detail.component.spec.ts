@@ -36,13 +36,8 @@ describe('BaseAdminDetailComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TestingBaseAdminDetailComponent],
-      imports:[
-        RouterTestingModule
-      ],
-      providers: [
-        ConfirmationService,
-        MessageService
-      ]
+      imports: [RouterTestingModule],
+      providers: [ConfirmationService, MessageService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestingBaseAdminDetailComponent);

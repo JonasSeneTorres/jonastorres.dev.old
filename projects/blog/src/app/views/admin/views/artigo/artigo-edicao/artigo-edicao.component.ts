@@ -260,7 +260,7 @@ export class ArtigoEdicaoComponent
     }
 
     this.listaCategoria = this.listaClassificacaoBruta
-      .filter((item) => item.classificacao.id === classificacaoId)[0]
+      .filter(item => item.classificacao.id === classificacaoId)[0]
       .classificacao.categorias.map((itemFiltrado: any) => ({
         nome: itemFiltrado.label,
         id: itemFiltrado.id,
@@ -275,7 +275,7 @@ export class ArtigoEdicaoComponent
     }
 
     const itemClassificacao = this.listaClassificacaoBruta.filter(
-      (filtroClassificacao) =>
+      filtroClassificacao =>
         filtroClassificacao.classificacao.id === classificacaoId
     )[0];
     const itemSubcategorias = itemClassificacao.classificacao.categorias.filter(
@@ -319,7 +319,7 @@ export class ArtigoEdicaoComponent
     this.form
       .get('categoriaId')!
       .valueChanges.pipe(takeUntil(this._destroy$))
-      .subscribe((valorCategoria) => {
+      .subscribe(valorCategoria => {
         this.popularComboSubcategoria();
       });
   }
@@ -357,9 +357,7 @@ export class ArtigoEdicaoComponent
       }
 
       this.filtrarListaCategoria();
-    } catch (error) {
-
-    }
+    } catch (error) {}
   }
 
   private checarValoresCombosIniciais(valor: string): string {

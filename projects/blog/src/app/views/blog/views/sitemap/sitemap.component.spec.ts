@@ -17,14 +17,19 @@ describe('SitemapComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SitemapComponent ],
-      imports: [SharedModule, RouterTestingModule, HttpClientModule, BlogModule, GuideDogModule ],
+      declarations: [SitemapComponent],
+      imports: [
+        SharedModule,
+        RouterTestingModule,
+        HttpClientModule,
+        BlogModule,
+        GuideDogModule,
+      ],
       providers: [
-        { provide: ArtigosService, useClass: ArtigosServiceMock},
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
-      ]
-    })
-    .compileComponents();
+        { provide: ArtigosService, useClass: ArtigosServiceMock },
+        { provide: ActivatedRoute, useClass: ActivatedRouteMock },
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SitemapComponent);
     component = fixture.componentInstance;

@@ -39,7 +39,7 @@ export class BlogComponent implements OnInit, OnDestroy {
     })
       .pipe(takeUntil(this._destroy$))
       .subscribe({
-        next: (sucesso) => {
+        next: sucesso => {
           this.ultimosArtigos = sucesso.artigos;
           this.categorias = sucesso.categorias;
           this.escutarMudançasJumbotron(sucesso.jumbotron);
@@ -48,16 +48,14 @@ export class BlogComponent implements OnInit, OnDestroy {
         error: () => {},
       });
 
-      this.boxPrincipalTransparente
+    this.boxPrincipalTransparente
       .pipe(takeUntil(this._destroy$))
-      .subscribe(
-        () => {
-          this._changeDetectorRef.detectChanges();
-          // setTimeout(() => {
+      .subscribe(() => {
+        this._changeDetectorRef.detectChanges();
+        // setTimeout(() => {
 
-          // }, 500);
-        }
-      );
+        // }, 500);
+      });
   }
 
   ngOnDestroy() {
@@ -66,18 +64,14 @@ export class BlogComponent implements OnInit, OnDestroy {
   }
 
   private escutarMudançasJumbotron(dados: Observable<any>) {
-    dados
-    .pipe(takeUntil(this._destroy$))
-    .subscribe((data) => {
+    dados.pipe(takeUntil(this._destroy$)).subscribe(data => {
       this.jumbotron = data;
     });
   }
 
   private escutarBusca(dados: Observable<any>) {
-    dados
-    .pipe(takeUntil(this._destroy$))
-    .subscribe((data) => {
-      this._router.navigate([''], { queryParams: { por: data }});
+    dados.pipe(takeUntil(this._destroy$)).subscribe(data => {
+      this._router.navigate([''], { queryParams: { por: data } });
     });
   }
 }

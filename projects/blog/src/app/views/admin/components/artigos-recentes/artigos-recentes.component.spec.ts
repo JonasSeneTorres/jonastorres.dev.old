@@ -9,11 +9,10 @@ describe('BoxArtigosRecentesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ArtigosRecentesComponent ],
+      declarations: [ArtigosRecentesComponent],
       providers: [],
-      imports: [SharedModule]
-    })
-    .compileComponents();
+      imports: [SharedModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ArtigosRecentesComponent);
     component = fixture.componentInstance;

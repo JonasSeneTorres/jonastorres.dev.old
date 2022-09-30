@@ -9,9 +9,8 @@ describe('JumbotronComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ JumbotronModule ]
-    })
-    .compileComponents();
+      imports: [JumbotronModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(JumbotronComponent);
     component = fixture.componentInstance;

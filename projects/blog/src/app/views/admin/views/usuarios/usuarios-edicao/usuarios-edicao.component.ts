@@ -9,7 +9,7 @@ import { UsuariosService } from './../../../../../services/usuarios/usuarios.ser
 
 @Component({
   templateUrl: './usuarios-edicao.component.html',
-  styleUrls: ['./usuarios-edicao.component.scss']
+  styleUrls: ['./usuarios-edicao.component.scss'],
 })
 export class UsuariosEdicaoComponent
   extends BaseAdminDetailComponent
@@ -29,7 +29,8 @@ export class UsuariosEdicaoComponent
         JonastorresRoutes.ADMIN.toBreadcrumb(),
         JonastorresRoutes.ADMIN_USUARIO.toBreadcrumb(),
       ];
-      const breadcrumbNovo = JonastorresRoutes.ADMIN_USUARIO_NOVO.toBreadcrumb();
+      const breadcrumbNovo =
+        JonastorresRoutes.ADMIN_USUARIO_NOVO.toBreadcrumb();
       const breadcrumbEditar =
         JonastorresRoutes.ADMIN_USUARIO_EDITAR.toBreadcrumb();
 
@@ -50,7 +51,11 @@ export class UsuariosEdicaoComponent
       urlImagem: this.form.get('urlImagem')!.value,
     };
 
-    this.gravarDados(autor, autor.nome, JonastorresRoutes.ADMIN_AUTOR.router as any);
+    this.gravarDados(
+      autor,
+      autor.nome,
+      JonastorresRoutes.ADMIN_AUTOR.router as any
+    );
   }
 
   protected gravarDadosInclusao(dados: any): Observable<any> {
@@ -63,8 +68,8 @@ export class UsuariosEdicaoComponent
 
   protected gravarDadosEdicao(dados: any): Observable<any> {
     dados.id = this.id;
-    dados.dataCriacao = this.form.get('dataCriacao')!.value,
-    dados.dataEdicao = new Date();
+    (dados.dataCriacao = this.form.get('dataCriacao')!.value),
+      (dados.dataEdicao = new Date());
     return this.usuariosService.atualizar(dados);
   }
 
@@ -98,4 +103,3 @@ export class UsuariosEdicaoComponent
     });
   }
 }
-

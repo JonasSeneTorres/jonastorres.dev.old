@@ -5,11 +5,11 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
 @Component({
   selector: 'gd-menu-list-horizontal',
   templateUrl: './menu-list-horizontal.component.html',
-  styleUrls: ['./menu-list-horizontal.component.scss']
+  styleUrls: ['./menu-list-horizontal.component.scss'],
 })
 export class MenuListHorizontalComponent {
   @Input() navibarItemList: NavibarItemConfig[] = [];
-  @Input() show = false
+  @Input() show = false;
 
-  constructor() { }
+  constructor() {}
 }

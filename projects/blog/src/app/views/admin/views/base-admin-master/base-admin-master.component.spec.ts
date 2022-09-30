@@ -14,7 +14,7 @@ class TestingBaseAdminMasterComponent extends BaseAdminMasterComponent {
   }
 
   protected confirmarExclusao(_registro: any): Observable<any> {
-    if(this.erro) {
+    if (this.erro) {
       return of({});
     }
 
@@ -28,11 +28,10 @@ describe('BaseAdminMasterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TestingBaseAdminMasterComponent, BaseAdminMasterComponent ],
+      declarations: [TestingBaseAdminMasterComponent, BaseAdminMasterComponent],
       imports: [SharedModule, AdminModule],
-      providers: [ConfirmationService, MessageService]
-    })
-    .compileComponents();
+      providers: [ConfirmationService, MessageService],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TestingBaseAdminMasterComponent);
     component = fixture.componentInstance;

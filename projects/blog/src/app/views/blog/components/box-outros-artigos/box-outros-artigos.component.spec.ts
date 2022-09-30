@@ -8,9 +8,8 @@ describe('BoxOutrosArtigosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoxOutrosArtigosComponent ]
-    })
-    .compileComponents();
+      declarations: [BoxOutrosArtigosComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BoxOutrosArtigosComponent);
     component = fixture.componentInstance;

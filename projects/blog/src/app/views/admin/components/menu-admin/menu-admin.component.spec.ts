@@ -11,13 +11,10 @@ describe('MenuAdminComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuAdminComponent ],
-      providers: [
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
-       ],
-      imports: [SharedModule]
-    })
-    .compileComponents();
+      declarations: [MenuAdminComponent],
+      providers: [{ provide: ActivatedRoute, useClass: ActivatedRouteMock }],
+      imports: [SharedModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MenuAdminComponent);
     component = fixture.componentInstance;

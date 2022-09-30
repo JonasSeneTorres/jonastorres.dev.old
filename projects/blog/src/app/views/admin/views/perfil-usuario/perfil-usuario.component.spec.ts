@@ -17,16 +17,20 @@ describe('ADMIN/PerfilUsuarioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PerfilUsuarioComponent ],
-      imports: [SharedModule, RouterTestingModule, HttpClientModule, AdminModule],
+      declarations: [PerfilUsuarioComponent],
+      imports: [
+        SharedModule,
+        RouterTestingModule,
+        HttpClientModule,
+        AdminModule,
+      ],
       providers: [
         { provide: ArtigosService, useClass: ArtigosServiceMock },
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
+        { provide: ActivatedRoute, useClass: ActivatedRouteMock },
         ConfirmationService,
-        MessageService
+        MessageService,
       ],
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PerfilUsuarioComponent);
     component = fixture.componentInstance;

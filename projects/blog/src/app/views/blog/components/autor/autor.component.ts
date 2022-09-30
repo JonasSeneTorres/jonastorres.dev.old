@@ -3,10 +3,10 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'jt-autor',
   templateUrl: './autor.component.html',
-  styleUrls: ['./autor.component.scss']
+  styleUrls: ['./autor.component.scss'],
 })
 export class AutorComponent {
   @Input() autor: any;
 
-  constructor() { }
+  constructor() {}
 }

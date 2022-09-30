@@ -1,8 +1,8 @@
-import { NavigationExtras } from "@angular/router";
+import { NavigationExtras } from '@angular/router';
 
 export interface NavibarItemConfig {
   label: string;
-  route?: any[],
-  routeExtras?: NavigationExtras | undefined
+  route?: any[];
+  routeExtras?: NavigationExtras | undefined;
   children?: NavibarItemConfig[];
 }

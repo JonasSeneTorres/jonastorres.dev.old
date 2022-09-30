@@ -16,10 +16,9 @@ describe('HeaderComponent', () => {
         HeaderModule,
         CenteredPanelModule,
         MenuModule,
-        RouterTestingModule
-      ]
-    })
-    .compileComponents();
+        RouterTestingModule,
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

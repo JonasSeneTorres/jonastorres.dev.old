@@ -11,8 +11,7 @@
   currentPageReportTemplate="Exibindo linhas {first} à {last} de um total de {totalRecords} registros"
   [rowsPerPageOptions]="[10, 25, 50]"
   [globalFilterFields]="filtravelPelosCampos"
-  #dt
->
+  #dt>
   <ng-template pTemplate="caption">
     <div class="table-busca__container-busca">
       <span class="p-float-label p-input-icon-left">
@@ -22,8 +21,7 @@
           type="text"
           class="table-busca__input-pesquisa"
           pInputText
-          (input)="applyFilterGlobal($event, 'contains')"
-        />
+          (input)="applyFilterGlobal($event, 'contains')" />
         <label for="float-input">Filtrar</label>
       </span>
 
@@ -31,8 +29,7 @@
         type="button"
         tabindex="0"
         class="table-busca__botao-novo"
-        [routerLink]="['/admin/artigos/novo']"
-      >
+        [routerLink]="['/admin/artigos/novo']">
         <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
         Novo
       </button>
@@ -61,7 +58,7 @@
         {{ dados.categoriaId }}
       </td>
       <td>
-        {{ dados.dataCriacao | date:'shortDate' }}
+        {{ dados.dataCriacao | date: 'shortDate' }}
       </td>
       <td class="table-busca__coluna-acoes">
         <div class="table-busca__grid-botao">
@@ -70,8 +67,7 @@
             class="table-busca__botao-editar"
             alt="editar"
             aria-label="editar"
-            [routerLink]="['/admin/artigos/editar/', dados.id]"
-          >
+            [routerLink]="['/admin/artigos/editar/', dados.id]">
             <span class="fa-solid fa-pen-to-square" aria-hidden="true"></span>
           </button>
 
@@ -80,8 +76,7 @@
             class="table-busca__botao-apagar"
             alt="excluir"
             aria-label="excluir"
-            (click)="excluir(dados, dados.titulo)"
-          >
+            (click)="excluir(dados, dados.titulo)">
             <span class="fa-solid fa-trash-can" aria-hidden="true"></span>
           </button>
         </div>
@@ -97,7 +92,7 @@
 
 <p-toast position="bottom-left"></p-toast>
 
-<p-confirmDialog #cd [style]="{ width: '50vw' }" >
+<p-confirmDialog #cd [style]="{ width: '50vw' }">
   <ng-template pTemplate="header">
     <h1>Excluir Registro</h1>
   </ng-template>

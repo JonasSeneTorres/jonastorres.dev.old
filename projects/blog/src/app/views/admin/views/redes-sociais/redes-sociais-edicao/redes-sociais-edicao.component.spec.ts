@@ -13,11 +13,10 @@ describe('ADMIN/RedesSociaisEdicaoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RedesSociaisEdicaoComponent ],
+      declarations: [RedesSociaisEdicaoComponent],
       imports: [SharedModule, AdminModule, HttpClientModule],
       providers: [{ provide: ArtigosService, useClass: ArtigosServiceMock }],
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RedesSociaisEdicaoComponent);
     component = fixture.componentInstance;

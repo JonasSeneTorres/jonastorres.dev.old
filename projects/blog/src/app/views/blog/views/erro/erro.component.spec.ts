@@ -16,14 +16,18 @@ describe('ErroComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ErroComponent ],
-      imports: [SharedModule, RouterTestingModule, HttpClientModule, BlogModule],
+      declarations: [ErroComponent],
+      imports: [
+        SharedModule,
+        RouterTestingModule,
+        HttpClientModule,
+        BlogModule,
+      ],
       providers: [
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
-        { provide: ArtigosService, useClass: ArtigosServiceMock},
-      ]
-    })
-    .compileComponents();
+        { provide: ActivatedRoute, useClass: ActivatedRouteMock },
+        { provide: ArtigosService, useClass: ArtigosServiceMock },
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ErroComponent);
     component = fixture.componentInstance;

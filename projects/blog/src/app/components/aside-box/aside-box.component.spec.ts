@@ -10,10 +10,9 @@ describe('AsideBoxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AsideBoxComponent ],
-      imports: [ SharedModule, HttpClientModule ]
-    })
-    .compileComponents();
+      declarations: [AsideBoxComponent],
+      imports: [SharedModule, HttpClientModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AsideBoxComponent);
     component = fixture.componentInstance;

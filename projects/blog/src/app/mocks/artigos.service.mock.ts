@@ -11,7 +11,7 @@ export class ArtigosServiceMock implements ICrudService {
   }
 
   obter(_codigo: string): Observable<any> {
-    if(!this.erro) {
+    if (!this.erro) {
       return of({});
     }
 
@@ -19,7 +19,7 @@ export class ArtigosServiceMock implements ICrudService {
   }
 
   listar(): Observable<any[]> {
-    if(!this.erro) {
+    if (!this.erro) {
       return of([{}]);
     }
 
@@ -27,7 +27,7 @@ export class ArtigosServiceMock implements ICrudService {
   }
 
   buscar(_palavraChave: string): Observable<any[]> {
-    if(!this.erro) {
+    if (!this.erro) {
       return of([{}]);
     }
 
@@ -35,7 +35,7 @@ export class ArtigosServiceMock implements ICrudService {
   }
 
   listarUltimosArtigos(): Observable<any[]> {
-    if(!this.erro) {
+    if (!this.erro) {
       return of([{}]);
     }
 
@@ -43,7 +43,7 @@ export class ArtigosServiceMock implements ICrudService {
   }
 
   listarArtigosCategoria(_categoriaId: number): Observable<any[]> {
-    if(!this.erro) {
+    if (!this.erro) {
       return of([{}]);
     }
 
@@ -51,7 +51,7 @@ export class ArtigosServiceMock implements ICrudService {
   }
 
   listarArtigosSerie(_serieId: number): Observable<any[]> {
-    if(!this.erro) {
+    if (!this.erro) {
       return of([{}]);
     }
 
@@ -59,7 +59,7 @@ export class ArtigosServiceMock implements ICrudService {
   }
 
   inserir(_objeto: any): Observable<any> {
-    if(!this.erro) {
+    if (!this.erro) {
       return of({});
     }
 
@@ -67,7 +67,7 @@ export class ArtigosServiceMock implements ICrudService {
   }
 
   atualizar(_objeto: any): Observable<any> {
-    if(!this.erro) {
+    if (!this.erro) {
       return of({});
     }
 
@@ -75,7 +75,7 @@ export class ArtigosServiceMock implements ICrudService {
   }
 
   apagar(_codigo: string): Observable<any> {
-    if(!this.erro) {
+    if (!this.erro) {
       return of({});
     }
 

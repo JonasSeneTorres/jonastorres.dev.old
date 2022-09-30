@@ -28,7 +28,7 @@ describe('CategoriaComponent', () => {
         BlogModule,
       ],
       providers: [
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
+        { provide: ActivatedRoute, useClass: ActivatedRouteMock },
         { provide: ArtigosService, useClass: ArtigosServiceMock },
         { provide: CategoriasService, useClass: CategoriasServiceMock },
         BlogService,

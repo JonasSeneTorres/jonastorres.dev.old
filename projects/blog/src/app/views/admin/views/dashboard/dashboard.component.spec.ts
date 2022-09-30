@@ -17,16 +17,20 @@ describe('ADMIN/DashboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ],
-      imports: [SharedModule, AdminModule, HttpClientModule, RouterTestingModule],
+      declarations: [DashboardComponent],
+      imports: [
+        SharedModule,
+        AdminModule,
+        HttpClientModule,
+        RouterTestingModule,
+      ],
       providers: [
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
+        { provide: ActivatedRoute, useClass: ActivatedRouteMock },
         { provide: ArtigosService, useClass: ArtigosServiceMock },
         ConfirmationService,
-        MessageService
+        MessageService,
       ],
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;

@@ -10,7 +10,7 @@ import { forkJoin, Observable, Subject, takeUntil } from 'rxjs';
 
 @Component({
   templateUrl: './categoria.component.html',
-  styleUrls: ['./categoria.component.scss']
+  styleUrls: ['./categoria.component.scss'],
 })
 export class CategoriaComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
@@ -35,29 +35,34 @@ export class CategoriaComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this._activatedRoute.params
-    .pipe(takeUntil(this._destroy$))
-    .subscribe((params: Params) => {
-      const labelGrupo = `${params['grupo']}`;
-      const routeGrupo = `/blog/${params['grupo']}`;
-      const labelCategoria = `${params['categoria']}`;
-      const routeCategoria = `/blog/${params['categoria']}`;
+      .pipe(takeUntil(this._destroy$))
+      .subscribe((params: Params) => {
+        const labelGrupo = `${params['grupo']}`;
+        const routeGrupo = `/blog/${params['grupo']}`;
+        const labelCategoria = `${params['categoria']}`;
+        const routeCategoria = `/blog/${params['categoria']}`;
 
-      this.breadcrumbsItem = [
-        JonastorresRoutes.HOME.toBreadcrumb(),
-      ];
+        this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb()];
 
-      if (labelGrupo !== 'categoria') {
-        this.breadcrumbsItem.push({ label: labelGrupo, route: [routeGrupo]});
-      }
-      this.breadcrumbsItem.push({ label: labelCategoria, route: [routeCategoria]});
-    });
+        if (labelGrupo !== 'categoria') {
+          this.breadcrumbsItem.push({ label: labelGrupo, route: [routeGrupo] });
+        }
+        this.breadcrumbsItem.push({
+          label: labelCategoria,
+          route: [routeCategoria],
+        });
+      });
 
-    this.obterDadosIniciais(1).pipe(takeUntil(this._destroy$)).subscribe((sucesso) => {
-      this.dadosArtigo = sucesso.artigo;
-    },
-    (erro: any) => {
-      console.error(erro);
-    });
+    this.obterDadosIniciais(1)
+      .pipe(takeUntil(this._destroy$))
+      .subscribe(
+        sucesso => {
+          this.dadosArtigo = sucesso.artigo;
+        },
+        (erro: any) => {
+          console.error(erro);
+        }
+      );
   }
 
   ngOnDestroy(): void {

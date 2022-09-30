@@ -19,17 +19,21 @@ describe('ADMIN/AutorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AutorComponent ],
-      imports: [SharedModule, AdminModule, RouterTestingModule, HttpClientModule],
+      declarations: [AutorComponent],
+      imports: [
+        SharedModule,
+        AdminModule,
+        RouterTestingModule,
+        HttpClientModule,
+      ],
       providers: [
         { provide: ArtigosService, useClass: ArtigosServiceMock },
         { provide: AutoresService, useClass: AutoresServiceMock },
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
+        { provide: ActivatedRoute, useClass: ActivatedRouteMock },
         ConfirmationService,
-        MessageService
+        MessageService,
       ],
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AutorComponent);
     component = fixture.componentInstance;

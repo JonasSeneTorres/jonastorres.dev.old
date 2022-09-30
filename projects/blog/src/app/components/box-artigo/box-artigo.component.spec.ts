@@ -11,10 +11,9 @@ describe('BoxArtigoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoxArtigoComponent ],
-      imports: [ SharedModule, HttpClientModule, RouterTestingModule ]
-    })
-    .compileComponents();
+      declarations: [BoxArtigoComponent],
+      imports: [SharedModule, HttpClientModule, RouterTestingModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BoxArtigoComponent);
     component = fixture.componentInstance;

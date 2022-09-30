@@ -13,7 +13,7 @@ export class UltimosPostsComponent {
 
   obterNomeCategoria(indice: number) {
     const output = this.categorias.filter(
-      (item) => item.id === this.ultimosArtigos[indice].categoriaId
+      item => item.id === this.ultimosArtigos[indice].categoriaId
     );
 
     return '';

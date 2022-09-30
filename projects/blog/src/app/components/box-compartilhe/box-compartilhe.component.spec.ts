@@ -8,9 +8,8 @@ describe('BoxCompartilheComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoxCompartilheComponent ]
-    })
-    .compileComponents();
+      declarations: [BoxCompartilheComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BoxCompartilheComponent);
     component = fixture.componentInstance;

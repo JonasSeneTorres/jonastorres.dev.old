@@ -3,16 +3,14 @@
   class="autor-edicao"
   [formGroup]="form"
   (submit)="submit()"
-  autocomplete="off"
->
+  autocomplete="off">
   <div class="autor-edicao__grid-titulo">
     <h1 *ngIf="id.length === 0">Novo Autor</h1>
     <h1 *ngIf="id.length > 0">Edição de autor</h1>
     <p-inputSwitch
       id="ativo"
       class="autor-edicao__ativo"
-      formControlName="ativo"
-    ></p-inputSwitch>
+      formControlName="ativo"></p-inputSwitch>
   </div>
 
   <div class="autor-edicao__grid">
@@ -20,15 +18,13 @@
       <img
         src="/assets/img/fotos/autor/jonas.jpg"
         class="autor-edicao__img"
-        alt=""
-      />
+        alt="" />
       <input
         id="username1"
         class="autor-edicao__campo-urlfoto"
         type="text"
         readonly
-        formControlName="urlImagem"
-      />
+        formControlName="urlImagem" />
       <input type="file" />
     </div>
     <div class="autor-edicao__container-form">
@@ -38,8 +34,7 @@
           id="username1"
           class="autor-edicao__campo"
           type="text"
-          formControlName="nome"
-        />
+          formControlName="nome" />
       </div>
       <div class="field">
         <label for="username1" class="autor-edicao__label">Cargo</label>
@@ -47,15 +42,13 @@
           id="username1"
           class="autor-edicao__campo"
           type="text"
-          formControlName="cargo"
-        />
+          formControlName="cargo" />
       </div>
       <div class="field">
         <label for="username1" class="autor-edicao__label">Descricao</label>
         <textarea
           class="autor-edicao__campo autor-edicao__campo-textarea"
-          formControlName="descricao"
-        >
+          formControlName="descricao">
         </textarea>
       </div>
 
@@ -69,8 +62,7 @@
             id="data-criacao"
             formControlName="dataCriacao"
             pInputText
-            readonly
-          />
+            readonly />
         </div>
 
         <div>
@@ -82,8 +74,7 @@
             id="data-edicao"
             formControlName="dataEdicao"
             pInputText
-            readonly
-          />
+            readonly />
         </div>
       </div>
     </div>
@@ -93,16 +84,14 @@
     <button
       class="botao confirmDialog__no"
       type="button"
-      [routerLink]="['/admin/autores']"
-    >
+      [routerLink]="['/admin/autores']">
       <span class="icone_botao fa-solid fa-xmark" aria-hidden="true"></span>
       Cancelar
     </button>
     <button
       class="botao confirmDialog__yes"
       type="submit"
-      [disabled]="form.invalid"
-    >
+      [disabled]="form.invalid">
       <span class="icone_botao fa-solid fa-check" aria-hidden="true"></span>
       Salvar
     </button>

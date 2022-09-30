@@ -1,16 +1,14 @@
 <gd-button-hamburger
   [actived]="showMenu"
   aria-controls="menuHamburger"
-  (click)="displayOpacity($event, !showBackground)"
-></gd-button-hamburger>
+  (click)="displayOpacity($event, !showBackground)"></gd-button-hamburger>
 
 <div
   id="menuHamburger"
   class="gd-menu-hamburger__nav"
   (click)="displayOpacity($event, false)"
   [@showHideBackgroundModal]="showBackground.toString() === 'true'"
-  (@showHideBackgroundModal.done)="showHideMenu()"
->
+  (@showHideBackgroundModal.done)="showHideMenu()">
   <gd-centered-panel>
     <div
       style="
@@ -18,13 +16,11 @@
         width: 100vw;
         height: 100vh;
         margin-left: -20px;
-      "
-    >
+      ">
       <div
         class="gd-menu-hamburger__nav-container"
         (click)="displayOpacity($event, true)"
-        [@openCloseHamburger]="showMenu.toString() === 'true'"
-      >
+        [@openCloseHamburger]="showMenu.toString() === 'true'">
         <div class="gd-menu-hamburger__nav-container-list">
           <ul class="gd-menu-hamburger__nav-list">
             <ng-container *ngFor="let itemNav of nav">
@@ -37,8 +33,7 @@
                     )
                   "
                   routerLinkActive="router-link-active"
-                  *ngIf="(itemNav.children ?? []).length === 0"
-                >
+                  *ngIf="(itemNav.children ?? []).length === 0">
                   <span class="label">{{ itemNav.label }}</span>
                 </a>
                 <a
@@ -52,8 +47,7 @@
                   role="button"
                   aria-haspopup="true"
                   aria-expanded="false"
-                  *ngIf="(itemNav.children ?? []).length > 0"
-                >
+                  *ngIf="(itemNav.children ?? []).length > 0">
                   <span class="label">{{ itemNav.label }}</span>
                   <span class="arrow">
                     <span class="fa-solid fa-chevron-right"></span>

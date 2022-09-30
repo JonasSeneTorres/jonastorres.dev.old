@@ -1,16 +1,19 @@
 <div class="gd-h-navbar">
   <ul class="gd-header__menu-main">
     <ng-container *ngFor="let itemNav of nav">
-      <li class="gd-header__menu-main-li" [attr.data-show]="false" #listaitens tabindex="-1" (hover)="listaitens.setAttribute('data-show', 'true')">
+      <li
+        class="gd-header__menu-main-li"
+        [attr.data-show]="false"
+        #listaitens
+        tabindex="-1"
+        (hover)="listaitens.setAttribute('data-show', 'true')">
         <ng-container
-          *ngIf="(itemNav?.children?.length ?? 0) === 0; else hasChild"
-        >
+          *ngIf="(itemNav?.children?.length ?? 0) === 0; else hasChild">
           <a
             class="gd-header__link"
             [routerLink]="itemNav?.route ?? []"
             [queryParams]="itemNav?.routeExtras ?? undefined"
-            routerLinkActive="gd-header__link--actived"
-          >
+            routerLinkActive="gd-header__link--actived">
             {{ itemNav.label }}
           </a>
         </ng-container>
@@ -20,7 +23,11 @@
             {{ itemNav.label }}
             <span class="fa-solid fa-caret-down"></span>
           </button>
-          <gd-menu-list-horizontal [navibarItemList]="itemNav.children ?? []" [show]="listaitens.getAttribute('data-show') === 'true'"></gd-menu-list-horizontal>
+          <gd-menu-list-horizontal
+            [navibarItemList]="itemNav.children ?? []"
+            [show]="
+              listaitens.getAttribute('data-show') === 'true'
+            "></gd-menu-list-horizontal>
         </ng-template>
       </li>
     </ng-container>

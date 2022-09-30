@@ -9,10 +9,9 @@ describe('GraficoMobileNavegadoresComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraficoMobileNavegadoresComponent ],
-      imports: [SharedModule]
-    })
-    .compileComponents();
+      declarations: [GraficoMobileNavegadoresComponent],
+      imports: [SharedModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GraficoMobileNavegadoresComponent);
     component = fixture.componentInstance;

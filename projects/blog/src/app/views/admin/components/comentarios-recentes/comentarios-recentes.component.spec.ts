@@ -9,10 +9,9 @@ describe('BoxComentariosRecentesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ComentariosRecentesComponent ],
-      imports: [SharedModule]
-    })
-    .compileComponents();
+      declarations: [ComentariosRecentesComponent],
+      imports: [SharedModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ComentariosRecentesComponent);
     component = fixture.componentInstance;

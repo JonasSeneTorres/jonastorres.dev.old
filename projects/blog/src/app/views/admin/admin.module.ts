@@ -12,14 +12,10 @@ import { BoxNumPostsComponent } from './components/box-num-posts/box-num-posts.c
 import { BoxNumSeguidoresComponent } from './components/box-num-seguidores/box-num-seguidores.component';
 import { BoxNumVisualizacaoComponent } from './components/box-num-visualizacao/box-num-visualizacao.component';
 import { ComentariosRecentesComponent } from './components/comentarios-recentes/comentarios-recentes.component';
-import {
-  GraficoDesktopNavegadoresComponent,
-} from './components/grafico-desktop-navegadores/grafico-desktop-navegadores.component';
+import { GraficoDesktopNavegadoresComponent } from './components/grafico-desktop-navegadores/grafico-desktop-navegadores.component';
 import { GraficoDesktopSOComponent } from './components/grafico-desktop-so/grafico-desktop-so.component';
 import { GraficoDispositivosComponent } from './components/grafico-dispositivos/grafico-dispositivos.component';
-import {
-  GraficoMobileNavegadoresComponent,
-} from './components/grafico-mobile-navegadores/grafico-mobile-navegadores.component';
+import { GraficoMobileNavegadoresComponent } from './components/grafico-mobile-navegadores/grafico-mobile-navegadores.component';
 import { GraficoMobileSoComponent } from './components/grafico-mobile-so/grafico-mobile-so.component';
 import { GraficoNumVisitantesComponent } from './components/grafico-num-visitantes/grafico-num-visitantes.component';
 import { ListaCompartilhamentosComponent } from './components/lista-compartilhamentos/lista-compartilhamentos.component';
@@ -79,7 +75,7 @@ import { UsuariosComponent } from './views/usuarios/usuarios.component';
     RouterModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+  ],
 })
-export class AdminModule { }
+export class AdminModule {}

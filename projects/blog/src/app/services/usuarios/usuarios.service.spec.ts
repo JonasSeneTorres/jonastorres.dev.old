@@ -8,12 +8,8 @@ describe('UsuariosService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientModule,
-      ],
-      providers: [
-        UsuariosService
-      ]
+      imports: [HttpClientModule],
+      providers: [UsuariosService],
     });
     service = TestBed.inject(UsuariosService);
   });

@@ -11,13 +11,8 @@ describe('VerticalMenuBurgerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        MenuModule,
-        RouterTestingModule,
-        NoopAnimationsModule
-      ],
-    })
-    .compileComponents();
+      imports: [MenuModule, RouterTestingModule, NoopAnimationsModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

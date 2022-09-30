@@ -4,12 +4,14 @@
   class="categoria-edicao"
   [formGroup]="form"
   (submit)="submit()"
-  autocomplete="off"
->
+  autocomplete="off">
   <div class="categoria-edicao__grid-titulo">
     <h1 *ngIf="id.length === 0">Novo categoria</h1>
     <h1 *ngIf="id.length > 0">Edição de categorias</h1>
-    <p-inputSwitch id="ativo" class="categoria-edicao__ativo" formControlName="ativo"></p-inputSwitch>
+    <p-inputSwitch
+      id="ativo"
+      class="categoria-edicao__ativo"
+      formControlName="ativo"></p-inputSwitch>
   </div>
 
   <p>
@@ -21,8 +23,7 @@
       id="classificacao"
       class="categoria-edicao__input"
       formControlName="classificacao"
-      pInputText
-    />
+      pInputText />
   </p>
 
   <p>
@@ -32,8 +33,7 @@
       id="classificacao"
       class="categoria-edicao__input"
       formControlName="url"
-      pInputText
-    />
+      pInputText />
   </p>
   <!-- <fieldset>
   <legend>categorias</legend> -->
@@ -41,8 +41,10 @@
     <ul>
       <ng-container formArrayName="categorias">
         <ng-container
-          *ngFor="let categoria of categorias.controls; let indiceCategoria = index"
-        >
+          *ngFor="
+            let categoria of categorias.controls;
+            let indiceCategoria = index
+          ">
           <li class="categoria-edicao__item" [formGroupName]="indiceCategoria">
             <fieldset>
               <legend>Categoria</legend>
@@ -56,8 +58,7 @@
                     id="categoria"
                     class="categoria-edicao__input"
                     formControlName="labelCategoria"
-                    pInputText
-                  />
+                    pInputText />
                 </div>
                 <div>
                   <label for="categoria" class="categoria-edicao__label"
@@ -68,35 +69,35 @@
                     id="categoria"
                     class="categoria-edicao__input"
                     formControlName="urlCategoria"
-                    pInputText
-                  />
+                    pInputText />
                 </div>
                 <div>
                   <label
                     for="ativo"
-                    class="categoria-edicao__label categoria-edicao__label-ativo"
-                  >
+                    class="categoria-edicao__label categoria-edicao__label-ativo">
                     Ativo
                   </label>
-                  <p-inputSwitch id="ativo" formControlName="ativoCategoria"></p-inputSwitch>
+                  <p-inputSwitch
+                    id="ativo"
+                    formControlName="ativoCategoria"></p-inputSwitch>
                 </div>
                 <div class="categoria-edicao__container-botoes">
                   <button
                     type="button"
                     (click)="removerCategoria(indiceCategoria)"
                     class="categoria-edicao__botao1"
-                    *ngIf="categorias.controls.length > 1 && !categoria.value.idCategoria"
-                  >
+                    *ngIf="
+                      categorias.controls.length > 1 &&
+                      !categoria.value.idCategoria
+                    ">
                     <span
                       class="fa-solid fa-trash-can"
-                      aria-hidden="true"
-                    ></span>
+                      aria-hidden="true"></span>
                   </button>
                   <button
                     type="button"
                     (click)="adicionarCategoria(indiceCategoria + 1)"
-                    *ngIf="categorias.controls.length === indiceCategoria + 1"
-                  >
+                    *ngIf="categorias.controls.length === indiceCategoria + 1">
                     <span class="fa-solid fa-plus" aria-hidden="true"></span>
                   </button>
                 </div>
@@ -105,11 +106,17 @@
             <fieldset>
               <legend>Subcategorias</legend>
               <!-- {{ categoria.value.subcategoria.controls | json }} -->
-              <ul >
+              <ul>
                 <ng-container formArrayName="subcategorias">
-                  <ng-container *ngFor="let subcategoria of getSubcategorias(indiceCategoria).controls let indiceSub = index">
-
-                    <li class="categoria-edicao__grid-categoria-sub" [formGroupName]="indiceSub">
+                  <ng-container
+                    *ngFor="
+                      let subcategoria of getSubcategorias(indiceCategoria)
+                        .controls;
+                      let indiceSub = index
+                    ">
+                    <li
+                      class="categoria-edicao__grid-categoria-sub"
+                      [formGroupName]="indiceSub">
                       <div>
                         <label for="categoria" class="categoria-edicao__label"
                           >Nome</label
@@ -119,32 +126,47 @@
                           id="categoria"
                           class="categoria-edicao__input"
                           formControlName="labelSubcategoria"
-                          pInputText
-                        />
+                          pInputText />
                       </div>
                       <div>
                         <label
                           for="ativo"
-
-                          class="categoria-edicao__label categoria-edicao__label-ativo"
-                        >
+                          class="categoria-edicao__label categoria-edicao__label-ativo">
                           Ativo
                         </label>
-                        <p-inputSwitch id="ativo" formControlName="ativoSubcategoria"></p-inputSwitch>
+                        <p-inputSwitch
+                          id="ativo"
+                          formControlName="ativoSubcategoria"></p-inputSwitch>
                       </div>
                       <div class="categoria-edicao__container-botoes">
-                        <button type="button" class="categoria-edicao__botao1" (click)="removerSubcategoria(indiceCategoria, indiceSub)" *ngIf="getSubcategorias(indiceCategoria).controls.length > 1 && !subcategoria.value.idSubcategoria">
+                        <button
+                          type="button"
+                          class="categoria-edicao__botao1"
+                          (click)="
+                            removerSubcategoria(indiceCategoria, indiceSub)
+                          "
+                          *ngIf="
+                            getSubcategorias(indiceCategoria).controls.length >
+                              1 && !subcategoria.value.idSubcategoria
+                          ">
                           <span
                             class="fa-solid fa-trash-can"
-                            aria-hidden="true"
-                          ></span>
+                            aria-hidden="true"></span>
                         </button>
-                        <button type="button" (click)="adicionarSubcategoria(indiceCategoria)" *ngIf="getSubcategorias(indiceCategoria).controls.length === indiceSub + 1">
-                          <span class="fa-solid fa-plus" aria-hidden="true"></span>
+                        <button
+                          type="button"
+                          (click)="adicionarSubcategoria(indiceCategoria)"
+                          *ngIf="
+                            getSubcategorias(indiceCategoria).controls
+                              .length ===
+                            indiceSub + 1
+                          ">
+                          <span
+                            class="fa-solid fa-plus"
+                            aria-hidden="true"></span>
                         </button>
                       </div>
                     </li>
-
                   </ng-container>
                 </ng-container>
               </ul>
@@ -164,8 +186,7 @@
         id="data-criacao"
         formControlName="dataCriacao"
         pInputText
-        readonly
-      />
+        readonly />
     </div>
 
     <div>
@@ -177,8 +198,7 @@
         id="data-edicao"
         formControlName="dataEdicao"
         pInputText
-        readonly
-      />
+        readonly />
     </div>
   </div>
   <!-- </fieldset> -->
@@ -190,16 +210,14 @@
     <button
       class="botao confirmDialog__no"
       type="button"
-      [routerLink]="['/admin/categorias']"
-    >
+      [routerLink]="['/admin/categorias']">
       <span class="icone_botao fa-solid fa-xmark" aria-hidden="true"></span>
       Cancelar
     </button>
     <button
       class="botao confirmDialog__yes"
       type="submit"
-      [disabled]="form.invalid"
-    >
+      [disabled]="form.invalid">
       <span class="icone_botao fa-solid fa-check" aria-hidden="true"></span>
       Salvar
     </button>

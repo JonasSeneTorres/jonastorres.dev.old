@@ -10,7 +10,7 @@ import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   templateUrl: './grupo.component.html',
-  styleUrls: ['./grupo.component.scss']
+  styleUrls: ['./grupo.component.scss'],
 })
 export class GrupoComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
@@ -22,29 +22,27 @@ export class GrupoComponent implements OnInit, OnDestroy {
     private _artigosService: ArtigosService,
     private _jumbotronService: JumbotronService,
     private _blogService: BlogService,
-    private _activatedRoute: ActivatedRoute,
-    ) {
-      this._jumbotronService.dadosJumbotrom$ = null;
-      this._blogService.tornarBoxPrincipalTransparente(false);
-      this.breadcrumbsItem = [];
-    }
+    private _activatedRoute: ActivatedRoute
+  ) {
+    this._jumbotronService.dadosJumbotrom$ = null;
+    this._blogService.tornarBoxPrincipalTransparente(false);
+    this.breadcrumbsItem = [];
+  }
 
   ngOnInit(): void {
     this.chamadasApisExternas();
     this._activatedRoute.params
-    .pipe(takeUntil(this._destroy$))
-    .subscribe((params: Params) => {
-      const labelGrupo = `${params['grupo']}`;
-      const routeGrupo = `/blog/${params['grupo']}`;
+      .pipe(takeUntil(this._destroy$))
+      .subscribe((params: Params) => {
+        const labelGrupo = `${params['grupo']}`;
+        const routeGrupo = `/blog/${params['grupo']}`;
 
-      this.breadcrumbsItem = [
-        JonastorresRoutes.HOME.toBreadcrumb(),
-      ];
+        this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb()];
 
-      if (labelGrupo !== 'categoria') {
-        this.breadcrumbsItem.push({ label: labelGrupo, route: [routeGrupo]});
-      }
-    });
+        if (labelGrupo !== 'categoria') {
+          this.breadcrumbsItem.push({ label: labelGrupo, route: [routeGrupo] });
+        }
+      });
   }
 
   ngOnDestroy(): void {
@@ -57,12 +55,11 @@ export class GrupoComponent implements OnInit, OnDestroy {
       .listarUltimosArtigos()
       .pipe(takeUntil(this._destroy$))
       .subscribe({
-
         next: (sucesso: any) => {
           console.log(sucesso);
-          this.vitrineDados.ultimosArtigos = sucesso
+          this.vitrineDados.ultimosArtigos = sucesso;
         },
-        error: () => { },
+        error: () => {},
       });
   }
 }

@@ -18,11 +18,9 @@ describe('AppComponent', () => {
         HttpClientModule,
       ],
       providers: [
-        { provide: CategoriasService, useClass: CategoriasServiceMock }
+        { provide: CategoriasService, useClass: CategoriasServiceMock },
       ],
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 

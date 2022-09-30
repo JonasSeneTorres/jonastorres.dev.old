@@ -26,7 +26,8 @@ export class ModalService {
     }
     const body = this.document.body;
 
-    this.scrollPosition = (window.pageYOffset || document.documentElement.scrollTop) - 70;
+    this.scrollPosition =
+      (window.pageYOffset || document.documentElement.scrollTop) - 70;
 
     this.renderer.addClass(body, 'modal-open');
     this._showModal = true;

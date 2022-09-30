@@ -15,15 +15,14 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ],
+      declarations: [HomeComponent],
       imports: [SharedModule, RouterTestingModule, BlogModule],
       providers: [
-        { provide: ArtigosService, useClass: ArtigosServiceMock},
+        { provide: ArtigosService, useClass: ArtigosServiceMock },
         BlogService,
         JumbotronService,
-      ]
-    })
-    .compileComponents();
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;

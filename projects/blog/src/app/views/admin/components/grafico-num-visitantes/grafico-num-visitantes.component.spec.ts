@@ -9,10 +9,9 @@ describe('GraficoNumVisitantesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraficoNumVisitantesComponent ],
-      imports: [SharedModule]
-    })
-    .compileComponents();
+      declarations: [GraficoNumVisitantesComponent],
+      imports: [SharedModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GraficoNumVisitantesComponent);
     component = fixture.componentInstance;

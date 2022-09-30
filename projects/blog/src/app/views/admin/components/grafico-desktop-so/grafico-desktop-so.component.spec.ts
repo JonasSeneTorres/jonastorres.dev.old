@@ -9,10 +9,9 @@ describe('BoxSistemasOperacionaisComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraficoDesktopSOComponent ],
-      imports: [SharedModule]
-    })
-    .compileComponents();
+      declarations: [GraficoDesktopSOComponent],
+      imports: [SharedModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GraficoDesktopSOComponent);
     component = fixture.componentInstance;

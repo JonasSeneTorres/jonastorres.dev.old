@@ -5,15 +5,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [
-    BoxArtigoComponent, GeraSpoilerPipe
-  ],
-  imports: [
-    CommonModule,
-    RouterModule
-  ],
-  exports: [
-    BoxArtigoComponent, GeraSpoilerPipe
-  ]
+  declarations: [BoxArtigoComponent, GeraSpoilerPipe],
+  imports: [CommonModule, RouterModule],
+  exports: [BoxArtigoComponent, GeraSpoilerPipe],
 })
-export class BoxArtigoModule { }
+export class BoxArtigoModule {}

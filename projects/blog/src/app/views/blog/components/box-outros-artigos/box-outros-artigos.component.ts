@@ -3,7 +3,7 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'jt-box-outros-artigos',
   templateUrl: './box-outros-artigos.component.html',
-  styleUrls: ['./box-outros-artigos.component.scss']
+  styleUrls: ['./box-outros-artigos.component.scss'],
 })
 export class BoxOutrosArtigosComponent {
   _listaArtigoSerie: any[] = [];
@@ -35,12 +35,11 @@ export class BoxOutrosArtigosComponent {
     }
   }
 
-  constructor() { }
+  constructor() {}
 
   private encontrarIndiceAtual() {
-    return this.listaArtigoSerie.findIndex(
-      item => {
-        return item.titulo === this.artigoAtual;
-      });
+    return this.listaArtigoSerie.findIndex(item => {
+      return item.titulo === this.artigoAtual;
+    });
   }
 }

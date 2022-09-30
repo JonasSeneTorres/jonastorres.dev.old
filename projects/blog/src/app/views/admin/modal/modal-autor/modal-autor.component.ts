@@ -5,8 +5,6 @@ import { AutorEdicaoComponent } from '../../views/autor/autor-edicao/autor-edica
 @Component({
   selector: 'jt-modal-autor',
   templateUrl: './modal-autor.component.html',
-  styleUrls: ['./modal-autor.component.scss']
+  styleUrls: ['./modal-autor.component.scss'],
 })
-export class ModalAutorComponent extends AutorEdicaoComponent {
-
-}
+export class ModalAutorComponent extends AutorEdicaoComponent {}

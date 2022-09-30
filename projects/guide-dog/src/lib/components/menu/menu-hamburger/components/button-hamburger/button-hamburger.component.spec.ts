@@ -9,10 +9,9 @@ describe('ButtonHamburgerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ButtonHamburgerComponent ],
-      imports: [ MenuModule ]
-    })
-    .compileComponents();
+      declarations: [ButtonHamburgerComponent],
+      imports: [MenuModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

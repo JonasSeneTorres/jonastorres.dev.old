@@ -9,12 +9,8 @@ describe('RedesSociaisService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientModule,
-      ],
-      providers: [
-        PerfilUsuarioService
-      ]
+      imports: [HttpClientModule],
+      providers: [PerfilUsuarioService],
     });
     service = TestBed.inject(RedesSociaisService);
   });

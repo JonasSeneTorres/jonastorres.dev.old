@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 @Component({
   selector: 'jt-pagina-nao-encontrada',
   templateUrl: './pagina-nao-encontrada.component.html',
-  styleUrls: ['./pagina-nao-encontrada.component.scss']
+  styleUrls: ['./pagina-nao-encontrada.component.scss'],
 })
 export class PaginaNaoEncontradaComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
@@ -18,12 +18,12 @@ export class PaginaNaoEncontradaComponent implements OnInit, OnDestroy {
 
   constructor(
     private jumbotronService: JumbotronService,
-    private _blogService: BlogService,
+    private _blogService: BlogService
   ) {
     this._blogService.tornarBoxPrincipalTransparente(true);
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
-      {label: 'Página não encontrada'}
+      { label: 'Página não encontrada' },
     ];
   }
 

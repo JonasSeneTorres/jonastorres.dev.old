@@ -9,10 +9,9 @@ describe('ListaCompartilhamentosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListaCompartilhamentosComponent ],
-      imports: [SharedModule]
-    })
-    .compileComponents();
+      declarations: [ListaCompartilhamentosComponent],
+      imports: [SharedModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ListaCompartilhamentosComponent);
     component = fixture.componentInstance;

@@ -13,13 +13,10 @@ describe('ModalAutorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModalAutorComponent ],
-      imports: [ SharedModule, HttpClientModule, RouterTestingModule ],
-      providers: [
-        {provide: ActivatedRoute, useClass: ActivatedRouteMock},
-      ]
-    })
-    .compileComponents();
+      declarations: [ModalAutorComponent],
+      imports: [SharedModule, HttpClientModule, RouterTestingModule],
+      providers: [{ provide: ActivatedRoute, useClass: ActivatedRouteMock }],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ModalAutorComponent);
     component = fixture.componentInstance;

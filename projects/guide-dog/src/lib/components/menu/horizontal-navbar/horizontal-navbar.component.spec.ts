@@ -9,10 +9,9 @@ describe('HorizontalNavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HorizontalNavbarComponent ],
-      imports: [ MenuModule ]
-    })
-    .compileComponents();
+      declarations: [HorizontalNavbarComponent],
+      imports: [MenuModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

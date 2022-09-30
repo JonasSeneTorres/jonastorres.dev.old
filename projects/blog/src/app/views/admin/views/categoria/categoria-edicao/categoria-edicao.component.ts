@@ -1,5 +1,11 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Guid } from 'guid-typescript';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { CategoriasService } from 'projects/blog/src/app/services/categorias/categorias.service';
@@ -49,18 +55,28 @@ export class CategoriaEdicaoComponent
       return;
     }
 
-    const categoria = {...this.form.value};
+    const categoria = { ...this.form.value };
     categoria.dataCriacao = this._dataCriacao;
-    categoria.categorias.forEach((itemCategoria: any, indiceCategoria: number) => {
-      itemCategoria.idCategoria = `${categoria.id}#${indiceCategoria + 1}`;
-      itemCategoria.subcategorias.forEach((itemSubategoria: any, indiceSubcategoria: number) => {
-        itemSubategoria.idSubcategoria = `${categoria.id}#${indiceCategoria + 1}-${indiceSubcategoria + 1}`;
-      });
-    });
+    categoria.categorias.forEach(
+      (itemCategoria: any, indiceCategoria: number) => {
+        itemCategoria.idCategoria = `${categoria.id}#${indiceCategoria + 1}`;
+        itemCategoria.subcategorias.forEach(
+          (itemSubategoria: any, indiceSubcategoria: number) => {
+            itemSubategoria.idSubcategoria = `${categoria.id}#${
+              indiceCategoria + 1
+            }-${indiceSubcategoria + 1}`;
+          }
+        );
+      }
+    );
 
     // console.log(categoria);
 
-    this.gravarDados( categoria, categoria.classificacao, JonastorresRoutes.ADMIN_CATEGORIA.router as any);
+    this.gravarDados(
+      categoria,
+      categoria.classificacao,
+      JonastorresRoutes.ADMIN_CATEGORIA.router as any
+    );
   }
 
   protected gravarDadosInclusao(dados: any): Observable<any> {
@@ -102,10 +118,10 @@ export class CategoriaEdicaoComponent
           subcategorias: [
             {
               labelSubcategoria: 'Fundamentos',
-            }
-          ]
-        }
-      ]
+            },
+          ],
+        },
+      ],
     });
   }
 
@@ -124,24 +140,24 @@ export class CategoriaEdicaoComponent
         dataEdicao: sucesso.dataEdicao?.split('T')[0],
       });
 
-      sucesso.categorias.forEach(
-        (categoria: any, indiceCategoria: number) => {
-          this.adicionarCategoria();
-          categoria.idCategoria = `${sucesso.id}#${indiceCategoria + 1}`
+      sucesso.categorias.forEach((categoria: any, indiceCategoria: number) => {
+        this.adicionarCategoria();
+        categoria.idCategoria = `${sucesso.id}#${indiceCategoria + 1}`;
 
-          categoria.subcategorias.forEach( (subcategoria: any, indiceSubcategoria: number) => {
-
+        categoria.subcategorias.forEach(
+          (subcategoria: any, indiceSubcategoria: number) => {
             this.adicionarSubcategoria(indiceCategoria);
-            subcategoria.idSubcategoria = `${sucesso.id}#${indiceCategoria = 1}-${indiceSubcategoria + 1}`
-          });
+            subcategoria.idSubcategoria = `${
+              sucesso.id
+            }#${(indiceCategoria = 1)}-${indiceSubcategoria + 1}`;
+          }
+        );
 
-          // for (const _sub of categoria.subcategorias) {
-          // }
-        }
-      );
+        // for (const _sub of categoria.subcategorias) {
+        // }
+      });
 
       const categoriasObtidas = sucesso.categorias;
-
 
       this.form.patchValue({
         categorias: categoriasObtidas,
@@ -160,7 +176,7 @@ export class CategoriaEdicaoComponent
 
     this.categorias.push(categoriaForm);
 
-    if(indice) {
+    if (indice) {
       this.adicionarSubcategoria(indice);
     }
   }

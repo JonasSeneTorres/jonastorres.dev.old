@@ -20,20 +20,18 @@ export class AppComponent implements OnInit, OnDestroy {
     private _messageService: MessageService,
     private categoriasService: CategoriasService,
     private _toastService: ToastService
-    ) {
-      this._toastService.itensBuscados$.subscribe(
-        (dados: any) => {
-          this.exibirToast(dados.titulo, dados.mensagem, dados.icone);
-        }
-      );
-    }
+  ) {
+    this._toastService.itensBuscados$.subscribe((dados: any) => {
+      this.exibirToast(dados.titulo, dados.mensagem, dados.icone);
+    });
+  }
 
   ngOnInit(): void {
     this.categoriasService
       .listar()
       .pipe(takeUntil(this._destroy$))
       .subscribe({
-        next: (sucesso) => {
+        next: sucesso => {
           const menuNovo: NavibarItemConfig[] = [];
           this.adicionarMenuComCategoria(sucesso, menuNovo);
           this.adicionarMenuSemCategoria(sucesso, menuNovo);
@@ -67,7 +65,7 @@ export class AppComponent implements OnInit, OnDestroy {
     sucesso: any,
     menuNovo: NavibarItemConfig[]
   ) {
-    console.log(sucesso)
+    console.log(sucesso);
     const itensMenuSemCategoria = sucesso
       .filter((item: any) => this.filtrarMenu(item, false))
       .map((itemFiltrado: any) => this.mapearMenuSemCategoria(itemFiltrado));
@@ -107,9 +105,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private filtrarMenu(item: any, filtrarComCategoria: boolean) {
     const estaAtivo = item.ativo;
-    console.log('aaaa', item, item.categorias.length)
+    console.log('aaaa', item, item.categorias.length);
     const possuiCategorias = item.categorias.length > 0;
-    let tipoClassificacaoValido = this.obterTipoClassificacaoValido(item, filtrarComCategoria);
+    let tipoClassificacaoValido = this.obterTipoClassificacaoValido(
+      item,
+      filtrarComCategoria
+    );
 
     const filtroValido =
       tipoClassificacaoValido && estaAtivo && possuiCategorias;
@@ -119,7 +120,10 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
-  private obterTipoClassificacaoValido(item: any, filtrarComCategoria: boolean) {
+  private obterTipoClassificacaoValido(
+    item: any,
+    filtrarComCategoria: boolean
+  ) {
     const semCategoria = item.url === 'categorias';
     const comCategoria = !semCategoria;
     let tipoClassificacaoValido = filtrarComCategoria
@@ -173,10 +177,15 @@ export class AppComponent implements OnInit, OnDestroy {
     return itensValidos;
   }
 
-  protected exclusaoMensagemSucesso(texto: string = '', edicao: boolean = false) {
+  protected exclusaoMensagemSucesso(
+    texto: string = '',
+    edicao: boolean = false
+  ) {
     let severidade = 'success';
     let titulo = 'Sucesso';
-    let detalhes = `${texto} foi ${edicao ? 'editado' : 'cadastrado'} com sucesso`;
+    let detalhes = `${texto} foi ${
+      edicao ? 'editado' : 'cadastrado'
+    } com sucesso`;
 
     this._messageService.add({
       severity: severidade,
@@ -185,7 +194,11 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
-  private exibirToast(titulo: string, mensagem: string, icone: string = 'success') {
+  private exibirToast(
+    titulo: string,
+    mensagem: string,
+    icone: string = 'success'
+  ) {
     this._messageService.add({
       severity: icone,
       summary: titulo,

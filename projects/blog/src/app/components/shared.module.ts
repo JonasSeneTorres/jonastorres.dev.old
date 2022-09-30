@@ -73,12 +73,11 @@ const modulosNgPrime = [
   ChipsModule,
   TabViewModule,
   EditorModule,
-  InputSwitchModule
+  InputSwitchModule,
 ];
 
 @NgModule({
-  imports: [CommonModule, ...modulosCompartilhados,
-  ],
+  imports: [CommonModule, ...modulosCompartilhados],
   providers: [ConfirmationService, MessageService],
   exports: [...modulosCompartilhados, ...modulosNgPrime],
 })

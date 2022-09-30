@@ -10,6 +10,5 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
 export class HorizontalNavbarComponent {
   @Input() nav: NavibarItemConfig[] = [];
 
-  constructor()
-  {}
+  constructor() {}
 }

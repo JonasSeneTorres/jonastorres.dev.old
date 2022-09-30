@@ -1,17 +1,14 @@
 <article
   class="artigo-box"
   [class.artigo-box__active]="dadosCarregados"
-  [routerLink]="[artigo?.url ]"
->
+  [routerLink]="[artigo?.url]">
   <section
     [class.artigo-box__capa.active]="dadosCarregados"
     [class.artigo-box__capaloading]="!dadosCarregados"
-    [class.loading]="!dadosCarregados"
-    >
+    [class.loading]="!dadosCarregados">
     <span
       class="artigo-box__icone fa-brands fa-html5"
-      *ngIf="dadosCarregados"
-    ></span>
+      *ngIf="dadosCarregados"></span>
   </section>
   <div class="artigo-box__box-conteudo">
     <div class="artigo-box__ghost-box-titulo" *ngIf="!dadosCarregados">
@@ -39,12 +36,12 @@
       <section class="artigo-box__box-dados">
         <p class="artigo-box__dados">
           <span class="fa-solid fa-calendar-days"></span>
-          {{ artigo?.dataCriacao | date: "longDate":"":"pt-BR" }}
+          {{ artigo?.dataCriacao | date: 'longDate':'':'pt-BR' }}
           <span class="pipe">|</span>
           <ng-container *ngIf="artigo?.dataEdicao">
             <span class="fa-solid fa-pen-to-square"></span>
             Ultima edição em:
-            {{ artigo?.dataEdicao | date: "longDate":"":"pt-BR" }}
+            {{ artigo?.dataEdicao | date: 'longDate':'':'pt-BR' }}
             <span class="pipe">|</span>
           </ng-container>
           <span class="fa-solid fa-stopwatch"></span>
