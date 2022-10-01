@@ -32,6 +32,12 @@
             "polyfills": "projects/blog/src/polyfills.ts",
             "tsConfig": "projects/blog/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "allowedCommonJsDependencies": [
+              "dompurify",
+              "quill",
+              "guid-typescript",
+              "platform"
+           ],
             "assets": [
               "projects/blog/src/favicon.ico",
               "projects/blog/src/assets"

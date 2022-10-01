@@ -183,7 +183,7 @@
           <textarea
             class="artigo-edicao__textarea"
             formControlName="conteudoArtigo"
-            [value]="form.get('conteudoArtigo')!.value"
+            [value]="form.get('conteudoArtigo')?.value"
             (input)="equalizarTexto($event)">
           </textarea>
         </p-tabPanel>
