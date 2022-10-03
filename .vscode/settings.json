@@ -13,4 +13,5 @@
     },
     "editor.formatOnSave": false
   },
+  "js/ts.implicitProjectConfig.experimentalDecorators": true
 }

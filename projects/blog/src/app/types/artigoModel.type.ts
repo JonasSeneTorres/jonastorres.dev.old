@@ -4,6 +4,7 @@ export type ArtigoModel = {
   titulo: string;
   subtitulo?: string;
   metatags?: string[];
+  classificacaoId: string;
   subcategoriaId: string;
   dataCriacao?: Date;
   dataEdicao?: Date;
@@ -12,4 +13,5 @@ export type ArtigoModel = {
   conteudoArtigo: string;
   autorId: number;
   serieId?: number;
+  ativo: boolean;
 };

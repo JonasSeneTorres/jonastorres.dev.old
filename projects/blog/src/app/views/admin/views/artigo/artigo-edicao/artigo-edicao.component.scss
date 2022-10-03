@@ -114,6 +114,20 @@
     align-self: end;
     justify-self: end;
   }
+
+  &__ol {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 100%;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__title-ol {
+    margin: .5rem 0 0 0;
+  }
 }
 
 .botao{

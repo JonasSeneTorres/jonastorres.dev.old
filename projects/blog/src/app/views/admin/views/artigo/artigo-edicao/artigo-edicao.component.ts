@@ -5,8 +5,9 @@ import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-route
 import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
 import { AutoresService } from 'projects/blog/src/app/services/autores/autores.service';
 import { CategoriasService } from 'projects/blog/src/app/services/categorias/categorias.service';
-import { ArtigoModel } from 'projects/blog/src/app/types/artigoModel';
-import { forkJoin, Observable, takeUntil } from 'rxjs';
+import { ArtigoModel } from 'projects/blog/src/app/types/artigoModel.type';
+import { TextUtilService } from 'projects/guide-dog/src/lib/services/text-util/text-util.service';
+import { debounceTime, distinctUntilChanged, forkJoin, Observable, takeUntil } from 'rxjs';
 
 import { BaseAdminDetailComponent } from '../../base-admin-detail/base-admin-detail.component';
 
@@ -28,6 +29,7 @@ export class ArtigoEdicaoComponent
   listaCategoria: { nome: string; id: string }[] = [];
   listaSubcategoria: { nome: string; id: string }[] = [];
   listaSerie: { nome: string; id: string }[] = [];
+  sugestoes: any[] = [];
 
   get displayModal(): boolean {
     return this._displayModal;
@@ -45,7 +47,8 @@ export class ArtigoEdicaoComponent
     protected override injector: Injector,
     private artigosService: ArtigosService,
     private autoresService: AutoresService,
-    private categoriasService: CategoriasService
+    private categoriasService: CategoriasService,
+    private textUtilService: TextUtilService
   ) {
     super(injector);
   }
@@ -68,25 +71,13 @@ export class ArtigoEdicaoComponent
     });
   }
 
-  abrirModalAutor() {
-    this.tipoDoModal = 'Autor';
-    this.displayModal = true;
-  }
-
-  abrirModalClassificacao() {
-    this.tipoDoModal = 'Classificação';
-    this.displayModal = true;
-  }
-
-  abrirModalSerie() {
-    this.tipoDoModal = 'Serie';
+  abrirModal(valor: 'Autor' | 'Classificação' | 'Serie' | null) {
+    this.tipoDoModal = valor;
     this.displayModal = true;
   }
 
   equalizarTexto(event: any) {
-    this.form.patchValue({
-      conteudoArtigo: event.target.value,
-    });
+    this.form.patchValue({ conteudoArtigo: event.target.value });
   }
 
   submit(): void {
@@ -99,12 +90,14 @@ export class ArtigoEdicaoComponent
       titulo: this.form.get('titulo')!.value,
       subtitulo: this.form.get('subtitulo')!.value,
       metatags: this.form.get('metatags')!.value,
+      classificacaoId: this.form.get('classificacaoId')!.value,
       subcategoriaId: this.form.get('subcategoriaId')!.value,
       dataAgendamento: this.form.get('dataAgendamento')!.value,
       tempoLeitura: +this.form.get('tempoLeitura')!.value ?? 0,
       conteudoArtigo: this.form.get('conteudoArtigo')!.value,
       autorId: this.form.get('autorId')!.value,
       serieId: this.form.get('serieId')!.value,
+      ativo: this.form.get('ativo')!.value,
     };
 
     this.gravarDados(
@@ -119,15 +112,15 @@ export class ArtigoEdicaoComponent
     dados.id = newGuid.value;
     dados.dataCriacao = new Date();
     dados.dataEdicao = undefined;
-    console.log('criar', dados);
+
     return this.artigosService.inserir(dados);
   }
 
   protected gravarDadosEdicao(dados: any): Observable<any> {
     dados.id = this.id;
-    dados.dataCriacao = this.form.get('dataCriacao')!.value;
+    dados.dataCriacao = this._dataCriacao;
     dados.dataEdicao = new Date();
-    console.log(dados);
+
     return this.artigosService.atualizar(dados);
   }
 
@@ -162,16 +155,17 @@ export class ArtigoEdicaoComponent
 
   protected prepararFormEdicao(): void {
     this.artigosService.obter(this.id).subscribe((sucesso: any) => {
-      console.log('sucesso: ', sucesso);
+      const classificacaoId = sucesso.classificacaoId;
       const input = sucesso.subcategoriaId ?? '';
       const classificacaoSplit = input.split('-');
-      const classificacaoId = `${classificacaoSplit[0]}`;
       let categoriaId = this.checarValoresCombosIniciais(
+        `${classificacaoSplit[0]}`
+      );
+
+      let subcategoriaId = this.checarValoresCombosIniciais(
         `${classificacaoSplit[0]}-${classificacaoSplit[1]}`
       );
-      let subcategoriaId = this.checarValoresCombosIniciais(
-        `${classificacaoSplit[0]}-${classificacaoSplit[1]}-${classificacaoSplit[2]}`
-      );
+
       this.observarAlteracoesCategoria();
       this.observarAlteracoesUrl();
 
@@ -232,8 +226,8 @@ export class ArtigoEdicaoComponent
     sucesso: any
   ): { id: string; nome: string }[] {
     return sucesso.categorias.map((item: any) => ({
-      id: item.classificacao.id,
-      nome: item.classificacao.label,
+      id: item.id,
+      nome: item.classificacao,
     }));
   }
 
@@ -259,12 +253,18 @@ export class ArtigoEdicaoComponent
       return;
     }
 
-    this.listaCategoria = this.listaClassificacaoBruta
-      .filter(item => item.classificacao.id === classificacaoId)[0]
-      .classificacao.categorias.map((itemFiltrado: any) => ({
-        nome: itemFiltrado.label,
-        id: itemFiltrado.id,
-      }));
+    this.listaCategoria = this.selecionarClassificacao(
+      classificacaoId
+    ).categorias.map((itemFiltrado: any) => ({
+      nome: itemFiltrado.labelCategoria,
+      id: itemFiltrado.idCategoria,
+    }));
+  }
+
+  private selecionarClassificacao(classificacaoId: any) {
+    return this.listaClassificacaoBruta.filter(
+      item => item.id === classificacaoId
+    )[0];
   }
 
   private filtrarListaSubcategoria() {
@@ -274,27 +274,26 @@ export class ArtigoEdicaoComponent
       return;
     }
 
-    const itemClassificacao = this.listaClassificacaoBruta.filter(
-      filtroClassificacao =>
-        filtroClassificacao.classificacao.id === classificacaoId
-    )[0];
-    const itemSubcategorias = itemClassificacao.classificacao.categorias.filter(
-      (x: any) => x.id === this.form.get('categoriaId')!.value
-    )[0].subcategorias;
+    const itemClassificacao = this.selecionarClassificacao(classificacaoId);
+    const itemSubcategorias = itemClassificacao?.categorias.filter((x: any) => {
+      return x.idCategoria === this.form.get('categoriaId')!.value;
+    })[0].subcategorias;
     this.listaSubcategoria = this.formatarOpcoesSubcategoria(itemSubcategorias);
   }
 
   private formatarOpcoesSubcategoria(
     itemSubcategorias: any
   ): { nome: string; id: string }[] {
-    return itemSubcategorias.map((resultado: any) => ({
-      nome: resultado.nome,
-      id: resultado.id,
+    return itemSubcategorias?.map((resultado: any) => ({
+      nome: resultado.labelSubcategoria,
+      id: resultado.idSubcategoria,
     }));
   }
 
   private popularComboSubcategoria() {
-    this.form.patchValue({ subcategoriaId: '' });
+    this.form.patchValue({
+      subcategoriaId: '',
+    });
 
     const classificacaoIdVazio = this.form.get('classificacaoId')!.value === '';
     const categoriaVazio = this.form.get('categoriaId')!.value === '';
@@ -319,37 +318,51 @@ export class ArtigoEdicaoComponent
     this.form
       .get('categoriaId')!
       .valueChanges.pipe(takeUntil(this._destroy$))
-      .subscribe(valorCategoria => {
+      .subscribe(() => {
         this.popularComboSubcategoria();
       });
   }
 
   private observarAlteracoesUrl() {
-    this.form
-      .get('subcategoriaId')!
-      .valueChanges.pipe(takeUntil(this._destroy$))
-      .subscribe((formValores: any) => {
-        const classificacao = this.form.get('classificacaoId')!.value;
-        const categoria = this.form.get('categoriaId')!.value;
-        const subcategoria = this.form.get('subcategoriaId')!.value;
-        let output: string = `/${classificacao}/${categoria}/${subcategoria}`;
+    this.form.valueChanges
+      .pipe(
+        takeUntil(this._destroy$),
+        debounceTime(1000),
+        distinctUntilChanged()
+      )
+      .subscribe(() => {
+        this.textUtilService.insertNewText(
+          this.form.get('conteudoArtigo')!.value
+        );
+
+        const classificacao = encodeURIComponent(this.obterUrlClassificacao());
+        const categoria = encodeURIComponent(this.obterUrlCategoria());
+        const titulo = encodeURIComponent(
+          this.form.get('titulo')!.value.replace(' ', '-')
+        );
+
+        let output: string = `/${classificacao}/${categoria}/${titulo}`;
+
         output =
           this.form.get('subcategoriaId')!.value.length === 0 ? '' : output;
 
         if (this.form.get('classificacaoId')!.value !== output) {
-          this.form.patchValue({
-            url: output,
-          });
+          this.form.patchValue({ url: output });
         }
       });
+
+    this.textUtilService.value$.subscribe((valor: any) => {
+      this.form.patchValue({
+        tempoLeitura: valor.readingTime,
+      });
+
+      this.sugestoes = valor.suggestedWords;
+    });
   }
 
   private popularComboCategoria(): void {
     try {
-      this.form.patchValue({
-        categoriaId: '',
-        subcategoriaId: '',
-      });
+      this.form.patchValue({ categoriaId: '', subcategoriaId: '' });
 
       if (this.form.get('classificacaoId')!.value === '') {
         this.listaCategoria = [];
@@ -362,5 +375,23 @@ export class ArtigoEdicaoComponent
 
   private checarValoresCombosIniciais(valor: string): string {
     return valor.includes('undefined') ? '' : valor;
+  }
+
+  private obterUrlClassificacao(): string {
+    return this.listaClassificacaoBruta.filter(
+      (filtro: any) => filtro.id === this.form.get('classificacaoId')!.value
+    )[0].url;
+  }
+
+  private obterUrlCategoria(): string {
+    return this.listaClassificacaoBruta
+      .filter(
+        (classificacao: any) =>
+          classificacao.id === this.form.get('classificacaoId')!.value
+      )[0]
+      .categorias.filter(
+        (categoria: any) =>
+          categoria.idCategoria === this.form.get('categoriaId')?.value
+      )[0].urlCategoria;
   }
 }

@@ -34,6 +34,15 @@ export class ArtigoComponent implements OnInit, OnDestroy {
   ) {
     this._blogService.tornarBoxPrincipalTransparente(true);
     this.breadcrumbsItem = [];
+    this._jumbotronService.inserirDados({
+      titulo: '',
+      subtitulo: '',
+      categoria: '',
+      compartilharBox: false,
+      dataCriacao: undefined,
+      dataEdicao: undefined,
+      tempoLeitura: undefined,
+    });
   }
 
   ngOnInit(): void {

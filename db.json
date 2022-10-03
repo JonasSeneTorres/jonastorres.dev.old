@@ -1,83 +1,41 @@
 {
   "artigos": [
     {
-      "url": "/1/1-2/1-2-1",
-      "titulo": "Dungeons & Dragons: Honra Entre Rebeldes abre o Salão H na SDCC deste ano",
-      "subtitulo": "um subtitulo Dungeons & Dragons: Honra Entre Rebeldes abre o Salão H na SDCC deste ano",
+      "url": "/categorias/arquitetura/hgljd",
+      "titulo": "hgljd",
+      "subtitulo": "dsaadsa",
       "metatags": [
-        "aa"
+        "sdfadfsfa "
       ],
-      "subcategoriaId": "1-2-1",
-      "dataAgendamento": "2022-05-22",
-      "tempoLeitura": 15,
-      "conteudoArtigo": "<gd-footer></gd-footer><iframe width='560' height='315'  src='http://player.vimeo.com/video/63534746' title='W3Schools Free Online Web Tutorials'></iframe><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe maxime similique, ab voluptate dolorem incidunt, totam dolores illum eum ad quas odit. Magnam rerum doloribus vitae magni quasi molestias repellat.</p><ul><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus tempora explicabo fugit unde maxime alias.</li><li>Numquam, nihil. Fugiat aspernatur suscipit voluptatum dolorum nisi numquam, fugit at, saepe alias assumenda autem.</li><li>Iste dolore sed placeat aperiam alias modi repellat dolorem, temporibus odio adipisci obcaecati, est facere!</li><li>Quas totam itaque voluptatibus dolore ea reprehenderit ut quibusdam, odit beatae aliquam, deleniti unde tempora!</li><li>Rerum quis soluta, necessitatibus. Maxime repudiandae minus at eum, dicta deserunt dignissimos laborum doloribus. Vel.</li></ul><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis enim illum, iure cumque amet. Eos quisquam, nemo voluptates. Minima facilis, recusandae atque ullam illum quae iure impedit nihil dolorum hic?</p><ol><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ex repudiandae ratione, autem? Nulla voluptatem et soluta dolores facilis reiciendis, porro repudiandae, aperiam commodi minima repellat voluptas dignissimos corrupti itaque.</li><li>Quisquam cupiditate odit voluptatem eum quibusdam modi, facilis.</li><li>Obcaecati molestias quisquam numquam deserunt nobis recusandae perferendis.</li><li>Totam sequi quam omnis fuga, laboriosam suscipit libero.</li></ol><h1>Dolor sit amet</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur repellendus et impedit aspernatur quae fugiat doloribus possimus laborum eveniet atque quisquam quis qui quaerat, eum consectetur, id libero a facilis.</p>",
-      "autorId": 1,
-      "serieId": 1,
-      "id": 0,
-      "dataCriacao": "2022-05-22",
-      "dataEdicao": "2022-09-25T22:13:36.593Z"
-    },
-    {
-      "url": "/2/2-1/2-1-1",
-      "titulo": "aaa",
-      "subtitulo": "aaa",
-      "metatags": [
-        "aaa"
-      ],
-      "subcategoriaId": "2-1-1",
-      "tempoLeitura": 0,
-      "conteudoArtigo": "<p>aaa</p>",
+      "classificacaoId": "adcb32e4-91b1-23b5-4c1a-d7ea5383df09",
+      "subcategoriaId": "#1-1",
+      "dataAgendamento": "",
+      "tempoLeitura": 1,
+      "conteudoArtigo": "<p>dsfdfsdfsfsd</p>",
       "autorId": "1",
       "serieId": "",
-      "id": "ad82c6e0-f9ce-35f8-0f37-0a0c12e367a1",
-      "dataEdicao": "2022-09-24T02:41:00.226Z"
+      "ativo": true,
+      "id": "7afd6364-3594-774c-7f0e-00e44e05486f",
+      "dataCriacao": "2022-10-03T01:26:01.259Z"
     },
     {
-      "url": "/2/2-2/2-2-2",
-      "titulo": "aaaa",
-      "subtitulo": "aaa",
-      "metatags": [
-        "aaa"
-      ],
-      "subcategoriaId": "2-2-2",
-      "tempoLeitura": 0,
-      "conteudoArtigo": "<p>aa</p>",
-      "autorId": "1",
-      "serieId": "",
-      "id": "0bdb5a43-94f9-7601-51d8-a491d372e1c6",
-      "dataEdicao": "2022-09-24T02:43:14.613Z"
-    },
-    {
-      "url": "/1/1-1/1-1-1",
-      "titulo": "12",
-      "subtitulo": "21",
-      "metatags": [
-        "111 "
-      ],
-      "subcategoriaId": "1-1-1",
-      "tempoLeitura": 0,
-      "conteudoArtigo": "<p>ddssd</p>",
-      "autorId": "1",
-      "serieId": "",
-      "id": "eedac19b-7ed2-485c-2244-c08179c8583e",
-      "dataCriacao": "2022-09-24",
-      "dataEdicao": "2022-09-24T02:49:01.881Z"
-    },
-    {
-      "url": "/1/1-1/1-1-1",
-      "titulo": "Novo artigo",
+      "url": "/categorias/arquitetura/musun-ipsun",
+      "titulo": "musun ipsun",
       "subtitulo": "",
       "metatags": [
-        "teste"
+        "aaa"
       ],
-      "subcategoriaId": "1-1-1",
+      "classificacaoId": "adcb32e4-91b1-23b5-4c1a-d7ea5383df09",
+      "subcategoriaId": "#1-1",
       "dataAgendamento": "",
-      "tempoLeitura": 0,
-      "conteudoArtigo": "<p>dfas</p>",
+      "tempoLeitura": 1,
+      "conteudoArtigo": "<p>sadasddsa</p>",
       "autorId": "1",
       "serieId": "",
-      "id": "2ac0d5f4-96d7-bb70-2b3f-939145ab8b9a",
-      "dataCriacao": "2022-09-25T23:08:15.823Z"
+      "ativo": true,
+      "id": "6cd907d8-d820-bf2d-d59b-6157b5211054",
+      "dataCriacao": "2022-10-03T01:26:45.147Z",
+      "dataEdicao": "2022-10-03T01:39:25.546Z"
     }
   ],
   "categorias": [
@@ -96,6 +54,54 @@
           "subcategorias": [
             {
               "idSubcategoria": "#1-1",
+              "labelSubcategoria": "Fundamentos",
+              "ativoSubcategoria": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "184c2ec5-ac40-5006-608a-8c44c0d35e99",
+      "ativo": true,
+      "classificacao": "Frontend",
+      "url": "frontend",
+      "dataCriacao": "2022-10-01T06:31:54.920Z",
+      "categorias": [
+        {
+          "idCategoria": "#1",
+          "labelCategoria": "HTML",
+          "urlCategoria": "html",
+          "ativoCategoria": true,
+          "subcategorias": [
+            {
+              "idSubcategoria": "#1-1",
+              "labelSubcategoria": "Fundamentos",
+              "ativoSubcategoria": true
+            }
+          ]
+        },
+        {
+          "idCategoria": "#2",
+          "labelCategoria": "CSS",
+          "urlCategoria": "css",
+          "ativoCategoria": true,
+          "subcategorias": [
+            {
+              "idSubcategoria": "#2-1",
+              "labelSubcategoria": "Fundamentos",
+              "ativoSubcategoria": true
+            }
+          ]
+        },
+        {
+          "idCategoria": "#3",
+          "labelCategoria": "Angular",
+          "urlCategoria": "angular",
+          "ativoCategoria": true,
+          "subcategorias": [
+            {
+              "idSubcategoria": "#3-1",
               "labelSubcategoria": "Fundamentos",
               "ativoSubcategoria": true
             }

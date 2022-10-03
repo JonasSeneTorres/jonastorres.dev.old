@@ -1,9 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-
-import { BlogService } from 'projects/blog/src/app/services/blog/blog.service';
-import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
+import { BlogService } from 'projects/blog/src/app/services/blog/blog.service';
 import { JumbotronService } from 'projects/blog/src/app/services/jumbotron/jumbotron.service';
+import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -17,7 +16,7 @@ export class BuscaComponent implements OnInit, OnDestroy {
   breadcrumbsItem: BreadcrumbsItem[];
 
   constructor(
-    private jumbotronService: JumbotronService,
+    private _jumbotronService: JumbotronService,
     private _blogService: BlogService
   ) {
     this._blogService.tornarBoxPrincipalTransparente(false);
@@ -25,6 +24,15 @@ export class BuscaComponent implements OnInit, OnDestroy {
       JonastorresRoutes.HOME.toBreadcrumb(),
       { label: 'busca' },
     ];
+    this._jumbotronService.inserirDados({
+      titulo: '',
+      subtitulo: '',
+      categoria: '',
+      compartilharBox: false,
+      dataCriacao: undefined,
+      dataEdicao: undefined,
+      tempoLeitura: undefined,
+    });
   }
 
   ngOnInit(): void {

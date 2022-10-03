@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-
+import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { BlogService } from 'projects/blog/src/app/services/blog/blog.service';
 import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
-import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { Subject } from 'rxjs';
+
+import { JumbotronService } from './../../../../services/jumbotron/jumbotron.service';
 
 @Component({
   templateUrl: './autores.component.html',
@@ -14,12 +15,24 @@ export class AutoresComponent implements OnInit, OnDestroy {
 
   breadcrumbsItem: BreadcrumbsItem[];
 
-  constructor(private _blogService: BlogService) {
+  constructor(
+    private _blogService: BlogService,
+    private _jumbotronService: JumbotronService
+  ) {
     this._blogService.tornarBoxPrincipalTransparente(false);
     this.breadcrumbsItem = [
       JonastorresRoutes.HOME.toBreadcrumb(),
       { label: 'Autores' },
     ];
+    this._jumbotronService.inserirDados({
+      titulo: '',
+      subtitulo: '',
+      categoria: '',
+      compartilharBox: false,
+      dataCriacao: undefined,
+      dataEdicao: undefined,
+      tempoLeitura: undefined,
+    });
   }
 
   ngOnInit(): void {

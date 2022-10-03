@@ -150,11 +150,11 @@ export class AppComponent implements OnInit, OnDestroy {
   private mapearMenuComCategoria(
     itemFiltrado: any
   ): NavibarItemConfig | undefined {
-    const itemLabel = itemFiltrado.classificacao.label;
-    const itemRoute = `/blog/${itemFiltrado.classificacao.url}`;
+    const itemLabel = itemFiltrado.classificacao;
+    const itemRoute = `/blog/${itemFiltrado.url}`;
     let itemChildren: any[] = [];
 
-    for (const categoria of itemFiltrado.classificacao.categorias) {
+    for (const categoria of itemFiltrado.categorias) {
       const categoriaLabel = categoria.labelCategoria;
       const categoriaRoute = `${itemRoute}/${categoria.urlCategoria}`;
 

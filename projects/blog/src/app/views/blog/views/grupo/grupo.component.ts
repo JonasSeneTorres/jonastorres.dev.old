@@ -24,9 +24,17 @@ export class GrupoComponent implements OnInit, OnDestroy {
     private _blogService: BlogService,
     private _activatedRoute: ActivatedRoute
   ) {
-    this._jumbotronService.dadosJumbotrom$ = null;
     this._blogService.tornarBoxPrincipalTransparente(false);
     this.breadcrumbsItem = [];
+    this._jumbotronService.inserirDados({
+      titulo: '',
+      subtitulo: '',
+      categoria: '',
+      compartilharBox: false,
+      dataCriacao: undefined,
+      dataEdicao: undefined,
+      tempoLeitura: undefined,
+    });
   }
 
   ngOnInit(): void {

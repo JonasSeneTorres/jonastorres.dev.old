@@ -56,13 +56,25 @@
     </div>
   </div>
 
-  <p class="p-float-label artigo-edicao__margin-top2">
-    <p-chips
-      id="metatags"
-      class="artigo-edicao__input-linha"
-      formControlName="metatags"></p-chips>
-    <label for="metatags">Metatags </label>
-  </p>
+  <div class="p-float-label artigo-edicao__margin-top2">
+    <fieldset>
+      <legend>Metatags</legend>
+      <p-chips
+        id="metatags"
+        class="artigo-edicao__input-linha"
+        formControlName="metatags"></p-chips>
+      <label for="metatags">Metatags </label>
+
+      <p class="artigo-edicao__title-ol">Sugestões</p>
+      <ol class="artigo-edicao__ol">
+        <ng-container *ngFor="let sugestao of sugestoes">
+          <li>
+            {{ sugestao.key }} <strong>({{ sugestao.power }}%)</strong>
+          </li>
+        </ng-container>
+      </ol>
+    </fieldset>
+  </div>
 
   <div class="artigo-edicao__margin-top artigo-edicao__grid-data">
     <div>
@@ -77,7 +89,7 @@
         type="button"
         tabindex="0"
         class="table-busca__botao-novo"
-        (click)="abrirModalAutor()">
+        (click)="abrirModal('Autor')">
         <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
         Adicionar novo autor
       </button>
@@ -149,7 +161,7 @@
         type="button"
         tabindex="0"
         class="table-busca__botao-novo"
-        (click)="abrirModalClassificacao()">
+        (click)="abrirModal('Classificação')">
         <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
         Adicionar nova classificação
       </button>
@@ -165,7 +177,7 @@
       type="button"
       tabindex="0"
       class="table-busca__botao-novo"
-      (click)="abrirModalSerie()">
+      (click)="abrirModal('Serie')">
       <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
       Adicionar nova série
     </button>
@@ -239,3 +251,7 @@
     </button>
   </ng-template>
 </p-dialog>
+<!--
+<pre>
+ {{ form.value | json }}
+</pre> -->

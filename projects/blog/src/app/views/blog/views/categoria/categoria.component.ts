@@ -44,25 +44,31 @@ export class CategoriaComponent implements OnInit, OnDestroy {
 
         this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb()];
 
-        if (labelGrupo !== 'categoria') {
+        if (labelGrupo !== 'categorias') {
           this.breadcrumbsItem.push({ label: labelGrupo, route: [routeGrupo] });
         }
         this.breadcrumbsItem.push({
           label: labelCategoria,
           route: [routeCategoria],
         });
+
+        this.inserirDadosJumbotrom(
+          labelCategoria,
+          labelCategoria.toLowerCase()
+        );
       });
 
     this.obterDadosIniciais(1)
       .pipe(takeUntil(this._destroy$))
-      .subscribe(
-        sucesso => {
+      .subscribe({
+        next: (sucesso: any) => {
           this.dadosArtigo = sucesso.artigo;
+          console.log(sucesso.artigo);
         },
-        (erro: any) => {
+        error: (erro: any) => {
           console.error(erro);
-        }
-      );
+        },
+      });
   }
 
   ngOnDestroy(): void {
@@ -78,6 +84,21 @@ export class CategoriaComponent implements OnInit, OnDestroy {
     });
   }
 
+  private inserirDadosJumbotrom(titulo: string, categoria: string) {
+    const tituloFormatado = `${titulo.toUpperCase().charAt(0)}${titulo
+      .toLowerCase()
+      .substring(1, titulo.length)}`;
+    // console.log(titulo, categoria);
+    this._jumbotronService.inserirDados({
+      titulo: tituloFormatado,
+      subtitulo: '',
+      categoria: categoria,
+      compartilharBox: false,
+      dataCriacao: undefined,
+      dataEdicao: undefined,
+      tempoLeitura: undefined,
+    });
+  }
   // private montarArtigosDaCategoria(subcategorias: any[], artigosDaCategoria: any[]) {
   //   let output = [];
   //   for (const item of subcategorias) {

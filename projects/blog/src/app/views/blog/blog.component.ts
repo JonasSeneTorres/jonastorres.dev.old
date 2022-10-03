@@ -5,7 +5,6 @@ import { forkJoin, Observable, Subject, takeUntil } from 'rxjs';
 import { BlogService } from '../../services/blog/blog.service';
 import { ArtigosService } from './../../services/artigos/artigos.service';
 import { CategoriasService } from './../../services/categorias/categorias.service';
-import { JumbotronService } from './../../services/jumbotron/jumbotron.service';
 
 @Component({
   selector: 'jt-blog',
@@ -15,7 +14,7 @@ import { JumbotronService } from './../../services/jumbotron/jumbotron.service';
 export class BlogComponent implements OnInit, OnDestroy {
   categorias = [];
   ultimosArtigos = [];
-  jumbotron = {};
+  // jumbotron = {};
   boxPrincipalTransparente: Observable<boolean>;
   private _destroy$: Subject<boolean> = new Subject<boolean>();
 
@@ -23,7 +22,7 @@ export class BlogComponent implements OnInit, OnDestroy {
     private _artigosService: ArtigosService,
     private _categoriasService: CategoriasService,
     private _blogService: BlogService,
-    private _jumbotronService: JumbotronService,
+    // private _jumbotronService: JumbotronService,
     private _router: Router,
     private _changeDetectorRef: ChangeDetectorRef
   ) {
@@ -34,7 +33,7 @@ export class BlogComponent implements OnInit, OnDestroy {
     forkJoin({
       artigos: this._artigosService.listarUltimosArtigos(),
       categorias: this._categoriasService.listar(),
-      jumbotron: this._jumbotronService.dadosJumbotrom$,
+      // jumbotron: this._jumbotronService.dadosJumbotron$,
       buscar: this._artigosService.itensBuscados$,
     })
       .pipe(takeUntil(this._destroy$))
@@ -42,8 +41,9 @@ export class BlogComponent implements OnInit, OnDestroy {
         next: sucesso => {
           this.ultimosArtigos = sucesso.artigos;
           this.categorias = sucesso.categorias;
-          this.escutarMudançasJumbotron(sucesso.jumbotron);
+          // this.escutarMudançasJumbotron(sucesso.jumbotron);
           this.escutarBusca(sucesso.buscar);
+          console.log(this.categorias);
         },
         error: () => {},
       });
@@ -63,11 +63,11 @@ export class BlogComponent implements OnInit, OnDestroy {
     this._destroy$.unsubscribe();
   }
 
-  private escutarMudançasJumbotron(dados: Observable<any>) {
-    dados.pipe(takeUntil(this._destroy$)).subscribe(data => {
-      this.jumbotron = data;
-    });
-  }
+  // private escutarMudançasJumbotron(dados: Observable<any>) {
+  //   dados.pipe(takeUntil(this._destroy$)).subscribe(data => {
+  //     this.jumbotron = data;
+  //   });
+  // }
 
   private escutarBusca(dados: Observable<any>) {
     dados.pipe(takeUntil(this._destroy$)).subscribe(data => {

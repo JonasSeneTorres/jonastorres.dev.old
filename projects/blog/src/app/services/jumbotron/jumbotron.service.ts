@@ -1,18 +1,30 @@
+import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-import { Injectable } from '@angular/core';
+import { Jumbotron } from './../../types/jumbotron.type';
 
 @Injectable({
   providedIn: 'root',
 })
 export class JumbotronService {
-  private _dadosJumbotrom$: BehaviorSubject<any> = new BehaviorSubject(null);
+  private _valorInicial: Jumbotron = {
+    titulo: '',
+    subtitulo: '',
+    categoria: '',
+    compartilharBox: false,
+    dataCriacao: undefined,
+    dataEdicao: undefined,
+    tempoLeitura: undefined,
+  };
+  private _dadosJumbotrom$: BehaviorSubject<Jumbotron> = new BehaviorSubject(
+    this._valorInicial
+  );
 
-  get dadosJumbotrom$(): Observable<any> {
+  get dadosJumbotron$(): Observable<Jumbotron> {
     return this._dadosJumbotrom$.asObservable();
   }
 
-  set dadosJumbotrom$(value: any) {
+  inserirDados(value: Jumbotron) {
     this._dadosJumbotrom$.next(value);
   }
 }

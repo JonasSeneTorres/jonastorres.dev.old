@@ -1,24 +1,31 @@
 <section class="categoria" *ngIf="categorias.length > 0">
   <h2 class="categoria__titulo">Categorias</h2>
+
   <ul class="categoria__lista">
-    <ng-container *ngFor="let categoria of categorias">
-      <li class="categoria__item">
-        <ng-container
-          *ngIf="
-            (categoria.nome | lowercase) === categoriaSelecionada;
-            else lista_selecionavel
-          ">
-          <span class="categoria__link--selecionado">
-            <span class="categoria__link-label">{{ categoria.nome }}</span>
-          </span>
-        </ng-container>
-        <ng-template #lista_selecionavel>
-          <a class="categoria__link" [routerLink]="['/blog/categoria']">
-            <span class="categoria__link-label">{{ categoria.nome }}</span>
-            <span class="fa-solid fa-caret-right" aria-hidden="true"></span>
-          </a>
-        </ng-template>
-      </li>
+    <ng-container *ngFor="let classificacao of categorias">
+      <ng-container *ngFor="let categoria of classificacao.categorias">
+        <li class="categoria__item">
+          <ng-container
+            *ngIf="
+              (categoria.labelCategoria | lowercase) === categoriaSelecionada;
+              else lista_selecionavel
+            ">
+            <span class="categoria__link--selecionado">
+              <span class="categoria__link-label">{{
+                categoria.labelCategoria
+              }}</span>
+            </span>
+          </ng-container>
+          <ng-template #lista_selecionavel>
+            <a class="categoria__link" [routerLink]="['/blog/categoria']">
+              <span class="categoria__link-label">{{
+                categoria.labelCategoria
+              }}</span>
+              <span class="fa-solid fa-caret-right" aria-hidden="true"></span>
+            </a>
+          </ng-template>
+        </li>
+      </ng-container>
     </ng-container>
   </ul>
 </section>
