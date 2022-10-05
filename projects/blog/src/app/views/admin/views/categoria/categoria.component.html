@@ -25,11 +25,7 @@
         <label for="float-input">Filtrar</label>
       </span>
 
-      <button
-        type="button"
-        tabindex="0"
-        class="table-busca__botao-novo"
-        [routerLink]="['/admin/categorias/novo']">
+      <button type="button" tabindex="0" class="table-busca__botao-novo" [routerLink]="['/admin/categorias/novo']">
         <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
         Novo
       </button>
@@ -37,12 +33,8 @@
   </ng-template>
   <ng-template pTemplate="header">
     <tr>
-      <th pSortableColumn="titulo">
-        Classificacao <p-sortIcon field="titulo"></p-sortIcon>
-      </th>
-      <th pSortableColumn="categoriaId">
-        Categoria <p-sortIcon field="categoriaId"></p-sortIcon>
-      </th>
+      <th pSortableColumn="titulo">Classificacao <p-sortIcon field="titulo"></p-sortIcon></th>
+      <th pSortableColumn="categoriaId">Categoria <p-sortIcon field="categoriaId"></p-sortIcon></th>
       <th class="table-busca__coluna-acoes"></th>
     </tr>
   </ng-template>
@@ -56,9 +48,7 @@
         <ng-container *ngFor="let categoria of dados?.categorias">
           <div>
             {{ categoria?.labelCategoria }}
-            <strong
-              >({{ categoria?.ativoCategoria ? 'Ativo' : 'Inativo' }})</strong
-            >
+            <strong>({{ categoria?.ativoCategoria ? 'Ativo' : 'Inativo' }})</strong>
           </div>
         </ng-container>
       </td>

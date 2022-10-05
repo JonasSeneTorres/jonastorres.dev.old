@@ -17,17 +17,8 @@ describe('BlogComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [BlogComponent],
-      imports: [
-        SharedModule,
-        HttpClientModule,
-        RouterTestingModule,
-        JumbotronModule,
-      ],
-      providers: [
-        { provide: ArtigosService, useClass: ArtigosServiceMock },
-        CategoriasService,
-        JumbotronService,
-      ],
+      imports: [SharedModule, HttpClientModule, RouterTestingModule, JumbotronModule],
+      providers: [{ provide: ArtigosService, useClass: ArtigosServiceMock }, CategoriasService, JumbotronService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(BlogComponent);

@@ -5,5 +5,6 @@
 <jt-box-compartilhe></jt-box-compartilhe>
 <jt-box-outros-artigos
   [listaArtigoSerie]="listaArquivoSerie"
-  [artigoAtual]="dadosArtigo?.titulo"></jt-box-outros-artigos>
+  [artigoAtual]="dadosArtigo?.titulo"
+  *ngIf="listaArquivoSerie.length > 0"></jt-box-outros-artigos>
 <jt-autor [autor]="dadosAutor"></jt-autor>

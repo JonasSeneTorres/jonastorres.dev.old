@@ -12,12 +12,7 @@ describe('AdminComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        AdminModule,
-        SharedModule,
-        RouterTestingModule,
-        HttpClientModule,
-      ],
+      imports: [AdminModule, SharedModule, RouterTestingModule, HttpClientModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AdminComponent);

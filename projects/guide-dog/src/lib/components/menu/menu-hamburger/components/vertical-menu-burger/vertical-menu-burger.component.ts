@@ -1,13 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import {
-  animate,
-  keyframes,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
 import { ModalService } from 'projects/guide-dog/src/lib/services/modal/modal.service';
 import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item-config';
@@ -33,14 +26,8 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
         })
       ),
 
-      transition(
-        'false => true',
-        animate('.2s 0s cubic-bezier(0.32, 0, 0.67, 0)')
-      ),
-      transition(
-        'true => false',
-        animate('0.1s 0s cubic-bezier(0.33, 1, 0.68, 1)')
-      ),
+      transition('false => true', animate('.2s 0s cubic-bezier(0.32, 0, 0.67, 0)')),
+      transition('true => false', animate('0.1s 0s cubic-bezier(0.33, 1, 0.68, 1)')),
     ]),
 
     trigger('openCloseHamburger', [
@@ -57,10 +44,7 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
         })
       ),
 
-      transition(
-        'false => true',
-        animate('0.5s 0s cubic-bezier(0.32, 0, 0.67, 0)')
-      ),
+      transition('false => true', animate('0.5s 0s cubic-bezier(0.32, 0, 0.67, 0)')),
       transition(
         'true => false',
         animate(

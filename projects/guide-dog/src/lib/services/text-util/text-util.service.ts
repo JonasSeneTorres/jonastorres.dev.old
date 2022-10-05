@@ -49,9 +49,7 @@ export class TextUtilService {
       });
     }
 
-    this._output.suggestedWords = output
-      .sort(this.sortByPowerDesc)
-      .slice(0, 20);
+    this._output.suggestedWords = output.sort(this.sortByPowerDesc).slice(0, 20);
     this._value$.next(this._output);
   }
 

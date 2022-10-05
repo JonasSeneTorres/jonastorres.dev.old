@@ -1,11 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import {
-  FormArray,
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Guid } from 'guid-typescript';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { CategoriasService } from 'projects/blog/src/app/services/categorias/categorias.service';
@@ -17,10 +11,7 @@ import { BaseAdminDetailComponent } from '../../base-admin-detail/base-admin-det
   templateUrl: './categoria-edicao.component.html',
   styleUrls: ['./categoria-edicao.component.scss'],
 })
-export class CategoriaEdicaoComponent
-  extends BaseAdminDetailComponent
-  implements OnInit
-{
+export class CategoriaEdicaoComponent extends BaseAdminDetailComponent implements OnInit {
   get categorias() {
     return this.form.controls['categorias'] as FormArray;
   }
@@ -40,10 +31,8 @@ export class CategoriaEdicaoComponent
         JonastorresRoutes.ADMIN.toBreadcrumb(),
         JonastorresRoutes.ADMIN_CATEGORIA.toBreadcrumb(),
       ];
-      const breadcrumbNovo =
-        JonastorresRoutes.ADMIN_CATEGORIA_NOVO.toBreadcrumb();
-      const breadcrumbEditar =
-        JonastorresRoutes.ADMIN_CATEGORIA_EDITAR.toBreadcrumb();
+      const breadcrumbNovo = JonastorresRoutes.ADMIN_CATEGORIA_NOVO.toBreadcrumb();
+      const breadcrumbEditar = JonastorresRoutes.ADMIN_CATEGORIA_EDITAR.toBreadcrumb();
 
       this.ajustarBreadcrumb(this.id, breadcrumbNovo, breadcrumbEditar);
       this.criarForm();
@@ -57,26 +46,16 @@ export class CategoriaEdicaoComponent
 
     const categoria = { ...this.form.value };
     categoria.dataCriacao = this._dataCriacao;
-    categoria.categorias.forEach(
-      (itemCategoria: any, indiceCategoria: number) => {
-        itemCategoria.idCategoria = `${categoria.id}#${indiceCategoria + 1}`;
-        itemCategoria.subcategorias.forEach(
-          (itemSubategoria: any, indiceSubcategoria: number) => {
-            itemSubategoria.idSubcategoria = `${categoria.id}#${
-              indiceCategoria + 1
-            }-${indiceSubcategoria + 1}`;
-          }
-        );
-      }
-    );
+    categoria.categorias.forEach((itemCategoria: any, indiceCategoria: number) => {
+      itemCategoria.idCategoria = `${categoria.id}#${indiceCategoria + 1}`;
+      itemCategoria.subcategorias.forEach((itemSubategoria: any, indiceSubcategoria: number) => {
+        itemSubategoria.idSubcategoria = `${categoria.id}#${indiceCategoria + 1}-${indiceSubcategoria + 1}`;
+      });
+    });
 
     // console.log(categoria);
 
-    this.gravarDados(
-      categoria,
-      categoria.classificacao,
-      JonastorresRoutes.ADMIN_CATEGORIA.router as any
-    );
+    this.gravarDados(categoria, categoria.classificacao, JonastorresRoutes.ADMIN_CATEGORIA.router as any);
   }
 
   protected gravarDadosInclusao(dados: any): Observable<any> {
@@ -144,14 +123,10 @@ export class CategoriaEdicaoComponent
         this.adicionarCategoria();
         categoria.idCategoria = `${sucesso.id}#${indiceCategoria + 1}`;
 
-        categoria.subcategorias.forEach(
-          (subcategoria: any, indiceSubcategoria: number) => {
-            this.adicionarSubcategoria(indiceCategoria);
-            subcategoria.idSubcategoria = `${
-              sucesso.id
-            }#${(indiceCategoria = 1)}-${indiceSubcategoria + 1}`;
-          }
-        );
+        categoria.subcategorias.forEach((subcategoria: any, indiceSubcategoria: number) => {
+          this.adicionarSubcategoria(indiceCategoria);
+          subcategoria.idSubcategoria = `${sucesso.id}#${(indiceCategoria = 1)}-${indiceSubcategoria + 1}`;
+        });
 
         // for (const _sub of categoria.subcategorias) {
         // }
@@ -201,8 +176,6 @@ export class CategoriaEdicaoComponent
   }
 
   getSubcategorias(indice: number): FormArray {
-    return (this.categorias.controls[indice] as FormGroup).controls[
-      'subcategorias'
-    ] as FormArray;
+    return (this.categorias.controls[indice] as FormGroup).controls['subcategorias'] as FormArray;
   }
 }

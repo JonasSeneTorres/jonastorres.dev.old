@@ -17,12 +17,7 @@ describe('ErroComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ErroComponent],
-      imports: [
-        SharedModule,
-        RouterTestingModule,
-        HttpClientModule,
-        BlogModule,
-      ],
+      imports: [SharedModule, RouterTestingModule, HttpClientModule, BlogModule],
       providers: [
         { provide: ActivatedRoute, useClass: ActivatedRouteMock },
         { provide: ArtigosService, useClass: ArtigosServiceMock },

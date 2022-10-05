@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
 import { AutoresService } from 'projects/blog/src/app/services/autores/autores.service';
@@ -30,68 +30,69 @@ export class ArtigoComponent implements OnInit, OnDestroy {
     private _autoresService: AutoresService,
     private _blogService: BlogService,
     private _jumbotronService: JumbotronService,
-    private _activatedRoute: ActivatedRoute
+    private _activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     this._blogService.tornarBoxPrincipalTransparente(true);
     this.breadcrumbsItem = [];
-    this._jumbotronService.inserirDados({
-      titulo: '',
-      subtitulo: '',
-      categoria: '',
-      compartilharBox: false,
-      dataCriacao: undefined,
-      dataEdicao: undefined,
-      tempoLeitura: undefined,
-    });
   }
 
   ngOnInit(): void {
-    this._activatedRoute.params
-      .pipe(takeUntil(this._destroy$))
-      .subscribe((params: Params) => {
-        const labelGrupo = `${params['grupo']}`;
-        const routeGrupo = `/blog/${params['grupo']}`;
-        const labelCategoria = `${params['categoria']}`;
-        const routeCategoria = `/blog/${params['grupo']}/${params['categoria']}`;
-        const labelArtigo = `${params['artigo']}`;
-        const routeArtigo = `/blog/${params['grupo']}/${params['categoria']}/${params['artigo']}`;
-        const idArtigo = params['artigo'] ?? '';
+    this._activatedRoute.params.pipe(takeUntil(this._destroy$)).subscribe((params: Params) => {
+      const labelGrupo = `${params['grupo']}`;
+      const routeGrupo = `/blog/${params['grupo']}`;
+      const labelCategoria = `${params['categoria']}`;
+      const routeCategoria = `/blog/${params['grupo']}/${params['categoria']}`;
+      const labelArtigo = `${params['artigo']}`;
+      const routeArtigo = `/blog/${params['grupo']}/${params['categoria']}/${params['artigo']}`;
+      const idArtigo = params['artigo'] ?? '';
 
-        this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb()];
+      this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb()];
 
-        if (labelGrupo !== 'categoria') {
-          this.breadcrumbsItem.push({ label: labelGrupo, route: [routeGrupo] });
-        }
-        this.breadcrumbsItem.push({
-          label: labelCategoria,
-          route: [routeCategoria],
-        });
-        this.breadcrumbsItem.push({ label: labelArtigo, route: [routeArtigo] });
-
-        this.obterDadosIniciais(idArtigo);
+      if (labelGrupo !== 'categoria') {
+        this.breadcrumbsItem.push({ label: labelGrupo, route: [routeGrupo] });
+      }
+      this.breadcrumbsItem.push({
+        label: labelCategoria,
+        route: [routeCategoria],
       });
+      this.breadcrumbsItem.push({ label: labelArtigo, route: [routeArtigo] });
+
+      this.obterDadosIniciais();
+    });
   }
 
-  private obterDadosIniciais(id: string) {
-    this.consutarDadosIniciais('0')
+  private obterDadosIniciais() {
+    this.consutarDadosIniciais()
       .pipe(takeUntil(this._destroy$))
       .subscribe((sucesso: any) => {
-        this.dadosArtigo = sucesso.artigo;
+        this.dadosArtigo = sucesso.artigo[0];
         this.categorias = sucesso.categorias ?? [];
         this.ultimosArtigos = sucesso.ultimosArtigos ?? [];
 
-        const nomeArtigo = this.categorias.filter(
-          item => item.id === this.dadosArtigo.categoriaId
-        )[0]?.nome;
+        const nomeArtigo = this.categorias.filter(item => item.id === this.dadosArtigo.categoriaId)[0]?.nome;
         this.categoriaArtigo = (nomeArtigo ?? '').toLowerCase();
+        console.log(sucesso.categorias);
+        this._jumbotronService.inserirDados({
+          titulo: this.dadosArtigo.titulo,
+          subtitulo: this.dadosArtigo.subtitulo,
+          categoria: 'html',
+          compartilharBox: true,
+          dataCriacao: this.dadosArtigo.dataCriacao,
+          dataEdicao: this.dadosArtigo.dataEdicao,
+          tempoLeitura: this.dadosArtigo.tempoLeitura,
+        });
 
-        this.obterDadosArtigoSerie()
-          .pipe(takeUntil(this._destroy$))
-          .subscribe((sucessoArtigoSerie: any) => {
-            this.listaArquivoSerie = sucessoArtigoSerie;
-          });
+        if (this.dadosArtigo.serieId !== '') {
+          this.obterDadosArtigoSerie()
+            .pipe(takeUntil(this._destroy$))
+            .subscribe((sucessoArtigoSerie: any) => {
+              this.listaArquivoSerie = sucessoArtigoSerie ?? [];
+            });
+        }
 
-        this.obterDadosAutor()
+        console.log(this.dadosArtigo);
+        this.obterDadosAutor(this.dadosArtigo.autorId)
           .pipe(takeUntil(this._destroy$))
           .subscribe((sucesso: any) => {
             this.dadosAutor = sucesso;
@@ -104,8 +105,8 @@ export class ArtigoComponent implements OnInit, OnDestroy {
     this._destroy$.unsubscribe();
   }
 
-  private consutarDadosIniciais(idArtigo: string): Observable<any> {
-    const obterArtigo = this._artigosService.obter(idArtigo);
+  private consutarDadosIniciais(): Observable<any> {
+    const obterArtigo = this._artigosService.obterPorURL(this.router.url);
     const obterCategorias = this._categoriasService.listar();
     const obterUltimosArtigos = this._artigosService.listarUltimosArtigos();
 
@@ -121,8 +122,7 @@ export class ArtigoComponent implements OnInit, OnDestroy {
     return this._artigosService.listarArtigosSerie(serieId);
   }
 
-  private obterDadosAutor() {
-    const autorId = this.dadosArtigo.autorId;
-    return this._autoresService.obter(autorId);
+  private obterDadosAutor(id: string) {
+    return this._autoresService.obter(id);
   }
 }

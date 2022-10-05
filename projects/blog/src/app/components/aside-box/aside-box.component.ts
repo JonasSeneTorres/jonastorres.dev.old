@@ -15,10 +15,7 @@ export class AsideBoxComponent implements OnInit, OnDestroy {
   categorias: any[] = [];
   ultimosArtigos: any[] = [];
 
-  constructor(
-    private categoriasService: CategoriasService,
-    private artigosService: ArtigosService
-  ) {}
+  constructor(private categoriasService: CategoriasService, private artigosService: ArtigosService) {}
 
   ngOnInit(): void {
     this.obterDadosIniciais(1)

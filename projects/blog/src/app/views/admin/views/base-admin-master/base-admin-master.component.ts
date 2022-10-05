@@ -19,12 +19,8 @@ export abstract class BaseAdminMasterComponent implements OnDestroy {
   protected _toastService: ToastService;
 
   constructor(protected injector: Injector) {
-    this.confirmationService = injector.get<ConfirmationService>(
-      ConfirmationService as Type<ConfirmationService>
-    );
-    this._toastService = injector.get<ToastService>(
-      ToastService as Type<ToastService>
-    );
+    this.confirmationService = injector.get<ConfirmationService>(ConfirmationService as Type<ConfirmationService>);
+    this._toastService = injector.get<ToastService>(ToastService as Type<ToastService>);
     this.filtravelPelosCampos = [];
     this.breadcrumbsItem = [];
   }
@@ -55,10 +51,7 @@ export abstract class BaseAdminMasterComponent implements OnDestroy {
   }
 
   applyFilterGlobal($event: any, stringVal: string) {
-    this.ngPrimeTable?.filterGlobal(
-      ($event.target as HTMLInputElement).value,
-      stringVal
-    );
+    this.ngPrimeTable?.filterGlobal(($event.target as HTMLInputElement).value, stringVal);
   }
 
   excluir(registro: any, texto: string = '') {
@@ -103,17 +96,11 @@ export abstract class BaseAdminMasterComponent implements OnDestroy {
     this.listarItens();
   }
 
-  protected exclusaoMensagemFalha(
-    _registro: any,
-    texto: string = '',
-    errorMessage: string = ''
-  ) {
+  protected exclusaoMensagemFalha(_registro: any, texto: string = '', errorMessage: string = '') {
     let icone = 'error';
     let titulo = 'Erro';
     let mensagem =
-      errorMessage.length === 0
-        ? `Ocorreu um erro ao tentar excluir o registro "${texto}".\nTente novamente`
-        : errorMessage;
+      errorMessage.length === 0 ? `Ocorreu um erro ao tentar excluir o registro "${texto}".\nTente novamente` : errorMessage;
 
     this.ativarToast(titulo, mensagem, icone);
   }

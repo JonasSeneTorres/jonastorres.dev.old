@@ -23,12 +23,7 @@ describe('ArtigoComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ArtigoComponent],
-      imports: [
-        SharedModule,
-        RouterTestingModule,
-        HttpClientModule,
-        BlogModule,
-      ],
+      imports: [SharedModule, RouterTestingModule, HttpClientModule, BlogModule],
       providers: [
         { provide: ActivatedRoute, useClass: ActivatedRouteMock },
         { provide: ArtigosService, useClass: ArtigosServiceMock },

@@ -16,9 +16,7 @@ export class JumbotronService {
     dataEdicao: undefined,
     tempoLeitura: undefined,
   };
-  private _dadosJumbotrom$: BehaviorSubject<Jumbotron> = new BehaviorSubject(
-    this._valorInicial
-  );
+  private _dadosJumbotrom$: BehaviorSubject<Jumbotron> = new BehaviorSubject(this._valorInicial);
 
   get dadosJumbotron$(): Observable<Jumbotron> {
     return this._dadosJumbotrom$.asObservable();

@@ -1,68 +1,37 @@
 <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
-<form
-  class="artigo-edicao"
-  [formGroup]="form"
-  (submit)="submit()"
-  autocomplete="off">
+<form class="artigo-edicao" [formGroup]="form" (submit)="submit()" autocomplete="off">
   <div class="artigo-edicao__grid-titulo">
     <h1 *ngIf="!ehEdicao">Novo Artigo</h1>
     <h1 *ngIf="ehEdicao">Edição de artigo</h1>
-    <p-inputSwitch
-      id="ativo"
-      class="artigo-edicao__ativo"
-      formControlName="ativo"></p-inputSwitch>
+    <p-inputSwitch id="ativo" class="artigo-edicao__ativo" formControlName="ativo"></p-inputSwitch>
   </div>
 
   <p class="p-float-label artigo-edicao__margin-top2">
-    <input
-      id="titulo"
-      class="artigo-edicao__input-linha"
-      type="text"
-      formControlName="titulo"
-      pInputText />
+    <input id="titulo" class="artigo-edicao__input-linha" type="text" formControlName="titulo" pInputText />
     <label for="titulo">Título</label>
   </p>
 
   <p class="p-float-label artigo-edicao__margin-top">
-    <input
-      id="subtitulo"
-      class="artigo-edicao__input-linha"
-      type="text"
-      formControlName="subtitulo"
-      pInputText />
+    <input id="subtitulo" class="artigo-edicao__input-linha" type="text" formControlName="subtitulo" pInputText />
     <label for="subtitulo">Subtítulo</label>
   </p>
 
   <div class="artigo-edicao__grid-url">
     <div>
       <label for="url">URL</label>
-      <input
-        type="text"
-        id="url"
-        class="artigo-edicao__input-linha"
-        formControlName="url"
-        readonly
-        pInputText />
+      <input type="text" id="url" class="artigo-edicao__input-linha" formControlName="url" readonly pInputText />
     </div>
 
     <div class="artigo-edicao__grid-url-col2">
       <label for="tempo-leitura">Tempo de leitura</label>
-      <input
-        type="text"
-        id="tempo-leitura"
-        formControlName="tempoLeitura"
-        readonly
-        pInputText />
+      <input type="text" id="tempo-leitura" formControlName="tempoLeitura" readonly pInputText />
     </div>
   </div>
 
   <div class="p-float-label artigo-edicao__margin-top2">
     <fieldset>
       <legend>Metatags</legend>
-      <p-chips
-        id="metatags"
-        class="artigo-edicao__input-linha"
-        formControlName="metatags"></p-chips>
+      <p-chips id="metatags" class="artigo-edicao__input-linha" formControlName="metatags"></p-chips>
       <label for="metatags">Metatags </label>
 
       <p class="artigo-edicao__title-ol">Sugestões</p>
@@ -85,11 +54,7 @@
           <option [value]="autor.id">{{ autor.nome }}</option>
         </ng-container>
       </select>
-      <button
-        type="button"
-        tabindex="0"
-        class="table-busca__botao-novo"
-        (click)="abrirModal('Autor')">
+      <button type="button" tabindex="0" class="table-busca__botao-novo" (click)="abrirModal('Autor')">
         <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
         Adicionar novo autor
       </button>
@@ -97,31 +62,17 @@
 
     <div>
       <label for="data-criacao">Data de criação</label>
-      <input
-        type="date"
-        id="data-criacao"
-        formControlName="dataCriacao"
-        pInputText
-        readonly />
+      <input type="date" id="data-criacao" formControlName="dataCriacao" pInputText readonly />
     </div>
 
     <div>
       <label for="data-edicao">Data da ultima edição</label>
-      <input
-        type="date"
-        id="data-edicao"
-        formControlName="dataEdicao"
-        pInputText
-        readonly />
+      <input type="date" id="data-edicao" formControlName="dataEdicao" pInputText readonly />
     </div>
 
     <div class="artigo-edicao__grid-data3">
       <label for="data-agendamento">Data de agendamento</label>
-      <input
-        type="date"
-        id="data-agendamento"
-        formControlName="dataAgendamento"
-        pInputText />
+      <input type="date" id="data-agendamento" formControlName="dataAgendamento" pInputText />
     </div>
   </div>
 
@@ -157,11 +108,7 @@
     </div>
 
     <div class="artigo-edicao__grid-classicicacao4">
-      <button
-        type="button"
-        tabindex="0"
-        class="table-busca__botao-novo"
-        (click)="abrirModal('Classificação')">
+      <button type="button" tabindex="0" class="table-busca__botao-novo" (click)="abrirModal('Classificação')">
         <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
         Adicionar nova classificação
       </button>
@@ -173,11 +120,7 @@
     <select formControlName="serieId" formControlName="classificacaoId">
       <option value="">Selecione...</option>
     </select>
-    <button
-      type="button"
-      tabindex="0"
-      class="table-busca__botao-novo"
-      (click)="abrirModal('Serie')">
+    <button type="button" tabindex="0" class="table-busca__botao-novo" (click)="abrirModal('Serie')">
       <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
       Adicionar nova série
     </button>
@@ -187,9 +130,7 @@
       <legend>Conteudo</legend>
       <p-tabView>
         <p-tabPanel header="Editor">
-          <p-editor
-            [style]="{ height: '320px' }"
-            formControlName="conteudoArtigo"></p-editor>
+          <p-editor [style]="{ height: '320px' }" formControlName="conteudoArtigo"></p-editor>
         </p-tabPanel>
         <p-tabPanel header="Ver código HTML">
           <textarea
@@ -203,17 +144,11 @@
     </fieldset>
   </div>
   <p class="artigo-edicao__container-salvar">
-    <button
-      class="botao confirmDialog__no"
-      type="button"
-      [routerLink]="['/admin/artigos']">
+    <button class="botao confirmDialog__no" type="button" [routerLink]="['/admin/artigos']">
       <span class="icone_botao fa-solid fa-xmark" aria-hidden="true"></span>
       Cancelar
     </button>
-    <button
-      class="botao confirmDialog__yes"
-      type="submit"
-      [disabled]="form.invalid">
+    <button class="botao confirmDialog__yes" type="submit" [disabled]="form.invalid">
       <span class="icone_botao fa-solid fa-check" aria-hidden="true"></span>
       Salvar
     </button>
@@ -229,23 +164,15 @@
   [draggable]="false"
   [resizable]="false">
   <jt-modal-autor *ngIf="tipoDoModal === 'Autor'"></jt-modal-autor>
-  <jt-modal-classificacao
-    *ngIf="tipoDoModal === 'Classificação'"></jt-modal-classificacao>
+  <jt-modal-classificacao *ngIf="tipoDoModal === 'Classificação'"></jt-modal-classificacao>
   <jt-modal-serie *ngIf="tipoDoModal === 'Serie'"></jt-modal-serie>
 
   <ng-template pTemplate="footer">
-    <button
-      class="confirmDialog__no"
-      type="button"
-      (click)="displayModal = false">
+    <button class="confirmDialog__no" type="button" (click)="displayModal = false">
       <span class="icone_botao fa-solid fa-xmark" aria-hidden="true"></span>
       Cancelar
     </button>
-    <button
-      class="confirmDialog__yes"
-      type="button"
-      [disabled]="form.valid"
-      (click)="displayModal = false">
+    <button class="confirmDialog__yes" type="button" [disabled]="form.valid" (click)="displayModal = false">
       <span class="icone_botao fa-solid fa-check" aria-hidden="true"></span>
       Salvar
     </button>

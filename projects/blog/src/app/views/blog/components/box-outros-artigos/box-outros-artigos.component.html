@@ -1,44 +1,27 @@
 <div class="box-outros-artigos-container">
-  <section
-    class="box-outros-artigos-botoes"
-    *ngIf="listaArtigoSerie.length > 0">
-    <button
-      class="botaoVoltar botaoAcao"
-      [routerLink]="['/artigo']"
-      [disabled]="desabilitarBotaoVoltar">
+  <section class="box-outros-artigos-botoes" *ngIf="listaArtigoSerie.length > 0">
+    <button class="botaoVoltar botaoAcao" [routerLink]="['/artigo']" [disabled]="desabilitarBotaoVoltar">
       <span class="fa-solid fa-chevron-left"></span>
       <span class="label">Artigo anterior</span>
     </button>
-    <button
-      class="botaoAvancar botaoAcao"
-      [routerLink]="['/artigo']"
-      [disabled]="desabilitarBotaoAvancar">
+    <button class="botaoAvancar botaoAcao" [routerLink]="['/artigo']" [disabled]="desabilitarBotaoAvancar">
       <span class="label">Próximo artigo</span>
       <span class="fa-solid fa-chevron-right"></span>
     </button>
   </section>
 
   <section class="box-outros-artigos" *ngIf="listaArtigoSerie.length > 0">
-    <h2 class="box-outros-artigos__titulo">
-      Outros artigos da série "Descomplicando conceitos de animação"
-    </h2>
+    <h2 class="box-outros-artigos__titulo">Outros artigos da série "Descomplicando conceitos de animação"</h2>
     <ul class="box-outros-artigos__lista">
-      <li
-        class="box-outros-artigos__item"
-        *ngFor="let artigo of listaArtigoSerie">
-        <ng-container
-          *ngIf="artigo.titulo === artigoAtual; else lista_selecionavel">
+      <li class="box-outros-artigos__item" *ngFor="let artigo of listaArtigoSerie">
+        <ng-container *ngIf="artigo.titulo === artigoAtual; else lista_selecionavel">
           <span class="box-outros-artigos__link--selecionado">
-            <span class="box-outros-artigos__link-label">{{
-              artigo.titulo
-            }}</span>
+            <span class="box-outros-artigos__link-label">{{ artigo.titulo }}</span>
           </span>
         </ng-container>
         <ng-template #lista_selecionavel>
           <a class="box-outros-artigos__link" [routerLink]="['/artigo']">
-            <span class="box-outros-artigos__link-label">{{
-              artigo.titulo
-            }}</span>
+            <span class="box-outros-artigos__link-label">{{ artigo.titulo }}</span>
           </a>
         </ng-template>
       </li>

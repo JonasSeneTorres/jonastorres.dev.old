@@ -1,65 +1,31 @@
 <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
 
-<form
-  class="usuarios-edicao"
-  [formGroup]="form"
-  (submit)="submit()"
-  autocomplete="off">
+<form class="usuarios-edicao" [formGroup]="form" (submit)="submit()" autocomplete="off">
   <div class="usuarios-edicao__grid-titulo">
     <h1 *ngIf="id.length === 0">Novo usuário</h1>
     <h1 *ngIf="id.length > 0">Edição de usuário</h1>
-    <p-inputSwitch
-      id="ativo"
-      class="usuarios-edicao__ativo"
-      formControlName="ativo"></p-inputSwitch>
+    <p-inputSwitch id="ativo" class="usuarios-edicao__ativo" formControlName="ativo"></p-inputSwitch>
   </div>
 
   <p>
     <label for="nome" class="usuarios-edicao__label">Nome</label>
-    <input
-      type="text"
-      id="nome"
-      class="usuarios-edicao__input"
-      formControlName="nome"
-      pInputText />
+    <input type="text" id="nome" class="usuarios-edicao__input" formControlName="nome" pInputText />
   </p>
   <p>
     <label for="email" class="usuarios-edicao__label">Email</label>
-    <input
-      type="email"
-      id="email"
-      class="usuarios-edicao__input"
-      formControlName="email"
-      pInputText />
+    <input type="email" id="email" class="usuarios-edicao__input" formControlName="email" pInputText />
   </p>
   <p>
     <label for="senha" class="usuarios-edicao__label">Senha</label>
-    <input
-      type="password"
-      id="senha"
-      class="usuarios-edicao__input"
-      formControlName="senha"
-      pInputText />
+    <input type="password" id="senha" class="usuarios-edicao__input" formControlName="senha" pInputText />
   </p>
   <p>
-    <label for="confirmarSenha" class="usuarios-edicao__label"
-      >Confirme a senha</label
-    >
-    <input
-      type="password"
-      id="confirmarSenha"
-      class="usuarios-edicao__input"
-      formControlName="confirmarSenha"
-      pInputText />
+    <label for="confirmarSenha" class="usuarios-edicao__label">Confirme a senha</label>
+    <input type="password" id="confirmarSenha" class="usuarios-edicao__input" formControlName="confirmarSenha" pInputText />
   </p>
   <p>
-    <label for="perfilUsuarioId" class="usuarios-edicao__label"
-      >Perfil de usuário</label
-    >
-    <select
-      id="perfilUsuarioId"
-      class="usuarios-edicao__input"
-      formControlName="perfilUsuarioId">
+    <label for="perfilUsuarioId" class="usuarios-edicao__label">Perfil de usuário</label>
+    <select id="perfilUsuarioId" class="usuarios-edicao__input" formControlName="perfilUsuarioId">
       <option value="">Selecione...</option>
       <ng-container *ngFor="let perfil of perfilUsuario">
         <option [value]="perfil.value">{{ perfil.key }}</option>
@@ -68,18 +34,12 @@
   </p>
   <p>
     <label for="observacao" class="usuarios-edicao__label">Observações</label>
-    <textarea
-      id="observacao"
-      class="usuarios-edicao__textarea"
-      formControlName="observacao">
-    </textarea>
+    <textarea id="observacao" class="usuarios-edicao__textarea" formControlName="observacao"> </textarea>
   </p>
   <fieldset>
     <legend>Advertencias</legend>
     <p>
-      <label for="quantidadeAdvertencia" class="usuarios-edicao__label"
-        >Quantidade de advertencias</label
-      >
+      <label for="quantidadeAdvertencia" class="usuarios-edicao__label">Quantidade de advertencias</label>
       <input
         type="number"
         id="quantidadeAdvertencia"
@@ -89,55 +49,28 @@
     </p>
 
     <p>
-      <label for="suspensoAteData" class="usuarios-edicao__label"
-        >Suspenso até</label
-      >
-      <input
-        type="date"
-        id="suspensoAteData"
-        class="usuarios-edicao__input"
-        formControlName="suspensoAteData"
-        pInputText />
+      <label for="suspensoAteData" class="usuarios-edicao__label">Suspenso até</label>
+      <input type="date" id="suspensoAteData" class="usuarios-edicao__input" formControlName="suspensoAteData" pInputText />
     </p>
   </fieldset>
   <div class="usuarios-edicao__grid-data">
     <div>
-      <label for="data-criacao" class="usuarios-edicao__label"
-        >Data de criação</label
-      >
-      <input
-        type="date"
-        id="data-criacao"
-        formControlName="dataCriacao"
-        pInputText
-        readonly />
+      <label for="data-criacao" class="usuarios-edicao__label">Data de criação</label>
+      <input type="date" id="data-criacao" formControlName="dataCriacao" pInputText readonly />
     </div>
 
     <div>
-      <label for="data-edicao" class="usuarios-edicao__label"
-        >Data da ultima edição</label
-      >
-      <input
-        type="date"
-        id="data-edicao"
-        formControlName="dataEdicao"
-        pInputText
-        readonly />
+      <label for="data-edicao" class="usuarios-edicao__label">Data da ultima edição</label>
+      <input type="date" id="data-edicao" formControlName="dataEdicao" pInputText readonly />
     </div>
   </div>
 
   <p class="usuarios-edicao__container-salvar">
-    <button
-      class="botao confirmDialog__no"
-      type="button"
-      [routerLink]="['/admin/usuarios']">
+    <button class="botao confirmDialog__no" type="button" [routerLink]="['/admin/usuarios']">
       <span class="icone_botao fa-solid fa-xmark" aria-hidden="true"></span>
       Cancelar
     </button>
-    <button
-      class="botao confirmDialog__yes"
-      type="submit"
-      [disabled]="form.invalid">
+    <button class="botao confirmDialog__yes" type="submit" [disabled]="form.invalid">
       <span class="icone_botao fa-solid fa-check" aria-hidden="true"></span>
       Salvar
     </button>

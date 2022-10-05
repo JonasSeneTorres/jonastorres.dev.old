@@ -16,10 +16,7 @@ import { BaseAdminDetailComponent } from '../../base-admin-detail/base-admin-det
   templateUrl: './artigo-edicao.component.html',
   styleUrls: ['./artigo-edicao.component.scss'],
 })
-export class ArtigoEdicaoComponent
-  extends BaseAdminDetailComponent
-  implements OnInit
-{
+export class ArtigoEdicaoComponent extends BaseAdminDetailComponent implements OnInit {
   private _displayModal = false;
 
   tipoDoModal: 'Autor' | 'Classificação' | 'Serie' | null = null;
@@ -60,10 +57,8 @@ export class ArtigoEdicaoComponent
         JonastorresRoutes.ADMIN.toBreadcrumb(),
         JonastorresRoutes.ADMIN_ARTIGOS.toBreadcrumb(),
       ];
-      const breadcrumbNovo =
-        JonastorresRoutes.ADMIN_ARTIGOS_NOVO.toBreadcrumb();
-      const breadcrumbEditar =
-        JonastorresRoutes.ADMIN_ARTIGOS_EDITAR.toBreadcrumb();
+      const breadcrumbNovo = JonastorresRoutes.ADMIN_ARTIGOS_NOVO.toBreadcrumb();
+      const breadcrumbEditar = JonastorresRoutes.ADMIN_ARTIGOS_EDITAR.toBreadcrumb();
 
       this.obterDadosIniciais();
       this.ajustarBreadcrumb(this.id, breadcrumbNovo, breadcrumbEditar);
@@ -100,11 +95,7 @@ export class ArtigoEdicaoComponent
       ativo: this.form.get('ativo')!.value,
     };
 
-    this.gravarDados(
-      artigo,
-      artigo.titulo,
-      JonastorresRoutes.ADMIN_ARTIGOS.router as any
-    );
+    this.gravarDados(artigo, artigo.titulo, JonastorresRoutes.ADMIN_ARTIGOS.router as any);
   }
 
   protected gravarDadosInclusao(dados: any): Observable<any> {
@@ -158,13 +149,9 @@ export class ArtigoEdicaoComponent
       const classificacaoId = sucesso.classificacaoId;
       const input = sucesso.subcategoriaId ?? '';
       const classificacaoSplit = input.split('-');
-      let categoriaId = this.checarValoresCombosIniciais(
-        `${classificacaoSplit[0]}`
-      );
+      let categoriaId = this.checarValoresCombosIniciais(`${classificacaoSplit[0]}`);
 
-      let subcategoriaId = this.checarValoresCombosIniciais(
-        `${classificacaoSplit[0]}-${classificacaoSplit[1]}`
-      );
+      let subcategoriaId = this.checarValoresCombosIniciais(`${classificacaoSplit[0]}-${classificacaoSplit[1]}`);
 
       this.observarAlteracoesCategoria();
       this.observarAlteracoesUrl();
@@ -222,9 +209,7 @@ export class ArtigoEdicaoComponent
       });
   }
 
-  private extrairListaClassificacao(
-    sucesso: any
-  ): { id: string; nome: string }[] {
+  private extrairListaClassificacao(sucesso: any): { id: string; nome: string }[] {
     return sucesso.categorias.map((item: any) => ({
       id: item.id,
       nome: item.classificacao,
@@ -253,18 +238,14 @@ export class ArtigoEdicaoComponent
       return;
     }
 
-    this.listaCategoria = this.selecionarClassificacao(
-      classificacaoId
-    ).categorias.map((itemFiltrado: any) => ({
+    this.listaCategoria = this.selecionarClassificacao(classificacaoId).categorias.map((itemFiltrado: any) => ({
       nome: itemFiltrado.labelCategoria,
       id: itemFiltrado.idCategoria,
     }));
   }
 
   private selecionarClassificacao(classificacaoId: any) {
-    return this.listaClassificacaoBruta.filter(
-      item => item.id === classificacaoId
-    )[0];
+    return this.listaClassificacaoBruta.filter(item => item.id === classificacaoId)[0];
   }
 
   private filtrarListaSubcategoria() {
@@ -281,9 +262,7 @@ export class ArtigoEdicaoComponent
     this.listaSubcategoria = this.formatarOpcoesSubcategoria(itemSubcategorias);
   }
 
-  private formatarOpcoesSubcategoria(
-    itemSubcategorias: any
-  ): { nome: string; id: string }[] {
+  private formatarOpcoesSubcategoria(itemSubcategorias: any): { nome: string; id: string }[] {
     return itemSubcategorias?.map((resultado: any) => ({
       nome: resultado.labelSubcategoria,
       id: resultado.idSubcategoria,
@@ -324,32 +303,21 @@ export class ArtigoEdicaoComponent
   }
 
   private observarAlteracoesUrl() {
-    this.form.valueChanges
-      .pipe(
-        takeUntil(this._destroy$),
-        debounceTime(1000),
-        distinctUntilChanged()
-      )
-      .subscribe(() => {
-        this.textUtilService.insertNewText(
-          this.form.get('conteudoArtigo')!.value
-        );
+    this.form.valueChanges.pipe(takeUntil(this._destroy$), debounceTime(1000), distinctUntilChanged()).subscribe(() => {
+      this.textUtilService.insertNewText(this.form.get('conteudoArtigo')!.value);
 
-        const classificacao = encodeURIComponent(this.obterUrlClassificacao());
-        const categoria = encodeURIComponent(this.obterUrlCategoria());
-        const titulo = encodeURIComponent(
-          this.form.get('titulo')!.value.replace(' ', '-')
-        );
+      const classificacao = encodeURIComponent(this.obterUrlClassificacao());
+      const categoria = encodeURIComponent(this.obterUrlCategoria());
+      const titulo = encodeURIComponent(this.form.get('titulo')!.value.replace(' ', '-'));
 
-        let output: string = `/${classificacao}/${categoria}/${titulo}`;
+      let output: string = `/${classificacao}/${categoria}/${titulo}`;
 
-        output =
-          this.form.get('subcategoriaId')!.value.length === 0 ? '' : output;
+      output = this.form.get('subcategoriaId')!.value.length === 0 ? '' : output;
 
-        if (this.form.get('classificacaoId')!.value !== output) {
-          this.form.patchValue({ url: output });
-        }
-      });
+      if (this.form.get('classificacaoId')!.value !== output) {
+        this.form.patchValue({ url: output });
+      }
+    });
 
     this.textUtilService.value$.subscribe((valor: any) => {
       this.form.patchValue({
@@ -378,20 +346,13 @@ export class ArtigoEdicaoComponent
   }
 
   private obterUrlClassificacao(): string {
-    return this.listaClassificacaoBruta.filter(
-      (filtro: any) => filtro.id === this.form.get('classificacaoId')!.value
-    )[0].url;
+    return this.listaClassificacaoBruta.filter((filtro: any) => filtro.id === this.form.get('classificacaoId')!.value)[0]
+      .url;
   }
 
   private obterUrlCategoria(): string {
     return this.listaClassificacaoBruta
-      .filter(
-        (classificacao: any) =>
-          classificacao.id === this.form.get('classificacaoId')!.value
-      )[0]
-      .categorias.filter(
-        (categoria: any) =>
-          categoria.idCategoria === this.form.get('categoriaId')?.value
-      )[0].urlCategoria;
+      .filter((classificacao: any) => classificacao.id === this.form.get('classificacaoId')!.value)[0]
+      .categorias.filter((categoria: any) => categoria.idCategoria === this.form.get('categoriaId')?.value)[0].urlCategoria;
   }
 }

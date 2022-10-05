@@ -25,11 +25,7 @@
         <label for="float-input">Filtrar</label>
       </span>
 
-      <button
-        type="button"
-        tabindex="0"
-        class="table-busca__botao-novo"
-        [routerLink]="['/admin/usuarios/novo']">
+      <button type="button" tabindex="0" class="table-busca__botao-novo" [routerLink]="['/admin/usuarios/novo']">
         <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
         Novo
       </button>
@@ -37,15 +33,9 @@
   </ng-template>
   <ng-template pTemplate="header">
     <tr>
-      <th pSortableColumn="titulo">
-        Nome <p-sortIcon field="titulo"></p-sortIcon>
-      </th>
-      <th pSortableColumn="categoriaId">
-        Perfil <p-sortIcon field="categoriaId"></p-sortIcon>
-      </th>
-      <th pSortableColumn="dataCriacao">
-        Criado em: <p-sortIcon field="dataCriacao"></p-sortIcon>
-      </th>
+      <th pSortableColumn="titulo">Nome <p-sortIcon field="titulo"></p-sortIcon></th>
+      <th pSortableColumn="categoriaId">Perfil <p-sortIcon field="categoriaId"></p-sortIcon></th>
+      <th pSortableColumn="dataCriacao">Criado em: <p-sortIcon field="dataCriacao"></p-sortIcon></th>
       <th class="table-busca__coluna-acoes"></th>
     </tr>
   </ng-template>
@@ -56,8 +46,15 @@
         <strong>({{ dados?.ativo ? 'ativo' : 'inativo' }})</strong>
       </td>
       <td>
-        {{ dados.perfilUsuarioId }}
-      </td>
+        {{ obterNomePerfil(dados?.perfilUsuarioId) }}
+        <!-- {{ perfilUsuario.filter( (x) => x === dados.perfilUsuarioId) }} -->
+
+        <!--
+          .filter(
+          (x: any) => x.value === dados.perfilUsuarioId
+          )[0].key
+        }}
+      --></td>
       <td>
         {{ dados.dataCriacao | date: 'shortDate' }}
       </td>

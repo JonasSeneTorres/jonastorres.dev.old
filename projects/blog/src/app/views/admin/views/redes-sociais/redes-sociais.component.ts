@@ -9,14 +9,8 @@ import { RedesSociaisService } from './../../../../services/redes-sociais/redes-
   templateUrl: './redes-sociais.component.html',
   styleUrls: ['./redes-sociais.component.scss'],
 })
-export class RedesSociaisComponent
-  extends BaseAdminMasterComponent
-  implements OnInit
-{
-  constructor(
-    protected override injector: Injector,
-    private redesSociaisService: RedesSociaisService
-  ) {
+export class RedesSociaisComponent extends BaseAdminMasterComponent implements OnInit {
+  constructor(protected override injector: Injector, private redesSociaisService: RedesSociaisService) {
     super(injector);
     this.filtravelPelosCampos = ['titulo', 'categoriaId'];
     this.breadcrumbsItem = [

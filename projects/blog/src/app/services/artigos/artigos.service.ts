@@ -22,6 +22,10 @@ export class ArtigosService implements ICrudService {
     return this.httpClient.get(`${this.baseURL}/${codigo}`);
   }
 
+  obterPorURL(url: string): Observable<any> {
+    return this.httpClient.get(`${this.baseURL}?url=${url}`);
+  }
+
   listar(): Observable<any> {
     return this.httpClient.get(`${this.baseURL}`);
   }

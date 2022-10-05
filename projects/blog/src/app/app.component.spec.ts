@@ -11,15 +11,8 @@ import { CategoriasService } from './services/categorias/categorias.service';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        SharedModule,
-        NoopAnimationsModule,
-        HttpClientModule,
-      ],
-      providers: [
-        { provide: CategoriasService, useClass: CategoriasServiceMock },
-      ],
+      imports: [RouterTestingModule, SharedModule, NoopAnimationsModule, HttpClientModule],
+      providers: [{ provide: CategoriasService, useClass: CategoriasServiceMock }],
       declarations: [AppComponent],
     }).compileComponents();
   });

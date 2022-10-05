@@ -7,14 +7,7 @@ import { ChartData, ChartEvent, ChartType } from 'chart.js';
   styleUrls: ['./grafico-mobile-so.component.scss'],
 })
 export class GraficoMobileSoComponent {
-  public doughnutChartLabels: string[] = [
-    'Chrome',
-    'Firefox',
-    'IExplorer',
-    'Chrome',
-    'Firefox',
-    'IExplorer',
-  ];
+  public doughnutChartLabels: string[] = ['Chrome', 'Firefox', 'IExplorer', 'Chrome', 'Firefox', 'IExplorer'];
 
   public doughnutChartData: ChartData<'doughnut'> = {
     labels: this.doughnutChartLabels,
@@ -24,19 +17,7 @@ export class GraficoMobileSoComponent {
 
   constructor() {}
 
-  public chartClicked({
-    event,
-    active,
-  }: {
-    event: ChartEvent;
-    active: {}[];
-  }): void {}
+  public chartClicked({ event, active }: { event: ChartEvent; active: {}[] }): void {}
 
-  public chartHovered({
-    event,
-    active,
-  }: {
-    event: ChartEvent;
-    active: {}[];
-  }): void {}
+  public chartHovered({ event, active }: { event: ChartEvent; active: {}[] }): void {}
 }

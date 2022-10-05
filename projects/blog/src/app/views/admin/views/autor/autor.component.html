@@ -25,11 +25,7 @@
         <label for="float-input">Filtrar</label>
       </span>
 
-      <button
-        type="button"
-        tabindex="0"
-        class="table-busca__botao-novo"
-        [routerLink]="['/admin/autores/novo']">
+      <button type="button" tabindex="0" class="table-busca__botao-novo" [routerLink]="['/admin/autores/novo']">
         <span class="icone_botao fa-solid fa-plus" aria-hidden="false"></span>
         Novo
       </button>
@@ -37,9 +33,7 @@
   </ng-template>
   <ng-template pTemplate="header">
     <tr>
-      <th pSortableColumn="titulo">
-        Nome <p-sortIcon field="titulo"></p-sortIcon>
-      </th>
+      <th pSortableColumn="titulo">Nome <p-sortIcon field="titulo"></p-sortIcon></th>
       <th class="table-busca__coluna-acoes"></th>
     </tr>
   </ng-template>

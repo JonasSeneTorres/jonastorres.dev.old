@@ -7,8 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class BlogService {
   private _boxPrincipalTransparente$ = new BehaviorSubject(false);
 
-  readonly boxPrincipalTransparente: Observable<boolean> =
-    this._boxPrincipalTransparente$.asObservable();
+  readonly boxPrincipalTransparente: Observable<boolean> = this._boxPrincipalTransparente$.asObservable();
 
   tornarBoxPrincipalTransparente(value: boolean) {
     this._boxPrincipalTransparente$.next(value);

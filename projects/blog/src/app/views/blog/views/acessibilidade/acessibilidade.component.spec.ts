@@ -17,12 +17,7 @@ describe('AcessibilidadeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AcessibilidadeComponent],
-      imports: [
-        SharedModule,
-        RouterTestingModule,
-        HttpClientModule,
-        BlogModule,
-      ],
+      imports: [SharedModule, RouterTestingModule, HttpClientModule, BlogModule],
       providers: [
         { provide: ArtigosService, useClass: ArtigosServiceMock },
         { provide: ActivatedRoute, useClass: ActivatedRouteMock },

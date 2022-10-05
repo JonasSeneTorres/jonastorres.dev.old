@@ -18,12 +18,7 @@ describe('ADMIN/RedesSociaisComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [RedesSociaisComponent],
-      imports: [
-        SharedModule,
-        RouterTestingModule,
-        HttpClientModule,
-        AdminModule,
-      ],
+      imports: [SharedModule, RouterTestingModule, HttpClientModule, AdminModule],
       providers: [
         { provide: ArtigosService, useClass: ArtigosServiceMock },
         { provide: ActivatedRoute, useClass: ActivatedRouteMock },

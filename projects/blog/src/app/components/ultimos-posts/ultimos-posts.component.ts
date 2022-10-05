@@ -11,15 +11,16 @@ export class UltimosPostsComponent {
 
   constructor() {}
 
-  obterNomeCategoria(indice: number) {
-    const output = this.categorias.filter(
-      item => item.id === this.ultimosArtigos[indice].categoriaId
-    );
-
-    return '';
+  obterNomeCategoria(item: any): string {
+    console.log('aaaaa: ', item);
+    return item.url.split('/')[2] ?? '';
+    // const output = this.categorias; //.filter(item => item.id === this.ultimosArtigos[indice].categoriaId);
+    // console.log('output: ', output);
+    // return output[0];
   }
 
   pertenceACategoria(indice: number, nomeCategoria: string = '') {
-    return this.obterNomeCategoria(indice) === nomeCategoria;
+    // console.log('jdsakh', indice, nomeCategoria, this.ultimosArtigos);
+    // return this.obterNomeCategoria(indice) === nomeCategoria;
   }
 }

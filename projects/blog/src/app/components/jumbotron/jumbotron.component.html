@@ -1,10 +1,7 @@
 <div class="jumbotron">
   <div class="jumbotron__vitrine">
     <gd-centered-panel>
-      <div
-        class="jumbotron__conteudo jumbotron__conteudo-{{
-          (dadosJumbotron$ | async)?.categoria
-        }}">
+      <div class="jumbotron__conteudo jumbotron__conteudo-{{ (dadosJumbotron$ | async)?.categoria }}">
         <div class="jumbotron__icone" aria-hidden="true">
           <img
             class="icone-asp"
@@ -12,78 +9,43 @@
             *ngIf="(dadosJumbotron$ | async)?.categoria === 'asp'" />
           <span
             class="fa-solid fa-universal-access"
-            *ngIf="
-              (dadosJumbotron$ | async)?.categoria === 'acessibilidade'
-            "></span>
-          <span
-            class="fa-brands fa-angular"
-            *ngIf="(dadosJumbotron$ | async)?.categoria === 'angular'"></span>
-          <span
-            class="fa-brands fa-angular"
-            *ngIf="(dadosJumbotron$ | async)?.categoria === 'angularjs'"></span>
-          <span
-            class="fa-solid fa-pen-ruler"
-            *ngIf="
-              (dadosJumbotron$ | async)?.categoria === 'arquitetura'
-            "></span>
-          <span
-            class="fa-solid fa-user-group"
-            *ngIf="(dadosJumbotron$ | async)?.categoria === 'autores'"></span>
-          <span
-            class="fa-brands fa-css3"
-            *ngIf="(dadosJumbotron$ | async)?.categoria === 'css'"></span>
-          <span
-            class="fa-solid fa-magnifying-glass"
-            *ngIf="(dadosJumbotron$ | async)?.categoria === 'busca'"></span>
-          <span
-            class="fa-solid fa-id-card"
-            *ngIf="(dadosJumbotron$ | async)?.categoria === 'contato'"></span>
+            *ngIf="(dadosJumbotron$ | async)?.categoria === 'acessibilidade'"></span>
+          <span class="fa-brands fa-angular" *ngIf="(dadosJumbotron$ | async)?.categoria === 'angular'"></span>
+          <span class="fa-brands fa-angular" *ngIf="(dadosJumbotron$ | async)?.categoria === 'angularjs'"></span>
+          <span class="fa-solid fa-pen-ruler" *ngIf="(dadosJumbotron$ | async)?.categoria === 'arquitetura'"></span>
+          <span class="fa-solid fa-user-group" *ngIf="(dadosJumbotron$ | async)?.categoria === 'autores'"></span>
+          <span class="fa-brands fa-css3" *ngIf="(dadosJumbotron$ | async)?.categoria === 'css'"></span>
+          <span class="fa-solid fa-magnifying-glass" *ngIf="(dadosJumbotron$ | async)?.categoria === 'busca'"></span>
+          <span class="fa-solid fa-id-card" *ngIf="(dadosJumbotron$ | async)?.categoria === 'contato'"></span>
+          <span class="fa-solid fa-sitemap" *ngIf="(dadosJumbotron$ | async)?.categoria === 'sitemap'"></span>
 
           <img
             src="assets/img/fotos/logos/c-sharp-branco.gif"
             width="200px"
             *ngIf="(dadosJumbotron$ | async)?.categoria === 'dotnet'" />
-          <span
-            class="fa-solid fa-bug"
-            *ngIf="(dadosJumbotron$ | async)?.categoria === 'erro'"></span>
+          <span class="fa-solid fa-bug" *ngIf="(dadosJumbotron$ | async)?.categoria === 'erro'"></span>
           <img
             src="assets/img/fotos/logos/flutter.svg"
             width="200px"
             *ngIf="(dadosJumbotron$ | async)?.categoria === 'flutter'" />
-          <span
-            class="fa-brands fa-html5"
-            *ngIf="(dadosJumbotron$ | async)?.categoria === 'html'"></span>
+          <span class="fa-brands fa-html5" *ngIf="(dadosJumbotron$ | async)?.categoria === 'html'"></span>
           <img
             src="assets/img/fotos/logos/jonastorres-dev.gif"
             width="220px"
             *ngIf="(dadosJumbotron$ | async)?.categoria === 'institucional'" />
-          <span
-            class="fa-brands fa-js"
-            *ngIf="
-              (dadosJumbotron$ | async)?.categoria === 'javascript'
-            "></span>
+          <span class="fa-brands fa-js" *ngIf="(dadosJumbotron$ | async)?.categoria === 'javascript'"></span>
           <img
             class="pagina-nao-encontrada"
             src="assets/img/fotos/pagina-nao-encontrada/travolta.gif"
             width="200px"
-            *ngIf="
-              (dadosJumbotron$ | async)?.categoria === 'pagina-nao-encontrada'
-            " />
-          <span
-            class="fa-brands fa-react"
-            *ngIf="(dadosJumbotron$ | async)?.categoria === 'react'"></span>
-          <span
-            class="fa-solid fa-person-chalkboard"
-            *ngIf="(dadosJumbotron$ | async)?.categoria === 'sobre'"></span>
-          <span
-            class="fa-brands fa-vuejs"
-            *ngIf="(dadosJumbotron$ | async)?.categoria === 'vue'"></span>
+            *ngIf="(dadosJumbotron$ | async)?.categoria === 'pagina-nao-encontrada'" />
+          <span class="fa-brands fa-react" *ngIf="(dadosJumbotron$ | async)?.categoria === 'react'"></span>
+          <span class="fa-solid fa-person-chalkboard" *ngIf="(dadosJumbotron$ | async)?.categoria === 'sobre'"></span>
+          <span class="fa-brands fa-vuejs" *ngIf="(dadosJumbotron$ | async)?.categoria === 'vue'"></span>
         </div>
         <div class="jumbotron__titulo">
           <h1
-            [class.destaque]="
-              ((dadosJumbotron$ | async)?.subtitulo || '').length === 0
-            "
+            [class.destaque]="((dadosJumbotron$ | async)?.subtitulo || '').length === 0"
             *ngIf="((dadosJumbotron$ | async)?.titulo || '').length > 0">
             {{ (dadosJumbotron$ | async)?.titulo }}
           </h1>
@@ -91,40 +53,23 @@
             {{ (dadosJumbotron$ | async)?.subtitulo }}
           </h2>
         </div>
-        <div
-          class="jumbotron__dados"
-          [class.sem-borda]="
-            ((dadosJumbotron$ | async)?.titulo || '').length === 0
-          ">
+        <div class="jumbotron__dados" [class.sem-borda]="((dadosJumbotron$ | async)?.titulo || '').length === 0">
           <ng-container *ngIf="(dadosJumbotron$ | async)?.dataCriacao">
             <span class="fa-solid fa-calendar-days icon"></span>
-            {{
-              (dadosJumbotron$ | async)?.dataCriacao
-                | date: 'longDate':'':'pt-BR'
-            }}
+            {{ (dadosJumbotron$ | async)?.dataCriacao | date: 'longDate':'':'pt-BR' }}
             <span class="icon2" aria-hidden="true"> | </span>
           </ng-container>
           <ng-container *ngIf="(dadosJumbotron$ | async)?.dataEdicao">
             <span class="fa-solid fa-pen-to-square icon"></span>Ultima edição:
-            {{
-              (dadosJumbotron$ | async)?.dataEdicao
-                | date: 'longDate':'':'pt-BR'
-            }}
+            {{ (dadosJumbotron$ | async)?.dataEdicao | date: 'longDate':'':'pt-BR' }}
             <span class="icon2" aria-hidden="true"> | </span>
           </ng-container>
           <ng-container *ngIf="(dadosJumbotron$ | async)?.tempoLeitura">
-            <span class="fa-solid fa-stopwatch icon"></span
-            >{{ (dadosJumbotron$ | async)?.tempoLeitura }} min de leitura
+            <span class="fa-solid fa-stopwatch icon"></span>{{ (dadosJumbotron$ | async)?.tempoLeitura }} min de leitura
           </ng-container>
         </div>
-        <div
-          class="jumbotron__compartilhamento"
-          [class.sem-borda]="
-            ((dadosJumbotron$ | async)?.titulo || '').length === 0
-          ">
-          <ul
-            class="jumbotron__list"
-            *ngIf="(dadosJumbotron$ | async)?.compartilharBox">
+        <div class="jumbotron__compartilhamento" [class.sem-borda]="((dadosJumbotron$ | async)?.titulo || '').length === 0">
+          <ul class="jumbotron__list" *ngIf="(dadosJumbotron$ | async)?.compartilharBox">
             <li>
               <a href="#" target="_blank">
                 <span class="icon socicon-youtube" aria-hidden="true"></span>
@@ -136,6 +81,5 @@
       </div>
     </gd-centered-panel>
   </div>
-  <div
-    class="jumbotron__fundo {{ (dadosJumbotron$ | async)?.categoria }}"></div>
+  <div class="jumbotron__fundo {{ (dadosJumbotron$ | async)?.categoria }}"></div>
 </div>

@@ -11,14 +11,8 @@ import { RedesSociaisService } from './../../../../../services/redes-sociais/red
   templateUrl: './redes-sociais-edicao.component.html',
   styleUrls: ['./redes-sociais-edicao.component.scss'],
 })
-export class RedesSociaisEdicaoComponent
-  extends BaseAdminDetailComponent
-  implements OnInit
-{
-  constructor(
-    protected override injector: Injector,
-    private redesSociaisService: RedesSociaisService
-  ) {
+export class RedesSociaisEdicaoComponent extends BaseAdminDetailComponent implements OnInit {
+  constructor(protected override injector: Injector, private redesSociaisService: RedesSociaisService) {
     super(injector);
   }
 
@@ -29,10 +23,8 @@ export class RedesSociaisEdicaoComponent
         JonastorresRoutes.ADMIN.toBreadcrumb(),
         JonastorresRoutes.ADMIN_REDESSOCIAIS.toBreadcrumb(),
       ];
-      const breadcrumbNovo =
-        JonastorresRoutes.ADMIN_REDESSOCIAIS_NOVO.toBreadcrumb();
-      const breadcrumbEditar =
-        JonastorresRoutes.ADMIN_REDESSOCIAIS_EDITAR.toBreadcrumb();
+      const breadcrumbNovo = JonastorresRoutes.ADMIN_REDESSOCIAIS_NOVO.toBreadcrumb();
+      const breadcrumbEditar = JonastorresRoutes.ADMIN_REDESSOCIAIS_EDITAR.toBreadcrumb();
 
       this.ajustarBreadcrumb(this.id, breadcrumbNovo, breadcrumbEditar);
       this.criarForm();
@@ -50,11 +42,7 @@ export class RedesSociaisEdicaoComponent
       ativo: this.form.get('ativo')!.value,
     };
 
-    this.gravarDados(
-      redeSocial,
-      redeSocial.nome,
-      JonastorresRoutes.ADMIN_AUTOR.router as any
-    );
+    this.gravarDados(redeSocial, redeSocial.nome, JonastorresRoutes.ADMIN_AUTOR.router as any);
   }
 
   protected gravarDadosInclusao(dados: any): Observable<any> {

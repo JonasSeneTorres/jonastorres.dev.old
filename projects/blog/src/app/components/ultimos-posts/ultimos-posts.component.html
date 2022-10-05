@@ -2,44 +2,27 @@
   <h2>Ultimos artigos</h2>
   <ul class="ultimos-posts__list">
     <li *ngFor="let artigo of ultimosArtigos; let i = index">
-      <article
-        class="ultimos-posts__artigo"
-        role="link"
-        [routerLink]="[artigo?.url]">
-        <div class="ultimos-posts__thumb {{ obterNomeCategoria(i) }}">
-          <img
-            class="icone-asp"
-            src="assets/img/fotos/logos/asp.gif"
-            *ngIf="pertenceACategoria(i, 'asp')" />
+      <article class="ultimos-posts__artigo" role="link" [routerLink]="[artigo?.url]">
+        <div class="ultimos-posts__thumb {{ obterNomeCategoria(artigo) }}">
+          <img class="icone-asp" src="assets/img/fotos/logos/asp.gif" *ngIf="obterNomeCategoria(artigo) === 'asp'" />
+          <span class="ultimos-posts__icone fa-brands fa-angular" *ngIf="obterNomeCategoria(artigo) === 'angular'"></span>
+          <span class="ultimos-posts__icone fa-brands fa-angular" *ngIf="obterNomeCategoria(artigo) === 'angularjs'"></span>
           <span
-            class="ultimos-posts__icone fa-brands fa-angular"
-            *ngIf="pertenceACategoria(i, 'angular')"></span>
-          <span
-            class="ultimos-posts__icone fa-brands fa-angular"
-            *ngIf="pertenceACategoria(i, 'angularjs')"></span>
-          <span
-            class="ultimos-posts__icone fa-brands fa-css3"
-            *ngIf="pertenceACategoria(i, 'css')"></span>
+            class="ultimos-posts__icone fa-solid fa-pen-ruler"
+            *ngIf="obterNomeCategoria(artigo) === 'arquitetura'"></span>
+          <span class="ultimos-posts__icone fa-brands fa-css3" *ngIf="obterNomeCategoria(artigo) === 'css'"></span>
           <img
             class="icone-c-sharp"
             src="assets/img/fotos/logos/c-sharp-branco.gif"
-            *ngIf="pertenceACategoria(i, 'dotnet')" />
+            *ngIf="obterNomeCategoria(artigo) === 'dotnet'" />
           <img
             class="icone-flutter"
             src="assets/img/fotos/logos/flutter.svg"
-            *ngIf="pertenceACategoria(i, 'flutter')" />
-          <span
-            class="ultimos-posts__icone fa-brands fa-html5"
-            *ngIf="pertenceACategoria(i, 'html')"></span>
-          <span
-            class="ultimos-posts__icone fa-brands fa-js"
-            *ngIf="pertenceACategoria(i, 'javascript')"></span>
-          <span
-            class="ultimos-posts__icone fa-brands fa-react"
-            *ngIf="pertenceACategoria(i, 'react')"></span>
-          <span
-            class="ultimos-posts__icone fa-brands fa-vuejs"
-            *ngIf="pertenceACategoria(i, 'vue')"></span>
+            *ngIf="obterNomeCategoria(artigo) === 'flutter'" />
+          <span class="ultimos-posts__icone fa-brands fa-html5" *ngIf="obterNomeCategoria(artigo) === 'html'"></span>
+          <span class="ultimos-posts__icone fa-brands fa-js" *ngIf="obterNomeCategoria(artigo) === 'javascript'"></span>
+          <span class="ultimos-posts__icone fa-brands fa-react" *ngIf="obterNomeCategoria(artigo) === 'react'"></span>
+          <span class="ultimos-posts__icone fa-brands fa-vuejs" *ngIf="obterNomeCategoria(artigo) === 'vue'"></span>
         </div>
         <h3 class="ultimos-posts__titulo">
           {{ artigo?.titulo }}

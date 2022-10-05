@@ -17,12 +17,7 @@ describe('ADMIN/AutorEdicaoComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AutorEdicaoComponent],
-      imports: [
-        SharedModule,
-        AdminModule,
-        HttpClientModule,
-        RouterTestingModule,
-      ],
+      imports: [SharedModule, AdminModule, HttpClientModule, RouterTestingModule],
       providers: [
         { provide: ArtigosService, useClass: ArtigosServiceMock },
         { provide: ActivatedRoute, useClass: ActivatedRouteMock },

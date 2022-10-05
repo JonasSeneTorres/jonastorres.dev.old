@@ -9,14 +9,7 @@ import { UltimosPostsModule } from './../ultimos-posts/ultimos-posts.module';
 
 @NgModule({
   declarations: [AsideBoxComponent],
-  imports: [
-    CommonModule,
-    GuideDogModule,
-    SigaNosModule,
-    BoxCategoriasModule,
-    BoxBuscaModule,
-    UltimosPostsModule,
-  ],
+  imports: [CommonModule, GuideDogModule, SigaNosModule, BoxCategoriasModule, BoxBuscaModule, UltimosPostsModule],
   exports: [AsideBoxComponent],
 })
 export class AsideBoxModule {}

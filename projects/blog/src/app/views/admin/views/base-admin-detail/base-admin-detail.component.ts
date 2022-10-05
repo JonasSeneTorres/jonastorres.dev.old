@@ -22,15 +22,9 @@ export abstract class BaseAdminDetailComponent implements OnDestroy {
   ehEdicao = false;
 
   constructor(protected injector: Injector) {
-    this._confirmationService = injector.get<ConfirmationService>(
-      ConfirmationService as Type<ConfirmationService>
-    );
-    this._toastService = injector.get<ToastService>(
-      ToastService as Type<ToastService>
-    );
-    this._activatedRoute = injector.get<ActivatedRoute>(
-      ActivatedRoute as Type<ActivatedRoute>
-    );
+    this._confirmationService = injector.get<ConfirmationService>(ConfirmationService as Type<ConfirmationService>);
+    this._toastService = injector.get<ToastService>(ToastService as Type<ToastService>);
+    this._activatedRoute = injector.get<ActivatedRoute>(ActivatedRoute as Type<ActivatedRoute>);
     this._router = injector.get<Router>(Router as Type<Router>);
     this.breadcrumbsItem = [];
   }
@@ -76,11 +70,7 @@ export abstract class BaseAdminDetailComponent implements OnDestroy {
     );
   }
 
-  protected ajustarBreadcrumb(
-    id: string,
-    breadcrumbNovo: BreadcrumbsItem,
-    breadcrumbEditar: BreadcrumbsItem
-  ): void {
+  protected ajustarBreadcrumb(id: string, breadcrumbNovo: BreadcrumbsItem, breadcrumbEditar: BreadcrumbsItem): void {
     let complementoBreadcrumbs = breadcrumbNovo;
     if (id.length > 0) {
       complementoBreadcrumbs = breadcrumbEditar;
@@ -96,9 +86,7 @@ export abstract class BaseAdminDetailComponent implements OnDestroy {
   protected ativarToast(texto: string = '', edicao: boolean = false) {
     let icone = 'success';
     let titulo = 'Sucesso';
-    let mensagem = `"${texto}" foi ${
-      edicao ? 'editado' : 'cadastrado'
-    } com sucesso`;
+    let mensagem = `"${texto}" foi ${edicao ? 'editado' : 'cadastrado'} com sucesso`;
 
     this._toastService.ativarToast(titulo, mensagem, icone);
   }

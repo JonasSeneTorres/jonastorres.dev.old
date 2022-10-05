@@ -18,12 +18,7 @@ describe('ADMIN/PerfilUsuarioComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [PerfilUsuarioComponent],
-      imports: [
-        SharedModule,
-        RouterTestingModule,
-        HttpClientModule,
-        AdminModule,
-      ],
+      imports: [SharedModule, RouterTestingModule, HttpClientModule, AdminModule],
       providers: [
         { provide: ArtigosService, useClass: ArtigosServiceMock },
         { provide: ActivatedRoute, useClass: ActivatedRouteMock },

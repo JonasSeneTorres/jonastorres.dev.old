@@ -15,15 +15,9 @@ export class BuscaComponent implements OnInit, OnDestroy {
 
   breadcrumbsItem: BreadcrumbsItem[];
 
-  constructor(
-    private _jumbotronService: JumbotronService,
-    private _blogService: BlogService
-  ) {
+  constructor(private _jumbotronService: JumbotronService, private _blogService: BlogService) {
     this._blogService.tornarBoxPrincipalTransparente(false);
-    this.breadcrumbsItem = [
-      JonastorresRoutes.HOME.toBreadcrumb(),
-      { label: 'busca' },
-    ];
+    this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb(), { label: 'busca' }];
     this._jumbotronService.inserirDados({
       titulo: '',
       subtitulo: '',

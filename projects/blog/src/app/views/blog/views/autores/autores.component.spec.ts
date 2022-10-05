@@ -17,12 +17,7 @@ describe('AutoresComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AutoresComponent],
-      imports: [
-        SharedModule,
-        RouterTestingModule,
-        HttpClientModule,
-        BlogModule,
-      ],
+      imports: [SharedModule, RouterTestingModule, HttpClientModule, BlogModule],
       providers: [
         { provide: ActivatedRoute, useClass: ActivatedRouteMock },
         { provide: ArtigosService, useClass: ArtigosServiceMock },

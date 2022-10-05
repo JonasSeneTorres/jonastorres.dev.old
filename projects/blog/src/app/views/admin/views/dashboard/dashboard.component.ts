@@ -10,9 +10,6 @@ export class DashboardComponent {
   breadcrumbsItem: BreadcrumbsItem[];
 
   constructor() {
-    this.breadcrumbsItem = [
-      JonastorresRoutes.HOME.toBreadcrumb(),
-      JonastorresRoutes.ADMIN.toBreadcrumb(),
-    ];
+    this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb(), JonastorresRoutes.ADMIN.toBreadcrumb()];
   }
 }

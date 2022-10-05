@@ -69,13 +69,6 @@ import { UsuariosComponent } from './views/usuarios/usuarios.component';
     ModalClassificacaoComponent,
     ModalSerieComponent,
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    RouterModule,
-    SharedModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
+  imports: [CommonModule, AdminRoutingModule, RouterModule, SharedModule, FormsModule, ReactiveFormsModule],
 })
 export class AdminModule {}

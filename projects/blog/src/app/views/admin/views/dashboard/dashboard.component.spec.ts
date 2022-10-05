@@ -18,12 +18,7 @@ describe('ADMIN/DashboardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [DashboardComponent],
-      imports: [
-        SharedModule,
-        AdminModule,
-        HttpClientModule,
-        RouterTestingModule,
-      ],
+      imports: [SharedModule, AdminModule, HttpClientModule, RouterTestingModule],
       providers: [
         { provide: ActivatedRoute, useClass: ActivatedRouteMock },
         { provide: ArtigosService, useClass: ArtigosServiceMock },

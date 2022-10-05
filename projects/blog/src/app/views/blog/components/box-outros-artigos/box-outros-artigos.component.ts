@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'jt-box-outros-artigos',
@@ -18,7 +18,7 @@ export class BoxOutrosArtigosComponent {
   @Input() set listaArtigoSerie(value: any[]) {
     this._listaArtigoSerie = value;
 
-    const ultimoIndiceLista = this.artigoAtual.length - 1;
+    const ultimoIndiceLista = (this.artigoAtual ?? []).length - 1;
     const index = this.encontrarIndiceAtual();
 
     this.desabilitarBotaoVoltar = false;

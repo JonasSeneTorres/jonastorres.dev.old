@@ -22,10 +22,6 @@ import { VerticalMenuBurgerComponent } from './menu-hamburger/components/vertica
     MenuListHorizontalComponent,
   ],
   imports: [CommonModule, RouterModule, CenteredPanelModule],
-  exports: [
-    MenuHamburgerComponent,
-    AcessibilityBarComponent,
-    HorizontalNavbarComponent,
-  ],
+  exports: [MenuHamburgerComponent, AcessibilityBarComponent, HorizontalNavbarComponent],
 })
 export class MenuModule {}

@@ -17,11 +17,7 @@ describe('PaginaNaoEncontradaComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [PaginaNaoEncontradaComponent],
       imports: [SharedModule, RouterTestingModule, BlogModule],
-      providers: [
-        { provide: ArtigosService, useClass: ArtigosServiceMock },
-        BlogService,
-        JumbotronService,
-      ],
+      providers: [{ provide: ArtigosService, useClass: ArtigosServiceMock }, BlogService, JumbotronService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PaginaNaoEncontradaComponent);

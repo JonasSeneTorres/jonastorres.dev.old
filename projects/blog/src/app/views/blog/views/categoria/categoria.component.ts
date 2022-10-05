@@ -34,29 +34,24 @@ export class CategoriaComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this._activatedRoute.params
-      .pipe(takeUntil(this._destroy$))
-      .subscribe((params: Params) => {
-        const labelGrupo = `${params['grupo']}`;
-        const routeGrupo = `/blog/${params['grupo']}`;
-        const labelCategoria = `${params['categoria']}`;
-        const routeCategoria = `/blog/${params['categoria']}`;
+    this._activatedRoute.params.pipe(takeUntil(this._destroy$)).subscribe((params: Params) => {
+      const labelGrupo = `${params['grupo']}`;
+      const routeGrupo = `/blog/${params['grupo']}`;
+      const labelCategoria = `${params['categoria']}`;
+      const routeCategoria = `/blog/${params['categoria']}`;
 
-        this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb()];
+      this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb()];
 
-        if (labelGrupo !== 'categorias') {
-          this.breadcrumbsItem.push({ label: labelGrupo, route: [routeGrupo] });
-        }
-        this.breadcrumbsItem.push({
-          label: labelCategoria,
-          route: [routeCategoria],
-        });
-
-        this.inserirDadosJumbotrom(
-          labelCategoria,
-          labelCategoria.toLowerCase()
-        );
+      if (labelGrupo !== 'categorias') {
+        this.breadcrumbsItem.push({ label: labelGrupo, route: [routeGrupo] });
+      }
+      this.breadcrumbsItem.push({
+        label: labelCategoria,
+        route: [routeCategoria],
       });
+
+      this.inserirDadosJumbotrom(labelCategoria, labelCategoria.toLowerCase());
+    });
 
     this.obterDadosIniciais(1)
       .pipe(takeUntil(this._destroy$))
@@ -85,9 +80,7 @@ export class CategoriaComponent implements OnInit, OnDestroy {
   }
 
   private inserirDadosJumbotrom(titulo: string, categoria: string) {
-    const tituloFormatado = `${titulo.toUpperCase().charAt(0)}${titulo
-      .toLowerCase()
-      .substring(1, titulo.length)}`;
+    const tituloFormatado = `${titulo.toUpperCase().charAt(0)}${titulo.toLowerCase().substring(1, titulo.length)}`;
     // console.log(titulo, categoria);
     this._jumbotronService.inserirDados({
       titulo: tituloFormatado,

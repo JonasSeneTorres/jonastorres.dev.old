@@ -12,20 +12,12 @@ import { UsuariosService } from './../../../../../services/usuarios/usuarios.ser
   templateUrl: './usuarios-edicao.component.html',
   styleUrls: ['./usuarios-edicao.component.scss'],
 })
-export class UsuariosEdicaoComponent
-  extends BaseAdminDetailComponent
-  implements OnInit
-{
+export class UsuariosEdicaoComponent extends BaseAdminDetailComponent implements OnInit {
   readonly perfilUsuario: any[] = [];
 
-  constructor(
-    protected override injector: Injector,
-    private usuariosService: UsuariosService
-  ) {
+  constructor(protected override injector: Injector, private usuariosService: UsuariosService) {
     super(injector);
-    const perfis = Object.values(PerfilUsuario).filter(key =>
-      isNaN(Number(key))
-    );
+    const perfis = Object.values(PerfilUsuario).filter(key => isNaN(Number(key)));
 
     // console.log(
     //   Object.values(PerfilUsuario).filter(key => isNaN(Number(key))),
@@ -33,9 +25,7 @@ export class UsuariosEdicaoComponent
     // );
     for (let perfil in perfis) {
       this.perfilUsuario.push({
-        key: `${PerfilUsuario[perfil].toUpperCase().charAt(0)}${PerfilUsuario[
-          perfil
-        ]
+        key: `${PerfilUsuario[perfil].toUpperCase().charAt(0)}${PerfilUsuario[perfil]
           .toLowerCase()
           .substring(1, PerfilUsuario[perfil].toLowerCase().length)}`,
         value: perfil,
@@ -50,10 +40,8 @@ export class UsuariosEdicaoComponent
         JonastorresRoutes.ADMIN.toBreadcrumb(),
         JonastorresRoutes.ADMIN_USUARIO.toBreadcrumb(),
       ];
-      const breadcrumbNovo =
-        JonastorresRoutes.ADMIN_USUARIO_NOVO.toBreadcrumb();
-      const breadcrumbEditar =
-        JonastorresRoutes.ADMIN_USUARIO_EDITAR.toBreadcrumb();
+      const breadcrumbNovo = JonastorresRoutes.ADMIN_USUARIO_NOVO.toBreadcrumb();
+      const breadcrumbEditar = JonastorresRoutes.ADMIN_USUARIO_EDITAR.toBreadcrumb();
 
       this.ajustarBreadcrumb(this.id, breadcrumbNovo, breadcrumbEditar);
       this.criarForm();
@@ -76,11 +64,7 @@ export class UsuariosEdicaoComponent
       ativo: this.form.get('ativo')!.value,
     };
 
-    this.gravarDados(
-      usuario,
-      usuario.nome,
-      JonastorresRoutes.ADMIN_AUTOR.router as any
-    );
+    this.gravarDados(usuario, usuario.nome, JonastorresRoutes.ADMIN_AUTOR.router as any);
   }
 
   protected gravarDadosInclusao(dados: any): Observable<any> {
@@ -93,8 +77,7 @@ export class UsuariosEdicaoComponent
 
   protected gravarDadosEdicao(dados: any): Observable<any> {
     dados.id = this.id;
-    (dados.dataCriacao = this.form.get('dataCriacao')!.value),
-      (dados.dataEdicao = new Date());
+    (dados.dataCriacao = this.form.get('dataCriacao')!.value), (dados.dataEdicao = new Date());
     return this.usuariosService.atualizar(dados);
   }
 

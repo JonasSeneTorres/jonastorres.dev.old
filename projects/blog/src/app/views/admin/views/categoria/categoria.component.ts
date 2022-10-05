@@ -9,14 +9,8 @@ import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master
   templateUrl: './categoria.component.html',
   styleUrls: ['./categoria.component.scss'],
 })
-export class CategoriaComponent
-  extends BaseAdminMasterComponent
-  implements OnInit
-{
-  constructor(
-    protected override injector: Injector,
-    private categoriasService: CategoriasService
-  ) {
+export class CategoriaComponent extends BaseAdminMasterComponent implements OnInit {
+  constructor(protected override injector: Injector, private categoriasService: CategoriasService) {
     super(injector);
     this.filtravelPelosCampos = ['classificacao', 'categoriaId'];
     this.breadcrumbsItem = [

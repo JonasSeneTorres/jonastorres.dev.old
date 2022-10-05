@@ -1,19 +1,11 @@
 <header class="gd-header">
   <gd-centered-panel>
-    <nav
-      class="gd-header__nav"
-      [class.gd-header__nav-complete]="navboxWithAcceptableSize"
-      id="menu">
-      <div
-        [class.grid]="navboxWithAcceptableSize"
-        [class.grid-mobile]="!navboxWithAcceptableSize">
+    <nav class="gd-header__nav" [class.gd-header__nav-complete]="navboxWithAcceptableSize" id="menu">
+      <div [class.grid]="navboxWithAcceptableSize" [class.grid-mobile]="!navboxWithAcceptableSize">
         <div class="grid">
           <gd-menu-hamburger
             [nav]="navConfig"
-            *ngIf="
-              (!showHamburgerHorizontalNav || !navboxWithAcceptableSize) &&
-              navConfig.length > 0
-            "></gd-menu-hamburger>
+            *ngIf="(!showHamburgerHorizontalNav || !navboxWithAcceptableSize) && navConfig.length > 0"></gd-menu-hamburger>
           <a
             [routerLink]="['']"
             class="gd-header__link gd-header__link-main"

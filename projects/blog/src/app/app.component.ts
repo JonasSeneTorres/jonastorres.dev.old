@@ -50,10 +50,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this._destroy$.unsubscribe();
   }
 
-  private adicionarMenuComCategoria(
-    sucesso: any,
-    menuNovo: NavibarItemConfig[]
-  ) {
+  private adicionarMenuComCategoria(sucesso: any, menuNovo: NavibarItemConfig[]) {
     const itensMenuComCategoria = sucesso
       .filter((item: any) => this.filtrarMenu(item, true))
       .map((itemFiltrado: any) => this.mapearMenuComCategoria(itemFiltrado));
@@ -61,10 +58,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.adicionarItemCategoriaFiltrado(itensMenuComCategoria, menuNovo);
   }
 
-  private adicionarMenuSemCategoria(
-    sucesso: any,
-    menuNovo: NavibarItemConfig[]
-  ) {
+  private adicionarMenuSemCategoria(sucesso: any, menuNovo: NavibarItemConfig[]) {
     console.log(sucesso);
     const itensMenuSemCategoria = sucesso
       .filter((item: any) => this.filtrarMenu(item, false))
@@ -94,10 +88,7 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
-  private adicionarItemCategoriaFiltrado(
-    itensMenuComCategoria: any,
-    menuNovo: NavibarItemConfig[]
-  ) {
+  private adicionarItemCategoriaFiltrado(itensMenuComCategoria: any, menuNovo: NavibarItemConfig[]) {
     for (const item of itensMenuComCategoria) {
       menuNovo.push(item);
     }
@@ -107,34 +98,23 @@ export class AppComponent implements OnInit, OnDestroy {
     const estaAtivo = item.ativo;
     console.log('aaaa', item, item.categorias.length);
     const possuiCategorias = item.categorias.length > 0;
-    let tipoClassificacaoValido = this.obterTipoClassificacaoValido(
-      item,
-      filtrarComCategoria
-    );
+    let tipoClassificacaoValido = this.obterTipoClassificacaoValido(item, filtrarComCategoria);
 
-    const filtroValido =
-      tipoClassificacaoValido && estaAtivo && possuiCategorias;
+    const filtroValido = tipoClassificacaoValido && estaAtivo && possuiCategorias;
 
     if (filtroValido) {
       return item;
     }
   }
 
-  private obterTipoClassificacaoValido(
-    item: any,
-    filtrarComCategoria: boolean
-  ) {
+  private obterTipoClassificacaoValido(item: any, filtrarComCategoria: boolean) {
     const semCategoria = item.url === 'categorias';
     const comCategoria = !semCategoria;
-    let tipoClassificacaoValido = filtrarComCategoria
-      ? comCategoria
-      : semCategoria;
+    let tipoClassificacaoValido = filtrarComCategoria ? comCategoria : semCategoria;
     return tipoClassificacaoValido;
   }
 
-  private mapearMenuSemCategoria(
-    itemFiltrado: any
-  ): NavibarItemConfig | undefined {
+  private mapearMenuSemCategoria(itemFiltrado: any): NavibarItemConfig | undefined {
     // console.log('jksaklh',itemFiltrado);
     for (const item of itemFiltrado.categorias) {
       const labelItem = item.labelCategoria;
@@ -147,9 +127,7 @@ export class AppComponent implements OnInit, OnDestroy {
     return;
   }
 
-  private mapearMenuComCategoria(
-    itemFiltrado: any
-  ): NavibarItemConfig | undefined {
+  private mapearMenuComCategoria(itemFiltrado: any): NavibarItemConfig | undefined {
     const itemLabel = itemFiltrado.classificacao;
     const itemRoute = `/blog/${itemFiltrado.url}`;
     let itemChildren: any[] = [];
@@ -177,15 +155,10 @@ export class AppComponent implements OnInit, OnDestroy {
     return itensValidos;
   }
 
-  protected exclusaoMensagemSucesso(
-    texto: string = '',
-    edicao: boolean = false
-  ) {
+  protected exclusaoMensagemSucesso(texto: string = '', edicao: boolean = false) {
     let severidade = 'success';
     let titulo = 'Sucesso';
-    let detalhes = `${texto} foi ${
-      edicao ? 'editado' : 'cadastrado'
-    } com sucesso`;
+    let detalhes = `${texto} foi ${edicao ? 'editado' : 'cadastrado'} com sucesso`;
 
     this._messageService.add({
       severity: severidade,
@@ -194,11 +167,7 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
-  private exibirToast(
-    titulo: string,
-    mensagem: string,
-    icone: string = 'success'
-  ) {
+  private exibirToast(titulo: string, mensagem: string, icone: string = 'success') {
     this._messageService.add({
       severity: icone,
       summary: titulo,

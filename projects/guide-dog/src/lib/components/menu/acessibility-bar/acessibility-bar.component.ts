@@ -1,10 +1,4 @@
-import {
-  ActivatedRoute,
-  ChildActivationEnd,
-  NavigationEnd,
-  Router,
-  UrlSegment,
-} from '@angular/router';
+import { ActivatedRoute, ChildActivationEnd, NavigationEnd, Router, UrlSegment } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, filter, take, takeUntil } from 'rxjs';
 

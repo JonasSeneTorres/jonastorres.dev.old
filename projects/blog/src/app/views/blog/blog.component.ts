@@ -48,14 +48,12 @@ export class BlogComponent implements OnInit, OnDestroy {
         error: () => {},
       });
 
-    this.boxPrincipalTransparente
-      .pipe(takeUntil(this._destroy$))
-      .subscribe(() => {
-        this._changeDetectorRef.detectChanges();
-        // setTimeout(() => {
+    this.boxPrincipalTransparente.pipe(takeUntil(this._destroy$)).subscribe(() => {
+      this._changeDetectorRef.detectChanges();
+      // setTimeout(() => {
 
-        // }, 500);
-      });
+      // }, 500);
+    });
   }
 
   ngOnDestroy() {

@@ -1,79 +1,40 @@
 <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
 
-<form
-  class="redes-sociais-edicao"
-  [formGroup]="form"
-  (submit)="submit()"
-  autocomplete="off">
+<form class="redes-sociais-edicao" [formGroup]="form" (submit)="submit()" autocomplete="off">
   <div class="redes-sociais-edicao__grid-titulo">
     <h1 *ngIf="id.length === 0">Nova rede social</h1>
     <h1 *ngIf="id.length > 0">Edição de rede social</h1>
-    <p-inputSwitch
-      id="ativo"
-      class="redes-sociais-edicao__ativo"
-      formControlName="ativo"></p-inputSwitch>
+    <p-inputSwitch id="ativo" class="redes-sociais-edicao__ativo" formControlName="ativo"></p-inputSwitch>
   </div>
 
   <p>
-    <label for="classificacao" class="redes-sociais-edicao__label"
-      >Nome da rede social</label
-    >
-    <input
-      type="text"
-      id="classificacao"
-      class="redes-sociais-edicao__input"
-      formControlName="nome"
-      pInputText />
+    <label for="classificacao" class="redes-sociais-edicao__label">Nome da rede social</label>
+    <input type="text" id="classificacao" class="redes-sociais-edicao__input" formControlName="nome" pInputText />
   </p>
 
   <p>
     <label for="classificacao" class="redes-sociais-edicao__label">url</label>
-    <input
-      type="text"
-      id="classificacao"
-      class="redes-sociais-edicao__input"
-      formControlName="url"
-      pInputText />
+    <input type="text" id="classificacao" class="redes-sociais-edicao__input" formControlName="url" pInputText />
   </p>
 
   <div class="redes-sociais-edicao__grid-data">
     <div>
-      <label for="data-criacao" class="redes-sociais-edicao__label"
-        >Data de criação</label
-      >
-      <input
-        type="date"
-        id="data-criacao"
-        formControlName="dataCriacao"
-        pInputText
-        readonly />
+      <label for="data-criacao" class="redes-sociais-edicao__label">Data de criação</label>
+      <input type="date" id="data-criacao" formControlName="dataCriacao" pInputText readonly />
     </div>
 
     <div>
-      <label for="data-edicao" class="redes-sociais-edicao__label"
-        >Data da ultima edição</label
-      >
-      <input
-        type="date"
-        id="data-edicao"
-        formControlName="dataEdicao"
-        pInputText
-        readonly />
+      <label for="data-edicao" class="redes-sociais-edicao__label">Data da ultima edição</label>
+      <input type="date" id="data-edicao" formControlName="dataEdicao" pInputText readonly />
     </div>
   </div>
 
   <p class="redes-sociais-edicao__container-salvar">
-    <button
-      class="botao confirmDialog__no"
-      type="button"
-      [routerLink]="['/admin/redes-sociais']">
+    <button class="botao confirmDialog__no" type="button" [routerLink]="['/admin/redes-sociais']">
       <span class="icone_botao fa-solid fa-xmark" aria-hidden="true"></span>
       Cancelar
     </button>
-    <button
-      class="botao confirmDialog__yes"
-      type="submit"
-      [disabled]="form.invalid">
+    <button class="botao confirmDialog__yes" type="submit" [disabled]="form.invalid">
       <span class="icone_botao fa-solid fa-check" aria-hidden="true"></span>
       Salvar
     </button>

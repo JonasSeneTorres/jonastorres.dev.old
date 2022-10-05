@@ -16,15 +16,9 @@ export class PaginaNaoEncontradaComponent implements OnInit, OnDestroy {
 
   breadcrumbsItem: BreadcrumbsItem[];
 
-  constructor(
-    private jumbotronService: JumbotronService,
-    private _blogService: BlogService
-  ) {
+  constructor(private jumbotronService: JumbotronService, private _blogService: BlogService) {
     this._blogService.tornarBoxPrincipalTransparente(true);
-    this.breadcrumbsItem = [
-      JonastorresRoutes.HOME.toBreadcrumb(),
-      { label: 'Página não encontrada' },
-    ];
+    this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb(), { label: 'Página não encontrada' }];
   }
 
   ngOnInit(): void {

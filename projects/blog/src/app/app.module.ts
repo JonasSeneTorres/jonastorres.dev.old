@@ -4,11 +4,7 @@ import localePT from '@angular/common/locales/pt';
 import { LOCALE_ID, NgModule, Sanitizer } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  DOMPURIFY_CONFIG,
-  NgDompurifyModule,
-  NgDompurifySanitizer,
-} from '@tinkoff/ng-dompurify';
+import { DOMPURIFY_CONFIG, NgDompurifyModule, NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,14 +15,7 @@ registerLocaleData(localePT);
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    SharedModule,
-    NgDompurifyModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, SharedModule, NgDompurifyModule],
   exports: [NgDompurifyModule],
   providers: [
     { provide: JsonPipe },

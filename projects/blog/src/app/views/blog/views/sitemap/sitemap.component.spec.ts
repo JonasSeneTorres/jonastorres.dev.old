@@ -18,13 +18,7 @@ describe('SitemapComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [SitemapComponent],
-      imports: [
-        SharedModule,
-        RouterTestingModule,
-        HttpClientModule,
-        BlogModule,
-        GuideDogModule,
-      ],
+      imports: [SharedModule, RouterTestingModule, HttpClientModule, BlogModule, GuideDogModule],
       providers: [
         { provide: ArtigosService, useClass: ArtigosServiceMock },
         { provide: ActivatedRoute, useClass: ActivatedRouteMock },

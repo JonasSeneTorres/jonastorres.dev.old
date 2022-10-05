@@ -39,18 +39,16 @@ export class GrupoComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.chamadasApisExternas();
-    this._activatedRoute.params
-      .pipe(takeUntil(this._destroy$))
-      .subscribe((params: Params) => {
-        const labelGrupo = `${params['grupo']}`;
-        const routeGrupo = `/blog/${params['grupo']}`;
+    this._activatedRoute.params.pipe(takeUntil(this._destroy$)).subscribe((params: Params) => {
+      const labelGrupo = `${params['grupo']}`;
+      const routeGrupo = `/blog/${params['grupo']}`;
 
-        this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb()];
+      this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb()];
 
-        if (labelGrupo !== 'categoria') {
-          this.breadcrumbsItem.push({ label: labelGrupo, route: [routeGrupo] });
-        }
-      });
+      if (labelGrupo !== 'categoria') {
+        this.breadcrumbsItem.push({ label: labelGrupo, route: [routeGrupo] });
+      }
+    });
   }
 
   ngOnDestroy(): void {

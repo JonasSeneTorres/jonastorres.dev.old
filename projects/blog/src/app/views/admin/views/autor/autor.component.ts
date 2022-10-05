@@ -10,14 +10,8 @@ import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master
   templateUrl: './autor.component.html',
   styleUrls: ['./autor.component.scss'],
 })
-export class AutorComponent
-  extends BaseAdminMasterComponent
-  implements OnInit, OnDestroy
-{
-  constructor(
-    protected override injector: Injector,
-    private autoresService: AutoresService
-  ) {
+export class AutorComponent extends BaseAdminMasterComponent implements OnInit, OnDestroy {
+  constructor(protected override injector: Injector, private autoresService: AutoresService) {
     super(injector);
     this.filtravelPelosCampos = ['nome'];
     this.breadcrumbsItem = [

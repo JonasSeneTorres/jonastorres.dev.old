@@ -1,12 +1,4 @@
-import {
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  HostListener,
-  Input,
-  OnDestroy,
-} from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Input, OnDestroy } from '@angular/core';
 import { SystemInformationService } from 'projects/guide-dog/src/lib/services/system-information/system-information.service';
 import { Subject, takeUntil, throttleTime } from 'rxjs';
 
@@ -34,13 +26,9 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   get showHamburgerHorizontalNav(): boolean {
     const hasNavConfig = this.navConfig.length > 0;
     const centeredPanelMarginPositive = this.centeredPanelMargin > 0;
-    this.greatherThanLayoutBreak =
-      this.systemInformation.page.size.ItsGreaterThanCenterPanel;
+    this.greatherThanLayoutBreak = this.systemInformation.page.size.ItsGreaterThanCenterPanel;
 
-    return (
-      hasNavConfig &&
-      (centeredPanelMarginPositive || this.greatherThanLayoutBreak)
-    );
+    return hasNavConfig && (centeredPanelMarginPositive || this.greatherThanLayoutBreak);
   }
 
   constructor(
@@ -80,9 +68,7 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     }
 
     const acceptableSizeLineInPixel = 24;
-    const heigthNavBox =
-      this.elementRef.nativeElement.querySelector('.gd-h-navbar')
-        ?.offsetHeight ?? 0;
+    const heigthNavBox = this.elementRef.nativeElement.querySelector('.gd-h-navbar')?.offsetHeight ?? 0;
 
     return heigthNavBox <= 2 * acceptableSizeLineInPixel - 1;
   }

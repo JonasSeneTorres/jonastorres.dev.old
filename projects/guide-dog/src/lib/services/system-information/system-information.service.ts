@@ -105,9 +105,7 @@ export class SystemInformationService {
 
   private calculateCenteredPanelArea(): number {
     const gdMinContentBoxValue =
-      getComputedStyle(document.body)
-        .getPropertyValue('--gd-min-content-box')
-        .replace('px', '') ?? '0';
+      getComputedStyle(document.body).getPropertyValue('--gd-min-content-box').replace('px', '') ?? '0';
     let output = parseInt(gdMinContentBoxValue, 10);
 
     if (output > this._fullScreenX) {

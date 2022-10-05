@@ -9,8 +9,7 @@ export class LocalStorageService implements IStorageService {
   private storage = window.localStorage;
 
   constructor() {
-    const warnMessage =
-      'Your browser does not have access to the "localStorage" feature.\nInstead, "Cookies" will be used.';
+    const warnMessage = 'Your browser does not have access to the "localStorage" feature.\nInstead, "Cookies" will be used.';
     this.storage = window.localStorage;
 
     if (!this.storage) {

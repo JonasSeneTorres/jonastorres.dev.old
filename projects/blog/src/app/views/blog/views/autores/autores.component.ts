@@ -15,19 +15,13 @@ export class AutoresComponent implements OnInit, OnDestroy {
 
   breadcrumbsItem: BreadcrumbsItem[];
 
-  constructor(
-    private _blogService: BlogService,
-    private _jumbotronService: JumbotronService
-  ) {
+  constructor(private _blogService: BlogService, private _jumbotronService: JumbotronService) {
     this._blogService.tornarBoxPrincipalTransparente(false);
-    this.breadcrumbsItem = [
-      JonastorresRoutes.HOME.toBreadcrumb(),
-      { label: 'Autores' },
-    ];
+    this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb(), { label: 'Autores' }];
     this._jumbotronService.inserirDados({
-      titulo: '',
+      titulo: 'Autores',
       subtitulo: '',
-      categoria: '',
+      categoria: 'autores',
       compartilharBox: false,
       dataCriacao: undefined,
       dataEdicao: undefined,

@@ -10,14 +10,8 @@ import { PerfilUsuarioService } from './../../../../services/perfil-usuario/perf
   templateUrl: './perfil-usuario.component.html',
   styleUrls: ['./perfil-usuario.component.scss'],
 })
-export class PerfilUsuarioComponent
-  extends BaseAdminMasterComponent
-  implements OnInit
-{
-  constructor(
-    protected override injector: Injector,
-    private perfilUsuarioService: PerfilUsuarioService
-  ) {
+export class PerfilUsuarioComponent extends BaseAdminMasterComponent implements OnInit {
+  constructor(protected override injector: Injector, private perfilUsuarioService: PerfilUsuarioService) {
     super(injector);
     this.filtravelPelosCampos = ['titulo', 'categoriaId'];
     this.breadcrumbsItem = [

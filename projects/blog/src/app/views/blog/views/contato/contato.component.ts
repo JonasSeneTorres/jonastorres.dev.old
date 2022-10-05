@@ -13,9 +13,9 @@ export class ContatoComponent {
   constructor(private _jumbotronService: JumbotronService) {
     this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb()];
     this._jumbotronService.inserirDados({
-      titulo: '',
+      titulo: 'Contato',
       subtitulo: '',
-      categoria: '',
+      categoria: 'contato',
       compartilharBox: false,
       dataCriacao: undefined,
       dataEdicao: undefined,

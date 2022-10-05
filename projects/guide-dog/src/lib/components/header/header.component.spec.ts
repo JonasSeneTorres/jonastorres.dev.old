@@ -12,12 +12,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        HeaderModule,
-        CenteredPanelModule,
-        MenuModule,
-        RouterTestingModule,
-      ],
+      imports: [HeaderModule, CenteredPanelModule, MenuModule, RouterTestingModule],
     }).compileComponents();
   });
 

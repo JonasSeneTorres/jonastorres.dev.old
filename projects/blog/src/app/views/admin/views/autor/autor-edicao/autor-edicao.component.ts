@@ -11,14 +11,8 @@ import { BaseAdminDetailComponent } from '../../base-admin-detail/base-admin-det
   templateUrl: './autor-edicao.component.html',
   styleUrls: ['./autor-edicao.component.scss'],
 })
-export class AutorEdicaoComponent
-  extends BaseAdminDetailComponent
-  implements OnInit
-{
-  constructor(
-    protected override injector: Injector,
-    private autoresService: AutoresService
-  ) {
+export class AutorEdicaoComponent extends BaseAdminDetailComponent implements OnInit {
+  constructor(protected override injector: Injector, private autoresService: AutoresService) {
     super(injector);
   }
 
@@ -30,8 +24,7 @@ export class AutorEdicaoComponent
         JonastorresRoutes.ADMIN_AUTOR.toBreadcrumb(),
       ];
       const breadcrumbNovo = JonastorresRoutes.ADMIN_AUTOR_NOVO.toBreadcrumb();
-      const breadcrumbEditar =
-        JonastorresRoutes.ADMIN_AUTOR_EDITAR.toBreadcrumb();
+      const breadcrumbEditar = JonastorresRoutes.ADMIN_AUTOR_EDITAR.toBreadcrumb();
 
       this.ajustarBreadcrumb(this.id, breadcrumbNovo, breadcrumbEditar);
       this.criarForm();
@@ -51,11 +44,7 @@ export class AutorEdicaoComponent
       ativo: this.form.get('ativo')!.value,
     };
 
-    this.gravarDados(
-      autor,
-      autor.nome,
-      JonastorresRoutes.ADMIN_AUTOR.router as any
-    );
+    this.gravarDados(autor, autor.nome, JonastorresRoutes.ADMIN_AUTOR.router as any);
   }
 
   protected gravarDadosInclusao(dados: any): Observable<any> {
@@ -68,8 +57,7 @@ export class AutorEdicaoComponent
 
   protected gravarDadosEdicao(dados: any): Observable<any> {
     dados.id = this.id;
-    (dados.dataCriacao = this.form.get('dataCriacao')!.value),
-      (dados.dataEdicao = new Date());
+    (dados.dataCriacao = this.form.get('dataCriacao')!.value), (dados.dataEdicao = new Date());
     return this.autoresService.atualizar(dados);
   }
 

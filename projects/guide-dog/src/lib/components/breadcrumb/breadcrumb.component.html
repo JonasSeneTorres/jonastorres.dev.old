@@ -1,12 +1,5 @@
-<nav
-  class="breadcrumb"
-  aria-label="Breadcrumb"
-  class="breadcrumb"
-  *ngIf="breadcrumbsItem.length > 0">
-  <ol
-    class="breadcrumb__list"
-    itemscope
-    itemtype="https://schema.org/BreadcrumbList">
+<nav class="breadcrumb" aria-label="Breadcrumb" class="breadcrumb" *ngIf="breadcrumbsItem.length > 0">
+  <ol class="breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
     <ng-container *ngFor="let item of breadcrumbsItem; let i = index">
       <li
         class="breadcrumb__item"

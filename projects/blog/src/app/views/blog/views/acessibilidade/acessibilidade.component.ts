@@ -12,19 +12,13 @@ import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-it
 export class AcessibilidadeComponent {
   breadcrumbsItem: BreadcrumbsItem[];
 
-  constructor(
-    private _blogService: BlogService,
-    private _jumbotronService: JumbotronService
-  ) {
-    this.breadcrumbsItem = [
-      JonastorresRoutes.HOME.toBreadcrumb(),
-      { label: 'acessibilidade' },
-    ];
+  constructor(private _blogService: BlogService, private _jumbotronService: JumbotronService) {
+    this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb(), { label: 'acessibilidade' }];
     this._blogService.tornarBoxPrincipalTransparente(true);
     this._jumbotronService.inserirDados({
-      titulo: '',
+      titulo: 'Acessibilidade',
       subtitulo: '',
-      categoria: '',
+      categoria: 'acessibilidade',
       compartilharBox: false,
       dataCriacao: undefined,
       dataEdicao: undefined,
