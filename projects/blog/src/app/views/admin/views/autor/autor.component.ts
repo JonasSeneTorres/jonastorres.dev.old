@@ -1,8 +1,8 @@
-import { Component, Injector, OnInit, OnDestroy } from '@angular/core';
+import { Component, Injector, OnDestroy, OnInit } from '@angular/core';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
-import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
 import { AutoresService } from 'projects/blog/src/app/services/autores/autores.service';
-import { Observable, Subject, takeUntil } from 'rxjs';
+import { Observable, takeUntil } from 'rxjs';
+
 import { BaseAdminMasterComponent } from '../base-admin-master/base-admin-master.component';
 
 @Component({
@@ -32,7 +32,6 @@ export class AutorComponent extends BaseAdminMasterComponent implements OnInit, 
       .subscribe({
         next: (sucesso: any) => {
           this.dados = sucesso;
-          console.log(this.dados);
         },
         error: () => {},
       });

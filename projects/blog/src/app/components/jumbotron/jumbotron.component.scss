@@ -39,9 +39,9 @@
 
     h1 {
       display: grid;
-      font-size: 3rem;
-      margin: 1rem 0 0 0;
-      min-height: 116px;
+      font-size: 5rem;
+      margin: 0 0 0 0;
+      min-height: 96px;
       align-items: flex-end;
     }
 
@@ -231,7 +231,7 @@
         "icone titulo titulo"
         "icone dados compartilhamento";
       grid-template-columns: 300px 2fr 1fr;
-      padding-top: 30px;
+      // padding-top: 30px;
     }
 
     &__icone {
@@ -382,7 +382,28 @@
   border: none !important;
 }
 
+
+.fa-user-group {
+  font-size: 12rem !important;
+}
+
 .fa-solid.fa-id-card,
-.fa-solid.fa-user-group {
+.fa-pen-ruler {
   font-size: 13rem !important;
 }
+
+// {
+//   font-size: 13rem !important;
+// }
+
+.fa-css3,
+.fa-person-chalkboard,
+.fa-universal-access,
+.fa-sitemap  {
+  font-size: 14rem !important;
+}
+
+// .fa-person-chalkboard {
+//   font-size: 14rem !important;
+// }
+

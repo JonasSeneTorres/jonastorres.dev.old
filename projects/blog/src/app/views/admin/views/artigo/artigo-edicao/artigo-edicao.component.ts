@@ -347,12 +347,20 @@ export class ArtigoEdicaoComponent extends BaseAdminDetailComponent implements O
 
   private obterUrlClassificacao(): string {
     return this.listaClassificacaoBruta.filter((filtro: any) => filtro.id === this.form.get('classificacaoId')!.value)[0]
-      .url;
+      ?.url;
   }
 
   private obterUrlCategoria(): string {
-    return this.listaClassificacaoBruta
-      .filter((classificacao: any) => classificacao.id === this.form.get('classificacaoId')!.value)[0]
-      .categorias.filter((categoria: any) => categoria.idCategoria === this.form.get('categoriaId')?.value)[0].urlCategoria;
+    let output = '';
+    try {
+      output = this.listaClassificacaoBruta
+        .filter((classificacao: any) => classificacao.id === this.form.get('classificacaoId')!.value)[0]
+        .categorias.filter(
+          (categoria: any) => categoria.idCategoria === this.form.get('categoriaId')?.value
+        )[0].urlCategoria;
+    } catch (error) {
+      //
+    }
+    return output;
   }
 }

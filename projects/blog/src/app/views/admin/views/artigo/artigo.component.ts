@@ -35,8 +35,9 @@ export class ArtigoComponent extends BaseAdminMasterComponent implements OnInit 
     const categoriaItem = this.categoria.filter((x: any) => x.id === dados.classificacaoId)[0];
 
     const classificacao = categoriaItem.classificacao === 'Sem categorias' ? '' : `${categoriaItem.classificacao} / `;
-    const categoria = categoriaItem.categorias.filter((y: any) => y.idCategoria === dados.subcategoriaId.split('-')[0])[0]
-      .labelCategoria;
+    const categoria = categoriaItem.categorias.filter(
+      (y: any) => `#${y.idCategoria.split('#')[1]}` === dados.subcategoriaId.split('-')[0]
+    )[0]?.labelCategoria;
 
     return `${classificacao}${categoria}`;
   }

@@ -24,7 +24,7 @@
   }
 
   &__link {
-    color: $gd-color-white;
+    color: rgba($gd-color-white, .85);
     cursor: pointer;
     font-family: $title_font_family;
     font-size: 1.2rem;
@@ -33,7 +33,7 @@
     text-decoration: none;
 
     &2 {
-      color: $gd-color-white;
+      color: rgba($gd-color-white, .85);
     cursor: pointer;
     font-family: $title_font_family;
     font-size: 1.2rem;
@@ -48,7 +48,7 @@
       width: 100%;
       height: 5px;
       border-radius: 4px;
-      background-color: $gd-color-white;
+      background-color: rgba($gd-color-white, .9);
       bottom: -8px;
       left: 0;
       transform-origin: right;
@@ -62,7 +62,7 @@
     }
 
     &--actived {
-      color: red !important;
+      color: $gd-color-white!important;
 
       &::before {
         content: "";
@@ -70,7 +70,7 @@
         width: 100%;
         height: 5px;
         border-radius: 4px;
-        background-color: red;
+        background-color: $gd-color-white;
         bottom: -8px;
         left: 0;
         transform-origin: right;

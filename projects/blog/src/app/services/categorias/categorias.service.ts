@@ -16,6 +16,10 @@ export class CategoriasService implements ICrudService {
     return this.httpClient.get(`${this.baseURL}/${codigo}`);
   }
 
+  obterPorUrl(codigo: string): Observable<any> {
+    return this.httpClient.get(`${this.baseURL}/${codigo}`);
+  }
+
   listar(): Observable<any> {
     return this.httpClient.get(`${this.baseURL}`);
   }

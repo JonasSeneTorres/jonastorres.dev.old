@@ -31,7 +31,6 @@ export class CategoriaComponent extends BaseAdminMasterComponent implements OnIn
       .pipe(takeUntil(this._destroy$))
       .subscribe({
         next: (sucesso: any) => {
-          console.log(sucesso);
           this.dados = sucesso;
         },
         error: () => {},

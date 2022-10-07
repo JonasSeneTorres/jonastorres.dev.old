@@ -19,10 +19,6 @@ export class UsuariosEdicaoComponent extends BaseAdminDetailComponent implements
     super(injector);
     const perfis = Object.values(PerfilUsuario).filter(key => isNaN(Number(key)));
 
-    // console.log(
-    //   Object.values(PerfilUsuario).filter(key => isNaN(Number(key))),
-    //   Object.keys(PerfilUsuario).map((key: any) => PerfilUsuario[key])
-    // );
     for (let perfil in perfis) {
       this.perfilUsuario.push({
         key: `${PerfilUsuario[perfil].toUpperCase().charAt(0)}${PerfilUsuario[perfil]
@@ -104,7 +100,6 @@ export class UsuariosEdicaoComponent extends BaseAdminDetailComponent implements
 
   protected prepararFormEdicao(): void {
     this.usuariosService.obter(this.id).subscribe((sucesso: any) => {
-      console.log(sucesso);
       this.form.patchValue({
         id: sucesso.id,
         nome: sucesso.nome,

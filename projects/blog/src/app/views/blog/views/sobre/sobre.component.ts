@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { BlogService } from 'projects/blog/src/app/services/blog/blog.service';
 import { JumbotronService } from 'projects/blog/src/app/services/jumbotron/jumbotron.service';
@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
   templateUrl: './sobre.component.html',
   styleUrls: ['./sobre.component.scss'],
 })
-export class SobreComponent implements OnInit, OnDestroy {
+export class SobreComponent implements OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
 
   breadcrumbsItem: BreadcrumbsItem[];
@@ -32,10 +32,6 @@ export class SobreComponent implements OnInit, OnDestroy {
       dataEdicao: undefined,
       tempoLeitura: undefined,
     });
-  }
-
-  ngOnInit(): void {
-    console.log('');
   }
 
   ngOnDestroy(): void {

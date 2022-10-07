@@ -46,7 +46,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this._destroy$))
       .subscribe({
         next: (sucesso: any) => {
-          console.log(sucesso);
           this.vitrineDados.ultimosArtigos = sucesso;
         },
         error: () => {},

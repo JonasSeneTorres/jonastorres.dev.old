@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { BlogService } from 'projects/blog/src/app/services/blog/blog.service';
 import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
@@ -10,7 +10,7 @@ import { JumbotronService } from './../../../../services/jumbotron/jumbotron.ser
   templateUrl: './autores.component.html',
   styleUrls: ['./autores.component.scss'],
 })
-export class AutoresComponent implements OnInit, OnDestroy {
+export class AutoresComponent implements OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
 
   breadcrumbsItem: BreadcrumbsItem[];
@@ -27,10 +27,6 @@ export class AutoresComponent implements OnInit, OnDestroy {
       dataEdicao: undefined,
       tempoLeitura: undefined,
     });
-  }
-
-  ngOnInit(): void {
-    console.log('');
   }
 
   ngOnDestroy(): void {

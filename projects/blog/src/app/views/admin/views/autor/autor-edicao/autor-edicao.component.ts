@@ -80,7 +80,6 @@ export class AutorEdicaoComponent extends BaseAdminDetailComponent implements On
 
   protected prepararFormEdicao(): void {
     this.autoresService.obter(this.id).subscribe((sucesso: any) => {
-      console.log(sucesso);
       this.form.patchValue({
         id: sucesso.id,
         nome: sucesso.nome,

@@ -14,6 +14,8 @@ import { forkJoin, Observable, Subject, takeUntil } from 'rxjs';
 })
 export class CategoriaComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
+  private classificacaoAtiva = '';
+  private categoriaAtiva = '';
 
   dadosArtigo: any;
   categorias: any[] = [];
@@ -50,20 +52,23 @@ export class CategoriaComponent implements OnInit, OnDestroy {
         route: [routeCategoria],
       });
 
-      this.inserirDadosJumbotrom(labelCategoria, labelCategoria.toLowerCase());
+      this.classificacaoAtiva = labelGrupo.toLowerCase();
+      this.categoriaAtiva = labelCategoria.toLowerCase();
+      // this.inserirDadosJumbotrom(labelCategoria, labelCategoria.toLowerCase());
+      this.obterDadosIniciais()
+        .pipe(takeUntil(this._destroy$))
+        .subscribe({
+          next: (sucesso: any) => {
+            // console.log(sucesso);
+            this.dadosArtigo = sucesso.artigo;
+            this.categorias = sucesso.categoria;
+            this.inserirDadosJumbotrom('', '');
+          },
+          error: (erro: any) => {
+            console.error(erro);
+          },
+        });
     });
-
-    this.obterDadosIniciais(1)
-      .pipe(takeUntil(this._destroy$))
-      .subscribe({
-        next: (sucesso: any) => {
-          this.dadosArtigo = sucesso.artigo;
-          console.log(sucesso.artigo);
-        },
-        error: (erro: any) => {
-          console.error(erro);
-        },
-      });
   }
 
   ngOnDestroy(): void {
@@ -71,27 +76,45 @@ export class CategoriaComponent implements OnInit, OnDestroy {
     this._destroy$.unsubscribe();
   }
 
-  private obterDadosIniciais(idCategoria: number): Observable<any> {
+  private obterDadosIniciais(): Observable<any> {
     const obterArtigos = this._artigosService.listar();
+    const obterCategoria = this._categoriasService.listar();
 
     return forkJoin({
       artigo: obterArtigos,
+      categoria: obterCategoria,
     });
   }
 
   private inserirDadosJumbotrom(titulo: string, categoria: string) {
-    const tituloFormatado = `${titulo.toUpperCase().charAt(0)}${titulo.toLowerCase().substring(1, titulo.length)}`;
-    // console.log(titulo, categoria);
+    console.log(this.categorias);
+    const categoriaItem = this.categorias.filter((x: any) => x.url === this.classificacaoAtiva)[0];
+    // const classificacao = categoriaItem.classificacao === 'Sem categorias' ? '' : `${categoriaItem.classificacao} / `;
+    const categoriaLabel = categoriaItem.categorias.filter((y: any) => y.urlCategoria === this.categoriaAtiva)[0]
+      ?.labelCategoria;
+
+    // const tituloFormatado = `${titulo.toUpperCase().charAt(0)}${titulo.toLowerCase().substring(1, titulo.length)}`;
     this._jumbotronService.inserirDados({
-      titulo: tituloFormatado,
+      titulo: categoriaLabel,
       subtitulo: '',
-      categoria: categoria,
+      categoria: this.categoriaAtiva,
       compartilharBox: false,
       dataCriacao: undefined,
       dataEdicao: undefined,
       tempoLeitura: undefined,
     });
   }
+
+  // private a() {
+  //   const categoriaItem = this.categorias.filter((x: any) => x.id === dados.classificacaoId)[0];
+
+  //   const classificacao = categoriaItem.classificacao === 'Sem categorias' ? '' : `${categoriaItem.classificacao} / `;
+  //   const categoria = categoriaItem.categorias.filter(
+  //     (y: any) => `#${y.idCategoria.split('#')[1]}` === dados.subcategoriaId.split('-')[0]
+  //   )[0]?.labelCategoria;
+
+  //   return `${classificacao}${categoria}`;
+  // }
   // private montarArtigosDaCategoria(subcategorias: any[], artigosDaCategoria: any[]) {
   //   let output = [];
   //   for (const item of subcategorias) {

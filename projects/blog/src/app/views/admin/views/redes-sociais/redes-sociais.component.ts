@@ -30,7 +30,6 @@ export class RedesSociaisComponent extends BaseAdminMasterComponent implements O
       .pipe(takeUntil(this._destroy$))
       .subscribe({
         next: sucesso => {
-          console.log(sucesso);
           this.dados = sucesso;
         },
         error: () => {},

@@ -72,11 +72,10 @@ export class ArtigoComponent implements OnInit, OnDestroy {
 
         const nomeArtigo = this.categorias.filter(item => item.id === this.dadosArtigo.categoriaId)[0]?.nome;
         this.categoriaArtigo = (nomeArtigo ?? '').toLowerCase();
-        console.log(sucesso.categorias);
         this._jumbotronService.inserirDados({
           titulo: this.dadosArtigo.titulo,
           subtitulo: this.dadosArtigo.subtitulo,
-          categoria: 'html',
+          categoria: 'arquitetura',
           compartilharBox: true,
           dataCriacao: this.dadosArtigo.dataCriacao,
           dataEdicao: this.dadosArtigo.dataEdicao,
@@ -91,7 +90,6 @@ export class ArtigoComponent implements OnInit, OnDestroy {
             });
         }
 
-        console.log(this.dadosArtigo);
         this.obterDadosAutor(this.dadosArtigo.autorId)
           .pipe(takeUntil(this._destroy$))
           .subscribe((sucesso: any) => {

@@ -41,18 +41,13 @@ export class BlogComponent implements OnInit, OnDestroy {
         next: sucesso => {
           this.ultimosArtigos = sucesso.artigos;
           this.categorias = sucesso.categorias;
-          // this.escutarMudançasJumbotron(sucesso.jumbotron);
           this.escutarBusca(sucesso.buscar);
-          console.log(this.categorias);
         },
         error: () => {},
       });
 
     this.boxPrincipalTransparente.pipe(takeUntil(this._destroy$)).subscribe(() => {
       this._changeDetectorRef.detectChanges();
-      // setTimeout(() => {
-
-      // }, 500);
     });
   }
 
@@ -60,12 +55,6 @@ export class BlogComponent implements OnInit, OnDestroy {
     this._destroy$.next(true);
     this._destroy$.unsubscribe();
   }
-
-  // private escutarMudançasJumbotron(dados: Observable<any>) {
-  //   dados.pipe(takeUntil(this._destroy$)).subscribe(data => {
-  //     this.jumbotron = data;
-  //   });
-  // }
 
   private escutarBusca(dados: Observable<any>) {
     dados.pipe(takeUntil(this._destroy$)).subscribe(data => {

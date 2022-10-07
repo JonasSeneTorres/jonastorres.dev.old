@@ -53,8 +53,6 @@ export class CategoriaEdicaoComponent extends BaseAdminDetailComponent implement
       });
     });
 
-    // console.log(categoria);
-
     this.gravarDados(categoria, categoria.classificacao, JonastorresRoutes.ADMIN_CATEGORIA.router as any);
   }
 
@@ -106,7 +104,6 @@ export class CategoriaEdicaoComponent extends BaseAdminDetailComponent implement
 
   protected prepararFormEdicao(): void {
     this.categoriasService.obter(this.id).subscribe((sucesso: any) => {
-      console.log('xxxx', sucesso);
       this._dataCriacao = sucesso.dataCriacao;
 
       this.form.patchValue({

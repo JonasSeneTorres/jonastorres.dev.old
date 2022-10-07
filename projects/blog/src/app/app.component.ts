@@ -59,7 +59,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private adicionarMenuSemCategoria(sucesso: any, menuNovo: NavibarItemConfig[]) {
-    console.log(sucesso);
     const itensMenuSemCategoria = sucesso
       .filter((item: any) => this.filtrarMenu(item, false))
       .map((itemFiltrado: any) => this.mapearMenuSemCategoria(itemFiltrado));
@@ -96,7 +95,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private filtrarMenu(item: any, filtrarComCategoria: boolean) {
     const estaAtivo = item.ativo;
-    console.log('aaaa', item, item.categorias.length);
     const possuiCategorias = item.categorias.length > 0;
     let tipoClassificacaoValido = this.obterTipoClassificacaoValido(item, filtrarComCategoria);
 
@@ -115,7 +113,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private mapearMenuSemCategoria(itemFiltrado: any): NavibarItemConfig | undefined {
-    // console.log('jksaklh',itemFiltrado);
     for (const item of itemFiltrado.categorias) {
       const labelItem = item.labelCategoria;
       const urlItem = `/blog/categorias/${item.urlCategoria}`;

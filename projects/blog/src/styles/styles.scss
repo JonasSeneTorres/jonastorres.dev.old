@@ -136,7 +136,7 @@ blockquote {
   ) !important;
 }
 
-.javascript {
+.js {
   background-color: #efd81d;
   background: linear-gradient(
     150deg,
@@ -162,6 +162,16 @@ blockquote {
     150deg,
     rgba(63, 178, 127, 1) 0%,
     rgba(50, 71, 91, 1) 30%,
+    rgba(0, 0, 0, 1) 89%
+  ) !important;
+}
+
+.primary {
+  background-color: #808080;
+  background: linear-gradient(
+    150deg,
+    rgba(124, 124, 124, 0.8) 0%,
+    rgba($gd-setcolorligth-primary, 1) 10%,
     rgba(0, 0, 0, 1) 89%
   ) !important;
 }

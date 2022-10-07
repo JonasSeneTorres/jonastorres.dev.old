@@ -32,7 +32,6 @@ export class PerfilUsuarioComponent extends BaseAdminMasterComponent implements 
       .pipe(takeUntil(this._destroy$))
       .subscribe({
         next: (sucesso: any) => {
-          console.log(sucesso);
           this.dados = sucesso;
         },
         error: () => {},
