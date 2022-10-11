@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { Subject, filter, takeUntil } from 'rxjs';
+import { filter, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'gd-footer',
@@ -27,5 +27,16 @@ export class FooterComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this._destroy$.next(true);
     this._destroy$.unsubscribe();
+  }
+
+  gotoUp() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    const a = document.querySelectorAll('button.hamburger, a.gd-header__link')[0] as HTMLElement;
+    console.log(a);
+    a.focus();
+    // (document.querySelectorAll('button.hamburger a.gd-header__link')[0] as HTMLElement).focus();
   }
 }

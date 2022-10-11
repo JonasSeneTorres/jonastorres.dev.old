@@ -1,19 +1,29 @@
 @import "../../../styles/styles.scss";
 
 .blog {
-  display: grid;
-  grid-template-areas:
-    'jumbotron jumbotron'
-    'main aside';
+  // display: grid;
+  // grid-template-areas:
+  //   'jumbotron jumbotron'
+  //   'main aside';
 
-  @include media-down($gd-media-phone-maxwidth) {
+  @include media-down($gd-media-tablet-maxwidth - 1) {
+    display: grid;
+    grid-template-areas:
+      'jumbotron'
+      'main'
+      'aside';
   }
 
-  @include media-between( $gd-media-phone-maxwidth + 1, $gd-media-tablet-maxwidth - 1) {
-  }
+  // @include media-between( $gd-media-phone-maxwidth + 1, $gd-media-tablet-maxwidth - 1) {
+  //   display: grid;
+  //   grid-template-areas:
+  //     'jumbotron'
+  //     'main aside';
+  // }
 
   @include media-up($gd-media-tablet-maxwidth) {
     column-gap: 1rem;
+    display: grid;
     grid-template-areas:
     'jumbotron jumbotron'
     'main aside';

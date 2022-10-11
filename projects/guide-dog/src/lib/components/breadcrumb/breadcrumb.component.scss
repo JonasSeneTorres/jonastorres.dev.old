@@ -7,6 +7,17 @@
     list-style-type: none;
     margin: 0 0 0.25rem;
     padding: 0;
+
+    @include media-down($gd-media-phone-maxwidth) {
+      margin: 0.75rem 0.5rem;
+    }
+
+    @include media-between(
+    $gd-media-phone-maxwidth + 1,
+    $gd-media-tablet-maxwidth - 1
+    ) {
+      margin: 0.75rem 0.5rem;
+    }
   }
 
   &__item,

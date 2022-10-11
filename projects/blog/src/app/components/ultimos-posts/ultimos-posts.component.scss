@@ -17,12 +17,20 @@ h2 {
     @include scaffolding-card;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      margin: .5rem 0 .5rem .5rem;
+    }
   }
 
   &__list {
     list-style-type: none;
     margin: 0;
     padding: 0;
+
+    li {
+      margin-bottom: .5rem;
+    }
   }
 
   &__artigo {
@@ -31,6 +39,8 @@ h2 {
     grid-template-areas:
       "thumb titulo"
       "thumb detalhes";
+      grid-template-columns: auto 1fr;
+      column-gap: 1rem;
     padding: 0.5rem 0 0.5rem 0;
     transition: all 0.5s ease;
 
@@ -42,7 +52,7 @@ h2 {
     }
 
     @include media-up($gd-media-tablet-maxwidth) {
-      margin: 0 0 0.5rem 0;
+      // margin: 0 0 0.5rem 0;
     }
 
     &:hover {
@@ -86,6 +96,7 @@ h2 {
     transition: all 0.5s ease;
     width: 85px;
     margin: .25rem .25rem .25rem .75rem;
+
 
     @include media-down($gd-media-tablet-maxwidth) {
       margin: .25rem .5rem .25rem 1rem;
