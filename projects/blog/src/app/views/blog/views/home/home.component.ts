@@ -12,7 +12,7 @@ import { Subject, takeUntil } from 'rxjs';
 export class HomeComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
 
-  vitrineDados: VitrineDados = {};
+  vitrineDados: VitrineDados = { ultimosArtigos: [] };
 
   constructor(
     private _artigosService: ArtigosService,

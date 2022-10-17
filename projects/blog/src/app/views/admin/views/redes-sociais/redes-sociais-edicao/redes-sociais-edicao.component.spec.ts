@@ -1,3 +1,4 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SharedModule } from 'projects/blog/src/app/components/shared.module';
@@ -14,7 +15,7 @@ describe('ADMIN/RedesSociaisEdicaoComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [RedesSociaisEdicaoComponent],
-      imports: [SharedModule, AdminModule, HttpClientModule],
+      imports: [SharedModule, AdminModule, HttpClientModule, RouterTestingModule],
       providers: [{ provide: ArtigosService, useClass: ArtigosServiceMock }],
     }).compileComponents();
 

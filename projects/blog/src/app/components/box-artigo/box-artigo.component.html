@@ -4,24 +4,24 @@
     [class.artigo-box__capa.active]="dadosCarregados"
     [class.artigo-box__capaloading]="!dadosCarregados"
     [class.loading]="!dadosCarregados">
-    <span class="fa-brands fa-angular" *ngIf="dadosCarregados && artigo?.url.split('/')[2] === 'angular'"></span>
-    <span class="fa-brands fa-angular" *ngIf="dadosCarregados && artigo?.url.split('/')[2] === 'angularjs'"></span>
-    <span class="fa-solid fa-pen-ruler" *ngIf="dadosCarregados && artigo?.url.split('/')[2] === 'arquitetura'"></span>
-    <span class="fa-brands fa-css3" *ngIf="dadosCarregados && artigo?.url.split('/')[2] === 'css'"></span>
+    <span class="fa-brands fa-angular" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'angular'"></span>
+    <span class="fa-brands fa-angular" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'angularjs'"></span>
+    <span class="fa-solid fa-pen-ruler" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'arquitetura'"></span>
+    <span class="fa-brands fa-css3" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'css'"></span>
 
     <img
       src="assets/img/fotos/logos/c-sharp-branco.gif"
       width="200px"
-      *ngIf="dadosCarregados && artigo?.url.split('/')[2] === 'dotnet'" />
+      *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'dotnet'" />
     <img
       src="assets/img/fotos/logos/flutter.svg"
       width="200px"
-      *ngIf="dadosCarregados && artigo?.url.split('/')[2] === 'flutter'" />
-    <span class="fa-brands fa-html5" *ngIf="dadosCarregados && artigo?.url.split('/')[2] === 'html'"></span>
-    <span class="fa-brands fa-js" *ngIf="dadosCarregados && artigo?.url.split('/')[2] === 'js'"></span>
+      *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'flutter'" />
+    <span class="fa-brands fa-html5" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'html'"></span>
+    <span class="fa-brands fa-js" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'js'"></span>
 
-    <span class="fa-brands fa-react" *ngIf="dadosCarregados && artigo?.url.split('/')[2] === 'react'"></span>
-    <span class="fa-brands fa-vuejs" *ngIf="dadosCarregados && artigo?.url.split('/')[2] === 'vue'"></span>
+    <span class="fa-brands fa-react" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'react'"></span>
+    <span class="fa-brands fa-vuejs" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'vue'"></span>
   </section>
   <div class="artigo-box__box-conteudo">
     <div class="artigo-box__ghost-box-titulo" *ngIf="!dadosCarregados">

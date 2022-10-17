@@ -54,11 +54,15 @@ export class TextUtilService {
   }
 
   private separateClearedWords(value: string): string[] {
-    return value
-      .trim()
-      .replace(/\n|<.*?>/g, '')
-      .replace(/&nbsp;/g, ' ')
-      .split(/\s+/);
+    try {
+      return value
+        .trim()
+        .replace(/\n|<.*?>/g, '')
+        .replace(/&nbsp;/g, ' ')
+        .split(/\s+/);
+    } catch (error) {
+      return [];
+    }
   }
 
   private sortByPowerDesc(prevValue: any, nextValue: any) {
