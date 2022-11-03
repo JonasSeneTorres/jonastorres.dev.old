@@ -5,10 +5,6 @@
     padding: 0.5rem 0.5rem 0.25rem 0.5rem;
   }
 
-  @include media-up($gd-media-tablet-maxwidth) {
-    //
-  }
-
   &__grid {
     @include media-down($gd-media-phone-maxheight) {
       column-gap: 0rem;

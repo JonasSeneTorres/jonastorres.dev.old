@@ -3,10 +3,6 @@
 .categoria {
   &__artigos{
     &-box {
-      @include media-up($gd-media-tablet-maxwidth) {
-        //
-      }
-
       h2 {
         font-size: 1.7rem;
         margin: 0 0 1rem 0;

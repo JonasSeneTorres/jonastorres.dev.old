@@ -18,8 +18,8 @@
 
   &__lista {
     list-style-type: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
 
   &__item {
@@ -78,10 +78,9 @@
       background-color: $gd-colorligth-primary-50 !important;
       border-bottom: solid 1px #000 !important;
       color: #000 !important;
-      // display: ;
-      width: 100%;
       font-size: 1.5rem;
       font-weight: bold;
+      width: 100%;
     }
   }
 

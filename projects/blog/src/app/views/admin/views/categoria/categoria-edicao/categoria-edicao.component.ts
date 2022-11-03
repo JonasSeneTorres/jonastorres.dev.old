@@ -75,7 +75,6 @@ export class CategoriaEdicaoComponent extends BaseAdminDetailComponent implement
       id: new FormControl(''),
       ativo: new FormControl(true),
       classificacao: new FormControl(''),
-      // idClassificacao: new FormControl(''),
       url: new FormControl(''),
       dataCriacao: new FormControl(''),
       dataEdicao: new FormControl(''),
@@ -110,7 +109,6 @@ export class CategoriaEdicaoComponent extends BaseAdminDetailComponent implement
         id: sucesso.id,
         ativo: sucesso.ativo,
         classificacao: sucesso.classificacao,
-        // idClassificacao: sucesso.idClassificacao,
         url: sucesso.url,
         dataCriacao: sucesso.dataCriacao?.split('T')[0],
         dataEdicao: sucesso.dataEdicao?.split('T')[0],
@@ -124,9 +122,6 @@ export class CategoriaEdicaoComponent extends BaseAdminDetailComponent implement
           this.adicionarSubcategoria(indiceCategoria);
           subcategoria.idSubcategoria = `${sucesso.id}#${(indiceCategoria = 1)}-${indiceSubcategoria + 1}`;
         });
-
-        // for (const _sub of categoria.subcategorias) {
-        // }
       });
 
       const categoriasObtidas = sucesso.categorias;

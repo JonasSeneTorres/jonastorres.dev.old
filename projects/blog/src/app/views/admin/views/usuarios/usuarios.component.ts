@@ -11,8 +11,8 @@ import { UsuariosService } from './../../../../services/usuarios/usuarios.servic
   styleUrls: ['./usuarios.component.scss'],
 })
 export class UsuariosComponent extends BaseAdminMasterComponent implements OnInit {
-  // perfilUsuario = PerfilUsuario;
   perfilUsuario: any[] = [];
+
   constructor(protected override injector: Injector, private usuariosService: UsuariosService) {
     super(injector);
     this.filtravelPelosCampos = ['titulo', 'categoriaId'];

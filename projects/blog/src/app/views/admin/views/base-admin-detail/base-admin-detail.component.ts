@@ -14,7 +14,6 @@ export abstract class BaseAdminDetailComponent implements OnDestroy {
   protected _activatedRoute: ActivatedRoute;
   protected _router: Router;
   protected _dataCriacao!: Date;
-  // protected _dataEdicao!: Date;
 
   breadcrumbsItem: BreadcrumbsItem[] = [];
   form!: FormGroup;

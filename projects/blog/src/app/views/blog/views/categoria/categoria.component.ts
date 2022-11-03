@@ -58,20 +58,6 @@ export class CategoriaComponent implements OnInit, OnDestroy {
 
       this.classificacaoAtiva = labelGrupo.toLowerCase();
       this.categoriaAtiva = labelCategoria.toLowerCase();
-      // this.inserirDadosJumbotrom(labelCategoria, labelCategoria.toLowerCase());
-      // this.obterDadosIniciais()
-      //   .pipe(takeUntil(this._destroy$))
-      //   .subscribe({
-      //     next: (sucesso: any) => {
-      //       // console.log(sucesso);
-      //       this.dadosArtigo = sucesso.artigo;
-      //       this.categorias = sucesso.categoria;
-      //       this.inserirDadosJumbotrom('', '');
-      //     },
-      //     error: (erro: any) => {
-      //       console.error(erro);
-      //     },
-      //   });
     });
   }
 
@@ -91,93 +77,4 @@ export class CategoriaComponent implements OnInit, OnDestroy {
         error: () => {},
       });
   }
-  // private _destroy$: Subject<boolean> = new Subject<boolean>();
-  // private classificacaoAtiva = '';
-  // private categoriaAtiva = '';
-
-  // dadosArtigo: any;
-  // categorias: any[] = [];
-  // subcategorias: any = [];
-  // ultimosArtigos: any[] = [];
-  // artigosDaCategoria: any[] = [];
-  // breadcrumbsItem: BreadcrumbsItem[];
-
-  // constructor(
-  //   private _artigosService: ArtigosService,
-  //   private _categoriasService: CategoriasService,
-  //   private _blogService: BlogService,
-  //   private _jumbotronService: JumbotronService,
-  //   private _activatedRoute: ActivatedRoute
-  // ) {
-  //   this._blogService.tornarBoxPrincipalTransparente(false);
-  //   this.breadcrumbsItem = [];
-  // }
-
-  // ngOnInit(): void {
-  //   this._activatedRoute.params.pipe(takeUntil(this._destroy$)).subscribe((params: Params) => {
-  //     const labelGrupo = `${params['grupo']}`;
-  //     const routeGrupo = `/blog/${params['grupo']}`;
-  //     const labelCategoria = `${params['categoria']}`;
-  //     const routeCategoria = `/blog/${params['categoria']}`;
-
-  //     this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb()];
-
-  //     if (labelGrupo !== 'categorias') {
-  //       this.breadcrumbsItem.push({ label: labelGrupo, route: [routeGrupo] });
-  //     }
-  //     this.breadcrumbsItem.push({
-  //       label: labelCategoria,
-  //       route: [routeCategoria],
-  //     });
-
-  //     this.classificacaoAtiva = labelGrupo.toLowerCase();
-  //     this.categoriaAtiva = labelCategoria.toLowerCase();
-  //     // this.inserirDadosJumbotrom(labelCategoria, labelCategoria.toLowerCase());
-  //     this.obterDadosIniciais()
-  //       .pipe(takeUntil(this._destroy$))
-  //       .subscribe({
-  //         next: (sucesso: any) => {
-  //           // console.log(sucesso);
-  //           this.dadosArtigo = sucesso.artigo;
-  //           this.categorias = sucesso.categoria;
-  //           this.inserirDadosJumbotrom('', '');
-  //         },
-  //         error: (erro: any) => {
-  //           console.error(erro);
-  //         },
-  //       });
-  //   });
-  // }
-
-  // ngOnDestroy(): void {
-  //   this._destroy$.next(true);
-  //   this._destroy$.unsubscribe();
-  // }
-
-  // private obterDadosIniciais(): Observable<any> {
-  //   const obterArtigos = this._artigosService.listar();
-  //   const obterCategoria = this._categoriasService.listar();
-
-  //   return forkJoin({
-  //     artigo: obterArtigos,
-  //     categoria: obterCategoria,
-  //   });
-  // }
-
-  // private inserirDadosJumbotrom(titulo: string, categoria: string) {
-  //   console.log(this.categorias);
-  //   const categoriaItem = this.categorias.filter((x: any) => x.url === this.classificacaoAtiva)[0];
-  //   const categoriaLabel = categoriaItem.categorias.filter((y: any) => y.urlCategoria === this.categoriaAtiva)[0]
-  //     ?.labelCategoria;
-
-  //   this._jumbotronService.inserirDados({
-  //     titulo: categoriaLabel,
-  //     subtitulo: '',
-  //     categoria: this.categoriaAtiva,
-  //     compartilharBox: false,
-  //     dataCriacao: undefined,
-  //     dataEdicao: undefined,
-  //     tempoLeitura: undefined,
-  //   });
-  // }
 }

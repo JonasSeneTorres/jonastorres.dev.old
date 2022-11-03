@@ -12,17 +12,16 @@ import { CategoriasService } from './../../services/categorias/categorias.servic
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit, OnDestroy {
+  private _destroy$: Subject<boolean> = new Subject<boolean>();
+
   categorias = [];
   ultimosArtigos = [];
-  // jumbotron = {};
   boxPrincipalTransparente: Observable<boolean>;
-  private _destroy$: Subject<boolean> = new Subject<boolean>();
 
   constructor(
     private _artigosService: ArtigosService,
     private _categoriasService: CategoriasService,
     private _blogService: BlogService,
-    // private _jumbotronService: JumbotronService,
     private _router: Router,
     private _changeDetectorRef: ChangeDetectorRef
   ) {
@@ -33,7 +32,6 @@ export class BlogComponent implements OnInit, OnDestroy {
     forkJoin({
       artigos: this._artigosService.listarUltimosArtigos(),
       categorias: this._categoriasService.listar(),
-      // jumbotron: this._jumbotronService.dadosJumbotron$,
       buscar: this._artigosService.itensBuscados$,
     })
       .pipe(takeUntil(this._destroy$))

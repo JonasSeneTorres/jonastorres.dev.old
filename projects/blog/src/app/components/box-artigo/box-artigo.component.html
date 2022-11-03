@@ -1,27 +1,21 @@
 <article class="artigo-box" [class.artigo-box__active]="dadosCarregados" [routerLink]="[artigo?.url]">
   <section
-    class="{{ artigo?.url.split('/')[2] }}"
+    class="{{ icone }}"
     [class.artigo-box__capa.active]="dadosCarregados"
     [class.artigo-box__capaloading]="!dadosCarregados"
     [class.loading]="!dadosCarregados">
-    <span class="fa-brands fa-angular" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'angular'"></span>
-    <span class="fa-brands fa-angular" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'angularjs'"></span>
-    <span class="fa-solid fa-pen-ruler" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'arquitetura'"></span>
-    <span class="fa-brands fa-css3" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'css'"></span>
+    <span class="fa-brands fa-angular" *ngIf="dadosCarregados && icone === 'angular'"></span>
+    <span class="fa-brands fa-angular" *ngIf="dadosCarregados && icone === 'angularjs'"></span>
+    <span class="fa-solid fa-pen-ruler" *ngIf="dadosCarregados && icone === 'arquitetura'"></span>
+    <span class="fa-brands fa-css3" *ngIf="dadosCarregados && icone === 'css'"></span>
 
-    <img
-      src="assets/img/fotos/logos/c-sharp-branco.gif"
-      width="200px"
-      *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'dotnet'" />
-    <img
-      src="assets/img/fotos/logos/flutter.svg"
-      width="200px"
-      *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'flutter'" />
-    <span class="fa-brands fa-html5" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'html'"></span>
-    <span class="fa-brands fa-js" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'js'"></span>
+    <img src="assets/img/fotos/logos/c-sharp-branco.gif" width="200px" *ngIf="dadosCarregados && icone === 'dotnet'" />
+    <img src="assets/img/fotos/logos/flutter.svg" width="200px" *ngIf="dadosCarregados && icone === 'flutter'" />
+    <span class="fa-brands fa-html5" *ngIf="dadosCarregados && icone === 'html'"></span>
+    <span class="fa-brands fa-js" *ngIf="dadosCarregados && icone === 'js'"></span>
 
-    <span class="fa-brands fa-react" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'react'"></span>
-    <span class="fa-brands fa-vuejs" *ngIf="dadosCarregados && artigo?.url?.split('/')[2] === 'vue'"></span>
+    <span class="fa-brands fa-react" *ngIf="dadosCarregados && icone === 'react'"></span>
+    <span class="fa-brands fa-vuejs" *ngIf="dadosCarregados && icone === 'vue'"></span>
   </section>
   <div class="artigo-box__box-conteudo">
     <div class="artigo-box__ghost-box-titulo" *ngIf="!dadosCarregados">
@@ -51,19 +45,12 @@
           <span class="fa-solid fa-calendar-days"></span>
           {{ artigo?.dataCriacao | date: 'longDate':'':'pt-BR' }}
           <span class="pipe">|</span>
-          <!-- <ng-container *ngIf="artigo?.dataEdicao">
-            <span class="fa-solid fa-pen-to-square"></span>
-            Ultima edição em:
-            {{ artigo?.dataEdicao | date: 'longDate':'':'pt-BR' }}
-            <span class="pipe">|</span>
-          </ng-container> -->
           <span class="fa-solid fa-stopwatch"></span>
           {{ artigo?.tempoLeitura }} min de leitura
         </p>
         <p class="artigo-box__spoiler">
           {{ artigo?.conteudoArtigo | geraspoiler }}
         </p>
-        <!-- <pre>{{ artigo | json }}</pre> -->
         <p class="artigo-box__box-leia-mais">
           <a class="artigo-box__leia-mais">
             Leia mais

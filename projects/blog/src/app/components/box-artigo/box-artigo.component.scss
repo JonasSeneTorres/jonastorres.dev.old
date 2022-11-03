@@ -31,12 +31,6 @@
   &__active {
     &:not(:hover) .artigo-box__capa {
       background-color: #808080 !important;
-      // background: linear-gradient(
-      //   150deg,
-      //   rgba(124, 124, 124, 0.8) 0%,
-      //   rgba(0, 22, 87, 1) 10%,
-      //   rgba(0, 0, 0, 1) 89%
-      // ) !important;
       transition: all 0.5s ease;
 
       .fa-brands {
@@ -57,7 +51,6 @@
         0 1px 18px rgb(0 0 0 / 12%);
       cursor: pointer;
       margin: 1rem 0 1.5rem 0;
-      // transform: scale(1.05);
 
       @include media-up($gd-media-tablet-maxwidth) {
         transform: scale(1.0125);
@@ -66,14 +59,12 @@
       .artigo-box__capa{
         .fa-brands {
           font-size: 13rem;
-          // transform: scale(1.1);
           transition: all 0.5s ease;
         }
 
         .fa-solid {
           font-size: 11rem;
           transition: all 0.5s ease;
-          // transform: scale(1.1);
         }
 
         &::after {
@@ -82,10 +73,6 @@
           }
         }
       }
-
-      // .artigo-box__icone {
-      //   font-size: 9rem;
-      // }
 
       .artigo-box__box-leia-mais {
         transform: scale(1.1);
@@ -143,11 +130,8 @@
 
 
     @include media-up($gd-media-tablet-maxwidth) {
-      // height: 7rem;
       margin: 1rem 0 1rem 1rem;
-      // width: 14rem;
       height: calc(100% - 2.25rem);
-      // width: calc(100% - 2rem);
     }
 
     &:after {

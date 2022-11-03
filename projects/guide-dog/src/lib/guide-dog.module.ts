@@ -6,15 +6,26 @@ import { CenteredPanelModule } from './components/centered-panel/centered-panel.
 import { FooterModule } from './components/footer/footer.module';
 import { HeaderModule } from './components/header/header.module';
 import { MenuModule } from './components/menu/menu.module';
+import { CookieStorageService } from './services/data-storage/cookie-storage/cookie-storage.service';
 import { LocalStorageService } from './services/data-storage/local-storage/local-storage.service';
 import { MemoryStorageService } from './services/data-storage/memory-storage/memory-storage.service';
 import { SessionStorageService } from './services/data-storage/session-storage/session-storage.service';
 import { ModalService } from './services/modal/modal.service';
+import { SystemInformationService } from './services/system-information/system-information.service';
+import { TextUtilService } from './services/text-util/text-util.service';
 
 @NgModule({
   declarations: [],
-  imports: [FooterModule, HeaderModule, CenteredPanelModule, MenuModule, CommonModule, CardModule],
-  providers: [LocalStorageService, MemoryStorageService, ModalService, SessionStorageService],
-  exports: [FooterModule, HeaderModule, CenteredPanelModule, MenuModule, CardModule],
+  imports: [CardModule, CenteredPanelModule, CommonModule, FooterModule, HeaderModule, MenuModule],
+  providers: [
+    CookieStorageService,
+    LocalStorageService,
+    MemoryStorageService,
+    ModalService,
+    SessionStorageService,
+    SystemInformationService,
+    TextUtilService,
+  ],
+  exports: [CardModule, CenteredPanelModule, FooterModule, HeaderModule, MenuModule],
 })
 export class GuideDogModule {}

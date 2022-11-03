@@ -191,31 +191,6 @@
 
     &__fundo {
       height: 100vh;
-
-      &:after {
-      }
-    }
-
-    &__list {
-
-      li {
-
-        &:hover {
-        }
-
-        &:hover .icon {
-        }
-
-        &:hover .title {
-        }
-
-        a,
-        a:link,
-        a:visited,
-        a:hover,
-        a:active {
-        }
-      }
     }
   }
 
@@ -232,61 +207,10 @@
         "icone titulo titulo"
         "icone dados compartilhamento";
       grid-template-columns: 300px 2fr 1fr;
-      // padding-top: 30px;
-    }
-
-    &__icone {
-    }
-
-    &__titulo {
-
-      h1 {
-      }
-
-      h2 {
-      }
-    }
-
-    &__dados {
-    }
-
-    &__compartilhamento {
-    }
-
-    &__fundo {
-
-      &:after {
-      }
-    }
-
-    &__list {
-
-      li {
-
-        &:hover {
-        }
-
-        &:hover .icon {
-        }
-
-        &:hover .title {
-        }
-
-        a,
-        a:link,
-        a:visited,
-        a:hover,
-        a:active {
-
-        }
-      }
     }
   }
 
   @include media-up($gd-media-tablet-maxwidth) {
-    &__vitrine {
-    }
-
     &__conteudo {
       grid-template-areas:
         "icone titulo titulo"
@@ -295,54 +219,12 @@
       padding-top: 30px;
     }
 
-    &__icone {
-    }
-
-    &__titulo {
-
-
-      h1 {
-
-      }
-
-      h2 {
-      }
-    }
-
     &__dados {
       border-top: solid 1px #fff;
     }
 
     &__compartilhamento {
       border-top: solid 1px #fff;
-    }
-
-    &__fundo {
-
-      &:after {
-      }
-    }
-
-    &__list {
-
-      li {
-
-        &:hover {
-        }
-
-        &:hover .icon {
-        }
-
-        &:hover .title {
-        }
-
-        a,
-        a:link,
-        a:visited,
-        a:hover,
-        a:active {
-        }
-      }
     }
   }
 }
@@ -393,18 +275,9 @@
   font-size: 13rem !important;
 }
 
-// {
-//   font-size: 13rem !important;
-// }
-
 .fa-css3,
 .fa-person-chalkboard,
 .fa-universal-access,
 .fa-sitemap  {
   font-size: 14rem !important;
 }
-
-// .fa-person-chalkboard {
-//   font-size: 14rem !important;
-// }
-
