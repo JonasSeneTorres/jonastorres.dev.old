@@ -35,6 +35,10 @@ $h6_margin: 2.33em 0 !default;
 $background: #fff !default;
 $color: #000 !default;
 
+:root {
+  --gd_font-base-size: 16px;
+}
+
 // =============================================================================
 // HTML5 display definitions
 // =============================================================================
@@ -94,7 +98,7 @@ html {
   }
   background: $background;
   color: $color;
-  font-size: 16px;
+  font-size: var(--gd_font-base-size);
   -webkit-text-size-adjust: 100%; // 2
   -ms-text-size-adjust: 100%; // 2
 }

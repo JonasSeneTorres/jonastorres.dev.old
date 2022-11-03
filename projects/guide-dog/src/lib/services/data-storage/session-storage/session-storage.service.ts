@@ -1,15 +1,19 @@
+import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable } from '@angular/core';
+
 import { CookieStorageService } from '../cookie-storage/cookie-storage.service';
-import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SessionStorageService {
-  private storage: any;
+  private storage: Storage;
+  private window: any;
 
-  constructor() {
+  constructor(@Inject(DOCUMENT) private document: Document, private cookieStorage: CookieStorageService) {
     const warnMessage = 'Your browser does not have access to the "localStorage" feature.\nInstead, "Cookies" will be used.';
-    this.storage = window.sessionStorage;
+    this.window = this.document.defaultView;
+    this.storage = this.window.localStorage;
 
     if (!this.storage) {
       console.warn(warnMessage);
@@ -22,7 +26,7 @@ export class SessionStorageService {
       return JSON.parse(output);
     }
 
-    // this.cookieStorage.get(key);
+    this.cookieStorage.get(key);
   }
 
   set(key: string, value: any): void {
@@ -31,7 +35,7 @@ export class SessionStorageService {
       return;
     }
 
-    // this.cookieStorage.set(key, value);
+    this.cookieStorage.set(key, value);
   }
 
   removeItem(key: string): void {
@@ -40,7 +44,7 @@ export class SessionStorageService {
       return;
     }
 
-    // this.cookieStorage.removeItem(key);
+    this.cookieStorage.removeItem(key);
   }
 
   clear(): void {
@@ -49,6 +53,6 @@ export class SessionStorageService {
       return;
     }
 
-    // this.cookieStorage.clear();
+    this.cookieStorage.clear();
   }
 }

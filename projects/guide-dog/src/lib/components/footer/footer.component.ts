@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, Subject, takeUntil } from 'rxjs';
 
@@ -9,10 +10,13 @@ import { filter, Subject, takeUntil } from 'rxjs';
 })
 export class FooterComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
+  private window: Window | null;
 
   url = '';
 
-  constructor(private route: Router) {}
+  constructor(private route: Router, @Inject(DOCUMENT) private document: Document) {
+    this.window = this.document.defaultView;
+  }
 
   ngOnInit(): void {
     this.route.events
@@ -30,13 +34,14 @@ export class FooterComponent implements OnInit, OnDestroy {
   }
 
   gotoUp() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-    const a = document.querySelectorAll('button.hamburger, a.gd-header__link')[0] as HTMLElement;
-    console.log(a);
-    a.focus();
-    // (document.querySelectorAll('button.hamburger a.gd-header__link')[0] as HTMLElement).focus();
+    if (this.window) {
+      this.window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
+
+    const a = this.document.querySelectorAll('button.hamburger, a.gd-header__link')[0] as HTMLElement;
+    a.focus({ preventScroll: true });
   }
 }

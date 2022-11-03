@@ -2,13 +2,13 @@
   <gd-centered-panel>
     <ul class="acessibilitybar__list">
       <li class="acessibilitybar__item">
-        <a href="{{ url }}#conteudo" accesskey="1">Ir para o conteúdo [1]</a>
+        <a href="{{ url }}#conteudo" (click)="moveTo('#conteudo', $event)" accesskey="1">Ir para o conteúdo [1]</a>
       </li>
       <li class="acessibilitybar__item">
-        <a href="{{ url }}#menu" accesskey="2">Ir para o menu [2]</a>
+        <a href="{{ url }}#menu" (click)="moveTo('#menu', $event)" accesskey="2">Ir para o menu [2]</a>
       </li>
       <li class="acessibilitybar__item">
-        <a href="{{ url }}#footer" accesskey="3">Ir para o rodapé [3]</a>
+        <a href="{{ url }}#footer" (click)="moveTo('#footer', $event)" accesskey="3">Ir para o rodapé [3]</a>
       </li>
       <li class="acessibilitybar__item">
         <a [routerLink]="['/acessibilidade']">Acessibilidade</a>
@@ -17,17 +17,17 @@
         <span> Zoom: </span>
         <ul class="acessibilitybar__list acessibilitybar__list2">
           <li>
-            <button type="button" aria-label="mais zoom">
+            <button type="button" aria-label="mais zoom" (click)="setZoom(1)" [disabled]="zoom === 4">
               <span class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></span>
             </button>
           </li>
           <li>
-            <button type="button" aria-label="menos zoom">
+            <button type="button" aria-label="menos zoom" (click)="setZoom(-1)" [disabled]="zoom === -2">
               <span class="fa-solid fa-magnifying-glass-minus" aria-hidden="true"></span>
             </button>
           </li>
           <li>
-            <button type="button">Redefinir</button>
+            <button type="button" (click)="setZoom(0)" [disabled]="zoom === 0">Redefinir</button>
           </li>
         </ul>
       </li>

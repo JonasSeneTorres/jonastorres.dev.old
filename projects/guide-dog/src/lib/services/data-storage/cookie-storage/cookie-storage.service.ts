@@ -1,27 +1,46 @@
-import { BehaviorSubject } from 'rxjs';
+import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable } from '@angular/core';
+
 import { IStorageService } from '../../../interfaces/iStorageService';
-import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CookieStorageService /*implements IStorageService*/ {
-  constructor() {}
+export class CookieStorageService implements IStorageService {
+  private cookie: any;
 
-  // get(key: string): string {
-  //   return this.cookieService.get(key);
-  // }
+  constructor(@Inject(DOCUMENT) private document: Document) {
+    this.cookie = this.document.cookie;
+  }
 
-  // set(key: string, value: any): void {
-  //   const inputValue = JSON.stringify(value);
-  //   this.cookieService.set(key, inputValue);
-  // }
+  get(key: string): string {
+    type ObjectKey = keyof typeof this.cookie;
+    const property = key as ObjectKey;
 
-  // removeItem(key: string): void {
-  //   this.cookieService.delete(key);
-  // }
+    const output = this.cookie[property] ?? '';
+    console.log(output);
+    return output.toString();
+  }
 
-  // clear(): void {
-  //   this.cookieService.deleteAll();
-  // }
+  set(key: string, value: any): void {
+    type ObjectKey = keyof typeof this.cookie;
+    const property = key as ObjectKey;
+    let input = JSON.parse(this.cookie);
+
+    input[property] = value;
+    this.cookie = JSON.stringify(input);
+  }
+
+  removeItem(key: string): void {
+    type ObjectKey = keyof typeof this.cookie;
+    const property = key as ObjectKey;
+    let input = JSON.parse(this.cookie);
+
+    delete input[property];
+    this.cookie = JSON.stringify(input);
+  }
+
+  clear(): void {
+    this.cookie = '';
+  }
 }
