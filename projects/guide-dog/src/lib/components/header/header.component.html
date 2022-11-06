@@ -1,4 +1,8 @@
-<header class="gd-header">
+<header
+  class="gd-header"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <gd-centered-panel>
     <nav class="gd-header__nav" [class.gd-header__nav-complete]="navboxWithAcceptableSize" id="menu">
       <div [class.grid]="navboxWithAcceptableSize" [class.grid-mobile]="!navboxWithAcceptableSize">

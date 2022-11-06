@@ -1,4 +1,4 @@
-@import "../../../styles/gd";
+@import '../../../styles/gd';
 
 .acessibilitybar {
   height: 2rem;
@@ -22,7 +22,7 @@
   &__ir-para {
     display: flex;
 
-    &-titulo{
+    &-titulo {
       line-height: 1.85;
       white-space: nowrap;
       width: 8rem;
@@ -32,7 +32,7 @@
   &__list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    column-gap: .5rem;
+    column-gap: 0.5rem;
     line-height: 1.8rem;
     list-style: none;
     margin: 0;
@@ -52,10 +52,11 @@
     }
 
     a {
-      color: rgba(0, 0, 255, .8);
+      color: rgba(0, 0, 255, 0.8);
 
-      &:link, &:visited {
-        color: rgba(0, 0, 255, .8);
+      &:link,
+      &:visited {
+        color: rgba(0, 0, 255, 0.8);
       }
 
       &:hover {
@@ -63,7 +64,7 @@
         font-weight: bold;
       }
 
-      &:active  {
+      &:active {
         color: $gd-setcolorligth-secondary;
       }
     }
@@ -73,16 +74,17 @@
 .gd__ligth {
   background-color: $gd-color-white;
 
-  .acessibilitybar{
+  .acessibilitybar {
     &__item {
       a {
-        color: rgba(0, 0, 255, .8);
+        color: rgba(0, 0, 255, 0.8);
         span {
           transition: all 800ms;
         }
 
-        &:link, &:visited {
-          color: rgba(0, 0, 255, .8);
+        &:link,
+        &:visited {
+          color: rgba(0, 0, 255, 0.8);
         }
 
         &:hover {
@@ -90,12 +92,13 @@
           font-weight: bold;
         }
 
-        &:active  {
+        &:active {
           color: $gd-setcolorligth-secondary;
         }
       }
 
-      &__ir-para-titulo, &__item2 {
+      &__ir-para-titulo,
+      &__item2 {
         color: $gd-color-black;
       }
     }
@@ -105,16 +108,17 @@
 .gd__dark {
   background-color: $gd-color-darkmode;
 
-  .acessibilitybar{
+  .acessibilitybar {
     &__item {
       a {
-        color: rgba(0, 0, 255, .8);
+        color: rgba(0, 0, 255, 0.8);
         span {
           transition: all 800ms;
         }
 
-        &:link, &:visited {
-          color: rgba(0, 0, 255, .8);
+        &:link,
+        &:visited {
+          color: rgba(0, 0, 255, 0.8);
         }
 
         &:hover {
@@ -122,13 +126,14 @@
           font-weight: bold;
         }
 
-        &:active  {
+        &:active {
           color: $gd-setcolorligth-secondary;
         }
       }
     }
 
-    &__ir-para-titulo, &__item2 {
+    &__ir-para-titulo,
+    &__item2 {
       color: $gd-color-white;
     }
   }
@@ -137,7 +142,21 @@
 .gd__contrast {
   background-color: $gd-color-black;
 
-  .acessibilitybar{
+  .acessibilitybar {
+    &__list2 {
+      button {
+        background-color: $gd-color-darkmode-interative;
+        border: solid 1px $gd-color-darkmode-text;
+        color: $gd-color-black;
+
+        &:disabled {
+          background-color: $gd-color-black;
+          border: solid 1px $gd-color-darkmode-text;
+          color: $gd-color-darkmode-text;
+        }
+      }
+    }
+
     &__item {
       a {
         color: rgba($gd-color-darkmode-interative, 1);
@@ -145,7 +164,8 @@
           transition: all 800ms;
         }
 
-        &:link, &:visited {
+        &:link,
+        &:visited {
           color: rgba($gd-color-darkmode-interative, 1);
         }
 
@@ -154,13 +174,14 @@
           font-weight: bold;
         }
 
-        &:active  {
+        &:active {
           color: $gd-color-darkmode-text;
         }
       }
     }
 
-    &__ir-para-titulo, &__item2 {
+    &__ir-para-titulo,
+    &__item2 {
       color: $gd-color-darkmode-text;
 
       span {

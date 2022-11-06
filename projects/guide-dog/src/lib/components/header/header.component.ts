@@ -1,7 +1,17 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Input, OnDestroy } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { SystemInformationService } from 'projects/guide-dog/src/lib/services/system-information/system-information.service';
 import { Subject, takeUntil, throttleTime } from 'rxjs';
 
+import { AcessibilityService } from '../../services/acessibility/acessibility.service';
 import { NavibarItemConfig } from '../../types/navibar-item-config';
 
 @Component({
@@ -9,12 +19,13 @@ import { NavibarItemConfig } from '../../types/navibar-item-config';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements AfterViewInit, OnDestroy {
+export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
 
   @Input() navConfig: NavibarItemConfig[] = [];
   greatherThanLayoutBreak = false;
   navboxWithAcceptableSize = true;
+  theme = 'ligth';
   private _navBoxElement: Element;
   private changeSize = new Subject();
 
@@ -34,6 +45,7 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   constructor(
     private elementRef: ElementRef,
     private systemInformation: SystemInformationService,
+    private acessibilityService: AcessibilityService,
     private changeDetectorRef: ChangeDetectorRef
   ) {
     this._navBoxElement = this.elementRef.nativeElement;
@@ -48,8 +60,18 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
       });
   }
 
+  ngOnInit(): void {
+    this.observeStateAcessibility();
+  }
+
   ngAfterViewInit(): void {
     this.onResize();
+  }
+
+  private observeStateAcessibility(): void {
+    this.acessibilityService.stateAcessibility$.pipe(takeUntil(this._destroy$)).subscribe((stateAcessibility: any) => {
+      this.theme = stateAcessibility.theme;
+    });
   }
 
   ngOnDestroy(): void {

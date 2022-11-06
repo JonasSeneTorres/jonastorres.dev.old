@@ -13,9 +13,12 @@ import { SessionStorageService } from './services/data-storage/session-storage/s
 import { ModalService } from './services/modal/modal.service';
 import { SystemInformationService } from './services/system-information/system-information.service';
 import { TextUtilService } from './services/text-util/text-util.service';
+import { MasterBaseComponent } from './components/master-base/master-base.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    MasterBaseComponent
+  ],
   imports: [CardModule, CenteredPanelModule, CommonModule, FooterModule, HeaderModule, MenuModule],
   providers: [
     CookieStorageService,

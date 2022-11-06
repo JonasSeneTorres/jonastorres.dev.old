@@ -1,39 +1,28 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, Injector, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { filter, Subject, takeUntil } from 'rxjs';
+import { filter, takeUntil } from 'rxjs';
 
-import { AcessibilityService } from '../../../services/acessibility/acessibility.service';
+import { MasterBaseComponent } from '../../master-base/master-base.component';
 
 @Component({
   selector: 'gd-acessibility-bar',
   templateUrl: './acessibility-bar.component.html',
   styleUrls: ['./acessibility-bar.component.scss'],
 })
-export class AcessibilityBarComponent implements OnInit, OnDestroy {
-  private _destroy$: Subject<boolean> = new Subject<boolean>();
+export class AcessibilityBarComponent extends MasterBaseComponent implements OnInit, OnDestroy {
   private window: Window | null;
 
-  theme = 'ligth';
-  zoom = 0;
   url = '';
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private route: Router,
-    private acessibilityService: AcessibilityService
-  ) {
+  constructor(protected override injector: Injector, @Inject(DOCUMENT) private document: Document, private route: Router) {
+    super(injector);
     this.window = this.document.defaultView;
   }
 
-  ngOnInit(): void {
+  override ngOnInit(): void {
+    super.ngOnInit();
     this.observeRoute();
-    this.observeStateAcessibility();
-  }
-
-  ngOnDestroy(): void {
-    this._destroy$.next(true);
-    this._destroy$.unsubscribe();
   }
 
   moveTo(querySelector: string, event: Event) {
@@ -57,20 +46,6 @@ export class AcessibilityBarComponent implements OnInit, OnDestroy {
     }
   }
 
-  setZoom(value: number): void {
-    if (value === 0) {
-      this.zoom = 0;
-    } else {
-      this.zoom += value;
-    }
-
-    this.acessibilityService.setZoom(this.zoom);
-  }
-
-  setTheme(value: 'ligth' | 'dark' | 'contrast') {
-    this.acessibilityService.setTheme(value);
-  }
-
   private observeRoute(): void {
     this.route.events
       .pipe(
@@ -81,13 +56,6 @@ export class AcessibilityBarComponent implements OnInit, OnDestroy {
         const dirtyUrl = `${event.url}#`.split('#');
         this.url = dirtyUrl[0];
       });
-  }
-
-  private observeStateAcessibility(): void {
-    this.acessibilityService.stateAcessibility$.pipe(takeUntil(this._destroy$)).subscribe((stateAcessibility: any) => {
-      this.zoom = stateAcessibility.zoom;
-      this.theme = stateAcessibility.theme;
-    });
   }
 
   private setFocus(querySelector: string) {
