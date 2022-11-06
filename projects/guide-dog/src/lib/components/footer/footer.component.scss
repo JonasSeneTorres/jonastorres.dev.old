@@ -1,22 +1,22 @@
 @import '../../styles/gd.scss';
 
 .gd-footer {
-  background-color: $gd-colorligth-primary-900;
-  color: $gd-color-white;
+  // background-color: $gd-colorligth-primary-900;
+  // color: $gd-color-white;
   min-height: 2.5rem;
   min-width: 250px;
   max-width: 100vw;
   max-height: 100vw;
   overflow: auto;
-  padding: .75rem 0;
+  padding: 0.75rem 0;
 
   &__up {
     align-items: center;
-    background-color: $gd-colorligth-primary-700;
+    // background-color: $gd-colorligth-primary-700;
     border-radius: 55%;
     bottom: 32px;
-    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
-    color: $gd-color-white;
+    // box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+    // color: $gd-color-white;
     display: grid;
     font-size: 1.25rem;
     height: 60px;
@@ -24,19 +24,85 @@
     position: fixed;
     right: 32px;
     text-decoration: none;
-    text-shadow: 2px 2px rgba(#000, .25);
+    // text-shadow: 2px 2px rgba(#000, 0.25);
     width: 60px;
     z-index: 10;
-    transition: all .75s;
+    transition: all 0.75s;
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 9px 12px 2px rgb(0 0 0 / 20%), 0 7px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+      // box-shadow: 0 9px 12px 2px rgb(0 0 0 / 20%), 0 7px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
     }
 
     &:active {
       transform: translateY(1px);
+      // box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+    }
+  }
+}
+
+.gd__ligth {
+  &.gd-footer {
+    background-color: $gd-colorligth-primary-900;
+    color: $gd-color-white;
+
+    &__up {
+      background-color: $gd-colorligth-primary-700;
       box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+      color: $gd-color-white;
+      text-shadow: 2px 2px rgba(#000, 0.25);
+
+      &:hover {
+        box-shadow: 0 9px 12px 2px rgb(0 0 0 / 20%), 0 7px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+      }
+
+      &:active {
+        box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+      }
+    }
+  }
+}
+
+.gd__dark {
+  &.gd-footer {
+    background-color: $gd-colordark-primary-900;
+    color: $gd-color-white;
+
+    &__up {
+      background-color: $gd-colordark-primary-700;
+      box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+      color: $gd-color-white;
+      text-shadow: 2px 2px rgba(#000, 0.25);
+
+      &:hover {
+        box-shadow: 0 9px 12px 2px rgb(0 0 0 / 20%), 0 7px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+      }
+
+      &:active {
+        box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+      }
+    }
+  }
+}
+
+.gd__contrast {
+  &.gd-footer {
+    background-color: $gd-color-black;
+    color: $gd-color-darkmode-text;
+
+    &__up {
+      background-color: $gd-color-darkmode-interative;
+      box-shadow: 0 3px 5px -1px rgb(F F F / 20%), 0 6px 10px rgb(F F F / 14%), 0 1px 18px rgb(F F F / 12%);
+      color: $gd-color-darkmode;
+      text-shadow: 2px 2px rgba($gd-color-darkmode-text, 0.25);
+
+      &:hover {
+        box-shadow: 0 9px 12px 2px rgb(F F F / 20%), 0 7px 10px rgb(F F F / 14%), 0 1px 18px rgb(F F F / 12%);
+      }
+
+      &:active {
+        box-shadow: 0 3px 5px -1px rgb(F F F / 20%), 0 6px 10px rgb(F F F / 14%), 0 1px 18px rgb(F F F / 12%);
+      }
     }
   }
 }

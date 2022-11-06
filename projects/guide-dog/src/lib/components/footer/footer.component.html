@@ -1,7 +1,18 @@
-<a class="gd-footer__up" (click)="gotoUp()" aria-label="Ir para o topo">
+<a
+  class="gd-footer__up"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'"
+  (click)="gotoUp()"
+  aria-label="Ir para o topo">
   <span class="fa-solid fa-angles-up" aria-hidden="true"></span>
 </a>
-<footer id="footer" class="gd-footer">
+<footer
+  id="footer"
+  class="gd-footer"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <gd-centered-panel>
     <ng-content></ng-content>
   </gd-centered-panel>
