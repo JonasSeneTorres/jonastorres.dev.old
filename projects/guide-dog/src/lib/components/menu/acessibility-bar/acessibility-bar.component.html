@@ -1,62 +1,84 @@
-<div class="acessibilitybar">
+<div
+  class="acessibilitybar"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <gd-centered-panel>
-    <ul class="acessibilitybar__list">
-      <li class="acessibilitybar__item">
-        <a href="{{ url }}#conteudo" (click)="moveTo('#conteudo', $event)" accesskey="1">Ir para o conteúdo [1]</a>
-      </li>
-      <li class="acessibilitybar__item">
-        <a href="{{ url }}#menu" (click)="moveTo('#menu', $event)" accesskey="2">Ir para o menu [2]</a>
-      </li>
-      <li class="acessibilitybar__item">
-        <a href="{{ url }}#footer" (click)="moveTo('#footer', $event)" accesskey="3">Ir para o rodapé [3]</a>
-      </li>
-      <li class="acessibilitybar__item">
-        <a [routerLink]="['/acessibilidade']">Acessibilidade</a>
-      </li>
-      <li class="acessibilitybar__item2">
-        <span> Zoom: </span>
-        <ul class="acessibilitybar__list acessibilitybar__list2">
-          <li>
-            <button type="button" aria-label="mais zoom" (click)="setZoom(1)" [disabled]="zoom === 4">
-              <span class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></span>
-            </button>
-          </li>
-          <li>
-            <button type="button" aria-label="menos zoom" (click)="setZoom(-1)" [disabled]="zoom === -2">
-              <span class="fa-solid fa-magnifying-glass-minus" aria-hidden="true"></span>
-            </button>
-          </li>
-          <li>
-            <button type="button" (click)="setZoom(0)" [disabled]="zoom === 0">Redefinir</button>
-          </li>
-        </ul>
-      </li>
-      <li class="acessibilitybar__item2">
-        <span> Temas: </span>
-        <ul class="acessibilitybar__list acessibilitybar__list2">
-          <li>
-            <button type="button" alt="tema claro" aria-label="tema claro">
-              <span class="fa-solid fa-sun" aria-hidden="true"></span>
-            </button>
-          </li>
-          <li>
-            <button type="button" alt="tema escuro" aria-label="tema escuro">
-              <span class="fa-solid fa-moon" aria-hidden="true"></span>
-            </button>
-          </li>
-          <li>
-            <button type="button" alt="auto contraste" aria-label="auto contraste">
-              <span class="fa-solid fa-circle-half-stroke" aria-hidden="true"></span>
-            </button>
-          </li>
-        </ul>
-      </li>
-      <li class="acessibilitybar__item">animações</li>
-      <li class="acessibilitybar__item">
-        <a [routerLink]="['/sitemap']" aria-label="sitemap">
-          <span class="fa-solid fa-sitemap" aria-hidden="true"></span>
-        </a>
-      </li>
-    </ul>
+    <div class="acessibilitybar__ir-para">
+      <div class="acessibilitybar__ir-para-titulo">Ir para:</div>
+      <ul class="acessibilitybar__list">
+        <li class="acessibilitybar__item">
+          <a href="{{ url }}#conteudo" (click)="moveTo('#conteudo', $event)" accesskey="1">conteúdo [1]</a>
+        </li>
+        <li class="acessibilitybar__item">
+          <a href="{{ url }}#menu" (click)="moveTo('#menu', $event)" accesskey="2">menu [2]</a>
+        </li>
+        <li class="acessibilitybar__item">
+          <a href="{{ url }}#footer" (click)="moveTo('#footer', $event)" accesskey="3">rodapé [3]</a>
+        </li>
+        <li class="acessibilitybar__item">
+          <a [routerLink]="['/acessibilidade']">Acessibilidade</a>
+        </li>
+        <li class="acessibilitybar__item2">
+          <span> Zoom: </span>
+          <ul class="acessibilitybar__list acessibilitybar__list2">
+            <li>
+              <button type="button" aria-label="mais zoom" (click)="setZoom(1)" [disabled]="zoom === 4">
+                <span class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></span>
+              </button>
+            </li>
+            <li>
+              <button type="button" aria-label="menos zoom" (click)="setZoom(-1)" [disabled]="zoom === -2">
+                <span class="fa-solid fa-magnifying-glass-minus" aria-hidden="true"></span>
+              </button>
+            </li>
+            <li>
+              <button type="button" (click)="setZoom(0)" [disabled]="zoom === 0">Redefinir</button>
+            </li>
+          </ul>
+        </li>
+        <li class="acessibilitybar__item2">
+          <span> Temas: </span>
+          <ul class="acessibilitybar__list acessibilitybar__list2">
+            <li>
+              <button
+                type="button"
+                alt="tema claro"
+                aria-label="tema claro"
+                (click)="setTheme('ligth')"
+                [disabled]="theme === 'ligth'">
+                <span class="fa-solid fa-sun" aria-hidden="true"></span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                alt="tema escuro"
+                aria-label="tema escuro"
+                (click)="setTheme('dark')"
+                [disabled]="theme === 'dark'">
+                <span class="fa-solid fa-moon" aria-hidden="true"></span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                alt="auto contraste"
+                aria-label="auto contraste"
+                (click)="setTheme('contrast')"
+                [disabled]="theme === 'contrast'">
+                <span class="fa-solid fa-circle-half-stroke" aria-hidden="true"></span>
+              </button>
+            </li>
+          </ul>
+        </li>
+        <li class="acessibilitybar__item2">animações</li>
+        <li class="acessibilitybar__item">
+          <a [routerLink]="['/sitemap']" aria-label="sitemap">
+            <span class="fa-solid fa-sitemap" aria-hidden="true"></span> Mapa do site
+          </a>
+        </li>
+      </ul>
+    </div>
   </gd-centered-panel>
 </div>

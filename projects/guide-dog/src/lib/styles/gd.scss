@@ -25,6 +25,9 @@ $gd-setcolordark-warning: $gd-setcolorligth-warning !default;
 $gd-setcolordark-info: $gd-setcolorligth-info !default;
 
 $gd-color-white: #fff !default;
+$gd-color-darkmode: #212529 !default;
+$gd-color-darkmode-interative: #FFF333 !default;
+$gd-color-darkmode-text: #fff !default;
 $gd-color-black: #000 !default;
 
 $gd-colorligth-gray-50: makeColorPalette50($gd-setcolorligth-gray);

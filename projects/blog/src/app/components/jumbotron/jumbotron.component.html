@@ -69,14 +69,14 @@
           </ng-container>
         </div>
         <div class="jumbotron__compartilhamento" [class.sem-borda]="((dadosJumbotron$ | async)?.titulo || '').length === 0">
-          <ul class="jumbotron__list" *ngIf="(dadosJumbotron$ | async)?.compartilharBox">
+          <!-- <ul class="jumbotron__list" *ngIf="(dadosJumbotron$ | async)?.compartilharBox">
             <li>
               <a href="#" target="_blank">
                 <span class="icon socicon-youtube" aria-hidden="true"></span>
                 <span class="title">YouTube</span>
               </a>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </gd-centered-panel>

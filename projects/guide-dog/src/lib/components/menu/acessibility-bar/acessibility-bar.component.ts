@@ -3,6 +3,8 @@ import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, Subject, takeUntil } from 'rxjs';
 
+import { AcessibilityService } from '../../../services/acessibility/acessibility.service';
+
 @Component({
   selector: 'gd-acessibility-bar',
   templateUrl: './acessibility-bar.component.html',
@@ -12,21 +14,21 @@ export class AcessibilityBarComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<boolean> = new Subject<boolean>();
   private window: Window | null;
 
+  theme = 'ligth';
   zoom = 0;
   url = '';
 
-  constructor(private route: Router, @Inject(DOCUMENT) private document: Document) {
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private route: Router,
+    private acessibilityService: AcessibilityService
+  ) {
     this.window = this.document.defaultView;
   }
 
   ngOnInit(): void {
-    this.route.events
-      .pipe(filter((typeEvent: any) => typeEvent instanceof NavigationEnd))
-      .pipe(takeUntil(this._destroy$))
-      .subscribe((event: any) => {
-        const dirtyUrl = `${event.url}#`.split('#');
-        this.url = dirtyUrl[0];
-      });
+    this.observeRoute();
+    this.observeStateAcessibility();
   }
 
   ngOnDestroy(): void {
@@ -56,18 +58,36 @@ export class AcessibilityBarComponent implements OnInit, OnDestroy {
   }
 
   setZoom(value: number): void {
-    let nextSize: number = 16;
     if (value === 0) {
       this.zoom = 0;
     } else {
-      const incrementInPx = 2;
       this.zoom += value;
-      // eslint-disable-next-line prettier/prettier
-      nextSize = 16 + (this.zoom * incrementInPx);
     }
 
-    const root = this.document.querySelector(':root') as HTMLElement;
-    root.style.setProperty('--gd_font-base-size', `${nextSize}px`);
+    this.acessibilityService.setZoom(this.zoom);
+  }
+
+  setTheme(value: 'ligth' | 'dark' | 'contrast') {
+    this.acessibilityService.setTheme(value);
+  }
+
+  private observeRoute(): void {
+    this.route.events
+      .pipe(
+        filter((typeEvent: any) => typeEvent instanceof NavigationEnd),
+        takeUntil(this._destroy$)
+      )
+      .subscribe((event: any) => {
+        const dirtyUrl = `${event.url}#`.split('#');
+        this.url = dirtyUrl[0];
+      });
+  }
+
+  private observeStateAcessibility(): void {
+    this.acessibilityService.stateAcessibility$.pipe(takeUntil(this._destroy$)).subscribe((stateAcessibility: any) => {
+      this.zoom = stateAcessibility.zoom;
+      this.theme = stateAcessibility.theme;
+    });
   }
 
   private setFocus(querySelector: string) {

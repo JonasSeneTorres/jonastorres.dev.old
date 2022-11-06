@@ -1,17 +1,38 @@
 @import "../../../styles/gd";
 
 .acessibilitybar {
-  background-color: $gd-color-white;;
   height: 2rem;
+
+  &.gd__ligth {
+    background-color: $gd-color-white;
+  }
+
+  &.gd__dark {
+    background-color: $gd-color-darkmode;
+  }
+
+  &.gd__contrast {
+    background-color: $gd-color-black;
+  }
 
   @include media-down($gd-media-tablet-maxwidth) {
     display: none;
   }
 
+  &__ir-para {
+    display: flex;
+
+    &-titulo{
+      line-height: 1.85;
+      white-space: nowrap;
+      width: 8rem;
+    }
+  }
+
   &__list {
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 1fr 1fr;
-    column-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    column-gap: .5rem;
     line-height: 1.8rem;
     list-style: none;
     margin: 0;
@@ -24,9 +45,127 @@
 
   &__item {
     display: inline-block;
+    white-space: nowrap;
 
     &2 {
       display: flex;
+    }
+
+    a {
+      color: rgba(0, 0, 255, .8);
+
+      &:link, &:visited {
+        color: rgba(0, 0, 255, .8);
+      }
+
+      &:hover {
+        color: rgba(0, 0, 255, 1);
+        font-weight: bold;
+      }
+
+      &:active  {
+        color: $gd-setcolorligth-secondary;
+      }
+    }
+  }
+}
+
+.gd__ligth {
+  background-color: $gd-color-white;
+
+  .acessibilitybar{
+    &__item {
+      a {
+        color: rgba(0, 0, 255, .8);
+        span {
+          transition: all 800ms;
+        }
+
+        &:link, &:visited {
+          color: rgba(0, 0, 255, .8);
+        }
+
+        &:hover {
+          color: rgba(0, 0, 255, 1);
+          font-weight: bold;
+        }
+
+        &:active  {
+          color: $gd-setcolorligth-secondary;
+        }
+      }
+
+      &__ir-para-titulo, &__item2 {
+        color: $gd-color-black;
+      }
+    }
+  }
+}
+
+.gd__dark {
+  background-color: $gd-color-darkmode;
+
+  .acessibilitybar{
+    &__item {
+      a {
+        color: rgba(0, 0, 255, .8);
+        span {
+          transition: all 800ms;
+        }
+
+        &:link, &:visited {
+          color: rgba(0, 0, 255, .8);
+        }
+
+        &:hover {
+          color: rgba(0, 0, 255, 1);
+          font-weight: bold;
+        }
+
+        &:active  {
+          color: $gd-setcolorligth-secondary;
+        }
+      }
+    }
+
+    &__ir-para-titulo, &__item2 {
+      color: $gd-color-white;
+    }
+  }
+}
+
+.gd__contrast {
+  background-color: $gd-color-black;
+
+  .acessibilitybar{
+    &__item {
+      a {
+        color: rgba($gd-color-darkmode-interative, 1);
+        span {
+          transition: all 800ms;
+        }
+
+        &:link, &:visited {
+          color: rgba($gd-color-darkmode-interative, 1);
+        }
+
+        &:hover {
+          color: rgba($gd-color-darkmode-interative, 1);
+          font-weight: bold;
+        }
+
+        &:active  {
+          color: $gd-color-darkmode-text;
+        }
+      }
+    }
+
+    &__ir-para-titulo, &__item2 {
+      color: $gd-color-darkmode-text;
+
+      span {
+        transition: all 800ms;
+      }
     }
   }
 }
