@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, Injector, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, Injector, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, takeUntil } from 'rxjs';
 
@@ -10,7 +10,7 @@ import { MasterBaseComponent } from '../../master-base/master-base.component';
   templateUrl: './acessibility-bar.component.html',
   styleUrls: ['./acessibility-bar.component.scss'],
 })
-export class AcessibilityBarComponent extends MasterBaseComponent implements OnInit, OnDestroy {
+export class AcessibilityBarComponent extends MasterBaseComponent implements OnInit {
   private window: Window | null;
 
   url = '';

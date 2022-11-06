@@ -1,13 +1,13 @@
 @import '../../styles/gd.scss';
 
 .gd-header {
-  background-color: $gd-setcolorligth-primary;
-  box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
-  color: $gd-color-white;
+  // background-color: $gd-setcolorligth-primary;
+  // box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+  // color: $gd-color-white;
   max-height: 100vw;
   min-height: 2.5rem;
   min-width: 250px;
-  padding: .75rem 0;
+  padding: 0.75rem 0;
   position: sticky;
   top: 0;
   z-index: 11;
@@ -24,32 +24,31 @@
     min-height: 2.5rem;
 
     &-complete {
-
       @include media-up($gd-media-tablet-maxwidth) {
         align-content: flex-end;
       }
     }
   }
 
-  &__menu{
+  &__menu {
     &-main {
-      display:inline;
+      display: inline;
       margin-left: 1.5rem;
       padding: 0;
 
       &-li {
-        display:inline;
+        display: inline;
         margin-left: 2rem;
       }
     }
 
     &-secondary {
-      display:inline;
+      display: inline;
       margin-left: 1.5rem;
       padding: 0;
 
       &-li {
-        display:inline;
+        display: inline;
         margin-left: 2rem;
       }
     }
@@ -67,7 +66,7 @@
     }
 
     &-adjusted {
-      margin-left: .5rem;
+      margin-left: 0.5rem;
       margin-top: 1rem;
 
       @include media-up($gd-media-phone-maxwidth) {
@@ -82,15 +81,15 @@
 }
 
 button {
-  background-color: $gd-setcolorligth-primary;;
+  background-color: $gd-setcolorligth-primary;
   background-color: transparent;
   border: solid 1px $gd-color-white;
   color: $gd-color-white;
   min-height: 2.5rem;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
 
   &.first-menu {
-    margin-right: 1rem
+    margin-right: 1rem;
   }
 }
 
@@ -109,7 +108,7 @@ button {
 
   .grid {
     @include media-up($gd-media-tablet-maxwidth) {
-      margin-top: .75rem;
+      margin-top: 0.75rem;
     }
   }
 }
@@ -120,12 +119,49 @@ button {
   }
 }
 
-
 .gd__ligth {
+  &.gd-header {
+    background-color: $gd-setcolorligth-primary;
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+    color: $gd-color-white;
+  }
 }
 
 .gd__dark {
+  &.gd-header {
+    background-color: $gd-setcolordark-primary;
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+    color: $gd-color-white;
+  }
 }
 
 .gd__contrast {
+  &.gd-header {
+    background-color: $gd-color-black;
+    border-bottom: solid 1px #fff;
+    border-top: solid 1px #fff;
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #ffffffaf;
+    color: $gd-color-white;
+
+    a {
+      color: rgba($gd-color-darkmode-interative, 1);
+      span {
+        transition: all 800ms;
+      }
+
+      &:link,
+      &:visited {
+        color: rgba($gd-color-darkmode-interative, 1);
+      }
+
+      &:hover {
+        color: rgba($gd-color-darkmode-interative, 1);
+        font-weight: bold;
+      }
+
+      &:active {
+        color: $gd-color-darkmode-text;
+      }
+    }
+  }
 }

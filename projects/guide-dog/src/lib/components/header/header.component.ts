@@ -4,6 +4,7 @@ import {
   Component,
   ElementRef,
   HostListener,
+  Injector,
   Input,
   OnDestroy,
   OnInit,
@@ -11,23 +12,20 @@ import {
 import { SystemInformationService } from 'projects/guide-dog/src/lib/services/system-information/system-information.service';
 import { Subject, takeUntil, throttleTime } from 'rxjs';
 
-import { AcessibilityService } from '../../services/acessibility/acessibility.service';
 import { NavibarItemConfig } from '../../types/navibar-item-config';
+import { MasterBaseComponent } from '../master-base/master-base.component';
 
 @Component({
   selector: 'gd-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
-  private _destroy$: Subject<boolean> = new Subject<boolean>();
-
+export class HeaderComponent extends MasterBaseComponent implements OnInit, AfterViewInit, OnDestroy {
+  private _navBoxElement: Element;
+  private changeSize = new Subject();
   @Input() navConfig: NavibarItemConfig[] = [];
   greatherThanLayoutBreak = false;
   navboxWithAcceptableSize = true;
-  theme = 'ligth';
-  private _navBoxElement: Element;
-  private changeSize = new Subject();
 
   get centeredPanelMargin() {
     const sizeAdjustment = -2;
@@ -43,40 +41,30 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   constructor(
+    protected override injector: Injector,
     private elementRef: ElementRef,
     private systemInformation: SystemInformationService,
-    private acessibilityService: AcessibilityService,
     private changeDetectorRef: ChangeDetectorRef
   ) {
+    super(injector);
     this._navBoxElement = this.elementRef.nativeElement;
 
     this.changeSize
       .asObservable()
       .pipe(throttleTime(1000))
       .pipe(takeUntil(this._destroy$))
-      .subscribe(innerWidth => {
+      .subscribe(() => {
         this.navboxWithAcceptableSize = this.checkAcceptableSizeNavbox();
         this.changeDetectorRef.detectChanges();
       });
   }
 
-  ngOnInit(): void {
-    this.observeStateAcessibility();
+  override ngOnInit(): void {
+    super.ngOnInit();
   }
 
   ngAfterViewInit(): void {
     this.onResize();
-  }
-
-  private observeStateAcessibility(): void {
-    this.acessibilityService.stateAcessibility$.pipe(takeUntil(this._destroy$)).subscribe((stateAcessibility: any) => {
-      this.theme = stateAcessibility.theme;
-    });
-  }
-
-  ngOnDestroy(): void {
-    this._destroy$.next(true);
-    this._destroy$.unsubscribe();
   }
 
   @HostListener('window:resize', ['$event.target'])
