@@ -1,8 +1,14 @@
-<nav class="breadcrumb" aria-label="Breadcrumb" class="breadcrumb" *ngIf="breadcrumbsItem.length > 0">
-  <ol class="breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+<nav
+  class="gd-breadcrumb"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'"
+  aria-label="Breadcrumb"
+  *ngIf="breadcrumbsItem.length > 0">
+  <ol class="gd-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
     <ng-container *ngFor="let item of breadcrumbsItem; let i = index">
       <li
-        class="breadcrumb__item"
+        class="gd-breadcrumb__item"
         itemprop="itemListElement"
         itemscope
         itemtype="https://schema.org/ListItem"
@@ -11,11 +17,11 @@
           <span itemprop="name">{{ item.label }}</span>
           <meta itemprop="position" [attr.content]="i" />
         </a>
-        <span class="breadcrumb__separador" aria-hidden="true">&gt;</span>
+        <span class="gd-breadcrumb__separador" aria-hidden="true">&gt;</span>
       </li>
 
       <li
-        class="breadcrumb__current"
+        class="gd-breadcrumb__current"
         itemprop="itemListElement"
         itemscope
         itemtype="https://schema.org/ListItem"

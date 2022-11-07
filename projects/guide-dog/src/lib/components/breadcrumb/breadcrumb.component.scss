@@ -1,6 +1,6 @@
-@import "../../styles/gd.scss";
+@import '../../styles/gd.scss';
 
-.breadcrumb {
+.gd-breadcrumb {
   margin: 0 0 0.5rem;
 
   &__list {
@@ -12,10 +12,7 @@
       margin: 0.75rem 0.5rem;
     }
 
-    @include media-between(
-    $gd-media-phone-maxwidth + 1,
-    $gd-media-tablet-maxwidth - 1
-    ) {
+    @include media-between($gd-media-phone-maxwidth + 1, $gd-media-tablet-maxwidth - 1) {
       margin: 0.75rem 0.5rem;
     }
   }
@@ -30,7 +27,6 @@
     a:visited,
     a:hover,
     a:active {
-      color: #0000ee;
       text-decoration: none;
       position: relative;
     }
@@ -45,7 +41,6 @@
   }
 
   &__separador {
-    color: #000;
     font-size: 1rem;
     margin: 0 0.5rem;
   }
@@ -56,11 +51,89 @@
     a:visited,
     a:hover,
     a:active {
-      color: #000;
       cursor: auto;
       text-decoration: none;
     }
+  }
+}
 
+.gd__ligth {
+  .gd-breadcrumb {
+    &__item {
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        color: #0000ee;
+      }
+    }
 
+    &__separador {
+      color: $gd-color-black;
+    }
+
+    &__current {
+      a,
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        color: $gd-color-black;
+      }
+    }
+  }
+}
+
+.gd__dark {
+  .gd-breadcrumb {
+    &__item {
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        color: #0000ee;
+      }
+    }
+
+    &__separador {
+      color: $gd-color-black;
+    }
+
+    &__current {
+      a,
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        color: $gd-color-black;
+      }
+    }
+  }
+}
+
+.gd__contrast {
+  .gd-breadcrumb {
+    &__item {
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        color: $gd-color-darkmode-interative;
+      }
+    }
+
+    &__separador {
+      color: $gd-color-white;
+    }
+
+    &__current {
+      a,
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        color: $gd-color-white;
+      }
+    }
   }
 }
