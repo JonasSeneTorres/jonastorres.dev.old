@@ -29,6 +29,7 @@
     height: 100%;
 
     &-transparente {
+      border: none !important;
       grid-area: main;
       height: 100%;
       z-index: 1;

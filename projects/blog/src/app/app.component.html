@@ -1,4 +1,8 @@
-<div class="app-container">
+<div
+  class="app-container"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <gd-acessibility-bar></gd-acessibility-bar>
   <gd-header [navConfig]="menu">
     <div class="grid">

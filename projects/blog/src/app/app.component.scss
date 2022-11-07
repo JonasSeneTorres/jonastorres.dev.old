@@ -1,4 +1,4 @@
-@import "../../../guide-dog/src/lib/styles/gd.scss";
+@import '../../../guide-dog/src/lib/styles/gd.scss';
 
 :host ::ng-deep {
   gd-header {
@@ -6,6 +6,10 @@
       font-size: 1.4rem;
       margin-right: 0.5rem;
     }
+  }
+
+  gd-footer {
+    z-index: 1;
   }
 
   gd-centered-panel.app-container__central {
@@ -19,10 +23,72 @@
   #footer {
     margin-top: 1rem;
   }
+
+  .app-container.gd__ligth {
+    background-color: $gd-colorligth-gray-100;
+
+    @include media-up($gd-media-tablet-maxwidth) {
+      &::after {
+        background-image: url('/assets/img/backgrounds/circuit-board-black.svg');
+      }
+    }
+
+    .titulo, .dev  {
+      color: $gd-color-white;
+    }
+
+    .app-container-conteudo main#conteudo, .app-container-conteudo aside {
+      background-color: $gd-color-white;
+      // color: $gd-color-black;
+    }
+  }
+
+  .app-container.gd__dark {
+    background-color: $gd-colorligth-gray-100;
+
+    @include media-up($gd-media-tablet-maxwidth) {
+      &::after {
+        background-image: url('/assets/img/backgrounds/circuit-board-black.svg');
+      }
+    }
+
+    .titulo, .dev  {
+      color: $gd-color-white;
+    }
+
+    .app-container-conteudo main, .app-container-conteudo aside {
+      background-color: $gd-color-white;
+      // color: $gd-color-black;
+    }
+  }
+
+  .app-container.gd__contrast {
+    background-color: $gd-color-black;
+
+    @include media-up($gd-media-tablet-maxwidth) {
+      &::after {
+        background-image: url('/assets/img/backgrounds/circuit-board-white.svg');
+        opacity: 0.2;
+      }
+    }
+
+    .logo {
+      background-image: url('/assets/img/fotos/logos/jonastorres-dev-contrast.gif');
+    }
+
+    .titulo, .dev  {
+      color: $gd-color-darkmode-interative;
+    }
+
+    .app-container-conteudo main#conteudo, .app-container-conteudo aside {
+      background-color: #000;
+      border: solid 1px $gd-color-white;
+      // color: $gd-color-white;
+    }
+  }
 }
 
 .app-container {
-  background-color: $gd-colorligth-gray-100;
   max-width: 100vw;
   min-width: 250px;
   position: relative;
@@ -31,9 +97,9 @@
 
   @include media-up($gd-media-tablet-maxwidth) {
     &::after {
-      background-image: url("/assets/img/backgrounds/circuit-board-black.svg");
-        opacity: 0.07;
-      content: "";
+      // background-image: url('/assets/img/backgrounds/circuit-board-black.svg');
+      opacity: 0.07;
+      content: '';
       display: block;
       height: 100%;
       left: 0;
@@ -57,7 +123,7 @@
 .titulo {
   text-shadow: 1px 1px 2px black, 0 0 0em;
   align-self: center;
-  font-family: "OoohBaby", Arial, Helvetica, sans-serif;
+  font-family: 'OoohBaby', Arial, Helvetica, sans-serif;
   font-size: 1.7rem;
   margin-left: 0.25rem;
   margin-top: -6px;
@@ -65,14 +131,14 @@
 
 .dev {
   text-shadow: 1px 1px 2px black, 0 0 0em;
-  font-family: "Tomorrow", mono;
+  font-family: 'Tomorrow', mono;
   font-size: 0.85rem;
   font-weight: 400;
   padding-left: 0.125rem;
 }
 
 .logo {
-  background-image: url("/assets/img/fotos/logos/jonastorres-dev.gif");
+  background-image: url('/assets/img/fotos/logos/jonastorres-dev.gif');
   background-size: 2.25rem 2.25rem;
   display: inline-block;
   height: 2.25rem;

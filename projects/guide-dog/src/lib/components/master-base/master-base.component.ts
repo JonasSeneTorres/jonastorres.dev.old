@@ -3,12 +3,8 @@ import { Subject, takeUntil } from 'rxjs';
 
 import { AcessibilityService } from '../../services/acessibility/acessibility.service';
 
-@Component({
-  selector: 'gd-master-base',
-  templateUrl: './master-base.component.html',
-  styleUrls: ['./master-base.component.css'],
-})
-export class MasterBaseComponent implements OnInit, OnDestroy {
+@Component({ template: '' })
+export abstract class MasterBaseComponent implements OnInit, OnDestroy {
   protected _acessibilityService: AcessibilityService;
   protected _destroy$: Subject<boolean> = new Subject<boolean>();
   theme = 'ligth';

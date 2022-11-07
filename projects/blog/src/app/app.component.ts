@@ -1,7 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Injector, OnDestroy, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
+import { MasterBaseComponent } from 'projects/guide-dog/src/lib/components/master-base/master-base.component';
 import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item-config';
-import { Subject, takeUntil } from 'rxjs';
+import { takeUntil } from 'rxjs';
 
 import { CategoriasService } from './services/categorias/categorias.service';
 import { ToastService } from './services/toast/toast.service';
@@ -11,23 +12,24 @@ import { ToastService } from './services/toast/toast.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit, OnDestroy {
-  private _destroy$: Subject<boolean> = new Subject<boolean>();
-
+export class AppComponent extends MasterBaseComponent implements OnInit, OnDestroy {
   menu: NavibarItemConfig[] = [];
 
   constructor(
+    protected override injector: Injector,
     private _messageService: MessageService,
-    private categoriasService: CategoriasService,
+    private _categoriasService: CategoriasService,
     private _toastService: ToastService
   ) {
+    super(injector);
     this._toastService.itensBuscados$.subscribe((dados: any) => {
       this.exibirToast(dados.titulo, dados.mensagem, dados.icone);
     });
   }
 
-  ngOnInit(): void {
-    this.categoriasService
+  override ngOnInit(): void {
+    super.ngOnInit();
+    this._categoriasService
       .listar()
       .pipe(takeUntil(this._destroy$))
       .subscribe({
@@ -44,12 +46,6 @@ export class AppComponent implements OnInit, OnDestroy {
         error: () => {},
       });
   }
-
-  ngOnDestroy(): void {
-    this._destroy$.next(true);
-    this._destroy$.unsubscribe();
-  }
-
   private adicionarMenuComCategoria(sucesso: any, menuNovo: NavibarItemConfig[]) {
     const itensMenuComCategoria = sucesso
       .filter((item: any) => this.filtrarMenu(item, true))

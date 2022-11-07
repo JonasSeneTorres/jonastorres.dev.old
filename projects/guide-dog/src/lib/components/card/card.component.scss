@@ -1,5 +1,27 @@
-@import "../../styles/gd.scss";
+@import '../../styles/gd.scss';
 
-.card {
+.gd-card {
   @include scaffolding-card;
+}
+
+.gd__ligth {
+  &.gd-card {
+    background-color: $gd-color-white;
+    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%), 0 1px 4px rgb(0 0 0 / 12%);
+  }
+}
+
+.gd__dark {
+  &.gd-card {
+    background-color: $gd-color-white;
+    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%), 0 1px 4px rgb(0 0 0 / 12%);
+  }
+}
+
+.gd__contrast {
+  &.gd-card {
+    background-color: $gd-color-black;
+    box-shadow: 0 1px 1px -1px rgb(F F F / 20%), 0 1px 2px rgb(F F F / 14%), 0 1px 4px rgb(F F F / 12%);
+    color: $gd-color-white;
+  }
 }

@@ -1,3 +1,7 @@
-<div class="card">
+<div
+  class="gd-card"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <ng-content></ng-content>
 </div>
