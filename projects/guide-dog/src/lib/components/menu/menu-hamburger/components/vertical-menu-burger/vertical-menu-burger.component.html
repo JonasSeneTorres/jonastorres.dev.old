@@ -1,11 +1,17 @@
 <gd-button-hamburger
   [actived]="showMenu"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'"
   aria-controls="menuHamburger"
   (click)="displayOpacity($event, !showBackground)"></gd-button-hamburger>
 
 <div
   id="menuHamburger"
   class="gd-menu-hamburger__nav"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'"
   (click)="displayOpacity($event, false)"
   [@showHideBackgroundModal]="showBackground.toString() === 'true'"
   (@showHideBackgroundModal.done)="showHideMenu()">

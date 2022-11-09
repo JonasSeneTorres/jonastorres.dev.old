@@ -1,2 +1,12 @@
-<gd-horizontal-menu-burguer [nav]="nav" *ngIf="showHorizontalMenu"></gd-horizontal-menu-burguer>
-<gd-vertical-menu-burger [nav]="nav" *ngIf="!showHorizontalMenu"></gd-vertical-menu-burger>
+<gd-horizontal-menu-burguer
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'"
+  [nav]="nav"
+  *ngIf="showHorizontalMenu"></gd-horizontal-menu-burguer>
+<gd-vertical-menu-burger
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'"
+  [nav]="nav"
+  *ngIf="!showHorizontalMenu"></gd-vertical-menu-burger>

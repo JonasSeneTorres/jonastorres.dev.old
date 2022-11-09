@@ -83,6 +83,7 @@
     .app-container-conteudo main#conteudo, .app-container-conteudo aside {
       background-color: #000;
       border: solid 1px $gd-color-white;
+      box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 2px 3px rgb(255 255 255 / 14%), 0 1px 9px rgb(255 255 255 / 69%);
       // color: $gd-color-white;
     }
   }

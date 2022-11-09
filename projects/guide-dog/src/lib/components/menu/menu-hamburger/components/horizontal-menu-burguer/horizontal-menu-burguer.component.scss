@@ -138,6 +138,15 @@ gd-centered-panel div {
   }
 }
 
+.gd__ligth {
+}
+
+.gd__dark {
+}
+
+.gd__contrast {
+}
+
 @include media-up(var(--gd-min-content-box)) {
   .gd-menu-hamburger {
     &__nav-container {

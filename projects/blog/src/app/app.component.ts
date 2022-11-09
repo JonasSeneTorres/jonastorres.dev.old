@@ -1,4 +1,5 @@
-import { Component, Injector, OnDestroy, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, Injector, OnDestroy, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { MasterBaseComponent } from 'projects/guide-dog/src/lib/components/master-base/master-base.component';
 import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item-config';
@@ -17,6 +18,7 @@ export class AppComponent extends MasterBaseComponent implements OnInit, OnDestr
 
   constructor(
     protected override injector: Injector,
+    @Inject(DOCUMENT) private document: Document,
     private _messageService: MessageService,
     private _categoriasService: CategoriasService,
     private _toastService: ToastService
@@ -46,6 +48,16 @@ export class AppComponent extends MasterBaseComponent implements OnInit, OnDestr
         error: () => {},
       });
   }
+
+  protected override observeStateAcessibility(): void {
+    this._acessibilityService.stateAcessibility$.pipe(takeUntil(this._destroy$)).subscribe((stateAcessibility: any) => {
+      this.zoom = stateAcessibility.zoom;
+      this.theme = stateAcessibility.theme;
+      this.document.body.classList.remove('gd_theme_ligth', 'gd_theme_dark', 'gd_theme_contrast');
+      this.document.body.classList.add(`gd_theme_${this.theme}`);
+    });
+  }
+
   private adicionarMenuComCategoria(sucesso: any, menuNovo: NavibarItemConfig[]) {
     const itensMenuComCategoria = sucesso
       .filter((item: any) => this.filtrarMenu(item, true))

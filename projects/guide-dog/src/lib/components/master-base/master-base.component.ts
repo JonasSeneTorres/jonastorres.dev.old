@@ -37,7 +37,7 @@ export abstract class MasterBaseComponent implements OnInit, OnDestroy {
     this._acessibilityService.setTheme(value);
   }
 
-  private observeStateAcessibility(): void {
+  protected observeStateAcessibility(): void {
     this._acessibilityService.stateAcessibility$.pipe(takeUntil(this._destroy$)).subscribe((stateAcessibility: any) => {
       this.zoom = stateAcessibility.zoom;
       this.theme = stateAcessibility.theme;

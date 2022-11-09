@@ -250,4 +250,30 @@ $gd-colordark-info-A700: makeColorPaletteA700($gd-setcolordark-info);
 
 :root {
   --gd-min-content-box: #{$gd-min-content-box};
+
+  body{
+    &.gd_theme_contrast {
+      background-color: $gd-color-black;
+      color: $gd-color-white;
+
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        color: $gd-color-darkmode-interative;
+      }
+
+      button, input[type="button"] {
+        background-color: $gd-color-darkmode-interative;
+        color: $gd-color-black;
+
+        &:disabled {
+          background-color: $gd-color-black;
+          border: solid 1px $gd-color-white;
+          color: $gd-color-white;
+        }
+      }
+    }
+  }
 }
+

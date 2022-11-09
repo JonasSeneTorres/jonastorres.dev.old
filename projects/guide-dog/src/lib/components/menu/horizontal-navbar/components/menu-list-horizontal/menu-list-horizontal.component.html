@@ -1,4 +1,8 @@
-<uL [class.show]="show">
+<uL
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'"
+  [class.show]="show">
   <ng-container *ngFor="let item of navibarItemList">
     <li>
       <a [routerLink]="item.route">{{ item.label }}</a>

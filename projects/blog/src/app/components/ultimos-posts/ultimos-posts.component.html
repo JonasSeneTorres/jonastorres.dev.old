@@ -1,4 +1,9 @@
-<section class="ultimos-posts" *ngIf="ultimosArtigos.length > 0">
+<section
+  class="ultimos-posts"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'"
+  *ngIf="ultimosArtigos.length > 0">
   <h2>Ultimos artigos</h2>
   <ul class="ultimos-posts__list">
     <li *ngFor="let artigo of ultimosArtigos; let i = index">

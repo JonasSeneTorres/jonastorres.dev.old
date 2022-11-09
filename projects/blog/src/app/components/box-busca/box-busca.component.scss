@@ -2,7 +2,7 @@
 
 .box-busca {
   margin-bottom: 1rem;
-  max-width: 22rem;
+  // max-width: 22rem;
   width: 100%;
 
   @include media-down($gd-media-tablet-maxwidth) {
@@ -19,6 +19,30 @@ input {
 }
 
 h2 {
+  color: $gd-color-black;
   font-size: 1.7rem;
   margin: 0 0 0.5rem;
+}
+
+.gd__contrast {
+  h2 {
+    color: $gd-color-white;
+  }
+
+  input, input:focus, input:focus-visible {
+    border: solid 1px $gd-color-darkmode-interative;
+    background-color: $gd-color-black;
+    color: $gd-color-darkmode-interative;
+  }
+
+  input:focus-visible, input:focus {
+    outline: solid 1px $gd-color-darkmode-interative;
+    // box-shadow: 1px 1px 2px $gd-color-darkmode-interative;
+    // lighting-color: $gd-color-darkmode-interative;
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $gd-color-darkmode-interative;
+    opacity: 1; /* Firefox */
+  }
 }

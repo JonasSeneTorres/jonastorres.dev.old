@@ -1,9 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
-
+import { Component, Injector, Input } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { ModalService } from 'projects/guide-dog/src/lib/services/modal/modal.service';
 import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item-config';
+
+import { MasterBaseComponent } from '../../../../master-base/master-base.component';
 
 @Component({
   selector: 'gd-vertical-menu-burger',
@@ -64,13 +65,15 @@ import { NavibarItemConfig } from 'projects/guide-dog/src/lib/types/navibar-item
     ]),
   ],
 })
-export class VerticalMenuBurgerComponent {
+export class VerticalMenuBurgerComponent extends MasterBaseComponent {
   @Input() nav: NavibarItemConfig[] = [];
   showBackground = false;
   showMenu = false;
   disabledButtom = false;
 
-  constructor(private modalService: ModalService, private router: Router) {}
+  constructor(protected override injector: Injector, private modalService: ModalService, private router: Router) {
+    super(injector);
+  }
 
   displayOpacity(event: Event, showModal: boolean) {
     event.stopPropagation();

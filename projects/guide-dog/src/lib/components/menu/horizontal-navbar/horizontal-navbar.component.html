@@ -1,4 +1,8 @@
-<div class="gd-h-navbar">
+<div
+  class="gd-h-navbar"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <ul class="gd-header__menu-main">
     <ng-container *ngFor="let itemNav of nav">
       <li

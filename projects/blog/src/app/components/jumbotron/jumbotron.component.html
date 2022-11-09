@@ -1,4 +1,8 @@
-<div class="jumbotron">
+<div
+  class="jumbotron"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <div class="jumbotron__vitrine">
     <gd-centered-panel>
       <div class="jumbotron__conteudo jumbotron__conteudo-{{ (dadosJumbotron$ | async)?.categoria }}">

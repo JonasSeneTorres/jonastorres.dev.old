@@ -21,7 +21,9 @@
 .gd__contrast {
   &.gd-card {
     background-color: $gd-color-black;
-    box-shadow: 0 1px 1px -1px rgb(F F F / 20%), 0 1px 2px rgb(F F F / 14%), 0 1px 4px rgb(F F F / 12%);
+    border: solid 1px $gd-color-white;
+    // box-shadow: 0 1px 1px -1px rgb(F F F / 20%), 0 1px 2px rgb(F F F / 14%), 0 1px 4px rgb(F F F / 12%);
+    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 2px 3px rgb(255 255 255 / 14%), 0 1px 9px rgb(255 255 255 / 69%);
     color: $gd-color-white;
   }
 }

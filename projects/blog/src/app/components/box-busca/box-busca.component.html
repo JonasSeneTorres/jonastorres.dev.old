@@ -1,4 +1,10 @@
-<section class="box-busca">
+<section
+  class="box-busca"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <h2>Busca</h2>
-  <input type="search" placeholder="Buscar" />
+  <div>
+    <input type="search" placeholder="Buscar" />
+  </div>
 </section>

@@ -1,4 +1,9 @@
-<section class="categoria" *ngIf="categorias.length > 0">
+<section
+  class="categoria"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'"
+  *ngIf="categorias.length > 0">
   <h2 class="categoria__titulo">Categorias</h2>
   <ul class="categoria__lista">
     <ng-container *ngFor="let classificacao of categorias">

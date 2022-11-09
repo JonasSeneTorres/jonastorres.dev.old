@@ -1,6 +1,8 @@
-body.modal-open {
-  height: 100vh;
-  overflow-y: hidden;
+body{
+  &.modal-open {
+    height: 100vh;
+    overflow-y: hidden;
+  }
 }
 
 main.main {

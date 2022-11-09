@@ -42,6 +42,7 @@ h2 {
       'thumb titulo'
       'thumb detalhes';
     grid-template-columns: auto 1fr;
+    overflow: hidden;
     padding: 0.5rem 0 0.5rem 0;
     transition: all 0.5s ease;
 
@@ -125,6 +126,30 @@ h2 {
   &__detalhes {
     grid-area: detalhes;
     margin-top: 0.5rem;
+  }
+
+  &.gd__contrast {
+    h2 {
+      color: $gd-color-white;
+    }
+
+    .ultimos-posts{
+      &__artigo {
+        background-color: $gd-color-darkmode-interative;
+        color: $gd-color-black;
+      }
+
+      &__thumb {
+        background: $gd-color-white !important;
+        color: $gd-color-black !important;
+        overflow: hidden;
+
+        &::after {
+          background-image: url(/assets/img/backgrounds/circuit-board-black.svg);
+          transform: scale(1);
+        }
+      }
+    }
   }
 }
 

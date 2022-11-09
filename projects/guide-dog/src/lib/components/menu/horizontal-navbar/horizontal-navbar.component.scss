@@ -31,10 +31,6 @@
     position: relative;
     text-decoration: none;
 
-    // &:active  {
-    //   color: $gd-setcolorligth-secondary;
-    // }
-
     &2 {
       color: rgba($gd-color-white, 0.85);
       cursor: pointer;
@@ -92,6 +88,45 @@
 
 .fa-caret-down {
   transition: all 250ms ease;
+}
+
+.gd__ligth {
+  button,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: $gd-color-white;
+  }
+}
+
+.gd__dark {
+  button,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: $gd-color-white;
+  }
+}
+
+.gd__contrast {
+  .gd-header__link {
+    color: $gd-color-darkmode-interative !important;
+
+    &::before {
+      background-color: $gd-color-darkmode-interative;
+    }
+  }
+
+  button,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    background-color: $gd-color-black;
+    color: $gd-color-darkmode-interative;
+  }
 }
 
 :host::ng-deep {

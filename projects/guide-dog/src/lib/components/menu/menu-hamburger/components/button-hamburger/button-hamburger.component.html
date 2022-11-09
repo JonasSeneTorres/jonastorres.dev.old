@@ -3,6 +3,9 @@
   tabindex="0"
   class="hamburger hamburger--spin gd-button-hamburger"
   [attr.aria-expanded]="actived"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'"
   [class.is-active]="actived"
   [attr.aria-label]="actived ? 'Abrir menu' : 'Fechar menu'">
   <span class="hamburger-box">
