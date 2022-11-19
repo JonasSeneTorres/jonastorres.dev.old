@@ -43,3 +43,22 @@
     }
   }
 }
+
+
+.gd__ligth {
+  &.vitrine {
+    color: $gd-color-black;
+  }
+}
+
+.gd__dark {
+  &.vitrine {
+    color: $gd-color-black;
+  }
+}
+
+.gd__contrast {
+  &.vitrine {
+    color: $gd-color-white;
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Injector, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { JonastorresRoutes } from 'projects/blog/src/app/enuns/jonastorres-routes.enum';
 import { ArtigosService } from 'projects/blog/src/app/services/artigos/artigos.service';
@@ -6,15 +6,16 @@ import { AutoresService } from 'projects/blog/src/app/services/autores/autores.s
 import { BlogService } from 'projects/blog/src/app/services/blog/blog.service';
 import { CategoriasService } from 'projects/blog/src/app/services/categorias/categorias.service';
 import { JumbotronService } from 'projects/blog/src/app/services/jumbotron/jumbotron.service';
+import { MasterBaseComponent } from 'projects/guide-dog/src/lib/components/master-base/master-base.component';
 import { BreadcrumbsItem } from 'projects/guide-dog/src/lib/types/breadcrumbs-item.type';
-import { forkJoin, Observable, Subject, takeUntil } from 'rxjs';
+import { forkJoin, Observable, takeUntil } from 'rxjs';
 
 @Component({
   templateUrl: './artigo.component.html',
   styleUrls: ['./artigo.component.scss'],
 })
-export class ArtigoComponent implements OnInit, OnDestroy {
-  private _destroy$: Subject<boolean> = new Subject<boolean>();
+export class ArtigoComponent extends MasterBaseComponent implements OnInit, OnDestroy {
+  // private _destroy$: Subject<boolean> = new Subject<boolean>();
 
   dadosArtigo: any;
   categorias: any[] = [];
@@ -31,13 +32,18 @@ export class ArtigoComponent implements OnInit, OnDestroy {
     private _blogService: BlogService,
     private _jumbotronService: JumbotronService,
     private _activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    protected override injector: Injector
   ) {
+    super(injector);
+    // ) {
+
     this._blogService.tornarBoxPrincipalTransparente(true);
     this.breadcrumbsItem = [];
   }
 
-  ngOnInit(): void {
+  override ngOnInit(): void {
+    super.ngOnInit();
     this._activatedRoute.params.pipe(takeUntil(this._destroy$)).subscribe((params: Params) => {
       const labelGrupo = `${params['grupo']}`;
       const routeGrupo = `/blog/${params['grupo']}`;
@@ -98,10 +104,10 @@ export class ArtigoComponent implements OnInit, OnDestroy {
       });
   }
 
-  ngOnDestroy(): void {
-    this._destroy$.next(true);
-    this._destroy$.unsubscribe();
-  }
+  // ngOnDestroy(): void {
+  //   this._destroy$.next(true);
+  //   this._destroy$.unsubscribe();
+  // }
 
   private consutarDadosIniciais(): Observable<any> {
     const obterArtigo = this._artigosService.obterPorURL(this.router.url);

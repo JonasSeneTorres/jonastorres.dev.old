@@ -1,4 +1,8 @@
-<section class="artigo">
+<section
+  class="artigo"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
   <div [innerHtml]="dadosArtigo?.conteudoArtigo"></div>
 </section>

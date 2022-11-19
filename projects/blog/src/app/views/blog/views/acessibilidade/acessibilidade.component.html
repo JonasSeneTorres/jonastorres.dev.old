@@ -1,4 +1,8 @@
-<gd-card class="acessibilidade__espacador">
+<gd-card
+  class="acessibilidade__espacador"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
   <blockquote>
     <span class="manuscrito">

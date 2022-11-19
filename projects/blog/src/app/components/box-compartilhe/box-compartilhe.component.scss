@@ -1,9 +1,6 @@
 @import "../../../styles/styles.scss";
 
 .box-compartilhe {
-  background-color: $gd-colorligth-secondary-500;
-
-  color: $gd-color-white;
   margin-top: 1rem;
   @include box-shadow;
 
@@ -102,4 +99,41 @@
 span {
   display: inline-block;
   transition: all 0.3s;
+}
+
+
+.gd__ligth {
+  &.box-compartilhe {
+    background-color: $gd-colorligth-secondary-500;
+    border: none;
+    color: $gd-color-white;
+  }
+}
+
+.gd__dark {
+  &.box-compartilhe {
+    background-color: $gd-colorligth-secondary-500;
+    border: none;
+    color: $gd-color-white;
+  }
+}
+
+.gd__contrast {
+  &.box-compartilhe {
+    background-color: $gd-color-black;
+    border: solid 1px $gd-color-white;
+    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 2px 3px rgb(255 255 255 / 14%), 0 1px 9px rgb(255 255 255 / 69%);
+    color: $gd-color-white;
+
+    a,
+    a:link,
+    a:visited,
+    a:hover {
+      color: $gd-color-darkmode-interative;
+    }
+
+    a:active {
+      color: $gd-color-white;
+    }
+  }
 }

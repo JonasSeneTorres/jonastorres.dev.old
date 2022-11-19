@@ -6,3 +6,31 @@
     margin-bottom: 1rem;
   }
 }
+
+
+.gd__ligth {
+  &.acessibilidade {
+
+  }
+}
+
+.gd__dark {
+  &.acessibilidade  {
+  }
+}
+
+.gd__contrast {
+  &.acessibilidade  {
+  }
+
+  blockquote {
+    background-color: $gd-color-black;
+    border: solid 3px $gd-color-white;
+    border-left: solid 1rem $gd-color-white;
+
+    &:after {
+      background-image: none;
+    }
+  }
+}
+

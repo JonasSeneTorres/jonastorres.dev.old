@@ -2,6 +2,7 @@
 
 h2 {
   font-size: 1.75rem;
+  color: $gd-color-black;
 
   @include media-down($gd-media-tablet-maxwidth) {
     margin: 0.5rem 0 0.5rem 0;
@@ -13,6 +14,8 @@ h2 {
 }
 
 .ultimos-posts {
+  color: $gd-color-black;
+
   @include media-down($gd-media-tablet-maxwidth) {
     @include scaffolding-card;
     margin-bottom: 0.5rem;
@@ -133,7 +136,7 @@ h2 {
       color: $gd-color-white;
     }
 
-    .ultimos-posts{
+    .ultimos-posts {
       &__artigo {
         background-color: $gd-color-darkmode-interative;
         color: $gd-color-black;

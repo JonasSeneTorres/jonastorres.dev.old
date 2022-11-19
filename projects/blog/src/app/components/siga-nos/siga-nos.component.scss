@@ -1,14 +1,11 @@
-@import "../../../styles/styles.scss";
+@import '../../../styles/styles.scss';
 
 .siganos {
-  background-color: $gd-colorligth-primary-300;
-  color: $gd-color-white;
   padding: 1.5rem 0 0.5rem 0;
 
-@include media-down($gd-media-tablet-maxwidth) {
-    @include box-shadow
+  @include media-down($gd-media-tablet-maxwidth) {
+    @include box-shadow;
   }
-
 
   @include media-up($gd-media-tablet-maxwidth) {
     border-radius: 8px;
@@ -71,4 +68,39 @@
 span {
   display: inline-block;
   transition: all 0.3s;
+}
+
+.gd__ligth {
+  &.siganos {
+    background-color: $gd-colorligth-primary-300;
+    border: none;
+    color: $gd-color-white;
+  }
+}
+
+.gd__dark {
+  &.siganos {
+    background-color: $gd-colorligth-primary-300;
+    border: none;
+    color: $gd-color-white;
+  }
+}
+
+.gd__contrast {
+  &.siganos {
+    background-color: $gd-color-black;
+    border: solid 1px $gd-color-white;
+    color: $gd-color-white;
+
+    a,
+    a:link,
+    a:visited,
+    a:hover {
+      color: $gd-color-darkmode-interative;
+    }
+
+    a:active {
+      color: $gd-color-white;
+    }
+  }
 }

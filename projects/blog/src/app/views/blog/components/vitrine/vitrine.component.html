@@ -1,4 +1,8 @@
-<section class="vitrine">
+<section
+  class="vitrine"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <h2 class="vitrine__titulo">Artigos populares</h2>
   <div class="vitrine__grid">
     <ng-container *ngFor="let item of ultimosArtigos; let i = index">

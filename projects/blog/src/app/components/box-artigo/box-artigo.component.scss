@@ -5,7 +5,6 @@
 }
 
 .artigo-box {
-  background-color: $gd-colorligth-primary-50;
   border-radius: 8px;
   cursor: pointer;
   display: grid;
@@ -120,7 +119,7 @@
     );
     border: solid 1px #000;
     border-radius: 8px;
-    color: $gd-color-white;;
+    color: $gd-color-white;
     display: grid;
     justify-content: center;
     justify-items: baseline;
@@ -135,7 +134,7 @@
     }
 
     &:after {
-      background-image: url("/assets/img/backgrounds/circuit-board-white.svg");
+      // background-image: url("/assets/img/backgrounds/circuit-board-white.svg");
       content: "";
       display: block;
       height: 100%;
@@ -222,9 +221,9 @@
   }
 
   &__leia-mais {
-    background-color: $gd-colorligth-primary-300;
+    // background-color: $gd-colorligth-primary-300;
     border-radius: 8px;
-    color: $gd-color-white;
+    // color: $gd-color-white;
     cursor: pointer;
     display: inline-block;
     font-family: $title_font_family;
@@ -304,4 +303,84 @@
     background-position-x: -20%;
   }
 }
+
+.gd__ligth {
+  &.artigo-box {
+    background-color: $gd-colorligth-primary-50;
+
+    .artigo-box{
+      &__titulo, &__subtitulo, &__spoiler, &__dados {
+        color: $gd-color-black;
+      }
+
+      &__leia-mais {
+        background-color: $gd-colorligth-primary-300;
+        color: $gd-color-white;
+      }
+
+      &__capa {
+        background-image: url("/assets/img/backgrounds/circuit-board-white.svg");
+      }
+    }
+
+  }
+}
+
+.gd__dark {
+  &.artigo-box {
+    background-color: $gd-colorligth-primary-50;
+
+    .artigo-box{
+      &__titulo, &__subtitulo, &__spoiler, &__dados {
+        color: $gd-color-black;
+      }
+
+      &__leia-mais {
+        background-color: $gd-colorligth-primary-300;
+        color: $gd-color-white;
+      }
+
+
+      &__capa {
+        background-image: url("/assets/img/backgrounds/circuit-board-white.svg");
+      }
+    }
+  }
+}
+
+.gd__contrast {
+  &.artigo-box {
+    background-color: $gd-color-darkmode-interative;
+
+    .artigo-box{
+      &__titulo, &__subtitulo, &__spoiler, &__dados {
+        color: $gd-color-black;
+      }
+
+      &__leia-mais {
+        background-color:  $gd-color-black;
+        color: $gd-color-white;
+      }
+
+      &__capa {
+        background: transparent !important;
+        background-color: $gd-color-white !important;
+        border: solid 3px $gd-color-black;
+        // opacity: 1;
+
+        &:after {
+          background-color: $gd-color-white;
+          background-image: url("/assets/img/backgrounds/circuit-board-black.svg");
+          opacity: 0.1;
+        }
+      }
+
+      &__thumb {
+        color: $gd-color-black;
+      }
+    }
+  }
+}
+
+
 

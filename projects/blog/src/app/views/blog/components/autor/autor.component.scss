@@ -6,7 +6,6 @@ h2 {
 
 .autor {
   @include scaffolding-card;
-  background-color: $gd-colorligth-primary-200;
   display: grid;
   line-height: 1.8rem;
   margin: 1rem 0 0rem;
@@ -115,3 +114,38 @@ h2 {
     }
   }
 }
+
+
+.gd__ligth {
+  &.autor {
+    background-color: $gd-colorligth-primary-200;
+    border: none;
+    color: $gd-color-black;
+  }
+}
+
+.gd__dark {
+  &.autor {
+    background-color: $gd-colorligth-primary-200;
+    border: none;
+    color: $gd-color-black;
+  }
+}
+
+.gd__contrast {
+  &.autor {
+    background-color: $gd-color-black;
+    border: solid 1px $gd-color-white;
+    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 2px 3px rgb(255 255 255 / 14%), 0 1px 9px rgb(255 255 255 / 69%);
+    color: $gd-color-white;
+
+    img {
+      border: solid 3px $gd-color-white;
+      border-radius: 16px;
+      // filter: invert(100%);
+      filter: grayscale(100%);
+      width: 146px;
+    }
+  }
+}
+

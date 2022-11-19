@@ -1,4 +1,8 @@
-<section class="autor">
+<section
+  class="autor"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <div class="autor__foto">
     <img [src]="autor?.urlImagem" alt="Foto de {{ autor?.nome }}" />
   </div>

@@ -1,6 +1,7 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Injector, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { forkJoin, Observable, Subject, takeUntil } from 'rxjs';
+import { MasterBaseComponent } from 'projects/guide-dog/src/lib/components/master-base/master-base.component';
+import { forkJoin, Observable, takeUntil } from 'rxjs';
 
 import { BlogService } from '../../services/blog/blog.service';
 import { ArtigosService } from './../../services/artigos/artigos.service';
@@ -11,8 +12,8 @@ import { CategoriasService } from './../../services/categorias/categorias.servic
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss'],
 })
-export class BlogComponent implements OnInit, OnDestroy {
-  private _destroy$: Subject<boolean> = new Subject<boolean>();
+export class BlogComponent extends MasterBaseComponent implements OnInit, OnDestroy {
+  // private _destroy$: Subject<boolean> = new Subject<boolean>();
 
   categorias = [];
   ultimosArtigos = [];
@@ -23,12 +24,15 @@ export class BlogComponent implements OnInit, OnDestroy {
     private _categoriasService: CategoriasService,
     private _blogService: BlogService,
     private _router: Router,
-    private _changeDetectorRef: ChangeDetectorRef
+    private _changeDetectorRef: ChangeDetectorRef,
+    protected override injector: Injector
   ) {
+    super(injector);
     this.boxPrincipalTransparente = this._blogService.boxPrincipalTransparente;
   }
 
-  ngOnInit(): void {
+  override ngOnInit(): void {
+    super.ngOnInit();
     forkJoin({
       artigos: this._artigosService.listarUltimosArtigos(),
       categorias: this._categoriasService.listar(),
@@ -49,10 +53,10 @@ export class BlogComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
-    this._destroy$.next(true);
-    this._destroy$.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //   this._destroy$.next(true);
+  //   this._destroy$.unsubscribe();
+  // }
 
   private escutarBusca(dados: Observable<any>) {
     dados.pipe(takeUntil(this._destroy$)).subscribe(data => {

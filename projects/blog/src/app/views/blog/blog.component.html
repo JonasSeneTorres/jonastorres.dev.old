@@ -1,4 +1,8 @@
-<div class="blog">
+<div
+  class="blog"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <jt-jumbotron class="blog__jumbotron"></jt-jumbotron>
   <main id="conteudo" class="blog__main" *ngIf="(boxPrincipalTransparente | async) !== true">
     <router-outlet></router-outlet>

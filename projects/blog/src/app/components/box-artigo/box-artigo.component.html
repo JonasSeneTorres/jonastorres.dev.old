@@ -1,21 +1,27 @@
-<article class="artigo-box" [class.artigo-box__active]="dadosCarregados" [routerLink]="[artigo?.url]">
+<article
+  class="artigo-box"
+  [class.artigo-box__active]="dadosCarregados"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'"
+  [routerLink]="[artigo?.url]">
   <section
     class="{{ icone }}"
     [class.artigo-box__capa.active]="dadosCarregados"
     [class.artigo-box__capaloading]="!dadosCarregados"
     [class.loading]="!dadosCarregados">
-    <span class="fa-brands fa-angular" *ngIf="dadosCarregados && icone === 'angular'"></span>
-    <span class="fa-brands fa-angular" *ngIf="dadosCarregados && icone === 'angularjs'"></span>
-    <span class="fa-solid fa-pen-ruler" *ngIf="dadosCarregados && icone === 'arquitetura'"></span>
-    <span class="fa-brands fa-css3" *ngIf="dadosCarregados && icone === 'css'"></span>
+    <span class="artigo-box__thumb fa-brands fa-angular" *ngIf="dadosCarregados && icone === 'angular'"></span>
+    <span class="artigo-box__thumb fa-brands fa-angular" *ngIf="dadosCarregados && icone === 'angularjs'"></span>
+    <span class="artigo-box__thumb fa-solid fa-pen-ruler" *ngIf="dadosCarregados && icone === 'arquitetura'"></span>
+    <span class="artigo-box__thumb fa-brands fa-css3" *ngIf="dadosCarregados && icone === 'css'"></span>
 
     <img src="assets/img/fotos/logos/c-sharp-branco.gif" width="200px" *ngIf="dadosCarregados && icone === 'dotnet'" />
     <img src="assets/img/fotos/logos/flutter.svg" width="200px" *ngIf="dadosCarregados && icone === 'flutter'" />
-    <span class="fa-brands fa-html5" *ngIf="dadosCarregados && icone === 'html'"></span>
-    <span class="fa-brands fa-js" *ngIf="dadosCarregados && icone === 'js'"></span>
+    <span class="artigo-box__thumb fa-brands fa-html5" *ngIf="dadosCarregados && icone === 'html'"></span>
+    <span class="artigo-box__thumb fa-brands fa-js" *ngIf="dadosCarregados && icone === 'js'"></span>
 
-    <span class="fa-brands fa-react" *ngIf="dadosCarregados && icone === 'react'"></span>
-    <span class="fa-brands fa-vuejs" *ngIf="dadosCarregados && icone === 'vue'"></span>
+    <span class="artigo-box__thumb fa-brands fa-react" *ngIf="dadosCarregados && icone === 'react'"></span>
+    <span class="artigo-box__thumb fa-brands fa-vuejs" *ngIf="dadosCarregados && icone === 'vue'"></span>
   </section>
   <div class="artigo-box__box-conteudo">
     <div class="artigo-box__ghost-box-titulo" *ngIf="!dadosCarregados">
