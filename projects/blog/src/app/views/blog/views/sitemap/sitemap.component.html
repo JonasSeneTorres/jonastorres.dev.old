@@ -1,43 +1,49 @@
-<gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
-<ul>
-  <li>
-    <a>Home</a>
-  </li>
-  <li>
-    <ul>
-      <li>
-        <a>Acessibilidade</a>
-      </li>
-      <li>
-        <a>Sobre</a>
-      </li>
-      <li>
-        <a>Autores</a>
-      </li>
-      <li>
-        <a>Contato</a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul>
-      <li>
-        <a>Frontend</a>
-        <ul>
-          <li>
-            <a>HTML</a>
-          </li>
-          <li>
-            <a>CSS</a>
-          </li>
-          <li>
-            <a>Javascript</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a>arquitetura</a>
-      </li>
-    </ul>
-  </li>
-</ul>
+<div
+  class="sitemap"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
+  <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
+  <ul>
+    <li>
+      <a>Home</a>
+    </li>
+    <li>
+      <ul>
+        <li>
+          <a>Acessibilidade</a>
+        </li>
+        <li>
+          <a>Sobre</a>
+        </li>
+        <li>
+          <a>Autores</a>
+        </li>
+        <li>
+          <a>Contato</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>
+          <a>Frontend</a>
+          <ul>
+            <li>
+              <a>HTML</a>
+            </li>
+            <li>
+              <a>CSS</a>
+            </li>
+            <li>
+              <a>Javascript</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a>arquitetura</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,4 +1,8 @@
-<article>
+<article
+  class="sobre"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
   <blockquote>
     <span class="manuscrito">“Se eu vi mais longe, foi porque estava sobre os ombros de gigantes”</span>

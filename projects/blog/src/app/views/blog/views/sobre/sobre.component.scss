@@ -1,0 +1,36 @@
+@import '../../../../../../../guide-dog/src/lib/styles/gd.scss';
+
+.sobre {
+  @include scaffolding-card;
+  // border-radius: 16px;
+  padding: 1rem;
+}
+
+.gd__ligth {
+  &.sobre {
+  }
+}
+
+.gd__dark {
+  &.sobre {
+  }
+}
+
+.gd__contrast {
+  &.sobre {
+    background-color: $gd-color-black;
+    border: solid 1px $gd-color-white;
+    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 2px 3px rgb(255 255 255 / 14%), 0 1px 9px rgb(255 255 255 / 69%);
+    color: $gd-color-white;
+
+    blockquote {
+      background-color: $gd-color-black;
+      border: solid 3px $gd-color-white;
+      border-left: solid 1rem $gd-color-white;
+
+      &:after{
+        background-image: none;
+      }
+    }
+  }
+}

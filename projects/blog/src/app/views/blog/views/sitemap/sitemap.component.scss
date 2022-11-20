@@ -1,0 +1,25 @@
+@import '../../../../../../../guide-dog/src/lib/styles/gd.scss';
+
+.sitemap {
+  @include scaffolding-card;
+  // border-radius: 16px;
+  padding: 1rem;
+}
+
+.gd__ligth {
+  &.sitemap {
+  }
+}
+
+.gd__dark {
+  &.sitemap {
+  }
+}
+
+.gd__contrast {
+  &.sitemap {
+    background-color: $gd-color-black;
+    border: solid 1px #fff;
+    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 2px 3px rgb(255 255 255 / 14%), 0 1px 9px rgb(255 255 255 / 69%);
+  }
+}
