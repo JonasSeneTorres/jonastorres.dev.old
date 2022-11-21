@@ -1,4 +1,4 @@
-@import '../../../styles/styles.scss';
+@import "../../../styles/styles.scss";
 
 .blog {
   @include media-down($gd-media-tablet-maxwidth - 1) {
@@ -13,8 +13,8 @@
     column-gap: 1rem;
     display: grid;
     grid-template-areas:
-      'jumbotron jumbotron'
-      'main aside';
+    'jumbotron jumbotron'
+    'main aside';
     grid-template-columns: 1fr 25rem;
     row-gap: 1.6rem;
   }
@@ -24,7 +24,7 @@
   }
 
   &__main {
-    // @include scaffolding-card;
+    @include scaffolding-card;
     grid-area: main;
     height: 100%;
 
@@ -37,66 +37,33 @@
   }
 
   &__aside {
-    // @include scaffolding-card;
+    @include scaffolding-card;
     grid-area: aside;
     height: 100%;
   }
 }
 
+
 .gd__ligth {
   &.blog {
-    .blog{
-      &__main {
-        @include scaffolding-card;
-        grid-area: main;
-        height: 100%;
-
-        &-transparente {
-          border: none !important;
-          grid-area: main;
-          height: 100%;
-          z-index: 1;
-        }
-      }
-
-      &__aside {
-        @include scaffolding-card;
-        grid-area: aside;
-        height: 100%;
-      }
+    .blog {
     }
   }
 }
 
 .gd__dark {
   &.blog {
+    .blog {
+      &__aside, &__main {
+        background-color: $gd-colordark-gray-900;
+      }
+    }
   }
 }
 
 .gd__contrast {
   &.blog {
-    .blog{
-      &__main {
-        @include scaffolding-card;
-        background-color: transparent;
-        grid-area: main;
-        height: 100%;
-
-        &-transparente {
-          border: none !important;
-          grid-area: main;
-          height: 100%;
-          z-index: 1;
-        }
-      }
-
-      &__aside {
-        @include scaffolding-card;
-        background-color: $gd-color-black !important;
-        box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 2px 3px rgb(255 255 255 / 14%), 0 1px 9px rgb(255 255 255 / 69%);
-        grid-area: aside;
-        height: 100%;
-      }
+    .blog {
     }
   }
 }

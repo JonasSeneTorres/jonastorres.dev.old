@@ -1,0 +1,99 @@
+@import '../../../../../../../guide-dog/src/lib/styles/gd.scss';
+
+.autores {
+  @include scaffolding-card;
+  // border-radius: 16px;
+  padding: 1rem;
+}
+
+.gd__ligth {
+  &.autores {
+  }
+}
+
+.gd__dark {
+  &.autores {
+  }
+}
+
+.gd__contrast {
+  &.autores {
+    background-color: $gd-color-black;
+    border: solid 1px $gd-color-white;
+    box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 2px 3px rgb(255 255 255 / 14%), 0 1px 9px rgb(255 255 255 / 69%);
+    color: $gd-color-white;
+
+
+  }
+}
+
+// $gd-colorligth-black-50: makeColorPalette50($gd-color-black);
+// $gd-colorligth-black-100: makeColorPalette100($gd-color-black);
+// $gd-colorligth-black-200: makeColorPalette200($gd-color-black);
+// $gd-colorligth-black-300: makeColorPalette300($gd-color-black);
+// $gd-colorligth-black-400: makeColorPalette400($gd-color-black);
+// $gd-colorligth-black-500: makeColorPalette500($gd-color-black);
+// $gd-colorligth-black-600: makeColorPalette600($gd-color-black);
+// $gd-colorligth-black-700: makeColorPalette700($gd-color-black);
+// $gd-colorligth-black-800: makeColorPalette800($gd-color-black);
+// $gd-colorligth-black-900: makeColorPalette900($gd-color-black);
+// $gd-colorligth-black-A100: makeColorPaletteA100($gd-color-black);
+// $gd-colorligth-black-A200: makeColorPaletteA200($gd-color-black);
+// $gd-colorligth-black-A400: makeColorPaletteA400($gd-color-black);
+// $gd-colorligth-black-A700: makeColorPaletteA700($gd-color-black);
+
+.gd-colorligth-black-50 {
+  background-color: $gd-colorligth-gray-50;
+}
+
+.gd-colorligth-gray-100 {
+  background-color: $gd-colorligth-gray-100;
+}
+
+.gd-colorligth-gray-200 {
+  background-color: $gd-colorligth-gray-200;
+}
+
+.gd-colorligth-gray-300 {
+  background-color: $gd-colorligth-gray-300;
+}
+
+.gd-colorligth-gray-400 {
+  background-color: $gd-colorligth-gray-400;
+}
+
+.gd-colorligth-gray-500 {
+  background-color: $gd-colorligth-gray-500;
+}
+
+.gd-colorligth-gray-600 {
+  background-color: $gd-colorligth-gray-600;
+}
+
+.gd-colorligth-gray-700 {
+  background-color: $gd-colorligth-gray-700;
+}
+
+.gd-colorligth-gray-800 {
+  background-color: $gd-colorligth-gray-800;
+}
+
+.gd-colorligth-gray-900 {
+  background-color: $gd-colorligth-gray-900;
+}
+
+.gd-colorligth-gray-a100 {
+  background-color: $gd-colorligth-gray-A100;
+}
+
+.gd-colorligth-gray-a200 {
+  background-color: $gd-colorligth-gray-A200;
+}
+
+.gd-colorligth-gray-a400 {
+  background-color: $gd-colorligth-gray-A400;
+}
+
+.gd-colorligth-gray-a700 {
+  background-color: $gd-colorligth-gray-A700;
+}

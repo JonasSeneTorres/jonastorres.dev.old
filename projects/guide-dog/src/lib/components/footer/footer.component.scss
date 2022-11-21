@@ -57,14 +57,14 @@
 
 .gd__dark {
   &.gd-footer {
-    background-color: $gd-colordark-primary-900;
+    background-color: darken($gd-colordark-gray-900, 30%);
     color: $gd-color-white;
 
     &__up {
-      background-color: $gd-colordark-primary-700;
+      background-color: $gd-colordark-gray-200;
       box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
-      color: $gd-color-white;
-      text-shadow: 2px 2px rgba(#000, 0.25);
+      color: $gd-color-black;
+      text-shadow: none;
 
       &:hover {
         box-shadow: 0 9px 12px 2px rgb(0 0 0 / 20%), 0 7px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
@@ -88,7 +88,7 @@
       // border: solid 3px $gd-color-darkmode-text;
       box-shadow: 0 3px 5px -1px rgb(F F F / 20%), 0 6px 10px rgb(F F F / 14%), 0 1px 18px rgb(F F F / 12%);
       color: $gd-color-darkmode;
-      text-shadow: 2px 2px rgba($gd-color-darkmode-text, 0.25);
+      text-shadow: none;
 
       &:hover {
         box-shadow: 0 9px 12px 2px rgb(F F F / 20%), 0 7px 10px rgb(F F F / 14%), 0 1px 18px rgb(F F F / 12%);

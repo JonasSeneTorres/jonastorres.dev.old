@@ -1,2 +1,38 @@
-<gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
-<p>autores works!</p>
+<article
+  class="autores"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
+  <gd-breadcrumb [breadcrumbsItem]="breadcrumbsItem"></gd-breadcrumb>
+  <p>autores works!</p>
+  <p>
+    $gd-colorligth-gray-50: makeColorPalette50($gd-color-black); $gd-colorligth-gray-100:
+    makeColorPalette100($gd-color-black); $gd-colorligth-gray-200: makeColorPalette200($gd-color-black);
+    $gd-colorligth-gray-300: makeColorPalette300($gd-color-black); $gd-colorligth-gray-400:
+    makeColorPalette400($gd-color-black); $gd-colorligth-gray-500: makeColorPalette500($gd-color-black);
+    $gd-colorligth-gray-600: makeColorPalette600($gd-color-black); $gd-colorligth-gray-700:
+    makeColorPalette700($gd-color-black); $gd-colorligth-gray-800: makeColorPalette800($gd-color-black);
+    $gd-colorligth-gray-900: makeColorPalette900($gd-color-black); $gd-colorligth-gray-A100:
+    makeColorPaletteA100($gd-color-black); $gd-colorligth-gray-A200: makeColorPaletteA200($gd-color-black);
+    $gd-colorligth-gray-A400: makeColorPaletteA400($gd-color-black); $gd-colorligth-gray-A700:
+    makeColorPaletteA700($gd-color-black);
+  </p>
+  <table>
+    <tr>
+      <td class="gd-colorligth-gray-50">50</td>
+      <td class="gd-colorligth-gray-100">100</td>
+      <td class="gd-colorligth-gray-200">200</td>
+      <td class="gd-colorligth-gray-300">300</td>
+      <td class="gd-colorligth-gray-400">400</td>
+      <td class="gd-colorligth-gray-500">500</td>
+      <td class="gd-colorligth-gray-600">600</td>
+      <td class="gd-colorligth-gray-700">700</td>
+      <td class="gd-colorligth-gray-800">800</td>
+      <td class="gd-colorligth-gray-900">900</td>
+      <td class="gd-colorligth-gray-a100">a100</td>
+      <td class="gd-colorligth-gray-a200">a200</td>
+      <td class="gd-colorligth-gray-a400">a400</td>
+      <td class="gd-colorligth-gray-a700">a700</td>
+    </tr>
+  </table>
+</article>

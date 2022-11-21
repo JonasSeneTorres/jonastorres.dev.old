@@ -8,7 +8,7 @@
 
 $gd-min-content-box: 1400px;
 
-$gd-setcolorligth-gray: #adb5bd !default;
+$gd-setcolorligth-gray: #808080 !default;
 $gd-setcolorligth-primary: #005555 !default;
 $gd-setcolorligth-secondary: #570057 !default;
 $gd-setcolorligth-success: #005716 !default;
@@ -25,6 +25,7 @@ $gd-setcolordark-warning: $gd-setcolorligth-warning !default;
 $gd-setcolordark-info: $gd-setcolorligth-info !default;
 
 $gd-color-white: #fff !default;
+$gd-color-offwhite: #121212 !default;
 $gd-color-darkmode: #212529 !default;
 $gd-color-darkmode-interative: #FFF333 !default;
 $gd-color-darkmode-text: #fff !default;
@@ -252,6 +253,36 @@ $gd-colordark-info-A700: makeColorPaletteA700($gd-setcolordark-info);
   --gd-min-content-box: #{$gd-min-content-box};
 
   body{
+    &.gd_theme_dark {
+      background-color: darken($gd-colordark-gray-900, 10%);
+      color: $gd-color-offwhite;
+
+      a:link,
+      a:visited,
+      a:hover {
+        color: $gd-color-darkmode-interative;
+      }
+
+      a:active {
+        color: $gd-color-offwhite;
+      }
+
+      img {
+        filter: brightness(.8) contrast(1.2);
+      }
+
+      // button, input[type="button"] {
+      //   background-color: $gd-color-darkmode-interative;
+      //   color: $gd-color-black;
+
+      //   &:disabled {
+      //     background-color: $gd-color-black;
+      //     border: solid 1px $gd-color-white;
+      //     color: $gd-color-white;
+      //   }
+      // }
+    }
+
     &.gd_theme_contrast {
       background-color: $gd-color-black;
       color: $gd-color-white;

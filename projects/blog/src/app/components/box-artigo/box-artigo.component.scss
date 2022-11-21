@@ -1,4 +1,4 @@
-@import "../../../styles/styles.scss";
+@import '../../../styles/styles.scss';
 
 :root {
   --loading-grey: #ededed;
@@ -15,8 +15,8 @@
 
   @include media-down($gd-media-tablet-maxwidth) {
     grid-template-columns: 1fr;
-    margin: 0 .5rem .5rem .5rem !important;
-    row-gap: .5rem;
+    margin: 0 0.5rem 0.5rem 0.5rem !important;
+    row-gap: 0.5rem;
     padding: 1rem;
     width: calc(100% - 1rem);
     height: 100%;
@@ -41,13 +41,11 @@
         font-size: 9rem;
         transition: all 0.5s ease;
       }
-
     }
 
     &:hover {
       background-color: $gd-colorligth-primary-50;
-      box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%),
-        0 1px 18px rgb(0 0 0 / 12%);
+      box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
       cursor: pointer;
       margin: 1rem 0 1.5rem 0;
 
@@ -55,7 +53,7 @@
         transform: scale(1.0125);
       }
 
-      .artigo-box__capa{
+      .artigo-box__capa {
         .fa-brands {
           font-size: 13rem;
           transition: all 0.5s ease;
@@ -75,7 +73,6 @@
 
       .artigo-box__box-leia-mais {
         transform: scale(1.1);
-
       }
 
       .artigo-box__leia-mais {
@@ -88,12 +85,7 @@
     align-content: center;
     align-items: baseline;
     background-color: #808080;
-    background: linear-gradient(
-      150deg,
-      rgba(124, 124, 124, 0.8) 0%,
-      rgba(180, 180, 180, 1) 10%,
-      rgba(0, 0, 0, 1) 89%
-    );
+    background: linear-gradient(150deg, rgba(124, 124, 124, 0.8) 0%, rgba(180, 180, 180, 1) 10%, rgba(0, 0, 0, 1) 89%);
     border: solid 1px #000;
     border-radius: 8px;
     color: $gd-color-white;
@@ -111,12 +103,7 @@
     align-content: center;
     align-items: baseline;
     background-color: #808080;
-    background: linear-gradient(
-      150deg,
-      rgba(124, 124, 124, 0.8) 0%,
-      rgba(180, 180, 180, 1) 10%,
-      rgba(0, 0, 0, 1) 89%
-    );
+    background: linear-gradient(150deg, rgba(124, 124, 124, 0.8) 0%, rgba(180, 180, 180, 1) 10%, rgba(0, 0, 0, 1) 89%);
     border: solid 1px #000;
     border-radius: 8px;
     color: $gd-color-white;
@@ -127,7 +114,6 @@
     position: relative;
     transition: all 0.5s ease;
 
-
     @include media-up($gd-media-tablet-maxwidth) {
       margin: 1rem 0 1rem 1rem;
       height: calc(100% - 2.25rem);
@@ -135,7 +121,7 @@
 
     &:after {
       // background-image: url("/assets/img/backgrounds/circuit-board-white.svg");
-      content: "";
+      content: '';
       display: block;
       height: 100%;
       left: 0;
@@ -216,7 +202,7 @@
 
   &__box-dados {
     @include media-up($gd-media-tablet-maxwidth) {
-      margin-top: .5rem;
+      margin-top: 0.5rem;
     }
   }
 
@@ -286,12 +272,7 @@
 
 .loading {
   background-color: #ededed;
-  background: linear-gradient(
-      100deg,
-      rgba(255, 255, 255, 0) 40%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 0) 60%
-    )
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 60%)
     #ededed;
   background-size: 200% 100%;
   background-position-x: 180%;
@@ -308,8 +289,11 @@
   &.artigo-box {
     background-color: $gd-colorligth-primary-50;
 
-    .artigo-box{
-      &__titulo, &__subtitulo, &__spoiler, &__dados {
+    .artigo-box {
+      &__titulo,
+      &__subtitulo,
+      &__spoiler,
+      &__dados {
         color: $gd-color-black;
       }
 
@@ -319,10 +303,11 @@
       }
 
       &__capa {
-        background-image: url("/assets/img/backgrounds/circuit-board-white.svg");
+        &:after {
+          background-image: url('/assets/img/backgrounds/circuit-board-white.svg');
+        }
       }
     }
-
   }
 }
 
@@ -330,8 +315,11 @@
   &.artigo-box {
     background-color: $gd-colorligth-primary-50;
 
-    .artigo-box{
-      &__titulo, &__subtitulo, &__spoiler, &__dados {
+    .artigo-box {
+      &__titulo,
+      &__subtitulo,
+      &__spoiler,
+      &__dados {
         color: $gd-color-black;
       }
 
@@ -340,9 +328,10 @@
         color: $gd-color-white;
       }
 
-
       &__capa {
-        background-image: url("/assets/img/backgrounds/circuit-board-white.svg");
+        &:after {
+          background-image: url('/assets/img/backgrounds/circuit-board-white.svg');
+        }
       }
     }
   }
@@ -352,13 +341,16 @@
   &.artigo-box {
     background-color: $gd-color-darkmode-interative;
 
-    .artigo-box{
-      &__titulo, &__subtitulo, &__spoiler, &__dados {
+    .artigo-box {
+      &__titulo,
+      &__subtitulo,
+      &__spoiler,
+      &__dados {
         color: $gd-color-black;
       }
 
       &__leia-mais {
-        background-color:  $gd-color-black;
+        background-color: $gd-color-black;
         color: $gd-color-white;
       }
 
@@ -370,7 +362,7 @@
 
         &:after {
           background-color: $gd-color-white;
-          background-image: url("/assets/img/backgrounds/circuit-board-black.svg");
+          background-image: url('/assets/img/backgrounds/circuit-board-black.svg');
           opacity: 0.1;
         }
       }
@@ -381,6 +373,3 @@
     }
   }
 }
-
-
-
