@@ -2,7 +2,6 @@
 
 h2 {
   font-size: 1.75rem;
-  color: $gd-color-black;
 
   @include media-down($gd-media-tablet-maxwidth) {
     margin: 0.5rem 0 0.5rem 0;
@@ -14,8 +13,6 @@ h2 {
 }
 
 .ultimos-posts {
-  color: $gd-color-black;
-
   @include media-down($gd-media-tablet-maxwidth) {
     @include scaffolding-card;
     margin-bottom: 0.5rem;
@@ -37,7 +34,6 @@ h2 {
   }
 
   &__artigo {
-    background-color: $gd-colorligth-primary-50;
     border-radius: 8px;
     column-gap: 1rem;
     display: grid;
@@ -54,8 +50,6 @@ h2 {
     }
 
     &:hover {
-      background-color: $gd-colorligth-primary-50;
-      box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
       cursor: pointer;
       padding: 0.5rem;
       transform: scale(1.05);
@@ -73,17 +67,14 @@ h2 {
   &__thumb {
     align-content: center;
     align-items: baseline;
-    background-color: #808080;
-    background: linear-gradient(150deg, rgba(124, 124, 124, 0.8) 0%, rgba(180, 180, 180, 1) 10%, rgba(0, 0, 0, 1) 89%);
-    border: solid 1px #000;
     border-radius: 8px;
-    color: $gd-color-white;
     display: grid;
     grid-area: thumb;
     height: 85px;
     justify-content: center;
     justify-items: baseline;
     margin: 0.25rem 0.25rem 0.25rem 0.75rem;
+    overflow: hidden;
     position: relative;
     transition: all 0.5s ease;
     width: 85px;
@@ -93,7 +84,6 @@ h2 {
     }
 
     &:after {
-      background-image: url('/assets/img/backgrounds/circuit-board-white.svg');
       content: '';
       display: block;
       height: 100%;
@@ -130,30 +120,6 @@ h2 {
     grid-area: detalhes;
     margin-top: 0.5rem;
   }
-
-  &.gd__contrast {
-    h2 {
-      color: $gd-color-white;
-    }
-
-    .ultimos-posts {
-      &__artigo {
-        background-color: $gd-color-darkmode-interative;
-        color: $gd-color-black;
-      }
-
-      &__thumb {
-        background: $gd-color-white !important;
-        color: $gd-color-black !important;
-        overflow: hidden;
-
-        &::after {
-          background-image: url(/assets/img/backgrounds/circuit-board-black.svg);
-          transform: scale(1);
-        }
-      }
-    }
-  }
 }
 
 .pipe {
@@ -172,5 +138,186 @@ h2 {
   &-flutter {
     margin-top: -2px;
     width: 48px;
+  }
+}
+
+.gd__ligth {
+  h2,
+  h3 {
+    color: $gd-color-black;
+  }
+
+  .ultimos-posts {
+    color: $gd-color-black;
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      @include scaffolding-card;
+    }
+
+    &__detalhes {
+      color: $gd-color-black;
+    }
+
+    &__artigo {
+      background-color: $gd-colorligth-primary-50;
+
+      &:hover {
+        background-color: $gd-colorligth-primary-50;
+        box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+
+        .ultimos-posts__thumb::after {
+          transform: scale(1.1);
+        }
+
+        .ultimos-posts__icone {
+          font-size: 3.5rem;
+        }
+      }
+    }
+
+    &__thumb {
+      background-color: #808080;
+      background: linear-gradient(150deg, rgba(124, 124, 124, 0.8) 0%, rgba(180, 180, 180, 1) 10%, rgba(0, 0, 0, 1) 89%);
+      border: solid 1px #000;
+      color: $gd-color-white;
+      filter: brightness(0.8) contrast(1.2);
+
+      &:after {
+        background-image: url('/assets/img/backgrounds/circuit-board-white.svg');
+      }
+    }
+  }
+}
+
+.gd__dark {
+  h2,
+  h3 {
+    color: $gd-color-offwhite;
+  }
+
+  .ultimos-posts {
+    color: $gd-color-offwhite;
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      @include scaffolding-card;
+    }
+
+    &__detalhes {
+      color: $gd-color-offwhite;
+    }
+
+    &__artigo {
+      background-color: $gd-colordark-gray-800;
+
+      &:hover {
+        background-color: $gd-colordark-gray-800;
+        box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+
+        .ultimos-posts__thumb::after {
+          transform: scale(1.1);
+        }
+
+        .ultimos-posts__icone {
+          font-size: 3.5rem;
+        }
+      }
+    }
+
+    &__thumb {
+      background-color: #808080;
+      background: linear-gradient(150deg, rgba(124, 124, 124, 0.8) 0%, rgba(180, 180, 180, 1) 10%, rgba(0, 0, 0, 1) 89%);
+      border: solid 1px #000;
+      color: $gd-color-white;
+
+      &:after {
+        background-image: url('/assets/img/backgrounds/circuit-board-white.svg');
+      }
+    }
+  }
+}
+
+// &.gd__contrast {
+//   h2 {
+//     color: $gd-color-white;
+//   }
+
+//   .ultimos-posts {
+//     &__artigo {
+//       background-color: $gd-color-darkmode-interative;
+//       color: $gd-color-black;
+//     }
+
+//     &__thumb {
+//       background: $gd-color-white !important;
+//       color: $gd-color-black !important;
+//       overflow: hidden;
+
+//       &::after {
+//         background-image: url(/assets/img/backgrounds/circuit-board-black.svg);
+//         transform: scale(1);
+//       }
+//     }
+//   }
+// }
+
+.gd__contrast {
+  h2{
+    color: $gd-color-white
+  }
+
+  h3{
+    color: $gd-color-black;
+  }
+
+  .ultimos-posts {
+    color: $gd-color-black;
+
+    @include media-down($gd-media-tablet-maxwidth) {
+      @include scaffolding-card;
+    }
+
+    &__detalhes {
+      color: $gd-color-black;
+    }
+
+    &__artigo {
+      background-color: $gd-color-darkmode-interative;
+      color: $gd-color-black;
+
+      &:hover {
+        background-color: $gd-color-darkmode-interative;
+        box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+
+        .ultimos-posts__thumb::after {
+          transform: scale(1.1);
+        }
+
+        .ultimos-posts__icone {
+          font-size: 3.5rem;
+        }
+      }
+    }
+
+    &__thumb {
+      background: $gd-color-white !important;
+      color: $gd-color-black !important;
+      overflow: hidden;
+
+      &::after {
+        background-image: url(/assets/img/backgrounds/circuit-board-black.svg);
+        transform: scale(1);
+      }
+    }
+
+    // &__thumb {
+    //   background-color: #808080;
+    //   background: linear-gradient(150deg, rgba(124, 124, 124, 0.8) 0%, rgba(180, 180, 180, 1) 10%, rgba(0, 0, 0, 1) 89%);
+    //   border: solid 1px #000;
+    //   color: $gd-color-white;
+
+    //   &:after {
+    //     background-image: url('/assets/img/backgrounds/circuit-board-white.svg');
+    //   }
+    // }
   }
 }

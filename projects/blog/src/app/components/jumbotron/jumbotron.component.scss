@@ -305,6 +305,7 @@
         rgba($gd-setcolorligth-secondary, 1) 10%,
         rgba(0, 0, 0, 1) 89%
       );
+      filter: brightness(.8) contrast(1.2);
 
       &:after {
         background-image: url('/assets/img/backgrounds/circuit-board-white.svg');
@@ -330,3 +331,5 @@
     }
   }
 }
+
+

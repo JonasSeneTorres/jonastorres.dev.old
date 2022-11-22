@@ -16,7 +16,7 @@ $gd-setcolorligth-danger: #8B1C00 !default;
 $gd-setcolorligth-warning: #F9F871 !default;
 $gd-setcolorligth-info: #3E729D !default;
 
-$gd-setcolordark-gray: $gd-setcolorligth-gray !default;
+$gd-setcolordark-gray: darken($gd-setcolorligth-gray, 10%) !default;
 $gd-setcolordark-primary: $gd-setcolorligth-primary !default;
 $gd-setcolordark-secondary: $gd-setcolorligth-secondary !default;
 $gd-setcolordark-success: $gd-setcolorligth-success !default;
@@ -25,7 +25,7 @@ $gd-setcolordark-warning: $gd-setcolorligth-warning !default;
 $gd-setcolordark-info: $gd-setcolorligth-info !default;
 
 $gd-color-white: #fff !default;
-$gd-color-offwhite: #121212 !default;
+$gd-color-offwhite: #f8f8ff !default;
 $gd-color-darkmode: #212529 !default;
 $gd-color-darkmode-interative: #FFF333 !default;
 $gd-color-darkmode-text: #fff !default;

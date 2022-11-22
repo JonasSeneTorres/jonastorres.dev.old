@@ -56,6 +56,7 @@
     .blog {
       &__aside, &__main {
         background-color: $gd-colordark-gray-900;
+        color: $gd-color-offwhite;
       }
     }
   }
@@ -64,6 +65,9 @@
 .gd__contrast {
   &.blog {
     .blog {
+      &__aside, &__main {
+        background-color: $gd-color-black;
+      }
     }
   }
 }

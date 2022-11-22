@@ -58,16 +58,17 @@
 .gd__dark {
   &.gd-footer {
     background-color: darken($gd-colordark-gray-900, 30%);
-    color: $gd-color-white;
+    color: $gd-color-offwhite;
 
     &__up {
-      background-color: $gd-colordark-gray-200;
+      background-color: $gd-colordark-gray-700;
       box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
-      color: $gd-color-black;
+      color: $gd-color-offwhite;
       text-shadow: none;
 
       &:hover {
         box-shadow: 0 9px 12px 2px rgb(0 0 0 / 20%), 0 7px 10px rgb(0 0 0 / 14%), 0 1px 18px rgb(0 0 0 / 12%);
+        color: $gd-color-offwhite;
       }
 
       &:active {

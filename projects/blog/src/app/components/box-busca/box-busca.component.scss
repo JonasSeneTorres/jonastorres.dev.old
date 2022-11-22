@@ -23,6 +23,60 @@ h2 {
   margin: 0 0 0.5rem;
 }
 
+// .gd__contrast {
+//   h2 {
+//     color: $gd-color-white;
+//   }
+
+//   input, input:focus, input:focus-visible {
+//     border: solid 1px $gd-color-darkmode-interative;
+//     background-color: $gd-color-black;
+//     color: $gd-color-darkmode-interative;
+//   }
+
+//   input:focus-visible, input:focus {
+//     outline: solid 1px $gd-color-darkmode-interative;
+//     // box-shadow: 1px 1px 2px $gd-color-darkmode-interative;
+//     // lighting-color: $gd-color-darkmode-interative;
+//   }
+
+//   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+//     color: $gd-color-darkmode-interative;
+//     opacity: 1; /* Firefox */
+//   }
+// }
+
+
+.gd__ligth {
+  h2 {
+    color: $gd-color-black;
+  }
+
+}
+
+.gd__dark {
+  h2 {
+    color: $gd-color-offwhite;
+  }
+
+  input, input:focus, input:focus-visible {
+    border: solid 1px $gd-color-offwhite;
+    background-color: $gd-colordark-gray-900;
+    color: $gd-color-offwhite;
+  }
+
+  input:focus-visible, input:focus {
+    outline: solid 1px $gd-color-offwhite;
+    // box-shadow: 1px 1px 2px $gd-color-darkmode-interative;
+    // lighting-color: $gd-color-darkmode-interative;
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $gd-color-offwhite;
+    opacity: 1; /* Firefox */
+  }
+}
+
 .gd__contrast {
   h2 {
     color: $gd-color-white;
@@ -45,3 +99,6 @@ h2 {
     opacity: 1; /* Firefox */
   }
 }
+
+
+

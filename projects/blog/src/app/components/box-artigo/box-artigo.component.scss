@@ -13,6 +13,10 @@
   transition: all 0.5s ease;
   width: 100%;
 
+  &__capa {
+    overflow: hidden;
+  }
+
   @include media-down($gd-media-tablet-maxwidth) {
     grid-template-columns: 1fr;
     margin: 0 0.5rem 0.5rem 0.5rem !important;
@@ -313,19 +317,21 @@
 
 .gd__dark {
   &.artigo-box {
-    background-color: $gd-colorligth-primary-50;
+    background-color: $gd-colordark-gray-800;
+    color: $gd-color-offwhite;
 
     .artigo-box {
       &__titulo,
       &__subtitulo,
       &__spoiler,
       &__dados {
-        color: $gd-color-black;
+        color: $gd-color-offwhite;
       }
 
       &__leia-mais {
-        background-color: $gd-colorligth-primary-300;
-        color: $gd-color-white;
+        background-color: $gd-colorligth-primary-700;
+        background-color: $gd-colordark-gray-400;
+        color: $gd-color-offwhite;
       }
 
       &__capa {

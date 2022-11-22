@@ -8,7 +8,7 @@
   }
 
   &.gd__dark {
-    background-color: darken($gd-colordark-gray-900, 10%);
+    background-color: $gd-colordark-gray-900;
   }
 
   &.gd__contrast {
