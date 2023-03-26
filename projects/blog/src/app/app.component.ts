@@ -52,9 +52,11 @@ export class AppComponent extends MasterBaseComponent implements OnInit, OnDestr
   protected override observeStateAcessibility(): void {
     this._acessibilityService.stateAcessibility$.pipe(takeUntil(this._destroy$)).subscribe((stateAcessibility: any) => {
       this.zoom = stateAcessibility.zoom;
-      this.theme = stateAcessibility.theme;
+      this.theme = stateAcessibility.theme ?? 'ligth';
+      // alert(`${this.theme}`);
       this.document.body.classList.remove('gd_theme_ligth', 'gd_theme_dark', 'gd_theme_contrast');
       this.document.body.classList.add(`gd_theme_${this.theme}`);
+      this._acessibilityService.setTheme(this.theme as 'ligth' | 'dark' | 'contrast');
     });
   }
 

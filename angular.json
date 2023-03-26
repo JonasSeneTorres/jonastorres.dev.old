@@ -26,6 +26,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules"]
+            },
             "outputPath": "dist/blog",
             "index": "projects/blog/src/index.html",
             "main": "projects/blog/src/main.ts",
@@ -37,7 +40,7 @@
               "quill",
               "guid-typescript",
               "platform"
-           ],
+            ],
             "assets": [
               "projects/blog/src/favicon.ico",
               "projects/blog/src/assets"
@@ -183,5 +186,13 @@
       }
     }
   },
-  "defaultProject": "blog"
+
+  "schematics": {
+    "@angular-eslint/schematics:application": {
+      "setParserOptionsProject": true
+    },
+    "@angular-eslint/schematics:library": {
+      "setParserOptionsProject": true
+    }
+  }
 }
