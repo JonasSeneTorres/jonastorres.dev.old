@@ -2,7 +2,8 @@
   class="jumbotron"
   [class.gd__ligth]="theme === 'ligth'"
   [class.gd__dark]="theme === 'dark'"
-  [class.gd__contrast]="theme === 'contrast'">
+  [class.gd__contrast]="theme === 'contrast'"
+  *ngIf="(dadosJumbotron$ | async)?.categoria">
   <div class="jumbotron__vitrine">
     <gd-centered-panel>
       <div class="jumbotron__conteudo jumbotron__conteudo-{{ (dadosJumbotron$ | async)?.categoria }}">
@@ -60,12 +61,12 @@
         <div class="jumbotron__dados" [class.sem-borda]="((dadosJumbotron$ | async)?.titulo || '').length === 0">
           <ng-container *ngIf="(dadosJumbotron$ | async)?.dataCriacao">
             <span class="fa-solid fa-calendar-days icon"></span>
-            {{ (dadosJumbotron$ | async)?.dataCriacao | date: 'longDate':'':'pt-BR' }}
+            {{ (dadosJumbotron$ | async)?.dataCriacao | date : 'longDate' : '' : 'pt-BR' }}
             <span class="icon2" aria-hidden="true"> | </span>
           </ng-container>
           <ng-container *ngIf="(dadosJumbotron$ | async)?.dataEdicao">
             <span class="fa-solid fa-pen-to-square icon"></span>Ultima edição:
-            {{ (dadosJumbotron$ | async)?.dataEdicao | date: 'longDate':'':'pt-BR' }}
+            {{ (dadosJumbotron$ | async)?.dataEdicao | date : 'longDate' : '' : 'pt-BR' }}
             <span class="icon2" aria-hidden="true"> | </span>
           </ng-container>
           <ng-container *ngIf="(dadosJumbotron$ | async)?.tempoLeitura">

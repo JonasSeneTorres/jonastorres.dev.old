@@ -33,11 +33,18 @@ export class HeaderComponent extends MasterBaseComponent implements OnInit, Afte
   }
 
   get showHamburgerHorizontalNav(): boolean {
-    const hasNavConfig = this.navConfig.length > 0;
-    const centeredPanelMarginPositive = this.centeredPanelMargin > 0;
-    this.greatherThanLayoutBreak = this.systemInformation.page.size.ItsGreaterThanCenterPanel;
-
-    return hasNavConfig && (centeredPanelMarginPositive || this.greatherThanLayoutBreak);
+    // const hasNavConfig = this.navConfig.length > 0;
+    // const centeredPanelMarginPositive = this.centeredPanelMargin > 0;
+    // this.greatherThanLayoutBreak = this.systemInformation.page.size.ItsGreaterThanCenterPanel;
+    // console.log(this.systemInformation.browser);
+    // console.log('hasNavConfig', hasNavConfig);
+    // console.log('centeredPanelMarginPositive', centeredPanelMarginPositive);
+    // console.log('greatherThanLayoutBreak', this.greatherThanLayoutBreak);
+    const browserWidth = this.systemInformation.browser.size.width;
+    const centeredPanelWidth = this.systemInformation.page.centeredPanel.area;
+    // const
+    // return hasNavConfig && (centeredPanelMarginPositive || this.greatherThanLayoutBreak);
+    return true;
   }
 
   constructor(

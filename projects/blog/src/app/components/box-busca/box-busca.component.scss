@@ -3,6 +3,7 @@
 .box-busca {
   margin-bottom: 1rem;
   width: 100%;
+  max-width: 18rem;
 
   @include media-down($gd-media-tablet-maxwidth) {
     display: none;
@@ -14,7 +15,7 @@ input {
   height: 38px;
   max-width: 19rem;
   padding: 0 1rem;
-  width: 100%;
+  width: calc(100% - 2rem - 2px);
 }
 
 h2 {
