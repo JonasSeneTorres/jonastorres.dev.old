@@ -5,12 +5,16 @@
 
   @include media-down($gd-media-phone-maxwidth) {
     overflow: hidden;
+    // padding: 0 1rem;
+    // width: calc(100% - 2rem);
   }
 
   @include media-between(
     $gd-media-phone-maxwidth + 1,
     $gd-media-tablet-maxwidth - 1
   ) {
+
+    // padding: 0 1rem 0 .5rem;
   }
 
   @include media-up($gd-media-tablet-maxwidth) {

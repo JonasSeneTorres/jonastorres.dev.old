@@ -33,11 +33,15 @@
           {{ artigo?.titulo }}
         </h3>
         <div class="ultimos-posts__detalhes">
-          <span class="fa-solid fa-calendar-days"></span>
-          {{ artigo?.dataCriacao | date: 'dd/MM/yyyy' }}
-          <span class="pipe">|</span>
-          <span class="fa-solid fa-stopwatch"></span>
-          {{ artigo?.tempoLeitura }} min
+          <div>
+            <span class="fa-solid fa-calendar-days"></span>
+            {{ artigo?.dataCriacao | date : 'dd/MM/yyyy' }}
+          </div>
+          <div>
+            <!-- <span class="pipe">|</span> -->
+            <span class="fa-solid fa-stopwatch"></span>
+            {{ artigo?.tempoLeitura }} min
+          </div>
         </div>
       </article>
     </li>
