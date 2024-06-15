@@ -161,6 +161,11 @@
     margin: 0.5rem 0 0;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    @include media-down($gd-media-phone-maxwidth) {
+      margin: 0.5rem 0;
+    }
+
   }
 
   &__dados {

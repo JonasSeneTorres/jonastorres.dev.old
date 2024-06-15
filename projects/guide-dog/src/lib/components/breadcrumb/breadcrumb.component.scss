@@ -9,7 +9,7 @@
     padding: 0;
 
     @include media-down($gd-media-phone-maxwidth) {
-      margin: 0.75rem 0.5rem;
+      margin: 0.75rem 0.5rem 0.75rem 0rem;
     }
 
     @include media-between($gd-media-phone-maxwidth + 1, $gd-media-tablet-maxwidth - 1) {
