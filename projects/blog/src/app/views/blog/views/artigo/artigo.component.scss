@@ -3,7 +3,10 @@
 .artigo {
   @include scaffolding-card;
 
-  @include media-down($gd-media-phone-maxwidth) {
+  @include media-between(
+    $gd-media-phone-maxwidth + 1,
+    $gd-media-tablet-maxwidth - 1
+  ) {
     overflow: hidden;
     padding: 0 1.5rem;
     // width: calc(100% - 2rem);

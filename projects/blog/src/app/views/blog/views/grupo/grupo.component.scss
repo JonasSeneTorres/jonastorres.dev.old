@@ -1,0 +1,11 @@
+@import "../../../../../styles/styles.scss";
+
+gd-breadcrumb {
+  @include media-between(
+    $gd-media-phone-maxwidth + 1,
+    $gd-media-tablet-maxwidth - 1
+  ) {
+    display: block;
+    margin-left: 1rem;
+  }
+}
