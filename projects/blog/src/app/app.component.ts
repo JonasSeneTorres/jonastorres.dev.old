@@ -31,22 +31,24 @@ export class AppComponent extends MasterBaseComponent implements OnInit, OnDestr
 
   override ngOnInit(): void {
     super.ngOnInit();
-    this._categoriasService
-      .listar()
-      .pipe(takeUntil(this._destroy$))
-      .subscribe({
-        next: sucesso => {
-          const menuNovo: NavibarItemConfig[] = [];
-          this.adicionarMenuComCategoria(sucesso, menuNovo);
-          this.adicionarMenuSemCategoria(sucesso, menuNovo);
-          this.adicionarMenuSobre(menuNovo);
-          this.adicionarMenuAutores(menuNovo);
-          this.adicionarMenuContato(menuNovo);
+    try {
+      this._categoriasService
+        .listar()
+        .pipe(takeUntil(this._destroy$))
+        .subscribe({
+          next: sucesso => {
+            const menuNovo: NavibarItemConfig[] = [];
+            this.adicionarMenuComCategoria(sucesso, menuNovo);
+            this.adicionarMenuSemCategoria(sucesso, menuNovo);
+            this.adicionarMenuSobre(menuNovo);
+            this.adicionarMenuAutores(menuNovo);
+            this.adicionarMenuContato(menuNovo);
 
-          this.menu = menuNovo;
-        },
-        error: () => {},
-      });
+            this.menu = menuNovo;
+          },
+          error: () => {},
+        });
+    } catch (error) {}
   }
 
   protected override observeStateAcessibility(): void {

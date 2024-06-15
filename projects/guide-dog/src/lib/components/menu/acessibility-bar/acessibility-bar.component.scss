@@ -5,7 +5,7 @@
   line-height: 2;
   min-height: 32px;
   position: relative;
-  transition: all 800ms;
+  // transition: all 800ms;
 
   &::after {
     position: absolute;
@@ -15,7 +15,7 @@
   }
 
   * {
-    transition: all 800ms;
+    // transition: all 800ms;
   }
 
   // &.gd__ligth {

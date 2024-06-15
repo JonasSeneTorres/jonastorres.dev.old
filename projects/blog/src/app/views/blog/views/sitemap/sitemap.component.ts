@@ -20,7 +20,7 @@ export class SitemapComponent extends MasterBaseComponent {
     super(injector);
     this._blogService.tornarBoxPrincipalTransparente(true);
     this.breadcrumbsItem = [JonastorresRoutes.HOME.toBreadcrumb(), { label: 'Mapa do site' }];
-    this._blogService.tornarBoxPrincipalTransparente(false);
+    // this._blogService.tornarBoxPrincipalTransparente(false);
     this._jumbotronService.inserirDados({
       titulo: 'Mapa do site',
       subtitulo: '',
