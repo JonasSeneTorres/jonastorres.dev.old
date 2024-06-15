@@ -8,6 +8,10 @@
   overflow: auto;
   padding: 0.75rem 0;
 
+  @include media-up($gd-media-tablet-maxwidth) {
+    margin-top: 1rem;
+  }
+
   &__up {
     align-items: center;
     border-radius: 55%;
