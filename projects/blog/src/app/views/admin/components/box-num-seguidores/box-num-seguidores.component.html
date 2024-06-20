@@ -1,4 +1,8 @@
-<section class="box-num-seguidores">
+<section
+  class="box-num-seguidores"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <span class="box-num-seguidores__icone fa-solid fa-users" aria-hidden="true"></span>
   <strong class="box-num-seguidores__numero">0</strong>
   <span class="box-num-seguidores__label">Seguidores</span>

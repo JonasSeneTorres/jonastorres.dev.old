@@ -1,3 +1,7 @@
-<section class="box-sistemas-operacionais">
+<section
+  class="box-sistemas-operacionais"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <canvas baseChart [data]="doughnutChartData" [type]="doughnutChartType"> </canvas>
 </section>

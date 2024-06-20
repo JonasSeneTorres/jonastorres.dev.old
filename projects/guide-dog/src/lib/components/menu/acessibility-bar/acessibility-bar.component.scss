@@ -136,7 +136,7 @@
 }
 
 .gd__dark {
-  background-color: $gd-color-darkmode;
+  background-color: $gd-colorligth-gray-800;
 
   .acessibilitybar {
     &__button-zoom{
@@ -151,18 +151,18 @@
     }
     &__item {
       a {
-        color: rgba($gd-color-darkmode-interative, 0.8);
+        color: rgba($gd-color-darkmode-link, 0.8);
         // span {
         //   transition: all 800ms;
         // }
 
         &:link,
         &:visited {
-          color: rgba($gd-color-darkmode-interative, 0.8);
+          color: rgba($gd-color-darkmode-link, 0.8);
         }
 
         &:hover {
-          color: rgba($gd-color-darkmode-interative, 1);
+          color: rgba($gd-color-darkmode-link, 1);
           // font-weight: bold;
         }
 

@@ -28,3 +28,24 @@ ul {
   list-style: none;
   padding: 0;
 }
+
+.gd__ligth {
+  .menu-admin {
+    // color: $gd-colorligth-primary-600;
+    // margin: 0;
+  }
+}
+
+.gd__dark {
+    .menu-admin {
+      background-color: $gd-colordark-gray-800;
+      color: $gd-color-offwhite;
+    }
+}
+
+.gd__contrast {
+  .menu-admin {
+    // color: $gd-colorligth-primary-600;
+    // margin: 0;
+  }
+}

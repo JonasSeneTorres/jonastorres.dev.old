@@ -1,4 +1,8 @@
-<section class="box-num-visualizacao">
+<section
+  class="box-num-visualizacao"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <span class="box-num-visualizacao__icone fa-solid fa-eye" aria-hidden="true"></span>
   <strong class="box-num-visualizacao__numero">0</strong>
   <span class="box-num-visualizacao__label">Visualizações</span>

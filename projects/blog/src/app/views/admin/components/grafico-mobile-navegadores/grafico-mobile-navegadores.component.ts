@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Injector, OnDestroy, OnInit } from '@angular/core';
 import { ChartData, ChartEvent, ChartType } from 'chart.js';
+import { MasterBaseComponent } from 'projects/guide-dog/src/lib/components/master-base/master-base.component';
 
 @Component({
   selector: 'jt-grafico-mobile-navegadores',
   templateUrl: './grafico-mobile-navegadores.component.html',
   styleUrls: ['./grafico-mobile-navegadores.component.scss'],
 })
-export class GraficoMobileNavegadoresComponent {
+export class GraficoMobileNavegadoresComponent extends MasterBaseComponent implements OnInit, OnDestroy {
   public doughnutChartLabels: string[] = ['Chrome', 'Firefox', 'IExplorer', 'Chrome', 'Firefox', 'IExplorer'];
 
   public doughnutChartData: ChartData<'doughnut'> = {
@@ -15,7 +16,9 @@ export class GraficoMobileNavegadoresComponent {
   };
   doughnutChartType: ChartType = 'doughnut';
 
-  constructor() {}
+  constructor(protected override injector: Injector) {
+    super(injector);
+  }
 
   public chartClicked({ event, active }: { event: ChartEvent; active: {}[] }): void {}
 

@@ -1,4 +1,8 @@
-<section class="box-comentarios-recentes">
+<section
+  class="box-comentarios-recentes"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <h2 class="box-comentarios-recentes__titulo">Ultimos comentários</h2>
   <div class="box-comentarios-recentes__grafico-container"></div>
 </section>
