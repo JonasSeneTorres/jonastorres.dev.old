@@ -27,6 +27,7 @@ $gd-setcolordark-info: $gd-setcolorligth-info !default;
 $gd-color-white: #fff !default;
 $gd-color-offwhite: #f8f8ff !default;
 $gd-color-darkmode: #212529 !default;
+$gd-color-darkmode-link: #58a6ff !default;
 $gd-color-darkmode-interative: #FFF333 !default;
 $gd-color-darkmode-text: #fff !default;
 $gd-color-black: #000 !default;
@@ -260,7 +261,7 @@ $gd-colordark-info-A700: makeColorPaletteA700($gd-setcolordark-info);
       a:link,
       a:visited,
       a:hover {
-        color: $gd-color-darkmode-interative;
+        color: $gd-color-darkmode-link;
       }
 
       a:active {

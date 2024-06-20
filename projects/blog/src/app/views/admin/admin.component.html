@@ -1,4 +1,8 @@
-<div class="admin">
+<div
+  class="admin"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <aside class="admin-aside">
     <jt-menu-admin></jt-menu-admin>
   </aside>

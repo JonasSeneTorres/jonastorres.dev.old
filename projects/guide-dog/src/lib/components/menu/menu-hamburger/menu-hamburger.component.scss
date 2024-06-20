@@ -1,10 +1,16 @@
 @import '../../../styles/gd';
 
-.gd__ligth {
+:host ::ng-deep {
+  .gd__ligth {
+  }
+
+  .gd__dark {
+  }
+
+  .gd__contrast {
+    div.gd-menu-hamburger__nav{
+      background-color: rgba($gd-color-white, 0.9) !important;
+    }
+  }
 }
 
-.gd__dark {
-}
-
-.gd__contrast {
-}

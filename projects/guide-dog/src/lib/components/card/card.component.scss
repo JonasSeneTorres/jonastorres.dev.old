@@ -13,7 +13,9 @@
 
 .gd__dark {
   &.gd-card {
-    background-color: $gd-color-white;
+    background-color: $gd-colordark-gray-800;
+    color: $gd-color-offwhite;
+    // background-color: $gd-color-white;
     box-shadow: 0 1px 1px -1px rgb(0 0 0 / 20%), 0 1px 2px rgb(0 0 0 / 14%), 0 1px 4px rgb(0 0 0 / 12%);
   }
 }
