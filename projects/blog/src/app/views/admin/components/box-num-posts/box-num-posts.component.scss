@@ -1,9 +1,6 @@
 @import "../../../../../../../blog/src/styles/styles.scss";
 
 .box-num-posts {
-  background-color: $gd-colorligth-primary-50;
-  border: solid 2px $gd-colorligth-primary-600;
-  color: $gd-colorligth-primary-600;
   border-radius: 8px;
   box-sizing: border-box;
   display: grid;
@@ -15,7 +12,7 @@
   &__icone {
     align-self: center;
     font-size: 1.75rem;
-    grid-area: icone;
+    grid-area: icone ;
     justify-self: center;
   }
 
@@ -32,3 +29,31 @@
     justify-self: center;
   }
 }
+
+
+.gd__ligth {
+  &.box-num-posts {
+    background-color: $gd-colorligth-primary-50;
+    border: solid 2px $gd-colorligth-primary-600;
+    color: $gd-colorligth-primary-600;
+  }
+}
+
+.gd__dark {
+  &.box-num-posts {
+    background-color: $gd-colordark-gray-500;
+    border: solid 2px $gd-color-offwhite;
+    color: $gd-color-offwhite;
+  }
+}
+
+.gd__contrast {
+  &.box-num-posts {
+    background-color: $gd-colordark-gray-500;
+    border: solid 2px $gd-color-offwhite;
+    color: $gd-color-offwhite;
+  }
+}
+
+
+

@@ -1,4 +1,8 @@
-<nav>
+<nav
+  class="menu-admin"
+  [class.gd__ligth]="theme === 'ligth'"
+  [class.gd__dark]="theme === 'dark'"
+  [class.gd__contrast]="theme === 'contrast'">
   <h2>Navegação (Admin)</h2>
   <ul>
     <li>

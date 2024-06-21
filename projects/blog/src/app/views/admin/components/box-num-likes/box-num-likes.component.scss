@@ -32,3 +32,30 @@
     justify-self: center;
   }
 }
+
+.gd__ligth {
+  &.box-num-likes {
+    background-color: $gd-colorligth-primary-50;
+    border: solid 2px $gd-colorligth-primary-600;
+    color: $gd-colorligth-primary-600;
+  }
+}
+
+.gd__dark {
+  &.box-num-likes {
+    background-color: $gd-colordark-gray-500;
+    border: solid 2px $gd-color-offwhite;
+    color: $gd-color-offwhite;
+  }
+}
+
+.gd__contrast {
+  &.box-num-likes {
+    background-color: $gd-colordark-gray-500;
+    border: solid 2px $gd-color-offwhite;
+    color: $gd-color-offwhite;
+  }
+}
+
+
+

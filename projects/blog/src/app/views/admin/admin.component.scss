@@ -1,4 +1,4 @@
-@import '../../../styles/styles.scss';
+// @import '../../../styles/styles.scss';
 @import '../../../../../guide-dog/src/lib/styles/gd.scss';
 
 h1 {
@@ -68,7 +68,7 @@ h1 {
 }
 
 .gd__dark {
-    .admin-main {
+    .admin-main, .admin-aside {
       background-color: $gd-colordark-gray-800;
       color: $gd-color-offwhite;
     }

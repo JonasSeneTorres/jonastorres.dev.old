@@ -1,10 +1,10 @@
 @import "../../../../../../../blog/src/styles/styles.scss";
 
 .box-comentarios-recentes {
-  background-color: $gd-colorligth-primary-50;
-  border: solid 2px $gd-colorligth-primary-600;
+  // background-color: $gd-colorligth-primary-50;
+  // border: solid 2px $gd-colorligth-primary-600;
   border-radius: 8px;
-  color: $gd-colorligth-primary-600;
+  // color: $gd-colorligth-primary-600;
   height: 100%;
 
   &__titulo {
@@ -18,3 +18,33 @@
     margin: 0 2rem 0.5rem;
   }
 }
+
+.gd__ligth {
+  &.box-comentarios-recentes {
+    background-color: $gd-colorligth-primary-50;
+    border: solid 2px $gd-colorligth-primary-600;
+    color: $gd-colorligth-primary-600;
+  }
+}
+
+.gd__dark {
+  &.box-comentarios-recentes {
+    background-color: $gd-colordark-gray-500;
+    border: solid 2px $gd-color-offwhite;
+    color: $gd-color-offwhite;
+  }
+}
+
+.gd__contrast {
+  &.box-comentarios-recentes {
+    background-color: $gd-colordark-gray-500;
+    border: solid 2px $gd-color-offwhite;
+    color: $gd-color-offwhite;
+
+    h2{
+      color: $gd-color-offwhite;
+    }
+  }
+}
+
+

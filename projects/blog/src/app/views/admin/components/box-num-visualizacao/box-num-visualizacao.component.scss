@@ -1,9 +1,9 @@
 @import "../../../../../../../blog/src/styles/styles.scss";
 
 .box-num-visualizacao {
-  background-color: $gd-colorligth-primary-50;
-  border: solid 2px $gd-colorligth-primary-600;
-  color: $gd-colorligth-primary-600;
+  // background-color: $gd-colorligth-primary-50;
+  // border: solid 2px $gd-colorligth-primary-600;
+  // color: $gd-colorligth-primary-600;
   border-radius: 8px;
   box-sizing: border-box;
   display: grid;
@@ -32,3 +32,29 @@
     justify-self: center;
   }
 }
+
+
+.gd__ligth {
+  &.box-num-visualizacao {
+    background-color: $gd-colorligth-primary-50;
+    border: solid 2px $gd-colorligth-primary-600;
+    color: $gd-colorligth-primary-600;
+  }
+}
+
+.gd__dark {
+  &.box-num-visualizacao {
+    background-color: $gd-colordark-gray-500;
+    border: solid 2px $gd-color-offwhite;
+    color: $gd-color-offwhite;
+  }
+}
+
+.gd__contrast {
+  &.box-num-visualizacao {
+    background-color: $gd-colordark-gray-500;
+    border: solid 2px $gd-color-offwhite;
+    color: $gd-color-offwhite;
+  }
+}
+
