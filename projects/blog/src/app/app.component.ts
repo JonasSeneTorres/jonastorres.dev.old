@@ -37,7 +37,6 @@ export class AppComponent extends MasterBaseComponent implements OnInit, OnDestr
         .pipe(takeUntil(this._destroy$))
         .subscribe({
           next: sucesso => {
-            console.log(sucesso);
             const menuNovo: NavibarItemConfig[] = [];
             this.adicionarMenuComCategoria(sucesso, menuNovo);
             this.adicionarMenuSemCategoria(sucesso, menuNovo);
