@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ICrudService } from '../../interfaces/icrud-service';
+import { environment } from 'projects/blog/src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PerfilUsuarioService implements ICrudService {
-  private baseURL: string = 'http://localhost:3000/perfil-de-usuario';
+  private baseURL: string = `${environment.baseURL}/perfil-de-usuario`;
 
   constructor(private httpClient: HttpClient) {}
 

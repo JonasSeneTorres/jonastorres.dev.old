@@ -6,8 +6,10 @@
   <gd-acessibility-bar></gd-acessibility-bar>
   <gd-header [navConfig]="menu">
     <div class="grid">
-      <span class="logo"></span>
-      <span class="titulo">JonasTorres<span class="dev">.dev</span></span>
+      <a [routerLink]="['/']">
+        <span class="logo"></span>
+        <span class="titulo">JonasTorres<span class="dev">.dev</span></span>
+      </a>
     </div>
   </gd-header>
   <gd-centered-panel class="app-container__central">

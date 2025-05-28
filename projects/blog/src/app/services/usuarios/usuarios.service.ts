@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ICrudService } from '../../interfaces/icrud-service';
+import { environment } from 'projects/blog/src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsuariosService implements ICrudService {
-  private baseURL: string = 'http://localhost:3000/usuarios';
+  private baseURL: string = `${environment.baseURL}/usuarios`;
 
   constructor(private httpClient: HttpClient) {}
 

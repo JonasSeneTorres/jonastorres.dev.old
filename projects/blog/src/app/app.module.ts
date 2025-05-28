@@ -10,12 +10,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared.module';
 import { domPurifyConfig } from './config/dom-purify.config';
+import { RouterModule } from '@angular/router';
 
 registerLocaleData(localePT);
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, SharedModule, NgDompurifyModule],
+  imports: [
+    BrowserModule,
+    RouterModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    NgDompurifyModule,
+  ],
   exports: [NgDompurifyModule],
   providers: [
     { provide: JsonPipe },
