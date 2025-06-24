@@ -1,7 +1,7 @@
-import { DOCUMENT } from '@angular/common';
 import { Component, Inject, Injector, OnDestroy, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 import { filter, takeUntil } from 'rxjs';
+import { NavigationEnd, Router } from '@angular/router';
 
 import { MasterBaseComponent } from '../master-base/master-base.component';
 
@@ -32,6 +32,7 @@ export class FooterComponent extends MasterBaseComponent implements OnInit, OnDe
   }
 
   gotoUp() {
+    console.log('aaa');
     if (this.window) {
       this.window.scrollTo({
         top: 0,

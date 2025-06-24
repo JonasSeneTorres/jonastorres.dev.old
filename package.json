@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "concurrently \"npm run start:blog\"  \"npm run mockdb\"",
     "start:blog": "ng serve --project=blog --port 42001",
-    "mockdb": "json-server --watch db.json --delay 750 --port 8000",
+    "mockdb": "json-server --watch db.json --delay 750 --port 801",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "concurrently \"npm run test:blog\"  \"npm run test:guide-dog\"",
